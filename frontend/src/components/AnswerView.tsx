@@ -7,6 +7,36 @@ const BEFORE = new Set<Notice['kind']>(['safety', 'ask_rabbi_first'])
 /** Connective text ("; ", ".") is not a claim; a segment with words and no citation is shown as such. */
 const hasWords = (text: string) => /[\p{L}]{3,}/u.test(text)
 
+type Run = { text: string; bold: boolean }
+
+/** The model marks emphasis with **…**, and both a bold span and a single marker can cross the
+ * segments that citations cut the answer into. Markers are found and paired in the whole answer;
+ * an unpaired one is shown as text. */
+export function emphasis(segments: string[]): Run[][] {
+  const whole = segments.join('')
+  const markers: number[] = []
+  for (let i = whole.indexOf('**'); i !== -1; i = whole.indexOf('**', i + 2)) markers.push(i)
+  const paired = markers.slice(0, markers.length - (markers.length % 2))
+  const hidden = new Set(paired.flatMap((m) => [m, m + 1]))
+  const bold = Array.from({ length: whole.length }, () => false)
+  for (let k = 0; k < paired.length; k += 2) {
+    for (let c = (paired[k] ?? 0) + 2; c < (paired[k + 1] ?? 0); c++) bold[c] = true
+  }
+  let offset = 0
+  return segments.map((text) => {
+    const runs: Run[] = []
+    for (let c = offset; c < offset + text.length; c++) {
+      if (hidden.has(c)) continue
+      const b = bold[c] ?? false
+      const last = runs[runs.length - 1]
+      if (last && last.bold === b) last.text += whole[c]
+      else runs.push({ text: whole[c] ?? '', bold: b })
+    }
+    offset += text.length
+    return runs
+  })
+}
+
 function NoticeBox({ notice }: { notice: Notice }) {
   const { lang } = useI18n()
   return (
@@ -34,6 +64,11 @@ function SourceCard({
       <button type="button" className="source-head" onClick={onToggle} aria-expanded={open}>
         <span className="source-num">{source.index + 1}</span>
         <bdi className="source-ref">{source.ref}</bdi>
+        {source.fetched && (
+          <span className="source-fetched" title={t('fetchedTitle')}>
+            {t('fetched')}
+          </span>
+        )}
         <span className="source-work">{source.category}</span>
       </button>
       {open && (
@@ -71,6 +106,7 @@ export function AnswerView({ answer }: { answer: Answer }) {
   const after = answer.notices.filter((n) => !BEFORE.has(n.kind))
   const cited = new Set(answer.segments.flatMap((s) => s.citations.map((c) => c.source_index)))
   const textDir = answer.segments.length ? undefined : lang === 'he' ? 'rtl' : 'ltr'
+  const runs = emphasis(answer.segments.map((s) => s.text))
 
   return (
     <div className="answer">
@@ -87,7 +123,9 @@ export function AnswerView({ answer }: { answer: Answer }) {
               }
               title={!segment.citations.length && hasWords(segment.text) ? t('uncited') : undefined}
             >
-              {segment.text}
+              {(runs[i] ?? []).map((run, j) =>
+                run.bold ? <strong key={j}>{run.text}</strong> : run.text,
+              )}
               {[...new Set(segment.citations.map((c) => c.source_index))].map((idx) => (
                 <button
                   key={idx}

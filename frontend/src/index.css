@@ -332,6 +332,16 @@ textarea {
   border-inline-start: 4px solid var(--muted);
 }
 
+.notice-fetched {
+  background: #eef4fb;
+  border-inline-start: 4px solid #5b7fa8;
+}
+
+.notice-lookup_failed {
+  background: var(--amber-soft);
+  border-inline-start: 4px solid var(--gold);
+}
+
 .notice-unretrieved_mention {
   background: var(--red-soft);
   border-inline-start: 4px solid var(--red);
@@ -371,6 +381,14 @@ textarea {
   border-radius: 999px;
   min-width: 22px;
   text-align: center;
+  font-size: 12px;
+}
+
+.source-fetched {
+  border: 1px solid #5b7fa8;
+  color: #3d5f86;
+  border-radius: 999px;
+  padding: 0 8px;
   font-size: 12px;
 }
 

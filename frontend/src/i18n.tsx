@@ -17,8 +17,8 @@ const strings = {
   username: { he: 'שם משתמש', en: 'Username' },
   password: { he: 'סיסמה', en: 'Password' },
   questionPlaceholder: {
-    he: 'שאלו על התורה, משנה וגמרא ברכות, רש״י, תוספות, הרמב״ם או השולחן ערוך…',
-    en: 'Ask about the Torah, Mishnah and Gemara Berakhot, Rashi, Tosafot, the Rambam or the Shulchan Arukh…',
+    he: 'שאלו על התורה, הגמרא, רש״י ותוספות, הרמב״ם או השולחן ערוך; ציון ספר ומקום עוזר…',
+    en: 'Ask about the Torah, the Gemara, Rashi and Tosafot, the Rambam or the Shulchan Arukh; naming the book and place helps…',
   },
   send: { he: 'שליחה', en: 'Send' },
   thinking: { he: 'מעיינת במקורות…', en: 'Looking in the sources…' },
@@ -26,6 +26,11 @@ const strings = {
   history: { he: 'שיחות קודמות', en: 'Earlier conversations' },
   sources: { he: 'מקורות', en: 'Sources' },
   openInSefaria: { he: 'פתיחה בספריא', en: 'Open in Sefaria' },
+  fetched: { he: 'מספריא', en: 'From Sefaria' },
+  fetchedTitle: {
+    he: 'נשלף מספריא לשאלה הזו; לא חלק מהספרייה',
+    en: 'Looked up on Sefaria for this question; not part of the library',
+  },
   license: { he: 'רישיון', en: 'License' },
   version: { he: 'מהדורה', en: 'Version' },
   samples: { he: 'שאלות לדוגמה', en: 'Sample questions' },

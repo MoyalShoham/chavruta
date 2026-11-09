@@ -28,7 +28,15 @@ export interface Segment {
 }
 
 export interface Notice {
-  kind: 'safety' | 'ask_rabbi_first' | 'not_psak' | 'unretrieved_mention' | 'refusal' | 'no_source'
+  kind:
+    | 'safety'
+    | 'ask_rabbi_first'
+    | 'not_psak'
+    | 'unretrieved_mention'
+    | 'refusal'
+    | 'no_source'
+    | 'fetched'
+    | 'lookup_failed'
   en: string
   he: string
 }
@@ -47,6 +55,8 @@ export interface Source {
   category: string
   url: string
   texts: SourceText[]
+  /** Looked up on Sefaria for this question, not part of the library. */
+  fetched?: boolean
 }
 
 export interface Answer {

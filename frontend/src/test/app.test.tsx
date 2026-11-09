@@ -2,7 +2,7 @@ import { render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { App } from '../App'
-import { AnswerView } from '../components/AnswerView'
+import { AnswerView, emphasis } from '../components/AnswerView'
 import { Corpus } from '../components/Corpus'
 import { sectionOf } from '../components/SugyaView'
 import { I18nProvider } from '../i18n'
@@ -111,6 +111,54 @@ describe('AnswerView', () => {
     expect(screen.getByText(/The Mishnah Berurah adds more/)).toHaveClass('uncited')
     expect(screen.getByText(/One whose dead lies/)).toHaveClass('cited')
     expect(screen.getByText('טקסט עם קו מקווקו אינו מצוטט ממקור')).toBeInTheDocument()
+  })
+
+  it('shows **bold** as bold, also across citation segments, and never invents emphasis', () => {
+    expect(emphasis(['a *', '*b** c'])).toEqual([
+      [{ text: 'a ', bold: false }],
+      [
+        { text: 'b', bold: true },
+        { text: ' c', bold: false },
+      ],
+    ])
+    expect(emphasis(['**The sources', ' say** this', ' and 2**3'])).toEqual([
+      [{ text: 'The sources', bold: true }],
+      [
+        { text: ' say', bold: true },
+        { text: ' this', bold: false },
+      ],
+      [{ text: ' and 2**3', bold: false }],
+    ])
+    const bolded: Answer = {
+      ...answer,
+      segments: [{ text: '**Not in the sources.** Here is why.', citations: [] }],
+    }
+    render(
+      <I18nProvider>
+        <AnswerView answer={bolded} />
+      </I18nProvider>,
+    )
+    expect(screen.getByText('Not in the sources.').tagName).toBe('STRONG')
+    expect(screen.queryByText(/\*\*/)).toBeNull()
+  })
+
+  it('marks a source looked up on Sefaria for this question', () => {
+    const fetched: Answer = {
+      ...answer,
+      sources: answer.sources.map((src, i) =>
+        i === 0 ? { ...src, ref: 'Bava Batra 5a:1', fetched: true } : src,
+      ),
+      notices: [{ kind: 'fetched', en: 'Looked up on Sefaria.', he: 'נשלף מספריא.' }],
+    }
+    render(
+      <I18nProvider>
+        <AnswerView answer={fetched} />
+      </I18nProvider>,
+    )
+    const badge = screen.getByText('מספריא')
+    expect(badge).toHaveAttribute('title', 'נשלף מספריא לשאלה הזו; לא חלק מהספרייה')
+    expect(screen.getAllByText('מספריא')).toHaveLength(1)
+    expect(screen.getByText('נשלף מספריא.')).toHaveClass('notice-fetched')
   })
 
   it('lists cited sources first and counts them', () => {
