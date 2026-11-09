@@ -169,16 +169,22 @@ dev. It answers 94% of in-scope questions, lets no not-in-library question throu
 lets 1 of 23 out-of-scope questions through. For that one, the classifier is the second gate; its
 numbers come with the answer recordings.
 
-**Latency:** retrieval with reranking, per question, on an 8 GB Apple laptop's GPU (MPS), with the
-machine short of memory:
+**Latency:** the time from question to reranked sources, which a person waits through before the
+model starts answering. It covers embedding the question, BM25, fusion and the cross-encoder. It
+was measured with `evaluation latency` on the first dev questions, after one warm-up, with the
+reranker's cache empty:
 
-| Rerank depth | Median | Max |
-|---:|---:|---:|
-| 20 | 3.9 s | 5.4 s |
-| 50 | 7.2 s | 8.9 s |
+| Machine and device | Reranker precision | Rerank depth | Questions | Median | Max |
+|---|---|---:|---:|---:|---:|
+| Desktop GPU: NVIDIA RTX 5070 Ti 16 GB (CUDA) | float16 | 20 (chosen) | 10 | 0.14 s | 0.18 s |
+| Desktop GPU: NVIDIA RTX 5070 Ti 16 GB (CUDA) | float16 | 50 | 10 | 0.19 s | 0.25 s |
+| Desktop CPU: Intel Core Ultra 7 265KF, 20 cores | float32 | 20 (chosen) | 5 | 2.86 s | 3.82 s |
+| 8 GB Apple laptop GPU (MPS), short of memory | float16 | 20 (chosen) | not recorded | 3.9 s | 5.4 s |
+| 8 GB Apple laptop GPU (MPS), short of memory | float16 | 50 | not recorded | 7.2 s | 8.9 s |
 
-On the same laptop's CPU, one measurement took 97 s to score 50 passages. The reranker is a
-568M-parameter cross-encoder, which is why depth was a cost decision.
+On the laptop's CPU, one measurement took 97 s to score 50 passages. The reranker is a
+568M-parameter cross-encoder, which is why depth was a cost decision: on the laptop, depth 50 nearly
+doubled the wait. On the desktop GPU it adds 0.05 s.
 
 ### Answers: pending
 
@@ -220,8 +226,9 @@ not itself a faithfulness measure.
   and other good answers exist.
 - **The mention detector is a heuristic.** It catches named works and located references in
   English and Hebrew. It misses a source alluded to without a name or a location.
-- **The reranker wants a GPU.** See the latency figures above. A CPU-only deployment should use a
-  smaller reranker or a hosted one.
+- **The reranker wants a GPU.** See the latency figures above. A question takes about 3 s on a
+  20-core desktop CPU and 0.14 s on a desktop GPU. A small CPU-only server should use a smaller
+  reranker or a hosted one.
 - **Generated secrets** in `./secrets` are readable by any local user of the machine running
   compose. They are meant for a personal deployment.
 - **Single household, no SSO.** Two local accounts, server-side sessions, no MFA or per-user
