@@ -285,6 +285,16 @@ textarea {
   background: linear-gradient(transparent 70%, var(--gold-soft) 70%);
 }
 
+.uncited {
+  text-decoration: underline dotted var(--muted);
+  text-underline-offset: 4px;
+}
+
+.legend {
+  font-size: 12px;
+  color: var(--muted);
+}
+
 .cite {
   font-size: 11px;
   padding: 0 5px;

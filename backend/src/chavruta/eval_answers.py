@@ -24,7 +24,7 @@ from pathlib import Path
 from typing import Any
 
 from chavruta.evaluation import EVAL, Question, load_questions
-from chavruta.llm import ANSWER_MODEL, LLM, Mode, RecordingLLM, iter_recordings, request_key
+from chavruta.llm import JUDGE_MODEL, LLM, Mode, RecordingLLM, iter_recordings, request_key
 from chavruta.retrieval import matches
 from chavruta.scope import Classification, Scope, Strictness, decide
 
@@ -147,7 +147,7 @@ def judge_request(question: str, row: dict[str, Any], sources: list[dict[str, An
     )
     prompt = f"Question: {question}\n\nSources:\n{shown}\n\nAnswer segments:\n{segs}"
     return {
-        "model": ANSWER_MODEL,
+        "model": JUDGE_MODEL,
         "max_tokens": 8000,
         "system": JUDGE_SYSTEM,
         "messages": [{"role": "user", "content": prompt}],
@@ -366,9 +366,10 @@ def cmd_score(args: argparse.Namespace) -> int:
     lines = [
         f"# Answers, {r['split']} split ({r['n']} questions)",
         "",
-        f"Integrity: {len(r['integrity_problems'])} problems "
-        "(stored answers re-parsed from the recorded responses; every cited text checked verbatim "
-        "against the sources sent).",
+        f"Integrity check: {len(r['integrity_problems'])} problems. The stored answers are re-parsed "
+        "from the recorded responses and every cited text is matched against the sources sent. This "
+        "proves the numbers come from real responses; it does not measure faithfulness, which the "
+        "judge (a different model from the answerer) and the manual sample do.",
         "",
         "## Grounding (answered questions)",
         "",

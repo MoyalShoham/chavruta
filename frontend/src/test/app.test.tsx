@@ -102,6 +102,17 @@ describe('AnswerView', () => {
     )
   })
 
+  it('marks text that is not tied to a source', () => {
+    render(
+      <I18nProvider>
+        <AnswerView answer={answer} />
+      </I18nProvider>,
+    )
+    expect(screen.getByText(/The Mishnah Berurah adds more/)).toHaveClass('uncited')
+    expect(screen.getByText(/One whose dead lies/)).toHaveClass('cited')
+    expect(screen.getByText('טקסט עם קו מקווקו אינו מצוטט ממקור')).toBeInTheDocument()
+  })
+
   it('lists cited sources first and counts them', () => {
     render(
       <I18nProvider>

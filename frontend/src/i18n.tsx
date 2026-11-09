@@ -98,6 +98,11 @@ const strings = {
   },
   noNotes: { he: 'עדיין אין הערות.', en: 'No notes yet.' },
   unverified: { he: 'לא אומת', en: 'unverified' },
+  uncited: { he: 'קטע זה אינו מצוטט ממקור', en: 'This part is not tied to a cited source' },
+  uncitedLegend: {
+    he: 'טקסט עם קו מקווקו אינו מצוטט ממקור',
+    en: 'Text with a dotted underline is not tied to a cited source',
+  },
   error: { he: 'שגיאה', en: 'Error' },
   language: { he: 'English', en: 'עברית' },
 } satisfies Record<string, Record<Lang, string>>

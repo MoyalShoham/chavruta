@@ -4,6 +4,9 @@ import type { Answer, Notice, Source } from '../types'
 
 const BEFORE = new Set<Notice['kind']>(['safety', 'ask_rabbi_first'])
 
+/** Connective text ("; ", ".") is not a claim; a segment with words and no citation is shown as such. */
+const hasWords = (text: string) => /[\p{L}]{3,}/u.test(text)
+
 function NoticeBox({ notice }: { notice: Notice }) {
   const { lang } = useI18n()
   return (
@@ -77,7 +80,13 @@ export function AnswerView({ answer }: { answer: Answer }) {
       {answer.segments.length > 0 && (
         <div className="answer-text" dir="auto">
           {answer.segments.map((segment, i) => (
-            <span key={i} className={segment.citations.length ? 'cited' : ''}>
+            <span
+              key={i}
+              className={
+                segment.citations.length ? 'cited' : hasWords(segment.text) ? 'uncited' : ''
+              }
+              title={!segment.citations.length && hasWords(segment.text) ? t('uncited') : undefined}
+            >
               {segment.text}
               {[...new Set(segment.citations.map((c) => c.source_index))].map((idx) => (
                 <button
@@ -96,6 +105,11 @@ export function AnswerView({ answer }: { answer: Answer }) {
             </span>
           ))}
         </div>
+      )}
+      {answer.segments.some((s) => !s.citations.length && hasWords(s.text)) && (
+        <p className="legend">
+          <span className="uncited">{t('uncitedLegend')}</span>
+        </p>
       )}
       {after.map((n) => (
         <NoticeBox key={n.kind} notice={n} />

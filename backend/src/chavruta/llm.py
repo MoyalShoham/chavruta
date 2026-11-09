@@ -19,6 +19,8 @@ from typing import Any, Protocol
 
 ANSWER_MODEL = "claude-opus-5-5"
 CLASSIFIER_MODEL = "claude-haiku-5-5"
+#: The faithfulness judge is a different model from the one that wrote the answers.
+JUDGE_MODEL = "claude-sonnet-5-5"
 
 
 class Mode(StrEnum):
