@@ -204,6 +204,19 @@ def cmd_embed(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_export_vectors(args: argparse.Namespace) -> int:
+    """Ships the chosen model's vectors with the corpus snapshot (float16, compressed)."""
+    import numpy as np
+
+    from chavruta.embeddings import CHOSEN_MODEL, load_vectors
+
+    ids, vectors = load_vectors(DATA / "vectors" / CHOSEN_MODEL)
+    out = BACKEND / "corpus" / f"vectors-{CHOSEN_MODEL}.npz"
+    np.savez_compressed(out, ids=np.array(ids), vectors=vectors.astype(np.float16))
+    print(f"{len(ids)} vectors -> {out} ({out.stat().st_size / 1e6:.1f} MB)")
+    return 0
+
+
 def _chunk_id(c: Chunk) -> str:
     return f"{c.ref}|{c.language}|{c.version}"
 
@@ -369,6 +382,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="python -m chavruta.evaluation")
     sub = parser.add_subparsers(dest="cmd", required=True)
     sub.add_parser("verify").set_defaults(fn=cmd_verify)
+    sub.add_parser("export-vectors").set_defaults(fn=cmd_export_vectors)
     e = sub.add_parser("embed")
     e.add_argument("--model", choices=sorted(MODELS), required=True)
     e.set_defaults(fn=cmd_embed)

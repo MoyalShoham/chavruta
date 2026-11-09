@@ -502,3 +502,26 @@ def test_vectors_from_another_model_are_refused(loaded: sessionmaker[Session]) -
         with loaded() as s:
             s.execute(update(ChunkRow).where(ChunkRow.id == first).values(embedding_model=CHOSEN_MODEL))
             s.commit()
+
+
+def test_shipped_vectors_are_loaded_by_reference(loaded: sessionmaker[Session], tmp_path: Path) -> None:
+    import numpy as np
+    from sqlalchemy import func, select, update
+
+    from chavruta.db import ChunkRow
+    from chavruta.embeddings import CHOSEN_MODEL, EMBEDDING_DIM
+    from chavruta.ingest import load_vectors_file
+
+    with loaded() as s:
+        row = s.execute(select(ChunkRow.id, ChunkRow.ref, ChunkRow.language).limit(1)).one()
+        version = s.scalar(select(ChunkRow.version_id).where(ChunkRow.id == row.id))
+        from chavruta.db import Version
+
+        title = s.scalar(select(Version.title).where(Version.id == version))
+        s.execute(update(ChunkRow).where(ChunkRow.id == row.id).values(embedding=None))
+        s.commit()
+        vec = np.full((1, EMBEDDING_DIM), 0.5, dtype=np.float16)
+        path = tmp_path / "v.npz"
+        np.savez_compressed(path, ids=np.array([f"{row.ref}|{row.language}|{title}"]), vectors=vec)
+        assert load_vectors_file(s, path, CHOSEN_MODEL) == 1
+        assert s.scalar(select(func.count()).select_from(ChunkRow).where(ChunkRow.embedding.is_(None))) == 0

@@ -20,7 +20,7 @@ from dataclasses import replace
 from pathlib import Path
 from typing import Any
 
-from sqlalchemy import func, select
+from sqlalchemy import func, select, update
 from sqlalchemy.dialects.postgresql import insert as pg_insert
 from sqlalchemy.orm import Session
 
@@ -158,6 +158,35 @@ def until(chunks: Sequence[Chunk], last_section: str | None) -> list[Chunk]:
     return [c for c in chunks if c.section_ref in keep]
 
 
+def vectors_file(directory: Path, model: str) -> Path:
+    return directory / f"vectors-{model}.npz"
+
+
+def load_vectors_file(s: Session, path: Path, model: str, batch: int = 2000) -> int:
+    """Embeddings shipped with the snapshot, computed by the same model, matched by
+    reference, language and version. Chunks it does not cover are embedded as usual."""
+    import numpy as np
+
+    data = np.load(path)
+    ids = [str(x) for x in data["ids"]]
+    vectors = data["vectors"]
+    index = {key: i for i, key in enumerate(ids)}
+    rows = s.execute(
+        select(ChunkRow.id, ChunkRow.ref, ChunkRow.language, Version.title)
+        .join(Version, Version.id == ChunkRow.version_id)
+        .where(ChunkRow.embedding.is_(None))
+    ).all()
+    updates = [
+        {"id": row.id, "embedding": vectors[index[key]].astype("float32").tolist(), "embedding_model": model}
+        for row in rows
+        if (key := f"{row.ref}|{row.language}|{row.title}") in index
+    ]
+    for i in range(0, len(updates), batch):
+        s.execute(update(ChunkRow), updates[i : i + batch])
+        s.commit()
+    return len(updates)
+
+
 def load_file(path: Path) -> dict[str, list[Chunk]]:
     by_work: dict[str, list[Chunk]] = {}
     opener: Any = gzip.open if path.suffix == ".gz" else open
@@ -206,6 +235,12 @@ def main(argv: list[str] | None = None) -> None:
             from chavruta.library import check_embeddings
 
             check_embeddings(sessions)
+            shipped = vectors_file(args.from_file.parent, CHOSEN_MODEL) if args.from_file else None
+            if shipped is not None and shipped.exists():
+                print(
+                    f"{load_vectors_file(s, shipped, CHOSEN_MODEL)} embeddings from {shipped.name}",
+                    flush=True,
+                )
             embed_missing(s, SentenceEmbedder(MODELS[CHOSEN_MODEL]))
 
 
