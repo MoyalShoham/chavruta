@@ -285,6 +285,27 @@ def find_mentions(text: str) -> list[Mention]:
     return sorted((x for x in spans if not inside(x)), key=lambda x: x.start)
 
 
+def families_of(work: str) -> set[str]:
+    """The mention families a work satisfies: a library work by the table above; a work fetched
+    from Sefaria for one question by its title: "Rashi on Bava Batra" is Rashi and Bava Batra,
+    "Pirkei Avot" is Avot, "Mishneh Torah, Sabbath" is the Rambam, "Bereshit Rabbah" a Midrash."""
+    if work in WORK_FAMILIES:
+        return WORK_FAMILIES[work]
+    if " on " in work:  # a commentary: the commentator and the work commented on
+        commentator, base = work.split(" on ", 1)
+        return {commentator, *families_of(commentator), *families_of(base)}
+    out = {work}
+    for family, (en, _) in TANAKH.items():
+        if work in (family, *en):
+            out.add(family)
+    if not work.startswith("Jerusalem Talmud"):  # its tractates are not the Bavli's
+        out |= {t for t in [*TALMUD, *MISHNAH_ONLY] if work == t or work.endswith(" " + t)}
+    for family, (en, _) in NAMED.items():
+        if any(work == n or work.startswith((n + " ", n + ",")) for n in (family, *en)):
+            out.add(family)
+    return out
+
+
 def unretrieved(
     answer_text: str,
     retrieved_works: set[str],
@@ -295,7 +316,7 @@ def unretrieved(
     text itself quotes (a Gemara quoting a verse may be followed in naming that verse)."""
     allowed: set[str] = set()
     for w in retrieved_works:
-        allowed |= WORK_FAMILIES.get(w, {w})
+        allowed |= families_of(w)
     refs = list(retrieved_refs)
     quoted = [m for t in retrieved_texts for m in find_mentions(t)]
     quoted_families = {m.family for m in quoted}

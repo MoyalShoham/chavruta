@@ -39,6 +39,9 @@ class Settings(BaseSettings):
     #: 50, for 40% of the compute). The reranker cannot be turned off, because the relevance
     #: threshold is defined on its scores.
     rerank_top: int = 20
+    #: Look up texts outside the library on Sefaria for a question the library cannot answer
+    #: (lookup.py). Off, the app answers from the library only, as the main evaluation measures.
+    sefaria_lookup: bool = True
     #: Model calls (ask, card suggestions) per account: a spend limit.
     llm_calls_per_hour: int = 60
     llm_calls_per_day: int = 300

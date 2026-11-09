@@ -11,6 +11,8 @@ What the model may and may not do is enforced around it, not only asked of it:
 - After the answer, code looks for works the model names that were not retrieved (mentions.py) and
   flags them.
 - Out of scope, manipulation and "no relevant source" never reach the answering model.
+- A question the library cannot answer may be answered from texts fetched from Sefaria for it
+  (lookup.py): same license rule, same ranking and threshold, and the answer says so.
 """
 
 from __future__ import annotations
@@ -19,18 +21,21 @@ import hashlib
 import json
 from collections import defaultdict
 from collections.abc import Sequence
-from dataclasses import dataclass, field
+from concurrent.futures import Future, ThreadPoolExecutor
+from dataclasses import dataclass, field, replace
 from enum import StrEnum
 from pathlib import Path
 from typing import Any
 
 from chavruta.corpus import Chunk
 from chavruta.llm import ANSWER_MODEL, LLM, MissingRecordingError, iter_recordings
+from chavruta.lookup import Found, Planned, SefariaLookup
 from chavruta.mentions import Mention, unretrieved
-from chavruta.retrieval import Retriever
-from chavruta.scope import URGENT, Classification, Decision, Strictness, classify, decide
+from chavruta.retrieval import Retriever, matches
+from chavruta.scope import URGENT, Classification, Decision, Scope, Strictness, classify, decide
 
 SOURCES_PER_ANSWER = 8
+PLAN_TIMEOUT = 20.0  # seconds to wait for the lookup planner before answering from the library
 DEFAULT_RELEVANCE = 0.05  # reranker probability; chosen on dev (see docs/decisions.md)
 
 SYSTEM = """You are Chavruta, a study partner for classical Jewish texts.
@@ -85,6 +90,7 @@ class Source:
     url: str
     score: float
     texts: tuple[SourceText, ...]
+    fetched: bool = False  # from Sefaria for this question, not from the library
 
 
 @dataclass(frozen=True)
@@ -121,6 +127,7 @@ class Answer:
     model: str | None = None
     usage: dict[str, Any] = field(default_factory=dict)
     replayed: bool = False  # a recorded answer served by question, without an API key
+    lookup: dict[str, Any] | None = None  # what was looked up in Sefaria, if anything
 
     @property
     def text(self) -> str:
@@ -136,10 +143,25 @@ class CorpusIndex:
 
     def __init__(self, chunks: Sequence[Chunk]) -> None:
         self.by_ref: dict[str, list[Chunk]] = defaultdict(list)
+        self.sections: set[str] = set()
+        self.works: set[str] = set()
         for c in chunks:
             self.by_ref[c.ref].append(c)
+            self.sections.add(c.section_ref)
+            self.works.add(c.work)
         for v in self.by_ref.values():
             v.sort(key=lambda c: (c.language != "he", c.version))
+        self.refs = list(self.by_ref)
+        self.disabled: set[str] = set()  # works an admin turned off: never fetched from Sefaria either
+
+    def has(self, ref: str) -> bool:
+        """The library holds this place: the reference itself, its section, a part of it or the
+        section it is part of ("Berakhot 2a", "Berakhot 2a:3", "Rashi on Berakhot 2a:1"), or, for a
+        range, where the range starts ("Deuteronomy 6:4-9")."""
+        ref = ref.split("-", 1)[0].strip()
+        if ref in self.by_ref or ref in self.sections:
+            return True
+        return any(matches(r, ref) or matches(ref, r) for r in self.sections)
 
     def source(self, index: int, chunk: Chunk, score: float) -> Source:
         texts = tuple(SourceText(c.language, c.version, c.license, c.text) for c in self.by_ref[chunk.ref])
@@ -267,9 +289,9 @@ REFUSALS = {
     ),
     "manipulation": Notice(
         "refusal",
-        "I can't do that. I answer only from the sources in my library, with citations, and I don't issue "
+        "I can't do that. I answer only from sources I can show you, with citations, and I don't issue "
         "rulings.",
-        "איני יכולה לעשות זאת. אני עונה רק מתוך המקורות שבספרייה, עם מראי מקום, ואיני פוסקת.",
+        "איני יכולה לעשות זאת. אני עונה רק מתוך מקורות שאני יכולה להראות, עם מראי מקום, ואיני פוסקת.",
     ),
 }
 
@@ -280,6 +302,25 @@ NO_SOURCE = Notice(
     "and blessings, and Shulchan Arukh Orach Chayim 1-241.",
     "לא מצאתי בספרייה מקור שעונה על כך, ולכן לא אענה מהזיכרון. בספרייה: חמשה חומשי תורה, משנה וגמרא "
     "ברכות עם רש״י ותוספות, הלכות קריאת שמע, תפילה וברכות לרמב״ם, ושולחן ערוך אורח חיים סימנים א-רמא.",
+)
+NO_SOURCE_LOOKED_UP = Notice(
+    "no_source",
+    "I couldn't find a source that answers this, in my library or in what I looked up on Sefaria, so I "
+    "won't answer from memory. Naming the book and the place (daf, chapter, siman) helps me find it.",
+    "לא מצאתי מקור שעונה על כך, לא בספרייה ולא במה שחיפשתי בספריא, ולכן לא אענה מהזיכרון. "
+    "ציון הספר והמקום (דף, פרק, סימן) יעזור לי למצוא אותו.",
+)
+FETCHED = Notice(
+    "fetched",
+    "Some of these sources were looked up on Sefaria for this question. They are outside the curated "
+    "library, so the library's measured results do not cover them.",
+    "חלק מהמקורות כאן נשלפו מספריא במיוחד לשאלה הזו. הם מחוץ לספרייה המובנית, ולכן התוצאות שנמדדו על "
+    "הספרייה אינן חלות עליהם.",
+)
+LOOKUP_FAILED = Notice(
+    "lookup_failed",
+    "Sefaria could not be reached, so I searched only my own library.",
+    "לא הצלחתי להתחבר לספריא, ולכן חיפשתי רק בספרייה שלי.",
 )
 
 
@@ -354,12 +395,15 @@ class Chavruta:
         llm: LLM,
         settings: Settings | None = None,
         replay: ReplayIndex | None = None,
+        lookup: SefariaLookup | None = None,
     ) -> None:
         self.retriever = retriever
         self.index = index
         self.llm = llm
         self.settings = settings or Settings()
         self.replay = replay
+        self.lookup = lookup
+        self._planner = ThreadPoolExecutor(8, thread_name_prefix="lookup-plan") if lookup else None
 
     def recorded_sources(self, request: dict[str, Any]) -> list[Source] | None:
         """The sources of a recorded request, rebuilt from the library; None if any differ."""
@@ -387,6 +431,51 @@ class Chavruta:
             ]
         return [self.index.source(i, c, s) for i, (c, s) in enumerate(chunks)]
 
+    def plan(self, question: str, context: str | None, c: Classification) -> Future[Planned] | None:
+        """Plans the Sefaria lookup while the library is searched. The planner runs for every
+        question that might be answered (it is what turns "בבא בתרא דף ה עמוד א" into a reference),
+        and never for one the classifier already refuses or marks sensitive."""
+        if self.lookup is None or self._planner is None:
+            return None
+        if c.manipulation or c.sensitive or c.scope == Scope.OUT_OF_SCOPE:
+            return None
+        return self._planner.submit(self.lookup.safe_plan, question, context)
+
+    def look_up(self, planning: Future[Planned], query: str, no_source: bool) -> Found:
+        """A planned place the library holds is not fetched; search runs only if the library has
+        nothing relevant or the question names a work or a place the library does not hold. Any
+        failure, or a planner slower than PLAN_TIMEOUT, leaves the library's sources as they were."""
+        assert self.lookup is not None
+        try:
+            planned = planning.result(timeout=PLAN_TIMEOUT)
+        except TimeoutError:
+            return Found(errors=["planner timed out: lookup skipped"])
+        try:
+            outside = bool(unretrieved(query, self.index.works, [], self.index.refs))
+            disabled = self.index.disabled
+            return self.lookup.fetch_planned(
+                planned, self.index.has, search=no_source or outside, blocked=lambda w: w in disabled
+            )
+        except Exception as e:
+            return Found(planned.plan, errors=[f"lookup failed: {type(e).__name__}: {e}"])
+
+    def merge(self, query: str, sources: list[Source], chunks: Sequence[Chunk]) -> list[Source]:
+        """Ranks fetched passages with the library's own embeddings and reranker, so their scores
+        and the relevance threshold mean the same thing, and keeps the best of both. A place both
+        hold comes from the library."""
+        r = self.retriever
+        vectors = r.embedder.passages([c.text for c in chunks]) if r.embedder is not None else None
+        ranker = Retriever(chunks, r.embedder, vectors, r.reranker, r.rerank_top)
+        fetched_index = CorpusIndex(chunks)
+        held = {s.ref for s in sources}
+        fetched = [
+            replace(fetched_index.source(0, h.chunk, h.score), fetched=True)
+            for h in ranker.search(query, k=self.settings.sources)
+            if h.chunk.ref not in held and not self.index.has(h.chunk.ref)
+        ]
+        best = sorted([*sources, *fetched], key=lambda s: -s.score)[: self.settings.sources]
+        return [replace(s, index=i) for i, s in enumerate(best)]
+
     def ask(
         self,
         question: str,
@@ -396,15 +485,61 @@ class Chavruta:
         classification: Classification | None = None,
     ) -> Answer:
         question = question.strip()
+        c, decision, sources, found = self.prepare(question, history, mode, anchor_ref, classification)
+        return self._answer(question, history, mode, c, decision, sources, found)
+
+    def prepare(
+        self,
+        question: str,
+        history: Sequence[Turn] = (),
+        mode: str = "ask",
+        anchor_ref: str | None = None,
+        classification: Classification | None = None,
+    ) -> tuple[Classification, Decision, list[Source], Found | None]:
+        """Everything before the answering model: the classification, the sources (the library's,
+        and any looked up on Sefaria) and the decision whether to answer."""
+        question = question.strip()
         # A follow-up is classified and searched together with the question it follows.
         context = next((t.text for t in reversed(history) if t.role == "user" and t.text.strip()), None)
         c = classification or classify(self.llm, question, context)
-        sources = self.retrieve(f"{context} {question}" if context else question, anchor_ref)
+        query = f"{context} {question}" if context else question
+        planning = None if anchor_ref else self.plan(question, context, c)
+        sources = self.retrieve(query, anchor_ref)
         # In chavruta mode the anchored passage is always relevant: the learner is studying it.
         best = sources[0].score if sources else None
         threshold = -1e9 if anchor_ref and mode == "chavruta" else self.settings.relevance_threshold
         decision = decide(c, question, best, self.settings.strictness, threshold)
+        found = None
+        may_look = decision.answer or decision.reason == "no_source"
+        if planning is not None and may_look and not decision.sensitive_area:
+            found = self.look_up(planning, query, no_source=decision.reason == "no_source")
+            if found.chunks:
+                try:
+                    merged = self.merge(query, sources, found.chunks)
+                except Exception as e:  # ranking the fetched passages failed: keep the library's
+                    found.errors.append(f"ranking failed: {type(e).__name__}: {e}")
+                    merged = sources
+                sources = merged
+                best = sources[0].score if sources else None
+                decision = decide(c, question, best, self.settings.strictness, threshold)
+        return c, decision, sources, found
+
+    def _answer(
+        self,
+        question: str,
+        history: Sequence[Turn],
+        mode: str,
+        c: Classification,
+        decision: Decision,
+        sources: list[Source],
+        found: Found | None,
+    ) -> Answer:
         out = Answer(Status.ANSWERED, question, decision=decision, retrieved=[s.ref for s in sources])
+        out.lookup = found.record() if found is not None else None
+        # Sefaria down matters only when the lookup was needed: nothing in the library, or a
+        # place named that the library does not hold.
+        if found is not None and found.unreachable and (decision.reason == "no_source" or found.plan.refs):
+            out.notices.append(LOOKUP_FAILED)
         if decision.sensitive_area in URGENT:
             out.notices.append(SAFETY)
         if decision.sensitive_area:
@@ -412,7 +547,8 @@ class Chavruta:
         if not decision.answer:
             if decision.reason == "no_source":
                 out.status = Status.NO_SOURCE
-                out.notices.append(NO_SOURCE)
+                looked = found is not None and found.attempted and not found.unreachable
+                out.notices.append(NO_SOURCE_LOOKED_UP if looked else NO_SOURCE)
             else:
                 out.status = Status.REFUSED
                 out.notices.append(REFUSALS[decision.reason])
@@ -443,6 +579,8 @@ class Chavruta:
         )
         if out.unretrieved:
             out.notices.append(unretrieved_notice(out.unretrieved))
+        if any(s.fetched for s in sources):
+            out.notices.append(FETCHED)
         practical = c.kind == "practical_halacha" or any(
             s.category == "Halakhah" for s in sources if _cited(out, s)
         )

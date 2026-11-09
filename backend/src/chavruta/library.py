@@ -111,6 +111,8 @@ class Library:
             for c, w, v in rows
         ]
         ids = [c.id for c, _, _ in rows]
+        with self.sessions() as s:
+            disabled = set(s.scalars(select(Work.title).where(Work.enabled.is_(False))))
         retriever = PgRetriever(chunks, ids, self.sessions, self.embedder, self.reranker, self.rerank_top)
         by_section: dict[str, list[Chunk]] = {}
         for c in chunks:
@@ -119,6 +121,7 @@ class Library:
             self.chunks = chunks
             self.retriever = retriever
             self.index = CorpusIndex(chunks)
+            self.index.disabled = disabled
             self.by_section = by_section
 
     def section(self, section_ref: str) -> list[Chunk]:

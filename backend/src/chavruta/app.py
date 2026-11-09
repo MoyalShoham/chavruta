@@ -17,6 +17,7 @@ from chavruta.embeddings import CHOSEN_MODEL, MODELS, CrossEncoderReranker, Sent
 from chavruta.hebcal import Schedule
 from chavruta.library import Library, check_embeddings
 from chavruta.llm import AnthropicLLM, Mode, RecordingLLM
+from chavruta.lookup import SefariaLookup
 from chavruta.net import install_socket_guard
 from chavruta.sefaria import SefariaClient
 from chavruta.services import CallLimit, Throttle, ensure_users, load_strictness
@@ -38,6 +39,7 @@ def make() -> FastAPI:
         AnthropicLLM() if settings.llm_mode != Mode.REPLAY else None,
     )
     tz = ZoneInfo(settings.timezone)
+    sefaria = SefariaClient(cache_dir=settings.data_dir / "sefaria-cache", min_interval=0.1)
     bot = Chavruta(
         library.retriever,
         library.index,
@@ -47,6 +49,7 @@ def make() -> FastAPI:
             relevance_threshold=settings.relevance_threshold,
         ),
         ReplayIndex.load(settings.recordings_dir) if settings.llm_mode == Mode.REPLAY else None,
+        SefariaLookup(sefaria, llm) if settings.sefaria_lookup else None,
     )
     state = AppState(
         settings=settings,
@@ -60,7 +63,7 @@ def make() -> FastAPI:
             settings.timezone,
             cache_file=settings.data_dir / "hebcal-schedule.json",
         ),
-        sefaria=SefariaClient(cache_dir=settings.data_dir / "sefaria-cache"),
+        sefaria=sefaria,
         tz=tz,
         throttle=Throttle(),
         limits=CallLimit(settings.llm_calls_per_hour, settings.llm_calls_per_day),

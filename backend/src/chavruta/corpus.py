@@ -132,14 +132,14 @@ class Skipped:
     license: str = ""
 
 
-def _units(text: Any, prefix: str) -> Iterator[tuple[str, str]]:
+def units(text: Any, prefix: str) -> Iterator[tuple[str, str]]:
     """Leaves of a Sefaria text array with their sub-references: ["a", ["b", "c"]] -> (prefix:1, a), ..."""
     if isinstance(text, str):
         yield prefix, text
         return
     if isinstance(text, list):
         for i, item in enumerate(text, 1):
-            yield from _units(item, f"{prefix}:{i}")
+            yield from units(item, f"{prefix}:{i}")
 
 
 def chunks_of(section: Section, work: WorkSpec, start_position: int) -> tuple[list[Chunk], list[Skipped]]:
@@ -155,7 +155,7 @@ def chunks_of(section: Section, work: WorkSpec, start_position: int) -> tuple[li
                 )
             )
             continue
-        for ref, raw in _units(v.text, section.ref):
+        for ref, raw in units(v.text, section.ref):
             body = clean(raw)
             if not body:
                 continue

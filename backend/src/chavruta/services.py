@@ -202,6 +202,7 @@ def answer_payload(a: Answer) -> dict[str, Any]:
                 "category": src.category,
                 "url": src.url,
                 "texts": [asdict(t) for t in src.texts],
+                "fetched": src.fetched,
             }
             for src in a.sources
         ],
