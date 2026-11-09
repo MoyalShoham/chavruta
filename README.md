@@ -14,6 +14,8 @@ It is not a posek. Practical questions get a disclaimer; sensitive ones get "ask
 and a crisis gets emergency numbers before anything else. It is prompted to present a machloket as
 a disagreement, and the evaluation checks that. It closes on Shabbat and Yom Tov.
 
+![The sugya view: Berakhot 2a with Rashi beside each line and the connections map](docs/screenshot.jpg)
+
 ## Why it is hard
 
 - **Grounding has to be checkable, not promised.** A model will happily quote "the Mishnah
