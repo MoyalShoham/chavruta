@@ -172,8 +172,8 @@ Recall@k is the share of questions with a gold source among the top k distinct r
 
 **Relevance gate:** this is retrieval alone, before the classifier, at the 0.05 threshold chosen on
 dev. It answers 94% of in-scope questions, lets no not-in-library question through (0 of 2), and
-lets 1 of 23 out-of-scope questions through. For that one, the classifier is the second gate; its
-numbers come with the answer recordings.
+lets 1 of 23 out-of-scope questions through. For that one, the classifier is the second gate. With
+both gates, every out-of-scope holdout question was refused (Answers, below).
 
 **Latency:** the time from question to reranked sources, which a person waits through before the
 model starts answering. It covers embedding the question, BM25, fusion and the cross-encoder. It
@@ -192,29 +192,63 @@ On the laptop's CPU, one measurement took 97 s to score 50 passages. The reranke
 568M-parameter cross-encoder, which is why depth was a cost decision: on the laptop, depth 50 nearly
 doubled the wait. On the desktop GPU it adds 0.05 s.
 
-### Answers: pending
+### Answers (holdout, 129 questions, run once)
 
-The answer metrics need Claude's responses, recorded once with an API key that was not available
-when this was written. Until they are committed, this section has no numbers and CI skips the
-answer step; it still replays and checks the retrieval results above. Once the responses are
-recorded (`eval_answers run`, then `judge`), `eval_answers score` reports from them:
-- **Grounding:**
-  - answers with at least one citation;
-  - the share of answer text in cited segments;
-  - answers that cite a gold source;
-  - answers that name a source or place that was not retrieved;
-  - machloket answers that name every side.
-- **Faithfulness:** a judge (Claude Sonnet, a different model from the Opus answerer) labels each
-  segment supported, partial or unsupported, and a 30-segment manual review sheet is the check
-  on the judge.
-- **Scope, for each strictness:** out-of-scope and borderline questions refused, not-in-library
-  questions declined, answerable questions wrongly refused.
-- **Safety:** emergency numbers first on crisis messages, "ask your rabbi" first on sensitive
-  questions, false alarms on the others, and the disclaimer on practical-halacha answers.
+Each question went through the whole app:
+- Claude Haiku classifies it;
+- retrieval finds sources;
+- Claude Opus answers with API citations;
+- Claude Sonnet, a different model, judges each segment of the answer against the sources sent.
 
-CI checks that every stored answer is exactly what its recorded response says, and that every
-citation quotes the sources that were sent. That proves the numbers come from real responses. It is
-not itself a faithfulness measure.
+Every response is recorded (`eval/recordings/llm`). Dev and holdout together cost about $9. Full
+reports: [dev](backend/eval/answers-dev.md), [holdout](backend/eval/answers-holdout.md).
+
+| Holdout | Value |
+|---|---:|
+| Answered (the rest were refused or had no relevant source) | 94 of 129 |
+| Answers with at least one API citation | 100% |
+| Answers citing a gold source | 78% |
+| Judge: claims fully supported / partly / unsupported (1,002 claims) | 89% / 11% / 0.4% |
+| Answers flagged for naming a source that was not retrieved | 7 (7%) |
+| Out-of-scope questions refused (23) / not-in-library declined (2), default strictness | 100% / 100% |
+| Answerable questions refused | 6% (6 of 97) |
+| Crisis messages with emergency numbers first (3) / sensitive with "ask your rabbi" first (2) | 3 / 2 |
+| Practical-halacha answers with the not-a-posek disclaimer | 95% (21 of 22) |
+
+What this does and does not show:
+
+- **Faithfulness is judged by a model.** The judge is a different model from the answerer and sees
+  only the sources sent. It is still a model, so
+  [a 30-segment manual review sheet](backend/eval/manual-review-holdout.md) is its check. That
+  review has not been filled in yet; until it is, the 89% is the judge's number alone.
+- **About half of the answer text is outside cited segments (48% is cited).** That part is mostly
+  questions back to the learner, transitions and the disclaimer: the judge labels 27% of segments
+  "no claim". The integrity check covers only what is cited.
+- **I read all 7 flagged answers.**
+  - Two gave the location of a verse that a retrieved passage quotes without naming it ("Devarim
+    16:3", "Deut. 26:11"). That came from the model's memory, which is what the check is for.
+  - Five were false alarms of the detector:
+    - three wrote a Rambam book as "Hilchot Tefillah" or "Hilchot Keriat Shema", and the book had
+      been retrieved;
+    - one said the Rambam was *not* among its sources;
+    - one wrote "תוספות על ברכות ו.", a form the dev fix ([decisions §3](docs/decisions.md)) does
+      not cover.
+
+  They are left as they are, because changing the detector after holdout would tune it on holdout.
+- **The missing disclaimer:** the classifier read "מה דין ברכת התורה לפני הלימוד בבוקר?" as text
+  study, not as a practical question, so no disclaimer was shown.
+- **"Ask your rabbi" also appeared on 4 of 89 ordinary text questions:** about an onen, the death
+  of Rabbi Akiva, an ill person, and danger to life. They are themes, not personal situations. It is
+  the cautious direction.
+- **Borderline questions depend on strictness.** At the default (balanced) strictness 1 of 4 was
+  refused, at strict all 4. That is the choice the setting exists for.
+- **Dev and holdout agree.** On dev (95 questions): 91% supported, 0 false "ask your rabbi", every
+  disclaimer present. Nothing about the answering was changed after dev. The only change was the
+  mention detector's parsing ([decisions §3](docs/decisions.md)).
+
+CI replays every stored answer against its recorded response, checks that every citation quotes the
+sources that were sent, and recomputes these reports (`eval_answers score --check`). That proves the
+numbers come from real responses. It is not itself a faithfulness measure.
 
 ## Limitations and next steps
 
