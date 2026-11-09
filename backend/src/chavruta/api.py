@@ -96,6 +96,7 @@ class AppState:
     sefaria: SefariaClient
     tz: ZoneInfo
     throttle: services.Throttle
+    limits: services.CallLimit
     now: Callable[[], datetime]
     lock: threading.Lock
 
@@ -198,7 +199,7 @@ def create_app(state: AppState) -> FastAPI:
 
     @app.post("/api/session")
     def login(body: Login, request: Request, response: Response, s: Db, st: State) -> dict[str, Any]:
-        key = (client_address(request), body.username)
+        key = (client_address(request, st.settings.trust_proxy), body.username)
         if st.throttle.blocked(key):
             raise HTTPException(429, "too many failed attempts; wait a minute")
         result = services.login(s, body.username, body.password, st.settings.session_hours)
@@ -231,10 +232,15 @@ def create_app(state: AppState) -> FastAPI:
 
     # ---- asking ---------------------------------------------------------------------------------
 
+    def spend(st: AppState, user: User) -> None:
+        if not st.limits.take(user.id):
+            raise HTTPException(429, "this account has reached its limit of model calls; try again later")
+
     @app.post("/api/ask")
     def ask(body: AskIn, user: Me, s: Db, st: State) -> dict[str, Any]:
         if body.anchor_ref and body.anchor_ref not in st.library.index.by_ref:
             raise HTTPException(422, "that passage is not in the library")
+        spend(st, user)
         try:
             result: dict[str, Any] = guarded(
                 lambda: services.ask(
@@ -381,6 +387,7 @@ def create_app(state: AppState) -> FastAPI:
 
     @app.post("/api/cards/suggest")
     def suggest(body: ProgressIn, user: Me, st: State) -> list[dict[str, str]]:
+        spend(st, user)
         try:
             result: list[dict[str, str]] = guarded(
                 lambda: services.suggest_cards(st.llm, st.library, body.unit)
@@ -483,16 +490,19 @@ def create_app(state: AppState) -> FastAPI:
     def strictness(body: StrictnessIn, user: Me, st: State) -> dict[str, str]:
         guarded(lambda: services.require_admin(user))
         st.bot.settings = replace(st.bot.settings, strictness=Strictness(body.strictness))
+        services.save_strictness(st.settings, body.strictness)
         return {"strictness": body.strictness}
 
     return app
 
 
-def client_address(request: Request) -> str:
-    """The browser's address. The API is reachable only through the bundled nginx (its port is not
-    published), which sets X-Forwarded-For to the connecting address, overwriting any sent value."""
-    forwarded = request.headers.get("x-forwarded-for", "").split(",")[0].strip()
-    return forwarded or (request.client.host if request.client else "?")
+def client_address(request: Request, trust_proxy: bool) -> str:
+    """The browser's address. X-Forwarded-For is used only when configured behind the bundled nginx,
+    which overwrites it with the connecting address; otherwise anyone could rotate it."""
+    direct = request.client.host if request.client else "?"
+    if not trust_proxy:
+        return direct
+    return request.headers.get("x-forwarded-for", "").split(",")[0].strip() or direct
 
 
 def _id(value: int) -> int:

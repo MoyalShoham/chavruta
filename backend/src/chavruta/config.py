@@ -1,5 +1,6 @@
-"""Settings from the environment (prefix CHAVRUTA_). Secrets have no defaults: the app refuses to
-start without a real session secret and real passwords, instead of running with a known one."""
+"""Settings from the environment (prefix CHAVRUTA_). Passwords have no defaults: the app refuses to
+start without real ones, instead of running with a known one. Sessions are random server-side
+tokens, so there is no signing secret to configure."""
 
 from __future__ import annotations
 
@@ -34,7 +35,14 @@ class Settings(BaseSettings):
     llm_mode: Mode = Mode.REPLAY
     strictness: Strictness = Strictness.BALANCED
     relevance_threshold: float = 0.05
-    reranker: bool = True
+    #: Candidates the reranker scores per question (chosen on dev; the reranker cannot be turned off,
+    #: because the relevance threshold is defined on its scores).
+    rerank_top: int = 50
+    #: Model calls (ask, card suggestions) per account: a spend limit.
+    llm_calls_per_hour: int = 60
+    llm_calls_per_day: int = 300
+    #: Read the client address from X-Forwarded-For. Only behind the bundled nginx, which sets it.
+    trust_proxy: bool = False
     session_hours: int = 12
     secure_cookies: bool = False
     api_docs: bool = False
@@ -45,8 +53,6 @@ class Settings(BaseSettings):
     timezone: str = "Asia/Jerusalem"
     closing: str = "auto"
 
-    session_secret: str | None = None
-    session_secret_file: str | None = None
     learner_password: str | None = None
     learner_password_file: str | None = None
     admin_password: str | None = None
@@ -72,15 +78,6 @@ class Settings(BaseSettings):
     @property
     def db_host(self) -> str:
         return urlparse(self.database_url.replace("+psycopg", "")).hostname or "localhost"
-
-    def secret(self) -> str:
-        value = read_secret(self.session_secret, self.session_secret_file)
-        if not value or len(value.encode()) < 32 or value.lower() in _PLACEHOLDERS:
-            raise RuntimeError(
-                "CHAVRUTA_SESSION_SECRET (or _FILE) must be set to at least 32 random bytes; "
-                "docker compose generates one on first run"
-            )
-        return value
 
     def password(self, role: str) -> str:
         value = read_secret(getattr(self, f"{role}_password"), getattr(self, f"{role}_password_file"))

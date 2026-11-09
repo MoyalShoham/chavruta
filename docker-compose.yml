@@ -13,7 +13,6 @@ x-backend: &backend
   environment:
     CHAVRUTA_DATABASE_URL: postgresql+psycopg://chavruta@db:5432/chavruta
     CHAVRUTA_DB_PASSWORD_FILE: /secrets/db_password
-    CHAVRUTA_SESSION_SECRET_FILE: /secrets/session_secret
     CHAVRUTA_LEARNER_PASSWORD_FILE: /secrets/learner_password
     CHAVRUTA_ADMIN_PASSWORD_FILE: /secrets/admin_password
     CHAVRUTA_DATA_DIR: /app/data
@@ -30,7 +29,7 @@ services:
       - -c
       - |
         import os, secrets
-        for name, n in (("db_password", 24), ("session_secret", 48), ("learner_password", 12), ("admin_password", 12)):
+        for name, n in (("db_password", 24), ("learner_password", 12), ("admin_password", 12)):
             path = f"/secrets/{name}"
             if not os.path.exists(path):
                 with open(path, "w") as f:
@@ -79,13 +78,13 @@ services:
     environment:
       CHAVRUTA_DATABASE_URL: postgresql+psycopg://chavruta@db:5432/chavruta
       CHAVRUTA_DB_PASSWORD_FILE: /secrets/db_password
-      CHAVRUTA_SESSION_SECRET_FILE: /secrets/session_secret
-      CHAVRUTA_LEARNER_PASSWORD_FILE: /secrets/learner_password
+        CHAVRUTA_LEARNER_PASSWORD_FILE: /secrets/learner_password
       CHAVRUTA_ADMIN_PASSWORD_FILE: /secrets/admin_password
       CHAVRUTA_DATA_DIR: /app/data
       CHAVRUTA_RECORDINGS_DIR: /app/eval/recordings/llm
       CHAVRUTA_LLM_MODE: ${CHAVRUTA_LLM_MODE:-replay}
       CHAVRUTA_CLOSING: ${CHAVRUTA_CLOSING:-auto}
+      CHAVRUTA_TRUST_PROXY: "true"  # only nginx reaches the API, and it sets X-Forwarded-For
     mem_limit: 4g
     depends_on:
       ingest: { condition: service_completed_successfully }

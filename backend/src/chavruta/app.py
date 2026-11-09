@@ -19,19 +19,18 @@ from chavruta.library import Library
 from chavruta.llm import AnthropicLLM, Mode, RecordingLLM
 from chavruta.net import install_socket_guard
 from chavruta.sefaria import SefariaClient
-from chavruta.services import Throttle, ensure_users
+from chavruta.services import CallLimit, Throttle, ensure_users, load_strictness
 
 
 def make() -> FastAPI:
     settings = Settings()
     install_socket_guard(extra_hosts=[settings.db_host])
-    settings.secret()  # refuse to start without a real secret
     sessions = make_sessions(make_engine(settings.dsn()))
     with sessions() as s:
         ensure_users(s, settings.password("learner"), settings.password("admin"))
     embedder = SentenceEmbedder(MODELS[CHOSEN_MODEL])
-    reranker = CrossEncoderReranker() if settings.reranker else None
-    library = Library(sessions, embedder, reranker)
+    reranker = CrossEncoderReranker()
+    library = Library(sessions, embedder, reranker, settings.rerank_top)
     llm = RecordingLLM(
         settings.recordings_dir,
         settings.llm_mode,
@@ -42,7 +41,10 @@ def make() -> FastAPI:
         library.retriever,
         library.index,
         llm,
-        AnswerSettings(strictness=settings.strictness, relevance_threshold=settings.relevance_threshold),
+        AnswerSettings(
+            strictness=load_strictness(settings) or settings.strictness,
+            relevance_threshold=settings.relevance_threshold,
+        ),
         ReplayIndex.load(settings.recordings_dir) if settings.llm_mode == Mode.REPLAY else None,
     )
     state = AppState(
@@ -60,6 +62,7 @@ def make() -> FastAPI:
         sefaria=SefariaClient(cache_dir=settings.data_dir / "sefaria-cache"),
         tz=tz,
         throttle=Throttle(),
+        limits=CallLimit(settings.llm_calls_per_hour, settings.llm_calls_per_day),
         now=lambda: datetime.now(tz),
         lock=threading.Lock(),
     )

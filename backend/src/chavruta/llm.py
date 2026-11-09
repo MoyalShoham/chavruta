@@ -40,6 +40,8 @@ class LLM(Protocol):
 
 
 class AnthropicLLM:
+    """At most two attempts of 120 s each: 240 s, inside nginx's 300 s."""
+
     def __init__(self, timeout: float = 120.0) -> None:
         import anthropic
 

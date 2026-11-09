@@ -107,6 +107,47 @@ class Throttle:
             self._fails.pop(key, None)
 
 
+class CallLimit:
+    """A spend limit: model calls per account per hour and per day, counted in memory."""
+
+    def __init__(self, per_hour: int, per_day: int) -> None:
+        self.per_hour, self.per_day = per_hour, per_day
+        self._calls: dict[int, list[float]] = {}
+        self._lock = threading.Lock()
+
+    def take(self, user_id: int) -> bool:
+        """Records a call if the account is within both limits; False if it is not."""
+        with self._lock:
+            t = time.monotonic()
+            calls = [x for x in self._calls.get(user_id, []) if t - x < 86_400]
+            if len(calls) >= self.per_day or sum(t - x < 3600 for x in calls) >= self.per_hour:
+                self._calls[user_id] = calls
+                return False
+            calls.append(t)
+            self._calls[user_id] = calls
+            return True
+
+
+def load_strictness(settings: Any) -> Any:
+    """The strictness the admin chose last, kept across restarts in the data directory."""
+    from chavruta.scope import Strictness
+
+    path = settings.data_dir / "settings.json"
+    try:
+        return Strictness(json.loads(path.read_text(encoding="utf-8"))["strictness"])
+    except (OSError, ValueError, KeyError):
+        return None
+
+
+def save_strictness(settings: Any, value: str) -> None:
+    path = settings.data_dir / "settings.json"
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps({"strictness": value}), encoding="utf-8")
+    except OSError:
+        pass  # the choice still applies until the next restart
+
+
 def _token_hash(token: str) -> str:
     return hashlib.sha256(token.encode()).hexdigest()
 

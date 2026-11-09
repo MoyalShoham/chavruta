@@ -25,7 +25,7 @@ from chavruta.hebcal import Schedule
 from chavruta.library import Library
 from chavruta.llm import MissingRecordingError, Mode, RecordingLLM
 from chavruta.sefaria import SefariaClient
-from chavruta.services import Throttle, ensure_users
+from chavruta.services import CallLimit, Throttle, ensure_users
 from tests.test_answer import FixedReranker, ScriptedLLM, cite, classification
 from tests.test_retrieval import HashEmbedder
 
@@ -67,13 +67,12 @@ def build(
     llm: Any,
     now: datetime = WEEKDAY,
     closing: str = "auto",
+    per_hour: int = 1000,
+    data_dir: Path | None = None,
 ) -> TestClient:
-    settings = Settings(
-        session_secret="s" * 40,
-        learner_password=LEARNER_PW,
-        admin_password=ADMIN_PW,
-        closing=closing,
-    )
+    settings = Settings(learner_password=LEARNER_PW, admin_password=ADMIN_PW, closing=closing)
+    if data_dir is not None:
+        settings.data_dir = data_dir
     with sessions() as s:
         ensure_users(s, LEARNER_PW, ADMIN_PW)
     library = Library(sessions, HashEmbedder(), FixedReranker())
@@ -93,6 +92,7 @@ def build(
         ),
         tz=IL,
         throttle=Throttle(),
+        limits=CallLimit(per_hour, per_hour * 5),
         now=lambda: now,
         lock=threading.Lock(),
     )
@@ -159,12 +159,38 @@ def test_writes_need_the_csrf_header(make: Callable[..., TestClient]) -> None:
     assert client.post("/api/notes", json={"ref": "Berakhot 2a:1", "body": "x"}).status_code == 403
 
 
-def test_app_refuses_to_start_without_a_real_secret() -> None:
+def test_app_refuses_to_start_without_real_passwords() -> None:
     for bad in (None, "short", "change-me"):
-        with pytest.raises(RuntimeError, match="SESSION_SECRET"):
-            Settings(session_secret=bad).secret()
-    with pytest.raises(RuntimeError, match="LEARNER_PASSWORD"):
-        Settings().password("learner")
+        with pytest.raises(RuntimeError, match="LEARNER_PASSWORD"):
+            Settings(learner_password=bad).password("learner")
+
+
+def test_forwarded_for_is_ignored_unless_behind_the_bundled_proxy(make: Callable[..., TestClient]) -> None:
+    """Rotating X-Forwarded-For must not reset the login throttle when nothing sets it for us."""
+    client = make()
+    for i in range(5):
+        r = client.post(
+            "/api/session",
+            json={"username": "admin", "password": "nope"},
+            headers={**H, "X-Forwarded-For": f"10.0.0.{i}"},
+        )
+        assert r.status_code == 401
+    blocked = client.post(
+        "/api/session",
+        json={"username": "admin", "password": ADMIN_PW},
+        headers={**H, "X-Forwarded-For": "10.9.9.9"},
+    )
+    assert blocked.status_code == 429
+
+
+def test_model_calls_are_limited_per_account(make: Callable[..., TestClient]) -> None:
+    client = make(per_hour=2)
+    sign_in(client)
+    for _ in range(2):
+        assert client.post("/api/ask", json={"question": "שמע ישראל"}, headers=H).status_code == 200
+    r = client.post("/api/ask", json={"question": "שמע ישראל"}, headers=H)
+    assert r.status_code == 429
+    assert "limit" in r.json()["detail"]
 
 
 # ---- asking -------------------------------------------------------------------------------------------

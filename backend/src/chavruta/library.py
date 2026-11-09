@@ -27,8 +27,9 @@ class PgRetriever(Retriever):
         sessions: sessionmaker[Session],
         embedder: Embedder | None,
         reranker: Reranker | None,
+        rerank_top: int = CANDIDATES,
     ) -> None:
-        super().__init__(chunks, embedder, None, reranker)
+        super().__init__(chunks, embedder, None, reranker, rerank_top)
         self.index_of = {chunk_id: i for i, chunk_id in enumerate(ids)}
         self.sessions = sessions
 
@@ -50,11 +51,16 @@ class PgRetriever(Retriever):
 
 class Library:
     def __init__(
-        self, sessions: sessionmaker[Session], embedder: Embedder | None, reranker: Reranker | None
+        self,
+        sessions: sessionmaker[Session],
+        embedder: Embedder | None,
+        reranker: Reranker | None,
+        rerank_top: int = CANDIDATES,
     ) -> None:
         self.sessions = sessions
         self.embedder = embedder
         self.reranker = reranker
+        self.rerank_top = rerank_top
         self._lock = threading.Lock()
         self.reload()
 
@@ -74,7 +80,7 @@ class Library:
             for c, w, v in rows
         ]
         ids = [c.id for c, _, _ in rows]
-        retriever = PgRetriever(chunks, ids, self.sessions, self.embedder, self.reranker)
+        retriever = PgRetriever(chunks, ids, self.sessions, self.embedder, self.reranker, self.rerank_top)
         by_section: dict[str, list[Chunk]] = {}
         for c in chunks:
             by_section.setdefault(c.section_ref, []).append(c)
