@@ -1,0 +1,93 @@
+{
+ "key": "bc795aa641a377ee572941ebcb73c90e",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: איפה כתוב ואהבת את ה' אלהיך בכל לבבך?\n\nSources:\n[0] Berakhot 54a:6 (Berakhot)\nחייב אדם לברך על הרעה כשם שמברך על הטובה שנאמר (דברים ו, ה) ואהבת את ה' אלהיך בכל לבבך וגו' בכל לבבך בשני יצריך ביצר טוב וביצר הרע ובכל נפשך אפילו הוא נוטל את נפשך ובכל מאדך בכל ממונך ד\"א בכל מאדך בכל מדה ומדה שהוא מודד לך הוי מודה לו\nA man is in duty bound to utter a benediction for the bad even as he utters one for the good ; as it is said, \"And thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy might\" (Deut. vi. 5) — \"with all thy heart,\" i.e. with thy two impulses, with the good and the evil impulse ; \"with all thy soul,\" i.e. even if He take thy soul; \"with all thy might,\" i.e. with all thy wealth. Another explanation of \"with all thy might [meodeka]\" — with whatever measure [middah] He metes out to thee, do Thou return Him thanks [modeh].\n\n[1] Deuteronomy 6:5 (Deuteronomy)\nוְאָ֣הַבְתָּ֔ אֵ֖ת יְהוָ֣ה אֱלֹהֶ֑יךָ בְּכָל־לְבָבְךָ֥ וּבְכָל־נַפְשְׁךָ֖ וּבְכָל־מְאֹדֶֽךָ׃\nAnd thou shalt love the LORD thy God with all thy heart, and with all thy soul, and with all thy might.\n\n[2] Berakhot 61b:5 (Berakhot)\nואהבת את י\"י אלהיך: תניא ר' אליעזר אומר אם נאמר בכל נפשך למה נאמר בכל מאדך ואם נאמר בכל מאדך למה נאמר בכל נפשך אלא אם יש לך אדם שגופו חביב עליו מממונו לכך נאמר בכל נפשך ואם יש לך אדם שממונו חביב עליו מגופו לכך נאמר בכל מאדך רבי עקיבא אומר בכל נפשך אפילו נוטל את נפשך\n\"And thou shalt love the Lord thy God\" (Deut. vi. 5). There is a teaching : R. Eliezer says : If it is stated \"With all thy soul,\" why is it stated \"With all thy might\"? And if it is stated \"With all thy might,\" why is it stated \"With all thy soul\"? But should there be a man whose body is dearer to him than his money, therefore it is stated \"With all thy soul\"; and should there be a man whose money is dearer to him than his body, therefore it is stated \"With all thy might.\" R. 'Akiba says: \"With all thy soul\" [means,] even if He take thy soul.\n\n[3] Deuteronomy 30:6 (Deuteronomy)\nוּמָ֨ל יְהוָ֧ה אֱלֹהֶ֛יךָ אֶת־לְבָבְךָ֖ וְאֶת־לְבַ֣ב זַרְעֶ֑ךָ לְאַהֲבָ֞ה אֶת־יְהוָ֧ה אֱלֹהֶ֛יךָ בְּכָל־לְבָבְךָ֥ וּבְכָל־נַפְשְׁךָ֖ לְמַ֥עַן חַיֶּֽיךָ׃\nAnd the LORD thy God will circumcise thy heart, and the heart of thy seed, to love the LORD thy God with all thy heart, and with all thy soul, that thou mayest live.\n\n[4] Deuteronomy 4:29 (Deuteronomy)\nוּבִקַּשְׁתֶּ֥ם מִשָּׁ֛ם אֶת־יְהוָ֥ה אֱלֹהֶ֖יךָ וּמָצָ֑אתָ כִּ֣י תִדְרְשֶׁ֔נּוּ בְּכָל־לְבָבְךָ֖ וּבְכָל־נַפְשֶֽׁךָ׃\nBut from thence ye will seek the LORD thy God; and thou shalt find Him, if thou search after Him with all thy heart and with all thy soul.\n\n[5] Deuteronomy 10:12 (Deuteronomy)\nוְעַתָּה֙ יִשְׂרָאֵ֔ל מָ֚ה יְהוָ֣ה אֱלֹהֶ֔יךָ שֹׁאֵ֖ל מֵעִמָּ֑ךְ כִּ֣י אִם־לְ֠יִרְאָה אֶת־יְהוָ֨ה אֱלֹהֶ֜יךָ לָלֶ֤כֶת בְּכָל־דְּרָכָיו֙ וּלְאַהֲבָ֣ה אֹת֔וֹ וְלַֽעֲבֹד֙ אֶת־יְהוָ֣ה אֱלֹהֶ֔יךָ בְּכָל־לְבָבְךָ֖ וּבְכָל־נַפְשֶֽׁךָ׃\nAnd now, Israel, what doth the LORD thy God require of thee, but to fear the LORD thy God, to walk in all His ways, and to love Him, and to serve the LORD thy God with all thy heart and with all thy soul;\n\n[6] Deuteronomy 30:2 (Deuteronomy)\nוְשַׁבְתָּ֞ עַד־יְהוָ֤ה אֱלֹהֶ֙יךָ֙ וְשָׁמַעְתָּ֣ בְקֹל֔וֹ כְּכֹ֛ל אֲשֶׁר־אָנֹכִ֥י מְצַוְּךָ֖ הַיּ֑וֹם אַתָּ֣ה וּבָנֶ֔יךָ בְּכָל־לְבָבְךָ֖ וּבְכָל־נַפְשֶֽׁךָ׃\nand shalt return unto the LORD thy God, and hearken to His voice according to all that I command thee this day, thou and thy children, with all thy heart, and with all thy soul;\n\n[7] Deuteronomy 8:5 (Deuteronomy)\nוְיָדַעְתָּ֖ עִם־לְבָבֶ֑ךָ כִּ֗י כַּאֲשֶׁ֨ר יְיַסֵּ֥ר אִישׁ֙ אֶת־בְּנ֔וֹ יְהוָ֥ה אֱלֹהֶ֖יךָ מְיַסְּרֶֽךָּ׃\nAnd thou shalt consider in thy heart, that, as a man chasteneth his son, so the LORD thy God chasteneth thee.\n\nAnswer segments:\n(0) sources=[]: הפסוק כתוב ב**דברים ו, ה**: \n(1) sources=[1]: וְאָ֣הַבְתָּ֔ אֵ֖ת יְהוָ֣ה אֱלֹהֶ֑יךָ בְּכָל־לְבָבְךָ֥ וּבְכָל־נַפְשְׁךָ֖ וּבְכָל־מְאֹדֶֽךָ׃\n(2) sources=[]: \n\n**ניסוחים דומים בספר דברים** (לפי המקורות שלפנינו):\n- **דברים ל, ו**: \n(3) sources=[3]: וּמָ֨ל יְהוָ֧ה אֱלֹהֶ֛יךָ אֶת־לְבָבְךָ֖ וְאֶת־לְבַ֣ב זַרְעֶ֑ךָ לְאַהֲבָ֞ה אֶת־יְהוָ֧ה אֱלֹהֶ֛יךָ בְּכָל־לְבָבְךָ֥ וּבְכָל־נַפְשְׁךָ֖ לְמַ֥עַן חַיֶּֽיךָ׃\n(4) sources=[]: \n- **דברים י, יב**: \n(5) sources=[5]: וּלְאַהֲבָ֣ה אֹת֔וֹ וְלַֽעֲבֹד֙ אֶת־יְהוָ֣ה אֱלֹהֶ֔יךָ בְּכָל־לְבָבְךָ֖ וּבְכָל־נַפְשֶֽׁךָ׃\n(6) sources=[]: \n\n**איך חז\"ל דרשו את הפסוק** (ברכות):\n- **ברכות נד ע\"א**: \n(7) sources=[0]: חייב אדם לברך על הרעה כשם שמברך על הטובה שנאמר (דברים ו, ה) ואהבת את ה' אלהיך בכל לבבך וגו' בכל לבבך בשני יצריך ביצר טוב וביצר הרע\n(8) sources=[]: .\n- **ברכות סא ע\"ב** – מחלוקת בפירוש \"בכל נפשך\" ו\"בכל מאדך\":\n  - **ר' אליעזר** מסביר את כפל הלשון: \n(9) sources=[2]: אם יש לך אדם שגופו חביב עליו מממונו לכך נאמר בכל נפשך ואם יש לך אדם שממונו חביב עליו מגופו לכך נאמר בכל מאדך\n(10) sources=[]: .\n  - **ר' עקיבא**: \n(11) sources=[2]: בכל נפשך אפילו נוטל את נפשך\n(12) sources=[]: .\n\nרוצה שנעיין יחד באחת הדרשות?"
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsgWCe7vCYCbXemM58Ku",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Deuteronomy 6:5 is the verse per sources 0 and 1.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Matches Deuteronomy 6:5 text exactly.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Deut 30:6 contains similar wording, per source 3.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Quotes Deut 30:6 accurately.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Deut 10:12 has similar wording, per source 5.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Accurate quote of part of Deut 10:12.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Berakhot 54a and 61b discuss the verse, per sources 0 and 2.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Accurate quote from Berakhot 54a.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Accurately quotes R. Eliezer's explanation in Berakhot 61b.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"R. Akiva's statement is quoted accurately from source 2.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Punctuation and an offer to continue.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3992,
+   "output_tokens": 502,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

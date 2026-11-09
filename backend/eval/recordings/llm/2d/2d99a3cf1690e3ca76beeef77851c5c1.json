@@ -1,0 +1,93 @@
+{
+ "key": "2d99a3cf1690e3ca76beeef77851c5c1",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: איפה הגמרא מספרת שכינור היה תלוי מעל מיטתו של דוד?\n\nSources:\n[0] Berakhot 3b:29 (Berakhot)\nדוד סימנא הוה ליה דאמר רב אחא בר ביזנא אמר רבי שמעון חסידא כנור היה תלוי למעלה ממטתו של דוד וכיון שהגיע חצות לילה בא רוח צפונית ונושבת בו ומנגן מאליו מיד היה עומד ועוסק בתורה עד שעלה עמוד השחר כיון שעלה עמוד השחר נכנסו חכמי ישראל אצלו אמרו לו אדונינו המלך עמך ישראל צריכין פרנסה אמר להם לכו והתפרנסו זה מזה אמרו לו אין הקומץ משביע את הארי ואין הבור מתמלא מחוליתו אמר להם לכו ופשטו ידיכם בגדוד\nHe had a sign. For R. Hannah b. Bizna said in the name of R. Simeon Hasida : There was a harp hanging above David's bed, and when the time of midnight arrived a North wind came and blew upon it, so that it produced melody. He used immediately to rise and occupy himself with Torah until the break of dawn. At the rise of dawn, the wise men of Israel entered his presence and said to him, \"Our lord, the king, thy people Israel are in need of sustenance.\" He answered them, \"Go, let each sustain himself from the other.\" They said to him, \"A handful cannot satisfy a lion, nor can a pit be filled with its own clods.\" He said to them, \"Go, stretch forth your hands with the army.\"\n\n[1] Rashi on Berakhot 3b:29:1 (Rashi on Berakhot)\nכנור היה תלוי למעלה ממטתו – ונקביו לצד צפון כיון שהגיע חצות הלילה רוח צפונית מנשבת בו דאמר מר (בב\"ב כה.) ארבע רוחות מנשבות בכל יום ויום שש שעות ראשונות של יום מנשבת רוח מזרחית מהלוך החמה ושש אחרונות רוח דרומית ובתחלת הלילה רוח מערבית ובחצות הלילה רוח צפונית:\n\n[2] Rashi on Berakhot 4a:3:1 (Rashi on Berakhot)\nמאי קרא – דכנור היה תלוי למעלה ממטתו ומעוררו:\n\n[3] Rashi on Berakhot 12b:13:2 (Rashi on Berakhot)\nוהוקענום – גבעונים אמרו לדוד בסוף ימיו שהיה רעב ג' שנים וישאל דוד בה' ויאמר ה' אל שאול ואל בית הדמים על אשר המית את הגבעונים שהרג את הכהנים שהיו מספיקים לגבעונים לחם ומים שהגבעונים נתנם יהושע חוטבי עצים ושואבי מים למזבח ויאמר דוד אל הגבעונים ובמה אכפר לכם וברכו את נחלת ה' והם אמרו לו יותן לנו שבעה אנשים מבניו והוקענום בגבעת שאול ובת קול יצאה וסיימה אחריהם בחיר ה' דודאי הם לא אמרו בחיר ה' שהרי לגנותו היו באין ולא לכבודו:\n\n[4] Shulchan Arukh, Orach Chayim 154:11 (Shulchan Arukh, Orach Chayim)\nנֵרוֹת שַׁעֲוָה שֶׁנְּתָנָם עַכּוּ\"ם לְעוֹבְדֵי אֱלִילִים, וְכִבָּן שַׁמָּשָן וּנְתָנָם אוֹ מְכָרָן לְיִשְׂרָאֵל, אָסוּר לְהַדְלִיקָם בְּבֵית הַכְּנֶסֶת. הַגָּה: אַף עַל פִּי שֶׁמֻּתָּרִים לְהֶדְיוֹט. וְעַיֵּן בְּיוֹרֵה דֵּעָה סי' קל\"ט מֵדִינִים אֵלּוּ. מוּמָר עוֹבֵד כּוֹכָבִים שֶׁנָּתַן שַׁעֲוָה אוֹ נֵר לְבֵית הַכְּנֶסֶת, אָסוּר לְהַדְלִיקוֹ (פִּסְקֵי מהרי\"ו סי' ס\"ו וְעַיֵּן בְּיוֹרֵה דֵּעָה סי' רנ\"ד)\n\n[5] Rashi on Berakhot 2a:1:2 (Rashi on Berakhot)\nעד סוף האשמורה הראשונה – שליש הלילה כדמפרש בגמרא (דף ג.) ומשם ואילך עבר זמן דלא מקרי תו זמן שכיבה ולא קרינן ביה בשכבך ומקמי הכי נמי לאו זמן שכיבה לפיכך הקורא קודם לכן לא יצא ידי חובתו. אם כן למה קורין אותה בבית הכנסת כדי לעמוד בתפלה מתוך דברי תורה והכי תניא בבריי' בברכות ירושלמי. ולפיכך חובה עלינו לקרותה משתחשך. ובקריאת פרשה ראשונה שאדם קורא על מטתו יצא:\n\n[6] Rashi on Berakhot 57a:17:1 (Rashi on Berakhot)\nתלי טבלא – נראה לו שהיה זוג וענבל תלוי בצוארו ומשמיע קול והוא סימן לראש ישיבה שמשמיע קול לרבים:\n\n[7] Shulchan Arukh, Orach Chayim 162:3 (Shulchan Arukh, Orach Chayim)\nנָטַל מִקְצָת יָדוֹ וְחָזַר וְהוֹסִיף וְנָטַל הַנִּשְׁאָר מִיָּדוֹ, הֲרֵי יָדוֹ טְמֵאָה כְּמוֹ שֶׁהָיְתָה, דְּאֵין נְטִילָה לַחֲצָאִין; וְאִם עֲדַיִן יֵשׁ עַל מִקְצָת הַיָּד שֶׁנָּטַל בִּתְחִלָּה טוֹפֵחַ עַל מְנַת לְהַטְפִּיחַ, הֲרֵי זוֹ טְהוֹרָה. בַּמֶּה דְּבָרִים אֲמוּרִים, בְּמַיִם רִאשׁוֹנִים; אֲבָל בִּשְׁנִיִּים, נוֹטֵל מִקְצָת יָדָיו וְחוֹזֵר וּמוֹסִיף עַל מִקְּצָתָן.\n\nAnswer segments:\n(0) sources=[]: הסיפור מופיע ב**מסכת ברכות דף ג ע\"ב**. הגמרא מביאה אותו כדי להסביר כיצד ידע דוד מתי הגיעה חצות הלילה: \n(1) sources=[0]: דוד סימנא הוה ליה דאמר רב אחא בר ביזנא אמר רבי שמעון חסידא כנור היה תלוי למעלה ממטתו של דוד וכיון שהגיע חצות לילה בא רוח צפונית ונושבת בו ומנגן מאליו מיד היה עומד ועוסק בתורה עד שעלה עמוד השחר\n(2) sources=[]: .\n\nהגמרא ממשיכה ומספרת שעם עלות השחר באו אליו חכמי ישראל ואמרו לו ש\n(3) sources=[0]: עמך ישראל צריכין פרנסה\n(4) sources=[]: . מכאן מתפתח דו־שיח שבסופו אמר להם דוד \n(5) sources=[0]: לכו ופשטו ידיכם בגדוד\n(6) sources=[]: .\n\n**רש\"י על המקום** מסביר כיצד ניגן הכינור מעצמו. לדבריו, \n(7) sources=[1]: ונקביו לצד צפון\n(8) sources=[]: . רש\"י מוסיף ש\n(9) sources=[1]: ארבע רוחות מנשבות בכל יום ויום\n(10) sources=[]: , ו\n(11) sources=[1]: בחצות הלילה רוח צפונית\n(12) sources=[]: . לכן דווקא בחצות נשבה הרוח לתוך נקבי הכינור.\n\nבהמשך הסוגיה, **בדף ד ע\"א**, הגמרא שואלת \"מאי קרא\", כלומר מהו המקור בפסוק. רש\"י מפרש שהשאלה היא על הפסוק שממנו לומדים \n(13) sources=[2]: דכנור היה תלוי למעלה ממטתו ומעוררו\n(14) sources=[]: . הפסוק עצמו אינו מופיע במקורות שלפניי, ולכן כדאי לעיין בו בגמרא שם."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011Cgsgfjr638dsn98t9r79X",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"partial\",\"note\":\"Berakhot 3b location and David's harp supported; claim the Gemara brings it to explain how David knew midnight is the sign, plausible but 'sign' only loosely stated.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Direct quote of source 0.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Source 0 says at dawn the sages of Israel came and spoke to him.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Quoted from source 0.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Source 0 shows a dialogue ending with David's reply.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Quoted from source 0.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Rashi explains how the harp played; the following details are in source 1.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Rashi: its holes faced north.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Rashi quotes four winds blowing each day.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Connector.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Rashi: north wind at midnight.\"},{\"i\":12,\"verdict\":\"supported\",\"note\":\"Follows from Rashi: north wind at midnight blows into the harp with holes facing north.\"},{\"i\":13,\"verdict\":\"partial\",\"note\":\"Rashi on 4a says 'mai kra' refers to harp hanging above bed; claim that it asks for a verse source is not stated.\"},{\"i\":14,\"verdict\":\"no_claim\",\"note\":\"Disclaimer about sources.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3821,
+   "output_tokens": 585,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

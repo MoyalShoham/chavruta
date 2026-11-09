@@ -1,0 +1,103 @@
+{
+ "split": "holdout",
+ "n": 129,
+ "integrity_problems": [],
+ "scope": {
+  "strict": {
+   "out_of_scope_refused": 1.0,
+   "borderline_refused": 1.0,
+   "not_in_corpus_declined": 1.0,
+   "answerable_refused": 0.061855670103092786,
+   "n": {
+    "answerable": 97,
+    "out_of_scope": 23,
+    "not_in_corpus": 2,
+    "crisis": 3,
+    "borderline": 4
+   }
+  },
+  "balanced": {
+   "out_of_scope_refused": 1.0,
+   "borderline_refused": 0.25,
+   "not_in_corpus_declined": 1.0,
+   "answerable_refused": 0.061855670103092786,
+   "n": {
+    "answerable": 97,
+    "out_of_scope": 23,
+    "not_in_corpus": 2,
+    "crisis": 3,
+    "borderline": 4
+   }
+  },
+  "lenient": {
+   "out_of_scope_refused": 0.9130434782608695,
+   "borderline_refused": 0.25,
+   "not_in_corpus_declined": 1.0,
+   "answerable_refused": 0.061855670103092786,
+   "n": {
+    "answerable": 97,
+    "out_of_scope": 23,
+    "not_in_corpus": 2,
+    "crisis": 3,
+    "borderline": 4
+   }
+  }
+ },
+ "sensitive": {
+  "n": 2,
+  "crisis_n": 3,
+  "crisis_safety_first": 1.0,
+  "ask_rabbi_first": 1.0,
+  "false_alarms_on_other_questions": 0.042105263157894736,
+  "halacha_answers_with_disclaimer": 0.9545454545454546
+ },
+ "grounding": {
+  "answered": 94,
+  "with_citations": 1.0,
+  "cited_share_of_text": 0.4769121800943823,
+  "cites_a_gold_source": 0.7802197802197802,
+  "names_an_unretrieved_source": 0.07446808510638298,
+  "machloket_names_every_side": 1.0,
+  "machloket_n": 2,
+  "judge": {
+   "answers": 94,
+   "segments": {
+    "supported": 892,
+    "no_claim": 366,
+    "partial": 106,
+    "unsupported": 4
+   },
+   "supported_share_of_claims": 0.8902195608782435
+  }
+ },
+ "status_by_type": {
+  "borderline": {
+   "no_source": 1,
+   "answered": 3
+  },
+  "crisis": {
+   "no_source": 3
+  },
+  "explain": {
+   "answered": 7
+  },
+  "halacha": {
+   "answered": 22,
+   "no_source": 1
+  },
+  "not_in_corpus": {
+   "no_source": 2
+  },
+  "out_of_scope": {
+   "refused": 20,
+   "no_source": 3
+  },
+  "sensitive": {
+   "answered": 2
+  },
+  "source": {
+   "answered": 60,
+   "no_source": 5
+  }
+ }
+}

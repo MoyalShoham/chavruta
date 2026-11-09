@@ -1,0 +1,93 @@
+{
+ "key": "e20c20f1c622dca60db76b27a638e0af",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: What blessing is said on seeing a place where miracles were done for Israel?\n\nSources:\n[0] Mishnah Berakhot 9:1 (Mishnah Berakhot)\nהָרוֹאֶה מָקוֹם שֶׁנַּעֲשׂוּ בוֹ נִסִּים לְיִשְׂרָאֵל, אוֹמֵר בָּרוּךְ שֶׁעָשָׂה נִסִּים לַאֲבוֹתֵינוּ בַּמָּקוֹם הַזֶּה. מָקוֹם שֶׁנֶּעֶקְרָה מִמֶּנּוּ עֲבוֹדָה זָרָה, אוֹמֵר בָּרוּךְ שֶׁעָקַר עֲבוֹדָה זָרָה מֵאַרְצֵנוּ:\nIf one sees a place where miracles have been done for Israel, he says, “Blessed be the One who made miracles for our ancestors in this place.” [If one sees] a place from which idolatry has been uprooted, he should say, “Blessed be the One who removed idolatry from our land.”\n\n[1] Mishneh Torah, Blessings 10:9 (Mishneh Torah, Blessings)\nהרואה מקום שנעשו נסים לישראל כגון ים סוף ומעברות הירדן אומר ברוך אתה יי' אלהינו מלך העולם שעשה נסים לאבותינו במקום הזה וכן כל מקום שנעשו בו נסים לרבים אבל מקום שנעשה בו נס ליחיד אותו היחיד ובנו ובן בנו מברך ברוך אתה יי' אלהינו מלך העולם שעשה לי נס במקום הזה או שעשה נס לאבותי במקום הזה הרואה גוב אריות וכבשן האש שהושלך בו חנניה מישאל ועזריה מברך ברוך אתה יי' אלהינו מלך העולם שעשה נס לצדיקים במקום הזה הרואה מקום שעובדין בו עכו\"ם מברך ברוך אתה יי' אלהינו מלך העולם שנתן ארך אפים לעוברי רצונו מקום שנעקרה ממנו עכו\"ם אם בארץ ישראל הוא מברך שעקר עכו\"ם מארצנו ואם בחוץ לארץ הוא מברך שעקר עכו\"ם ממקום הזה ואומר בשתיהן כשם שעקרת ממקום זה כך תעקר מכל מקומות ותשיב לב עובדיהם לעבדך.\nOn seeing a place where miracles had been wrought for Israel, such as the Red Sea or the fords of the Jordan, which the Israelites crossed with Joshua, one says \"Blessed art Thou, O Lord our God, King of the Universe, Who wroughtest miracles for our fathers in this place.\" This blessing is also said in any place where miracles had been vouchsafed to a multitude. But where a miracle had been vouchsafed to an individual, he, his son, and his grandson, also say the blessing \"Blessed art Thou, O Lord our God, King of the Universe, Who wroughtest miracles for me in this place\" or \"Who wroughtest miracles for my fathers in this place.\" When viewing the lion's den (into which Daniel was cast) or the fiery furnace (into which Chananiah, Mishael and Azariah were thrust), the blessing is recited \"Blessed art Thou, O Lord our God, King of the Universe, Who wroughtest miracles for the righteous at this place.\" When seeing a place where idols are worshipped, the blessing is said, \"Blessed art Thou, O Lord, our God, King of the Universe, who hast been long suffering with those who transgress Thy will.\" When seeing a place from which idolatry has been eradicated, if it is in the Holy Land, the blessing is said \"Who hast uprooted idolatry from our land\"; if it is outside Palestine, \"Who hast uprooted idolatry from this place.\" To both blessings, the petition is added \"Even as Thou hast uprooted idolatry from this place, so do Thou uproot it from all places and turn the heart of idol worshippers to serve Thee.\n\n[2] Berakhot 54a:1 (Berakhot)\nמתני׳ הרואה מקום שנעשו בו נסים לישראל אומר ברוך שעשה נסים לאבותינו במקום הזה מקום שנעקרה ממנו עכו\"ם אומר ברוך שעקר עכו\"ם מארצנו\nHe who beholds a place where miracles have been wrought for Israel says, \"Blessed [art Thou, O Lord our God, King of the Universe] Who wroughtest miracles for our fathers in this place.\" [He who beholds] a place from which idolatry has been uprooted says, \"Blessed... Who hast uprooted idolatry from our land.\"\n\n[3] Berakhot 57b:21 (Berakhot)\nדרש רב המנונא הרואה בבל הרשעה צריך לברך חמש ברכות ראה בבל אומר ברוך שהחריב בבל הרשעה ראה ביתו של נבוכדנצר אומר ברוך שהחריב ביתו של נבוכדנצר הרשע ראה גוב של אריות או כבשן האש אומר ברוך שעשה נסים לאבותינו במקום הזה ראה מרקוליס אומר ברוך שנתן ארך אפים לעוברי רצונו ראה מקום שנוטלין ממנו עפר אומר ברוך אומר ועושה גוזר ומקיים\nRab Hamnuna expounded : Who sees the wicked Babylon should utter five benedictions. If he sees Babylon, he says \"Blessed... Who hast destroyed wicked Babylon.\" If he sees the palace of Nebuchadnezzar, he says \"Blessed...Who hast destroyed the palace of Nebuchadnezzar.\" If he sees the den of lions or the fiery furnace, he says \"Blessed ...Who hast performed miracles for our fathers in this place.\" If he sees a statue of Hermes, he says \"Blessed... Who hast shown long-suffering to those who transgress Thy will.\" If he sees a place [in Babylon] from which dust is being taken away, he says \"Blessed...Who sayest and doest, Who doth decree and fulfil.\"\n\n[4] Berakhot 57b:20 (Berakhot)\nמקום שנעקרה ממנו עבודת גלולים: תנו רבנן הרואה מרקוליס אומר ברוך שנתן ארך אפים לעוברי רצונו מקום שנעקרה ממנו עבודת כוכבים אומר ברוך שעקר עכו\"ם מארצנו וכשם שנעקרה ממקום זה כן תעקר מכל מקומות ישראל והשב לב עובדיהם לעבדך ובח\"ל אין צריך לומר והשב לב עובדיהם לעבדך מפני שרובה עובדי כוכבים רשב\"א אומר אף בחוץ לארץ צריך לומר כן מפני שעתידים להתגייר שנאמר (צפניה ג, ט) אז אהפוך אל עמים שפה ברורה\n[He who beholds] a place from which idolatry has been uprooted. Our Rabbis have taught : (Who sees a statue of Hermes says, \"Blessed... Who hast shown long-suffering to those who transgress Thy will\"), [If he sees] a place from which idolatry has been uprooted, he should say, \"Blessed... Who hast uprooted idolatry from our land ; and as it has been uprooted from this place, so may it be uprooted from all places of Israel. And do Thou turn the heart of those who serve idols to serve Thee.\" But if this is outside the Land [of Israel], it is unnecessary to say \"And do Thou turn the heart of those who serve idols to serve Thee,\" because most of them are gentiles. R. Simeon b. Eleazar said : The benediction should also be uttered outside the Land, because they will in the future become converted ; as it is said, \"For then will I turn to the peoples a pure language\" (Zeph. iii. 9).\n\n[5] Mishneh Torah, Blessings 10:10 (Mishneh Torah, Blessings)\nהרואה בתי ישראל ביישובן מברך ברוך אתה יי' אלהינו מלך העולם מציב גבול אלמנה בחרבנן אומר ברוך דיין האמת הרואה קברי ישראל מברך ברוך אתה יי' אלהינו מלך העולם אשר יצר אתכם בדין ודן אתכם בדין וכלכל אתכם בדין והמית אתכם בדין והוא עתיד להקים אתכם בדין לחיי העולם הבא ברוך אתה יי' מחיה המתים.\nIf one sees fine houses of Israelites (that are inhabited), he says, \"Blessed art Thou, O Lord our God, King of the Universe who settest up the border stone of the widow.\" If they are in ruins, he says, \"Blessed be the true judge.\" On seeing the graves of Israelites, one says, \"Blessed art Thou, O Lord our God, King of the Universe, who formed you in judgment, and quickened you in judgment, sustained you in judgment and nourished you in judgment and will hereafter raise you up in judgment, to life in the world to come, Blessed art Thou O Lord, who quickenest the dead.\"\n\n[6] Berakhot 54a:13 (Berakhot)\nותו זמנא חדא הוה קאזיל ברסתקא דמחוזא ונפל עליה גמלא פריצא איתפרקא ליה אשיתא על לגוה כי מטא לערבות בריך ברוך שעשה לי נס בערבות ובגמל כי מטא לרסתקא דמחוזא בריך ברוך שעשה לי נס בגמל ובערבות אמרי אניסא דרבים כולי עלמא מיחייבי לברוכי אניסא דיחיד איהו חייב לברוכי\nWhenever he came to 'Arabot he said the benediction \"Blessed... Who hast wrought for me a miracle in 'Arabot and with the camel\" ; and whenever he came to the market-place of Mahoza he said, \"Blessed... Who hast wrought for me a miracle with the camel and in 'Arabot.\" They answer : In the case of a miracle wrought on behalf of the many, everybody is obliged to utter the benediction; but in the case of a miracle wrought on behalf of an individual, only he is obliged to say it. Our Rabbis have taught : He who beholds the fords of the [Red] Sea, or the fords of the Jordan, or the fords of the valleys of Arnon, or the hail-stones in the descent of Bet Horon, or the stone which Og, king of Bashan, sought to cast upon Israel, or the stone upon which Moses sat when Joshua fought against Amalek, or [the pillar of salt of] Lot's wife, or the wall of Jericho which was swallowed up in its place — over all these one must give thanks and praise before the All-present. It is quite right with the fords of the [Red] Sea ; for it is written,\n\n[7] Mishneh Torah, Blessings 2:6 (Mishneh Torah, Blessings)\nבחנוכה ובפורים מוסיף באמצע ברכת הארץ על הנסים כדרך שמוסיף בתפלה ויום טוב או ראש חדש שחל להיות בשבת מזכיר רצה והחליצנו תחילה ואחר כך יעלה ויבא וכן ראש חדש טבת שחל להיות בשבת מזכיר על הנסים בברכת הארץ ורצה והחליצנו ויעלה ויבא בנחמה.\nOn the Feast of Lights and on the Feast of Lots, there is added in the blessing for the Promised Land the formula beginning, \"For the miracles\" which is inserted on these days in the Amidah prayer. When a festival or the first day of the month falls on a Sabbath, the paragraph beginning, \"Be pleased to fortify us\" is said first, and then that beginning, \"Let arise and come\". So too, when the first day of the month of Tebeth falls on a Sabbath, the paragraph beginning, \"For the miracles\" is added in the blessing for the Promised Land and those respectively commencing, \"Be pleased to fortify us\" and \"let arise and come\" are added in the blessing for the comforting of Israel.\n\nAnswer segments:\n(0) sources=[]: **The basic blessing (Mishnah)**\n\nThe Mishnah teaches: \n(1) sources=[0]: הָרוֹאֶה מָקוֹם שֶׁנַּעֲשׂוּ בוֹ נִסִּים לְיִשְׂרָאֵל, אוֹמֵר בָּרוּךְ שֶׁעָשָׂה נִסִּים לַאֲבוֹתֵינוּ בַּמָּקוֹם הַזֶּה\n(2) sources=[]: . That is, \n(3) sources=[0]: \"Blessed be the One who made miracles for our ancestors in this place.\"\n(4) sources=[]: \n\n**Examples of such places**\n\nRambam gives examples: \n(5) sources=[1]: the Red Sea or the fords of the Jordan, which the Israelites crossed with Joshua\n(6) sources=[]: . He adds that \n(7) sources=[1]: this blessing is also said in any place where miracles had been vouchsafed to a multitude.\n(8) sources=[]: \n\nThe Gemara's baraita lists more sites, including \n(9) sources=[6]: the fords of the valleys of Arnon, or the hail-stones in the descent of Bet Horon… or [the pillar of salt of] Lot's wife, or the wall of Jericho\n(10) sources=[]: .\n\n**Many versus individual**\n\nThe Gemara distinguishes two cases: \n(11) sources=[6]: in the case of a miracle wrought on behalf of the many, everybody is obliged to utter the benediction; but in the case of a miracle wrought on behalf of an individual, only he is obliged to say it.\n(12) sources=[]:  Rambam extends the individual's blessing to \n(13) sources=[1]: his son, and his grandson\n(14) sources=[]: , who say \n(15) sources=[1]: \"Who wroughtest miracles for me in this place\" or \"Who wroughtest miracles for my fathers in this place.\"\n(16) sources=[]: \n\n**The lions' den and the fiery furnace: two wordings**\n\nThe sources give different formulas here:\n- **Rav Hamnuna (Berakhot 57b):** one says \n(17) sources=[3]: \"Blessed ...Who hast performed miracles for our fathers in this place.\"\n(18) sources=[]: \n- **Rambam (Hilchot Berakhot 10:9):** one says \n(19) sources=[1]: \"Who wroughtest miracles for the righteous at this place.\"\n(20) sources=[]: \n\nFor practical application, please consult a rabbi."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsgdcrLmBbesgAJTZRbb",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"no_claim\",\"note\":\"Heading and transition.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Exact Hebrew text of Mishnah Berakhot 9:1.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition phrase.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches the Mishnah translation.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Heading and transition attributing to Rambam; no claim itself.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Mishneh Torah 10:9 gives these examples.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Directly stated in Mishneh Torah 10:9.\"},{\"i\":8,\"verdict\":\"partial\",\"note\":\"Gemara baraita does list more sites, but 'including' framing is a transition; claim supported by source 6.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Quoted from the baraita in Berakhot 54a.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Quoted accurately from Berakhot 54a.\"},{\"i\":12,\"verdict\":\"supported\",\"note\":\"Rambam says the individual's son and grandson also bless.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Stated in Mishneh Torah 10:9.\"},{\"i\":14,\"verdict\":\"no_claim\",\"note\":\"Connective fragment.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Matches the Rambam's wording.\"},{\"i\":16,\"verdict\":\"supported\",\"note\":\"Sources do give differing formulas for lions' den and furnace.\"},{\"i\":17,\"verdict\":\"supported\",\"note\":\"Matches Rav Hamnuna in Berakhot 57b.\"},{\"i\":18,\"verdict\":\"no_claim\",\"note\":\"Attribution lead-in.\"},{\"i\":19,\"verdict\":\"supported\",\"note\":\"Matches Mishneh Torah 10:9.\"},{\"i\":20,\"verdict\":\"no_claim\",\"note\":\"Disclaimer.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 5726,
+   "output_tokens": 744,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "key": "1f59220a8b02a173041c45c61e812b1a",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: What blessing is said on seeing Jewish sages and on seeing kings?\n\nSources:\n[0] Berakhot 58a:8 (Berakhot)\nת\"ר הרואה חכמי ישראל אומר ברוך שחלק מחכמתו ליראיו חכמי עובדי כוכבים אומר ברוך שנתן מחכמתו לבריותיו הרואה מלכי ישראל אומר ברוך שחלק מכבודו ליראיו מלכי עובדי כוכבים אומר ברוך שנתן מכבודו לבריותיו\nOur Rabbis have taught : Who beholds the Sages of Israel should say, \"Blessed... Who hast imparted of Thy wisdom to them that fear Thee\" ; but [on beholding] the wise men of other peoples, he says \"Blessed... Who hast given of Thy wisdom to Thy creatures.\" Who beholds the kings of Israel should say, \"Blessed... Who hast imparted of Thy glory to them that fear Thee\"; but [on beholding] the kings of other peoples he says, \"Blessed... Who hast imparted of Thy glory to Thy creatures.\"\n\n[1] Mishneh Torah, Blessings 10:11 (Mishneh Torah, Blessings)\nהרואה ת\"ר אלף אדם כאחד אם עכו\"ם הם אומר בושה אמכם מאד חפרה יולדתכם הנה אחרית גוים מדבר ציה וערבה ואם ישראל הם ובארץ ישראל אומר ברוך אתה יי' אלהינו מלך העולם חכם הרזים הרואה מחכמי אומות העולם אומר ברוך אתה יי' אלהינו מלך העולם שנתן מחכמתו לבשר ודם חכמי ישראל מברך שנתן מחכמתו ליראיו מלכי ישראל אומר שנתן מכבודו ומגבורתו ליראיו מלכי אומות העולם מברך שנתן מכבודו לבשר ודם.\nIf one sees at one time six hundred thousand persons, who are heathens, he says \"Your mother shall be sore ashamed, she that bore you shall be confounded; behold, the latter end of the nations shall be a wilderness, a dry land and a desert.\" (Jerem. 50:12) Should they be Israelites, and he sees them in the land of Israel, he says, \"Blessed art Thou, O Lord our God, King of the Universe, wise in secrets.\" When seeing a gentile sage, one says, \"Blessed art Thou, O Lord our God, King of the Universe Who hast imparted of Thy wisdom to flesh and blood.\" If the sage is an Israelite, he says \"Who hast imparted of Thy wisdom unto them that fear Thee.\" When seeing Israelite kings, one says \"Who hast given of Thy glory and might to them that fear Thee.\" If they are gentile kings, he says \"Who hast given of Thy glory to flesh and blood.\"\n\n[2] Mishneh Torah, Blessings 10:10 (Mishneh Torah, Blessings)\nהרואה בתי ישראל ביישובן מברך ברוך אתה יי' אלהינו מלך העולם מציב גבול אלמנה בחרבנן אומר ברוך דיין האמת הרואה קברי ישראל מברך ברוך אתה יי' אלהינו מלך העולם אשר יצר אתכם בדין ודן אתכם בדין וכלכל אתכם בדין והמית אתכם בדין והוא עתיד להקים אתכם בדין לחיי העולם הבא ברוך אתה יי' מחיה המתים.\nIf one sees fine houses of Israelites (that are inhabited), he says, \"Blessed art Thou, O Lord our God, King of the Universe who settest up the border stone of the widow.\" If they are in ruins, he says, \"Blessed be the true judge.\" On seeing the graves of Israelites, one says, \"Blessed art Thou, O Lord our God, King of the Universe, who formed you in judgment, and quickened you in judgment, sustained you in judgment and nourished you in judgment and will hereafter raise you up in judgment, to life in the world to come, Blessed art Thou O Lord, who quickenest the dead.\"\n\n[3] Mishneh Torah, Blessings 10:9 (Mishneh Torah, Blessings)\nהרואה מקום שנעשו נסים לישראל כגון ים סוף ומעברות הירדן אומר ברוך אתה יי' אלהינו מלך העולם שעשה נסים לאבותינו במקום הזה וכן כל מקום שנעשו בו נסים לרבים אבל מקום שנעשה בו נס ליחיד אותו היחיד ובנו ובן בנו מברך ברוך אתה יי' אלהינו מלך העולם שעשה לי נס במקום הזה או שעשה נס לאבותי במקום הזה הרואה גוב אריות וכבשן האש שהושלך בו חנניה מישאל ועזריה מברך ברוך אתה יי' אלהינו מלך העולם שעשה נס לצדיקים במקום הזה הרואה מקום שעובדין בו עכו\"ם מברך ברוך אתה יי' אלהינו מלך העולם שנתן ארך אפים לעוברי רצונו מקום שנעקרה ממנו עכו\"ם אם בארץ ישראל הוא מברך שעקר עכו\"ם מארצנו ואם בחוץ לארץ הוא מברך שעקר עכו\"ם ממקום הזה ואומר בשתיהן כשם שעקרת ממקום זה כך תעקר מכל מקומות ותשיב לב עובדיהם לעבדך.\nOn seeing a place where miracles had been wrought for Israel, such as the Red Sea or the fords of the Jordan, which the Israelites crossed with Joshua, one says \"Blessed art Thou, O Lord our God, King of the Universe, Who wroughtest miracles for our fathers in this place.\" This blessing is also said in any place where miracles had been vouchsafed to a multitude. But where a miracle had been vouchsafed to an individual, he, his son, and his grandson, also say the blessing \"Blessed art Thou, O Lord our God, King of the Universe, Who wroughtest miracles for me in this place\" or \"Who wroughtest miracles for my fathers in this place.\" When viewing the lion's den (into which Daniel was cast) or the fiery furnace (into which Chananiah, Mishael and Azariah were thrust), the blessing is recited \"Blessed art Thou, O Lord our God, King of the Universe, Who wroughtest miracles for the righteous at this place.\" When seeing a place where idols are worshipped, the blessing is said, \"Blessed art Thou, O Lord, our God, King of the Universe, who hast been long suffering with those who transgress Thy will.\" When seeing a place from which idolatry has been eradicated, if it is in the Holy Land, the blessing is said \"Who hast uprooted idolatry from our land\"; if it is outside Palestine, \"Who hast uprooted idolatry from this place.\" To both blessings, the petition is added \"Even as Thou hast uprooted idolatry from this place, so do Thou uproot it from all places and turn the heart of idol worshippers to serve Thee.\n\n[4] Mishnah Berakhot 9:2 (Mishnah Berakhot)\nעַל הַזִּיקִין, וְעַל הַזְּוָעוֹת, וְעַל הַבְּרָקִים, וְעַל הָרְעָמִים, וְעַל הָרוּחוֹת, אוֹמֵר בָּרוּךְ שֶׁכֹּחוֹ וּגְבוּרָתוֹ מָלֵא עוֹלָם. עַל הֶהָרִים, וְעַל הַגְּבָעוֹת, וְעַל הַיַּמִּים, וְעַל הַנְּהָרוֹת, וְעַל הַמִּדְבָּרוֹת, אוֹמֵר בָּרוּךְ עוֹשֵׂה מַעֲשֵׂה בְרֵאשִׁית. רַבִּי יְהוּדָה אוֹמֵר, הָרוֹאֶה אֶת הַיָּם הַגָּדוֹל אוֹמֵר בָּרוּךְ שֶׁעָשָׂה אֶת הַיָּם הַגָּדוֹל, בִּזְמַן שֶׁרוֹאֶה אוֹתוֹ לִפְרָקִים. עַל הַגְּשָׁמִים וְעַל הַבְּשׂוֹרוֹת הַטּוֹבוֹת אוֹמֵר בָּרוּךְ הַטּוֹב וְהַמֵּטִיב, וְעַל שְׁמוּעוֹת רָעוֹת אוֹמֵר בָּרוּךְ דַּיַּן הָאֱמֶת:\n[On witnessing] comets, earthquakes, thunder, or windy storms one says, “Blessed be He whose strength and might fill the world.” [On seeing] mountains, hills, seas, rivers or deserts one says, “Blessed be He who made creation.” Rabbi Judah says: one who sees the Great Sea should say, “Blessed be He who made the Great Sea,” if he sees it at intervals. For rain and for good news one says, “Blessed be He that is good and grants good.” For bad news one says, “Blessed be the true judge.”\n\n[5] Berakhot 58a:3 (Berakhot)\nת\"ר הרואה אוכלוסי ישראל אומר ברוך חכם הרזים שאין דעתם דומה זה לזה ואין פרצופיהן דומים זה לזה בן זומא ראה אוכלוסא על גב מעלה בהר הבית אמר ברוך חכם הרזים וברוך שברא כל אלו לשמשני\nThe Rabbis have taught : Who sees crowds of Israelites should say \"Blessed... Who art wise in secrets,\" because their minds differ and their faces differ. Ben Zoma saw a crowd on top of the ascent of the Temple Mount and said, \"Blessed... Who art wise in secrets, and blessed...Who hast created all these to serve me.\"\n\n[6] Mishneh Torah, Blessings 1:3 (Mishneh Torah, Blessings)\nוכשם שמברכין על ההנייה כך מברכין על כל מצוה ומצוה ואח\"כ יעשה אותה וברכות רבות תקנו חכמים דרך שבח והודיה ודרך בקשה כדי לזכור את הבורא תמיד אע\"פ שלא נהנה ולא עשה מצוה.\nAnd just as blessings are recited when partaking of material enjoyments, so when about to fulfill any precept, a blessing is said, after which the precept is performed. The sages have moreover instituted several blessings of praise and thanksgiving and petition, in order that when not partaking of material enjoyments nor engaged in the fulfillment of religious duties we should constantly have God in mind.\n\n[7] Mishneh Torah, Blessings 10:12 (Mishneh Torah, Blessings)\nהרואה את הכושי ואת המשונין בצורת פניהן או באיבריהם מברך ברוך אתה יי' אלהינו מלך העולם משנה את הבריות הרואה סומא או קיטע ומוכה שחין ובוהקנין וכיוצא בהן מברך ברוך אתה יי' אלהינו מלך העולם דיין האמת ואם נולדו כן ממעי אמן מברך משנה את הבריות הרואה את הפיל ואת הקוף ואת הקיפוף אומר ברוך משנה את הבריות.\nOn seeing a negro, or anyone unusual in facial appearance or conformation of his limbs, one says, \"Blessed art Thou, O Lord our God, King of the Universe, Who variest the forms of creatures.\" On seeing a blind person, a cripple, or one afflicted with boils or tetters, etc. the blessing said is \"Blessed art Thou, O Lord our God, King of the Universe, the true Judge.\" If the affliction is congenital, the blessing is \"Who variest the forms of creatures.\" On seeing an elephant, an ape or an owl one says, \"Blessed be He Who varieth the forms of creatures.\"\n\nAnswer segments:\n(0) sources=[]: **Sages**\n\nThe Gemara (Berakhot 58a) says that \n(1) sources=[0]: one who beholds the Sages of Israel should say, \"Blessed... Who hast imparted of Thy wisdom to them that fear Thee\"\n(2) sources=[]: : *שחלק מחכמתו ליראיו*. For the wise men of other peoples, the blessing is \n(3) sources=[0]: \"Blessed... Who hast given of Thy wisdom to Thy creatures.\"\n(4) sources=[]: \n\nRambam (Hilchot Berakhot 10:11) has the same blessing for \n(5) sources=[1]: an Israelite\n(6) sources=[]:  sage. For a gentile sage, however, his wording is \n(7) sources=[1]: \"Who hast imparted of Thy wisdom to flesh and blood\"\n(8) sources=[]:  (*לבשר ודם*), not \"to Thy creatures.\"\n\n**Kings**\n\nIn the Gemara, \n(9) sources=[0]: one who beholds the kings of Israel should say, \"Blessed... Who hast imparted of Thy glory to them that fear Thee\"; but [on beholding] the kings of other peoples he says, \"Blessed... Who hast imparted of Thy glory to Thy creatures.\"\n(10) sources=[]: \n\nRambam's version differs in two places:\n- For Israelite kings he adds \"might\": \n(11) sources=[1]: \"Who hast given of Thy glory and might to them that fear Thee.\"\n(12) sources=[]:  In Hebrew this is *שנתן מכבודו ומגבורתו ליראיו*.\n- For gentile kings he again uses *לבשר ודם*: \n(13) sources=[1]: \"Who hast given of Thy glory to flesh and blood.\"\n(14) sources=[]: \n\n**A pattern worth noticing**\n\nIn both sources, the blessing for Israel uses the phrase \"to them that fear Thee,\" while the blessing for the nations speaks of all humanity. In the Gemara's Hebrew, the verb also changes: *חלק* (\"imparted,\" a portion) for Israel's sages, and *נתן* (\"given\") for the sages of the nations.\n\nThe sources record these wording differences but do not explain them. For practical questions about which text to say, please ask a rabbi."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsgiVBNFBx65ygym9CBP",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Introduces Berakhot 58a, which is source 0; the framing makes no unsupported claim.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Matches source 0 translation exactly.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Hebrew phrase שחלק מחכמתו ליראיו is in source 0; the framing sentence is accurate.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches source 0 on wise men of other peoples.\"},{\"i\":4,\"verdict\":\"partial\",\"note\":\"Claim that Rambam has the same blessing for an Israelite sage is supported by source 1, but it cites Hilchot Berakhot 10:11 correctly; mostly framing.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Source 1 covers the Israelite sage.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Source 1 gives different wording for a gentile sage.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches source 1 on gentile sage.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"לבשר ודם is in source 1; Gemara says 'to Thy creatures', so contrast holds.\"},{\"i\":9,\"verdict\":\"partial\",\"note\":\"Matches source 0 translation, though that translation says 'imparted' for other peoples' kings while Hebrew says נתן.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"Says Rambam's version differs in two places; consistent with sources 0 and 1.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Matches source 1 on Israelite kings with 'glory and might'.\"},{\"i\":12,\"verdict\":\"supported\",\"note\":\"Hebrew שנתן מכבודו ומגבורתו ליראיו is in source 1 text.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Matches source 1 on gentile kings.\"},{\"i\":14,\"verdict\":\"supported\",\"note\":\"Pattern claim about 'them that fear Thee' holds in both sources; Hebrew חלק/נתן distinction is in source 0, though Rambam uses נתן for Israel.\"},{\"i\":14,\"verdict\":\"supported\",\"note\":\"Pattern claim about 'them that fear Thee' holds in both sources; Hebrew חלק/נתן distinction is in source 0, though Rambam uses נתן for Israel.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 5631,
+   "output_tokens": 815,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

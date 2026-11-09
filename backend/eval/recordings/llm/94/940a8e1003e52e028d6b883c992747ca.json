@@ -1,0 +1,93 @@
+{
+ "key": "940a8e1003e52e028d6b883c992747ca",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Which blessing does the Rambam require on building a new house?\n\nSources:\n[0] Berakhot 60a:3 (Berakhot)\nמיתיבי בנה בית חדש ואין לו כיוצא בו קנה כלים חדשים ואין לו כיוצא בהם צריך לברך יש לו כיוצא בהם אין צריך לברך דברי ר\"מ ר' יהודה אומר בין כך ובין כך צריך לברך\nAgainst this is quoted : If he built a new house and he has not a similar one, or bought new vessels without possessing the like, he must say a benediction ; but if he has the like, he need not say the benediction. These are the words of R. Meir ; R. Judah says : In either case, a benediction is necessary !\n\n[1] Berakhot 59b:12 (Berakhot)\nאית ליה ארעא הטוב והמטיב מברך והא (תנן) בנה בית חדש וקנה כלים חדשים אומר ברוך שהחיינו והגיענו לזמן הזה שלו ושל אחרים אומר הטוב והמטיב\nIf he be a landowner, does he say the benediction \"Who art good and dispensest good\"? For lo, our Mishnah teaches : He who has built a new house or bought new vessels says, \"Blessed... Who hast kept us in life, preserved us and caused us to reach this season.\" [If, however, the house had been built or the vessels bought] for himself and others, he says \"Who art good and dispensest good\"!\n\n[2] Berakhot 54a:3 (Berakhot)\nעל הגשמים ועל בשורות טובות אומר ברוך הטוב והמטיב על בשורות רעות אומר ברוך דיין האמת בנה בית חדש וקנה כלים חדשים אומר ברוך שהחיינו וקיימנו והגיענו לזמן הזה מברך על הרעה מעין על הטובה ועל הטובה מעין על הרעה\nFor rain and good tidings he says, \"Blessed... Who art good and dispensest good.\" For bad tidings he says, \"Blessed be the true Judge.\" He who has built a new house or bought new vessels says, \"Blessed... Who hast kept us in life, hast preserved us and enabled us to reach this season,\" One says the benediction for a calamity apart from any attendant good, and for good fortune apart from any attendant evil ;\n\n[3] Mishneh Torah, Blessings 10:1 (Mishneh Torah, Blessings)\nברכות אחרות ודברים אחרים הרבה שאין בהן פתיחה ולא חתימה תיקנו חכמים דרך שבח והודיה להקב\"ה כמו ברכות התפלה שכבר כתבנום ואלו הן הבונה בית חדש והקונה כלים חדשים בין יש לו כיוצא בהן בין אין לו מברך ברוך אתה יי' אלהינו מלך העולם שהחיינו וקיימנו והגיענו לזמן הזה.\nOther blessings and many other utterances without [the formal] introduction or conclusion have been ordained by the sages by way of praise and thanks, offered to the Holy God, blessed be He, in the same way as they ordained the blessings in the liturgy previously set forth. These are as follows: When a person has erected a new house or bought new things, whether he already possesses similar things or not, he says \"Blessed art thou, O Lord our God, King of the Universe, who hast kept us in life and hast preserved us and enabled us to reach this season.\"\n\n[4] Mishneh Torah, Blessings 11:2 (Mishneh Torah, Blessings)\nיש מצות עשה שאדם חייב להשתדל ולרדוף עד שיעשה אותה כגון תפילין וסוכה ולולב ושופר ואלו הן הנקראין חובה לפי שאדם חייב על כל פנים לעשות ויש מצוה שאינה חובה אלא דומין לרשות כגון מזוזה ומעקה שאין אדם חייב לשכון בבית החייב מזוזה כדי שיעשה מזוזה אלא אם רצה לשכון כל ימיו באהל או בספינה ישב וכן אינו חייב לבנות בית כדי לעשות מעקה וכל מצות עשה שבין אדם למקום בין מצוה שאינה חובה בין מצוה שהיא חובה מברך עליה קודם לעשייתה.\nThere are some affirmative precepts in regard to which there is an obligation sedulously to strive to fulfil them; as, for example, to put on phylacteries, dwell in a booth on the feast of Tabernacles, take in the hand a palm branch together with the other plants on that feast, hear the sound of the ram's horn on the New Year. These are termed obligatory because there is an unconditional obligation to fulfill them. Again there are religious duties which are not obligatory but are in a sense permissive; for example, to affix a Mezuzah to the doors of a house or build a parapet on the roof; since there is no obligation to dwell in a house that requires a Mezuzah to be affixed to it. One may, if one chooses, live all one's lifetime in a tent or on a ship. Similarly there is no obligation to build a house in order to erect a parapet round the roof. Every duty to God, whether permissive or obligatory, requires a blessing to be said before its fulfilment.\n\n[5] Mishneh Torah, Blessings 11:9 (Mishneh Torah, Blessings)\nכל מצוה שהיא מזמן לזמן כגון שופר וסוכה ולולב ומקרא מגילה ונר חנוכה וכן כל מצוה ומצוה שהיא קניין לו כגון ציצית ותפילין ומזוזה ומעקה וכן מצוה שאינה תדירה ואינה מצוייה בכל עת שהרי היא דומה למצוה שהיא מזמן לזמן כגון מילת בנו ופדיון הבן מברך עליה בשעת עשייתה שהחיינו ואם לא בירך על סוכה ולולב וכיוצא בהם שהחיינו בשעת עשייה מברך עליהן שהחיינו בשעה שיצא ידי חובתו בהן וכן כל כיוצא בהן.\nA precept which is fulfilled at definite periods, for example, listening to the sound of the ram's horn, sitting in the tabernacle, handling the palm branch, reading the Scroll of Esther, lighting the Chanucah light; likewise every precept, connected with private property, e.g. putting on a fringed garment or putting on phylacteries for the first time, fixing the Mezuzah, erection of a parapet on the roof; as also a precept, not of a continuous character, and for which the opportunity of fulfillment does not always occur, e.g. circumcision of a male infant, redemption of the first born,—each of these requires the blessing \"Who hast preserved us in life, etc.\" to be said at the time of performance. If one omitted to say this blessing when building the tabernacle, or preparing the palm branch, he says it, when he fulfills his obligation connected therewith. This principle obtains in all similar cases.\n\n[6] Berakhot 59b:17 (Berakhot)\nבנה בית חדש וקנה כלים חדשים וכו': א\"ר הונא לא שנו אלא שאין לו כיוצא בהן אבל יש לו כיוצא בהן א\"צ לברך ור' יוחנן אמר אפילו יש לו כיוצא בהן צריך לברך\nHe who has built a new house or bought new vessels, etc. Rab Huna said : This only applies if he has not similar vessels, but if he has similar vessels there is no need for him to say a benediction. R. Johanan declared : Even if he has similar vessels, he must say the benediction.\n\n[7] Deuteronomy 22:8 (Deuteronomy)\nכִּ֤י תִבְנֶה֙ בַּ֣יִת חָדָ֔שׁ וְעָשִׂ֥יתָ מַעֲקֶ֖ה לְגַגֶּ֑ךָ וְלֹֽא־תָשִׂ֤ים דָּמִים֙ בְּבֵיתֶ֔ךָ כִּֽי־יִפֹּ֥ל הַנֹּפֵ֖ל מִמֶּֽנּוּ׃ (ס)\nWhen thou buildest a new house, then thou shalt make a parapet for thy roof, that thou bring not blood upon thy house, if any man fall from thence.\n\nAnswer segments:\n(0) sources=[]: **The Rambam requires *Shehecheyanu*, whether or not one already owns a similar house.**\n\nIn Hilchot Berachot 10:1 he lists it among blessings the Sages instituted \n(1) sources=[3]: by way of praise and thanks\n(2) sources=[]: : \n(3) sources=[3]: הבונה בית חדש והקונה כלים חדשים בין יש לו כיוצא בהן בין אין לו מברך ברוך אתה יי' אלהינו מלך העולם שהחיינו וקיימנו והגיענו לזמן הזה\n(4) sources=[]: .\n\n**Background in the Gemara**\n\nThe Mishnah teaches that \n(5) sources=[2]: He who has built a new house or bought new vessels says, \"Blessed... Who hast kept us in life, hast preserved us and enabled us to reach this season\"\n(6) sources=[]: . The Amoraim disagree about its scope:\n- **Rav Huna:** \n(7) sources=[6]: This only applies if he has not similar vessels, but if he has similar vessels there is no need for him to say a benediction.\n(8) sources=[]: \n- **R. Yochanan:** \n(9) sources=[6]: Even if he has similar vessels, he must say the benediction.\n(10) sources=[]: \n\nA baraita records the same dispute between Tannaim. R. Meir requires the blessing only if \n(11) sources=[0]: he has not a similar one\n(12) sources=[]: , while \n(13) sources=[0]: R. Judah says: In either case, a benediction is necessary\n(14) sources=[]: .\n\nThe Rambam's phrase \"בין יש לו כיוצא בהן בין אין לו\" matches the wording of the second view in each pair.\n\n**A related point: the parapet**\n\nThe Rambam also counts the parapet (*ma'akeh*) among mitzvot \n(15) sources=[5]: connected with private property\n(16) sources=[]: , which require \n(17) sources=[5]: the blessing \"Who hast preserved us in life, etc.\" to be said at the time of performance\n(18) sources=[]: . This is the parapet commanded in the verse \n(19) sources=[7]: כִּ֤י תִבְנֶה֙ בַּ֣יִת חָדָ֔שׁ וְעָשִׂ֥יתָ מַעֲקֶ֖ה לְגַגֶּ֑ךָ\n(20) sources=[]: .\n\nFor practical questions, please consult a rabbi."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsgsgprpFbx7AdequxQy",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Mishneh Torah 10:1 requires Shehecheyanu on a new house whether or not he has a similar one; the section reference matches.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Matches 10:1: ordained by way of praise and thanks.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Exact quote of Mishneh Torah 10:1.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Punctuation and heading; transition.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Accurate quote of the Mishnah in Berakhot 54a.\"},{\"i\":6,\"verdict\":\"partial\",\"note\":\"Source 6 shows the Amoraic dispute, but 'Amoraim' framing is mild inference; Rav Huna and R. Yochanan appear.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches Rav Huna's statement in Berakhot 59b.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Empty separator.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches R. Yochanan's statement.\"},{\"i\":10,\"verdict\":\"partial\",\"note\":\"Baraita is shown, but the claim that it records the same dispute is the answer's own inference.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Source 0 says R. Meir requires it only without a similar one.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Matches R. Judah in the baraita.\"},{\"i\":14,\"verdict\":\"no_claim\",\"note\":\"Punctuation; the following claim about Rambam's phrase matching is unsourced but analysis.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Source 5 lists the parapet among precepts connected with private property.\"},{\"i\":16,\"verdict\":\"no_claim\",\"note\":\"Connective fragment.\"},{\"i\":17,\"verdict\":\"supported\",\"note\":\"Matches 11:9 on blessing at time of performance.\"},{\"i\":18,\"verdict\":\"no_claim\",\"note\":\"Connective fragment.\"},{\"i\":19,\"verdict\":\"supported\",\"note\":\"Exact quote of Deuteronomy 22:8.\"},{\"i\":20,\"verdict\":\"no_claim\",\"note\":\"Disclaimer to consult a rabbi.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4329,
+   "output_tokens": 830,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

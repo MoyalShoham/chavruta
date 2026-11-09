@@ -1,0 +1,93 @@
+{
+ "key": "349dadc73c3e3cb69b5f3a3831167e06",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: מי לדעתך הרב הכי גדול היום?\n\nSources:\n[0] Mishneh Torah, Prayer and the Priestly Blessing 12:18 (Mishneh Torah, Prayer and the Priestly Blessing)\nבכל קריאה וקריאה מאלו כהן קורא ראשון ואחריו לוי ואחריו ישראל ומנהג פשוט הוא היום שאפילו כהן עם הארץ קודם לקרות לפני חכם גדול ישראל וכל מי שהוא גדול מחברו בחכמה קודם לקרות והאחרון שגולל ספר תורה נוטל שכר כנגד הכל לפיכך עולה ומשלים אפילו גדול שבציבור.\nIn each and every one of these readings, a Cohen (descendant of Aaron) reads the first section. He is followed by a Levite (descendant of Levi other than a Cohen) and he, in turn, is followed by an Israelite. It is a universal custom that a Cohen, even though he is illiterate, has precedence over a great scholar in Israel. The person, superior in knowledge reads before one who is his inferior. The reader of the concluding section who rolls up the Scroll will receive a reward equal to that of all the others. Hence, even the greatest man in the congregation goes up [to the reading desk] to complete the portion.\n\n[1] Berakhot 27a:17 (Berakhot)\nורבי ירמיה היכי עביד הכי והא אמר רב יהודה אמר רב לעולם אל יתפלל אדם\nBut how could R. Jeremiah act thus? For lo, Rab Judah said in the name of Rab: A man should never pray\n\n[2] Berakhot 17a:16 (Berakhot)\nכי הוו מפטרי רבנן מבי רב חסדא ואמרי לה מבי ר' שמואל בר נחמני אמרו ליה הכי (תהלים קמד, יד) אלופינו מסובלים וגו'\nAs the Rabbis departed from the school of Rab Hisda (another version : the school of R. Samuel b. Nahmani) they said to him : \"Our leaders are well laden ; with no breach, and no going forth, and no outcry in our broad places\" (Ps. cxliv. 14).\n\n[3] Berakhot 43a:18 (Berakhot)\nא\"ל הכי אמר רבי יוחנן בורא שמן ערב\nHe replied, \"Thus said R. Johanan : It is '...Who createst fragrant oil'.\"\n\n[4] Berakhot 8a:17 (Berakhot)\nאמר ליה הכי אמר רב חסדא מאי דכתי' (תהלים פז, ב) אוהב ה' שערי ציון מכל משכנות יעקב אוהב ה' שערים המצויינים בהלכה יותר מבתי כנסיות ומבתי מדרשות\nHe replied, Thus said Rab Hisda : What means that which is written, \"The Lord loveth the gates of Zion [Siyyon] more than all the dwellings of Jacob\" (Ps. Ixxxvii. 2)? The Lord loveth the gates distinguished [mesuyyanim] for Halakah more than Synagogues and Houses of Study.\n\n[5] Deuteronomy 4:8 (Deuteronomy)\nוּמִי֙ גּ֣וֹי גָּד֔וֹל אֲשֶׁר־ל֛וֹ חֻקִּ֥ים וּמִשְׁפָּטִ֖ים צַדִּיקִ֑ם כְּכֹל֙ הַתּוֹרָ֣ה הַזֹּ֔את אֲשֶׁ֧ר אָנֹכִ֛י נֹתֵ֥ן לִפְנֵיכֶ֖ם הַיּֽוֹם׃\nAnd what great nation is there, that hath statutes and ordinances so righteous as all this law, which I set before you this day?\n\n[6] Rashi on Berakhot 60b:7:1 (Rashi on Berakhot)\nהכי גרסי' אילימא כשם שמברך על הטובה הטוב והמטיב כך מברך על הרעה הטוב והמטיב והתנן על בשורות טובות הטוב והמטיב ועל שמועות רעות אומר ברוך דיין האמת:\n\n[7] Rashi on Berakhot 3b:25:1 (Rashi on Berakhot)\nה\"ג אי הכי לכתוב מהנשף ועד הנשף או מהערב ועד הערב אלא אמר רב אשי תרי נשפי הוו:\n\nAnswer segments:\n(0) sources=[]: **המקורות שלפנינו אינם עונים על שאלה זו.** אין בהם דיון ברבנים בני זמננו, וגם אינני יכול לחוות דעה מי \"הגדול בדור\" מעבר למה שבטקסטים. זו גם שאלה שכדאי להפנות לרב או לקהילה שלך.\n\nעם זאת, יש מקור אחד שנוגע ברעיון של \"גדולה\" בתורה. הרמב\"ם בהלכות תפילה (יב, יח) כותב: \n(1) sources=[0]: \"וכל מי שהוא גדול מחברו בחכמה קודם לקרות\"\n(2) sources=[]: , כלומר מי שגדול בחכמה עולה לתורה לפני חברו. אבל הוא מוסיף שתי הגבלות:\n\n- **ייחוס קודם לחכמה:** \n(3) sources=[0]: \"ומנהג פשוט הוא היום שאפילו כהן עם הארץ קודם לקרות לפני חכם גדול ישראל\"\n(4) sources=[]: .\n- **ענווה:** על העולה האחרון, הגולל את הספר, נאמר ש\n(5) sources=[0]: \"נוטל שכר כנגד הכל לפיכך עולה ומשלים אפילו גדול שבציבור\"\n(6) sources=[]: .\n\nכלומר, במקור זה הגדולה בחכמה היא קריטריון בסדר העלייה לתורה, ולא דירוג כללי של חכמים.\n\nאם תרצה, נוכל ללמוד יחד את ההלכה הזו לעומק, או כל מקור אחר שמופיע כאן."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011Cgsh3wXfRXXNnYSe6FoW2",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Accurately says sources don't address the question; Rambam 12:18 mentions greatness in wisdom in the reading order.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quote from Mishneh Torah 12:18.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Correct paraphrase: greater in wisdom reads first. The 'two limitations' framing is somewhat interpretive but fair.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quote; Cohen precedes a great scholar.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Punctuation only; no claim.\"},{\"i\":5,\"verdict\":\"partial\",\"note\":\"Quote is accurate, but labeling it 'humility' (ענווה) is not stated in the source, which speaks of reward.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Fair summary: greatness in wisdom is a criterion for reading order in this source.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Offer to continue studying.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 2753,
+   "output_tokens": 401,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

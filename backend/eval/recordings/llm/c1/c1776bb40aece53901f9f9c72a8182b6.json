@@ -1,0 +1,93 @@
+{
+ "key": "c1776bb40aece53901f9f9c72a8182b6",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: What blessing does one say on seeing a king?\n\nSources:\n[0] Mishneh Torah, Blessings 10:11 (Mishneh Torah, Blessings)\nהרואה ת\"ר אלף אדם כאחד אם עכו\"ם הם אומר בושה אמכם מאד חפרה יולדתכם הנה אחרית גוים מדבר ציה וערבה ואם ישראל הם ובארץ ישראל אומר ברוך אתה יי' אלהינו מלך העולם חכם הרזים הרואה מחכמי אומות העולם אומר ברוך אתה יי' אלהינו מלך העולם שנתן מחכמתו לבשר ודם חכמי ישראל מברך שנתן מחכמתו ליראיו מלכי ישראל אומר שנתן מכבודו ומגבורתו ליראיו מלכי אומות העולם מברך שנתן מכבודו לבשר ודם.\nIf one sees at one time six hundred thousand persons, who are heathens, he says \"Your mother shall be sore ashamed, she that bore you shall be confounded; behold, the latter end of the nations shall be a wilderness, a dry land and a desert.\" (Jerem. 50:12) Should they be Israelites, and he sees them in the land of Israel, he says, \"Blessed art Thou, O Lord our God, King of the Universe, wise in secrets.\" When seeing a gentile sage, one says, \"Blessed art Thou, O Lord our God, King of the Universe Who hast imparted of Thy wisdom to flesh and blood.\" If the sage is an Israelite, he says \"Who hast imparted of Thy wisdom unto them that fear Thee.\" When seeing Israelite kings, one says \"Who hast given of Thy glory and might to them that fear Thee.\" If they are gentile kings, he says \"Who hast given of Thy glory to flesh and blood.\"\n\n[1] Mishneh Torah, Blessings 10:12 (Mishneh Torah, Blessings)\nהרואה את הכושי ואת המשונין בצורת פניהן או באיבריהם מברך ברוך אתה יי' אלהינו מלך העולם משנה את הבריות הרואה סומא או קיטע ומוכה שחין ובוהקנין וכיוצא בהן מברך ברוך אתה יי' אלהינו מלך העולם דיין האמת ואם נולדו כן ממעי אמן מברך משנה את הבריות הרואה את הפיל ואת הקוף ואת הקיפוף אומר ברוך משנה את הבריות.\nOn seeing a negro, or anyone unusual in facial appearance or conformation of his limbs, one says, \"Blessed art Thou, O Lord our God, King of the Universe, Who variest the forms of creatures.\" On seeing a blind person, a cripple, or one afflicted with boils or tetters, etc. the blessing said is \"Blessed art Thou, O Lord our God, King of the Universe, the true Judge.\" If the affliction is congenital, the blessing is \"Who variest the forms of creatures.\" On seeing an elephant, an ape or an owl one says, \"Blessed be He Who varieth the forms of creatures.\"\n\n[2] Mishneh Torah, Blessings 10:10 (Mishneh Torah, Blessings)\nהרואה בתי ישראל ביישובן מברך ברוך אתה יי' אלהינו מלך העולם מציב גבול אלמנה בחרבנן אומר ברוך דיין האמת הרואה קברי ישראל מברך ברוך אתה יי' אלהינו מלך העולם אשר יצר אתכם בדין ודן אתכם בדין וכלכל אתכם בדין והמית אתכם בדין והוא עתיד להקים אתכם בדין לחיי העולם הבא ברוך אתה יי' מחיה המתים.\nIf one sees fine houses of Israelites (that are inhabited), he says, \"Blessed art Thou, O Lord our God, King of the Universe who settest up the border stone of the widow.\" If they are in ruins, he says, \"Blessed be the true judge.\" On seeing the graves of Israelites, one says, \"Blessed art Thou, O Lord our God, King of the Universe, who formed you in judgment, and quickened you in judgment, sustained you in judgment and nourished you in judgment and will hereafter raise you up in judgment, to life in the world to come, Blessed art Thou O Lord, who quickenest the dead.\"\n\n[3] Mishneh Torah, Blessings 10:9 (Mishneh Torah, Blessings)\nהרואה מקום שנעשו נסים לישראל כגון ים סוף ומעברות הירדן אומר ברוך אתה יי' אלהינו מלך העולם שעשה נסים לאבותינו במקום הזה וכן כל מקום שנעשו בו נסים לרבים אבל מקום שנעשה בו נס ליחיד אותו היחיד ובנו ובן בנו מברך ברוך אתה יי' אלהינו מלך העולם שעשה לי נס במקום הזה או שעשה נס לאבותי במקום הזה הרואה גוב אריות וכבשן האש שהושלך בו חנניה מישאל ועזריה מברך ברוך אתה יי' אלהינו מלך העולם שעשה נס לצדיקים במקום הזה הרואה מקום שעובדין בו עכו\"ם מברך ברוך אתה יי' אלהינו מלך העולם שנתן ארך אפים לעוברי רצונו מקום שנעקרה ממנו עכו\"ם אם בארץ ישראל הוא מברך שעקר עכו\"ם מארצנו ואם בחוץ לארץ הוא מברך שעקר עכו\"ם ממקום הזה ואומר בשתיהן כשם שעקרת ממקום זה כך תעקר מכל מקומות ותשיב לב עובדיהם לעבדך.\nOn seeing a place where miracles had been wrought for Israel, such as the Red Sea or the fords of the Jordan, which the Israelites crossed with Joshua, one says \"Blessed art Thou, O Lord our God, King of the Universe, Who wroughtest miracles for our fathers in this place.\" This blessing is also said in any place where miracles had been vouchsafed to a multitude. But where a miracle had been vouchsafed to an individual, he, his son, and his grandson, also say the blessing \"Blessed art Thou, O Lord our God, King of the Universe, Who wroughtest miracles for me in this place\" or \"Who wroughtest miracles for my fathers in this place.\" When viewing the lion's den (into which Daniel was cast) or the fiery furnace (into which Chananiah, Mishael and Azariah were thrust), the blessing is recited \"Blessed art Thou, O Lord our God, King of the Universe, Who wroughtest miracles for the righteous at this place.\" When seeing a place where idols are worshipped, the blessing is said, \"Blessed art Thou, O Lord, our God, King of the Universe, who hast been long suffering with those who transgress Thy will.\" When seeing a place from which idolatry has been eradicated, if it is in the Holy Land, the blessing is said \"Who hast uprooted idolatry from our land\"; if it is outside Palestine, \"Who hast uprooted idolatry from this place.\" To both blessings, the petition is added \"Even as Thou hast uprooted idolatry from this place, so do Thou uproot it from all places and turn the heart of idol worshippers to serve Thee.\n\n[4] Mishneh Torah, Blessings 10:13 (Mishneh Torah, Blessings)\nהרואה בריות נאות ומתוקנות ביותר ואילנות טובות מברך שככה לו בעולמו היוצא לשדות או לגנות ביומי ניסן וראה אילנות פורחות וניצנים עולים מברך ברוך אתה יי' אלהינו מלך העולם שלא חיסר בעולמו כלום וברא בו בריות טובות ואילנות טובות ונאות כדי ליהנות בהן בני אדם.\nOn seeing creatures that are beautiful or exceptionally well formed or goodly trees, one says \"Blessed art Thou, O Lord our God, King of the Universe Who hast such as these in the world.\" If one goes out into the fields or gardens during Nisan (i.e. in the Spring) and sees the trees in bud and the flowers in bloom, he says, \"Blessed art Thou, O Lord our God, King of the Universe, Who hast made Thy world lacking in nought, and hast produced therein goodly creatures and good and beautiful trees wherewith to delight the children of men\".\n\n[5] Mishneh Torah, Blessings 10:16 (Mishneh Torah, Blessings)\nהרואה קשת בענן מברך ברוך אתה יי' אלהינו מלך העולם זוכר הברית ונאמן בבריתו וקיים במאמרו הרואה לבנה בחדושה מברך ברוך אתה יי' אלהינו מלך העולם אשר במאמרו ברא שחקים וברוח פיו כל צבאם חק וזמן נתן להם שלא ישנו את תפקידם ששים ושמחים לעשות רצון קוניהם פועלי אמת ופעולתם צדק וללבנה אמר שתתחדש עטרה תפארת לעמוסי בטן שהם עתידין להתחדש כמותה ולפאר ליוצאם על כבוד מלכותו ועל כל מה שברא ברוך אתה יי' מחדש החדשים.\nAt sight of a rainbow, one says the blessing \"Blessed art Thou, O Lord our God, King of the Universe, Who rememberest the Covenant, art faithful to Thy Covenant and keepest Thy promise.\" At sight of the new moon, one says, \"Blessed art Thou, O Lord our God, King of the Universe, by Whose word the heavens were created, and by the breath of Whose mouth all their hosts. A statute and season Thou didst assign unto them, that they should not change their appointed charge. They are glad and rejoice to do the will of their Master—faithful workers whose work is faithful. And the moon He bade renew herself as a crown of glory unto those that have been upborne by Him from the womb, who, in the time to come, will themselves be renewed like her, to honor their Creator for His glorious sovereignty's sake and for all that He has created. Blessed art Thou, O Lord, Who renewest the months.\"\n\n[6] Mishneh Torah, Blessings 10:2 (Mishneh Torah, Blessings)\nוכן הרואה את חבירו לאחר שלשים יום מברך שהחיינו ואם ראהו לאחר שנים עשר חדש מברך ברוך אתה יי' מחיה המתים הרואה פרי המתחדש משנה לשנה בתחלת ראייתו מברך שהחיינו.\nThe same blessing is said when one sees an associate after thirty days. If however twelve months have elapsed since he was last seen, one says \"Blessed art Thou, O Lord, Who quickenest the dead.\" The first time in the season that one sees a fruit that is renewed every year, the blessing is said \"Who hast kept us in life, etc.\"\n\n[7] Berakhot 57b:21 (Berakhot)\nדרש רב המנונא הרואה בבל הרשעה צריך לברך חמש ברכות ראה בבל אומר ברוך שהחריב בבל הרשעה ראה ביתו של נבוכדנצר אומר ברוך שהחריב ביתו של נבוכדנצר הרשע ראה גוב של אריות או כבשן האש אומר ברוך שעשה נסים לאבותינו במקום הזה ראה מרקוליס אומר ברוך שנתן ארך אפים לעוברי רצונו ראה מקום שנוטלין ממנו עפר אומר ברוך אומר ועושה גוזר ומקיים\nRab Hamnuna expounded : Who sees the wicked Babylon should utter five benedictions. If he sees Babylon, he says \"Blessed... Who hast destroyed wicked Babylon.\" If he sees the palace of Nebuchadnezzar, he says \"Blessed...Who hast destroyed the palace of Nebuchadnezzar.\" If he sees the den of lions or the fiery furnace, he says \"Blessed ...Who hast performed miracles for our fathers in this place.\" If he sees a statue of Hermes, he says \"Blessed... Who hast shown long-suffering to those who transgress Thy will.\" If he sees a place [in Babylon] from which dust is being taken away, he says \"Blessed...Who sayest and doest, Who doth decree and fulfil.\"\n\nAnswer segments:\n(0) sources=[]: The Rambam (Mishneh Torah, Hilkhot Berakhot 10:11) distinguishes between two kinds of kings:\n\n**Israelite kings:** \n(1) sources=[0]: When seeing Israelite kings, one says \"Who hast given of Thy glory and might to them that fear Thee.\"\n(2) sources=[]:  In Hebrew: \n(3) sources=[0]: מלכי ישראל אומר שנתן מכבודו ומגבורתו ליראיו\n(4) sources=[]: .\n\n**Gentile kings:** \n(5) sources=[0]: If they are gentile kings, he says \"Who hast given of Thy glory to flesh and blood.\"\n(6) sources=[]:  In Hebrew: \n(7) sources=[0]: מלכי אומות העולם מברך שנתן מכבודו לבשר ודם\n(8) sources=[]: .\n\n**Points to notice:**\n- The blessing for Israelite kings adds \"might\" (גבורתו) to \"glory\" (כבודו). The blessing for gentile kings mentions only glory.\n- The recipients also differ. For Jewish kings it is \"those who fear Him\" (ליראיו); for gentile kings it is \"flesh and blood\" (לבשר ודם).\n\nThe same halakha uses this pattern for sages. For a gentile sage one says \n(9) sources=[0]: \"Who hast imparted of Thy wisdom to flesh and blood.\"\n(10) sources=[]:  For an Israelite sage one says \n(11) sources=[0]: \"Who hast imparted of Thy wisdom unto them that fear Thee.\"\n(12) sources=[]: \n\nThe sources here give only the Rambam's text. They do not cover the Talmudic discussion behind it, other opinions, or practical details such as how close one must be or what counts as a \"king\" today. For practical questions, ask a rabbi."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011Cgsgzo5qrpqvFHB2VeTSu",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Rambam 10:11 distinguishes Israelite and gentile kings; citation matches source 0.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Matches source 0 translation for Israelite kings.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transitional label.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Hebrew quotes source 0 accurately.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches source 0 for gentile kings.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Transitional label.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Hebrew matches source 0.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches source 0 for gentile sage.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Transitional phrase.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Matches source 0 for Israelite sage.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Disclaimer about limits of sources and advice to ask a rabbi.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 5572,
+   "output_tokens": 447,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

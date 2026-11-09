@@ -1,0 +1,93 @@
+{
+ "key": "dc295c022805e2dd68f6b618f717fd14",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Where does God tell Abraham to take Isaac and offer him on a mountain?\n\nSources:\n[0] Genesis 22:2 (Genesis)\nוַיֹּ֡אמֶר קַח־נָ֠א אֶת־בִּנְךָ֨ אֶת־יְחִֽידְךָ֤ אֲשֶׁר־אָהַ֙בְתָּ֙ אֶת־יִצְחָ֔ק וְלֶךְ־לְךָ֔ אֶל־אֶ֖רֶץ הַמֹּרִיָּ֑ה וְהַעֲלֵ֤הוּ שָׁם֙ לְעֹלָ֔ה עַ֚ל אַחַ֣ד הֶֽהָרִ֔ים אֲשֶׁ֖ר אֹמַ֥ר אֵלֶֽיךָ׃\nAnd He said: ‘Take now thy son, thine only son, whom thou lovest, even Isaac, and get thee into the land of Moriah; and offer him there for a burnt-offering upon one of the mountains which I will tell thee of.’\n\n[1] Genesis 22:9 (Genesis)\nוַיָּבֹ֗אוּ אֶֽל־הַמָּקוֹם֮ אֲשֶׁ֣ר אָֽמַר־ל֣וֹ הָאֱלֹהִים֒ וַיִּ֨בֶן שָׁ֤ם אַבְרָהָם֙ אֶת־הַמִּזְבֵּ֔חַ וַֽיַּעֲרֹ֖ךְ אֶת־הָעֵצִ֑ים וַֽיַּעֲקֹד֙ אֶת־יִצְחָ֣ק בְּנ֔וֹ וַיָּ֤שֶׂם אֹתוֹ֙ עַל־הַמִּזְבֵּ֔חַ מִמַּ֖עַל לָעֵצִֽים׃\nAnd they came to the place which God had told him of; and Abraham built the altar there, and laid the wood in order, and bound Isaac his son, and laid him on the altar, upon the wood.\n\n[2] Deuteronomy 32:49 (Deuteronomy)\nעֲלֵ֡ה אֶל־הַר֩ הָעֲבָרִ֨ים הַזֶּ֜ה הַר־נְב֗וֹ אֲשֶׁר֙ בְּאֶ֣רֶץ מוֹאָ֔ב אֲשֶׁ֖ר עַל־פְּנֵ֣י יְרֵח֑וֹ וּרְאֵה֙ אֶת־אֶ֣רֶץ כְּנַ֔עַן אֲשֶׁ֨ר אֲנִ֥י נֹתֵ֛ן לִבְנֵ֥י יִשְׂרָאֵ֖ל לַאֲחֻזָּֽה׃\n’Get thee up into this mountain of Abarim, unto mount Nebo, which is in the land of Moab, that is over against Jericho; and behold the land of Canaan, which I give unto the children of Israel for a possession;\n\n[3] Berakhot 56b:19 (Berakhot)\nהרואה ישמעאל בחלום תפלתו נשמעת ודוקא ישמעאל בן אברהם אבל טייעא בעלמא לא הרואה גמל בחלום מיתה נקנסה לו מן השמים והצילוהו ממנה אמר רבי חמא ברבי חנינא מאי קראה (בראשית מו, ד) ואנכי ארד עמך מצרימה ואנכי אעלך גם עלה רב נחמן בר יצחק אמר מהכא (שמואל ב יב, יג) גם ה' העביר חטאתך לא תמות\nWho dreams of Ishmael, his prayer will be heard; but only of Ishmael the son of Abraham, and not of an ordinary Arab. Who dreams of a camel, death had been decreed upon him by Heaven, but he has been delivered therefrom. R. Hamma b. R. Hannina said : What is the Scriptural authority for this ? \"I will go down with thee into Egypt ; and I will also surely bring thee up again\" (Gen. xlvi. 4). Rab Nahman b. Isaac said : It may be derived from the following, \"The Lord also hath put away thy sin; thou shalt not die\" (II Sam. xii. 13).\n\n[4] Genesis 35:27 (Genesis)\nוַיָּבֹ֤א יַעֲקֹב֙ אֶל־יִצְחָ֣ק אָבִ֔יו מַמְרֵ֖א קִרְיַ֣ת הָֽאַרְבַּ֑ע הִ֣וא חֶבְר֔וֹן אֲשֶׁר־גָּֽר־שָׁ֥ם אַבְרָהָ֖ם וְיִצְחָֽק׃\nAnd Jacob came unto Isaac his father to Mamre, to Kiriatharba—the same is Hebron—where Abraham and Isaac sojourned.\n\n[5] Berakhot 64a:6 (Berakhot)\nואמר רבי אבין הלוי מאי דכתיב (תהלים כ, ב) יענך ה' ביום צרה ישגבך שם אלהי יעקב אלהי יעקב ולא אלהי אברהם ויצחק מכאן לבעל הקורה שיכנס בעביה של קורה:\nR. Abin the Levite also said : What means that which is written, \"The Lord answer thee in the day of trouble; the name of the God of Jacob set thee up on high\" (Ps. xx. 2)? The God of Jacob, but not the God of Abraham and Isaac ! From this we learn that the owner of a beam should go in with the heaviest part of it[1].\n\n[6] Exodus 33:1 (Exodus)\nוַיְדַבֵּ֨ר יְהוָ֤ה אֶל־מֹשֶׁה֙ לֵ֣ךְ עֲלֵ֣ה מִזֶּ֔ה אַתָּ֣ה וְהָעָ֔ם אֲשֶׁ֥ר הֶֽעֱלִ֖יתָ מֵאֶ֣רֶץ מִצְרָ֑יִם אֶל־הָאָ֗רֶץ אֲשֶׁ֣ר נִ֠שְׁבַּעְתִּי לְאַבְרָהָ֨ם לְיִצְחָ֤ק וּֽלְיַעֲקֹב֙ לֵאמֹ֔ר לְזַרְעֲךָ֖ אֶתְּנֶֽנָּה׃\nAnd the LORD spoke unto Moses: ‘Depart, go up hence, thou and the people that thou hast brought up out of the land of Egypt, unto the land of which I swore unto Abraham, to Isaac, and to Jacob, saying: Unto thy seed will I give it—\n\n[7] Genesis 22:14 (Genesis)\nוַיִּקְרָ֧א אַבְרָהָ֛ם שֵֽׁם־הַמָּק֥וֹם הַה֖וּא יְהוָ֣ה ׀ יִרְאֶ֑ה אֲשֶׁר֙ יֵאָמֵ֣ר הַיּ֔וֹם בְּהַ֥ר יְהוָ֖ה יֵרָאֶֽה׃\nAnd Abraham called the name of that place Adonai-jireh; as it is said to this day: ‘In the mount where the LORD is seen.’\n\nAnswer segments:\n(0) sources=[]: The command appears in **Genesis 22:2**. God says: \n(1) sources=[0]: \"קַח־נָא אֶת־בִּנְךָ אֶת־יְחִידְךָ אֲשֶׁר־אָהַבְתָּ אֶת־יִצְחָק וְלֶךְ־לְךָ אֶל־אֶרֶץ הַמֹּרִיָּה וְהַעֲלֵהוּ שָׁם לְעֹלָה עַל אַחַד הֶהָרִים אֲשֶׁר אֹמַר אֵלֶיךָ\"\n(2) sources=[]: , meaning \n(3) sources=[0]: \"Take now thy son, thine only son, whom thou lovest, even Isaac, and get thee into the land of Moriah; and offer him there for a burnt-offering upon one of the mountains which I will tell thee of.\"\n(4) sources=[]: \n\nNotice that the verse names the region, **אֶרֶץ הַמֹּרִיָּה**, but not the specific mountain. That is left as \"one of the mountains which I will tell thee of.\"\n\nTwo other verses in the provided sources continue the story:\n\n- **Genesis 22:9:** Abraham arrives and binds Isaac. \n(5) sources=[1]: \"And they came to the place which God had told him of; and Abraham built the altar there, and laid the wood in order, and bound Isaac his son, and laid him on the altar, upon the wood.\"\n(6) sources=[]:  The word \n(7) sources=[1]: וַֽיַּעֲקֹד\n(8) sources=[]:  (\"and he bound\") is where the episode gets its familiar name, the *Akedah*.\n- **Genesis 22:14:** Abraham names the place. \n(9) sources=[7]: \"And Abraham called the name of that place Adonai-jireh; as it is said to this day: 'In the mount where the LORD is seen.'\"\n(10) sources=[]: \n\nThe other results (Deuteronomy 32:49, Exodus 33:1, Genesis 35:27, and the passages from Berakhot) mention Abraham, Isaac, or mountains, but none of them deals with this command."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsgVAtAreYyLHT3EZF7v",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Genesis 22:2 contains God's command to take Isaac, as shown in source 0.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Hebrew quote matches Genesis 22:2 exactly (minus cantillation marks).\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transitional phrase, no claim about the texts.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quote of the English translation of Genesis 22:2.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Verse names the land of Moriah, not a specific mountain; 22:9 binding and 'the place' fit sources.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Accurate quote of Genesis 22:9.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Transitional fragment introducing the word.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"The word וַֽיַּעֲקֹד appears in Genesis 22:9.\"},{\"i\":8,\"verdict\":\"partial\",\"note\":\"'and he bound' is supported, but the claim that this gives the episode the name Akedah is not in sources.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Accurate quote of Genesis 22:14.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"Other listed sources mention Abraham, Isaac, or mountains but don't contain this command.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3979,
+   "output_tokens": 495,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

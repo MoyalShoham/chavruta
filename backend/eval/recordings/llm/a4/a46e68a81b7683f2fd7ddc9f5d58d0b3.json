@@ -1,0 +1,93 @@
+{
+ "key": "a46e68a81b7683f2fd7ddc9f5d58d0b3",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: What blessing is said on seeing a rainbow?\n\nSources:\n[0] Mishneh Torah, Blessings 10:16 (Mishneh Torah, Blessings)\nהרואה קשת בענן מברך ברוך אתה יי' אלהינו מלך העולם זוכר הברית ונאמן בבריתו וקיים במאמרו הרואה לבנה בחדושה מברך ברוך אתה יי' אלהינו מלך העולם אשר במאמרו ברא שחקים וברוח פיו כל צבאם חק וזמן נתן להם שלא ישנו את תפקידם ששים ושמחים לעשות רצון קוניהם פועלי אמת ופעולתם צדק וללבנה אמר שתתחדש עטרה תפארת לעמוסי בטן שהם עתידין להתחדש כמותה ולפאר ליוצאם על כבוד מלכותו ועל כל מה שברא ברוך אתה יי' מחדש החדשים.\nAt sight of a rainbow, one says the blessing \"Blessed art Thou, O Lord our God, King of the Universe, Who rememberest the Covenant, art faithful to Thy Covenant and keepest Thy promise.\" At sight of the new moon, one says, \"Blessed art Thou, O Lord our God, King of the Universe, by Whose word the heavens were created, and by the breath of Whose mouth all their hosts. A statute and season Thou didst assign unto them, that they should not change their appointed charge. They are glad and rejoice to do the will of their Master—faithful workers whose work is faithful. And the moon He bade renew herself as a crown of glory unto those that have been upborne by Him from the womb, who, in the time to come, will themselves be renewed like her, to honor their Creator for His glorious sovereignty's sake and for all that He has created. Blessed art Thou, O Lord, Who renewest the months.\"\n\n[1] Tosafot on Berakhot 59a:12:1 (Tosafot on Berakhot)\nהלכך נימרינהו לתרוייהו - אומר ר\"י דאין חותמין בברוך בברכה זו והיכי מברך ברוך אתה ה' אלהינו מלך העולם נאמן בבריתו וקיים בשבועתו וזוכר הברית:\nTHEREFORE WE WILL SAY THEM BOTH. Rav Popo says that since two feasible phrases were suggested for this b’rochoh to be said upon seeing a rainbow, we should recite both. R’I says that we do not say a conclusion for this b’rochoh. And how do we recite it? Blessed are you Hashem our G-d, King of the universe who is trustworthy in his covenant, and fulfills his promise and remembers his covenant.\n\n[2] Berakhot 59a:12 (Berakhot)\nאמר ר' אלכסנדרי אמר ר' יהושע בן לוי לא נבראו רעמים אלא לפשוט עקמומית שבלב שנאמר (קהלת ג, יד) והאלהים עשה שייראו מלפניו וא\"ר אלכסנדרי אמר ריב\"ל הרואה את הקשת בענן צריך שיפול על פניו שנאמר (יחזקאל א, כח) כמראה הקשת אשר יהיה בענן וגו' ואראה ואפול על פני לייטי עלה במערבא משום דמחזי כמאן דסגיד לקשתא אבל ברוכי ודאי מברך מאי מברך ברוך זוכר הברית במתניתא תנא ר' ישמעאל בנו של ר' יוחנן בן ברוקא אומר נאמן בבריתו וקיים במאמרו א\"ר פפא הלכך נימרינהו לתרוייהו ברוך זוכר הברית ונאמן בבריתו וקיים במאמרו:\nR. Alexander said in the name of R. Joshua b. Levi : Thunder was only created to break the pride of the heart ; as it is said, \"God hath so made it that men should fear before Him\" (Eccles. iii. 14). Also said R. Alexander in the nanie of R.Joshua b. Levi : Who sees the rainbow should prostrate himself upon his face; as it is said, \"As the appearance of the bow that is in the cloud...and when I saw it, I fell upon my face\" (Ezek. i. 28). In the West they curse one who acts thus, because it has the appearance as though he worships the rainbow ; but he should certainly pronounce a benediction. What is the benediction ? \"Blessed. ..Who remembrest the Covenant.\" It has been taught in a Baraita : R. Ishmael, the son of R. Johanan b. Baroka says: [The benediction is, \"Blessed...] Who art faithful with Thy Covenant and fulfillest Thy word.\" Rab Pappa said: Let us therefore say both : \"Blessed ... Who remembrest the Covenant, art faithful with Thy Covenant and fulfillest Thy word.\"\n\n[3] Mishnah Berakhot 9:2 (Mishnah Berakhot)\nעַל הַזִּיקִין, וְעַל הַזְּוָעוֹת, וְעַל הַבְּרָקִים, וְעַל הָרְעָמִים, וְעַל הָרוּחוֹת, אוֹמֵר בָּרוּךְ שֶׁכֹּחוֹ וּגְבוּרָתוֹ מָלֵא עוֹלָם. עַל הֶהָרִים, וְעַל הַגְּבָעוֹת, וְעַל הַיַּמִּים, וְעַל הַנְּהָרוֹת, וְעַל הַמִּדְבָּרוֹת, אוֹמֵר בָּרוּךְ עוֹשֵׂה מַעֲשֵׂה בְרֵאשִׁית. רַבִּי יְהוּדָה אוֹמֵר, הָרוֹאֶה אֶת הַיָּם הַגָּדוֹל אוֹמֵר בָּרוּךְ שֶׁעָשָׂה אֶת הַיָּם הַגָּדוֹל, בִּזְמַן שֶׁרוֹאֶה אוֹתוֹ לִפְרָקִים. עַל הַגְּשָׁמִים וְעַל הַבְּשׂוֹרוֹת הַטּוֹבוֹת אוֹמֵר בָּרוּךְ הַטּוֹב וְהַמֵּטִיב, וְעַל שְׁמוּעוֹת רָעוֹת אוֹמֵר בָּרוּךְ דַּיַּן הָאֱמֶת:\n[On witnessing] comets, earthquakes, thunder, or windy storms one says, “Blessed be He whose strength and might fill the world.” [On seeing] mountains, hills, seas, rivers or deserts one says, “Blessed be He who made creation.” Rabbi Judah says: one who sees the Great Sea should say, “Blessed be He who made the Great Sea,” if he sees it at intervals. For rain and for good news one says, “Blessed be He that is good and grants good.” For bad news one says, “Blessed be the true judge.”\n\n[4] Mishneh Torah, Blessings 10:12 (Mishneh Torah, Blessings)\nהרואה את הכושי ואת המשונין בצורת פניהן או באיבריהם מברך ברוך אתה יי' אלהינו מלך העולם משנה את הבריות הרואה סומא או קיטע ומוכה שחין ובוהקנין וכיוצא בהן מברך ברוך אתה יי' אלהינו מלך העולם דיין האמת ואם נולדו כן ממעי אמן מברך משנה את הבריות הרואה את הפיל ואת הקוף ואת הקיפוף אומר ברוך משנה את הבריות.\nOn seeing a negro, or anyone unusual in facial appearance or conformation of his limbs, one says, \"Blessed art Thou, O Lord our God, King of the Universe, Who variest the forms of creatures.\" On seeing a blind person, a cripple, or one afflicted with boils or tetters, etc. the blessing said is \"Blessed art Thou, O Lord our God, King of the Universe, the true Judge.\" If the affliction is congenital, the blessing is \"Who variest the forms of creatures.\" On seeing an elephant, an ape or an owl one says, \"Blessed be He Who varieth the forms of creatures.\"\n\n[5] Mishneh Torah, Blessings 10:2 (Mishneh Torah, Blessings)\nוכן הרואה את חבירו לאחר שלשים יום מברך שהחיינו ואם ראהו לאחר שנים עשר חדש מברך ברוך אתה יי' מחיה המתים הרואה פרי המתחדש משנה לשנה בתחלת ראייתו מברך שהחיינו.\nThe same blessing is said when one sees an associate after thirty days. If however twelve months have elapsed since he was last seen, one says \"Blessed art Thou, O Lord, Who quickenest the dead.\" The first time in the season that one sees a fruit that is renewed every year, the blessing is said \"Who hast kept us in life, etc.\"\n\n[6] Mishneh Torah, Blessings 10:9 (Mishneh Torah, Blessings)\nהרואה מקום שנעשו נסים לישראל כגון ים סוף ומעברות הירדן אומר ברוך אתה יי' אלהינו מלך העולם שעשה נסים לאבותינו במקום הזה וכן כל מקום שנעשו בו נסים לרבים אבל מקום שנעשה בו נס ליחיד אותו היחיד ובנו ובן בנו מברך ברוך אתה יי' אלהינו מלך העולם שעשה לי נס במקום הזה או שעשה נס לאבותי במקום הזה הרואה גוב אריות וכבשן האש שהושלך בו חנניה מישאל ועזריה מברך ברוך אתה יי' אלהינו מלך העולם שעשה נס לצדיקים במקום הזה הרואה מקום שעובדין בו עכו\"ם מברך ברוך אתה יי' אלהינו מלך העולם שנתן ארך אפים לעוברי רצונו מקום שנעקרה ממנו עכו\"ם אם בארץ ישראל הוא מברך שעקר עכו\"ם מארצנו ואם בחוץ לארץ הוא מברך שעקר עכו\"ם ממקום הזה ואומר בשתיהן כשם שעקרת ממקום זה כך תעקר מכל מקומות ותשיב לב עובדיהם לעבדך.\nOn seeing a place where miracles had been wrought for Israel, such as the Red Sea or the fords of the Jordan, which the Israelites crossed with Joshua, one says \"Blessed art Thou, O Lord our God, King of the Universe, Who wroughtest miracles for our fathers in this place.\" This blessing is also said in any place where miracles had been vouchsafed to a multitude. But where a miracle had been vouchsafed to an individual, he, his son, and his grandson, also say the blessing \"Blessed art Thou, O Lord our God, King of the Universe, Who wroughtest miracles for me in this place\" or \"Who wroughtest miracles for my fathers in this place.\" When viewing the lion's den (into which Daniel was cast) or the fiery furnace (into which Chananiah, Mishael and Azariah were thrust), the blessing is recited \"Blessed art Thou, O Lord our God, King of the Universe, Who wroughtest miracles for the righteous at this place.\" When seeing a place where idols are worshipped, the blessing is said, \"Blessed art Thou, O Lord, our God, King of the Universe, who hast been long suffering with those who transgress Thy will.\" When seeing a place from which idolatry has been eradicated, if it is in the Holy Land, the blessing is said \"Who hast uprooted idolatry from our land\"; if it is outside Palestine, \"Who hast uprooted idolatry from this place.\" To both blessings, the petition is added \"Even as Thou hast uprooted idolatry from this place, so do Thou uproot it from all places and turn the heart of idol worshippers to serve Thee.\n\n[7] Mishneh Torah, Blessings 10:13 (Mishneh Torah, Blessings)\nהרואה בריות נאות ומתוקנות ביותר ואילנות טובות מברך שככה לו בעולמו היוצא לשדות או לגנות ביומי ניסן וראה אילנות פורחות וניצנים עולים מברך ברוך אתה יי' אלהינו מלך העולם שלא חיסר בעולמו כלום וברא בו בריות טובות ואילנות טובות ונאות כדי ליהנות בהן בני אדם.\nOn seeing creatures that are beautiful or exceptionally well formed or goodly trees, one says \"Blessed art Thou, O Lord our God, King of the Universe Who hast such as these in the world.\" If one goes out into the fields or gardens during Nisan (i.e. in the Spring) and sees the trees in bud and the flowers in bloom, he says, \"Blessed art Thou, O Lord our God, King of the Universe, Who hast made Thy world lacking in nought, and hast produced therein goodly creatures and good and beautiful trees wherewith to delight the children of men\".\n\nAnswer segments:\n(0) sources=[]: **The blessing on seeing a rainbow**\n\n**The Gemara (Berakhot 59a)** records two formulations. The first: \n(1) sources=[2]: \"Blessed. ..Who remembrest the Covenant.\"\n(2) sources=[]:  Then \n(3) sources=[2]: R. Ishmael, the son of R. Johanan b. Baroka says: [The benediction is, \"Blessed...] Who art faithful with Thy Covenant and fulfillest Thy word.\"\n(5) sources=[2]: Rab Pappa said: Let us therefore say both\n(6) sources=[]: , giving \n(7) sources=[2]: ברוך זוכר הברית ונאמן בבריתו וקיים במאמרו\n(8) sources=[]: .\n\nThe same passage first cites R. Joshua b. Levi, who held that \n(9) sources=[2]: who sees the rainbow should prostrate himself upon his face\n(10) sources=[]: , based on Ezekiel 1:28. However, \n(11) sources=[2]: in the West they curse one who acts thus, because it has the appearance as though he worships the rainbow; but he should certainly pronounce a benediction.\n(12) sources=[]: \n\n**Rambam (Hilkhot Berakhot 10:16)** gives the full formula following Rav Pappa's combination: \n(13) sources=[0]: ברוך אתה יי' אלהינו מלך העולם זוכר הברית ונאמן בבריתו וקיים במאמרו\n(14) sources=[]: .\n\n**Tosafot (Berakhot 59a)** adds that, according to R\"I, \n(15) sources=[1]: we do not say a conclusion for this b'rochoh\n(16) sources=[]: . In other words, there is no closing \"ברוך אתה ה'...\" at the end. Tosafot's wording also differs from the Gemara and Rambam in two ways. It changes the order, and it reads \n(17) sources=[1]: וקיים בשבועתו\n(18) sources=[]:  (\"His oath\") instead of \"במאמרו\" (\"His word\"): \n(19) sources=[1]: נאמן בבריתו וקיים בשבועתו וזוכר הברית\n(20) sources=[]: .\n\nThe sources therefore differ on the exact wording and order. For how to say it in practice, ask your rabbi."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsgzMUiJBcQ9bBRiPZEh",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Framing: Gemara Berakhot 59a gives two formulations of the rainbow blessing, which source 2 supports.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quote from Berakhot 59a.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition word.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quote of R. Ishmael's baraita.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Rab Pappa's statement is quoted accurately.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches the Hebrew of Rav Pappa's combined formula.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Accurate quote of R. Joshua b. Levi's view.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"Ezekiel 1:28 is cited in the source as the basis.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Accurate quote from source 2.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Empty or formatting segment.\"},{\"i\":13,\"verdict\":\"partial\",\"note\":\"Rambam's text is quoted accurately, but the claim that it follows Rav Pappa's combination is the answer's own inference, and the quoted words match only part of the source's wording.\"},{\"i\":14,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Tosafot reports R\\\"I saying that no conclusion is said.\"},{\"i\":16,\"verdict\":\"partial\",\"note\":\"Order change and wording difference are supported, but the claim of no closing 'ברוך אתה ה'' elaborates beyond the source.\"},{\"i\":17,\"verdict\":\"supported\",\"note\":\"Tosafot text contains this phrase.\"},{\"i\":18,\"verdict\":\"supported\",\"note\":\"Oath versus word is a fair gloss of the differing wording.\"},{\"i\":19,\"verdict\":\"supported\",\"note\":\"Accurate quote of Tosafot's formula.\"},{\"i\":20,\"verdict\":\"supported\",\"note\":\"Sources do differ in wording and order; the rabbi advice is a disclaimer.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6001,
+   "output_tokens": 801,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "key": "62602f2ddfb4a11ad0b33768dbaa3e4f",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: האם מניחים תפילין בשבת?\n\nSources:\n[0] Mishneh Torah, Blessings 11:12 (Mishneh Torah, Blessings)\nכיצד לבש תפילין מברך להניח תפילין נתעטף בציצית מברך להתעטף ישב בסוכה מברך לישב בסוכה וכן הוא מברך להדליק נר של שבת ולגמור את הלל וכן אם קבע מזוזה לביתו מברך לקבוע מזוזה עשה מעקה לגגו מברך אשר קדשנו במצותיו וצונו לעשות מעקה הפריש תרומה לעצמו מברך להפריש מל את בנו מברך למול את הבן שחט פסחו וחגיגתו מברך לשחוט.\nFor example, on putting on phylacteries, one says the blessing concluding \"… and commanded us to lay Tephillin (phylacteries)\". When putting on the Tallith (fringed garment), he says the blessing ending \"… to enwrap oneself in the fringed garment.\" On taking a seat in the tabernacle (on the feast of Tabernacles), the blessing to be said ends \"to dwell in the tabernacle\". And so other blessings end \"to kindle the light for the Sabbath\"; to read the Hallel This means to complete the Hallel (Psalms 113-118). (Psalms 113-118) recited on Festivals and on the Feast of Dedication. So too, if a person affixes the Mezuzah, to rooms in his own home, he ends the blessing—\"to affix the Mezuzah .\" If he builds a parapet for his own roof, he says the blessing \"Who hast sanctified us with Thy commandments and commanded us to make a parapet.\" If a person sets aside the priest's dues from his own produce, he says a blessing ending \"to set aside the dues\". If he circumcises his son, the blessing he says ends \"to circumcise the son\". If he slays his own paschal lamb or brings his festival offering, he says the blessing ending \"to slay, etc.\"\n\n[1] Berakhot 18a:1 (Berakhot)\nואין מברכין עליו ואין מזמנין עליו ופטור מקריאת שמע ומן התפלה ומן התפילין ומכל מצות האמורות בתורה ובשבת מיסב ואוכל בשר ושותה יין ומברך ומזמן ומברכין עליו ומזמנין עליו וחייב בכל המצות האמורות בתורה. רשב\"ג אומר מתוך שנתחייב באלו נתחייב בכולן\nnor do others say Grace on his behalf or include him for Zimmun. He is likewise exempt from the reading of the Shema', from Tefillah, Tefillin, and all the commandments mentioned in the Torah. On the Sabbath, however, he may recline at his meal, eat meat and drink wine, say Grace and arrange Zimmun, and others may say Grace on his behalf and include him for Zimmun ; and he is under the obligation of reading the Shema' and Tefillah, and all the commandments mentioned in the Torah. Rabban Simeon b. Gamaliel says : Since he is under the obligation of these, he has obviously the obligation of them all !\n\n[2] Shulchan Arukh, Orach Chayim 31:1 (Shulchan Arukh, Orach Chayim)\nבְּשַׁבָּת וְיוֹם טוֹב אָסוּר לְהָנִיחַ תְּפִלִּין, מִפְּנֵי שֶׁהֵם עַצְמָם אוֹת וְאִם מְנִיחִים בָּהֶם אוֹת אַחֵר, הָיָה זִלְזוּל לָאוֹת שֶׁלָּהֶם.\n\n[3] Tosafot on Berakhot 60b:6:1 (Tosafot on Berakhot)\nאשר קדשנו במצותיו וצונו להניח תפילין - כיון דתחלת הנחתו בזרועו יש לברך להניח אבל בשל ראש מברך על מצות ולא להניח שכבר התחיל והניח אחד מהם ובפ' הקומץ (מנחות לו. ושם) אמר לא סח מברך אחת סח מברך שתים פ\"ה דעל שתי התפילין קאמר דמברך ברכה אחת על שתיהן בלא סח בינתים ודוחק לומר דלא הוצרכו שתי ברכות דלהניח ועל מצות אלא כשסח ועבר עבירה. לכן פר\"ת דעל של ראש שהיא גמר מצוה ועיקר דיש בה ד' בתים ושי\"ן מברך על מצות אבל סח חוזר ומברך שתים על של ראש וכן בשימושא רבא דגאונים ולפר\"ת גבי סח מברך שתים אם יניח של ראש לבד דאין מעכבין זה את זה מברך שתים על של ראש בלבד ומה שלא הזכיר הגמ' על של ראש בלבד מברך שתים לפי שאין רגילות כלל להניח זה בלא זה דתפילין בי בר חבו שכיחי (ב\"מ ד' כט:) וכן פי' רבינו תם בתשובותיו וכן רבינו אלחנן בסדר תקון תפלה שלו כתב כן:\n\n[4] Tosafot on Berakhot 6a:19:1 (Tosafot on Berakhot)\nאלו תפילין שבראש - לפי שיש בהן רוב שם של שדי שהשי\"ן כתובה בקמט שבבתים והדלי\"ת ברצועות. ותימא משבת פרק במה מדליקין (שבת דף כח ב) דקאמר מן המותר בפיך ולא מפיק רצועות מתורת ה' בפיך. ועוד דבפ' בתרא דמגילה (דף כו ב) קרי לרצועות תשמישי קדושה בעלמא. אלא י\"ל אלו תפילין שבראש לפי שהן בגבהו של ראש ונראין דשייך בהו וראו אבל תפילין של יד מכוסין דכתיב (שמות י״ג:ט׳) לך לאות על ידך ולא לאחרים לאות:\n\n[5] Rashi on Berakhot 9b:13:1 (Rashi on Berakhot)\nלתפילין – להניח תפילין שמצות הנחתן קודם קרית שמע בפ' שני (ד' יד:):\n\n[6] Mishneh Torah, Prayer and the Priestly Blessing 12:2 (Mishneh Torah, Prayer and the Priestly Blessing)\nואלו הן הימים שקורין בהם בתורה בציבור בשבתות ובמועדים ובראשי חדשים ובתעניות ובחנוכה ובפורים ובשני וחמישי שבכל שבוע ושבוע ואין מפטירין בנביאים אלא בשבתות וימים טובים ותשעה באב בלבד.\nThe following are the days on which the Law is publicly read: Sabbaths, Festivals, the first day of each month, Fast-days, the Feast of Dedication, the Feast of Lots, the second and fifth day of the week. Lessons from the Prophets are only read on Sabbaths, Festivals and the ninth day of Ab.\n\n[7] Shulchan Arukh, Orach Chayim 30:2 (Shulchan Arukh, Orach Chayim)\nאָסוּר לְהָנִיחַ תְּפִלִּין בַּלַּיְלָה, שֶׁמָּא יִשְׁכְּחֵם וְיִישַׁן בָּהֶם. אִם הֵנִיחָם קֹדֶם שֶׁתִּשְׁקַע הַחַמָּה וְחָשְׁכָה עָלָיו, אֲפִלּוּ הֵם עָלָיו כָּל הַלַּיְלָה, מֻתָּר, וְאֵין מוֹרִין כֵּן. אִם לֹא חָלַץ תְּפִלִּין מִשֶּׁשָּׁקְעָה חַמָּה מִפְּנֵי שֶׁלֹּא הָיָה מָקוֹם לְשָׁמְרָן, וְנִמְצְאוּ עָלָיו כְּדֵי לְשָׁמְרָן, מֻתָּר, וּמוֹרִין כֵּן.\n\nAnswer segments:\n(0) sources=[]: לפי המקורות שלפנינו, **השולחן ערוך** קובע במפורש: \n(1) sources=[2]: \"בְּשַׁבָּת וְיוֹם טוֹב אָסוּר לְהָנִיחַ תְּפִלִּין, מִפְּנֵי שֶׁהֵם עַצְמָם אוֹת וְאִם מְנִיחִים בָּהֶם אוֹת אַחֵר, הָיָה זִלְזוּל לָאוֹת שֶׁלָּהֶם.\"\n(2) sources=[]: \n\n**הנימוק:** שבת ויום טוב הם עצמם \"אות\", ולכן הנחת תפילין, שהן \"אות\" אחר, הייתה פוגעת בכבוד האות של היום.\n\n**רקע למושג \"אות\" בתפילין:** תוספות על ברכות ו. מסבירים שתפילין של ראש הן אלה שנאמר עליהן \"וראו\", \n(3) sources=[4]: לפי שהן בגבהו של ראש ונראין דשייך בהו וראו אבל תפילין של יד מכוסין דכתיב (שמות י״ג:ט׳) לך לאות על ידך ולא לאחרים לאות\n(4) sources=[]: . מקור זה אינו עוסק בשבת, אך מבהיר שהתפילין מתוארות כ\"אות\".\n\n**הערה על מקור שעלול להטעות:** הגמרא בברכות יח. אומרת שבשבת \n(5) sources=[1]: חייב בכל המצות האמורות בתורה\n(6) sources=[]: . אולם הקטע עוסק באונן (מי שמתו מוטל לפניו), שבימות החול פטור מתפילין וממצוות אחרות. הוא אינו קובע שמניחים תפילין בשבת, ואין בו כדי לסתור את דברי השולחן ערוך.\n\n**דין קרוב:** השולחן ערוך אוסר גם להניח תפילין בלילה. הטעם שם שונה: \n(7) sources=[7]: שֶׁמָּא יִשְׁכְּחֵם וְיִישַׁן בָּהֶם\n(8) sources=[]: .\n\nלשאלות מעשיות כדאי לפנות לרב."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsguafLaWsUZGCeoA6rN",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Shulchan Arukh 31:1 explicitly states the prohibition; framing is accurate.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quotation of Shulchan Arukh OC 31:1.\"},{\"i\":2,\"verdict\":\"partial\",\"note\":\"Reasoning follows source 2, though 'כבוד האות של היום' is paraphrase. But Tosafot Berakhot 6a is cited, claim about 'וראו' for head tefillin is supported.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quote from Tosafot Berakhot 6a.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Tosafot passage doesn't discuss Shabbat and describes tefillin as 'ot'.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Quoted from Berakhot 18a: on Shabbat he is obligated in all commandments.\"},{\"i\":6,\"verdict\":\"partial\",\"note\":\"Source concerns a mourner (onen) exempt from tefillin; the text doesn't say it doesn't contradict; the interpretive claim is reasonable but source's mourner wording is implicit.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Shulchan Arukh 30:2 prohibits tefillin at night, with a different reason.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Accurate quote of the reason.\"},{\"i\":9,\"verdict\":\"no_claim\",\"note\":\"Disclaimer advising to consult a rabbi.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4301,
+   "output_tokens": 533,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

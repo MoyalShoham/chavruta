@@ -1,0 +1,93 @@
+{
+ "key": "fb02c51bb4bc184fe6fd500090b80489",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: האם צריך להתגבר כארי לעמוד בבוקר לעבודת הבורא?\n\nSources:\n[0] Shulchan Arukh, Orach Chayim 1:1 (Shulchan Arukh, Orach Chayim)\nיִתְגַּבֵּר כַּאֲרִי לַעֲמֹד בַּבֹּקֶר לַעֲבוֹדַת בּוֹרְאוֹ שֶׁיְּהֵא הוּא מְעוֹרֵר הַשַּׁחַר: הַגָּה: וְעַל כָּל פָּנִים לֹא יְאַחֵר זְמַן הַתְּפִלָּה שֶׁהַצִּבּוּר מִתְפַּלְּלִין. (טוּר) הַגָּה: שִׁוִּיתִי ה' לְנֶגְדִּי תָמִיד הוּא כְּלָל גָּדוֹל בַּתּוֹרָה וּבְמַעֲלוֹת הַצַּדִּיקִים אֲשֶׁר הוֹלְכִים לִפְנֵי הָאֱלֹהִים, כִּי אֵין יְשִׁיבַת הָאָדָם וּתְנוּעוֹתָיו וַעֲסָקָיו וְהוּא לְבַדּוֹ בְּבֵיתוֹ כִּישִׁיבָתוֹ וּתְנוּעוֹתָיו וַעֲסָקָיו וְהוּא לִפְנֵי מֶלֶךְ גָּדוֹל, וְלֹא דִּבּוּרוֹ וְהַרְחָבַת פִּיו כִּרְצוֹנוֹ וְהוּא עִם אַנְשֵׁי בֵּיתוֹ וּקְרוֹבָיו כְּדִבּוּרוֹ בְּמוֹשַׁב הַמֶּלֶךְ, כָּל שֶׁכֵּן כְּשֶׁיָּשִׂים הָאָדָם אֶל לִבּוֹ שֶׁהַמֶּלֶךְ הַגָּדוֹל הָקָּבָּ\"ה אֲשֶׁר מְלֹא כָל הָאָרֶץ כְּבוֹדוֹ עוֹמֵד עָלָיו וְרוֹאֶה בְּמַעֲשָׂיו, כְּמוֹ שֶׁנֶּאֱמַר: אִם יִסָּתֵר אִישׁ בַּמִּסְתָּרִים וַאֲנִי לֹא אֶרְאֶנּוּ נְאֻם ה', מִיָּד יַגִּיעַ אֵלָיו הַיִּרְאָה וְהַהַכְנָעָה וּפַחַד ה' יִתְבָּרַךְ וּבָשְׁתּוֹ מִמֶּנּוּ תָּמִיד (מוֹרֵה נְבוֹכִים ח\"ג פ' כ\"ב) וְלֹא יִתְבַּיֵּשׁ מִפְּנֵי בְּנֵי אָדָם הַמַּלְעִיגִים עָלָיו בַּעֲבוֹדַת ה' יִתְבָּרַךְ גַּם בְּהֶצְנֵעַ לֶכֶת. וּבְשָׁכְבּוֹ עַל מִשְׁכָּבוֹ יֵדַע לִפְנֵי מִי הוּא שׁוֹכֵב, וּמִיָּד כְּשֶׁיֵּעוֹר מִשְּׁנָתוֹ יָקוּם בִּזְרִיזוּת לַעֲבוֹדַת בּוֹרְאוֹ יִתְעַלֶּה וְיִתְרוֹמֵם (טוּר) .\n\n[1] Berakhot 3b:22 (Berakhot)\nרבי זירא אמר עד חצות לילה היה מתנמנם כסוס מכאן ואילך היה מתגבר כארי רב אשי אמר עד חצות לילה היה עוסק בדברי תורה מכאן ואילך בשירות ותשבחות.\nR. Zera said : Until midnight David used to slumber like a horse, but from thence he grew strong like a lion. Rab Ashe said : Until midnight he was occupied with words of Torah, but from thence with psalms and praises.\n\n[2] Numbers 24:9 (Numbers)\nכָּרַ֨ע שָׁכַ֧ב כַּאֲרִ֛י וּכְלָבִ֖יא מִ֣י יְקִימֶ֑נּוּ מְבָרֲכֶ֣יךָ בָר֔וּךְ וְאֹרְרֶ֖יךָ אָרֽוּר׃\nHe couched, he lay down as a lion, And as a lioness; who shall rouse him up? Blessed be every one that blesseth thee, And cursed be every one that curseth thee.\n\n[3] Shulchan Arukh, Orach Chayim 208:14 (Shulchan Arukh, Orach Chayim)\nשָׁתָה יַיִן וּבֵרַךְ בּוֹרֵא פְּרִי הַגֶּפֶן וְאָכַל עֲנָבִים, צָרִיךְ לְבָרֵךְ עֲלֵיהֶם בּוֹרֵא פְּרִי הָעֵץ; וְכֵן בִּבְרָכָה אַחֲרוֹנָה צָרִיךְ לְהַזְכִּיר עַל הָעֵץ וְעַל פְּרִי הָעֵץ.\n\n[4] Shulchan Arukh, Orach Chayim 63:6 (Shulchan Arukh, Orach Chayim)\nהַקּוֹרֵא קְרִיאַת שְׁמַע, לֹא יִרְמֹז בְּעֵינָיו, וְלֹא יִקְרֹץ בִּשְׂפָתָיו, וְלֹא יַרְאֶה בְּאֶצְבְּעוֹתָיו בְּפָרָשָׁה רִאשׁוֹנָה שֶׁהוּא עִקַּר קַבָּלַת עֹל מַלְכוּת שָׁמַיִם, מִפְּנֵי שֶׁנִּרְאֶה כְּקוֹרֵא עֲרַאי, וּכְתִיב וְדִבַּרְתָּ בָּם, וְדַרְשִׁינָן עֲשֵׂה אוֹתָם קֶבַע.\n\n[5] Mishnah Berakhot 1:2 (Mishnah Berakhot)\nמֵאֵימָתַי קוֹרִין אֶת שְׁמַע בְּשַׁחֲרִית. מִשֶּׁיַּכִּיר בֵּין תְּכֵלֶת לְלָבָן. רַבִּי אֱלִיעֶזֶר אוֹמֵר, בֵּין תְּכֵלֶת לְכַרְתִּי. וְגוֹמְרָהּ עַד הָנֵץ הַחַמָּה. רַבִּי יְהוֹשֻׁעַ אוֹמֵר, עַד שָׁלֹשׁ שָׁעוֹת, שֶׁכֵּן דֶּרֶךְ בְּנֵי מְלָכִים לַעֲמֹד בְּשָׁלֹשׁ שָׁעוֹת. הַקּוֹרֵא מִכָּאן וְאֵילָךְ לֹא הִפְסִיד, כְּאָדָם הַקּוֹרֵא בַתּוֹרָה:\nFrom what time may one recite the Shema in the morning? From the time that one can distinguish between blue and white. Rabbi Eliezer says: between blue and green. And he must finish it by sunrise. Rabbi Joshua says: until the third hour of the day, for such is the custom of the children of kings, to rise at the third hour. If one recites the Shema later he loses nothing, like one who reads in the Torah.\n\n[6] Rashi on Berakhot 13b:16:1 (Rashi on Berakhot)\nבעמידה – אפילו לב\"ה דאמרי [לעיל (ברכות יא.)] עוסקין במלאכתן וקורין ומהלכין וקורין מודים הם שצריך לעמוד במקום אחד עד המקרא הזה לפי שעד כאן מצות כוונה:\n\n[7] Shulchan Arukh, Orach Chayim 58:6 (Shulchan Arukh, Orach Chayim)\nאַף עַל פִּי שֶׁזְּמַנָּהּ נִמְשָׁךְ עַד סוֹף הַשָּׁעָה הַג', אִם עָבְרָה שָׁעָה ג' וְלֹא קְרָאָהּ, קוֹרֵא אוֹתָהּ בְּבִרְכוֹתֶיהָ כָּל שָׁעָה ד' שֶׁהוּא שְׁלִישׁ הַיּוֹם, וְאֵין לוֹ שָׂכָר כְּקוֹרֵא בִּזְמַנָּהּ. וְאִם עָבְרָה שָׁעָה ד' וְלֹא קְרָאָהּ, קוֹרְאָהּ בְּלֹא בִּרְכוֹתֶיהָ כָּל הַיּוֹם.\n\nAnswer segments:\n(0) sources=[]: **מה אומרים המקורות**\n\n**השולחן ערוך (או\"ח א:א)** פותח בלשון זו: \n(1) sources=[0]: \"יִתְגַּבֵּר כַּאֲרִי לַעֲמֹד בַּבֹּקֶר לַעֲבוֹדַת בּוֹרְאוֹ שֶׁיְּהֵא הוּא מְעוֹרֵר הַשַּׁחַר\"\n(2) sources=[]: .\n\n**הרמ\"א** מוסיף שם כמה דברים:\n- ממתן את הדרישה: \n(3) sources=[0]: \"וְעַל כָּל פָּנִים לֹא יְאַחֵר זְמַן הַתְּפִלָּה שֶׁהַצִּבּוּר מִתְפַּלְּלִין\"\n(4) sources=[]: .\n- מביא את היסוד \"שִׁוִּיתִי ה' לְנֶגְדִּי תָמִיד\". לדבריו, כשאדם שם אל לבו שהקב\"ה \n(5) sources=[0]: \"עוֹמֵד עָלָיו וְרוֹאֶה בְּמַעֲשָׂיו\"\n(6) sources=[]: , מגיעה אליו היראה. משם הוא מגיע לקימה: \n(7) sources=[0]: \"וּמִיָּד כְּשֶׁיֵּעוֹר מִשְּׁנָתוֹ יָקוּם בִּזְרִיזוּת לַעֲבוֹדַת בּוֹרְאוֹ\"\n(8) sources=[]: .\n- מוסיף שאדם \n(9) sources=[0]: \"לֹא יִתְבַּיֵּשׁ מִפְּנֵי בְּנֵי אָדָם הַמַּלְעִיגִים עָלָיו בַּעֲבוֹדַת ה'\"\n(10) sources=[]: .\n\n**הרקע בגמרא (ברכות ג:)** הלשון \"מתגבר כארי\" מופיעה שם בתיאור לילותיו של דוד, ונאמרו בכך שתי דעות:\n- **ר' זירא:** \n(11) sources=[1]: \"עד חצות לילה היה מתנמנם כסוס מכאן ואילך היה מתגבר כארי\"\n(12) sources=[]: .\n- **רב אשי:** \n(13) sources=[1]: \"עד חצות לילה היה עוסק בדברי תורה מכאן ואילך בשירות ותשבחות\"\n(14) sources=[]: .\n\n**לסיכום:** בשולחן ערוך ההתגברות כארי מוצגת כפתיחה לעבודת היום. הרמ\"א מעגן אותה בתודעת עמידה לפני ה', ומציב כרף מינימלי את זמן תפילת הציבור.\n\nמה זה מחייב אותך למעשה, למשל באיזו שעה לקום, זו שאלה לרב."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsgtXiSy2EvW3ZuAEA8Y",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"no_claim\",\"note\":\"Heading only.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quote of Shulchan Arukh OC 1:1.\"},{\"i\":2,\"verdict\":\"partial\",\"note\":\"Rema adding things is supported, but 'ממתן את הדרישה' (softens the demand) is interpretation not in the source.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quote of the Rema's gloss.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Rema's gloss on 'שויתי' and awareness of God seeing him is in the source.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Accurate quote from the Rema.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Source says fear reaches him immediately, and then rising with alacrity follows.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Accurate quote.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Accurate quote about not being ashamed of mockers.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Accurate quote of R. Zera in Berakhot 3b, about David.\"},{\"i\":12,\"verdict\":\"supported\",\"note\":\"The two opinions are in Berakhot 3b, as the source shows.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Accurate quote of Rav Ashi.\"},{\"i\":14,\"verdict\":\"partial\",\"note\":\"Summary that the Rema sets the community prayer time as a minimum is reasonable, but 'opening the day's service' is interpretive.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4973,
+   "output_tokens": 597,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

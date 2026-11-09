@@ -1,0 +1,93 @@
+{
+ "key": "4c0e7724ea33473e147fe173e80e2c69",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: איפה כתוב ודברת בם בשבתך בביתך ובלכתך בדרך?\n\nSources:\n[0] Deuteronomy 6:7 (Deuteronomy)\nוְשִׁנַּנְתָּ֣ם לְבָנֶ֔יךָ וְדִבַּרְתָּ֖ בָּ֑ם בְּשִׁבְתְּךָ֤ בְּבֵיתֶ֙ךָ֙ וּבְלֶכְתְּךָ֣ בַדֶּ֔רֶךְ וּֽבְשָׁכְבְּךָ֖ וּבְקוּמֶֽךָ׃\nand thou shalt teach them diligently unto thy children, and shalt talk of them when thou sittest in thy house, and when thou walkest by the way, and when thou liest down, and when thou risest up.\n\n[1] Berakhot 16a:20 (Berakhot)\nחתן פטור מק\"ש: תנו רבנן בשבתך בביתך פרט לעוסק במצוה ובלכתך בדרך פרט לחתן מכאן אמרו הכונס את הבתולה פטור ואת האלמנה חייב\nA bridegroom is exempt from the obligation of reading the Shema'. Our Rabbis have taught : \"When thou sittest in thy house\" (Deut. vi. 7) excludes one occupied with a religious duty ; \"and when thou walkest by the way\" (ibid.) excludes a bridegroom. Hence they say : He who takes a virgin to his house as wife is exempt ; but if he marry a widow, he has that obligation.\n\n[2] Berakhot 11a:4 (Berakhot)\nההוא מבעי להו לכדתניא בשבתך בביתך פרט לעוסק במצוה ובלכתך בדרך פרט לחתן מכאן אמרו הכונס את הבתולה פטור ואת האלמנה חייב\nThis is required in accordance with the teaching : \" When thou sittest in thy house\" excludes one occupied with a religious duty; \"and when thou walkest by the way\" excludes a bridegroom. Hence they say : He who takes a virgin to his house as wife is exempt [from the obligation of reading the Shema' on the night of his marriage] ; but if he marry a widow, he has that obligation.\n\n[3] Rashi on Berakhot 16a:20:1 (Rashi on Berakhot)\nבשבתך בביתך פרט לעוסק במצוה – כבר פירשתיה בפרק ראשון (דף יא.):\n\n[4] Berakhot 10b:38 (Berakhot)\nובית הלל אומרים כל אדם קורא כדרכו שנאמר ובלכתך בדרך\nBut Bet Hillel say : A man reads it after his own manner; as it is said, \"And when thou walkest by the way\" (ibid.).\n\n[5] Deuteronomy 11:19 (Deuteronomy)\nוְלִמַּדְתֶּ֥ם אֹתָ֛ם אֶת־בְּנֵיכֶ֖ם לְדַבֵּ֣ר בָּ֑ם בְּשִׁבְתְּךָ֤ בְּבֵיתֶ֙ךָ֙ וּבְלֶכְתְּךָ֣ בַדֶּ֔רֶךְ וּֽבְשָׁכְבְּךָ֖ וּבְקוּמֶֽךָ׃\nAnd ye shall teach them your children, talking of them, when thou sittest in thy house, and when thou walkest by the way, and when thou liest down, and when thou risest up.\n\n[6] Rashi on Berakhot 11a:6:1 (Rashi on Berakhot)\nכי דרך – בשבתך ובלכתך הוקשו לדרך:\n\n[7] Berakhot 11a:7 (Berakhot)\nמי לא עסקינן דקא אזיל לדבר מצוה ואפילו הכי אמר רחמנא לקרי אם כן לכתוב רחמנא בשבת ובלכת מאי בשבתך ובלכתך בשבת דידך ובלכת דידך הוא דמחייבת הא דמצוה פטירת\nAre we not here dealing with one who is on his way to perform a religious duty, and even so, the All-merciful requires of him the reading [of the Shema']? In that case, the All-merciful should have written \"when sitting and when walking.\" What means \"when thou sittest and when thou walkest\"? When sitting for thine own purpose and when walking for thine own purpose, thou art under the obligation [to read the Shema'] ; but when it is the performance of a religious duty, thou art exempt.\n\nAnswer segments:\n(0) sources=[]: הפסוק הוא **דברים ו:ז**, בפרשת \"שמע\":\n\n\n(1) sources=[0]: וְשִׁנַּנְתָּ֣ם לְבָנֶ֔יךָ וְדִבַּרְתָּ֖ בָּ֑ם בְּשִׁבְתְּךָ֤ בְּבֵיתֶ֙ךָ֙ וּבְלֶכְתְּךָ֣ בַדֶּ֔רֶךְ וּֽבְשָׁכְבְּךָ֖ וּבְקוּמֶֽךָ׃\n(2) sources=[]: \n\n**לשון דומה בדברים יא:יט** (בפרשת \"והיה אם שמוע\"), אלא שכאן כתוב \"לְדַבֵּר בָּם\" ולא \"וְדִבַּרְתָּ בָּם\":\n\n(3) sources=[5]: וְלִמַּדְתֶּ֥ם אֹתָ֛ם אֶת־בְּנֵיכֶ֖ם לְדַבֵּ֣ר בָּ֑ם בְּשִׁבְתְּךָ֤ בְּבֵיתֶ֙ךָ֙ וּבְלֶכְתְּךָ֣ בַדֶּ֔רֶךְ...\n(4) sources=[]: \n\n**הפסוק בגמרא (מסכת ברכות):**\n- בברכות יא ע\"א ובברכות טז ע\"א מובאת ברייתא שדורשת את הפסוק לפטורים מקריאת שמע: \n(5) sources=[2]: בשבתך בביתך פרט לעוסק במצוה ובלכתך בדרך פרט לחתן מכאן אמרו הכונס את הבתולה פטור ואת האלמנה חייב\n(6) sources=[]: .\n- הגמרא מסבירה את הדרשה מתוך הכינוי \"שלך\": \n(7) sources=[7]: מאי בשבתך ובלכתך בשבת דידך ובלכת דידך הוא דמחייבת הא דמצוה פטירת\n(8) sources=[]: .\n- בברכות י ע\"ב בית הלל לומדים מאותו פסוק לגבי אופן הקריאה: \n(9) sources=[4]: כל אדם קורא כדרכו שנאמר ובלכתך בדרך\n(10) sources=[]: .\n\nרוצה שנעיין יחד באחת מהדרשות האלה?"
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsgXtRZ9uL5yMDSKfpEt",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"partial\",\"note\":\"Deut 6:7 is supported; the claim it is in the 'Shema' section is not stated in sources.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Quotes Deuteronomy 6:7 exactly.\"},{\"i\":2,\"verdict\":\"partial\",\"note\":\"Deut 11:19 wording 'לדבר בם' is supported; the parashah name 'והיה אם שמוע' is not in the sources.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches Deuteronomy 11:19 text.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Berakhot 11a and 16a both cite the baraita on exemptions from Shema.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches the baraita in Berakhot 11a:4.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Punctuation fragment only.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches Berakhot 11a:7 explanation.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Punctuation fragment only.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches Berakhot 10b: Beit Hillel learn from the verse that one reads in one's own manner.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Punctuation fragment only.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3052,
+   "output_tokens": 475,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

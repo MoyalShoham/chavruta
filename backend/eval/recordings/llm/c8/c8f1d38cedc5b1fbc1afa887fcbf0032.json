@@ -1,0 +1,93 @@
+{
+ "key": "c8f1d38cedc5b1fbc1afa887fcbf0032",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Do I need to wash my hands before eating bread?\n\nSources:\n[0] Mishneh Torah, Blessings 6:1 (Mishneh Torah, Blessings)\nכל האוכל הפת שמברכין עליו המוציא צריך נטילת ידים תחלה וסוף ואע\"פ שהיא פת חולין ואף על פי שאין ידיו מלוכלכות ואינו יודע להן טומאה לא יאכל עד שיטול שתי ידיו וכן כל דבר שטיבולו במשקין צריך נטילת ידים תחילה.\nWhen one eats that kind of bread, the blessing for which is \"Who bringest forth bread from the earth\", he must wash his hands before and after the meal. Even if it is unconsecrated bread and his hands are free from dirt and he is not aware of any uncleanliness attaching to them, he should not eat till he has washed his hands. Similarly any food that is dipped in liquids requires previous washing of the hands.\n\n[1] Mishneh Torah, Blessings 6:3 (Mishneh Torah, Blessings)\nנטילת ידים בין תבשיל לתבשיל רשות רצה נוטל רצה אינו נוטל ופירות של חולין אינן צריכין נטילת ידים בין בתחלה בין בסוף וכל הנוטל ידיו לפירות הרי זה מגסי הרוח כל פת שהמלח בו צריך נטילת ידים באחרונה שמא יש בו מלח סדומית או מלח שטבעו כמלח סדומית ויעביר ידיו על עיניו ויסמא מפני זה חייבין ליטול ידים בסוף כל סעודה מפני המלח ובמחנה פטורים מנטילת ידים בתחלה מפני שהן טרודים במלחמה וחייבין באחרונה מפני הסכנה.\nWashing of the hands between the courses is permissive; a person may wash or refrain from doing so, as he pleases. Fruit that is unconsecrated does not require washing of the hands either before or after being eaten; and anyone who washes his hands for fruit belongs to the class of the arrogant. All bread that has salt in it requires washing of the hands at the end of the meal, for it may contain Salt of Sodom or salt with similar properties, and a person after eating such bread may pass his hands over his eyes and lose his sight. Hence the obligation to wash the hands at the end of each meal, on account of the salt. Soldiers in camp are dispensed from the duty of washing their hands before meals as their minds are preoccupied. But they are under the obligation of washing their hands after meals as a precaution against risk to health.\n\n[2] Mishneh Torah, Blessings 6:18 (Mishneh Torah, Blessings)\nלט אדם את ידיו במפה ואוכל בהן פת או דבר שטיבולו במשקה אע\"פ שלא נטל ידיו המאכיל לאחרים אינו צריך נטילת ידים והאוכל צריך נטילת ידים אף על פי שאחר נותן לתוך פיו ואינו נוגע במאכל והוא הדין לאוכל במגריפה שצריך נטילת ידים.\nA person may wrap his hands in a napkin and eat bread or other food that is dipped in a liquid, even if he had not washed his hands. An individual, feeding another individual, need not wash his hands. But the one fed has to wash his hands, even if another individual puts the food into his mouth while he does not touch it. Likewise a person who uses a fork has to wash his hands.\n\n[3] Mishneh Torah, Blessings 6:20 (Mishneh Torah, Blessings)\nצריך אדם לנגב את ידיו ואח\"כ יאכל וכל האוכל בלא ניגוב ידים כאוכל לחם טמא וכל הנוטל ידיו באחרונה מנגב ואח\"כ מברך ותכף לנטילת ידים ברכת המזון לא יפסיק ביניהם בדבר אחר אפילו לשתות מים אחר שנוטל ידיו באחרונה אסור עד שיברך ברכת המזון.\nThe hands are to be dried first and then the meal is to be begun. To eat without having dried one's hands is the same as partaking of bread that is unclean. Anyone who washes his hands after a meal dries them and then says Grace. Immediately after washing the hands, Grace should follow without interruption. After having washed the hands at the close of a meal, it is forbidden even to drink water till Grace has been recited.\n\n[4] Berakhot 52b:18 (Berakhot)\nת\"ר בש\"א מכבדין את הבית ואחר כך נוטלין לידים שאם אתה אומר נוטלין לידים תחלה נמצא אתה מפסיד את האוכלין אבל נט\"י לב\"ש תחלה לא סבירא להו מ\"ט משום פירורין\nOur Rabbis have taught : Bet Shammai say : They clear up and then we wash the hands [before Grace] ; for if thou sayest that we wash the hands first, the consequence may be that thou wilt spoil some food. (Bet Shammai do not hold that the washing of the hands comes first. What is the reason? On account of the pieces of breads.)\n\n[5] Tosafot on Berakhot 53b:32:1 (Tosafot on Berakhot)\nוהייתם קדושים אלו מים אחרונים - דוקא להם שהיו רגילין ליטול ידיהם אחר הסעודה מפני מלח סדומית אבל אנו שאין מלח סדומית מצוי בינינו ואין אנו רגילין ליטול אחר הסעודה אין הנטילה מעכבת עלינו לברך ומיהו אנשים מעונגים הרגילין ליטול ידיהן אחר הסעודה ודאי להם מעכבת הנטילה לברך ברכת המזון וצריכים ליטול את ידיהם קודם בהמ\"ז:\nAND YOU SHALL BE HOLY, THESE ARE THE FINAL WATERS. It seems from Tosfos that it was not the common custom to wash one’s hand at the end of the meal. From the Gemara it is quite clear that it is required and as long as one does not wash his hands he may not recite birchas hamozon. Tosfos wishes to reconcile the custom of his time with the Gemara. It is exclusively for the times of the Gemara that they regularly washed their hands after the meal because of the possibility that some of the salt may have come from S’dom and it would be harmful if one would not wash his hands after the meal. However, we who do not have S’dom salt available in our hands and we therefore we do not regularly wash our hands after the meal, the lack of washing does not prevent us from reciting birchas hamozon. However, fastidious people who regularly wash their hands after the meal, for them, not washing one’s hands definitely prevents them from reciting birchas hamozon and they must wash their hands before birchas hamozon.\n\n[6] Mishneh Torah, Blessings 6:17 (Mishneh Torah, Blessings)\nנוטל אדם ידיו שחרית ומתנה עליהן כל היום ואינו צריך ליטול את ידיו לכל אכילה ואכילה והוא שלא יסיח דעתו מהן אבל אם הסיח דעתו מהן צריך ליטול ידיו בכל עת שצריך נטילה.\nA person may wash his hands in the morning and make a condition with himself that this shall be the ablution for the entire day, and then he need not wash his hands for each meal—provided however that he does not allow his mind to become at any time oblivious of the intent to keep his hands clean. Should he have become oblivious, he has to wash his hands each time when this would ordinarily be required.\n\n[7] Mishneh Torah, Blessings 7:9 (Mishneh Torah, Blessings)\nאין מניחין בשר חי על הפת ואין מעבירין כוס מלא על הפת ואין סומכין את הקערה בפת ואין זורקין את הפת ולא את החתיכות ולא את האוכלין שאין להן קליפין כגון תותים וענבים ותאנים מפני שהן נמאסין ומותר למשוך את היין בצינורות בבתי חתנים וזורקין לפניהם קליות ואגוזים בימות החמה אבל לא בימות הגשמים מפני שנמאסין ואין נוטלין ידיהן ביין בין חי בין מזוג וכן אין מפסידין שאר אוכלין ומשקין דרך בזוי ובעיטה.\nRaw meat is not to be put on bread. A full cup of wine is not to be passed over bread. A dish should not be supported with a slice (or loaf) of bread. Bread must not be thrown. Nor should this be done with pieces of food, or with food that is without a shell, such as mulberries, grapes, figs, because they are thus rendered nauseous. Wine may be drawn through pipes in houses where wedding festivities are taking place. Parched corn and nuts may be flung in front of a bridal couple, but only in summer and not in winter, for then they would become nauseous. The hands may not be washed in wine, whether it be pure or diluted. So too no kind of food or drink may be spoilt by being handled contemptuously or roughly.\n\nAnswer segments:\n(0) sources=[]: The sources here are all from the Rambam's Mishneh Torah, so this is his view. For practical guidance, ask your rabbi.\n\n**The basic rule:** According to the Rambam, \n(1) sources=[0]: when one eats that kind of bread, the blessing for which is \"Who bringest forth bread from the earth\", he must wash his hands before and after the meal.\n(2) sources=[]:  This applies \n(3) sources=[0]: even if it is unconsecrated bread and his hands are free from dirt and he is not aware of any uncleanliness attaching to them\n(4) sources=[]: . In his words: \n(5) sources=[0]: לא יאכל עד שיטול שתי ידיו\n(6) sources=[]: , \"he should not eat till he has washed both his hands.\"\n\n**Details the Rambam adds:**\n- **Drying:** \n(7) sources=[3]: The hands are to be dried first and then the meal is to be begun. To eat without having dried one's hands is the same as partaking of bread that is unclean.\n(8) sources=[]: \n- **Not touching the food doesn't exempt you:** \n(9) sources=[2]: the one fed has to wash his hands, even if another individual puts the food into his mouth while he does not touch it. Likewise a person who uses a fork has to wash his hands.\n(10) sources=[]: \n- **A napkin:** Yet \n(11) sources=[2]: a person may wrap his hands in a napkin and eat bread or other food that is dipped in a liquid, even if he had not washed his hands.\n(12) sources=[]: \n- **A morning condition:** \n(13) sources=[6]: A person may wash his hands in the morning and make a condition with himself that this shall be the ablution for the entire day\n(14) sources=[]: . This works only if his mind stays on keeping his hands clean. Otherwise he must wash again.\n\n**A side note on washing after the meal:** The sources differ on this. The Rambam links it to the danger of \"Salt of Sodom.\" Tosafot holds that \n(15) sources=[5]: we who do not have S'dom salt available\n(16) sources=[]:  are not held back from saying Grace if we haven't washed. The exception is people who regularly wash after meals."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsgxZLY3KujktkNNdyEg",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Sources shown are all Mishneh Torah except Berakhot and Tosafot; the claim 'all from Rambam' is inaccurate, though the rest is a disclaimer.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Matches source 0 closely.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition phrase.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches source 0.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Hebrew quote appears in source 0.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Faithful translation of the quoted Hebrew phrase.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches source 3.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Empty.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches source 2.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Matches source 2.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Empty.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Matches source 6.\"},{\"i\":14,\"verdict\":\"supported\",\"note\":\"Source 6 states the proviso about not forgetting and washing again.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Source 5 says this; Rambam's salt link is in source 1.\"},{\"i\":16,\"verdict\":\"supported\",\"note\":\"Source 5 states lack of washing doesn't prevent Grace, except for fastidious people who regularly wash.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4503,
+   "output_tokens": 583,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

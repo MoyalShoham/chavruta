@@ -1,0 +1,93 @@
+{
+ "key": "b55e7992415010edcbc39240395fe54a",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: האם צריך לכסות את העיניים בפסוק הראשון של שמע?\n\nSources:\n[0] Mishneh Torah, Reading the Shema 2:8 (Mishneh Torah, Reading the Shema)\nהקורא קריאת שמע לא ירמוז בעיניו ולא יקרוץ בשפתיו ולא יראה באצבעותיו כדי שלא תהיה קריאתו עראי ואם עשה כן אף על פי שיצא ידי חובתו הרי זה מגונה וצריך להשמיע לאזנו כשהוא קורא ואם לא השמיע לאזנו יצא וצריך לדקדק באותיותיו ואם לא דקדק יצא.\nWhile reading the Shema, one must not wink with the eyes, signal with the lips, or point with the fingers, so that his recital shall not be perfunctory. If he did any of these things, he has, though fulfilling his duty, been guilty of unbecoming conduct. A person should read the Shema so that the words are audible to himself. If he has not done so, he has nevertheless fulfilled his duty. He should enunciate the letters distinctly. If he has not done so, he has nevertheless fulfilled his duty.\n\n[1] Mishneh Torah, Reading the Shema 2:1 (Mishneh Torah, Reading the Shema)\nהקורא את שמע ולא כיון לבו בפסוק ראשון שהוא שמע ישראל לא יצא ידי חובתו והשאר אם לא כיון לבו יצא אפי' היה קורא בתורה כדרכו או מגיה את הפרשיות האלו בעונת קריאה יצא והוא שכיון לבו בפסוק ראשון.\nOne who reads the Shema and does not concentrate his mind while reciting the first verse—\"Hear, O Israel, the Lord, our God, the Lord is One,\" has not fulfilled his duty. As to the remaining verses, if he did not concentrate his mind (while reciting them), he has nevertheless fulfilled his duty. Even if he was reading the Torah in his usual course of study or examining these sections in a scroll (to ensure correctness), and read them at the prescribed time, he has fulfilled his duty, provided however that he concentrated his mind while reciting the First Verse.\n\n[2] Mishneh Torah, Reading the Shema 1:4 (Mishneh Torah, Reading the Shema)\nהקורא קריאת שמע כשהוא גומר פסוק ראשון אומר בלחש ברוך שם כבוד מלכותו לעולם ועד וחוזר וקורא כדרכו ואהבת את יי' אלהיך עד סופה ולמה קורין כן מסורת היא בידינו שבשעה שקבץ יעקב אבינו את בניו במצרים בשעת מיתתו ציום וזרזם על יחוד השם ועל דרך ה' שהלך בה אברהם ויצחק אביו ושאל אותם ואמר להם בני שמא יש בכם פסלות מי שאינו עומד עמי ביחוד השם כענין שאמר לנו משה רבינו פן יש בכם איש או אשה וגו' ענו כולם ואמרו שמע ישראל יי' אלהינו יי' אחד כלומר שמע ממנו אבינו ישראל יי' אלהינו יי' אחד פתח הזקן ואמר ברוך שם כבוד מלכותו לעולם ועד לפיכך נהגו כל ישראל לומר שבח ששבח בו ישראל הזקן אחר פסוק זה.\nWhen reciting the Shema, after concluding the first verse, one repeats in a low tone the sentence, \"Blessed be the name of His glorious sovereignty for ever and ever\" and then resumes the reading of the first section in the regular order from the verse, \"And thou shalt love the Lord, thy God,…\"to the end of the section. Why is the sentence above mentioned interpolated? We have a tradition that when the patriarch Jacob, residing in Egypt, gathered his sons about him, in his dying hour, he earnestly charged them concerning the Unity of God and the Way of the Lord in which Abraham and his father Isaac had walked. He questioned them, saying to them, \"Possibly, my sons, there is some one among you who is unworthy, and is not at one with me on the doctrine of the Unity of the Creator of the World,\" in the same way as our teacher Moses charged the people in the words, \"Lest there be among you a man or a woman … whose heart turneth away this day\" (Deuteronomy 29:17). They all answered, \"Hear, O Israel, the Lord our God, the Lord is one.\" This means, \"Our father, Israel, hear this, our [confession of faith]: 'the Lord our God is one Lord'\". The aged patriarch then ejaculated, \"Blessed be the name of His glorious Sovereignty for ever and ever.\" Hence, all Israelites keep the custom of reciting, after the first verse of the Shema, the thanksgiving uttered by the Patriarch Israel.\n\n[3] Mishneh Torah, Prayer and the Priestly Blessing 4:7 (Mishneh Torah, Prayer and the Priestly Blessing)\nכיסוי הערוה כיצד אף על פי שכסה ערותו כדרך שמכסין לקריאת שמע לא יתפלל עד שיכסה את לבו ואם לא כסה לבו או שנאנס ואין לו במה יכסה הואיל וכסה ערותו והתפלל יצא ולכתחלה לא יעשה.\nThe covering of the body: how is this requirement to be fulfilled? Although the lower part of the body is covered, as for the reading of the Shema, the prayers are not to be recited till the heart is also covered. If one has not covered it or is unable to do so, having nothing wherewith to cover it, and recites the prayers, he has fulfilled his duty, since the lower part of his body is covered. But he should not do so deliberately.\n\n[4] Mishneh Torah, Prayer and the Priestly Blessing 7:2 (Mishneh Torah, Prayer and the Priestly Blessing)\nוקורא פרשה ראשונה מקריאת שמע וישן ואפילו אשתו ישנה עמו (קורא פסוק ראשון או פסוקי רחמים ואחר כך יישן) ואם אנסתו שינה קורא אפילו פסוק ראשון או פסוקי רחמים ואח\"כ יישן.\nHe then reads the first section of the Shema and sleeps. If he is overcome by drowsiness, he reads even if it be only one verse [of the Shema ] or verses of a supplicatory character and sleeps.\n\n[5] Berakhot 5a:5 (Berakhot)\nואמר רבי יצחק כל הקורא קריאת שמע על מטתו מזיקין בדילין הימנו שנאמר (איוב ה, ז) ובני רשף יגביהו עוף ואין עוף אלא תורה שנאמר (משלי כג, ה) התעיף עיניך בו ואיננו ואין רשף אלא מזיקין שנאמר (דברים לב, כד) מזי רעב ולחומי רשף וקטב מרירי.\nR. Isaac also said : Whoever reads the Shema' upon his bed, the evil spirits flee from him ; as it is said, \"And the sons of Reshef fly upwards ['uf] \" (Job v. 7). 'Uf means nothing else than Torah ; as it is said, \"Wilt thou set [hata'if] thine eyes upon it? It is gone\" (Prov. xxiii. 5). And Reshef means nothing else than \"evil spirits\"; as it is said, \"The wasting of hunger, and the devouring of the fiery bolt [Reshef] and bitter destruction\" (Deut. xxxii. 24).\n\n[6] Exodus 28:42 (Exodus)\nוַעֲשֵׂ֤ה לָהֶם֙ מִכְנְסֵי־בָ֔ד לְכַסּ֖וֹת בְּשַׂ֣ר עֶרְוָ֑ה מִמָּתְנַ֥יִם וְעַד־יְרֵכַ֖יִם יִהְיֽוּ׃\nAnd thou shalt make them linen breeches to cover the flesh of their nakedness; from the loins even unto the thighs they shall reach.\n\n[7] Shulchan Arukh, Orach Chayim 139:5 (Shulchan Arukh, Orach Chayim)\nנָהֲגוּ לְכַסוֹת הַכְּתָב בְּסוּדָר, בֵּין גַּבְרָא לְגַבְרָא. וּבִמְדִינוֹת אֵלּוּ נָהֲגוּ שֶׁהִיא מְגֻלֶּלֶת בֵּין גַּבְרָא לְגַבְרָא, וְכֵן עִקָּר.\n\nAnswer segments:\n(0) sources=[]: **המקורות שלפנינו אינם מזכירים כיסוי עיניים** בפסוק הראשון של שמע, ולכן אין בהם תשובה לשאלה. יש בהם שני דברים קרובים:\n\n**1. חובת כוונה בפסוק הראשון.** הרמב\"ם פוסק: \n(1) sources=[1]: הקורא את שמע ולא כיון לבו בפסוק ראשון שהוא שמע ישראל לא יצא ידי חובתו והשאר אם לא כיון לבו יצא\n(2) sources=[]: . כלומר, הפסוק הראשון שונה משאר הקריאה: בלי כוונה בו לא יצא ידי חובה. אבל הרמב\"ם אינו מפרט כאן אמצעי מעשי להשגת הכוונה, כמו כיסוי עיניים.\n\n**2. איסור רמיזה בעיניים.** \n(3) sources=[0]: הקורא קריאת שמע לא ירמוז בעיניו ולא יקרוץ בשפתיו ולא יראה באצבעותיו כדי שלא תהיה קריאתו עראי ואם עשה כן אף על פי שיצא ידי חובתו הרי זה מגונה\n(4) sources=[]: . המקור עוסק בעיניים ובמניעת קריאת \"עראי\", אך הוא אוסר רמיזה ואינו מחייב כיסוי.\n\nעוד דבר הקשור לפסוק הראשון: \n(5) sources=[2]: כשהוא גומר פסוק ראשון אומר בלחש ברוך שם כבוד מלכותו לעולם ועד\n(6) sources=[]: , על פי המסורת שכך אמר יעקב אבינו כשענו לו בניו \"שמע ישראל\".\n\n(המקור על \"כיסוי הערוה\" בהלכות תפילה ד:ז עוסק בכיסוי הגוף, לא העיניים, ואינו נוגע לשאלה.)\n\nכדי לברר את מקור הדין של כיסוי עיניים יש לחפש מקורות נוספים. לשאלה מעשית כדאי לפנות לרב."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsgvQD4AWfnpJrnccwgm",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"None of the sources mention covering the eyes during the first verse; the two related topics are accurately previewed.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quote of Mishneh Torah, Reading the Shema 2:1.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Follows from 2:1; the source gives no practical means such as covering the eyes.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quote of 2:8 on not winking, signaling with the lips, or pointing with the fingers.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Source prohibits signaling with the eyes so the reading isn't perfunctory, and doesn't require covering them.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Accurate quote from Reading the Shema 1:4.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Matches the 1:4 tradition about Jacob and his sons answering 'Shema Yisrael'.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Source 3 concerns covering the body and heart, not the eyes, so it is irrelevant to the question.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Suggestion to seek other sources and consult a rabbi; makes no claim about the texts.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4410,
+   "output_tokens": 459,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

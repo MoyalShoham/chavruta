@@ -1,0 +1,93 @@
+{
+ "key": "4df13625c30c47e0bfde418aed71c8bd",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Where does the Torah forbid adding to or taking away from the commandments?\n\nSources:\n[0] Mishneh Torah, Blessings 1:5 (Mishneh Torah, Blessings)\nונוסח כל הברכות עזרא ובית דינו תקנום ואין ראוי לשנותם ולא להוסיף על אחת מהם ולא לגרוע ממנה וכל המשנה ממטבע שטבעו חכמים בברכות אינו אלא טועה וכל ברכה שאין בה הזכרת השם ומלכות אינה ברכה אא\"כ היתה סמוכה לחבירתה.\nThe forms of all the blessings were established by Ezra and his Court. It is not proper to vary them, or add to or take aught away from any one of them. Whoever deviates from the form which the Sages have given to the Blessings, is in error. Any blessing in which the name of God and His Sovereignty are not mentioned is not regarded as a blessing, unless it follows immediately another blessing.\n\n[1] Mishneh Torah, Reading the Shema 3:4 (Mishneh Torah, Reading the Shema)\nולא קריאת שמע בלבד אלא כל ענין שהוא מדברי הקדש אסור לאומרו בבית המרחץ ובבית הכסא ואפילו אמרו בלשון חול ולא לאמרו בלבד אלא אפילו להרהר בלבו בדברי תורה בבית הכסא ובבית המרחץ ובמקום הטנופת והוא המקום שיש בו צואה ומי רגלים אסור.\nNot only the sections of the Shema, but anything that appertains to things sacred may not be uttered in a bath house or latrine, even in a secular language. It is forbidden to speak there of such topics. Even to meditate silently on the words of the Torah in a latrine, in a bath house, or in any unclean place that contains ordure or urine, is also prohibited.\n\n[2] Berakhot 18a:8 (Berakhot)\nגופא המשמר את המת אע\"פ שאינו מתו פטור מקריאת שמע ומן התפלה ומן התפילין ומכל מצות האמורות בתורה היו שנים זה משמר וזה קורא וזה משמר וזה קורא בן עזאי אומר היו באים בספינה מניחו בזוית זו ומתפללין שניהם בזוית אחרת\nIt was stated above [in the Baraita] : \"Who watches the body, although it is not his dead, is exempt from reading the Shema', from Tefillah, Tefillin, and all the commandments mentioned in the Torah.\" Should there be two [watchers], they take it in turn to watch and read. Ben Azzai says : Should they be bringing the body in a boat, they place it in one corner and they both pray in another corner !\n\n[3] Berakhot 18a:1 (Berakhot)\nואין מברכין עליו ואין מזמנין עליו ופטור מקריאת שמע ומן התפלה ומן התפילין ומכל מצות האמורות בתורה ובשבת מיסב ואוכל בשר ושותה יין ומברך ומזמן ומברכין עליו ומזמנין עליו וחייב בכל המצות האמורות בתורה. רשב\"ג אומר מתוך שנתחייב באלו נתחייב בכולן\nnor do others say Grace on his behalf or include him for Zimmun. He is likewise exempt from the reading of the Shema', from Tefillah, Tefillin, and all the commandments mentioned in the Torah. On the Sabbath, however, he may recline at his meal, eat meat and drink wine, say Grace and arrange Zimmun, and others may say Grace on his behalf and include him for Zimmun ; and he is under the obligation of reading the Shema' and Tefillah, and all the commandments mentioned in the Torah. Rabban Simeon b. Gamaliel says : Since he is under the obligation of these, he has obviously the obligation of them all !\n\n[4] Berakhot 16b:3 (Berakhot)\nאי משום טרדא אפילו טבעה ספינתו בים נמי אלמה אמר רבי אבא בר זבדא אמר רב אבל חייב בכל מצות האמורות בתורה חוץ מן התפילין שהרי נאמר בהן פאר שנאמר (יחזקאל כד, יז) פארך חבוש עליך וגו'\nShould the reason [of exemption] be on account of anxiety, then it ought to apply also to one whose ship has sunk at sea ! Why, then, does R. Abba b. Zabda declare in the name of Rab : A mourner is under the obligation to observe all the commandments mentioned in the Torah except Tefillin, because they are called an adornment; as it is said, \"Bind thine adornment upon thee\" (Ezek. xxiv. 17)?\n\n[5] Berakhot 18a:5 (Berakhot)\nוהתניא המשמר את המת אע\"פ שאינו מתו פטור מק\"ש ומן התפלה ומן התפילין ומכל מצות האמורות בתורה משמרו אע\"פ שאינו מתו מתו אע\"פ שאינו משמרו\nWho watches the body, although it is not his dead, is exempt from reading the Shema', from Tefillah, Tefillin, and all the commandments mentioned in the Torah ! \"Who watches the body, although it is not his dead\" [so stated the Baraita ; therefore it is to be inferred] if it is his dead, although he does not watch the body, [he is exempt].\n\n[6] Mishneh Torah, Reading the Shema 3:6 (Mishneh Torah, Reading the Shema)\nצואת האדם וצואת כלבים וחזירין בזמן שיש בתוכן עורות וכל צואה שריחה רע כגון אלו אסור לקרות קריאת שמע כנגדן וכן כנגד מי רגלים של אדם אבל מי רגלים של בהמה קורין כנגדן קטן שאינו יכול לאכול כזית דגן בכדי שיאכל הגדול כשלשה ביצי דגן אין מרחיקין לא מצואתו ולא ממי רגליו.\nIt is forbidden to read the Shema where one is facing ordures of human beings, dogs or swine, even if hides are immersed in them (for tanning), or any other filth that emits an odor as foul as these. This reading is also forbidden where one is facing human urine. But where there is urine of a beast, the Shema may be read in front of it. When an infant is so young that it could not consume a quantity of cereal equal in volume to an olive, in the time that it would take an adult to eat a quantity of cereal equal in volume to three eggs, there is no need to move away from its stools or urine (in order to read the Shema ).\n\n[7] Mishneh Torah, Prayer and the Priestly Blessing 14:12 (Mishneh Torah, Prayer and the Priestly Blessing)\nאין הכהנים רשאין בכל מקום להוסיף ברכה על שלשת הפסוקים כגון יי' אלהי אבותיכם יוסף עליכם ככם אלף פעמים וכיוצא בה לא בקול רם ולא בלחש שנאמר לא תוסיפו על הדבר בשעה שכל כהן עולה לדוכן כשהוא עוקר רגליו לעלות אומר יהי רצון מלפניך יי' אלהינו שתהיה ברכה זו שצויתנו לברך את עמך ישראל ברכה שלמה ואל יהי בה מכשול ועון מעתה ועד עולם וקודם שיחזיר פניו לברך את העם מברך ברוך אתה יי' אלהינו מלך העולם אשר קדשנו בקדושתו של אהרן וצונו לברך את עמו ישראל באהבה ואח\"כ מחזיר פניו לציבור ומתחיל לברכם וכשמחזיר פניו מן הציבור אחר שמשלים אומר עשינו מה שגזרת עלינו עשה עמנו מה שהבטחתנו השקיפה ממעון קדשך מן השמים וברך את עמך את ישראל.\nIn no place may the priests add, either softly or aloud, a blessing to the three verses of the Benediction, such as, \"The Lord, the God of your fathers, make you a thousand times as many more as you are\", or other verses of a similar tenor, for it is said, \"Thou shalt not add to it\" (Deuteronomy 13:1). Every priest proceeding to the platform to pronounce the Benediction, as soon as he starts, says, \"May it be Thy Will, O Lord our God, that this Benediction which Thou hast commanded us to bless therewith Thy people Israel shall be a perfect blessing. May there be in it no stumbling nor perverseness from now and for evermore\". Before the priest turns his face towards the people to bless them, he recites the blessing, \"Blessed art Thou, O Lord our God, King of the Universe, who hast sanctified us with the sanctification of Aaron and commanded us to bless Thy people Israel with love\". He then turns his face to the congregation and begins to bless them. And when he turns his face away from the congregation, after he had concluded the Benediction, he says \"We have done that which Thou hast decreed unto us. Do Thou fulfill unto us that which Thou hast promised unto us. Do Thou look down from Thy holy habitation, from Heaven, and bless Thy People Israel\".\n\nAnswer segments:\n(0) sources=[]: The sources provided only partly answer this.\n\n**The verse cited for \"not adding\"**\n\nRambam, discussing the Priestly Blessing, rules that \n(1) sources=[7]: in no place may the priests add, either softly or aloud, a blessing to the three verses of the Benediction, such as, \"The Lord, the God of your fathers, make you a thousand times as many more as you are\"\n(2) sources=[]: . His proof-text is \n(3) sources=[7]: \"Thou shalt not add to it\" (Deuteronomy 13:1)\n(4) sources=[]: , in Hebrew \n(5) sources=[7]: שנאמר לא תוסיפו על הדבר\n(6) sources=[]: . Here he applies the verse to a specific case: extra words added to a fixed blessing.\n\n**A related rule without a verse**\n\nFor blessings in general, Rambam writes that \n(7) sources=[0]: the forms of all the blessings were established by Ezra and his Court. It is not proper to vary them, or add to or take aught away from any one of them. Whoever deviates from the form which the Sages have given to the Blessings, is in error.\n(8) sources=[]:  He bases this on the authority of Ezra's court and does not cite a Torah verse.\n\n**What's missing**\n\nNone of these sources quotes a verse prohibiting *taking away* (גריעה) from the commandments, and none discusses the prohibition as a general principle about the mitzvot. To study that directly, you would need additional texts, such as the verse in its Chumash context and its commentaries, which aren't included here."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsgXaKdrbj7DtJDFrBfX",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"no_claim\",\"note\":\"Disclaimer/framing about the sources' coverage; no textual claim.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Matches Prayer and Priestly Blessing 14:12 closely.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Source 7 says 'for it is said' the verse; Rambam's proof-text is the verse.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Source 7 quotes 'Thou shalt not add to it' (Deut. 13:1).\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Transition phrase.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Hebrew text appears in source 7.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Source applies the verse to adding blessings to the priestly benediction's three verses.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Accurate quote of Blessings 1:5.\"},{\"i\":8,\"verdict\":\"partial\",\"note\":\"Ezra's court is stated as origin; no verse cited in source 0, but 'bases this on authority' is inference.\"},{\"i\":9,\"verdict\":\"partial\",\"note\":\"True that no source cites a taking-away verse, but source 7 does cite the add verse in general-ish context; claims about absence are fine, though.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4340,
+   "output_tokens": 458,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

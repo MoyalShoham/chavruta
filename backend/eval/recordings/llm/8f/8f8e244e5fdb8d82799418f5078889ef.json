@@ -1,0 +1,93 @@
+{
+ "key": "8f8e244e5fdb8d82799418f5078889ef",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: איפה כתוב ולטוטפת בין עיניך בספר שמות?\n\nSources:\n[0] Exodus 13:16 (Exodus)\nוְהָיָ֤ה לְאוֹת֙ עַל־יָ֣דְכָ֔ה וּלְטוֹטָפֹ֖ת בֵּ֣ין עֵינֶ֑יךָ כִּ֚י בְּחֹ֣זֶק יָ֔ד הוֹצִיאָ֥נוּ יְהוָ֖ה מִמִּצְרָֽיִם׃ (ס)\nAnd it shall be for a sign upon thy hand, and for frontlets between your eyes; for by strength of hand the LORD brought us forth out of Egypt.’\n\n[1] Deuteronomy 11:18 (Deuteronomy)\nוְשַׂמְתֶּם֙ אֶת־דְּבָרַ֣י אֵ֔לֶּה עַל־לְבַבְכֶ֖ם וְעַֽל־נַפְשְׁכֶ֑ם וּקְשַׁרְתֶּ֨ם אֹתָ֤ם לְאוֹת֙ עַל־יֶדְכֶ֔ם וְהָי֥וּ לְטוֹטָפֹ֖ת בֵּ֥ין עֵינֵיכֶֽם׃\nTherefore shall ye lay up these My words in your heart and in your soul; and ye shall bind them for a sign upon your hand, and they shall be for frontlets between your eyes.\n\n[2] Deuteronomy 4:9 (Deuteronomy)\nרַ֡ק הִשָּׁ֣מֶר לְךָ֩ וּשְׁמֹ֨ר נַפְשְׁךָ֜ מְאֹ֗ד פֶּן־תִּשְׁכַּ֨ח אֶת־הַדְּבָרִ֜ים אֲשֶׁר־רָא֣וּ עֵינֶ֗יךָ וּפֶן־יָס֙וּרוּ֙ מִלְּבָ֣בְךָ֔ כֹּ֖ל יְמֵ֣י חַיֶּ֑יךָ וְהוֹדַעְתָּ֥ם לְבָנֶ֖יךָ וְלִבְנֵ֥י בָנֶֽיךָ׃\nOnly take heed to thyself, and keep thy soul diligently, lest thou forget the things which thine eyes saw, and lest they depart from thy heart all the days of thy life; but make them known unto thy children and thy children’s children;\n\n[3] Berakhot 6b:31 (Berakhot)\nאיני והא כתיב (שמות כ, טו) וכל העם רואים את הקולת\nBut it is not so; for it is written, \"And all the people perceived the thunderings\" (Exod. 20:15)!\n\n[4] Rashi on Berakhot 4b:27:2 (Rashi on Berakhot)\nעל משכבכם – שנאמר בשכבך (שם):\n\n[5] Exodus 15:26 (Exodus)\nוַיֹּאמֶר֩ אִם־שָׁמ֨וֹעַ תִּשְׁמַ֜ע לְק֣וֹל ׀ יְהוָ֣ה אֱלֹהֶ֗יךָ וְהַיָּשָׁ֤ר בְּעֵינָיו֙ תַּעֲשֶׂ֔ה וְהַֽאֲזַנְתָּ֙ לְמִצְוֺתָ֔יו וְשָׁמַרְתָּ֖ כָּל־חֻקָּ֑יו כָּֽל־הַמַּֽחֲלָ֞ה אֲשֶׁר־שַׂ֤מְתִּי בְמִצְרַ֙יִם֙ לֹא־אָשִׂ֣ים עָלֶ֔יךָ כִּ֛י אֲנִ֥י יְהוָ֖ה רֹפְאֶֽךָ׃ (ס)\nand He said: ‘If thou wilt diligently hearken to the voice of the LORD thy God, and wilt do that which is right in His eyes, and wilt give ear to His commandments, and keep all His statutes, I will put none of the diseases upon thee, which I have put upon the Egyptians; for I am the LORD that healeth thee.’\n\n[6] Rashi on Berakhot 29b:11:4 (Rashi on Berakhot)\nוהטוב בעיניך עשה – אתה להם ודוגמא זו מצינו בספר שופטים ויאמרו בני ישראל חטאנו עשה אתה לנו (כטוב) [ככל הטוב] בעיניך אך הצילנו וגו':\n\n[7] Leviticus 14:51 (Leviticus)\nוְלָקַ֣ח אֶת־עֵֽץ־הָ֠אֶרֶז וְאֶת־הָ֨אֵזֹ֜ב וְאֵ֣ת ׀ שְׁנִ֣י הַתּוֹלַ֗עַת וְאֵת֮ הַצִּפֹּ֣ר הַֽחַיָּה֒ וְטָבַ֣ל אֹתָ֗ם בְּדַם֙ הַצִּפֹּ֣ר הַשְּׁחוּטָ֔ה וּבַמַּ֖יִם הַֽחַיִּ֑ים וְהִזָּ֥ה אֶל־הַבַּ֖יִת שֶׁ֥בַע פְּעָמִֽים׃\nAnd he shall take the cedar-wood, and the hyssop, and the scarlet, and the living bird, and dip them in the blood of the slain bird, and in the running water, and sprinkle the house seven times.\n\nAnswer segments:\n(0) sources=[]: בין המקורות שלפניי, הביטוי מופיע ב**שמות יג, טז**: \n(1) sources=[0]: וְהָיָ֤ה לְאוֹת֙ עַל־יָ֣דְכָ֔ה וּלְטוֹטָפֹ֖ת בֵּ֣ין עֵינֶ֑יךָ כִּ֚י בְּחֹ֣זֶק יָ֔ד הוֹצִיאָ֥נוּ יְהוָ֖ה מִמִּצְרָֽיִם\n(2) sources=[]: \n\nבתרגום: \n(3) sources=[0]: \"And it shall be for a sign upon thy hand, and for frontlets between your eyes; for by strength of hand the LORD brought us forth out of Egypt.\"\n(4) sources=[]: \n\nשני דברים שכדאי לשים לב אליהם:\n- בפסוק זה הכתיב הוא \"יָדְכָה\" ולא \"ידך\".\n- הטעם המובא בפסוק הוא יציאת מצרים: \"כִּי בְּחֹזֶק יָד הוֹצִיאָנוּ\".\n\nלהשוואה, ביטוי דומה מופיע גם בספר דברים (לא בשמות), ב**דברים יא, יח**, אך בלשון רבים: \n(5) sources=[1]: וּקְשַׁרְתֶּ֨ם אֹתָ֤ם לְאוֹת֙ עַל־יֶדְכֶ֔ם וְהָי֥וּ לְטוֹטָפֹ֖ת בֵּ֥ין עֵינֵיכֶֽם\n(6) sources=[]: . שם הטעם שונה. הפסוק פותח ב\n(7) sources=[1]: \"Therefore shall ye lay up these My words in your heart and in your soul\"\n(8) sources=[]: , כלומר הקשירה קשורה ל\"דברי אלה\".\n\nהמקורות שלפניי אינם מראים אם הביטוי מופיע במקום נוסף בספר שמות. אם תרצה לבדוק זאת, יש לחפש במקורות נוספים."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsgXHHCqd3TbHyQgPJRq",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Source [0] is Exodus 13:16 and contains the phrase.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quotation of Exodus 13:16.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition word for the translation.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches the English translation in source [0].\"},{\"i\":4,\"verdict\":\"partial\",\"note\":\"The reason (Exodus from Egypt) and the quote are supported. The spelling claim about 'yadkha' versus 'yadkha' is not in the sources. Deut 11:18 is plural and in Deuteronomy.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Accurate quotation of Deuteronomy 11:18.\"},{\"i\":6,\"verdict\":\"partial\",\"note\":\"The verse opening is supported by source [1], but the claim that the reason differs is not directly stated.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches the English of Deut 11:18 in source [1].\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Follows from the verse: binding is tied to 'these My words'.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3356,
+   "output_tokens": 409,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

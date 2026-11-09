@@ -1,0 +1,93 @@
+{
+ "key": "a0da8cd069b1ebfbcd4eb979639ea6be",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: איפה כתוב בתורה הפסוק שמע ישראל?\n\nSources:\n[0] Mishneh Torah, Reading the Shema 2:1 (Mishneh Torah, Reading the Shema)\nהקורא את שמע ולא כיון לבו בפסוק ראשון שהוא שמע ישראל לא יצא ידי חובתו והשאר אם לא כיון לבו יצא אפי' היה קורא בתורה כדרכו או מגיה את הפרשיות האלו בעונת קריאה יצא והוא שכיון לבו בפסוק ראשון.\nOne who reads the Shema and does not concentrate his mind while reciting the first verse—\"Hear, O Israel, the Lord, our God, the Lord is One,\" has not fulfilled his duty. As to the remaining verses, if he did not concentrate his mind (while reciting them), he has nevertheless fulfilled his duty. Even if he was reading the Torah in his usual course of study or examining these sections in a scroll (to ensure correctness), and read them at the prescribed time, he has fulfilled his duty, provided however that he concentrated his mind while reciting the First Verse.\n\n[1] Berakhot 15b:17 (Berakhot)\nוהכתיב הסכת ושמע ישראל\nBut it is written, \"Attend and hear, O Israel\" !\n\n[2] Mishneh Torah, Reading the Shema 1:4 (Mishneh Torah, Reading the Shema)\nהקורא קריאת שמע כשהוא גומר פסוק ראשון אומר בלחש ברוך שם כבוד מלכותו לעולם ועד וחוזר וקורא כדרכו ואהבת את יי' אלהיך עד סופה ולמה קורין כן מסורת היא בידינו שבשעה שקבץ יעקב אבינו את בניו במצרים בשעת מיתתו ציום וזרזם על יחוד השם ועל דרך ה' שהלך בה אברהם ויצחק אביו ושאל אותם ואמר להם בני שמא יש בכם פסלות מי שאינו עומד עמי ביחוד השם כענין שאמר לנו משה רבינו פן יש בכם איש או אשה וגו' ענו כולם ואמרו שמע ישראל יי' אלהינו יי' אחד כלומר שמע ממנו אבינו ישראל יי' אלהינו יי' אחד פתח הזקן ואמר ברוך שם כבוד מלכותו לעולם ועד לפיכך נהגו כל ישראל לומר שבח ששבח בו ישראל הזקן אחר פסוק זה.\nWhen reciting the Shema, after concluding the first verse, one repeats in a low tone the sentence, \"Blessed be the name of His glorious sovereignty for ever and ever\" and then resumes the reading of the first section in the regular order from the verse, \"And thou shalt love the Lord, thy God,…\"to the end of the section. Why is the sentence above mentioned interpolated? We have a tradition that when the patriarch Jacob, residing in Egypt, gathered his sons about him, in his dying hour, he earnestly charged them concerning the Unity of God and the Way of the Lord in which Abraham and his father Isaac had walked. He questioned them, saying to them, \"Possibly, my sons, there is some one among you who is unworthy, and is not at one with me on the doctrine of the Unity of the Creator of the World,\" in the same way as our teacher Moses charged the people in the words, \"Lest there be among you a man or a woman … whose heart turneth away this day\" (Deuteronomy 29:17). They all answered, \"Hear, O Israel, the Lord our God, the Lord is one.\" This means, \"Our father, Israel, hear this, our [confession of faith]: 'the Lord our God is one Lord'\". The aged patriarch then ejaculated, \"Blessed be the name of His glorious Sovereignty for ever and ever.\" Hence, all Israelites keep the custom of reciting, after the first verse of the Shema, the thanksgiving uttered by the Patriarch Israel.\n\n[3] Berakhot 13b:13 (Berakhot)\nת\"ר (דברים ו, ד) שמע ישראל ה' אלהינו ה' אחד עד כאן צריכה כוונת הלב דברי ר\"מ אמר רבא הלכה כר\"מ\nOur Rabbis have taught : \"Hear, O Israel, the Lord our God, the Lord is one\" (Deut. vi. 4) — up to here Kawwanah is required. These are the words of R. Meir. Raba said : The Halakah is in accord with R. Meir.\n\n[4] Berakhot 29b:12 (Berakhot)\nר' יהושע אומר שמע שועת עמך ישראל ועשה מהרה בקשתם בא\"י שומע תפלה\nR. Joshua said : \"Hear the lament of Thy people Israel, and speedily fulfil their request. Blessed art Thou, O Lord, Who hearkenest unto prayer.\"\n\n[5] Mishneh Torah, Prayer and the Priestly Blessing 7:10 (Mishneh Torah, Prayer and the Priestly Blessing)\nהמשכים לקרוא בתורה קודם שיקרא קריאת שמע בין קרא בתורה שבכתב בין קרא בתורה שבעל פה נוטל ידיו תחלה ומברך שלש ברכות ואחר כך קורא ואלו הן:אשר קדשנו במצותיו וצונו על דברי תורה והערב נא יי' אלהינו את דברי תורתך בפינו ובפיפיות עמך כל בית ישראל ונהיה אנחנו וצאצאינו וצאצאי עמך יודעי שמך ועוסקי תורתך ברוך אתה יי' המלמד תורה לעמו ישראל ברוך אתה יי' אלהינו מלך העולם אשר בחר בנו מכל העמים ונתן לנו את תורתו ברוך אתה יי' נותן התורה.\nIf one rises early to read the Torah, before he has recited the Shema, whether it is the Written or the Oral Law that he intends to study, he first washes his hands, recites three blessings and then proceeds to his reading. The blessings are as follows: \"Who hast sanctified us by Thy commandments and given us a command concerning the words of the Law. Make pleasant, we beseech Thee, O Lord our God, the words of Thy Law in our mouth and in the mouth of Thy people, all the house of Israel, so that we with our offspring and the offspring of Thy people all the house of Israel may know Thy name and learn Thy Law for its own sake. Blessed art Thou, O Lord, who givest the Law. Blessed art Thou, O Lord our God, King of the Universe, who hast chosen us from all nations and given us Thy Law. Blessed art Thou, O Lord, who givest the Law.\"\n\n[6] Berakhot 13b:18 (Berakhot)\nת\"ר שמע ישראל ה' אלהינו ה' אחד זו ק\"ש של ר' יהודה הנשיא א\"ל רב לר' חייא לא חזינא ליה לרבי דמקבל עליה מלכות שמים אמר ליה בר פחתי בשעה שמעביר ידיו על פניו מקבל עליו עול מלכות שמים\nOur Rabbis have taught: \"Hear, O Israel, the Lord our God, the Lord is one\" — that was the reading of the Shema' of R. Judah ha-Nasi'. Rab said to R. Hiyya, \"I have never seen Rabbi receive the yoke of the kingdom of heaven upon himself.\" He replied to him, \"Son of princes, at the time when he passed his hands across his face, he received upon himself the yoke of the kingdom of heaven.\"\n\n[7] Rashi on Berakhot 6a:20:1 (Rashi on Berakhot)\nמה כתיב בהו – בשלמא בתפילין דידן כתיב שמע (דברים ו) והיה אם שמוע (שם יא) קדש לי כל בכור (שמות י״ג:ב׳) והיה כי יביאך (שם) פרשיות שנצטוו בהם לשום זכרון מצותיו של הקב\"ה אות וזכרון להם לישראל אלא בדידיה מאי כתיב בהו:\n\nAnswer segments:\n(0) sources=[]: **הפסוק \"שמע ישראל\" נמצא בספר דברים, פרק ו', פסוק ד'.**\n\nהברייתא בגמרא מביאה את הפסוק עם המקור שלו: \n(1) sources=[3]: ת\"ר (דברים ו, ד) שמע ישראל ה' אלהינו ה' אחד עד כאן צריכה כוונת הלב דברי ר\"מ אמר רבא הלכה כר\"מ\n(2) sources=[]: .\n\nגם רש\"י מציין את פרשת \"שמע\" בספר דברים פרק ו', כאחת מהפרשיות שבתפילין: \n(3) sources=[7]: בתפילין דידן כתיב שמע (דברים ו) והיה אם שמוע (שם יא) קדש לי כל בכור (שמות י״ג:ב׳) והיה כי יביאך (שם)\n(4) sources=[]: .\n\n**מה בא אחרי הפסוק:** הרמב\"ם מתאר שבקריאת שמע, \n(5) sources=[2]: כשהוא גומר פסוק ראשון אומר בלחש ברוך שם כבוד מלכותו לעולם ועד וחוזר וקורא כדרכו ואהבת את יי' אלהיך עד סופה\n(6) sources=[]: . כלומר, \"ברוך שם\" אינו חלק מהפסוק שבתורה. הרמב\"ם מסביר שזה מנהג שמקורו במסורת על יעקב אבינו ובניו: \n(7) sources=[2]: לפיכך נהגו כל ישראל לומר שבח ששבח בו ישראל הזקן אחר פסוק זה\n(8) sources=[]: .\n\n**חשיבות הפסוק הראשון:** לפי הרמב\"ם, \n(9) sources=[0]: הקורא את שמע ולא כיון לבו בפסוק ראשון שהוא שמע ישראל לא יצא ידי חובתו\n(10) sources=[]: ."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsgTEGm1TDyrDpUptD8T",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Berakhot 13b cites Deut. vi:4 for the verse.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quote of source 3.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Just punctuation.\"},{\"i\":3,\"verdict\":\"partial\",\"note\":\"Rashi lists Shema (Deut 6) among tefillin passages; quote is accurate, though the statement that it is chapter 6 comes from the citation.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Just punctuation.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches Mishneh Torah 1:4.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Rambam calls it a tradition/custom; 'not part of the Torah verse' follows from it being interpolated after the verse.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Accurate quote from source 2.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Just punctuation.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches source 0.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Just punctuation.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4161,
+   "output_tokens": 416,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

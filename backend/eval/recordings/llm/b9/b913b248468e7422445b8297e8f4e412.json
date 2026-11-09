@@ -1,0 +1,93 @@
+{
+ "key": "b913b248468e7422445b8297e8f4e412",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Who says that whoever recites Tehilla LeDavid (Ashrei) three times a day is assured of the world to come?\n\nSources:\n[0] Berakhot 4b:16 (Berakhot)\nאמר רבי אלעזר א\"ר אבינא כל האומר (תהלים קמה, א) תהלה לדוד בכל יום שלש פעמים מובטח לו שהוא בן העולם הבא\nR. Eleazar b. R. Abina said: Whoever recites Psalm cxlv. thrice daily may be assured that he is a son of the world to come.\n\n[1] Berakhot 57a:2 (Berakhot)\nהעונה יהא שמיה רבא מברך מובטח לו שהוא בן העולם הבא הקורא ק\"ש ראוי שתשרה עליו שכינה אלא שאין דורו זכאי לכך\n[Who dreams] that he makes the response \"May His great name be blessed\" is assured that he is a son of the world to come. [Who dreams] that he recites the Shema' is meet that the Shekinah should rest upon him, but his generation is not worthy of it.\n\n[2] Berakhot 17a:12 (Berakhot)\nמרגלא בפומיה דרב [לא כעולם הזה העולם הבא] העולם הבא אין בו לא אכילה ולא שתיה ולא פריה ורביה ולא משא ומתן ולא קנאה ולא שנאה ולא תחרות אלא צדיקים יושבין ועטרותיהם בראשיהם ונהנים מזיו השכינה שנאמר (שמות כד, יא) ויחזו את האלהים ויאכלו וישתו:\nIt was a favourite saying of Rab : Not like this world is the world to come. In the world to come there is neither eating nor drinking; no procreation of children or business transactions; no envy or hatred or rivalry ; but the righteous sit enthroned, their crowns on their heads, and enjoy the lustre of the Shekinah; as it is said, \"And they beheld God, and did eat and drink\" (Exod. xxiv. ll).\n\n[3] Berakhot 9b:21 (Berakhot)\nוהא אמר ר' יוחנן איזהו בן העוה\"ב זהו הסומך גאולה של ערבית לתפלה של ערבית\nBut R. Johanan has said : Who will inherit the world to come? He who unites the Ge'ullah of the evening to the Tefillah of the evening!\n\n[4] Berakhot 4b:6 (Berakhot)\nאמר מר קורא ק\"ש ומתפלל מסייע ליה לר' יוחנן דאמר ר' יוחנן איזהו בן העולם הבא זה הסומך גאולה לתפלה של ערבית רבי יהושע בן לוי אומר תפלות באמצע תקנום\nThe teacher stated above : \"Then let him read the Shema' and say the Tefillah.\" This supports the view of R. Johanan who declared : Who will inherit the world to come? He who joins the Ge'ullah to the evening Tefillah. R. Joshua b. Levi said : The Tefillot were arranged in the middle.\n\n[5] Berakhot 31a:20 (Berakhot)\nיכול יתפלל אדם כל היום כלו כבר מפורש על ידי דניאל (דניאל ו, יא) וזמנין תלתא וגו'\nIt is possible to imagine that a man can pray all the day long ; but it has already been clearly stated by Daniel, \"And he kneeled upon his knees three times a day and prayed, and gave thanks before his God \" (ibid.).\n\n[6] Berakhot 5a:20 (Berakhot)\nתניא רבי שמעון בן יוחאי אומר שלש מתנות טובות נתן הקדוש ברוך הוא לישראל וכולן לא נתנן אלא ע\"י יסורין אלו הן תורה וארץ ישראל והעולם הבא\nThere is a teaching : R. Simeon b. Johai said : Three precious gifts did the Holy One, blessed be He, give to Israel, and all of them He gave only through the medium of suffering ; they are : Torah, the land of Israel, and the world to come.\n\n[7] Berakhot 57a:4 (Berakhot)\nהבא על אמו בחלום יצפה לבינה שנאמר (משלי ב, ג) כי אם לבינה תקרא הבא על נערה מאורסה יצפה לתורה שנאמר (דברים לג, ד) תורה צוה לנו משה מורשה קהלת יעקב אל תקרי מורשה אלא מאורשה הבא על אחותו בחלום יצפה לחכמה שנאמר (משלי ז, ד) אמור לחכמה אחותי את הבא על אשת איש בחלום מובטח לו שהוא בן העולם הבא וה\"מ דלא ידע לה ולא הרהר בה מאורתא\nWho dreams of having intercourse with his mother may hope for understanding; as it is said, \"Yea, thou wilt call understanding 'mother'\" (Prov. ii. 3). [Who dreams] of having intercourse with a betrothed maiden may hope for Torah, as it is said, \"Moses commanded us a law [Torah], an inheritance of the congregation of Jacob\" (Deut. xxxiii. 4) — read not morashah \"an inheritance\" but me'orasah \"betrothed maiden.\" Who dreams of having had intercourse with his sister may hope for wisdom ; as it is said, \"Say unto wisdom, thou art my sister\" (Prov. vii. 4). Who dreams of having had intercourse with a married woman is assured that he is a son of the world to come ; but this applies only if he was not acquainted with her and did not think of her during the evening.\n\nAnswer segments:\n(0) sources=[]: The statement appears in **Berakhot 4b**: \n(1) sources=[0]: אמר רבי אלעזר א\"ר אבינא כל האומר תהלה לדוד בכל יום שלש פעמים מובטח לו שהוא בן העולם הבא\n(2) sources=[]: \n\nThe English translation gives it as: \n(3) sources=[0]: R. Eleazar b. R. Abina said: Whoever recites Psalm cxlv. thrice daily may be assured that he is a son of the world to come.\n(4) sources=[]: \n\n**A note on attribution:** The Hebrew and the translation differ slightly. The Hebrew reads *\"אמר רבי אלעזר א\"ר אבינא\"*. This most naturally means \"R. Elazar said, R. Avina said,\" so R. Elazar would be transmitting the teaching in the name of R. Avina. The translation instead renders it as one person, \"R. Eleazar b. R. Abina.\" You may want to check this against the full Gemara text or commentaries.\n\n**Related formulations in Berakhot:** Ashrei is not the only practice described this way. \n(5) sources=[3]: R. Johanan has said: Who will inherit the world to come? He who unites the Ge'ullah of the evening to the Tefillah of the evening!\n(6) sources=[]:  There are also dream-interpretation passages using the same phrase. For example, one who dreams \n(7) sources=[1]: that he makes the response \"May His great name be blessed\" is assured that he is a son of the world to come.\n(8) sources=[]: \n\nThe provided sources include only the statement itself. They do not include the Gemara's discussion of *why* Ashrei in particular earns this assurance."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsggqNzi8VdroPs42qoA",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Source 0 is Berakhot 4b:16, containing the statement.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurately quotes the Hebrew of source 0.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition only.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quote of the source 0 translation.\"},{\"i\":4,\"verdict\":\"partial\",\"note\":\"Hebrew text is quoted correctly, but reading as 'R. Elazar said in name of R. Avina' and the translation discrepancy are interpretation not in sources.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches source 3 quote of R. Johanan.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Source 1 and 7 show dream passages using the phrase.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches source 1.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Sources contain no discussion of why Ashrei earns the assurance.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3126,
+   "output_tokens": 366,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

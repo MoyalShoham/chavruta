@@ -1,0 +1,93 @@
+{
+ "key": "25bbebe4e105352639df9e95346934b2",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Where does Rabbi Yochanan say 'this is the bone of my tenth son'?\n\nSources:\n[0] Berakhot 5b:14 (Berakhot)\nרבי אליעזר חלש על לגביה רבי יוחנן חזא דהוה קא גני בבית אפל גלייה לדרעיה ונפל נהורא חזייה דהוה קא בכי ר' אליעזר א\"ל אמאי קא בכית אי משום תורה דלא אפשת שנינו אחד המרבה ואחד הממעיט ובלבד שיכוין לבו לשמים ואי משום מזוני לא כל אדם זוכה לשתי שלחנות ואי משום בני דין גרמא דעשיראה ביר\nR. Eleazar was ill and R. Johanan went in to visit him. He saw that he was lying in a dark room, so he bared his arm and a brightness was radiated therefrom. He then noticed that R. Eleazar was weeping. He said to him, \"Why weepest thou? Is it because thou hast not applied thyself sufficiently to the study of Torah ? We have learnt that it matters not whether one does much or little, so long as he directs his heart to Heaven ! Is it because of [the lack of] food? Not everyone has the merit of two tables! Is it because of childlessness? This is the bone of my tenth son!\"\n\n[1] Berakhot 5b:9 (Berakhot)\nובנים לא היכי דמי אילימא דהוו להו ומתו והא א\"ר יוחנן דין גרמא דעשיראה ביר אלא הא דלא הוו ליה כלל והא דהוו ליה ומתו.\nWhat is meant [by childlessness] ? Is it to be supposed to refer to a man who had children but they died ? Lo, R. Johanan himself said, \"This is the bone of my tenth son!\" Nay, the latter teaching refers to one who never had children, the other to one who has been bereft of his children.\n\n[2] Berakhot 8a:6 (Berakhot)\nאמרו ליה לר' יוחנן איכא סבי בבבל תמה ואמר (דברים יא, כא) למען ירבו ימיכם וימי בניכם על האדמה כתיב אבל בחוצה לארץ לא כיון דאמרי ליה מקדמי ומחשכי לבי כנישתא אמר היינו דאהני להו\nIt was said to R. Johanan, \"There are old men to be found in Babylon.\" He was astonished and exclaimed, \"It is written 'that your days may be multiplied, and the days of your children, upon the land' (Deut. xi. 21); but not outside the land [of Israel] !\" When they told him [that the old men are in the Synagogue early and late,] he said, \"It is this which helps them [to live long].\"\n\n[3] Berakhot 6b:5 (Berakhot)\nאמר ר' יוחנן בשעה שהקב\"ה בא בבית הכנסת ולא מצא בה עשרה מיד הוא כועס שנא' (ישעיהו נ, ב) מדוע באתי ואין איש קראתי ואין עונה.\nR. Johanan said : When the Holy One, blessed be He, enters a Synagogue and does not find there ten. He is immediately filled with wrath ; as it is said, \"Wherefore, when I came, was there no man ? When I called, was there none to answer ?\" (ibid. v. 2).\n\n[4] Berakhot 8a:14 (Berakhot)\nר' יוחנן אמר לעת מצא זו קבורה א\"ר חנינא מאי קרא (איוב ג, כב) השמחים אלי גיל ישישו כי ימצאו קבר אמר רבה בר רב שילא היינו דאמרי אינשי ליבעי אינש רחמי אפילו עד זיבולא בתרייתא שלמא\nR. Johanan said : \"In the time of finding\" refers to burial. R. Hannina said: What is the Scriptural authority for this? \"Who rejoice unto exultation and are glad, when they can find the grave\" (Job iii. 22). Rabbah b. Rab Shela said : Hence the popular saying : \"Let a man pray for peace even to the last shovelful of earth.\"\n\n[5] Berakhot 7b:23 (Berakhot)\nוא\"ר יוחנן משום רבי שמעון בן יוחי כל הקובע מקום לתפלתו אויביו נופלים תחתיו שנאמר (שמואל ב ז, י) ושמתי מקום לעמי לישראל ונטעתיו ושכן תחתיו ולא ירגז עוד ולא יוסיפו בני עולה לענותו כאשר בראשונה\nR. Johanan also said in the name of R. Simeon b. Johai : Whoever fixes a place for his prayer, his enemies fall beneath him; as it is said : \"And I will appoint a place for My people Israel, and will plant them, that they may dwell in their own place, and be disquieted no more ; neither shall the children of wickedness afflict them any more as at the first\" (II Sam. vii. 10).\n\n[6] Berakhot 58b:4 (Berakhot)\nאמר ליה הכי אמר ר' יוחנן מיום שחרב בית המקדש נגזרה גזירה על בתיהן של צדיקים שיחרבו שנאמר (ישעיהו ה, ט) באזני ה' צבאות אם לא בתים רבים לשמה יהיו גדולים וטובים מאין יושב ואמר ר' יוחנן עתיד הקדוש ברוך הוא להחזירן לישובן שנאמר (תהלים קכה, א) שיר המעלות לדוד הבוטחים ביי' כהר ציון מה הר ציון עתיד הקדוש ברוך הוא להחזירו לישובו אף בתיהן של צדיקים עתיד הקב\"ה להחזירן לישובן חזייה דלא מיישב דעתיה א\"ל דיו לעבד שיהא כרבו\nHe said to him, \"Thus spake R. Johanan : From the day the Temple was destroyed, a decree was issued that the houses of the righteous should be destroyed ; as it is said, 'In mine ears said the Lord of hosts : Of a truth many houses shall be desolate, even great and fair, without inhabitant' (Is. v. 9). Also said R. Johanan: The Holy One, blessed be He, will restore them to habitation ; as it is said, 'A Song of Ascents. They that trust in the Lord are as Mount Zion' (Ps. cxxv. 1) — just as the Holy One, blessed be He, will restore Mount Zion to habitation, so will He restore the houses of the righteous to habitation.\" He perceived that his mind was still not at rest, so he said to him, \"It is enough for the slave to be like his master.\"\n\n[7] Genesis 2:23 (Genesis)\nוַיֹּאמֶר֮ הָֽאָדָם֒ זֹ֣את הַפַּ֗עַם עֶ֚צֶם מֵֽעֲצָמַ֔י וּבָשָׂ֖ר מִבְּשָׂרִ֑י לְזֹאת֙ יִקָּרֵ֣א אִשָּׁ֔ה כִּ֥י מֵאִ֖ישׁ לֻֽקֳחָה־זֹּֽאת׃\nAnd the man said: ‘This is now bone of my bones, and flesh of my flesh; she shall be called Woman, because she was taken out of Man.’\n\nAnswer segments:\n(0) sources=[]: Rabbi Yochanan says it in **Berakhot 5b**, in the story of his visit to his sick colleague, Rabbi Elazar.\n\n**The story (Berakhot 5b:14)**\n\n(1) sources=[0]: R. Eleazar was ill and R. Johanan went in to visit him. He saw that he was lying in a dark room, so he bared his arm and a brightness was radiated therefrom. He then noticed that R. Eleazar was weeping.\n(2) sources=[]:  Rabbi Yochanan offers three possible reasons for the weeping and answers each one:\n\n1. **Torah study:** \n(3) sources=[0]: \"it matters not whether one does much or little, so long as he directs his heart to Heaven!\"\n(4) sources=[]: \n2. **Lack of food:** \n(5) sources=[0]: \"Not everyone has the merit of two tables!\"\n(6) sources=[]: \n3. **Children:** \n(7) sources=[0]: \"Is it because of childlessness? This is the bone of my tenth son!\"\n(8) sources=[]:  In the Aramaic: \n(9) sources=[0]: דין גרמא דעשיראה ביר\n(10) sources=[]: \n\n**The Gemara's discussion (Berakhot 5b:9)**\nThe Gemara also uses this line to clarify an earlier teaching about suffering caused by childlessness. It asks whether that teaching could refer to someone whose children died. It answers that it cannot, because \n(11) sources=[1]: R. Johanan himself said, \"This is the bone of my tenth son!\"\n(12) sources=[]:  The resolution is that \n(13) sources=[1]: the latter teaching refers to one who never had children, the other to one who has been bereft of his children.\n(14) sources=[]: \n\nSo Rabbi Yochanan's line works both as consolation in the story and as evidence in the Gemara's argument.\n\nA note on the other sources: Genesis 2:23 (\n(15) sources=[7]: \"This is now bone of my bones\"\n(16) sources=[]: ) also uses the word \"bone,\" but it is not where this statement comes from."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011Cgsgg7jETtJ3uzpdhfiha",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Source 0 and 1 at Berakhot 5b show R. Johanan visiting sick R. Eleazar and saying it.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Matches source 0 closely.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Source 0 lists Torah study, food, children as possible reasons, each answered.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Quote matches source 0 (slightly abbreviated).\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Just a list heading.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches source 0.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Just a list heading.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches source 0.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Aramaic text matches source 0.\"},{\"i\":10,\"verdict\":\"partial\",\"note\":\"Heading plus claim that Gemara uses line to clarify earlier teaching; asking about children dying is supported, details of 'earlier teaching' loosely inferred.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Matches source 1.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Matches source 1.\"},{\"i\":14,\"verdict\":\"partial\",\"note\":\"Consolation in story and evidence in Gemara follows from sources 0 and 1.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Matches Genesis 2:23 in source 7.\"},{\"i\":16,\"verdict\":\"supported\",\"note\":\"Genesis uses 'bone' but is Adam's statement, not R. Yochanan's.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3877,
+   "output_tokens": 629,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

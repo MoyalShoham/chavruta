@@ -1,0 +1,93 @@
+{
+ "key": "58c25c872c6f2252762eefa59d518c9c",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: How did Rabbi Chanina ben Dosa know whether a sick person would live?\n\nSources:\n[0] Mishnah Berakhot 5:5 (Mishnah Berakhot)\nהַמִּתְפַּלֵּל וְטָעָה, סִימָן רַע לוֹ. וְאִם שְׁלִיחַ צִבּוּר הוּא, סִימָן רַע לְשׁוֹלְחָיו, מִפְּנֵי שֶׁשְּׁלוּחוֹ שֶׁל אָדָם כְּמוֹתוֹ. אָמְרוּ עָלָיו עַל רַבִּי חֲנִינָא בֶן דּוֹסָא, כְּשֶׁהָיָה מִתְפַּלֵּל עַל הַחוֹלִים וְאוֹמֵר, זֶה חַי וְזֶה מֵת. אָמְרוּ לוֹ, מִנַּיִן אַתָּה יוֹדֵעַ. אָמַר לָהֶם, אִם שְׁגוּרָה תְפִלָּתִי בְּפִי, יוֹדֵעַ אֲנִי שֶׁהוּא מְקֻבָּל. וְאִם לָאו, יוֹדֵעַ אֲנִי שֶׁהוּא מְטֹרָף:\nOne who is praying and makes a mistake, it is a bad sign for him. And if he is the messenger of the congregation (the prayer leader) it is a bad sign for those who have sent him, because one’s messenger is equivalent to one’s self. They said about Rabbi Hanina ben Dosa that he used to pray for the sick and say, “This one will die, this one will live.” They said to him: “How do you know?” He replied: “If my prayer comes out fluently, I know that he is accepted, but if not, then I know that he is rejected.”\n\n[1] Berakhot 34b:12 (Berakhot)\nמתני׳ המתפלל וטעה סימן רע לו ואם שליח צבור הוא סימן רע לשולחיו מפני ששלוחו של אדם כמותו אמרו עליו על ר' חנינא בן דוסא שהיה מתפלל על החולים ואומר זה חי וזה מת אמרו לו מנין אתה יודע אמר להם אם שגורה תפלתי בפי יודע אני שהוא מקובל ואם לאו יודע אני שהוא מטורף:\nMISHNAH If one errs while saying the Tefillah, it is a bad omen for him; and should he be the messenger of the congregation, it is a bad omen for those who deputed him, since a man's deputy is similar to himself. They declared concerning R. Hannina b. Dosa that when praying on behalf of the sick, he would say, \"This one will live, that one will die.\" They asked him, \"How knowest thou?\" He replied, \"If my prayer is fluent in my mouth, I know that he is accepted; but if not, I know that he is rejected.\"\n\n[2] Berakhot 34b:28 (Berakhot)\nושוב מעשה ברבי חנינא בן דוסא שהלך ללמוד תורה אצל ר' יוחנן בן זכאי וחלה בנו של ריב\"ז אמר לו חנינא בני בקש עליו רחמים ויחיה הניח ראשו בין ברכיו ובקש עליו רחמים וחיה אמר רבי יוחנן בן זכאי אלמלי הטיח בן זכאי את ראשו בין ברכיו כל היום כולו לא היו משגיחים עליו אמרה לו אשתו וכי חנינא גדול ממך אמר לה לאו אלא הוא דומה כעבד לפני המלך ואני דומה כשר לפני המלך:\nIt also happened with R. Hannina b. Dosa that he went to Torah with Rabban Johanan b. Zakkai. The son of Rabban Johanan b. Zakkai fell ill, and he said to him, \"Hannina, my son ! Pray on his behalf that he may live\" R. Hannina laid his head between his knees, and prayed on his behalf, and he recovered. Rabban Johanan b. Zakkai said, \"Were Ben Zakkai to press his head between his knees all the day long, no notice would be taken of him.\" His wife said to him, \"Is, then, Hannina greater than thou?\" He replied, \"No; he is like a slave before the King, and I like a nobleman before the King.\"\n\n[3] Berakhot 34b:27 (Berakhot)\nת\"ר מעשה שחלה בנו של ר\"ג שגר שני ת\"ח אצל רבי חנינא בן דוסא לבקש עליו רחמים כיון שראה אותם עלה לעלייה ובקש עליו רחמים בירידתו אמר להם לכו שחלצתו חמה אמרו לו וכי נביא אתה אמר להן לא נביא אנכי ולא בן נביא אנכי אלא כך מקובלני אם שגורה תפלתי בפי יודע אני שהוא מקובל ואם לאו יודע אני שהוא מטורף ישבו וכתבו וכוונו אותה שעה וכשבאו אצל ר\"ג אמר להן העבודה לא חסרתם ולא הותרתם אלא כך היה מעשה באותה שעה חלצתו חמה ושאל לנו מים לשתות\nOur Rabbis have taught : It once happened that the son of Rabban Gamaliel was ill. He sent two disciples of the wise to R. Hannina b. Dosa to pray on his behalf. When he saw them, he ascended to an upper chamber and prayed on his behalf. On descending he said to them, \"Go, the fever has left him.\" They said to him, \"Art thou a prophet?\" He replied, \"'I am no prophet nor a prophet's son' (Amos vii. 14) ; but so is my tradition : If my prayer is fluent in my mouth, I know that he is accepted ; but if not, I know that he is rejected.\" They sat down and wrote and noted the time. When they came to Rabban Gamaliel, he said to them, \"By the Temple-service! You have neither understated nor overstated [the time]. But thus it happened ; at that very hour the fever left him, and he asked us for water to drink.\"\n\n[4] Berakhot 33a:8 (Berakhot)\nת\"ר מעשה במקום אחד שהיה ערוד והיה מזיק את הבריות באו והודיעו לו לר' חנינא בן דוסא אמר להם הראו לי את חורו הראוהו את חורו נתן עקבו על פי החור יצא ונשכו ומת אותו ערוד\nOur Rabbis have taught : It happened in a certain place that there was a lizard which injured people. They came and informed R. Hannina b. Dosa. He said to them, \"Show me its hole.\" They pointed it out to him, and he placed his heel over the mouth of the hole. The lizard came out and bit him, and it died.\n\n[5] Berakhot 61b:4 (Berakhot)\nואמר רבא לא איברי עלמא אלא לרשיעי גמורי או לצדיקי גמורי אמר רבא לידע אינש בנפשיה אם צדיק גמור הוא אם לאו אמר רב לא איברי עלמא אלא לאחאב בן עמרי ולר' חנינא בן דוסא לאחאב בן עמרי העולם הזה ולרבי חנינא בן דוסא העולם הבא:\nRaba also said : The universe was only created for the completely wicked or the completely righteous. Raba said : Let a man know himself whether he is completely righteous or not. Rab said : The universe was only created for Ahab the son of Omri and for R. Hannina b. Dosa — for Ahab the son of Omri, this world; and for R. Hannina b. Dosa, the world to come.\n\n[6] Berakhot 6a:6 (Berakhot)\nהאי מאן דבעי למידע להו לייתי קיטמא נהילא ונהדר אפורייה ובצפרא חזי כי כרעי דתרנגולא האי מאן דבעי למחזינהו ליתי שלייתא דשונרתא אוכמתא בת אוכמתא בוכרתא בת בוכרתא ולקליה בנורא ולשחקיה ולימלי עיניה מניה וחזי להו ולשדייה בגובתא דפרזלא ולחתמי' בגושפנקא דפרזלא דילמא גנבי מניה ולחתום פומיה כי היכי דלא ליתזק רב ביבי בר אביי עבד הכי חזא ואתזק בעו רבנן רחמי עליה ואתסי:\nWho wishes to perceive their footprints should take sifted ashes and sprinkle them around his bed. In the morning he will see something resembling the footprints of a cock. Who wishes to see them should take the after-birth of a black she-cat, the offspring of a black she-cat, the first-born of a first-born, roast it in the fire, pulverise it, then fill his eyes with it, and he will see them. He must pour the powder into an iron tube and seal it with an iron signet, lest the evil spirits steal it. He must also seal its mouth, lest he come to harm. Rab Bebai b. Abbai did this ; he saw the evil spirits and was injured. The Rabbis prayed for him and he was cured.\n\n[7] Berakhot 28b:6 (Berakhot)\nת\"ר כשחלה ר' אליעזר נכנסו תלמידיו לבקרו אמרו לו רבינו למדנו אורחות חיים ונזכה בהן לחיי העולם הבא\nOur Rabbis have taught : When R. Eliezer was ill, his disciples went in to visit him. They said to him, \"Master, teach us the ways of life whereby we may be worthy of the life of the world to come.\"\n\nAnswer segments:\n(0) sources=[]: **The sign was how fluently his prayer came out.**\n\nThe Mishnah reports that \n(1) sources=[0]: Rabbi Hanina ben Dosa used to pray for the sick and say, \"This one will die, this one will live.\" They said to him: \"How do you know?\" He replied: \"If my prayer comes out fluently, I know that he is accepted, but if not, then I know that he is rejected.\"\n(2) sources=[]:  In the original: \n(3) sources=[0]: אִם שְׁגוּרָה תְפִלָּתִי בְּפִי, יוֹדֵעַ אֲנִי שֶׁהוּא מְקֻבָּל. וְאִם לָאו, יוֹדֵעַ אֲנִי שֶׁהוּא מְטֹרָף\n(4) sources=[]: .\n\nThe Mishnah places this right after a related principle: \n(5) sources=[0]: one who is praying and makes a mistake, it is a bad sign for him.\n(6) sources=[]:  Rabbi Chanina's teaching is the other side of that idea. Fluent prayer is a good sign.\n\n**The Gemara's story.** A baraita describes this in practice. When \n(7) sources=[3]: the son of Rabban Gamaliel was ill. He sent two disciples of the wise to R. Hannina b. Dosa to pray on his behalf.\n(8) sources=[]:  After praying, he told them, \n(9) sources=[3]: \"Go, the fever has left him.\"\n(10) sources=[]:  Asked if he was a prophet, he quoted Amos: \n(11) sources=[3]: \"'I am no prophet nor a prophet's son' (Amos vii. 14); but so is my tradition\"\n(12) sources=[]: . The Aramaic is \n(13) sources=[3]: כך מקובלני\n(14) sources=[]: .\n\nSo he presented this as a received tradition, not as prophecy. The disciples noted the time. Rabban Gamaliel confirmed that \n(15) sources=[3]: at that very hour the fever left him, and he asked us for water to drink."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsgbyBfKdAio7KZFwrv4",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Fluency of prayer as the sign is stated in the Mishnah (sources 0, 1).\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurately quotes Mishnah Berakhot 5:5.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition phrase only.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Hebrew quotation matches source 0 exactly.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Transition; the claim about adjacent placement is in the next segment.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches the Mishnah's first sentence, which immediately precedes the Hanina passage.\"},{\"i\":6,\"verdict\":\"partial\",\"note\":\"Interpretive claim that Hanina's teaching is the 'other side' of the mistake idea is not stated in sources; fluent-as-good is implied.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches the baraita in source 3.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Source says he prayed, then on descending told them.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Direct quote from source 3.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"They asked 'Art thou a prophet?' and he cited Amos.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Accurate quote from source 3.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Transition introducing the Hebrew/Aramaic phrase.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Phrase 'כך מקובלני' appears in source 3.\"},{\"i\":14,\"verdict\":\"partial\",\"note\":\"Received tradition rather than prophecy follows from his reply; disciples noting time is in source.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Matches Rabban Gamaliel's confirmation in source 3.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4675,
+   "output_tokens": 666,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

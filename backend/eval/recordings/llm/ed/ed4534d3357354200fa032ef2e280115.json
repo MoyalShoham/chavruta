@@ -1,0 +1,93 @@
+{
+ "key": "ed4534d3357354200fa032ef2e280115",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Is someone whose dead relative lies before him exempt from reciting the Shema?\n\nSources:\n[0] Mishnah Berakhot 3:1 (Mishnah Berakhot)\nמִי שֶׁמֵּתוֹ מוּטָל לְפָנָיו, פָּטוּר מִקְּרִיאַת שְׁמַע, מִן הַתְּפִלָּה וּמִן הַתְּפִלִּין. נוֹשְׂאֵי הַמִּטָּה וְחִלּוּפֵיהֶן וְחִלּוּפֵי חִלּוּפֵיהֶן, אֶת שֶׁלִּפְנֵי הַמִּטָּה וְאֶת שֶׁלְּאַחַר הַמִּטָּה, אֶת שֶׁלַּמִּטָּה צֹרֶךְ בָּהֶן פְּטוּרִים, וְאֶת שֶׁאֵין לַמִּטָּה צֹרֶךְ בָּהֶן חַיָּבִין. אֵלּוּ וָאֵלּוּ פְּטוּרִים מִן הַתְּפִלָּה:\nOne whose dead [relative] lies before him is exempt from the recital of the Shema and from the tefillah and from tefillin. The bearers of the bier and their replacements, and their replacements’ replacement, both those in front of the bier and those behind the bier those needed to carry the bier, are exempt; but those not needed to carry the bier are obligated. Both, however, are exempt from [saying] the tefillah.\n\n[1] Tosafot on Berakhot 17b:12:2 (Tosafot on Berakhot)\nפטור מק\"ש - בירושלמי מפרש טעמא א\"ר בון כתיב למען תזכור כו' עד כל ימי חייך ימים שאתה עוסק בחיים ולא ימים שאתה עוסק במתים: הכי גרסינן פטור מקריאת שמע ומן התפלה ומן התפילין:\n[HE IS] EXEMPT FROM THE RECITATION OF THE SHEMA . Rashi says that the reason for the exemption is because a person occupied with the plans for burying his relative is similar to a choson who is occupied with involvement in a mitzvoh. Tosfos quotes a Yerushalmee that has a more specific source for this rule. The Yerushalmee explains the reason for the exemption. Rav Bon said: it is written (D’vorim 16, 3) “so that you should remember etc.” till “all the days of your life”. The verse could have concluded with “all your days” by saying “all the days of your life” it is implying that the obligation to perform mitzvos is for days that you are occupied with life and not on days that you are occupied with death. See the חרדים ספר מבעל פירוש on the Y’rushalmee for an explanation why an additional verse is needed to exempt one when occupied with the death of a relative and the general exemption for one involved in a mitzvoh is insufficient. This is the text. One whose dead relative is in front of him is exempt from reading sh’ma, and from prayer and from t’filin.\n\n[2] Tosafot on Berakhot 17b:13:2 (Tosafot on Berakhot)\nאלו ואלו פטורין מן התפלה - אבל בק\"ש ובתפילין שהן מדאורייתא חייבים ורישא דקאמר מי שמתו מוטל לפניו דפטור מן קריאת שמע ומן התפילין וכו' כל שכן דפטור מן התפלה אלא לא בעי למיתני ברישא אלא החלוק שבין נושאי המטה למתו מוטל לפניו:\nBOTH THESE AND THOSE ARE EXEMPT FROM [RECITING THE AMIDAH ] PRAYER. Those who are needed to carry the bier and those who are not needed are exempt from prayer. However, to recite sh’ma and wear t’filin they are obligated. And the beginning of the Mishna that says an onain whose dead relative is lying before him, is exempt from reciting sh’ma and wearing t’filin etc. even though the Mishna does not mention that he is exempt from prayer, it is a kal v’chomer that he is exempt from prayer. If so, why didn’t the Mishna mention that one’s whose relative died is exempt from reciting sh’ma? But the Mishna only wanted to mention in the beginning the differences between the pallbearers who are not needed because they already carried the bier and one who’s dead relative is laying before him.\n\n[3] Berakhot 17b:12 (Berakhot)\nמתני׳ מי שמתו מוטל לפניו פטור מק\"ש ומן התפלה ומן התפילין ומכל מצות האמורות בתורה\nMISHNAH He whose dead is lying before him [unburied] is exempt from the reading of the Shema', from Tefillah, Tefillin and all the commandments mentioned in the Torah.\n\n[4] Mishneh Torah, Reading the Shema 4:3 (Mishneh Torah, Reading the Shema)\nמי שמת לו מת שהוא חייב להתאבל עליו פטור מקריאת שמע עד שיקברנו מפני שאין דעתו פנויה לקרות ואם היה משמר את המת אף על פי שאינו מתו פטור מקריאת שמע ואם היו השומרים שנים האחד משמר והשני נשמט למקום אחר וקורא וחוזר ומשמר ונשמט האחר וקורא וכן החופר קבר למת פטור מקריאת שמע.\nHe who has been bereaved of a relative for whom he has to keep the period of mourning is exempted from reading the Shema till he has buried the body, as his mind is not free for reading it. A watcher, even if the body is not that of a relative, is exempt from reading the Shema. When there are two watchers, one watches while the other withdraws to another room and reads it. Then he returns and watches while his companion withdraws and reads it. So too, one who is engaged in digging a grave for the interment of a human body is exempt, for the time being, from reading the Shema.\n\n[5] Berakhot 18a:4 (Berakhot)\nמתו אין אבל משמרו לא\nHe whose dead [is lying before him] is exempt, but [so it may The be inferred,] not the watcher. But lo, there is a teaching :\n\n[6] Tosafot on Berakhot 17b:12:1 (Tosafot on Berakhot)\nמי שמתו מוטל לפניו - רש\"י גריס מי שמתו אחר תפלת השחר אבל נראה לר\"י שהוא אחר היה קורא דאיירי בסיפיה מק\"ש וכאן מתחיל נמי מפטור ק\"ש ובירושלמי גריס כמו כן:\nONE WHOSE DECEASED [RELATIVE] IS LAID OUT [UNBURIED] BEFORE HIM. In Rashi’s text this perek mee shemaso, appears after the perek t’feelas hashachar. However, it appears to R”I, that it should be after היה קורא (as it is in our Gemaros), for at the end of היה קורא the Mishna is discussing rules of k’reeas sh’ma. And here the Mishna also starts with exemptions from k’reeas sh’ma. And in Yerushalmee the text is as we have it.\n\n[7] Berakhot 18a:3 (Berakhot)\nקתני מיהת פטור מקריאת שמע ומן התפלה ומן התפילין ומכל מצות האמורות בתורה אמר רב פפא תרגמא אמחזיר פניו ואוכל רב אשי אמר כיון שמוטל עליו לקוברו כמוטל לפניו דמי שנאמר (בראשית כג, ג) ויקם אברהם מעל פני מתו ונאמר ואקברה מתי מלפני כל זמן שמוטל עליו לקוברו כמוטל לפניו דמי\nIt is here at any rate taught that [the mourner, although he is not in the same room as the body,] is exempt from reading the Shema', from Tefillah, Tefillin, and all the commandments mentioned in the Torah ! Rab Pappa replied : [The Baraita] is to be interpreted as referring to one who turns his face from the body and eats. Rab Ashe said : Since the duty of burying rests upon him, it is to be regarded as though the body was lying before him; as it is said, \"And Abraham rose up from before his dead\" (Gen. xxiii. 3) and it is said \"That I may bury my dead from before me\" (ibid. v. 4), i.e. so long as the duty of burial rested upon him, it was as though the body was actually before him.\n\nAnswer segments:\n(0) sources=[]: **Yes.** The Mishnah states this explicitly: \n(1) sources=[0]: מִי שֶׁמֵּתוֹ מוּטָל לְפָנָיו, פָּטוּר מִקְּרִיאַת שְׁמַע\n(2) sources=[]: . \n(3) sources=[0]: One whose dead [relative] lies before him is exempt from the recital of the Shema and from the tefillah and from tefillin.\n(4) sources=[]:  The Gemara's version adds that he is exempt \n(5) sources=[3]: from all the commandments mentioned in the Torah.\n(6) sources=[]: \n\n**Why?** The sources give different reasons:\n- According to Tosafot's explanatory notes, \n(7) sources=[1]: Rashi says that the reason for the exemption is because a person occupied with the plans for burying his relative is similar to a choson who is occupied with involvement in a mitzvoh.\n(8) sources=[]: \n- Tosafot cites the Yerushalmi, where Rav Bon reads \"כל ימי חייך\" in Devarim 16:3 as meaning \n(9) sources=[1]: the obligation to perform mitzvos is for days that you are occupied with life and not on days that you are occupied with death.\n(10) sources=[]: \n- Rambam explains that the mourner is exempt \n(11) sources=[4]: till he has buried the body, as his mind is not free for reading it.\n(12) sources=[]: \n\n**What does \"before him\" mean?** The Gemara raises a baraita suggesting the mourner is exempt even when the body is in another room. Two Amoraim answer differently:\n- \n(13) sources=[7]: Rab Pappa replied : [The Baraita] is to be interpreted as referring to one who turns his face from the body and eats.\n(14) sources=[]: \n- \n(15) sources=[7]: Rab Ashe said : Since the duty of burying rests upon him, it is to be regarded as though the body was lying before him\n(16) sources=[]: , citing Avraham (\"ואקברה מתי מלפני\").\n\n**Others:** Rambam also exempts \n(17) sources=[4]: a watcher, even if the body is not that of a relative\n(18) sources=[]: , and \n(19) sources=[4]: one who is engaged in digging a grave\n(20) sources=[]: .\n\nFor practical application, please consult a rabbi."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsgZxMVTzxD7o3RuBjtC",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Mishnah (source 0) states the exemption explicitly.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quotation of Mishnah 3:1.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches source 0 translation.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Source 3 (Gemara's Mishnah) adds all commandments; consistent.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Source 3 says this.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Sources 1 attribute Rashi's reason and Yerushalmi reason; framing matches.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Source 1 states Rashi's reason this way.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Source 1 cites Rav Bon on Devarim 16:3 'all the days of your life'.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches source 1's explanation.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"Source 4 is Rambam's ruling with reason.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Matches source 4.\"},{\"i\":12,\"verdict\":\"supported\",\"note\":\"Source 7 shows the baraita challenge about the body not being present; two answers follow.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Source 7 gives Rab Pappa's answer.\"},{\"i\":14,\"verdict\":\"no_claim\",\"note\":\"Formatting only.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Source 7 gives Rab Ashe's answer.\"},{\"i\":16,\"verdict\":\"supported\",\"note\":\"Source 7 cites Abraham's verse 'that I may bury my dead from before me'.\"},{\"i\":17,\"verdict\":\"supported\",\"note\":\"Source 4 says a watcher is exempt even if not a relative.\"},{\"i\":18,\"verdict\":\"no_claim\",\"note\":\"Connective text.\"},{\"i\":19,\"verdict\":\"supported\",\"note\":\"Source 4 exempts one digging a grave.\"},{\"i\":20,\"verdict\":\"no_claim\",\"note\":\"Closing disclaimer to consult a rabbi; no claim about texts.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4372,
+   "output_tokens": 787,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

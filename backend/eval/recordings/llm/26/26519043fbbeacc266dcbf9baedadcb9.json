@@ -1,0 +1,93 @@
+{
+ "key": "26519043fbbeacc266dcbf9baedadcb9",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: My father just died and the funeral is tomorrow. Do I need to pray and put on tefillin today?\n\nSources:\n[0] Berakhot 15a:1 (Berakhot)\nיפנה ויטול ידיו ויניח תפילין ויקרא ק\"ש ויתפלל וזו היא מלכות שמים שלמה\nshould first have evacuation, then wash his hands, lay Tefillin, read the Shema' and offer his prayers — that is receiving the kingdom of heaven in perfection.\n\n[1] Berakhot 21a:13 (Berakhot)\nור' אלעזר אמר ספק קרא קריאת שמע ספק לא קרא חוזר וקורא ק\"ש ספק התפלל ספק לא התפלל אינו חוזר ומתפלל ורבי יוחנן אמר ולואי שיתפלל אדם כל היום כולו:\nR. Eleazar said : If one is in doubt whether he has read the Shema' or not, he should repeat it ; but if he is in doubt whether he has said the Tefillah or not, he need not repeat it. But R. Johanan said: Would that a man could pray all day.\n\n[2] Berakhot 14b:16 (Berakhot)\nרב משי ידיה וקרא ק\"ש ואנח תפילין וצלי והיכי עביד הכי והתניא החופר כוך למת בקבר פטור מק\"ש ומן התפלה ומן התפילין ומכל מצות האמורות בתורה הגיע זמן ק\"ש עולה ונוטל ידיו ומניח תפילין וקורא ק\"ש ומתפלל\nRab washed his hands, read the Shema', put on the Tefillin and then offered his prayers. How could he act thus? For lo, there is a teaching : One who is digging a cavity for a corpse is exempt from the obligation of reading the Shema', the Tefillah, Tefillin and all the commandments mentioned in the Torah ; but when the time of reading the Shema' arrives, he ascends, washes his hands, puts on the Tefillin, reads the Shema' and offers his prayers?\n\n[3] Berakhot 23b:2 (Berakhot)\nת\"ר לא יאחז אדם תפילין בידו וס\"ת בזרועו ויתפלל ולא ישתין בהן מים ולא יישן בהן לא שינת קבע ולא שינת עראי. אמר שמואל סכין ומעות וקערה וככר הרי אלו כיוצא בהן.\nOur Rabbis have taught : A man should not hold the Tefillin in his hand, or a scroll of the Torah on his arm and say his prayers. He may not urinate while holding them, or sleep with them, neither a regular sleep nor a chance sleep. Samuel said: A knife, money, a dish and a loaf come under the same rule.\n\n[4] Berakhot 31a:26 (Berakhot)\nנמי אמר רב חייא בר אשי אמר רב אע\"פ שאמרו שואל אדם צרכיו בשומע תפלה אם בא לומר אחר תפלתו אפילו כסדר יום הכפורים אומר:\nAlthough it has been said that one may pray for his personal needs in the benediction \"Who hearkenest unto prayer,\" if he desires to add after the Tefillah even something like the order of [confession for] the Day of Atonement, he may do so.\n\n[5] Berakhot 30a:6 (Berakhot)\nהיה רוכב על החמור וכו': ת\"ר היה רוכב על החמור והגיע זמן תפלה אם יש לו מי שיאחז את חמורו ירד למטה ויתפלל ואם לאו ישב במקומו ויתפלל רבי אומר בין כך ובין כך ישב במקומו ויתפלל לפי שאין דעתו מיושבת עליו\nIf he is riding upon an ass, he should alight and say the Tefillah. Our Rabbis have taught : If a man is riding upon an ass and the time of the Tefillah arrives, should he have somebody to hold his ass, he must alight and pray ; but if not, he sits in his place and prays. Rabbi says : In either case, he should sit in his place and pray, because his mind is unsettled.\n\n[6] Berakhot 23b:13 (Berakhot)\nהכי קאמר הא מילתא תיתי לה בתורת טעמא ולא תיתי לה בק\"ו דאי אתיא לה בתורת ק\"ו זהו ק\"ו שאין עליו תשובה:\nBut this is what he means to say : This question [of carrying Tefillin in a regular privy but not a chance one] thou mayest argue with a reason; but thou must not argue it by means of a fortiori deduction, for if thou usest this method of argument, it is an argument which cannot be refuted.\n\n[7] Berakhot 23a:3 (Berakhot)\nתנו רבנן הנצרך לנקביו אל יתפלל ואם התפלל תפלתו תועבה אמר רב זביד ואיתימא רב יהודה לא שנו אלא שאינו יכול לשהות בעצמו אבל אם יכול לשהות בעצמו תפלתו תפלה\nOur Rabbis have taught : If a man feels the need to relieve himself, he should not say the Tefillah; and if he does, his prayer is an abomination. Rab Zebid (another version : Rab Judah) said : This teaching is meant to apply only to one who is unable to contain himself; but if he is able to contain himself, his Tefillah is valid.\n\nAnswer segments:\n(0) sources=[]: I'm so sorry about your father. בָּרוּךְ דַּיַּן הָאֱמֶת. May you be comforted.\n\n**The sources here don't answer your question.** None of them discusses someone whose close relative has died and is not yet buried. I won't fill that gap from memory.\n\nThe closest related text is about a different person, a gravedigger. A baraita cited in Berakhot 14b says that \n(1) sources=[2]: one who is digging a cavity for a corpse is exempt from the obligation of reading the Shema', the Tefillah, Tefillin and all the commandments mentioned in the Torah\n(2) sources=[]: . In Aramaic: \n(3) sources=[2]: החופר כוך למת בקבר פטור מק\"ש ומן התפלה ומן התפילין\n(4) sources=[]: . The same baraita adds that \n(5) sources=[2]: when the time of reading the Shema' arrives, he ascends, washes his hands, puts on the Tefillin, reads the Shema' and offers his prayers\n(6) sources=[]: .\n\nThis is not your case. The text concerns someone busy digging a grave, not a bereaved son. Whether its reasoning applies to a mourner before the funeral, and how, is not addressed in these sources.\n\nPlease call your rabbi, or the rabbi or chevra kadisha handling the funeral, today. They can tell you what applies to you between now and the burial. They can also guide you through the funeral and the days after.\n\nIf you'd like, when you have the strength, we can study this together with sources that address your situation directly. Wishing you strength tomorrow."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011Cgsh37m3hKBQRaE7EJby8",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Condolences, plus accurate statement that none of the sources address a mourner before burial; the gravedigger baraita in 14b is correctly described.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurately quotes the Berakhot 14b baraita about one digging a cavity for a corpse.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transitional phrase introducing the Aramaic.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Aramaic text matches the quoted baraita in source 2.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Transition connecting to the next quotation.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Accurately quotes the continuation of the baraita in source 2.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Says the text concerns a gravedigger, not a bereaved son, and that applicability to mourners is unaddressed; consistent with sources.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3003,
+   "output_tokens": 342,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

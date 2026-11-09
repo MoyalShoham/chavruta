@@ -1,0 +1,93 @@
+{
+ "key": "2136d0d66f41b2f05ed835438b473452",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Where does the Rambam rule that the grace after meals is a positive commandment from the Torah?\n\nSources:\n[0] Mishneh Torah, Blessings 1:1 (Mishneh Torah, Blessings)\nמצות עשה מן התורה לברך אחר אכילת מזון שנאמר ואכלת ושבעת וברכת את יי' אלהיך ואינו חייב מן התורה אלא אם כן שבע שנאמר ואכלת ושבעת וברכת ומדברי סופרים אכל אפילו כזית מברך אחריו.\nIt is an affirmative precept of the Torah to say Grace after a meal, as it is said, \"And thou shalt eat and be satisfied and shalt bless the Lord, thy God\" (Deuteronomy 8:10). The Torah only imposes the obligation on a person when he is satisfied; for it is said, \"When thou hast eaten and art satisfied, thou shalt bless etc.\" According to the ordinances of the sages, however, even if one has eaten only as much food as the size of an olive, he recites Grace after the meal.\n\n[1] Berakhot 48b:5 (Berakhot)\nתנו רבנן מנין לברכת המזון מן התורה שנאמר (דברים ח, י) ואכלת ושבעת וברכת זו ברכת הזן את ה' אלהיך זו ברכת הזמון על הארץ זו ברכת הארץ הטובה זו בונה ירושלים וכן הוא אומר (דברים ג, כה) ההר הטוב הזה והלבנון אשר נתן לך זו הטוב והמטיב אין לי אלא לאחריו לפניו מנין אמרת קל וחומר כשהוא שבע מברך כשהוא רעב לא כל שכן\nOur Rabbis have taught : Whence do we derive the Grace after meals from the Torah? As it is said, \"And thou shalt eat and be satisfied and bless\" (Deut. viii. 10) — this refers to the benediction \"Who feedest\"; \"the Lord thy God\" (ibid.)— to the benediction of Zimmun; \"for the land\" (ibid.) — to the benediction of \"the land\" ; \"the good\" (ibid.) — to \"Who. . . rebuildest Jerusalem,\" for so it states \"That goodly hill-country and Lebanon\" (ibid. iii. 25); \"which He hath given thee\" (ibid. viii. 10) — to \"Who art kind and dealest kindly.\" I have here only the Grace after meals ; whence do we derive the Grace before meals ? Thou canst reason by a fortiori argument — if a man should bless God when satisfied, how much more so when he is hungry !\n\n[2] Berakhot 20b:7 (Berakhot)\nובברכת המזון: פשיטא מהו דתימא הואיל וכתיב (שמות טז, ח) בתת ה' לכם בערב בשר לאכל ולחם בבקר לשבע כמצות עשה שהזמן גרמא דמי קמ\"ל:\nAnd Grace after meals. This too is evident ! But thou mightest say that since it is written thereby, \"When the Lord shall give you in the evening flesh to eat and in the morning bread to the full\" (Exod. xvi. 8), it is like a command the observance of which depends upon a certain point of time [and women are exempt]; therefore it informs us [that it is obligatory].\n\n[3] Berakhot 21a:3 (Berakhot)\nאמר רב יהודה מנין לברכת המזון לאחריה מן התורה שנאמר (דברים ח, י) ואכלת ושבעת וברכת\nRab Judah said : Whence is it that Grace after meals is ordained by the Torah? As it is said, \"And thou shalt eat and be satisfied and bless the Lord thy God\" (Deut. viii. 10).\n\n[4] Mishneh Torah, Blessings 2:1 (Mishneh Torah, Blessings)\nסדר ברכת המזון כך היא:ראשונה ברכת הזן שנייה ברכת הארץ שלישית בונה ירושלים רביעית הטוב והמטיב ברכה ראשונה משה רבינו תקנה שנייה תיקן יהושע שלישית תיקן דוד ושלמה בנו רביעית חכמי משנה תקנוה.\nThe order of the Grace after meals is as follows: The first blessing is that beginning \"Who feedeth\"; the second is the blessing for the Promised Land; the third, that ending \"Who rebuildeth Jerusalem\"; the fourth, that beginning \"Who is good and doeth good\". The first blessing was instituted by Moses, our teacher; the second, by Joshua; the third, by David and Solomon, his son; the fourth, by the Sages of the Mishna.\n\n[5] Berakhot 21a:6 (Berakhot)\nאיכא למפרך מה למזון שכן נהנה ומה לתורה שכן חיי עולם ועוד תנן על המזון מברך לאחריו ואינו מברך לפניו תיובתא:\nOne can, however, object to this reasoning : Why is Grace answered squired after a meal? Because it has been enjoyed. Why is a benediction required over the reading of the Torah ? Because it is life eternal. Moreover there is a teaching in our Mishnah: At his meal, he says the Grace after but not the Grace before ! The refutation [remains unanswered].\n\n[6] Berakhot 20b:11 (Berakhot)\nא\"ל רבינא לרבא נשים בברכת המזון דאורייתא או דרבנן למאי נפקא מינה לאפוקי רבים ידי חובתן אי אמרת (בשלמא) דאורייתא אתי דאורייתא ומפיק דאורייתא (אלא אי) אמרת דרבנן הוי שאינו מחוייב בדבר וכל שאינו מחוייב בדבר אינו מוציא את הרבים ידי חובתן מאי\nRabina asked Raba : Is the recital of the Grace after meals by women an ordinance from the Torah or the Rabbis ? What is the point at issue ? It is whether they have the power of exempting others. It is quite right if thou sayest it is from the Torah ; then one who is enjoined by the Torah [to keep the observance] comes and exempts one [whose observance is likewise commanded] by the Torah. But if thou sayest it is from the Rabbis, then it is not a compulsory observance, and one who is not under the obligation [to keep the observance] cannot exempt others. How is it then ?\n\n[7] Berakhot 21a:2 (Berakhot)\nשאני תפלה דלית בה מלכות שמים והרי ברכת המזון לאחריו דלית בה מלכות שמים ותנן על המזון מברך לאחריו ואינו מברך לפניו אלא ק\"ש וברכת המזון דאורייתא ותפלה דרבנן:\nIt is different with Tefillah, because it contains no reference to the Kingdom of Heaven. But in the Grace after meals there is also no reference to the Kingdom of Heaven, and yet our Mishnah declares : At his meal, he says the Grace after but not the Grace before ! Quite so ; but the reading of the Shema' and the Grace after meals are ordained by the Torah, whereas Tefillah is ordained by the Rabbis.\n\nAnswer segments:\n(0) sources=[]: The Rambam states this at the very opening of **Mishneh Torah, Hilkhot Berakhot 1:1**: \n(1) sources=[0]: מצות עשה מן התורה לברך אחר אכילת מזון שנאמר ואכלת ושבעת וברכת את יי' אלהיך\n(2) sources=[]: , meaning \n(3) sources=[0]: \"It is an affirmative precept of the Torah to say Grace after a meal, as it is said, 'And thou shalt eat and be satisfied and shalt bless the Lord, thy God' (Deuteronomy 8:10).\"\n(4) sources=[]: \n\nIn the same halakhah he adds two qualifications:\n\n- **The Torah-level obligation:** \n(5) sources=[0]: The Torah only imposes the obligation on a person when he is satisfied\n(6) sources=[]: . He reads this from the word ושבעת.\n- **The rabbinic extension:** \n(7) sources=[0]: According to the ordinances of the sages, however, even if one has eaten only as much food as the size of an olive, he recites Grace after the meal.\n(8) sources=[]: \n\n**Talmudic background in the sources:** The Rambam's ruling matches \n(9) sources=[3]: Rab Judah\n(10) sources=[]:  in Berakhot 21a, who derives Grace after meals from the same verse. Berakhot 21a also states directly that \n(11) sources=[7]: the reading of the Shema' and the Grace after meals are ordained by the Torah, whereas Tefillah is ordained by the Rabbis.\n(12) sources=[]: \n\n**A related point:** In Hilkhot Berakhot 2:1, the Rambam gives the order of the four blessings and who instituted each. \n(13) sources=[4]: The first blessing was instituted by Moses, our teacher; the second, by Joshua; the third, by David and Solomon, his son; the fourth, by the Sages of the Mishna.\n(14) sources=[]:  You might compare this with the baraita in Berakhot 48b, which reads the parts of the verse as referring to the various blessings, including \n(15) sources=[1]: \"which He hath given thee\" (ibid. viii. 10) — to \"Who art kind and dealest kindly.\""
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsgrKPEdw6m91gCAAeH3",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Source 0 is Mishneh Torah Blessings 1:1, opening with this ruling.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Exact Hebrew quote from source 0.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition phrase.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quote of source 0 translation.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Transition introducing qualifications.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Directly from source 0.\"},{\"i\":6,\"verdict\":\"partial\",\"note\":\"Source says 'ושבעת' is the verse basis, but doesn't explicitly say he reads it from the word; reasonable but not stated as such.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Directly from source 0.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Heading/transition.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Rab Judah in source 3.\"},{\"i\":10,\"verdict\":\"partial\",\"note\":\"Rab Judah derives it from same verse (supported); Berakhot 21a stating Shema/Grace Torah-ordained is in source 7.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Quote from source 7, Berakhot 21a:2.\"},{\"i\":12,\"verdict\":\"supported\",\"note\":\"Source 4 gives order of four blessings and who instituted them.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Matches source 4.\"},{\"i\":14,\"verdict\":\"supported\",\"note\":\"Source 1 reads verse parts as referring to blessings.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Matches source 1.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3860,
+   "output_tokens": 598,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

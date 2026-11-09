@@ -1,0 +1,93 @@
+{
+ "key": "e3373ad7a224f3ec29c479112a44a794",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: אבא שלי נפטר הבוקר והלוויה מחר, האם אני חייב לקרוא קריאת שמע?\n\nSources:\n[0] Mishneh Torah, Reading the Shema 4:3 (Mishneh Torah, Reading the Shema)\nמי שמת לו מת שהוא חייב להתאבל עליו פטור מקריאת שמע עד שיקברנו מפני שאין דעתו פנויה לקרות ואם היה משמר את המת אף על פי שאינו מתו פטור מקריאת שמע ואם היו השומרים שנים האחד משמר והשני נשמט למקום אחר וקורא וחוזר ומשמר ונשמט האחר וקורא וכן החופר קבר למת פטור מקריאת שמע.\nHe who has been bereaved of a relative for whom he has to keep the period of mourning is exempted from reading the Shema till he has buried the body, as his mind is not free for reading it. A watcher, even if the body is not that of a relative, is exempt from reading the Shema. When there are two watchers, one watches while the other withdraws to another room and reads it. Then he returns and watches while his companion withdraws and reads it. So too, one who is engaged in digging a grave for the interment of a human body is exempt, for the time being, from reading the Shema.\n\n[1] Mishneh Torah, Reading the Shema 4:5 (Mishneh Torah, Reading the Shema)\nהיו עסוקים בהספד והגיע זמן קריאת שמע בזמן שהמת מונח לפניהן נשמטים אחד אחד וקוראין וחוזרין להספד אין המת מוטל לפניהם כל העם קורין קריאת שמע והאבל יושב ודומם לפי שאינו חייב לקרות עד שיקבור את מתו.\nWhen the people are engaged in listening to funeral addresses and the time arrives to read the Shema, they withdraw singly, to read the Shema, and return to listen to the funeral addresses that are delivered in the presence of the dead. But if the dead body is not in the place where they are gathered, all those present read the Shema —the mourner however is silent as he is under no obligation to read the Shema till he has buried his dead.\n\n[2] Mishneh Torah, Reading the Shema 4:6 (Mishneh Torah, Reading the Shema)\nקברו את המת וחזרו האבלים לקבל תנחומין וכל העם הולכים אחריהם ממקום הקבר למקום שעומדים בו האבלים לעשות שורה לקבל תנחומין אם יכולין העם להתחיל ולגמור אפילו פסוק אחד קודם שיגיעו לשורה יתחילו ואם לאו לא יתחילו אלא ינחמו את האבלים ואחר שיפטרו מהן יתחילו לקרות בני אדם העומדין בשורה הפנימיים שהן רואין פני האבלים פטורין מקריאת שמע והחיצונים הואיל ואינן רואין את האבלים חייבין בקריאת שמע במקומן.\nAfter the interment, when the mourners have returned from the grave to receive condolences, and the people follow them from the grave to the spot where the mourners stand, to form a line to receive condolences—if there is time for the people to commence and conclude the recital of at least one verse of the Shema before they reach the line, they should do so. Otherwise they are not to begin but should first offer their condolences to the mourners, and, after they have left them, read the Shema. Those who are in the interior lines and face the mourners are exempt from the duty of reading the Shema; but those who stand in the exterior lines, since they do not see the mourners, have the duty of reading the Shema where they are standing.\n\n[3] Mishneh Torah, Reading the Shema 2:8 (Mishneh Torah, Reading the Shema)\nהקורא קריאת שמע לא ירמוז בעיניו ולא יקרוץ בשפתיו ולא יראה באצבעותיו כדי שלא תהיה קריאתו עראי ואם עשה כן אף על פי שיצא ידי חובתו הרי זה מגונה וצריך להשמיע לאזנו כשהוא קורא ואם לא השמיע לאזנו יצא וצריך לדקדק באותיותיו ואם לא דקדק יצא.\nWhile reading the Shema, one must not wink with the eyes, signal with the lips, or point with the fingers, so that his recital shall not be perfunctory. If he did any of these things, he has, though fulfilling his duty, been guilty of unbecoming conduct. A person should read the Shema so that the words are audible to himself. If he has not done so, he has nevertheless fulfilled his duty. He should enunciate the letters distinctly. If he has not done so, he has nevertheless fulfilled his duty.\n\n[4] Shulchan Arukh, Orach Chayim 111:3 (Shulchan Arukh, Orach Chayim)\nאִם עַד שֶׁלֹּא קָרָא קְרִיאַת שְׁמַע מָצָא צִבּוּר מִתְפַּלְּלִין, לֹא יִתְפַּלֵּל עִמָּהֶם, אֶלָּא קוֹרֵא קְרִיאַת שְׁמַע וְאַחַר כָּךְ יִתְפַּלֵּל, דְּמִסְמַךְ גְּאֻלָּה לִתְפִלָּה עָדִיף.\n\n[5] Mishneh Torah, Reading the Shema 1:5 (Mishneh Torah, Reading the Shema)\nהקורא קריאת שמע מברך לפניה ולאחריה ביום מברך שתים לפניה ואחת לאחריה ובלילה מברך שתים לפניה ושתים לאחריה.\nBlessings are recited before the Shema and after it. When reading the Shema by day, two blessings are recited before it, and one after it. When reading it at night, two blessings are recited before, and two after it.\n\n[6] Tosafot on Berakhot 4b:2:1 (Tosafot on Berakhot)\nוקורא קריאת שמע ומתפלל - מכאן משמע שמשעה שהגיע זמן קריאת שמע של לילה שאין לו לאכול סעודה עד שיקרא ק\"ש ויתפלל ערבית:\n\n[7] Mishneh Torah, Reading the Shema 1:13 (Mishneh Torah, Reading the Shema)\nהקורא אחר שלש שעות ביום אפילו היה אנוס לא יצא ידי חובת קריאת שמע בעונתו אלא הרי הוא כקורא בתורה ומברך לפניה ולאחריה כל היום אפילו איחר וקרא אחר שלש שעות.\nIf one reads the Shema after the first three hours of the day are gone, even though he had been unavoidably prevented from doing so earlier, he has not fulfilled the duty of reading the Shema at the right time. He is in the same category with one who reads the Torah. Still he recites the blessings that precede and follow it, at any part of the day, even if he delayed the reading till after the first three hours of the morning had elapsed.\n\nAnswer segments:\n(0) sources=[]: **בוגוד; המקום ינחם אותך בתוך שאר אבלי ציון וירושלים.**\n\nהנה מה שהמקורות שלפנינו אומרים:\n\n**הרמב\"ם, הלכות קריאת שמע ד:ג**, כותב: \n(1) sources=[0]: מי שמת לו מת שהוא חייב להתאבל עליו פטור מקריאת שמע עד שיקברנו מפני שאין דעתו פנויה לקרות\n(2) sources=[]: . כלומר, הפטור נמשך עד הקבורה, והטעם הוא שדעתו של האבל טרודה.\n\n**שם, ד:ה**, הרמב\"ם מתאר מצב של הספד כשהמת אינו מונח לפני הקהל: \n(3) sources=[1]: כל העם קורין קריאת שמע והאבל יושב ודומם לפי שאינו חייב לקרות עד שיקבור את מתו\n(4) sources=[]: .\n\nלפי לשון הרמב\"ם, הפטור תלוי בקבורה (\"עד שיקברנו\"). לכן במקרה שהלוויה מחר, הזמן שעד הקבורה כולל גם את הלילה ואת הבוקר שלפניה.\n\n**מה המקורות אינם עונים עליו:** הם אינם עוסקים בשאלות כגון: האם מותר לקרוא אם רוצים, מה הדין אם אחרים מטפלים בכל סידורי הלוויה, או מה עושים לאחר הקבורה לגבי זמן קריאת שמע שעבר. לשאלות האלה, ולהכרעה מעשית במצבך, כדאי מאוד לפנות לרב, ורצוי עוד היום.\n\nשוב, משתתף בצערך."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011Cgsh3NK9fV6Yjy2dAfy33",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"no_claim\",\"note\":\"Condolence and introduction; no claim about the texts.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quotation of Rambam 4:3.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Exemption until burial and the reason (mind not free) are stated in 4:3.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quote of 4:5, mourner silent when body not before them.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Just punctuation, no claim.\"},{\"i\":5,\"verdict\":\"partial\",\"note\":\"Exemption depending on burial is supported; the application to the night and morning before the funeral is an inference, not stated.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Statement of what sources don't address and referral to a rabbi; no claim about the texts.\"},{\"i\":7,\"verdict\":\"no_claim\",\"note\":\"Closing condolence.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3664,
+   "output_tokens": 334,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

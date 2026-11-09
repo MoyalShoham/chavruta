@@ -1,0 +1,93 @@
+{
+ "key": "043f4d5c601243c5025864a7e435d2c9",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Where in the Torah is the verse 'Hear, O Israel, the Lord is our God, the Lord is one'?\n\nSources:\n[0] Berakhot 13b:13 (Berakhot)\nת\"ר (דברים ו, ד) שמע ישראל ה' אלהינו ה' אחד עד כאן צריכה כוונת הלב דברי ר\"מ אמר רבא הלכה כר\"מ\nOur Rabbis have taught : \"Hear, O Israel, the Lord our God, the Lord is one\" (Deut. vi. 4) — up to here Kawwanah is required. These are the words of R. Meir. Raba said : The Halakah is in accord with R. Meir.\n\n[1] Berakhot 6a:22 (Berakhot)\nאתם עשיתוני חטיבה אחת בעולם שנאמר (דברים ו, ד) שמע ישראל ה' אלהינו ה' אחד ואני אעשה אתכם חטיבה אחת בעולם שנאמר ומי כעמך ישראל גוי אחד בארץ\n\"You have made Me the only object of your love in the world\" — as it is said, \"Hear O Israel, the Lord our God, the Lord is one\" (ibid. vi. 4). \"I shall make you the only object of My love in the world\" — as it is said, \"And who is like Thy people Israel, a nation one in the earth?\" (I Chron. xvii. 21).\n\n[2] Berakhot 13a:27 (Berakhot)\nורבנן מאי טעמייהו אמר קרא שמע בכל לשון שאתה שומע\nAnd what is the reason of the Sages? The text states, \"Hear, O Israel\" (ibid. v. 4); i.e. in any language which thou hearest.\n\n[3] Berakhot 15a:22 (Berakhot)\nאלא לעולם רבי יהודה ואפי' לכתחלה נמי ולא קשיא הא דידיה הא דרביה דתנן רבי יהודה אומר משום ר' אלעזר בן עזריה הקורא את שמע צריך שישמיע לאזנו שנאמר (דברים ו, ד) שמע ישראל ה' אלהינו ה' אחד אמר ליה רבי מאיר הרי הוא אומר אשר אנכי מצוך היום על לבבך אחר כונת הלב הן הן הדברים\nIt is certainly in agreement with R. Judah, even though it be ab initio ; and there is no contradiction. The latter is his own opinion, the other the opinion of his teacher. For there is a teaching : R. Judah says in the name of R. Eleazar b. 'Azariah : When one reads the Shema' he must make it audible to his ear ; as it is said, \"Hear, O Israel, the Lord our God, the Lord is one\" (Deut. vi. 4). R. Meir said to him : Behold the Scriptures state, \"And these words which I command thee this day shall be upon thy heart\" (ibid. v. 6), i.e. the words depend on the Kawwanah of the heart. Since thou hast reached so far, thou mayest even suppose that\n\n[4] Deuteronomy 6:4 (Deuteronomy)\nשְׁמַ֖ע יִשְׂרָאֵ֑ל יְהוָ֥ה אֱלֹהֵ֖ינוּ יְהוָ֥ה ׀ אֶחָֽד׃\nHEAR, O ISRAEL: THE LORD OUR GOD, THE LORD IS ONE.\n\n[5] Mishneh Torah, Reading the Shema 1:4 (Mishneh Torah, Reading the Shema)\nהקורא קריאת שמע כשהוא גומר פסוק ראשון אומר בלחש ברוך שם כבוד מלכותו לעולם ועד וחוזר וקורא כדרכו ואהבת את יי' אלהיך עד סופה ולמה קורין כן מסורת היא בידינו שבשעה שקבץ יעקב אבינו את בניו במצרים בשעת מיתתו ציום וזרזם על יחוד השם ועל דרך ה' שהלך בה אברהם ויצחק אביו ושאל אותם ואמר להם בני שמא יש בכם פסלות מי שאינו עומד עמי ביחוד השם כענין שאמר לנו משה רבינו פן יש בכם איש או אשה וגו' ענו כולם ואמרו שמע ישראל יי' אלהינו יי' אחד כלומר שמע ממנו אבינו ישראל יי' אלהינו יי' אחד פתח הזקן ואמר ברוך שם כבוד מלכותו לעולם ועד לפיכך נהגו כל ישראל לומר שבח ששבח בו ישראל הזקן אחר פסוק זה.\nWhen reciting the Shema, after concluding the first verse, one repeats in a low tone the sentence, \"Blessed be the name of His glorious sovereignty for ever and ever\" and then resumes the reading of the first section in the regular order from the verse, \"And thou shalt love the Lord, thy God,…\"to the end of the section. Why is the sentence above mentioned interpolated? We have a tradition that when the patriarch Jacob, residing in Egypt, gathered his sons about him, in his dying hour, he earnestly charged them concerning the Unity of God and the Way of the Lord in which Abraham and his father Isaac had walked. He questioned them, saying to them, \"Possibly, my sons, there is some one among you who is unworthy, and is not at one with me on the doctrine of the Unity of the Creator of the World,\" in the same way as our teacher Moses charged the people in the words, \"Lest there be among you a man or a woman … whose heart turneth away this day\" (Deuteronomy 29:17). They all answered, \"Hear, O Israel, the Lord our God, the Lord is one.\" This means, \"Our father, Israel, hear this, our [confession of faith]: 'the Lord our God is one Lord'\". The aged patriarch then ejaculated, \"Blessed be the name of His glorious Sovereignty for ever and ever.\" Hence, all Israelites keep the custom of reciting, after the first verse of the Shema, the thanksgiving uttered by the Patriarch Israel.\n\n[6] Mishneh Torah, Reading the Shema 1:2 (Mishneh Torah, Reading the Shema)\nומה הוא קורא שלשה פרשיות אלו הן:שמע והיה אם שמוע ויאמר ומקדימין לקרות פרשת שמע מפני שיש בה יחוד השם ואהבתו ותלמודו שהוא העיקר הגדול שהכל תלוי בו ואחריה והיה אם שמוע שיש בה צווי על (זכירת) שאר כל המצות ואחר כך פרשת ציצית שגם היא יש בה צווי זכירת כל המצות.\nWhat does one read? Three sections as follows: the section beginning, \"Hear, O Israel\" (Deuteronomy 6:4-9); that commencing, \"And it shall come to pass\" (Deuteronomy 11:13-21); and that commencing, \"And the Lord spoke\" (Numbers 15:37-41). The section beginning, \"Hear, O Israel\" is recited first, because it sets forth the duties of acknowledging the Unity of God, loving Him, and studying His words. This is the great and essential matter on which all depends. Then, the passage beginning, \"And it shall come to pass\" is read, this containing a charge to fulfill all the other commandments. Finally the section concerning Fringes is read, as it also contains a charge to remember all the commandments.\n\n[7] Berakhot 13b:18 (Berakhot)\nת\"ר שמע ישראל ה' אלהינו ה' אחד זו ק\"ש של ר' יהודה הנשיא א\"ל רב לר' חייא לא חזינא ליה לרבי דמקבל עליה מלכות שמים אמר ליה בר פחתי בשעה שמעביר ידיו על פניו מקבל עליו עול מלכות שמים\nOur Rabbis have taught: \"Hear, O Israel, the Lord our God, the Lord is one\" — that was the reading of the Shema' of R. Judah ha-Nasi'. Rab said to R. Hiyya, \"I have never seen Rabbi receive the yoke of the kingdom of heaven upon himself.\" He replied to him, \"Son of princes, at the time when he passed his hands across his face, he received upon himself the yoke of the kingdom of heaven.\"\n\nAnswer segments:\n(0) sources=[]: The verse is **Deuteronomy (Devarim) 6:4**:\n\n\n(1) sources=[4]: שְׁמַ֖ע יִשְׂרָאֵ֑ל יְהוָ֥ה אֱלֹהֵ֖ינוּ יְהוָ֥ה ׀ אֶחָֽד׃\n(2) sources=[]: \n\"\n(3) sources=[4]: HEAR, O ISRAEL: THE LORD OUR GOD, THE LORD IS ONE.\n(4) sources=[]: \"\n\n**Its place in the Shema:** The Rambam explains that the Shema is made up of three passages, beginning with \n(5) sources=[6]: the section beginning, \"Hear, O Israel\" (Deuteronomy 6:4-9)\n(6) sources=[]: . That passage comes first \n(7) sources=[6]: because it sets forth the duties of acknowledging the Unity of God, loving Him, and studying His words.\n(8) sources=[]: \n\n**How the Gemara uses it:** The Talmud in Berakhot cites the verse with the same reference, *(דברים ו, ד)*. Two examples:\n\n- On kavanah (intention), a baraita teaches that up to the end of this verse \n(9) sources=[0]: Kawwanah is required. These are the words of R. Meir. Raba said : The Halakah is in accord with R. Meir.\n(10) sources=[]: \n- In a machloket about saying the Shema aloud, \n(11) sources=[3]: R. Judah says in the name of R. Eleazar b. 'Azariah : When one reads the Shema' he must make it audible to his ear\n(12) sources=[]: , and he derives this from the word \"Hear\" in this verse. \n(13) sources=[3]: R. Meir said to him : Behold the Scriptures state, \"And these words which I command thee this day shall be upon thy heart\" (ibid. v. 6), i.e. the words depend on the Kawwanah of the heart.\n(14) sources=[]: \n\nA note on wording: your question says \"the Lord is our God.\" The translation in these sources renders it \"the Lord our God, the Lord is one.\" The Hebrew can be read either way."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsgSsrSZVbBA91dcV67B",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Deuteronomy 6:4 is confirmed by source 4 and the Talmud citations.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Hebrew text matches source 4.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Just a quotation mark.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"English matches source 4.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Rambam (Mishneh Torah) lists three passages beginning with Shema, per source 6.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Quoted directly from source 6.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Source 6 says Shema is recited first.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches source 6.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Berakhot sources cite (Deut. vi. 4); the claim is accurate.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches source 0.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"Source 3 presents a dispute between R. Judah and R. Meir about audibility.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Matches source 3.\"},{\"i\":12,\"verdict\":\"partial\",\"note\":\"Source 3 derives audibility from the verse, but does not say specifically from the word 'Hear'.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Matches source 3.\"},{\"i\":14,\"verdict\":\"partial\",\"note\":\"Translation wording is accurate, but the claim that the Hebrew can be read either way is not in the sources.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4244,
+   "output_tokens": 562,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}
