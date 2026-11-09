@@ -9,7 +9,7 @@ import numpy as np
 import pytest
 
 from chavruta.corpus import Chunk
-from chavruta.embeddings import Vectors, load_vectors, save_vectors
+from chavruta.embeddings import EMBEDDING_DIM, Vectors, load_vectors, save_vectors
 from chavruta.evaluation import Question, Ranking, load_questions, score_rankings, verify_questions
 from chavruta.retrieval import Retriever, matches
 from chavruta.text import tokens
@@ -19,7 +19,7 @@ class HashEmbedder:
     """Bag-of-tokens vectors: texts sharing words are close. Deterministic, no model download."""
 
     key = "hash"
-    dim = 256
+    dim = EMBEDDING_DIM
 
     def _one(self, text: str) -> Vectors:
         v = np.zeros(self.dim, dtype=np.float32)
@@ -96,7 +96,7 @@ def test_empty_or_punctuation_query_returns_nothing_from_keywords(retriever: Ret
 
 def test_vectors_must_match_chunks() -> None:
     with pytest.raises(ValueError, match="one vector per chunk"):
-        Retriever(CHUNKS, HashEmbedder(), np.zeros((2, 256), dtype=np.float32))
+        Retriever(CHUNKS, HashEmbedder(), np.zeros((2, EMBEDDING_DIM), dtype=np.float32))
 
 
 def test_vectors_roundtrip(tmp_path: Path) -> None:
