@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { api, ApiError, del, onClosed } from './api'
 import { Ask } from './components/Ask'
 import { Corpus } from './components/Corpus'
-import { Closed, Login, Notes } from './components/Simple'
+import { Closed, Login, Notes, Starting } from './components/Simple'
 import { Study } from './components/Study'
 import { SugyaView } from './components/SugyaView'
 import { useI18n } from './i18n'
@@ -18,19 +18,25 @@ export function App() {
   const [sugyaRef, setSugyaRef] = useState('Berakhot 2a')
   const [anchor, setAnchor] = useState<string | null>(null)
 
+  const [starting, setStarting] = useState(false)
+
   useEffect(() => {
     const check = () =>
       api<ClosedStatus>('/api/status')
-        .then(setStatus)
-        .catch(() => undefined)
+        .then((s) => {
+          setStatus(s)
+          setStarting(false)
+        })
+        .catch(() => setStarting(true))
     void check()
-    const timer = window.setInterval(check, 60_000)
+    // Every minute normally; every few seconds while the API is still starting up.
+    const timer = window.setInterval(check, starting ? 5_000 : 60_000)
     const off = onClosed(setStatus)
     return () => {
       window.clearInterval(timer)
       off()
     }
-  }, [])
+  }, [starting])
 
   const isOpen = status !== null && !status.closed
   useEffect(() => {
@@ -44,6 +50,7 @@ export function App() {
   }, [isOpen])
 
   if (status?.closed) return <Closed status={status} />
+  if (starting && status === null) return <Starting />
 
   const open = (ref: string) => {
     setSugyaRef(ref)

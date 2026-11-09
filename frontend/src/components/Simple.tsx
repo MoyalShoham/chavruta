@@ -34,6 +34,16 @@ export function Closed({ status }: { status: ClosedStatus }) {
   )
 }
 
+export function Starting() {
+  const { t } = useI18n()
+  return (
+    <main className="closed starting" role="main">
+      <h1>{t('appName')}</h1>
+      <p>{t('starting')}</p>
+    </main>
+  )
+}
+
 export function Login({ onSignedIn }: { onSignedIn: (u: User) => void }) {
   const { t } = useI18n()
   const [username, setUsername] = useState('learner')

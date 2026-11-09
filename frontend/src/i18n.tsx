@@ -80,6 +80,10 @@ const strings = {
     he: 'זמני השבת אינם זמינים כרגע, ולכן חברותא סגורה מיום שישי בצהריים.',
     en: 'Shabbat times are unavailable right now, so Chavruta closes from Friday noon.',
   },
+  starting: {
+    he: 'הספרייה נטענת. בהפעלה הראשונה זה לוקח זמן; הדף יתעדכן לבד.',
+    en: 'The library is loading. The first start takes a while; this page updates by itself.',
+  },
   works: { he: 'חיבורים', en: 'Works' },
   enabled: { he: 'פעיל', en: 'Enabled' },
   versions: { he: 'מהדורות', en: 'Versions' },

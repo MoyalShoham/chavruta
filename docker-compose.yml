@@ -100,8 +100,8 @@ services:
     restart: unless-stopped
     ports:
       - "127.0.0.1:3200:80"
-    depends_on:
-      api: { condition: service_healthy }
+    # No depends_on: the page is up at once and shows "the library is loading" until the API
+    # answers (nginx resolves the API's name per request).
 
 volumes:
   pgdata:

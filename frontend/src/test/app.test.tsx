@@ -146,6 +146,19 @@ describe('App', () => {
     expect(fetch.mock.calls.map((c) => c[0])).toEqual(['/api/status'])
   })
 
+  it('shows a loading screen while the API is still starting', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() => json({ detail: 'The API is not responding yet' }, 503)),
+    )
+    render(
+      <I18nProvider>
+        <App />
+      </I18nProvider>,
+    )
+    expect(await screen.findByText(/הספרייה נטענת/)).toBeInTheDocument()
+  })
+
   it('closes at once when any request answers 423', async () => {
     vi.stubGlobal(
       'fetch',
