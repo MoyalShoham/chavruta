@@ -70,9 +70,20 @@ addopts = "-q"
 markers = ["db: needs Docker for a PostgreSQL container"]
 
 [tool.uv.sources]
-torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
+# Linux (Docker, CI) takes the CPU wheels. Windows takes CUDA wheels, since PyPI's are CPU-only there.
+# RTX 50-series GPUs need CUDA 12.8 or newer; cu132 is the CUDA line that carries torch 2.15 for
+# Windows (cu128 stops at 2.11). macOS takes PyPI (MPS).
+torch = [
+    { index = "pytorch-cpu", marker = "sys_platform == 'linux'" },
+    { index = "pytorch-cu132", marker = "sys_platform == 'win32'" },
+]
 
 [[tool.uv.index]]
 name = "pytorch-cpu"
 url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu132"
+url = "https://download.pytorch.org/whl/cu132"
 explicit = true

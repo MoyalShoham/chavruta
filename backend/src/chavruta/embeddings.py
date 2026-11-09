@@ -105,6 +105,8 @@ def _device() -> str:
     try:
         import torch
 
+        if torch.cuda.is_available():
+            return "cuda"
         if torch.backends.mps.is_available():
             return "mps"
     except ImportError:  # pragma: no cover
