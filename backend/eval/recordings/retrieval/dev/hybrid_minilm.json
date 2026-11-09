@@ -1,0 +1,2671 @@
+{
+ "config": {
+  "name": "hybrid:minilm",
+  "mode": "hybrid",
+  "model": "minilm",
+  "rerank": false,
+  "rerank_top": 50
+ },
+ "rankings": [
+  {
+   "id": "q003",
+   "refs": [
+    "Rashi on Berakhot 13a:31:1",
+    "Berakhot 51b:14",
+    "Berakhot 47a:3",
+    "Rashi on Berakhot 6b:1:1",
+    "Deuteronomy 11:20",
+    "Rashi on Berakhot 40b:9:2",
+    "Rashi on Berakhot 15b:23:2",
+    "Berakhot 51b:13",
+    "Rashi on Berakhot 20b:4:1",
+    "Rashi on Berakhot 20b:6:1"
+   ],
+   "scores": [
+    0.028612,
+    0.024337,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015385
+   ],
+   "seconds": 0.06264608299534302
+  },
+  {
+   "id": "q004",
+   "refs": [
+    "Mishneh Torah, Blessings 1:1",
+    "Mishneh Torah, Blessings 3:11",
+    "Mishneh Torah, Blessings 4:2",
+    "Mishnah Berakhot 5:2",
+    "Mishneh Torah, Blessings 4:12",
+    "Rashi on Berakhot 52a:9:1",
+    "Mishnah Berakhot 6:6",
+    "Berakhot 49b:14",
+    "Mishneh Torah, Blessings 4:11",
+    "Mishneh Torah, Blessings 4:5"
+   ],
+   "scores": [
+    0.030798,
+    0.025253,
+    0.024909,
+    0.020098,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015625
+   ],
+   "seconds": 0.05538229200465139
+  },
+  {
+   "id": "q005",
+   "refs": [
+    "Berakhot 21a:3",
+    "Berakhot 21a:5",
+    "Rashi on Berakhot 22a:3:1",
+    "Mishneh Torah, Blessings 1:1",
+    "Rashi on Berakhot 11b:15:1",
+    "Rashi on Berakhot 52a:9:1",
+    "Rashi on Berakhot 16a:18:3",
+    "Rashi on Berakhot 52a:8:4",
+    "Mishneh Torah, Blessings 5:16",
+    "Rashi on Berakhot 45b:15:1"
+   ],
+   "scores": [
+    0.032522,
+    0.030835,
+    0.03055,
+    0.030478,
+    0.028219,
+    0.025729,
+    0.025383,
+    0.025238,
+    0.024878,
+    0.024799
+   ],
+   "seconds": 0.046238915994763374
+  },
+  {
+   "id": "q006",
+   "refs": [
+    "Numbers 15:38",
+    "Exodus 35:19",
+    "Exodus 39:41",
+    "Exodus 31:10",
+    "Exodus 39:1",
+    "Mishneh Torah, Blessings 11:5",
+    "Exodus 28:4",
+    "Berakhot 15a:10",
+    "Berakhot 24a:22",
+    "Berakhot 24a:3"
+   ],
+   "scores": [
+    0.030579,
+    0.027032,
+    0.026491,
+    0.025937,
+    0.022858,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873
+   ],
+   "seconds": 0.04416195799421985
+  },
+  {
+   "id": "q007",
+   "refs": [
+    "Berakhot 13b:12",
+    "Mishnah Berakhot 5:2",
+    "Mishneh Torah, Prayer and the Priestly Blessing 7:11",
+    "Mishneh Torah, Prayer and the Priestly Blessing 15:7",
+    "Mishneh Torah, Prayer and the Priestly Blessing 2:18",
+    "Mishneh Torah, Prayer and the Priestly Blessing 14:11",
+    "Berakhot 22a:14",
+    "Berakhot 49b:15",
+    "Berakhot 11b:16",
+    "Rashi on Berakhot 16a:15:2"
+   ],
+   "scores": [
+    0.026857,
+    0.021243,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625
+   ],
+   "seconds": 0.04943483399983961
+  },
+  {
+   "id": "q008",
+   "refs": [
+    "Rashi on Berakhot 11b:15:1",
+    "Berakhot 46a:7",
+    "Shulchan Arukh, Orach Chayim 47:9",
+    "Shulchan Arukh, Orach Chayim 139:9",
+    "Shulchan Arukh, Orach Chayim 128:27",
+    "Rashi on Berakhot 14b:21:2",
+    "Shulchan Arukh, Orach Chayim 128:18",
+    "Berakhot 21a:4",
+    "Shulchan Arukh, Orach Chayim 139:8",
+    "Numbers 26:8"
+   ],
+   "scores": [
+    0.030018,
+    0.026102,
+    0.016393,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.04164741600106936
+  },
+  {
+   "id": "q009",
+   "refs": [
+    "Berakhot 16a:13",
+    "Berakhot 16a:4",
+    "Leviticus 26:3",
+    "Mishneh Torah, Reading the Shema 3:3",
+    "Berakhot 32a:3",
+    "Deuteronomy 6:17",
+    "Berakhot 15b:15",
+    "Mishneh Torah, Reading the Shema 2:11",
+    "Deuteronomy 11:13",
+    "Mishnah Berakhot 2:2"
+   ],
+   "scores": [
+    0.032522,
+    0.03009,
+    0.025978,
+    0.023459,
+    0.023317,
+    0.023175,
+    0.022274,
+    0.016393,
+    0.016129,
+    0.015873
+   ],
+   "seconds": 0.06402700000035111
+  },
+  {
+   "id": "q010",
+   "refs": [
+    "Exodus 20:8",
+    "Berakhot 20b:10",
+    "Numbers 15:32",
+    "Mishnah Berakhot 1:5",
+    "Deuteronomy 5:12",
+    "Berakhot 49a:10",
+    "Mishneh Torah, Prayer and the Priestly Blessing 13:19",
+    "Mishneh Torah, Prayer and the Priestly Blessing 15:9",
+    "Mishneh Torah, Prayer and the Priestly Blessing 14:14",
+    "Mishneh Torah, Prayer and the Priestly Blessing 13:20"
+   ],
+   "scores": [
+    0.031778,
+    0.026882,
+    0.022657,
+    0.022195,
+    0.02089,
+    0.016393,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625
+   ],
+   "seconds": 0.0666409170080442
+  },
+  {
+   "id": "q016",
+   "refs": [
+    "Deuteronomy 11:22",
+    "Leviticus 24:19",
+    "Exodus 20:14",
+    "Deuteronomy 19:9",
+    "Deuteronomy 5:18",
+    "Leviticus 19:18",
+    "Deuteronomy 19:7",
+    "Rashi on Berakhot 57a:7:2",
+    "Berakhot 6a:22",
+    "Deuteronomy 28:5"
+   ],
+   "scores": [
+    0.028475,
+    0.025589,
+    0.025253,
+    0.023159,
+    0.020202,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.015873,
+    0.015873
+   ],
+   "seconds": 0.04196149999916088
+  },
+  {
+   "id": "q017",
+   "refs": [
+    "Exodus 20:12",
+    "Rashi on Berakhot 29a:14:1",
+    "Deuteronomy 5:16",
+    "Rashi on Berakhot 22a:11:1",
+    "Rashi on Berakhot 45b:1:1",
+    "Deuteronomy 25:17",
+    "Rashi on Berakhot 45a:14:1",
+    "Exodus 28:2",
+    "Leviticus 18:7",
+    "Rashi on Berakhot 62b:2:4"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.04856112498964649
+  },
+  {
+   "id": "q019",
+   "refs": [
+    "Berakhot 26b:6",
+    "Tosafot on Berakhot 26b:6:2",
+    "Tosafot on Berakhot 34b:30:1",
+    "Genesis 24:63",
+    "Tosafot on Berakhot 26b:6:1",
+    "Berakhot 6a:17",
+    "Berakhot 23b:16",
+    "Genesis 37:15",
+    "Berakhot 6b:8",
+    "Rashi on Berakhot 3b:9:2"
+   ],
+   "scores": [
+    0.032522,
+    0.028283,
+    0.026862,
+    0.016393,
+    0.016129,
+    0.015873,
+    0.015625,
+    0.015385,
+    0.015385,
+    0.015152
+   ],
+   "seconds": 0.04693829199823085
+  },
+  {
+   "id": "q024",
+   "refs": [
+    "Genesis 35:13",
+    "Leviticus 23:9",
+    "Berakhot 2a:7",
+    "Numbers 4:21",
+    "Genesis 35:15",
+    "Numbers 34:16",
+    "Berakhot 63a:1",
+    "Numbers 35:9",
+    "Exodus 18:5",
+    "Numbers 8:5"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.052783417006139643
+  },
+  {
+   "id": "q026",
+   "refs": [
+    "Deuteronomy 32:3",
+    "Berakhot 21a:4",
+    "Berakhot 45a:6",
+    "Rashi on Berakhot 21a:4:1",
+    "Genesis 5:11",
+    "Shulchan Arukh, Orach Chayim 51:7",
+    "Tosafot on Berakhot 30b:18:1",
+    "Mishneh Torah, Prayer and the Priestly Blessing 13:7",
+    "Leviticus 21:24",
+    "Rashi on Berakhot 45a:6:2"
+   ],
+   "scores": [
+    0.032522,
+    0.032522,
+    0.03125,
+    0.015873,
+    0.015873,
+    0.015385,
+    0.015385,
+    0.015152,
+    0.015152,
+    0.014925
+   ],
+   "seconds": 0.05127037499914877
+  },
+  {
+   "id": "q027",
+   "refs": [
+    "Mishneh Torah, Prayer and the Priestly Blessing 14:7",
+    "Berakhot 33a:25",
+    "Mishneh Torah, Prayer and the Priestly Blessing 15:12",
+    "Mishneh Torah, Prayer and the Priestly Blessing 15:7",
+    "Berakhot 11b:17",
+    "Berakhot 53a:31",
+    "Mishneh Torah, Prayer and the Priestly Blessing 14:5",
+    "Berakhot 33a:27",
+    "Mishneh Torah, Prayer and the Priestly Blessing 15:10",
+    "Berakhot 48b:2"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.053635500007658266
+  },
+  {
+   "id": "q028",
+   "refs": [
+    "Exodus 16:35",
+    "Exodus 16:22",
+    "Numbers 7:42",
+    "Rashi on Berakhot 53a:2:2",
+    "Exodus 16:5",
+    "Mishneh Torah, Blessings 7:1",
+    "Numbers 29:29",
+    "Exodus 26:9",
+    "Tosafot on Berakhot 6a:20:1",
+    "Exodus 16:29"
+   ],
+   "scores": [
+    0.031754,
+    0.030092,
+    0.016393,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015385,
+    0.015385,
+    0.015152
+   ],
+   "seconds": 0.05371991600259207
+  },
+  {
+   "id": "q031",
+   "refs": [
+    "Deuteronomy 6:6",
+    "Deuteronomy 11:27",
+    "Deuteronomy 11:18",
+    "Deuteronomy 11:13",
+    "Deuteronomy 8:1",
+    "Berakhot 15a:22",
+    "Numbers 15:39",
+    "Deuteronomy 11:22",
+    "Deuteronomy 10:13",
+    "Deuteronomy 12:28"
+   ],
+   "scores": [
+    0.032787,
+    0.031746,
+    0.030835,
+    0.028324,
+    0.027418,
+    0.024448,
+    0.023237,
+    0.023075,
+    0.022872,
+    0.022024
+   ],
+   "seconds": 0.07118987500143703
+  },
+  {
+   "id": "q037",
+   "refs": [
+    "Berakhot 51b:13",
+    "Berakhot 53a:24",
+    "Rashi on Berakhot 38b:10:1",
+    "Mishnah Berakhot 8:5",
+    "Rashi on Berakhot 13a:31:1",
+    "Mishnah Berakhot 8:1",
+    "Rashi on Berakhot 19a:18:2",
+    "Berakhot 13b:5",
+    "Mishnah Berakhot 8:3",
+    "Rashi on Berakhot 11a:7:1"
+   ],
+   "scores": [
+    0.028068,
+    0.026547,
+    0.022918,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015625,
+    0.015625
+   ],
+   "seconds": 0.06782008400477935
+  },
+  {
+   "id": "q038",
+   "refs": [
+    "Mishneh Torah, Reading the Shema 1:5",
+    "Mishneh Torah, Reading the Shema 1:6",
+    "Berakhot 2a:10",
+    "Mishneh Torah, Reading the Shema 1:1",
+    "Mishneh Torah, Prayer and the Priestly Blessing 3:7",
+    "Berakhot 11b:8",
+    "Mishneh Torah, Prayer and the Priestly Blessing 7:16",
+    "Mishneh Torah, Prayer and the Priestly Blessing 2:6",
+    "Mishneh Torah, Reading the Shema 1:8",
+    "Berakhot 11a:26"
+   ],
+   "scores": [
+    0.032787,
+    0.03009,
+    0.028219,
+    0.026547,
+    0.023362,
+    0.019743,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873
+   ],
+   "seconds": 0.05856379099714104
+  },
+  {
+   "id": "q039",
+   "refs": [
+    "Mishnah Berakhot 1:5",
+    "Berakhot 12b:23",
+    "Berakhot 12b:26",
+    "Mishneh Torah, Reading the Shema 1:3",
+    "Berakhot 11b:5",
+    "Rashi on Berakhot 2b:10:3",
+    "Berakhot 12b:24",
+    "Berakhot 12a:18",
+    "Tosafot on Berakhot 17b:12:2",
+    "Rashi on Berakhot 2a:3:1"
+   ],
+   "scores": [
+    0.032787,
+    0.032002,
+    0.030159,
+    0.02524,
+    0.016129,
+    0.015625,
+    0.015385,
+    0.015385,
+    0.015152,
+    0.015152
+   ],
+   "seconds": 0.07396154200250749
+  },
+  {
+   "id": "q040",
+   "refs": [
+    "Mishneh Torah, Reading the Shema 1:3",
+    "Mishneh Torah, Reading the Shema 1:9",
+    "Rashi on Berakhot 43b:7:1",
+    "Berakhot 8b:19",
+    "Mishnah Berakhot 2:5",
+    "Berakhot 2a:4",
+    "Mishnah Berakhot 2:8",
+    "Berakhot 9a:9",
+    "Berakhot 16b:7",
+    "Rashi on Berakhot 2a:11:1"
+   ],
+   "scores": [
+    0.026481,
+    0.025166,
+    0.025141,
+    0.02388,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873
+   ],
+   "seconds": 0.05406591700739227
+  },
+  {
+   "id": "q044",
+   "refs": [
+    "Berakhot 28b:3",
+    "Mishnah Berakhot 4:2",
+    "Berakhot 8a:19",
+    "Berakhot 54a:5",
+    "Rashi on Berakhot 61a:25:1",
+    "Mishnah Berakhot 9:4",
+    "Rashi on Berakhot 30a:16:1",
+    "Berakhot 16b:24",
+    "Mishneh Torah, Prayer and the Priestly Blessing 11:8",
+    "Berakhot 27b:7"
+   ],
+   "scores": [
+    0.032258,
+    0.03101,
+    0.02837,
+    0.016393,
+    0.016393,
+    0.015873,
+    0.015625,
+    0.015385,
+    0.015152,
+    0.015152
+   ],
+   "seconds": 0.058204917004331946
+  },
+  {
+   "id": "q045",
+   "refs": [
+    "Berakhot 28b:12",
+    "Mishnah Berakhot 4:3",
+    "Mishneh Torah, Prayer and the Priestly Blessing 7:7",
+    "Mishneh Torah, Prayer and the Priestly Blessing 2:7",
+    "Mishneh Torah, Prayer and the Priestly Blessing 1:9",
+    "Mishneh Torah, Prayer and the Priestly Blessing 2:2",
+    "Berakhot 63a:5",
+    "Berakhot 3a:13",
+    "Berakhot 49a:2",
+    "Mishneh Torah, Prayer and the Priestly Blessing 7:14"
+   ],
+   "scores": [
+    0.032002,
+    0.031778,
+    0.029324,
+    0.022722,
+    0.022161,
+    0.016393,
+    0.016129,
+    0.015873,
+    0.015625,
+    0.015385
+   ],
+   "seconds": 0.06239304099290166
+  },
+  {
+   "id": "q052",
+   "refs": [
+    "Berakhot 51b:11",
+    "Berakhot 41b:7",
+    "Berakhot 51b:15",
+    "Rashi on Berakhot 41b:7:1",
+    "Rashi on Berakhot 41b:7:3",
+    "Berakhot 41b:8",
+    "Tosafot on Berakhot 41b:6:1",
+    "Rashi on Berakhot 39b:10:1",
+    "Rashi on Berakhot 41b:7:6",
+    "Rashi on Berakhot 16a:18:1"
+   ],
+   "scores": [
+    0.029727,
+    0.026905,
+    0.026779,
+    0.025873,
+    0.024758,
+    0.024522,
+    0.024497,
+    0.022947,
+    0.020032,
+    0.016393
+   ],
+   "seconds": 0.053940375000820495
+  },
+  {
+   "id": "q059",
+   "refs": [
+    "Berakhot 3a:6",
+    "Berakhot 3a:11",
+    "Berakhot 3b:10",
+    "Shulchan Arukh, Orach Chayim 23:3",
+    "Berakhot 3a:5",
+    "Shulchan Arukh, Orach Chayim 63:8",
+    "Exodus 25:33",
+    "Exodus 37:29",
+    "Exodus 37:19",
+    "Berakhot 4a:1"
+   ],
+   "scores": [
+    0.032522,
+    0.032522,
+    0.02886,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385,
+    0.015152,
+    0.015152
+   ],
+   "seconds": 0.06166474999918137
+  },
+  {
+   "id": "q060",
+   "refs": [
+    "Berakhot 13b:19",
+    "Berakhot 8a:5",
+    "Berakhot 31a:21",
+    "Rashi on Berakhot 6a:20:1",
+    "Mishnah Berakhot 4:2",
+    "Berakhot 19a:5",
+    "Berakhot 13a:28",
+    "Berakhot 31a:18",
+    "Mishnah Berakhot 2:3",
+    "Berakhot 27b:7"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.05650600000808481
+  },
+  {
+   "id": "q061",
+   "refs": [
+    "Rashi on Berakhot 5b:9:3",
+    "Berakhot 5a:10",
+    "Berakhot 5b:6",
+    "Rashi on Berakhot 5a:10:1",
+    "Berakhot 5a:15",
+    "Berakhot 5b:4",
+    "Berakhot 5a:14",
+    "Rashi on Berakhot 5b:7:1",
+    "Rashi on Berakhot 11b:17:2",
+    "Berakhot 42b:14"
+   ],
+   "scores": [
+    0.030798,
+    0.030092,
+    0.029514,
+    0.029469,
+    0.028787,
+    0.027921,
+    0.026748,
+    0.026141,
+    0.025155,
+    0.024695
+   ],
+   "seconds": 0.03139366699906532
+  },
+  {
+   "id": "q064",
+   "refs": [
+    "Berakhot 7a:1",
+    "Berakhot 28a:15",
+    "Berakhot 28b:12",
+    "Berakhot 28b:3",
+    "Mishneh Torah, Prayer and the Priestly Blessing 3:11",
+    "Berakhot 10a:25",
+    "Rashi on Berakhot 47b:6:1",
+    "Berakhot 30a:13",
+    "Rashi on Berakhot 61b:2:3",
+    "Rashi on Berakhot 28b:1:2"
+   ],
+   "scores": [
+    0.032258,
+    0.031778,
+    0.02739,
+    0.026944,
+    0.026754,
+    0.016393,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015385
+   ],
+   "seconds": 0.04472254200663883
+  },
+  {
+   "id": "q065",
+   "refs": [
+    "Berakhot 7a:28",
+    "Berakhot 7a:25",
+    "Numbers 14:41",
+    "Numbers 4:4",
+    "Berakhot 29a:5",
+    "Exodus 23:32",
+    "Berakhot 7b:21",
+    "Deuteronomy 14:3",
+    "Exodus 9:27",
+    "Berakhot 19a:10"
+   ],
+   "scores": [
+    0.032522,
+    0.030478,
+    0.025038,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.053935542004182935
+  },
+  {
+   "id": "q068",
+   "refs": [
+    "Berakhot 10a:3",
+    "Berakhot 16b:24",
+    "Berakhot 23a:6",
+    "Berakhot 40b:4",
+    "Berakhot 22b:17",
+    "Berakhot 10a:2",
+    "Berakhot 21b:2",
+    "Genesis 37:16",
+    "Berakhot 61a:25",
+    "Berakhot 28b:18"
+   ],
+   "scores": [
+    0.032018,
+    0.027912,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.05805470800260082
+  },
+  {
+   "id": "q069",
+   "refs": [
+    "Berakhot 10a:31",
+    "Berakhot 10a:32",
+    "Berakhot 10b:1",
+    "Tosafot on Berakhot 21a:1:2",
+    "Mishnah Berakhot 5:1",
+    "Berakhot 15b:21",
+    "Tosafot on Berakhot 34b:15:1",
+    "Shulchan Arukh, Orach Chayim 94:8",
+    "Mishneh Torah, Blessings 9:9",
+    "Rashi on Berakhot 13a:17:5"
+   ],
+   "scores": [
+    0.032787,
+    0.032258,
+    0.015873,
+    0.015625,
+    0.015385,
+    0.015385,
+    0.015152,
+    0.015152,
+    0.014925,
+    0.014925
+   ],
+   "seconds": 0.07640595900011249
+  },
+  {
+   "id": "q070",
+   "refs": [
+    "Berakhot 63a:3",
+    "Berakhot 12a:4",
+    "Berakhot 49a:10",
+    "Rashi on Berakhot 12a:5:1",
+    "Rashi on Berakhot 61b:11:4",
+    "Shulchan Arukh, Orach Chayim 1:5",
+    "Rashi on Berakhot 49b:7:3",
+    "Rashi on Berakhot 35a:15:1",
+    "Berakhot 54a:8",
+    "Berakhot 50a:10"
+   ],
+   "scores": [
+    0.029911,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.049396791990147904
+  },
+  {
+   "id": "q071",
+   "refs": [
+    "Mishneh Torah, Reading the Shema 2:10",
+    "Berakhot 13a:25",
+    "Mishneh Torah, Reading the Shema 3:4",
+    "Mishneh Torah, Prayer and the Priestly Blessing 3:7",
+    "Berakhot 2a:1",
+    "Berakhot 40b:8",
+    "Berakhot 63b:11",
+    "Mishneh Torah, Blessings 1:6",
+    "Mishneh Torah, Reading the Shema 2:8",
+    "Berakhot 15a:9"
+   ],
+   "scores": [
+    0.032787,
+    0.032258,
+    0.024729,
+    0.021528,
+    0.02087,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385
+   ],
+   "seconds": 0.04381483299948741
+  },
+  {
+   "id": "q074",
+   "refs": [
+    "Berakhot 16b:24",
+    "Mishneh Torah, Prayer and the Priestly Blessing 7:11",
+    "Mishnah Berakhot 4:3",
+    "Mishnah Berakhot 2:3",
+    "Berakhot 31a:18",
+    "Berakhot 13b:19",
+    "Berakhot 24a:18",
+    "Berakhot 46b:14",
+    "Berakhot 29a:15",
+    "Mishnah Berakhot 4:1"
+   ],
+   "scores": [
+    0.026172,
+    0.025385,
+    0.024697,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625
+   ],
+   "seconds": 0.052816625000559725
+  },
+  {
+   "id": "q075",
+   "refs": [
+    "Mishneh Torah, Prayer and the Priestly Blessing 1:5",
+    "Mishneh Torah, Prayer and the Priestly Blessing 1:1",
+    "Mishneh Torah, Prayer and the Priestly Blessing 1:8",
+    "Mishneh Torah, Prayer and the Priestly Blessing 7:11",
+    "Berakhot 28b:16",
+    "Mishneh Torah, Prayer and the Priestly Blessing 1:9",
+    "Mishneh Torah, Prayer and the Priestly Blessing 2:6",
+    "Mishneh Torah, Prayer and the Priestly Blessing 3:2",
+    "Mishneh Torah, Prayer and the Priestly Blessing 2:8",
+    "Mishneh Torah, Prayer and the Priestly Blessing 7:16"
+   ],
+   "scores": [
+    0.032787,
+    0.028718,
+    0.027912,
+    0.027778,
+    0.027253,
+    0.026614,
+    0.024394,
+    0.016129,
+    0.016129,
+    0.015385
+   ],
+   "seconds": 0.049876332996063866
+  },
+  {
+   "id": "q077",
+   "refs": [
+    "Mishnah Berakhot 8:5",
+    "Rashi on Berakhot 30b:1:1",
+    "Mishnah Berakhot 3:3",
+    "Tosafot on Berakhot 54b:19:1",
+    "Mishneh Torah, Prayer and the Priestly Blessing 2:1",
+    "Deuteronomy 2:3",
+    "Mishneh Torah, Blessings 9:6",
+    "Berakhot 6a:1",
+    "Mishneh Torah, Blessings 10:7",
+    "Berakhot 31a:18"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.039443792004021816
+  },
+  {
+   "id": "q078",
+   "refs": [
+    "Berakhot 28b:6",
+    "Berakhot 34a:11",
+    "Berakhot 19a:1",
+    "Berakhot 11a:22",
+    "Berakhot 27b:2",
+    "Berakhot 9b:3",
+    "Rashi on Berakhot 13a:21:1",
+    "Mishnah Berakhot 7:5",
+    "Deuteronomy 11:6",
+    "Berakhot 63a:27"
+   ],
+   "scores": [
+    0.032787,
+    0.023793,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385,
+    0.015152
+   ],
+   "seconds": 0.06627362500876188
+  },
+  {
+   "id": "q079",
+   "refs": [
+    "Tosafot on Berakhot 30a:7:1",
+    "Mishneh Torah, Prayer and the Priestly Blessing 5:6",
+    "Mishneh Torah, Prayer and the Priestly Blessing 5:3",
+    "Rashi on Berakhot 30a:2:1",
+    "Shulchan Arukh, Orach Chayim 90:4",
+    "Berakhot 31a:22",
+    "Shulchan Arukh, Orach Chayim 94:1",
+    "Rashi on Berakhot 57b:20:1",
+    "Mishneh Torah, Prayer and the Priestly Blessing 3:3",
+    "Rashi on Berakhot 61b:13:2"
+   ],
+   "scores": [
+    0.029857,
+    0.02886,
+    0.027149,
+    0.026709,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015625
+   ],
+   "seconds": 0.041411166996113025
+  },
+  {
+   "id": "q081",
+   "refs": [
+    "Berakhot 21a:3",
+    "Rashi on Berakhot 22a:3:1",
+    "Mishneh Torah, Blessings 1:1",
+    "Berakhot 21a:5",
+    "Berakhot 48b:5",
+    "Berakhot 48b:10",
+    "Rashi on Berakhot 16a:18:3",
+    "Rashi on Berakhot 20b:1:4",
+    "Rashi on Berakhot 11b:15:1",
+    "Rashi on Berakhot 21a:6:1"
+   ],
+   "scores": [
+    0.032787,
+    0.030769,
+    0.029643,
+    0.028531,
+    0.026861,
+    0.026709,
+    0.025482,
+    0.025452,
+    0.024752,
+    0.024394
+   ],
+   "seconds": 0.04506866598967463
+  },
+  {
+   "id": "q082",
+   "refs": [
+    "Mishnah Berakhot 7:4",
+    "Berakhot 63b:24",
+    "Mishnah Berakhot 3:3",
+    "Berakhot 37b:5",
+    "Genesis 49:25",
+    "Berakhot 63a:3",
+    "Mishnah Berakhot 8:5",
+    "Rashi on Berakhot 40b:10:1",
+    "Mishneh Torah, Prayer and the Priestly Blessing 7:16",
+    "Rashi on Berakhot 15a:14:1"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.04139545799989719
+  },
+  {
+   "id": "q083",
+   "refs": [
+    "Berakhot 28b:21",
+    "Berakhot 26b:14",
+    "Mishneh Torah, Blessings 2:1",
+    "Rashi on Berakhot 37a:6:5",
+    "Berakhot 48b:2",
+    "Deuteronomy 2:3",
+    "Tosafot on Berakhot 22b:2:1",
+    "Berakhot 50b:7",
+    "Berakhot 22b:4",
+    "Berakhot 6b:15"
+   ],
+   "scores": [
+    0.032787,
+    0.021243,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.03761600000143517
+  },
+  {
+   "id": "q084",
+   "refs": [
+    "Rashi on Berakhot 51a:16:1",
+    "Tosafot on Berakhot 51a:17:3",
+    "Rashi on Berakhot 53b:26:1",
+    "Tosafot on Berakhot 50b:7:1",
+    "Berakhot 35a:9",
+    "Rashi on Berakhot 51b:7:1",
+    "Berakhot 33a:28",
+    "Rashi on Berakhot 37a:2:1",
+    "Berakhot 15a:14",
+    "Rashi on Berakhot 42b:3:1"
+   ],
+   "scores": [
+    0.031281,
+    0.028175,
+    0.027253,
+    0.025729,
+    0.01916,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.015873,
+    0.015873
+   ],
+   "seconds": 0.05559533400810324
+  },
+  {
+   "id": "q093",
+   "refs": [
+    "Berakhot 64a:13",
+    "Berakhot 19a:5",
+    "Berakhot 21b:9",
+    "Berakhot 48b:2",
+    "Berakhot 15a:10",
+    "Tosafot on Berakhot 27b:2:1",
+    "Berakhot 46a:5",
+    "Rashi on Berakhot 35b:2:2",
+    "Berakhot 46b:5",
+    "Mishneh Torah, Prayer and the Priestly Blessing 11:16"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.052267582999775186
+  },
+  {
+   "id": "q094",
+   "refs": [
+    "Berakhot 11b:18",
+    "Berakhot 11b:14",
+    "Tosafot on Berakhot 31a:10:2",
+    "Berakhot 63b:10",
+    "Rashi on Berakhot 54a:2:4",
+    "Berakhot 13a:23",
+    "Berakhot 54b:17",
+    "Berakhot 58a:2",
+    "Berakhot 27a:8",
+    "Mishneh Torah, Blessings 4:2"
+   ],
+   "scores": [
+    0.032522,
+    0.016393,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385,
+    0.015152
+   ],
+   "seconds": 0.041079165996052325
+  },
+  {
+   "id": "q097",
+   "refs": [
+    "Berakhot 11a:26",
+    "Mishneh Torah, Prayer and the Priestly Blessing 6:4",
+    "Mishneh Torah, Prayer and the Priestly Blessing 14:2",
+    "Genesis 19:27",
+    "Mishneh Torah, Prayer and the Priestly Blessing 1:7",
+    "Tosafot on Berakhot 32b:9:1",
+    "Mishneh Torah, Prayer and the Priestly Blessing 3:1",
+    "Tosafot on Berakhot 2a:7:1",
+    "Berakhot 28b:2",
+    "Mishnah Berakhot 2:1"
+   ],
+   "scores": [
+    0.032018,
+    0.029911,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015385,
+    0.015385,
+    0.015152
+   ],
+   "seconds": 0.05134133399405982
+  },
+  {
+   "id": "q104",
+   "refs": [
+    "Mishneh Torah, Prayer and the Priestly Blessing 1:2",
+    "Berakhot 32a:5",
+    "Berakhot 35a:3",
+    "Berakhot 29a:15",
+    "Tosafot on Berakhot 34b:15:1",
+    "Mishneh Torah, Prayer and the Priestly Blessing 7:17",
+    "Berakhot 24a:1",
+    "Exodus 27:14",
+    "Berakhot 11a:26",
+    "Numbers 27:5"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.06142683399957605
+  },
+  {
+   "id": "q108",
+   "refs": [
+    "Berakhot 13a:16",
+    "Berakhot 10b:36",
+    "Berakhot 2b:5",
+    "Tosafot on Berakhot 2a:1:1",
+    "Berakhot 9a:7",
+    "Berakhot 26a:13",
+    "Mishneh Torah, Reading the Shema 2:5",
+    "Berakhot 9a:13",
+    "Tosafot on Berakhot 2b:17:1",
+    "Tosafot on Berakhot 2a:7:1"
+   ],
+   "scores": [
+    0.031281,
+    0.02837,
+    0.025942,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625
+   ],
+   "seconds": 0.059590958000626415
+  },
+  {
+   "id": "q109",
+   "refs": [
+    "Mishneh Torah, Prayer and the Priestly Blessing 8:2",
+    "Rashi on Berakhot 17a:14:1",
+    "Rashi on Berakhot 62b:19:1",
+    "Mishneh Torah, Prayer and the Priestly Blessing 11:16",
+    "Mishneh Torah, Prayer and the Priestly Blessing 11:10",
+    "Tosafot on Berakhot 2a:10:2",
+    "Mishneh Torah, Prayer and the Priestly Blessing 11:15",
+    "Rashi on Berakhot 53a:21:1",
+    "Berakhot 62b:21",
+    "Rashi on Berakhot 61a:25:1"
+   ],
+   "scores": [
+    0.030835,
+    0.028068,
+    0.024326,
+    0.023573,
+    0.023333,
+    0.021937,
+    0.021568,
+    0.020235,
+    0.016393,
+    0.016393
+   ],
+   "seconds": 0.054256083007203415
+  },
+  {
+   "id": "q110",
+   "refs": [
+    "Berakhot 23b:12",
+    "Rashi on Berakhot 27b:21:1",
+    "Tosafot on Berakhot 37a:7:1",
+    "Rashi on Berakhot 43b:15:2",
+    "Berakhot 58b:14",
+    "Shulchan Arukh, Orach Chayim 203:3",
+    "Tosafot on Berakhot 60b:2:1",
+    "Rashi on Berakhot 24a:10:1",
+    "Tosafot on Berakhot 34b:31:1",
+    "Rashi on Berakhot 44b:4:2"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.05055312500917353
+  },
+  {
+   "id": "q113",
+   "refs": [
+    "Mishneh Torah, Reading the Shema 2:10",
+    "Berakhot 13a:25",
+    "Berakhot 20a:10",
+    "Berakhot 21a:7",
+    "Mishneh Torah, Reading the Shema 3:4",
+    "Berakhot 3a:10",
+    "Mishneh Torah, Reading the Shema 3:16",
+    "Berakhot 15a:9",
+    "Berakhot 13a:16",
+    "Mishneh Torah, Reading the Shema 1:13"
+   ],
+   "scores": [
+    0.032787,
+    0.032258,
+    0.027912,
+    0.026861,
+    0.025859,
+    0.025589,
+    0.024056,
+    0.024017,
+    0.02379,
+    0.023467
+   ],
+   "seconds": 0.04398083299747668
+  },
+  {
+   "id": "q114",
+   "refs": [
+    "Mishneh Torah, Prayer and the Priestly Blessing 1:1",
+    "Mishneh Torah, Blessings 6:2",
+    "Rashi on Berakhot 13b:4:3",
+    "Tosafot on Berakhot 31a:10:1",
+    "Berakhot 6a:18",
+    "Rashi on Berakhot 11b:18:1",
+    "Rashi on Berakhot 40a:1:1",
+    "Rashi on Berakhot 48b:11:1",
+    "Berakhot 31a:5",
+    "Rashi on Berakhot 16a:18:3"
+   ],
+   "scores": [
+    0.030214,
+    0.023667,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385
+   ],
+   "seconds": 0.0523292500001844
+  },
+  {
+   "id": "q115",
+   "refs": [
+    "Berakhot 28b:16",
+    "Berakhot 28b:21",
+    "Mishneh Torah, Prayer and the Priestly Blessing 7:15",
+    "Mishnah Berakhot 4:3",
+    "Berakhot 33b:8",
+    "Rashi on Berakhot 30b:1:1",
+    "Mishneh Torah, Blessings 1:17",
+    "Berakhot 63b:24",
+    "Berakhot 26b:14",
+    "Berakhot 50b:7"
+   ],
+   "scores": [
+    0.026197,
+    0.025937,
+    0.021719,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625
+   ],
+   "seconds": 0.04701749999367166
+  },
+  {
+   "id": "q123",
+   "refs": [
+    "Tosafot on Berakhot 44a:2:1",
+    "Shulchan Arukh, Orach Chayim 14:2",
+    "Berakhot 36b:13",
+    "Berakhot 49a:8",
+    "Rashi on Berakhot 30b:1:1",
+    "Rashi on Berakhot 47b:6:1",
+    "Rashi on Berakhot 35b:2:2",
+    "Berakhot 36a:18",
+    "Rashi on Berakhot 44a:15:2",
+    "Rashi on Berakhot 36a:5:2"
+   ],
+   "scores": [
+    0.027638,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.05609399999957532
+  },
+  {
+   "id": "q124",
+   "refs": [
+    "Berakhot 34a:3",
+    "Mishneh Torah, Prayer and the Priestly Blessing 14:9",
+    "Mishnah Berakhot 5:4",
+    "Tosafot on Berakhot 41b:4:1",
+    "Rashi on Berakhot 3b:30:2",
+    "Berakhot 16a:14",
+    "Numbers 1:33",
+    "Mishneh Torah, Blessings 6:6",
+    "Genesis 44:6",
+    "Mishneh Torah, Blessings 6:2"
+   ],
+   "scores": [
+    0.028298,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385,
+    0.015152
+   ],
+   "seconds": 0.05628345899458509
+  },
+  {
+   "id": "q127",
+   "refs": [
+    "Mishneh Torah, Blessings 6:17",
+    "Mishneh Torah, Blessings 6:4",
+    "Berakhot 51b:14",
+    "Mishneh Torah, Prayer and the Priestly Blessing 4:2",
+    "Mishneh Torah, Blessings 6:18",
+    "Mishneh Torah, Blessings 7:12",
+    "Berakhot 52b:18",
+    "Berakhot 51b:12",
+    "Berakhot 52a:17",
+    "Genesis 44:34"
+   ],
+   "scores": [
+    0.032787,
+    0.031498,
+    0.029236,
+    0.025528,
+    0.023434,
+    0.022859,
+    0.022529,
+    0.022465,
+    0.021806,
+    0.016129
+   ],
+   "seconds": 0.05173533401102759
+  },
+  {
+   "id": "q131",
+   "refs": [
+    "Berakhot 6b:1",
+    "Berakhot 23b:18",
+    "Berakhot 6a:19",
+    "Berakhot 6a:17",
+    "Berakhot 30b:22",
+    "Berakhot 30b:24",
+    "Rashi on Berakhot 62a:4:2",
+    "Mishnah Berakhot 3:3",
+    "Rashi on Berakhot 23a:16:3",
+    "Berakhot 13b:8"
+   ],
+   "scores": [
+    0.031099,
+    0.028783,
+    0.028382,
+    0.025712,
+    0.025038,
+    0.024954,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873
+   ],
+   "seconds": 0.03348083399760071
+  },
+  {
+   "id": "q134",
+   "refs": [
+    "Tosafot on Berakhot 2a:7:1",
+    "Mishneh Torah, Reading the Shema 2:11",
+    "Berakhot 24b:17",
+    "Berakhot 16a:4",
+    "Mishnah Berakhot 2:8",
+    "Mishneh Torah, Reading the Shema 2:12",
+    "Mishneh Torah, Reading the Shema 2:3",
+    "Berakhot 16b:7",
+    "Berakhot 16a:13",
+    "Mishneh Torah, Reading the Shema 2:1"
+   ],
+   "scores": [
+    0.029214,
+    0.027629,
+    0.026993,
+    0.026767,
+    0.026541,
+    0.02642,
+    0.026399,
+    0.02423,
+    0.023533,
+    0.022862
+   ],
+   "seconds": 0.04915183299453929
+  },
+  {
+   "id": "q135",
+   "refs": [
+    "Mishneh Torah, Prayer and the Priestly Blessing 5:4",
+    "Berakhot 10b:28",
+    "Mishneh Torah, Prayer and the Priestly Blessing 5:2",
+    "Mishneh Torah, Prayer and the Priestly Blessing 5:1",
+    "Rashi on Berakhot 25a:2:2",
+    "Mishneh Torah, Prayer and the Priestly Blessing 10:1",
+    "Rashi on Berakhot 25b:16:3",
+    "Mishneh Torah, Prayer and the Priestly Blessing 10:6",
+    "Rashi on Berakhot 10b:28:1",
+    "Berakhot 12b:2"
+   ],
+   "scores": [
+    0.032787,
+    0.024337,
+    0.02414,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385
+   ],
+   "seconds": 0.0448933329898864
+  },
+  {
+   "id": "q136",
+   "refs": [
+    "Mishneh Torah, Prayer and the Priestly Blessing 5:9",
+    "Mishneh Torah, Prayer and the Priestly Blessing 13:6",
+    "Rashi on Berakhot 28b:1:2",
+    "Shulchan Arukh, Orach Chayim 62:5",
+    "Rashi on Berakhot 30a:16:5",
+    "Rashi on Berakhot 16a:15:1",
+    "Mishneh Torah, Prayer and the Priestly Blessing 4:7",
+    "Berakhot 31a:17",
+    "Shulchan Arukh, Orach Chayim 62:3",
+    "Berakhot 29a:26"
+   ],
+   "scores": [
+    0.030777,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.049026958004105836
+  },
+  {
+   "id": "q144",
+   "refs": [
+    "Tosafot on Berakhot 36b:5:1",
+    "Rashi on Berakhot 41a:9:1",
+    "Tosafot on Berakhot 39a:6:1",
+    "Mishneh Torah, Blessings 8:1",
+    "Mishneh Torah, Blessings 8:14",
+    "Berakhot 35a:1",
+    "Mishneh Torah, Blessings 8:10",
+    "Shulchan Arukh, Orach Chayim 211:3",
+    "Rashi on Berakhot 38a:5:1",
+    "Rashi on Berakhot 39a:3:2"
+   ],
+   "scores": [
+    0.02886,
+    0.027885,
+    0.027757,
+    0.023752,
+    0.022773,
+    0.022754,
+    0.022504,
+    0.016393,
+    0.016393,
+    0.016129
+   ],
+   "seconds": 0.051765084004728124
+  },
+  {
+   "id": "q149",
+   "refs": [
+    "Mishneh Torah, Prayer and the Priestly Blessing 13:3",
+    "Rashi on Berakhot 63b:14:2",
+    "Rashi on Berakhot 2b:13:4",
+    "Genesis 41:2",
+    "Rashi on Berakhot 2b:11:1",
+    "Rashi on Berakhot 14a:4:1",
+    "Berakhot 50b:12",
+    "Rashi on Berakhot 2b:10:3",
+    "Rashi on Berakhot 2a:11:1",
+    "Genesis 41:18"
+   ],
+   "scores": [
+    0.030536,
+    0.02532,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625
+   ],
+   "seconds": 0.047605083003873006
+  },
+  {
+   "id": "q151",
+   "refs": [
+    "Rashi on Berakhot 47a:7:3",
+    "Mishneh Torah, Blessings 7:13",
+    "Mishneh Torah, Blessings 1:15",
+    "Rashi on Berakhot 21b:6:1",
+    "Rashi on Berakhot 47a:10:3",
+    "Shulchan Arukh, Orach Chayim 51:3",
+    "Shulchan Arukh, Orach Chayim 215:1",
+    "Rashi on Berakhot 34a:3:1",
+    "Shulchan Arukh, Orach Chayim 124:4",
+    "Rashi on Berakhot 47a:10:1"
+   ],
+   "scores": [
+    0.029727,
+    0.025712,
+    0.024702,
+    0.021864,
+    0.020851,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873
+   ],
+   "seconds": 0.04839774999709334
+  },
+  {
+   "id": "q152",
+   "refs": [
+    "Mishneh Torah, Prayer and the Priestly Blessing 6:7",
+    "Mishneh Torah, Prayer and the Priestly Blessing 6:4",
+    "Berakhot 20b:7",
+    "Mishneh Torah, Prayer and the Priestly Blessing 1:5",
+    "Mishneh Torah, Prayer and the Priestly Blessing 3:1",
+    "Berakhot 6b:28",
+    "Mishneh Torah, Prayer and the Priestly Blessing 1:1",
+    "Mishneh Torah, Prayer and the Priestly Blessing 3:9",
+    "Berakhot 24b:12",
+    "Rashi on Berakhot 16a:19:1"
+   ],
+   "scores": [
+    0.030303,
+    0.030092,
+    0.027253,
+    0.026378,
+    0.026374,
+    0.025739,
+    0.024008,
+    0.023399,
+    0.016129,
+    0.016129
+   ],
+   "seconds": 0.041451500001130626
+  },
+  {
+   "id": "q156",
+   "refs": [
+    "Mishneh Torah, Prayer and the Priestly Blessing 12:22",
+    "Mishneh Torah, Reading the Shema 1:1",
+    "Mishneh Torah, Prayer and the Priestly Blessing 1:8",
+    "Tosafot on Berakhot 22b:2:1",
+    "Shulchan Arukh, Orach Chayim 131:4",
+    "Rashi on Berakhot 26a:17:2",
+    "Deuteronomy 22:6",
+    "Rashi on Berakhot 28a:15:2",
+    "Numbers 17:28",
+    "Rashi on Berakhot 40a:10:1"
+   ],
+   "scores": [
+    0.029572,
+    0.026999,
+    0.02008,
+    0.019463,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.015873,
+    0.015625,
+    0.015625
+   ],
+   "seconds": 0.03170637499715667
+  },
+  {
+   "id": "q160",
+   "refs": [
+    "Genesis 27:4",
+    "Genesis 27:7",
+    "Genesis 24:33",
+    "Rashi on Berakhot 22a:3:1",
+    "Rashi on Berakhot 16a:19:1",
+    "Leviticus 22:8",
+    "Tosafot on Berakhot 28b:2:1",
+    "Leviticus 22:16",
+    "Mishnah Berakhot 4:1",
+    "Rashi on Berakhot 41a:10:3"
+   ],
+   "scores": [
+    0.029643,
+    0.027149,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385
+   ],
+   "seconds": 0.05978075000166427
+  },
+  {
+   "id": "q161",
+   "refs": [
+    "Rashi on Berakhot 30a:3:2",
+    "Rashi on Berakhot 30a:2:1",
+    "Rashi on Berakhot 30b:14:2",
+    "Rashi on Berakhot 9b:15:1",
+    "Rashi on Berakhot 29b:7:1",
+    "Rashi on Berakhot 23a:2:2",
+    "Rashi on Berakhot 30a:14:1",
+    "Rashi on Berakhot 30a:2:2",
+    "Rashi on Berakhot 28b:1:2",
+    "Rashi on Berakhot 16a:15:1"
+   ],
+   "scores": [
+    0.03009,
+    0.028787,
+    0.026553,
+    0.025278,
+    0.024924,
+    0.024394,
+    0.022894,
+    0.021337,
+    0.020698,
+    0.016393
+   ],
+   "seconds": 0.05722520899144001
+  },
+  {
+   "id": "q162",
+   "refs": [
+    "Deuteronomy 7:17",
+    "Mishneh Torah, Reading the Shema 2:2",
+    "Berakhot 4b:8",
+    "Berakhot 4b:12",
+    "Berakhot 4a:9",
+    "Berakhot 10b:37",
+    "Berakhot 27b:18",
+    "Berakhot 31b:15",
+    "Berakhot 17a:8",
+    "Mishneh Torah, Reading the Shema 3:14"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.06494799999927636
+  },
+  {
+   "id": "q163",
+   "refs": [
+    "Mishneh Torah, Prayer and the Priestly Blessing 11:20",
+    "Genesis 24:37",
+    "Genesis 43:22",
+    "Genesis 24:3",
+    "Rashi on Berakhot 35b:22:4",
+    "Genesis 24:7",
+    "Rashi on Berakhot 63a:18:1",
+    "Genesis 24:40",
+    "Berakhot 32b:2",
+    "Genesis 29:21"
+   ],
+   "scores": [
+    0.024522,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385
+   ],
+   "seconds": 0.07332854199921712
+  },
+  {
+   "id": "o000",
+   "refs": [
+    "Deuteronomy 31:19",
+    "Berakhot 46a:12",
+    "Berakhot 23b:7",
+    "Deuteronomy 34:11",
+    "Deuteronomy 17:18",
+    "Deuteronomy 11:3",
+    "Berakhot 23b:6",
+    "Genesis 22:22",
+    "Berakhot 14b:13",
+    "Mishneh Torah, Prayer and the Priestly Blessing 4:19"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.04418229099246673
+  },
+  {
+   "id": "o004",
+   "refs": [
+    "Berakhot 12b:25",
+    "Berakhot 23b:7",
+    "Mishneh Torah, Prayer and the Priestly Blessing 9:6",
+    "Rashi on Berakhot 15a:3:1",
+    "Berakhot 9b:3",
+    "Berakhot 11a:5",
+    "Berakhot 53a:24",
+    "Berakhot 53a:16",
+    "Berakhot 3b:12",
+    "Berakhot 53a:18"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.03364550000696909
+  },
+  {
+   "id": "o005",
+   "refs": [
+    "Genesis 29:32",
+    "Rashi on Berakhot 29a:11:1",
+    "Exodus 21:5",
+    "Rashi on Berakhot 11b:17:2",
+    "Berakhot 11b:9",
+    "Berakhot 42b:14",
+    "Deuteronomy 5:10",
+    "Rashi on Berakhot 15b:23:2",
+    "Exodus 20:6",
+    "Rashi on Berakhot 4b:27:1"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.03636287499102764
+  },
+  {
+   "id": "o006",
+   "refs": [
+    "Exodus 13:10",
+    "Deuteronomy 15:20",
+    "Berakhot 53a:30",
+    "Rashi on Berakhot 27b:20:2",
+    "Exodus 29:38",
+    "Berakhot 28b:24",
+    "Berakhot 39a:7",
+    "Genesis 17:21",
+    "Rashi on Berakhot 60a:8:2",
+    "Deuteronomy 1:18"
+   ],
+   "scores": [
+    0.028068,
+    0.025914,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385
+   ],
+   "seconds": 0.03675654200196732
+  },
+  {
+   "id": "o007",
+   "refs": [
+    "Genesis 7:1",
+    "Rashi on Berakhot 63b:5:2",
+    "Leviticus 26:27",
+    "Berakhot 43a:6",
+    "Deuteronomy 3:26",
+    "Rashi on Berakhot 53b:29:2",
+    "Berakhot 50b:3",
+    "Rashi on Berakhot 53b:25:1",
+    "Numbers 20:12",
+    "Rashi on Berakhot 11a:25:1"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.03981825000664685
+  },
+  {
+   "id": "o008",
+   "refs": [
+    "Numbers 13:19",
+    "Berakhot 3a:8",
+    "Rashi on Berakhot 18b:17:1",
+    "Berakhot 2b:9",
+    "Deuteronomy 13:13",
+    "Berakhot 52b:2",
+    "Numbers 35:4",
+    "Berakhot 22a:19",
+    "Berakhot 12b:11",
+    "Berakhot 3a:4"
+   ],
+   "scores": [
+    0.023901,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385
+   ],
+   "seconds": 0.03470495800138451
+  },
+  {
+   "id": "o009",
+   "refs": [
+    "Deuteronomy 31:19",
+    "Rashi on Berakhot 22a:6:4",
+    "Berakhot 6b:6",
+    "Rashi on Berakhot 15b:24:1",
+    "Mishneh Torah, Reading the Shema 2:9",
+    "Berakhot 12a:27",
+    "Berakhot 60b:1",
+    "Rashi on Berakhot 15b:23:1",
+    "Berakhot 13b:14",
+    "Rashi on Berakhot 11a:25:1"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.047619290999136865
+  },
+  {
+   "id": "o010",
+   "refs": [
+    "Genesis 24:49",
+    "Berakhot 4b:9",
+    "Genesis 43:6",
+    "Berakhot 44b:7",
+    "Leviticus 14:35",
+    "Rashi on Berakhot 62a:21:1",
+    "Genesis 29:15",
+    "Rashi on Berakhot 58b:11:3",
+    "Numbers 23:3",
+    "Berakhot 61a:7"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.03241462500591297
+  },
+  {
+   "id": "o011",
+   "refs": [
+    "Berakhot 58a:1",
+    "Berakhot 62a:11",
+    "Genesis 44:34",
+    "Berakhot 23a:13",
+    "Berakhot 58a:5",
+    "Berakhot 31a:28",
+    "Genesis 19:7",
+    "Rashi on Berakhot 46a:6:2",
+    "Leviticus 22:31",
+    "Berakhot 44b:21"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.03638237499399111
+  },
+  {
+   "id": "o013",
+   "refs": [
+    "Leviticus 8:25",
+    "Leviticus 7:3",
+    "Berakhot 9a:11",
+    "Exodus 29:22",
+    "Leviticus 7:24",
+    "Leviticus 4:8",
+    "Leviticus 9:19",
+    "Berakhot 61a:1",
+    "Leviticus 11:42",
+    "Berakhot 20b:1"
+   ],
+   "scores": [
+    0.031281,
+    0.029469,
+    0.028158,
+    0.025873,
+    0.025275,
+    0.023985,
+    0.023974,
+    0.016393,
+    0.016129,
+    0.015873
+   ],
+   "seconds": 0.0440173329989193
+  },
+  {
+   "id": "o019",
+   "refs": [
+    "Leviticus 25:21",
+    "Genesis 24:4",
+    "Numbers 31:45",
+    "Genesis 30:26",
+    "Genesis 24:38",
+    "Numbers 1:25",
+    "Berakhot 55a:2",
+    "Numbers 26:18",
+    "Genesis 44:32",
+    "Numbers 1:46"
+   ],
+   "scores": [
+    0.025388,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.032579042002907954
+  },
+  {
+   "id": "o024",
+   "refs": [
+    "Genesis 44:34",
+    "Rashi on Berakhot 54a:13:1",
+    "Exodus 6:30",
+    "Rashi on Berakhot 56a:2:1",
+    "Genesis 44:8",
+    "Rashi on Berakhot 24a:17:3",
+    "Exodus 6:12",
+    "Rashi on Berakhot 63a:16:1",
+    "Genesis 26:9",
+    "Rashi on Berakhot 53b:25:1"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.030776915999013
+  },
+  {
+   "id": "o028",
+   "refs": [
+    "Rashi on Berakhot 27a:1:1",
+    "Rashi on Berakhot 26b:13:1",
+    "Deuteronomy 24:3",
+    "Rashi on Berakhot 46b:13:1",
+    "Deuteronomy 34:2",
+    "Berakhot 33a:24",
+    "Exodus 4:8",
+    "Berakhot 3a:4",
+    "Deuteronomy 29:21",
+    "Rashi on Berakhot 47a:13:1"
+   ],
+   "scores": [
+    0.024322,
+    0.024269,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625
+   ],
+   "seconds": 0.04696687500108965
+  },
+  {
+   "id": "o029",
+   "refs": [
+    "Rashi on Berakhot 56a:2:1",
+    "Leviticus 24:7",
+    "Berakhot 33b:26",
+    "Leviticus 24:6",
+    "Rashi on Berakhot 28b:21:1",
+    "Exodus 19:3",
+    "Rashi on Berakhot 27b:19:2",
+    "Rashi on Berakhot 7b:1:1",
+    "Berakhot 51a:13",
+    "Rashi on Berakhot 57a:1:2"
+   ],
+   "scores": [
+    0.024758,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385
+   ],
+   "seconds": 0.05050399999890942
+  },
+  {
+   "id": "o031",
+   "refs": [
+    "Berakhot 43b:19",
+    "Rashi on Berakhot 58b:11:3",
+    "Deuteronomy 16:9",
+    "Berakhot 4b:9",
+    "Exodus 10:2",
+    "Berakhot 27b:6",
+    "Rashi on Berakhot 6b:9:1",
+    "Rashi on Berakhot 16b:12:1",
+    "Rashi on Berakhot 6b:10:2",
+    "Berakhot 15b:2"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.031542291995720007
+  },
+  {
+   "id": "o037",
+   "refs": [
+    "Deuteronomy 32:30",
+    "Berakhot 43a:6",
+    "Berakhot 28a:17",
+    "Berakhot 33a:5",
+    "Exodus 32:33",
+    "Rashi on Berakhot 55b:13:2",
+    "Exodus 32:32",
+    "Berakhot 3b:1",
+    "Deuteronomy 31:24",
+    "Rashi on Berakhot 23b:1:1"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.03571199999714736
+  },
+  {
+   "id": "o039",
+   "refs": [
+    "Deuteronomy 27:15",
+    "Rashi on Berakhot 6a:6:1",
+    "Genesis 1:27",
+    "Berakhot 24a:3",
+    "Berakhot 6a:6",
+    "Leviticus 11:15",
+    "Deuteronomy 4:16",
+    "Deuteronomy 14:14",
+    "Genesis 5:3",
+    "Deuteronomy 4:17"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.03445641600410454
+  },
+  {
+   "id": "n002",
+   "refs": [
+    "Mishneh Torah, Blessings 5:13",
+    "Tosafot on Berakhot 54a:14:1",
+    "Berakhot 17a:10",
+    "Berakhot 24a:11",
+    "Genesis 44:16",
+    "Berakhot 49b:8",
+    "Leviticus 5:22",
+    "Mishneh Torah, Prayer and the Priestly Blessing 11:11",
+    "Berakhot 11a:26",
+    "Berakhot 22b:8"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.062022790996707045
+  },
+  {
+   "id": "n003",
+   "refs": [
+    "Berakhot 57b:3",
+    "Rashi on Berakhot 8a:29:1",
+    "Berakhot 10a:8",
+    "Berakhot 16b:17",
+    "Rashi on Berakhot 31b:26:1",
+    "Mishneh Torah, Prayer and the Priestly Blessing 7:12",
+    "Tosafot on Berakhot 30b:18:1",
+    "Deuteronomy 28:61",
+    "Tosafot on Berakhot 6a:14:1",
+    "Rashi on Berakhot 7b:1:1"
+   ],
+   "scores": [
+    0.027263,
+    0.026389,
+    0.02603,
+    0.025911,
+    0.025678,
+    0.022958,
+    0.019055,
+    0.016393,
+    0.016129,
+    0.015873
+   ],
+   "seconds": 0.038797999994130805
+  },
+  {
+   "id": "n004",
+   "refs": [
+    "Berakhot 16b:8",
+    "Tosafot on Berakhot 51a:17:3",
+    "Berakhot 9a:23",
+    "Berakhot 52b:5",
+    "Berakhot 38a:3",
+    "Rashi on Berakhot 53a:32:1",
+    "Berakhot 37a:5",
+    "Mishneh Torah, Blessings 6:14",
+    "Leviticus 26:46",
+    "Berakhot 51a:17"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.04462241601140704
+  },
+  {
+   "id": "n005",
+   "refs": [
+    "Berakhot 10a:4",
+    "Rashi on Berakhot 40b:9:2",
+    "Rashi on Berakhot 4a:9:5",
+    "Deuteronomy 22:10",
+    "Rashi on Berakhot 51b:11:1",
+    "Berakhot 5a:11",
+    "Berakhot 31a:25",
+    "Exodus 17:13",
+    "Berakhot 22a:7",
+    "Genesis 44:19"
+   ],
+   "scores": [
+    0.028442,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.04738879200886004
+  },
+  {
+   "id": "c000",
+   "refs": [
+    "Berakhot 4a:15",
+    "Deuteronomy 32:40",
+    "Genesis 19:20",
+    "Rashi on Berakhot 64a:3:6",
+    "Berakhot 16b:22",
+    "Genesis 7:10",
+    "Deuteronomy 30:19",
+    "Genesis 35:25",
+    "Mishnah Berakhot 5:5",
+    "Genesis 49:6"
+   ],
+   "scores": [
+    0.029052,
+    0.028475,
+    0.016393,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.06101712500094436
+  },
+  {
+   "id": "c003",
+   "refs": [
+    "Rashi on Berakhot 31b:10:1",
+    "Berakhot 6b:37",
+    "Rashi on Berakhot 8a:4:1",
+    "Rashi on Berakhot 13a:17:2",
+    "Rashi on Berakhot 14a:3:3",
+    "Berakhot 14a:1",
+    "Rashi on Berakhot 27b:16:1",
+    "Rashi on Berakhot 42a:8:2",
+    "Berakhot 34b:22",
+    "Rashi on Berakhot 32b:21:1"
+   ],
+   "scores": [
+    0.03009,
+    0.022809,
+    0.022593,
+    0.022106,
+    0.021757,
+    0.019762,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129
+   ],
+   "seconds": 0.05104962499171961
+  },
+  {
+   "id": "c005",
+   "refs": [
+    "Berakhot 25a:9",
+    "Berakhot 30b:23",
+    "Rashi on Berakhot 18a:2:1",
+    "Deuteronomy 25:11",
+    "Rashi on Berakhot 23a:18:1",
+    "Numbers 17:28",
+    "Rashi on Berakhot 8b:8:1",
+    "Tosafot on Berakhot 18a:11:1",
+    "Berakhot 23a:13",
+    "Berakhot 7b:15"
+   ],
+   "scores": [
+    0.02208,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385
+   ],
+   "seconds": 0.05947829100477975
+  },
+  {
+   "id": "b000",
+   "refs": [
+    "Berakhot 24a:18",
+    "Berakhot 36a:14",
+    "Berakhot 27a:1",
+    "Berakhot 43a:12",
+    "Berakhot 37a:9",
+    "Berakhot 46b:14",
+    "Rashi on Berakhot 62b:19:1",
+    "Berakhot 43a:14",
+    "Tosafot on Berakhot 53a:20:1",
+    "Mishnah Berakhot 6:1"
+   ],
+   "scores": [
+    0.021833,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385
+   ],
+   "seconds": 0.043537207995541394
+  },
+  {
+   "id": "b003",
+   "refs": [
+    "Exodus 39:14",
+    "Berakhot 49a:6",
+    "Numbers 2:18",
+    "Tosafot on Berakhot 35b:5:1",
+    "Exodus 28:21",
+    "Rashi on Berakhot 37b:6:2",
+    "Numbers 2:34",
+    "Rashi on Berakhot 9b:17:1",
+    "Numbers 30:1",
+    "Rashi on Berakhot 49a:14:2"
+   ],
+   "scores": [
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.04555729200365022
+  },
+  {
+   "id": "b005",
+   "refs": [
+    "Berakhot 32b:25",
+    "Berakhot 32b:20",
+    "Berakhot 33a:16",
+    "Berakhot 16b:4",
+    "Rashi on Berakhot 7b:6:1",
+    "Rashi on Berakhot 30b:8:1",
+    "Mishneh Torah, Blessings 1:7",
+    "Numbers 4:38",
+    "Rashi on Berakhot 49b:15:1",
+    "Berakhot 28b:16"
+   ],
+   "scores": [
+    0.029116,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625,
+    0.015385,
+    0.015385
+   ],
+   "seconds": 0.04085291600495111
+  },
+  {
+   "id": "b007",
+   "refs": [
+    "Rashi on Berakhot 19a:10:3",
+    "Berakhot 63b:2",
+    "Tosafot on Berakhot 50a:8:1",
+    "Tosafot on Berakhot 35b:5:1",
+    "Numbers 18:14",
+    "Rashi on Berakhot 35b:2:2",
+    "Numbers 1:45",
+    "Rashi on Berakhot 37b:6:2",
+    "Numbers 26:2",
+    "Rashi on Berakhot 32b:17:2"
+   ],
+   "scores": [
+    0.024085,
+    0.018698,
+    0.016393,
+    0.016393,
+    0.016129,
+    0.016129,
+    0.015873,
+    0.015873,
+    0.015625,
+    0.015625
+   ],
+   "seconds": 0.04159812499710824
+  }
+ ]
+}

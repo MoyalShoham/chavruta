@@ -35,9 +35,10 @@ class Settings(BaseSettings):
     llm_mode: Mode = Mode.REPLAY
     strictness: Strictness = Strictness.BALANCED
     relevance_threshold: float = 0.05
-    #: Candidates the reranker scores per question (chosen on dev; the reranker cannot be turned off,
-    #: because the relevance threshold is defined on its scores).
-    rerank_top: int = 50
+    #: Candidates the reranker scores per question: 20, chosen on dev (recall@10 71% against 74% at
+    #: 50, for 40% of the compute). The reranker cannot be turned off, because the relevance
+    #: threshold is defined on its scores.
+    rerank_top: int = 20
     #: Model calls (ask, card suggestions) per account: a spend limit.
     llm_calls_per_hour: int = 60
     llm_calls_per_day: int = 300

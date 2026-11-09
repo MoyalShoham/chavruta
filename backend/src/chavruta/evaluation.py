@@ -165,12 +165,15 @@ class Config:
     rerank_top: int = 50
 
 
-def configs(models: Sequence[str]) -> list[Config]:
-    out = [Config("bm25", "keyword", None, False), Config("bm25+rerank", "keyword", None, True)]
+def configs(models: Sequence[str], rerank_models: Sequence[str] = ()) -> list[Config]:
+    """BM25 alone; each model alone and fused with BM25; reranking only for the models named in
+    `rerank_models`. The reranker is the expensive part (a 568M-parameter cross-encoder), so it is
+    evaluated for the chosen model, at two depths."""
+    out = [Config("bm25", "keyword", None, False)]
     for m in models:
+        out += [Config(f"{m}", "semantic", m, False), Config(f"hybrid:{m}", "hybrid", m, False)]
+    for m in rerank_models:
         out += [
-            Config(f"{m}", "semantic", m, False),
-            Config(f"hybrid:{m}", "hybrid", m, False),
             Config(f"hybrid:{m}+rerank", "hybrid", m, True),
             Config(f"hybrid:{m}+rerank20", "hybrid", m, True, 20),
         ]
@@ -226,7 +229,7 @@ def cmd_retrieval(args: argparse.Namespace) -> int:
     # threshold); only questions with gold references are scored for recall.
     questions = load_questions(split=args.split)
     out_dir = RECORDINGS / "retrieval" / args.split
-    wanted = configs(args.models)
+    wanted = configs(args.models, args.rerank_models)
     if args.only:
         wanted = [c for c in wanted if c.name in args.only]
     results: dict[str, Any] = {}
@@ -344,16 +347,16 @@ def _write_results(split: str, results: dict[str, Any], out: Path | None) -> Non
         "",
         "Recall@k: share of questions with at least one gold source in the top k distinct references.",
         "",
-        "| Configuration | n | Recall@5 | Recall@10 | All gold@10 | MRR@10 "
-        "| Hebrew R@10 | English R@10 | ms/query |",
-        "|---|---:|---:|---:|---:|---:|---:|---:|---:|",
+        "Latency is measured separately (README): reranker scores are cached across configurations.",
+        "",
+        "| Configuration | n | Recall@5 | Recall@10 | All gold@10 | MRR@10 | Hebrew R@10 | English R@10 |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for name, r in results.items():
         a, he, en = r["all"], r.get("lang:he", {}), r.get("lang:en", {})
         lines.append(
             f"| {name} | {a['n']} | {a['recall@5']:.0%} | {a['recall@10']:.0%} | {a['all_gold@10']:.0%} "
-            f"| {a['mrr@10']:.2f} | {he.get('recall@10', 0):.0%} | {en.get('recall@10', 0):.0%} "
-            f"| {a['seconds'] * 1000:.0f} |"
+            f"| {a['mrr@10']:.2f} | {he.get('recall@10', 0):.0%} | {en.get('recall@10', 0):.0%} |"
         )
     for name, r in results.items():
         if "relevance" not in r:
@@ -377,7 +380,7 @@ def _write_results(split: str, results: dict[str, Any], out: Path | None) -> Non
 
 
 def main(argv: list[str] | None = None) -> int:
-    from chavruta.embeddings import MODELS
+    from chavruta.embeddings import CHOSEN_MODEL, MODELS
 
     parser = argparse.ArgumentParser(prog="python -m chavruta.evaluation")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -389,6 +392,7 @@ def main(argv: list[str] | None = None) -> int:
     r = sub.add_parser("retrieval")
     r.add_argument("--split", choices=("dev", "holdout"), required=True)
     r.add_argument("--models", nargs="+", default=["e5-small", "e5-base", "minilm"])
+    r.add_argument("--rerank-models", nargs="*", default=[CHOSEN_MODEL])
     r.add_argument("--only", nargs="*", help="configuration names to run")
     r.add_argument("--replay", action="store_true", help="score the recorded rankings only")
     r.add_argument("--out", type=Path, default=None)
