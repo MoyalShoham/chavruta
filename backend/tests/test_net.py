@@ -142,3 +142,55 @@ def test_socket_guard_allows_the_three_services_and_the_database() -> None:
     )
     assert result.returncode == 0, result.stderr
     assert "BLOCKED" not in result.stdout, result.stdout
+
+
+def test_ip_literals_cannot_bypass_the_guard_through_any_socket_path() -> None:
+    """The review's bypass: getaddrinfo on an IP literal used to allowlist that IP, so
+    create_connection, urlopen and a plain httpx client reached any address. 192.0.2.0/24 is
+    TEST-NET-1, never routed, so nothing leaves the machine even if a check failed."""
+    result = _run(
+        """
+        import socket, urllib.request
+        import httpx2
+        from chavruta.net import BlockedHostError, install_socket_guard
+        install_socket_guard()
+        target = ("192.0.2.1", 80)
+
+        def udp():
+            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            s.sendto(b"x", ("192.0.2.1", 53))
+
+        def udp_msg():
+            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            s.sendmsg([b"x"], [], 0, ("192.0.2.1", 53))
+
+        attempts = {
+            "getaddrinfo": lambda: socket.getaddrinfo("192.0.2.1", 80),
+            "create_connection": lambda: socket.create_connection(target, timeout=2),
+            "urlopen": lambda: urllib.request.urlopen("http://192.0.2.1/", timeout=2),
+            "httpx": lambda: httpx2.get("http://192.0.2.1/", timeout=2),
+            "connect": lambda: socket.socket().connect(target),
+            "connect_ex": lambda: socket.socket().connect_ex(target),
+            "connect_by_name": lambda: socket.socket().connect(("example.com", 80)),
+            "sendto": udp,
+            "sendmsg": udp_msg,
+            "gethostbyname": lambda: socket.gethostbyname("example.com"),
+            "gethostbyname_ex": lambda: socket.gethostbyname_ex("example.com"),
+        }
+        for name, attempt in attempts.items():
+            try:
+                attempt()
+            except Exception as e:
+                chain, blocked = e, False
+                while chain is not None:
+                    blocked = blocked or isinstance(chain, BlockedHostError) or "not allowed" in str(chain)
+                    chain = chain.__cause__ or chain.__context__
+                print(name, "blocked" if blocked else f"NOT BLOCKED ({type(e).__name__}: {e})")
+            else:
+                print(name, "NOT BLOCKED (succeeded)")
+        """
+    )
+    assert result.returncode == 0, result.stderr
+    lines = result.stdout.strip().splitlines()
+    assert len(lines) == 11, result.stdout
+    assert all(line.endswith(" blocked") for line in lines), result.stdout
