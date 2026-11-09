@@ -65,7 +65,8 @@ def install_socket_guard(extra_hosts: Iterable[str] = ()) -> None:
     - Name resolution (`getaddrinfo`, `gethostbyname`, `gethostbyname_ex`) succeeds only for
       allowlisted names. Their addresses are remembered; an IP literal is never added.
     - Every way Python sockets reach an address (`connect`, `connect_ex`, `sendto`, `sendmsg`)
-      requires a loopback address or one that an allowlisted name resolved to.
+      requires a loopback address or one that an allowlisted name resolved to. (`sendmsg` exists only
+      on POSIX; Windows sockets lack it.)
 
     Native code that opens its own sockets (libpq, for the configured database) is outside it.
     """
@@ -81,7 +82,8 @@ def install_socket_guard(extra_hosts: Iterable[str] = ()) -> None:
         original_connect = cls.connect
         original_connect_ex = cls.connect_ex
         original_sendto = cls.sendto
-        original_sendmsg = cls.sendmsg
+        # Windows sockets have no sendmsg; there is nothing to wrap there.
+        original_sendmsg = getattr(cls, "sendmsg", None)
 
         def check_name(host: Any) -> str:
             name = host.decode() if isinstance(host, bytes) else str(host)
@@ -139,6 +141,7 @@ def install_socket_guard(extra_hosts: Iterable[str] = ()) -> None:
         def guarded_sendmsg(self: socket.socket, buffers: Any, *args: Any) -> Any:
             if len(args) >= 3:
                 check_address(self, args[2])
+            assert original_sendmsg is not None
             return original_sendmsg(self, buffers, *args)
 
         socket.getaddrinfo = guarded_getaddrinfo
@@ -147,7 +150,8 @@ def install_socket_guard(extra_hosts: Iterable[str] = ()) -> None:
         cls.connect = guarded_connect
         cls.connect_ex = guarded_connect_ex
         cls.sendto = guarded_sendto
-        cls.sendmsg = guarded_sendmsg
+        if original_sendmsg is not None:
+            cls.sendmsg = guarded_sendmsg
         _installed = True
 
 

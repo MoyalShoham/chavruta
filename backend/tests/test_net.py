@@ -6,6 +6,7 @@ leak into the rest of the test session.
 
 from __future__ import annotations
 
+import socket
 import subprocess
 import sys
 import textwrap
@@ -173,10 +174,11 @@ def test_ip_literals_cannot_bypass_the_guard_through_any_socket_path() -> None:
             "connect_ex": lambda: socket.socket().connect_ex(target),
             "connect_by_name": lambda: socket.socket().connect(("example.com", 80)),
             "sendto": udp,
-            "sendmsg": udp_msg,
             "gethostbyname": lambda: socket.gethostbyname("example.com"),
             "gethostbyname_ex": lambda: socket.gethostbyname_ex("example.com"),
         }
+        if hasattr(socket.socket, "sendmsg"):  # POSIX only; Windows sockets have no sendmsg
+            attempts["sendmsg"] = udp_msg
         for name, attempt in attempts.items():
             try:
                 attempt()
@@ -192,5 +194,5 @@ def test_ip_literals_cannot_bypass_the_guard_through_any_socket_path() -> None:
     )
     assert result.returncode == 0, result.stderr
     lines = result.stdout.strip().splitlines()
-    assert len(lines) == 11, result.stdout
+    assert len(lines) == (11 if hasattr(socket.socket, "sendmsg") else 10), result.stdout
     assert all(line.endswith(" blocked") for line in lines), result.stdout
