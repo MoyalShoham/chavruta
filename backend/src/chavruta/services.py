@@ -174,6 +174,7 @@ def answer_payload(a: Answer) -> dict[str, Any]:
             "kind": a.decision.classification.kind,
         },
         "model": a.model,
+        "replayed": a.replayed,
     }
 
 

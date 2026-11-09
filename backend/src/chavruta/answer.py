@@ -19,10 +19,11 @@ from collections import defaultdict
 from collections.abc import Sequence
 from dataclasses import dataclass, field
 from enum import StrEnum
+from pathlib import Path
 from typing import Any
 
 from chavruta.corpus import Chunk
-from chavruta.llm import ANSWER_MODEL, LLM
+from chavruta.llm import ANSWER_MODEL, LLM, MissingRecordingError, iter_recordings
 from chavruta.mentions import Mention, unretrieved
 from chavruta.retrieval import Retriever
 from chavruta.scope import Classification, Decision, Strictness, classify, decide
@@ -118,6 +119,7 @@ class Answer:
     unretrieved: list[Mention] = field(default_factory=list)
     model: str | None = None
     usage: dict[str, Any] = field(default_factory=dict)
+    replayed: bool = False  # a recorded answer served by question, without an API key
 
     @property
     def text(self) -> str:
@@ -286,14 +288,62 @@ class Settings:
     sources: int = SOURCES_PER_ANSWER
 
 
+class ReplayIndex:
+    """Recorded answers by question, for running without an API key.
+
+    Exact replay needs the identical request, sources included. The app searches pgvector's
+    approximate index where the evaluation searched exactly, so its sources can come out in a
+    slightly different order. For a recorded question the app then shows the recorded answer with
+    the sources that were actually sent with it, rebuilt from the library, and says so.
+    """
+
+    def __init__(self, recordings: Sequence[dict[str, Any]]) -> None:
+        self.by_question: dict[tuple[str, str, int], dict[str, Any]] = {}
+        for rec in recordings:
+            req = rec["request"]
+            content = req["messages"][-1]["content"]
+            if isinstance(content, list) and any(b.get("type") == "search_result" for b in content):
+                key = (req["system"], content[-1]["text"], len(req["messages"]))
+                self.by_question[key] = rec
+
+    @classmethod
+    def load(cls, directory: Path) -> ReplayIndex:
+        return cls(iter_recordings(directory))
+
+    def find(self, request: dict[str, Any]) -> dict[str, Any] | None:
+        content = request["messages"][-1]["content"]
+        return self.by_question.get((request["system"], content[-1]["text"], len(request["messages"])))
+
+
 class Chavruta:
     def __init__(
-        self, retriever: Retriever, index: CorpusIndex, llm: LLM, settings: Settings | None = None
+        self,
+        retriever: Retriever,
+        index: CorpusIndex,
+        llm: LLM,
+        settings: Settings | None = None,
+        replay: ReplayIndex | None = None,
     ) -> None:
         self.retriever = retriever
         self.index = index
         self.llm = llm
         self.settings = settings or Settings()
+        self.replay = replay
+
+    def recorded_sources(self, request: dict[str, Any]) -> list[Source] | None:
+        """The sources of a recorded request, rebuilt from the library; None if any differ."""
+        blocks = [b for b in request["messages"][-1]["content"] if b.get("type") == "search_result"]
+        out: list[Source] = []
+        for i, b in enumerate(blocks):
+            ref = b["title"].rsplit(" (", 1)[0]
+            chunks = self.index.by_ref.get(ref)
+            if not chunks:
+                return None
+            source = self.index.source(i, chunks[0], 0.0)
+            if [t.text for t in source.texts] != [c["text"] for c in b["content"]]:
+                return None
+            out.append(source)
+        return out
 
     def retrieve(self, question: str, anchor_ref: str | None = None) -> list[Source]:
         hits = self.retriever.search(question, k=self.settings.sources)
@@ -335,7 +385,14 @@ class Chavruta:
                 out.notices.append(REFUSALS[decision.reason])
             return out
         request = answer_request(question, sources, history, mode)
-        response = self.llm.create(request)
+        try:
+            response = self.llm.create(request)
+        except MissingRecordingError:
+            hit = self.replay.find(request) if self.replay else None
+            recorded = self.recorded_sources(hit["request"]) if hit else None
+            if hit is None or recorded is None:
+                raise
+            response, sources, out.replayed = hit["response"], recorded, True
         out.model = response.get("model")
         out.usage = response.get("usage") or {}
         out.sources = sources

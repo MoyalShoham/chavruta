@@ -8,7 +8,7 @@ from zoneinfo import ZoneInfo
 
 from fastapi import FastAPI
 
-from chavruta.answer import Chavruta
+from chavruta.answer import Chavruta, ReplayIndex
 from chavruta.answer import Settings as AnswerSettings
 from chavruta.api import AppState, create_app
 from chavruta.config import Settings
@@ -43,6 +43,7 @@ def make() -> FastAPI:
         library.index,
         llm,
         AnswerSettings(strictness=settings.strictness, relevance_threshold=settings.relevance_threshold),
+        ReplayIndex.load(settings.recordings_dir) if settings.llm_mode == Mode.REPLAY else None,
     )
     state = AppState(
         settings=settings,

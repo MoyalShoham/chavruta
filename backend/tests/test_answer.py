@@ -353,3 +353,37 @@ def test_answer_request_is_deterministic() -> None:
     assert request_key(answer_request("q", sources, (), "ask")) == request_key(
         answer_request("q", sources, (), "ask")
     )
+
+
+def test_keyless_replay_serves_a_recorded_answer_when_retrieval_order_differs(tmp_path: Path) -> None:
+    from chavruta.answer import ReplayIndex
+    from chavruta.llm import iter_recordings
+
+    blocks = [{"type": "text", "text": "Recorded.", "citations": [cite(0, "x")]}]
+    recorder = RecordingLLM(tmp_path, Mode.RECORD, ScriptedLLM(classification(), blocks))
+    first = bot(recorder).ask("שמע ישראל")
+    assert first.status == Status.ANSWERED
+
+    class Reversed(FixedReranker):
+        def scores(self, query: str, passages: list[str]) -> list[float]:
+            return list(reversed(super().scores(query, passages)))
+
+    e = HashEmbedder()
+    other = Retriever(ALL, e, e.passages([c.text for c in ALL]), Reversed())
+    replay = RecordingLLM(tmp_path, Mode.REPLAY)
+    strict = Chavruta(other, CorpusIndex(ALL), replay, Settings(relevance_threshold=0.0))
+    with pytest.raises(MissingRecordingError):
+        strict.ask("שמע ישראל")  # different sources: no exact recording
+    lenient = Chavruta(
+        other,
+        CorpusIndex(ALL),
+        replay,
+        Settings(relevance_threshold=0.0),
+        ReplayIndex(iter_recordings(tmp_path)),
+    )
+    again = lenient.ask("שמע ישראל")
+    assert again.replayed
+    assert [s.ref for s in again.sources] == [s.ref for s in first.sources]  # the sources actually sent
+    assert again.segments[0].citations[0].ref == first.segments[0].citations[0].ref
+    with pytest.raises(MissingRecordingError):
+        lenient.ask("a question nobody recorded")
