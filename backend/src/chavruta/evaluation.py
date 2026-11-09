@@ -360,7 +360,7 @@ def main(argv: list[str] | None = None) -> int:
     e.set_defaults(fn=cmd_embed)
     r = sub.add_parser("retrieval")
     r.add_argument("--split", choices=("dev", "holdout"), required=True)
-    r.add_argument("--models", nargs="+", default=["e5-small", "e5-base", "bge-m3", "minilm"])
+    r.add_argument("--models", nargs="+", default=["e5-small", "e5-base", "minilm"])
     r.add_argument("--only", nargs="*", help="configuration names to run")
     r.add_argument("--replay", action="store_true", help="score the recorded rankings only")
     r.add_argument("--out", type=Path, default=None)

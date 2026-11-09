@@ -51,7 +51,12 @@ def make() -> FastAPI:
         library=library,
         llm=llm,
         bot=bot,
-        schedule=Schedule(settings.geonameid, settings.israel, settings.timezone),
+        schedule=Schedule(
+            settings.geonameid,
+            settings.israel,
+            settings.timezone,
+            cache_file=settings.data_dir / "hebcal-schedule.json",
+        ),
         sefaria=SefariaClient(cache_dir=settings.data_dir / "sefaria-cache"),
         tz=tz,
         throttle=Throttle(),

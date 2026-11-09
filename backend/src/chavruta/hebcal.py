@@ -3,17 +3,20 @@
 The app is closed from candle lighting until havdalah, for Shabbat and for Yom Tov, at the
 configured location. The backend enforces it (every study endpoint answers 423), not only the UI.
 
-If Hebcal cannot be reached and nothing is cached, the app does not guess the exact times. It falls
-back to a conservative window, Friday 12:00 to Saturday 23:59 local time, and says so. A Yom Tov on a
-weekday is then missed; the cached schedule (fetched weeks ahead) makes that rare.
+If Hebcal cannot be reached and no saved schedule covers today, the app does not guess the exact
+times. It falls back to a conservative window, Friday 12:00 to Saturday 23:59 local time, and says
+so. A Yom Tov on a weekday is then missed; the saved schedule (fetched weeks ahead, kept across
+restarts) makes that rare.
 """
 
 from __future__ import annotations
 
+import json
 import threading
 from collections.abc import Sequence
 from dataclasses import dataclass
 from datetime import date, datetime, time, timedelta
+from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
 
@@ -99,7 +102,14 @@ def fallback_status(now: datetime) -> Status:
 
 
 class Schedule:
-    """Cached closed periods for one location, refreshed at most every `refresh` interval."""
+    """Closed periods for one location, refreshed at most every `refresh` interval.
+
+    - A failed refresh backs off for `retry` before trying again, so an outage does not make every
+      request wait on Hebcal.
+    - The fetch runs outside the lock: one request refreshes, the others use what is known.
+    - The last good schedule is saved to `cache_file`, so a restart during an outage still knows
+      the real times (they cover weeks ahead) instead of falling back to Friday and Saturday.
+    """
 
     def __init__(
         self,
@@ -108,16 +118,22 @@ class Schedule:
         tz: str = "Asia/Jerusalem",
         client: httpx.Client | None = None,
         refresh: timedelta = timedelta(hours=6),
+        retry: timedelta = timedelta(minutes=5),
         days_ahead: int = 45,
+        cache_file: Path | None = None,
     ) -> None:
         self.geonameid = geonameid
         self.israel = israel
         self.tz = ZoneInfo(tz)
         self.client = client or http_client(timeout=10)
         self.refresh = refresh
+        self.retry = retry
         self.days_ahead = days_ahead
-        self._periods: list[Period] = []
+        self.cache_file = cache_file
+        self._periods: list[Period] = self._load()
         self._fetched_at: datetime | None = None
+        self._next_try: datetime | None = None
+        self._fetching = False
         self._lock = threading.Lock()
 
     def fetch(self, start: date) -> list[Period]:
@@ -142,15 +158,62 @@ class Schedule:
         now = now or datetime.now(self.tz)
         with self._lock:
             stale = self._fetched_at is None or now - self._fetched_at > self.refresh
-            if stale:
-                try:
-                    self._periods = self.fetch(now.date())
-                    self._fetched_at = now
-                except (httpx.HTTPError, ValueError, PermissionError):
-                    if self._fetched_at is None:
-                        return fallback_status(now.astimezone(self.tz))
+            due = self._next_try is None or now >= self._next_try
+            refresh = stale and due and not self._fetching
+            if refresh:
+                self._fetching = True
+        if refresh:
+            try:
+                periods = self.fetch(now.date())
+            except (httpx.HTTPError, ValueError, PermissionError):
+                with self._lock:
+                    self._next_try = now + self.retry
+                    self._fetching = False
+            else:
+                with self._lock:
+                    self._periods, self._fetched_at, self._next_try = periods, now, None
+                    self._fetching = False
+                self._save(periods)
+        with self._lock:
             periods = list(self._periods)
+        if not periods or periods[-1].end < now:
+            return fallback_status(now.astimezone(self.tz))
         return status_at(periods, now)
+
+    def _save(self, periods: Sequence[Period]) -> None:
+        if self.cache_file is None:
+            return
+        data = [
+            {
+                "start": p.start.isoformat(),
+                "end": p.end.isoformat(),
+                "reason": p.reason,
+                "reason_he": p.reason_he,
+            }
+            for p in periods
+        ]
+        try:
+            self.cache_file.parent.mkdir(parents=True, exist_ok=True)
+            self.cache_file.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+        except OSError:
+            pass  # the cache is a convenience; the in-memory schedule still applies
+
+    def _load(self) -> list[Period]:
+        if self.cache_file is None or not self.cache_file.exists():
+            return []
+        try:
+            data = json.loads(self.cache_file.read_text(encoding="utf-8"))
+            return [
+                Period(
+                    datetime.fromisoformat(d["start"]),
+                    datetime.fromisoformat(d["end"]),
+                    d["reason"],
+                    d["reason_he"],
+                )
+                for d in data
+            ]
+        except (OSError, ValueError, KeyError):
+            return []
 
 
 def status_at(periods: Sequence[Period], now: datetime) -> Status:

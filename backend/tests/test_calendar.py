@@ -134,3 +134,35 @@ def test_due_and_invalid_grades() -> None:
     assert not is_due(s, TODAY) and is_due(s, TODAY + timedelta(days=1))
     with pytest.raises(ValueError, match="grade"):
         review(CardState(), 7, TODAY)
+
+
+def test_an_outage_backs_off_instead_of_refetching_on_every_request() -> None:
+    calls = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls["n"] += 1
+        return httpx.Response(503)
+
+    s = _schedule(handler)
+    for minute in range(3):
+        s.status(at(f"2026-11-14T10:0{minute}"))
+    assert calls["n"] == 1  # retried only after the back-off
+    s.status(at("2026-11-14T10:06"))
+    assert calls["n"] == 2
+
+
+def test_a_restart_during_an_outage_keeps_the_saved_times(tmp_path: Path) -> None:
+    cache = tmp_path / "schedule.json"
+    up = Schedule(
+        client=httpx.Client(
+            transport=httpx.MockTransport(lambda r: httpx.Response(200, json=FIXTURE["pesach_5787"]))
+        ),
+        cache_file=cache,
+    )
+    up.status(at("2027-04-20T10:00"))
+    down = Schedule(
+        client=httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(503))), cache_file=cache
+    )
+    s = down.status(at("2027-04-22T10:00"))  # Pesach I, a weekday: the fallback alone would miss it
+    assert s.closed
+    assert s.reason == "Pesach I"
