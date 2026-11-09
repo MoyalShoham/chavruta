@@ -37,7 +37,8 @@ def check_embeddings(sessions: sessionmaker[Session]) -> None:
         )
     if models - {CHOSEN_MODEL}:
         raise EmbeddingMismatchError(
-            f"the library was embedded with {sorted(models)}, the app uses {CHOSEN_MODEL}; re-embed it"
+            f"the library was embedded with {sorted(m for m in models if m)}, the app uses "
+            f"{CHOSEN_MODEL}; re-embed it"
         )
     if dim is not None and dim != EMBEDDING_DIM:
         raise EmbeddingMismatchError(
