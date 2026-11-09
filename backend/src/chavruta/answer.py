@@ -26,7 +26,7 @@ from chavruta.corpus import Chunk
 from chavruta.llm import ANSWER_MODEL, LLM, MissingRecordingError, iter_recordings
 from chavruta.mentions import Mention, unretrieved
 from chavruta.retrieval import Retriever
-from chavruta.scope import Classification, Decision, Strictness, classify, decide
+from chavruta.scope import URGENT, Classification, Decision, Strictness, classify, decide
 
 PROMPT_VERSION = "2026-11-09.1"
 SOURCES_PER_ANSWER = 8
@@ -207,6 +207,7 @@ AREA_HE = {
     "abuse": "פגיעה",
     "self_harm": "פגיעה עצמית",
     "financial_hardship": "מצוקה כלכלית",
+    "unclassified": "שאלה שלא ניתן היה לסווג",
     "other": "נושא רגיש",
 }
 
@@ -250,6 +251,18 @@ REFUSALS = {
         "refusal",
         "That is outside what I study in strict mode: I answer only questions about the texts.",
         "בשאלה הזאת איני עוסקת במצב המחמיר: אני עונה רק על שאלות על המקורות.",
+    ),
+    "unclassified": Notice(
+        "refusal",
+        "I couldn't process this question, so I won't try to answer it. If it is about something "
+        "that matters in your life, please speak to a rabbi or someone you trust.",
+        "לא הצלחתי לעבד את השאלה, ולכן לא אנסה לענות עליה. אם היא נוגעת למשהו חשוב בחייך, "
+        "כדאי לדבר עם רב או עם מישהו שסומכים עליו.",
+    ),
+    "model_refusal": Notice(
+        "refusal",
+        "The model declined to answer this question, so there is no answer to show.",
+        "המודל סירב לענות על השאלה, ולכן אין תשובה להציג.",
     ),
     "manipulation": Notice(
         "refusal",
@@ -372,7 +385,7 @@ class Chavruta:
         threshold = -1e9 if anchor_ref and mode == "chavruta" else self.settings.relevance_threshold
         decision = decide(c, question, best, self.settings.strictness, threshold)
         out = Answer(Status.ANSWERED, question, decision=decision, retrieved=[s.ref for s in sources])
-        if decision.sensitive_area in ("self_harm", "danger_to_life", "abuse"):
+        if decision.sensitive_area in URGENT:
             out.notices.append(SAFETY)
         if decision.sensitive_area:
             out.notices.append(ask_rabbi_first(decision.sensitive_area))
@@ -398,7 +411,8 @@ class Chavruta:
         out.sources = sources
         if response.get("stop_reason") == "refusal":
             out.status = Status.REFUSED
-            out.notices.append(REFUSALS["manipulation"])
+            out.notices.append(REFUSALS["model_refusal"])
+            out.segments = []
             return out
         out.segments = parse_answer(response, sources)
         out.unretrieved = unretrieved(

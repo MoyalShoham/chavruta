@@ -56,8 +56,14 @@ def dirs(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
     return tmp_path
 
 
+def picked() -> list[Any]:
+    """One dev question of each kind: a source question, a sensitive one, an out-of-scope one."""
+    dev = load_questions(split="dev")
+    return [next(q for q in dev if q.type == t) for t in ("source", "sensitive", "out_of_scope")]
+
+
 def run(dirs: Path) -> list[dict[str, Any]]:
-    questions = [q for q in load_questions(split="dev") if q.id in ("q035", "q160", "o000")]
+    questions = picked()
     scripted = EvalLLM(out_of_scope={q.question for q in questions if q.type == "out_of_scope"})
     llm = RecordingLLM(dirs / "llm", Mode.RECORD, scripted)
     b = bot(llm)
@@ -72,7 +78,7 @@ def run(dirs: Path) -> list[dict[str, Any]]:
 
 def test_scores_come_from_the_recordings(dirs: Path) -> None:
     rows = run(dirs)
-    assert {r["id"]: r["status"] for r in rows} == {"q035": "answered", "q160": "answered", "o000": "refused"}
+    assert [r["status"] for r in rows] == ["answered", "answered", "refused"]
     r = ev.score("dev")
     assert r["integrity_problems"] == []
     g = r["grounding"]
@@ -81,7 +87,7 @@ def test_scores_come_from_the_recordings(dirs: Path) -> None:
     assert 0 < g["cited_share_of_text"] < 1  # " Shall we go on?" is uncited
     assert g["judge"]["supported_share_of_claims"] == 1.0
     assert r["scope"]["balanced"]["out_of_scope_refused"] == 1.0
-    assert r["sensitive"]["ask_rabbi_first"] == 1.0  # q160: diabetic, keyword backstop
+    assert r["sensitive"]["ask_rabbi_first"] == 1.0  # first-person, keyword backstop
 
 
 def test_a_doctored_answer_or_citation_is_caught(dirs: Path) -> None:

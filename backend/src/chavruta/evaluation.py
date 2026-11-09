@@ -42,6 +42,8 @@ class Question:
     question: str
     gold: tuple[str, ...]
     verify: dict[str, list[str]] = field(default_factory=dict)
+    #: For a machloket: groups of name variants; a good answer names one from every group.
+    expect_sides: tuple[tuple[str, ...], ...] = ()
 
     @property
     def in_scope(self) -> bool:
@@ -54,7 +56,10 @@ def load_questions(path: Path = QUESTIONS, split: str | None = None) -> list[Que
         if not line.strip():
             continue
         r = json.loads(line)
-        q = Question(r["id"], r["split"], r["lang"], r["type"], r["question"], tuple(r["gold"]), r["verify"])
+        sides = tuple(tuple(g) for g in r.get("expect_sides", []))
+        q = Question(
+            r["id"], r["split"], r["lang"], r["type"], r["question"], tuple(r["gold"]), r["verify"], sides
+        )
         if split is None or q.split == split:
             out.append(q)
     return out

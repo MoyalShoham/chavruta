@@ -95,10 +95,25 @@ language: the language of the message."""
 
 # Independent backstop: words that make a question sensitive whatever the classifier says.
 _SENSITIVE_WORDS = {
-    # Not "אבל" (also "but") or "שבעה" (also "seven"): only unambiguous forms.
+    # Checked first: these also put emergency numbers above everything.
+    "self_harm": (
+        r"להתאבד|התאבדות|לפגוע בעצמי|לשים קץ לחיי|לא רוצה לחיות|לא רוצה יותר לחיות|רוצה למות|"
+        r"בא לי למות|אין לי בשביל מה לחיות|"
+        r"suicid|kill myself|self-harm|hurt myself|end my life|end it all|want to die|"
+        r"(?:don't|do not|no longer) want to (?:live|be alive)|no reason to live"
+    ),
+    "abuse": (
+        r"התעללות|מתעלל|מכה אותי|מכה אותנו|מרביץ|מרביצה|אלימות במשפחה|"
+        r"\babuse|abusive|hits me|beats me|hurts me|domestic violence"
+    ),
+    "danger_to_life": (
+        r"פיקוח נפש|סכנת חיים|בסכנה|בסכנת|"
+        r"danger to life|life-threatening|in danger|emergency"
+    ),
+    # Not "אבל" (also "but") or "שבעה" (also "seven"); not "נפטר מ..." ("exempt from").
     "mourning": (
-        r"נפטר|נפטרה|אבלות|להתאבל|מתאבל|\bאונן\b|אנינות|יושב שבעה|לשבת שבעה|הלוויה|"
-        r"\bdied\b|passed away|funeral|mourn|\bshiva\b|\bonen\b"
+        r"נפטר(?:ה)?(?!\s*מ)|אבלות|להתאבל|מתאבל|\bאונן\b|אנינות|יושב שבעה|לשבת שבעה|הלוויה|"
+        r"הלך לעולמו|\bdied\b|passed away|funeral|mourn|\bshiva\b|\bonen\b"
     ),
     "illness_or_medical": (
         r"\bחולה\b|מחלה|רופא|תרופה|תרופות|סוכרת|בהריון|הריון|ניתוח|"
@@ -107,10 +122,9 @@ _SENSITIVE_WORDS = {
     "family_purity": r"\bנדה\b|טהרת המשפחה|מקווה|niddah|mikveh|family purity",
     "marriage_or_divorce": r"\bגט\b|גירושין|להתגרש|מתגרשים|divorce|agunah|עגונה",
     "conversion": r"גיור|להתגייר|conversion to judaism|convert to judaism",
-    "danger_to_life": r"פיקוח נפש|סכנת חיים|danger to life|life-threatening",
-    "abuse": r"התעללות|מתעלל|\babuse|domestic violence",
-    "self_harm": r"להתאבד|התאבדות|לפגוע בעצמי|suicid|kill myself|self-harm|hurt myself",
 }
+#: Areas that also get the emergency-numbers notice, first.
+URGENT = ("self_harm", "abuse", "danger_to_life", "unclassified")
 _SENSITIVE_RE = {k: re.compile(v, re.IGNORECASE) for k, v in _SENSITIVE_WORDS.items()}
 
 
@@ -164,19 +178,25 @@ def classify_request(question: str) -> dict[str, Any]:
 
 
 def parse_classification(response: dict[str, Any]) -> Classification:
+    """A classifier that refuses, is cut off or returns something unparseable has not classified
+    the question. The answer is then not attempted, and the person gets the emergency and
+    "ask your rabbi" notices instead of a bare "out of scope": a refusal by a safety classifier is
+    itself a signal that the message may be about harm."""
     text = next((b["text"] for b in response.get("content", []) if b.get("type") == "text"), "")
-    if response.get("stop_reason") == "refusal" or not text:
-        # A classifier refusal is treated as out of scope rather than guessed.
-        return Classification(Scope.OUT_OF_SCOPE, "other", False, None, False, "other")
-    data = json.loads(text)
-    return Classification(
-        Scope(data["scope"]),
-        data["kind"],
-        bool(data["sensitive"]),
-        data.get("sensitive_area"),
-        bool(data["manipulation"]),
-        data["language"],
-    )
+    try:
+        if response.get("stop_reason") in ("refusal", "max_tokens") or not text:
+            raise ValueError("no classification")
+        data = json.loads(text)
+        return Classification(
+            Scope(data["scope"]),
+            data["kind"],
+            bool(data["sensitive"]),
+            data.get("sensitive_area"),
+            bool(data["manipulation"]),
+            data["language"],
+        )
+    except (ValueError, KeyError, TypeError):
+        return Classification(Scope.OUT_OF_SCOPE, "other", True, "unclassified", False, "other")
 
 
 def classify(llm: LLM, question: str) -> Classification:
@@ -192,6 +212,9 @@ def decide(
 ) -> Decision:
     """Combines the classifier, the keyword backstop and retrieval relevance."""
     area = c.sensitive_area if c.sensitive else None
+    keyword_area = keyword_sensitivity(question)
+    if keyword_area in URGENT and area not in URGENT:
+        area = keyword_area  # danger outranks whatever else the classifier saw
     if area is None and (c.kind != "text_study" or is_personal(question)):
         # The backstop skips impersonal text study ("how did R. Chanina know whether a sick person
         # would live?"): a story about illness is not a question about one's own illness. It still
@@ -206,6 +229,8 @@ def decide(
 
     if c.manipulation:
         return d(False, "manipulation")
+    if area == "unclassified":
+        return d(False, "unclassified")
     if c.scope == Scope.OUT_OF_SCOPE and (strictness != Strictness.LENIENT or not relevant):
         return d(False, "out_of_scope")
     if c.scope == Scope.BORDERLINE and strictness == Strictness.STRICT:

@@ -252,6 +252,7 @@ def test_model_refusal_is_reported_not_shown_as_an_answer() -> None:
     a = bot(Refusing(classification(), [{"type": "text", "text": "partial"}])).ask("שמע ישראל")
     assert a.status == Status.REFUSED
     assert a.segments == []
+    assert a.notices[-1].en.startswith("The model declined")
 
 
 def test_chavruta_mode_anchors_the_passage_and_keeps_history() -> None:
@@ -312,8 +313,58 @@ def test_keyword_backstop_avoids_common_false_alarms() -> None:
     )
 
 
-def test_classifier_refusal_or_empty_output_is_treated_as_out_of_scope() -> None:
-    assert parse_classification({"stop_reason": "refusal", "content": []}).scope == Scope.OUT_OF_SCOPE
+@pytest.mark.parametrize(
+    "response",
+    [
+        {"stop_reason": "refusal", "content": []},
+        {"stop_reason": "max_tokens", "content": [{"type": "text", "text": '{"scope": "in_'}]},
+        {"stop_reason": "end_turn", "content": [{"type": "text", "text": "not json"}]},
+        {"stop_reason": "end_turn", "content": [{"type": "text", "text": '{"scope": "nonsense"}'}]},
+    ],
+)
+def test_a_classifier_that_fails_leaves_the_question_unclassified(response: dict[str, Any]) -> None:
+    c = parse_classification(response)
+    assert (c.scope, c.sensitive, c.sensitive_area) == (Scope.OUT_OF_SCOPE, True, "unclassified")
+
+
+def test_unclassified_questions_get_safety_and_rabbi_notices_not_a_bare_refusal() -> None:
+    class Refusing(ScriptedLLM):
+        def create(self, request: dict[str, Any]) -> dict[str, Any]:
+            self.requests.append(request)
+            return {"stop_reason": "refusal", "content": []}
+
+    llm = Refusing(classification())
+    a = bot(llm).ask("something the classifier will not touch")
+    assert [n.kind for n in a.notices] == ["safety", "ask_rabbi_first", "refusal"]
+    assert a.decision is not None and a.decision.reason == "unclassified"
+    assert llm.answer_requests == []
+
+
+@pytest.mark.parametrize(
+    ("question", "area"),
+    [
+        ("I don't want to live anymore", "self_harm"),
+        ("I want to end my life", "self_harm"),
+        ("אני לא רוצה לחיות יותר", "self_harm"),
+        ("בא לי למות", "self_harm"),
+        ("My husband hits me", "abuse"),
+        ("בעלי מכה אותי", "abuse"),
+        ("השכן שלי בסכנה", "danger_to_life"),
+    ],
+)
+def test_crisis_messages_get_emergency_numbers_first_whatever_the_classifier_says(
+    question: str, area: str
+) -> None:
+    # Even a classifier that calls it out-of-scope text study cannot drop the safety notice.
+    llm = ScriptedLLM(classification(scope="out_of_scope", kind="text_study"))
+    a = bot(llm).ask(question)
+    assert a.decision is not None and a.decision.sensitive_area == area
+    assert [n.kind for n in a.notices][:2] == ["safety", "ask_rabbi_first"]
+
+
+def test_exempt_is_not_mourning() -> None:
+    assert keyword_sensitivity("החתן נפטר מקריאת שמע בלילה הראשון") is None
+    assert keyword_sensitivity("אבא שלי נפטר הבוקר") == "mourning"
 
 
 # ---- recording -------------------------------------------------------------------------------------
