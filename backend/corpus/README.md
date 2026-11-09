@@ -24,3 +24,8 @@ Attribution: texts via Sefaria (sefaria.org). CC-BY texts: Mishnah Yomit by Dr. 
 Tosafot translated by Jan Buckler. CC-BY-SA texts (Wikisource Talmud Bavli, Wikisource Mishneh
 Torah) are redistributed here under the same license, CC BY-SA. This snapshot is offered under the
 licenses of the texts it contains.
+
+`vectors-e5-small.npz` holds the `intfloat/multilingual-e5-small` embeddings of those passages
+(float16, matched by reference, language and version), the same vectors the evaluation used. Ingest
+loads them instead of embedding 23,507 passages on the CPU, and embeds only passages they do not
+cover. Regenerate with `python -m chavruta.evaluation export-vectors` after re-embedding.
