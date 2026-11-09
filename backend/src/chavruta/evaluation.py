@@ -207,6 +207,34 @@ def cmd_embed(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_latency(args: argparse.Namespace) -> int:
+    """Per-question retrieval time of the chosen configuration, with a fresh (uncached) reranker,
+    on the device given: what a person waits for before the model starts answering."""
+    import statistics
+
+    from chavruta.embeddings import CHOSEN_MODEL, MODELS, CrossEncoderReranker, SentenceEmbedder, load_vectors
+    from chavruta.retrieval import Retriever
+
+    chunks = load_chunks()
+    _, vectors = load_vectors(DATA / "vectors" / CHOSEN_MODEL)
+    embedder = SentenceEmbedder(MODELS[CHOSEN_MODEL], device=args.device)
+    retriever = Retriever(chunks, embedder, vectors, CrossEncoderReranker(device=args.device))
+    questions = [q for q in load_questions(split="dev") if q.gold][: args.n]
+    retriever.search(questions[0].question, k=10)  # warm-up
+    for depth in args.depths:
+        retriever.rerank_top = depth
+        times = []
+        for q in questions:
+            start = time.perf_counter()
+            retriever.search(q.question, k=10)
+            times.append(time.perf_counter() - start)
+        print(
+            f"{args.device} depth {depth}: median {statistics.median(times):.2f}s, "
+            f"max {max(times):.2f}s, n={len(times)}"
+        )
+    return 0
+
+
 def cmd_export_vectors(args: argparse.Namespace) -> int:
     """Ships the chosen model's vectors with the corpus snapshot (float16, compressed)."""
     import numpy as np
@@ -386,6 +414,11 @@ def main(argv: list[str] | None = None) -> int:
     sub = parser.add_subparsers(dest="cmd", required=True)
     sub.add_parser("verify").set_defaults(fn=cmd_verify)
     sub.add_parser("export-vectors").set_defaults(fn=cmd_export_vectors)
+    lat = sub.add_parser("latency")
+    lat.add_argument("--device", default="cpu")
+    lat.add_argument("--n", type=int, default=10)
+    lat.add_argument("--depths", type=int, nargs="+", default=[20, 50])
+    lat.set_defaults(fn=cmd_latency)
     e = sub.add_parser("embed")
     e.add_argument("--model", choices=sorted(MODELS), required=True)
     e.set_defaults(fn=cmd_embed)
