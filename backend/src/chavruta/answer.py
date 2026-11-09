@@ -32,10 +32,23 @@ from chavruta.llm import ANSWER_MODEL, LLM, MissingRecordingError, iter_recordin
 from chavruta.lookup import Found, Planned, SefariaLookup
 from chavruta.mentions import Mention, unretrieved
 from chavruta.retrieval import Retriever, matches
-from chavruta.scope import URGENT, Classification, Decision, Scope, Strictness, classify, decide
+from chavruta.scope import (
+    URGENT,
+    Classification,
+    Decision,
+    Scope,
+    Strictness,
+    classify,
+    decide,
+    is_personal,
+)
+from chavruta.text import strip_marks
 
 SOURCES_PER_ANSWER = 8
 PLAN_TIMEOUT = 20.0  # seconds to wait for the lookup planner before answering from the library
+#: Below this best library score, Sefaria's search runs as well (chosen on the lookup's dev split:
+#: 6 of the library's 65 answered dev questions are below it).
+SEARCH_BELOW = 0.3
 DEFAULT_RELEVANCE = 0.05  # reranker probability; chosen on dev (see docs/decisions.md)
 
 SYSTEM = """You are Chavruta, a study partner for classical Jewish texts.
@@ -441,10 +454,11 @@ class Chavruta:
             return None
         return self._planner.submit(self.lookup.safe_plan, question, context)
 
-    def look_up(self, planning: Future[Planned], query: str, no_source: bool) -> Found:
-        """A planned place the library holds is not fetched; search runs only if the library has
-        nothing relevant or the question names a work or a place the library does not hold. Any
-        failure, or a planner slower than PLAN_TIMEOUT, leaves the library's sources as they were."""
+    def look_up(self, planning: Future[Planned], query: str, library_best: float | None) -> Found:
+        """A planned place the library holds is not fetched. Search runs if the library's best
+        source is weak (below SEARCH_BELOW) or the question names a work or a place the library
+        does not hold. Any failure, or a planner slower than PLAN_TIMEOUT, leaves the library's
+        sources as they were."""
         assert self.lookup is not None
         try:
             planned = planning.result(timeout=PLAN_TIMEOUT)
@@ -453,24 +467,32 @@ class Chavruta:
         try:
             outside = bool(unretrieved(query, self.index.works, [], self.index.refs))
             disabled = self.index.disabled
+            weak = library_best is None or library_best < SEARCH_BELOW
             return self.lookup.fetch_planned(
-                planned, self.index.has, search=no_source or outside, blocked=lambda w: w in disabled
+                planned, self.index.has, search=weak or outside, blocked=lambda w: w in disabled
             )
         except Exception as e:
             return Found(planned.plan, errors=[f"lookup failed: {type(e).__name__}: {e}"])
 
-    def merge(self, query: str, sources: list[Source], chunks: Sequence[Chunk]) -> list[Source]:
-        """Ranks fetched passages with the library's own embeddings and reranker, so their scores
-        and the relevance threshold mean the same thing, and keeps the best of both. A place both
-        hold comes from the library."""
+    def merge(
+        self, query: str, sources: list[Source], chunks: Sequence[Chunk], phrases: Sequence[str] = ()
+    ) -> list[Source]:
+        """Ranks fetched passages with the library's own embeddings and reranker, and keeps the
+        best of both; a place both hold comes from the library. Two things differ from the
+        library's ranking, both chosen on the lookup's dev split: the reranker reads the passage
+        without vowel points (Sefaria's default Hebrew is often vocalized, which pushed a matching
+        halakhah from 0.87 to 0.02), and the planner's phrases in the text's own language are added
+        to the question (an English question about a short Aramaic line otherwise scores 0)."""
         r = self.retriever
-        vectors = r.embedder.passages([c.text for c in chunks]) if r.embedder is not None else None
-        ranker = Retriever(chunks, r.embedder, vectors, r.reranker, r.rerank_top)
-        fetched_index = CorpusIndex(chunks)
+        plain = [replace(c, text=strip_marks(c.text)) for c in chunks]
+        vectors = r.embedder.passages([c.text for c in plain]) if r.embedder is not None else None
+        ranker = Retriever(plain, r.embedder, vectors, r.reranker, r.rerank_top)
+        fetched_index = CorpusIndex(chunks)  # what is shown and sent keeps its vowel points
         held = {s.ref for s in sources}
+        ranking_query = f"{query} ({'; '.join(phrases)})" if phrases else query
         fetched = [
             replace(fetched_index.source(0, h.chunk, h.score), fetched=True)
-            for h in ranker.search(query, k=self.settings.sources)
+            for h in ranker.search(ranking_query, k=self.settings.sources)
             if h.chunk.ref not in held and not self.index.has(h.chunk.ref)
         ]
         best = sorted([*sources, *fetched], key=lambda s: -s.score)[: self.settings.sources]
@@ -511,11 +533,15 @@ class Chavruta:
         decision = decide(c, question, best, self.settings.strictness, threshold)
         found = None
         may_look = decision.answer or decision.reason == "no_source"
-        if planning is not None and may_look and not decision.sensitive_area:
-            found = self.look_up(planning, query, no_source=decision.reason == "no_source")
+        # A question the classifier calls sensitive, or one about the asker's own life, is not looked
+        # up. A keyword alone ("פיקוח נפש" in a question about Yoma 85b) still gets its notices,
+        # but does not stop the study of a text.
+        sensitive = c.sensitive or (decision.sensitive_area is not None and is_personal(question))
+        if planning is not None and may_look and not sensitive:
+            found = self.look_up(planning, query, best)
             if found.chunks:
                 try:
-                    merged = self.merge(query, sources, found.chunks)
+                    merged = self.merge(query, sources, found.chunks, found.plan.queries)
                 except Exception as e:  # ranking the fetched passages failed: keep the library's
                     found.errors.append(f"ranking failed: {type(e).__name__}: {e}")
                     merged = sources

@@ -285,12 +285,19 @@ def find_mentions(text: str) -> list[Mention]:
     return sorted((x for x in spans if not inside(x)), key=lambda x: x.start)
 
 
+#: The Rambam's works other than the Mishneh Torah, by their Sefaria titles.
+RAMBAM_WORKS = ("Sefer HaMitzvot", "Eight Chapters", "Iggerot HaRambam", "Guide for the Perplexed",
+                "Rambam on ", "Treatise on Resurrection")  # fmt: skip
+
+
 def families_of(work: str) -> set[str]:
     """The mention families a work satisfies: a library work by the table above; a work fetched
     from Sefaria for one question by its title: "Rashi on Bava Batra" is Rashi and Bava Batra,
     "Pirkei Avot" is Avot, "Mishneh Torah, Sabbath" is the Rambam, "Bereshit Rabbah" a Midrash."""
     if work in WORK_FAMILIES:
         return WORK_FAMILIES[work]
+    if work.startswith(RAMBAM_WORKS):
+        return {work, "Rambam"}
     if " on " in work:  # a commentary: the commentator and the work commented on
         commentator, base = work.split(" on ", 1)
         return {commentator, *families_of(commentator), *families_of(base)}

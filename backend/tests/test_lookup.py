@@ -589,3 +589,65 @@ def test_library_membership_by_place_section_part_and_range() -> None:
     assert index.has("Deuteronomy 6:4-9") and index.has("Deuteronomy 6:4")
     assert not index.has("Bava Batra 5a") and not index.has("Deuteronomy 6:5")
     assert NO_SOURCE.kind == NO_SOURCE_LOOKED_UP.kind == "no_source"
+
+
+# ---- choices made on the lookup's dev split ---------------------------------------------------------
+
+
+def test_a_keyword_alone_does_not_stop_the_study_of_a_text_but_its_notices_stay() -> None:
+    s = FakeSefaria()
+    llm = PlannerLLM({"refs": ["Bava Batra 5a"], "queries": []})
+    a = bot(llm, s).ask("בבא בתרא דף ה עמוד א: כותל חצר שנפל, ופיקוח נפש")
+    assert a.decision is not None and a.decision.sensitive_area == "danger_to_life"
+    assert any(src.fetched for src in a.sources) and a.notices[0].kind == "safety"
+
+
+def test_a_personal_question_with_a_sensitive_keyword_is_not_looked_up() -> None:
+    s = FakeSefaria()
+    llm = PlannerLLM({"refs": ["Bava Batra 5a"], "queries": []})
+    bot(llm, s).ask("אבא שלי במצב של פיקוח נפש, מה אומרת בבא בתרא ה.?")
+    assert s.calls == []
+
+
+class FixedScore:
+    def __init__(self, score: float) -> None:
+        self.score = score
+
+    def scores(self, query: str, passages: list[str]) -> list[float]:
+        return [self.score] * len(passages)
+
+
+def test_search_also_runs_when_the_library_s_best_source_is_weak() -> None:
+    s = FakeSefaria()
+    llm = PlannerLLM({"refs": [], "queries": ["אלו ואלו"]})
+    e = HashEmbedder()
+    weak = Retriever(ALL, e, e.passages([c.text for c in ALL]), FixedScore(0.2))
+    Chavruta(weak, CorpusIndex(ALL), llm, Settings(), lookup=SefariaLookup(s, llm)).ask("שאלה כלשהי")
+    assert ("search", "אלו ואלו") in s.calls
+    s2 = FakeSefaria()
+    strong = Retriever(ALL, e, e.passages([c.text for c in ALL]), FixedScore(0.6))
+    Chavruta(strong, CorpusIndex(ALL), llm, Settings(), lookup=SefariaLookup(s2, llm)).ask("שאלה כלשהי")
+    assert s2.calls == []
+
+
+def test_fetched_passages_are_ranked_unvocalized_and_with_the_planner_s_phrases() -> None:
+    class Literal:
+        """Relevant only to an unvocalized passage containing a phrase from the query."""
+
+        def scores(self, query: str, passages: list[str]) -> list[float]:
+            return [0.9 if "דינא דמלכותא" in query and "דינא דמלכותא" in p else 0.01 for p in passages]
+
+    e = HashEmbedder()
+    b = Chavruta(Retriever(ALL, e, e.passages([c.text for c in ALL]), Literal()), CorpusIndex(ALL), None)  # type: ignore[arg-type]
+    vocalized = chunk("Bava Kamma 113a:14", "וְהָאָמַר שְׁמוּאֵל דִּינָא דְמַלְכוּתָא דִּינָא")
+    merged = b.merge("the law of the kingdom is the law", [], [vocalized], ["דינא דמלכותא דינא"])
+    assert merged[0].ref == "Bava Kamma 113a:14" and merged[0].score == 0.9
+    assert merged[0].texts[0].text == vocalized.text  # what is sent keeps its vowel points
+    assert b.merge("the law of the kingdom is the law", [], [vocalized])[0].score == 0.01
+
+
+def test_the_rambam_s_other_works_count_as_the_rambam() -> None:
+    assert "Rambam" in families_of("Sefer HaMitzvot, Shorashim")
+    assert "Rambam" in families_of("Eight Chapters")
+    text = 'הרמב"ם מונה את המצוות'
+    assert unretrieved(text, {"Sefer HaMitzvot, Shorashim"}, [], ["Sefer HaMitzvot, Shorashim 1:2"]) == []
