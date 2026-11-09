@@ -1,0 +1,93 @@
+{
+ "key": "6a6cc881bfd34c0b9bbf135496616d46",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: What did Rabbi Nechunya ben HaKana pray when entering and leaving the study hall?\n\nSources:\n[0] Berakhot 28b:3 (Berakhot)\nמתני׳ ר' נחוניא בן הקנה היה מתפלל בכניסתו לבית המדרש וביציאתו תפלה קצרה אמרו לו מה מקום לתפלה זו אמר להם בכניסתי אני מתפלל שלא יארע דבר תקלה על ידי וביציאתי אני נותן הודאה על חלקי:\nMISHNAH R. Nehunya h. Hakkanah, on entering and leaving the House of Study, used to offer a short prayer. They said to him : What is the nature of this prayer ? He replied : On entering I pray that no offence should occur through me; and when I leave I offer thanks-giving for my portion .\n\n[1] Mishnah Berakhot 4:2 (Mishnah Berakhot)\nרַבִּי נְחוּנְיָא בֶּן הַקָּנָה הָיָה מִתְפַּלֵּל בִּכְנִיסָתוֹ לְבֵית הַמִּדְרָשׁ וּבִיצִיאָתוֹ תְּפִלָּה קְצָרָה. אָמְרוּ לוֹ, מַה מָּקוֹם לִתְפִלָּה זוֹ. אָמַר לָהֶם, בִּכְנִיסָתִי אֲנִי מִתְפַּלֵּל שֶׁלֹּא תֶאֱרַע תַּקָלָה עַל יָדִי, וּבִיצִיאָתִי אֲנִי נוֹתֵן הוֹדָיָה עַל חֶלְקִי:\nRabbi Nehunia ben Hakaneh used to pray as he entered the Bet Hamidrash and as he left it a short prayer. They said to him: what is the reason for this prayer? He replied: When I enter I pray that that no mishap should occur through me, and when I leave I express thanks for my portion.\n\n[2] Mishneh Torah, Blessings 10:24 (Mishneh Torah, Blessings)\nוביציאתו מבית המדרש אומר מודה אני לפניך יי' אלהי ששמת חלקי מיושבי בית המדרש ולא שמת חלקי מיושבי קרנות שאני משכים והם משכימים אני משכים לדברי תורה והם משכימים לדברים בטלים אני עמל והם עמלין אני עמל לדברי תורה ומקבל שכר והם עמלין ואין מקבלין שכר אני רץ והם רצים אני רץ לחיי העולם הבא והם רצים לבאר שחת.\nOn leaving the house of study, one says \"I render thanks unto Thee, O Lord my God for that Thou hast appointed my portion with those who abide in the house of study and hast not appointed my portion with those who tarry at the street corners; for I rise up early and they rise up early. I rise up early to study the words of the Torah, and they rise up early to engage in vain things, I labour and they labour. I labour in the words of the Torah and receive a reward. They labour and have no reward. I hasten and they hasten. I hasten to life in the world to come and they hasten to the pit of destruction.\"\n\n[3] Berakhot 28b:5 (Berakhot)\nביציאתו מהו אומר מודה אני לפניך ה' אלהי ששמת חלקי מיושבי בית המדרש ולא שמת חלקי מיושבי קרנות שאני משכים והם משכימים אני משכים לדברי תורה והם משכימים לדברים בטלים אני עמל והם עמלים אני עמל ומקבל שכר והם עמלים ואינם מקבלים שכר אני רץ והם רצים אני רץ לחיי העולם הבא והם רצים לבאר שחת:\nWhat used he to say on leaving? \"I give thanks before Thee, O Lord my God, that Thou hast set my portion with those who sit in the House of Study and not with those who sit at street-corners; for I and they rise early — I to words of Torah, but they to vain matters ; I and they labour, but I labour and receive a reward whereas they labour and receive no reward ; I and they hasten — I to the life of the world to come, but they to the pit of destruction.\"\n\n[4] Mishneh Torah, Blessings 10:23 (Mishneh Torah, Blessings)\nהנכנס לבית המדרש אומר יהי רצון מלפניך יי' אלהי שלא אכשל בדבר הלכה שלא אומר על טהור טמא ועל טמא טהור ולא על מותר אסור ולא על אסור מותר ולא אכשל בדבר הלכה וישמחו בי חבירי ואל יכשלו חבירי ואשמח בהם.\nOn entering the house of study, one says \"May it by Thy will, O Lord my God, that I may not err in a matter of Halacha ( law ), that I may not say of that which is clean that it is unclean, or of that which is unclean that it is clean; or of that which is permitted that it is forbidden, or of that which is forbidden that it is permitted; so that, not erring in a Halachie matter, my colleagues may rejoice with me; and that my colleagues may not err so that I may rejoice with them.\"\n\n[5] Berakhot 60a:20 (Berakhot)\nתנו רבנן בכניסתו מהו אומר יהי רצון מלפניך ה' אלהי שתכניסני לכרך זה לשלום נכנס אומר מודה אני לפניך ה' אלהי שהכנסתני לכרך זה לשלום בקש לצאת אומר יהי רצון מלפניך ה' אלהי ואלהי אבותי שתוציאני מכרך זה לשלום יצא אומר מודה אני לפניך ה' אלהי שהוצאתני מכרך זה לשלום וכשם שהוצאתני לשלום כך תוליכני לשלום ותסמכני לשלום ותצעידני לשלום ותצילני מכף כל אויב ואורב בדרך\nOur Rabbis have taught : On entering, what does he say? \"May it be Thy will, O Lord our God, that Thou cause me to enter this town in peace\" Having entered, he says, \"I give thanks before Thee, O Lord my God, for that Thou hast caused me to enter this town in peace.\" On desiring to depart, he says, \"May it be Thy will, O Lord my God and God of my fathers, that Thou cause me to depart from this town in peace.\" Having left he says, \"I give thanks before Thee, O Lord my God, for that Thou hast caused me to depart from this town in peace ; and as Thou hast caused me to depart in peace, so do Thou conduct me in peace, uphold me in peace, and direct my steps in peace, and deliver me from every enemy and ambush by the way. [Let me obtain grace, loving-kindness, and mercy in Thine eyes and in the eyes of all who behold me. Blessed art Thou, O Lord, Who hearkenest unto prayer].\"\n\n[6] Mishnah Berakhot 9:4 (Mishnah Berakhot)\nהַנִּכְנָס לִכְרַךְ מִתְפַּלֵּל שְׁתַּיִם, אַחַת בִּכְנִיסָתוֹ וְאַחַת בִּיצִיאָתוֹ. בֶּן עַזַּאי אוֹמֵר, אַרְבַּע, שְׁתַּיִם בִּכְנִיסָתוֹ וּשְׁתַּיִם בִּיצִיאָתוֹ, וְנוֹתֵן הוֹדָאָה לְשֶׁעָבַר, וְצוֹעֵק לֶעָתִיד לָבֹא:\nOne who enters into a large city should say two prayers, one on entering and one on leaving. Ben Azzai says: four two on entering and two on leaving, he gives thanks for the past and cries out for the future.\n\n[7] Berakhot 54a:5 (Berakhot)\nהנכנס לכרך מתפלל שתים אחת בכניסתו ואחת ביציאתו בן עזאי אומר ארבע שתים בכניסתו ושתים ביציאתו נותן הודאה על שעבר וצועק על העתיד\nHe who enters a town should offer prayer twice, once on entering and once on leaving. Ben 'Azzai says : Four times, twice on entering and twice on leaving. He gives thanks for what is past and supplicates for what is yet to be.\n\nAnswer segments:\n(0) sources=[]: **The Mishnah**\n\nThe Mishnah (Berakhot 4:2) reports that \n(1) sources=[1]: Rabbi Nehunia ben Hakaneh used to pray as he entered the Bet Hamidrash and as he left it a short prayer.\n(2) sources=[]:  When asked why, he explained: \n(3) sources=[1]: \"When I enter I pray that that no mishap should occur through me, and when I leave I express thanks for my portion.\"\n(4) sources=[]:  In the original: \n(5) sources=[1]: בִּכְנִיסָתִי אֲנִי מִתְפַּלֵּל שֶׁלֹּא תֶאֱרַע תַּקָלָה עַל יָדִי, וּבִיצִיאָתִי אֲנִי נוֹתֵן הוֹדָיָה עַל חֶלְקִי\n(6) sources=[]: .\n\n**The Gemara's wording for leaving (Berakhot 28b)**\n\nThe Gemara gives the text he said on leaving: \n(7) sources=[3]: \"I give thanks before Thee, O Lord my God, that Thou hast set my portion with those who sit in the House of Study and not with those who sit at street-corners; for I and they rise early — I to words of Torah, but they to vain matters; I and they labour, but I labour and receive a reward whereas they labour and receive no reward; I and they hasten — I to the life of the world to come, but they to the pit of destruction.\"\n(8) sources=[]: \n\n**Wording for entering**\n\nThe provided sources do not include the Gemara's text of his entering prayer. Rambam, however, records an entering prayer without attributing it to Rabbi Nechunya: \n(9) sources=[4]: \"May it be Thy will, O Lord my God, that I may not err in a matter of Halacha\"\n(10) sources=[]: , meaning that he not call pure impure, impure pure, permitted forbidden, or forbidden permitted, \n(11) sources=[4]: \"so that, not erring in a Halachic matter, my colleagues may rejoice with me; and that my colleagues may not err so that I may rejoice with them.\"\n(12) sources=[]: \n\nRambam's leaving prayer (10:24) closely matches the Gemara's text above."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdmkKBqHRm2ocPRBZcn",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Mishnah Berakhot 4:2 reports this; source [1] shows it.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Matches source 1 closely.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Source says they asked him the reason and he replied.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Exact quote from source 1.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Hebrew text matches source 1.\"},{\"i\":6,\"verdict\":\"partial\",\"note\":\"Gemara's leaving text is in source 3, but nothing links it to Rabbi Nechunya; Berakhot 28b:5 says 'he'.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Quote matches source 3.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Accurate: sources lack Gemara's entering text, and Rambam's entering prayer isn't attributed to him.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches Rambam 10:23, source 4.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"Paraphrases source 4's clean/unclean, permitted/forbidden.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Matches source 4.\"},{\"i\":12,\"verdict\":\"supported\",\"note\":\"Rambam 10:24 nearly matches Berakhot 28b:5 text.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4289,
+   "output_tokens": 510,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "key": "11d624a28e6785100693c1bf948113ab",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Where is the commandment 'love your neighbour as yourself'?\n\nSources:\n[0] Leviticus 19:18 (Leviticus)\nלֹֽא־תִקֹּ֤ם וְלֹֽא־תִטֹּר֙ אֶת־בְּנֵ֣י עַמֶּ֔ךָ וְאָֽהַבְתָּ֥ לְרֵעֲךָ֖ כָּמ֑וֹךָ אֲנִ֖י יְהוָֽה׃\nThou shalt not take vengeance, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am the LORD.\n\n[1] Leviticus 19:34 (Leviticus)\nכְּאֶזְרָ֣ח מִכֶּם֩ יִהְיֶ֨ה לָכֶ֜ם הַגֵּ֣ר ׀ הַגָּ֣ר אִתְּכֶ֗ם וְאָהַבְתָּ֥ לוֹ֙ כָּמ֔וֹךָ כִּֽי־גֵרִ֥ים הֱיִיתֶ֖ם בְּאֶ֣רֶץ מִצְרָ֑יִם אֲנִ֖י יְהוָ֥ה אֱלֹהֵיכֶֽם׃\nThe stranger that sojourneth with you shall be unto you as the home-born among you, and thou shalt love him as thyself; for ye were strangers in the land of Egypt: I am the LORD your God.\n\n[2] Berakhot 64a:14 (Berakhot)\nאל תקרי בניך אלא בוניך (תהלים קיט, קסה) שלום רב לאוהבי תורתך ואין למו מכשול (תהלים קכב, ז) יהי שלום בחילך שלוה בארמנותיך (תהלים קכב, ח) למען אחי ורעי אדברה נא שלום בך (תהלים קכב, ט) למען בית ה' אלהינו אבקשה טוב לך (תהלים כט, יא) ה' עוז לעמו יתן ה' יברך את עמו בשלום:\n\"Great peace have they that love Thy law; and there is no stumbling for them\" (Ps. cxix. 165). \"Peace be within thy walls, and prosperity within thy palaces\" (ibid, cxxii. 7). \"For my brethren and companions' sakes, I will now say, Peace be within thee\" (ibid. v. 8). \"For the sake of the house of the Lord our God, I will seek thy good\" (ibid. v. 9). \"The Lord will give strength unto His people ; the Lord will bless His people with peace\" (ibid. xxix. 11)[2]\n\n[3] Berakhot 6b:37 (Berakhot)\nוא\"ר חלבו אמר רב הונא כל שיודע בחברו שהוא רגיל ליתן לו שלום יקדים לו שלום שנאמר (תהלים לד, טו) בקש שלום ורדפהו ואם נתן לו ולא החזיר נקרא גזלן שנאמר (ישעיהו ג, יד) ואתם בערתם הכרם גזלת העני בבתיכם:\nR. Helbo also said in the name of Rab Huna : Whoever is in the habit of greeting his neighbour, and omits to do so a single day, transgresses the injunction \"Seek peace and pursue it\" (Ps. xxxiv. 15). Should his neighbour greet him and he does not respond, he is called a robber ; as it is said, \"It is ye that have eaten up the vineyard ; the spoil of the poor is in your houses\" (Is. iii. 14).\n\n[4] Berakhot 12b:21 (Berakhot)\nבשלמא הני תלת מפרשן עול מצות דכתיב (במדבר טו, לט) וראיתם אותו וזכרתם את כל מצות ה' ציצית דכתיב ועשו להם ציצית וגו' יציאת מצרים דכתיב אשר הוצאתי וגו' אלא דעת מינים הרהור עבירה והרהור ע\"ז מנלן\nQuite right that three of these are explicitly stated therein ; viz. : the yoke of the commandments, as it is written, \"That ye may look upon it and remember all the commandments of the Lord\" (ibid. xv. 39) ; the command of Fringes, as it is written, \"That they make for themselves fringes\" (ibid. v. 38) ; the exodus from Egypt, as it is written, \"I am the Lord your God, Who brought you out of the land of Egypt to be your God ; I am the Lord your God\" (ibid. 5:41). But where is there reference to heretical opinions and lustful imagination and idolatrous longing ?\n\n[5] Berakhot 17a:8 (Berakhot)\nמרגלא בפומייהו דרבנן דיבנה אני בריה וחברי בריה אני מלאכתי בעיר והוא מלאכתו בשדה אני משכים למלאכתי והוא משכים למלאכתו כשם שהוא אינו מתגדר במלאכתי כך אני איני מתגדר במלאכתו ושמא תאמר אני מרבה והוא ממעיט שנינו אחד המרבה ואחד הממעיט ובלבד שיכוין לבו לשמים.\nIt was a favourite saying of the Rabbis of Jabneh : I am a creature [of God] and my neighbour is also His creature ; my work is in the city and his in the field ; I rise early to my work and he rises early to his. As he cannot excel in my work, so I cannot excel in his work. But perhaps thou sayest, \"I do great things and he small things\"! We have learnt that [it matters not whether] one does much or little, if only he direct his heart to Heaven.\n\n[6] Berakhot 14a:11 (Berakhot)\nאמר רב כל הנותן שלום לחבירו קודם שיתפלל כאלו עשאו במה שנאמר (ישעיהו ב, כב) חדלו לכם מן האדם אשר נשמה באפו כי במה נחשב הוא אל תקרי במה אלא במה\nRab said : Whoever greets his neighbour before he prays is as though he accounted him as an idolatrous altar [bamah] ; as it is said, \"Cease ye from man, in whose nostrils is a breath ; for how little [bammeh] is he to be accounted\" (Is. ii. 22). Read not bammeh but bamah.\n\n[7] Exodus 20:14 (Exodus)\nלֹ֥א תַחְמֹ֖ד בֵּ֣ית רֵעֶ֑ךָ לֹֽא־תַחְמֹ֞ד אֵ֣שֶׁת רֵעֶ֗ךָ וְעַבְדּ֤וֹ וַאֲמָתוֹ֙ וְשׁוֹר֣וֹ וַחֲמֹר֔וֹ וְכֹ֖ל אֲשֶׁ֥ר לְרֵעֶֽךָ׃ (פ)\nThou shalt not covet thy neighbour’s house; thou shalt not covet thy neighbour’s wife, nor his man-servant, nor his maid-servant, nor his ox, nor his ass, nor any thing that is thy neighbour’s.\n\nAnswer segments:\n(0) sources=[]: The commandment appears in **Leviticus 19:18**:\n\n\n(1) sources=[0]: לֹֽא־תִקֹּ֤ם וְלֹֽא־תִטֹּר֙ אֶת־בְּנֵ֣י עַמֶּ֔ךָ וְאָֽהַבְתָּ֥ לְרֵעֲךָ֖ כָּמ֑וֹךָ אֲנִ֖י יְהוָֽה׃\n(3) sources=[0]: \"Thou shalt not take vengeance, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am the LORD.\"\n(4) sources=[]: \n\nThe command *וְאָהַבְתָּ לְרֵעֲךָ כָּמוֹךָ* comes right after the prohibitions against taking vengeance and bearing a grudge.\n\n**A parallel later in the chapter:** Leviticus 19:34 uses the same phrase, *וְאָהַבְתָּ לוֹ כָּמוֹךָ*, about the stranger (*הַגֵּר*): \n(5) sources=[1]: \"The stranger that sojourneth with you shall be unto you as the home-born among you, and thou shalt love him as thyself; for ye were strangers in the land of Egypt: I am the LORD your God.\"\n(6) sources=[]:  In that verse, the reason given is Israel's own experience as strangers in Egypt.\n\n**A related theme in the Talmud:** None of the passages here comments directly on the verse. However, Berakhot 17a records a saying of the Rabbis of Yavneh about seeing one's fellow as an equal: \n(7) sources=[5]: \"I am a creature [of God] and my neighbour is also His creature; my work is in the city and his in the field\"\n(8) sources=[]: .\n\nIf you want to study how the Sages interpreted Leviticus 19:18 itself, you'd need to bring additional sources. The ones here don't include that discussion."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011Cgsdgwv3boGY6yyqVHn6o",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Leviticus 19:18 contains the commandment, per source 0.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quotation of the Hebrew of Leviticus 19:18.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quotation of the English translation of source 0.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Verse 18 begins with prohibitions on vengeance and grudges; 19:34 uses similar phrase about the stranger (הגר). Both shown.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Accurate quotation of Leviticus 19:34.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Source 1 gives the reason: ye were strangers in Egypt.\"},{\"i\":7,\"verdict\":\"partial\",\"note\":\"Quote is accurate, but framing it as 'seeing one's fellow as an equal' is interpretation; the source speaks of fellow creature and separate work.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Just a punctuation fragment closing the quotation.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3783,
+   "output_tokens": 387,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

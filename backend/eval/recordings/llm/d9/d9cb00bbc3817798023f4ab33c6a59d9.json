@@ -1,0 +1,93 @@
+{
+ "key": "d9cb00bbc3817798023f4ab33c6a59d9",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: מה מחלוקת בית שמאי ובית הלל אם קוראים שמע בהטייה או בעמידה?\n\nSources:\n[0] Berakhot 51b:14 (Berakhot)\nבית שמאי אומרים מכבדין את הבית ואחר כך נוטלין לידים ובית הלל אומרים נוטלין לידים ואחר כך מכבדין את הבית\nBet Shammai say: [After the meal] they clear up and then we wash the hands [prior to Grace] ; but Bet Hillel say : We wash the hands and then they clear up.\n\n[1] Berakhot 52a:6 (Berakhot)\nלא ס\"ד דקתני הכא במתניתין בית שמאי אומרים נר ומזון בשמים והבדלה ובית הלל אומרים נר ובשמים מזון והבדלה והתם בברייתא קתני אם אין לו אלא כוס אחד מניחו לאחר המזון ומשלשלן כולן לאחריו שמע מינה דבית שמאי היא ואליבא דרבי יהודה\nThat cannot enter thy mind; for it states here in our Mishnah: Bet Shammai say : [The order of benedictions is] light, food, spices and Habdalah ; but Bet Hillel say : Light, spices, food and Habdalah ; and there in the Baraita it states : \"Should he have only one cup [of wine], he leaves it until after the meal and combines all [the benedictions] afterwards.\" Conclude therefore that it emanates from Bet Shammai as interpreted by R. Judah.\n\n[2] Berakhot 51b:11 (Berakhot)\nמתני׳ אלו דברים שבין בית שמאי ובין בית הלל בסעודה בית שמאי אומרים מברך על היום ואחר כך מברך על היין ובית הלל אומרים מברך על היין ואחר כך מברך על היום\nMISHNAH The following are the points of variance between Bet Shammai and Bet Hillel in connection with the meal. Bet Shammai say : [On a Sabbath or Festival] one pronunces the benediction over the day and then over the wine ; but Bet Hillel say : He pronounces the benediction over the wine and afterwards over the day.\n\n[3] Berakhot 51b:12 (Berakhot)\nבית שמאי אומרים נוטלין לידים ואחר כך מוזגין את הכוס ובית הלל אומרים מוזגין את הכוס ואחר כך נוטלין לידים\nBet Shammai say : We wash the hands and then fill the cup ; but Bet Hillel say: We fill the cup and then wash the hands.\n\n[4] Berakhot 51b:13 (Berakhot)\nבית שמאי אומרים מקנח ידיו במפה ומניחה על השלחן ובית הלל אומרים על הכסת\nBet Shammai say : One wipes his hands with a napkin which he lays upon the table ; but Bet Hillel say : [He lays it] upon the bolster [of his couch].\n\n[5] Berakhot 51b:15 (Berakhot)\nבית שמאי אומרים נר ומזון בשמים והבדלה ובית הלל אומרים נר ובשמים מזון והבדלה\nBet Shammai say : [The order of benedictions is] light, food, spices and Habdalah; but Bet Hillel say : Light, spices, food and Habdalah.\n\n[6] Berakhot 10b:38 (Berakhot)\nובית הלל אומרים כל אדם קורא כדרכו שנאמר ובלכתך בדרך\nBut Bet Hillel say : A man reads it after his own manner; as it is said, \"And when thou walkest by the way\" (ibid.).\n\n[7] Berakhot 51b:19 (Berakhot)\nבא להן יין אחר המזון אם אין שם אלא אותו כוס בית שמאי אומרים מברך על היין ואח\"כ מברך על המזון ובית הלל אומרים מברך על המזון ואח\"כ מברך על היין\nIf wine is brought to them after the food and there is [only sufficient for] one cup, Bet Shammai declare he says the benediction over the wine and then over the food ; but Bet Hillel declare he says the benediction over the food and then over the wine.\n\nAnswer segments:\n(0) sources=[]: **מה שיש במקורות:** בין המקורות שסופקו מופיע רק צד אחד של המחלוקת, שיטת בית הלל (ברכות י ע\"ב):\n\n\n(1) sources=[6]: \"ובית הלל אומרים כל אדם קורא כדרכו שנאמר ובלכתך בדרך\"\n(2) sources=[]: \n\nכלומר, \n(3) sources=[6]: אדם קורא את שמע כדרכו, כפי שנאמר \"ובלכתך בדרך\"\n(4) sources=[]: . לפי בית הלל אין תנוחה מחייבת לקריאת שמע. כל אחד קורא במצב שבו הוא נמצא, והראיה מהפסוק \"ובלכתך בדרך\".\n\n**מה שחסר:** שיטת בית שמאי בעניין זה, כלומר מהי עמדתם ועל איזה פסוק הם נסמכים, אינה מופיעה במקורות שלפניי. לכן איני יכול להציג את צדם במחלוקת. כדי ללמוד את המחלוקת במלואה כדאי לפתוח את המשנה בברכות י ע\"ב, בקטע שלפני דברי בית הלל.\n\n**הערה:** שאר המקורות שהתקבלו עוסקים במחלוקות אחרות בין בית שמאי לבית הלל, בעניין סדר הסעודה (ברכות נא ע\"ב). למשל, \n(5) sources=[2]: \"בית שמאי אומרים מברך על היום ואחר כך מברך על היין ובית הלל אומרים מברך על היין ואחר כך מברך על היום\"\n(6) sources=[]: . אין להם קשר לשאלת התנוחה בקריאת שמע.\n\nלשאלות למעשה יש לפנות לרב."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdjuQaTJk6JGHy1SBvB",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Only Bet Hillel's view appears (Berakhot 10b, source 6); Bet Shammai's is absent from the sources.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quote of source 6.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition word only.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Faithful paraphrase of source 6, which speaks of reading 'in his own manner'.\"},{\"i\":4,\"verdict\":\"partial\",\"note\":\"Reading as he is follows from 'kedarko' and the verse. 'No posture required' is an interpretive gloss; the source doesn't mention posture or shema explicitly.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Accurate quote of source 2, a meal dispute.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Sources show those disputes concern meals, unrelated to posture in shema; a reasonable inference.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 2683,
+   "output_tokens": 341,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "key": "3f0e20ae376c7785ee92531ee883a381",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: איפה מופיעה המצווה לכבד את אביך ואת אמך?\n\nSources:\n[0] Deuteronomy 5:16 (Deuteronomy)\nכַּבֵּ֤ד אֶת־אָבִ֙יךָ֙ וְאֶת־אִמֶּ֔ךָ כַּאֲשֶׁ֥ר צִוְּךָ֖ יְהוָ֣ה אֱלֹהֶ֑יךָ לְמַ֣עַן ׀ יַאֲרִיכֻ֣ן יָמֶ֗יךָ וּלְמַ֙עַן֙ יִ֣יטַב לָ֔ךְ עַ֚ל הָֽאֲדָמָ֔ה אֲשֶׁר־יְהוָ֥ה אֱלֹהֶ֖יךָ נֹתֵ֥ן לָֽךְ׃ (ס)\nHonour thy father and thy mother, as the LORD thy God commanded thee; that thy days may be long, and that it may go well with thee, upon the land which the LORD thy God giveth thee.\n\n[1] Genesis 47:6 (Genesis)\nאֶ֤רֶץ מִצְרַ֙יִם֙ לְפָנֶ֣יךָ הִ֔וא בְּמֵיטַ֣ב הָאָ֔רֶץ הוֹשֵׁ֥ב אֶת־אָבִ֖יךָ וְאֶת־אַחֶ֑יךָ יֵשְׁבוּ֙ בְּאֶ֣רֶץ גֹּ֔שֶׁן וְאִם־יָדַ֗עְתָּ וְיֶשׁ־בָּם֙ אַנְשֵׁי־חַ֔יִל וְשַׂמְתָּ֛ם שָׂרֵ֥י מִקְנֶ֖ה עַל־אֲשֶׁר־לִֽי׃\nthe land of Egypt is before thee; in the best of the land make thy father and thy brethren to dwell; in the land of Goshen let them dwell. And if thou knowest any able men among them, then make them rulers over my cattle.’\n\n[2] Shulchan Arukh, Orach Chayim 189:2 (Shulchan Arukh, Orach Chayim)\nבְּבֵית הָאָבֵל אוֹמֵר: בָּרוּךְ אַתָּה ה' אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם הָאֵל אָבִינוּ מַלְכֵּנוּ בּוֹרְאֵנוּ גּוֹאֲלֵנוּ קְדוֹשֵׁנוּ קְדוֹשׁ יַעֲקֹב הַמֶּלֶךְ הַחַי הַטּוֹב וְהַמֵּטִיב אֵל אֱמֶת דַּיַּן אֱמֶת וְכו' וְעַיֵּן בְּיוֹרֵה דֵּעָה סִימָן שע\"ט.\n\n[3] Exodus 20:12 (Exodus)\nכַּבֵּ֥ד אֶת־אָבִ֖יךָ וְאֶת־אִמֶּ֑ךָ לְמַ֙עַן֙ יַאֲרִכ֣וּן יָמֶ֔יךָ עַ֚ל הָאֲדָמָ֔ה אֲשֶׁר־יְהוָ֥ה אֱלֹהֶ֖יךָ נֹתֵ֥ן לָֽךְ׃ (ס)\nHonour thy father and thy mother, that thy days may be long upon the land which the LORD thy God giveth thee.\n\n[4] Deuteronomy 16:11 (Deuteronomy)\nוְשָׂמַחְתָּ֞ לִפְנֵ֣י ׀ יְהוָ֣ה אֱלֹהֶ֗יךָ אַתָּ֨ה וּבִנְךָ֣ וּבִתֶּךָ֮ וְעַבְדְּךָ֣ וַאֲמָתֶךָ֒ וְהַלֵּוִי֙ אֲשֶׁ֣ר בִּשְׁעָרֶ֔יךָ וְהַגֵּ֛ר וְהַיָּת֥וֹם וְהָאַלְמָנָ֖ה אֲשֶׁ֣ר בְּקִרְבֶּ֑ךָ בַּמָּק֗וֹם אֲשֶׁ֤ר יִבְחַר֙ יְהוָ֣ה אֱלֹהֶ֔יךָ לְשַׁכֵּ֥ן שְׁמ֖וֹ שָֽׁם׃\nAnd thou shalt rejoice before the LORD thy God, thou, and thy son, and thy daughter, and thy man-servant, and thy maid-servant, and the Levite that is within they gates, and the stranger, and the fatherless, and the widow, that are in the midst of thee, in the place which the LORD thy God shall choose to cause His name to dwell there.\n\n[5] Genesis 37:10 (Genesis)\nוַיְסַפֵּ֣ר אֶל־אָבִיו֮ וְאֶל־אֶחָיו֒ וַיִּגְעַר־בּ֣וֹ אָבִ֔יו וַיֹּ֣אמֶר ל֔וֹ מָ֛ה הַחֲל֥וֹם הַזֶּ֖ה אֲשֶׁ֣ר חָלָ֑מְתָּ הֲב֣וֹא נָב֗וֹא אֲנִי֙ וְאִמְּךָ֣ וְאַחֶ֔יךָ לְהִשְׁתַּחֲוֺ֥ת לְךָ֖ אָֽרְצָה׃\nAnd he told it to his father, and to his brethren; and his father rebuked him, and said unto him: ‘What is this dream that thou hast dreamed? Shall I and thy mother and thy brethren indeed come to bow down to thee to the earth?’\n\n[6] Leviticus 20:19 (Leviticus)\nוְעֶרְוַ֨ת אֲח֧וֹת אִמְּךָ֛ וַאֲח֥וֹת אָבִ֖יךָ לֹ֣א תְגַלֵּ֑ה כִּ֧י אֶת־שְׁאֵר֛וֹ הֶעֱרָ֖ה עֲוֺנָ֥ם יִשָּֽׂאוּ׃\nAnd thou shalt not uncover the nakedness of thy mother’s sister, nor of thy father’s sister; for he hath made naked his near kin; they shall bear their iniquity.\n\n[7] Rashi on Berakhot 60b:1:1 (Rashi on Berakhot)\nהתכבדו וכו' – אל המלאכים המלוים אותו הוא אומר שנאמר כי מלאכיו יצוה לך (תהילים צ״א:י״א):\n\nAnswer segments:\n(0) sources=[]: המצווה מופיעה בתורה פעמיים, בשני נוסחי עשרת הדיברות:\n\n**1. שמות כ:יב** (בפרשת יתרו):\n\n(1) sources=[3]: כַּבֵּ֥ד אֶת־אָבִ֖יךָ וְאֶת־אִמֶּ֑ךָ לְמַ֙עַן֙ יַאֲרִכ֣וּן יָמֶ֔יךָ עַ֚ל הָאֲדָמָ֔ה אֲשֶׁר־יְהוָ֥ה אֱלֹהֶ֖יךָ נֹתֵ֥ן לָֽךְ׃\n(2) sources=[]: \n\n**2. דברים ה:טז** (בפרשת ואתחנן):\n\n(3) sources=[0]: כַּבֵּ֤ד אֶת־אָבִ֙יךָ֙ וְאֶת־אִמֶּ֔ךָ כַּאֲשֶׁ֥ר צִוְּךָ֖ יְהוָ֣ה אֱלֹהֶ֑יךָ לְמַ֣עַן ׀ יַאֲרִיכֻ֣ן יָמֶ֗יךָ וּלְמַ֙עַן֙ יִ֣יטַב לָ֔ךְ עַ֚ל הָֽאֲדָמָ֔ה אֲשֶׁר־יְהוָ֥ה אֱלֹהֶ֖יךָ נֹתֵ֥ן לָֽךְ׃\n(4) sources=[]: \n\n**שאלה ללימוד:** כשמשווים את שני הפסוקים, הנוסח בדברים מוסיף שני ביטויים שאינם בשמות:\n- \"כַּאֲשֶׁר צִוְּךָ ה' אֱלֹהֶיךָ\"\n- \"וּלְמַעַן יִיטַב לָךְ\"\n\nבשני הנוסחים השכר המובטח הוא אריכות ימים \"עַל הָאֲדָמָה\". אבל בדברים נוסף עליו גם \"ייטב לך\". מה משמעות התוספות האלה? למה דווקא בחזרה על הדיברות מופיע \"כאשר צוך\"? המקורות שלפניי אינם כוללים פרשנות שעוסקת בהבדלים האלה. כדאי לעיין במפרשים על הפסוקים.\n\nשאר המקורות שהתקבלו (למשל בראשית מז:ו, ויקרא כ:יט, ושולחן ערוך או\"ח קפט:ב) מזכירים אמנם \"אביך\" או \"אמך\", אבל אינם עוסקים במצוות כיבוד הורים. גם פרטי המצווה עצמם, כלומר מה נחשב כיבוד ועד היכן הוא מגיע, אינם מופיעים במקורות שלפניי."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdhH6TnsnS4wid2paci",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"partial\",\"note\":\"Exodus 20:12 and Deut 5:16 are supported; that these are the two Decalogue versions and 'twice in the Torah' and the Yitro parasha aren't in the sources.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurately quotes Exodus 20:12 from source 3.\"},{\"i\":2,\"verdict\":\"partial\",\"note\":\"Deuteronomy 5:16 is supported; the 'Parashat Va'etchanan' attribution is not in the sources.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurately quotes Deuteronomy 5:16 from source 0.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"The two additional phrases in Deuteronomy are absent from Exodus, per the texts. The remaining claims about the sources hold.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Sources 1, 6, and 2 mention father/mother but don't address honoring parents; no details of the commandment appear.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4074,
+   "output_tokens": 353,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

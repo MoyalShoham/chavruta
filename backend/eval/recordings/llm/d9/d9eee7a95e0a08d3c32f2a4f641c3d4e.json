@@ -1,0 +1,93 @@
+{
+ "key": "d9eee7a95e0a08d3c32f2a4f641c3d4e",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Who composed the blessing against heretics (birkat haminim)?\n\nSources:\n[0] Mishneh Torah, Prayer and the Priestly Blessing 2:1 (Mishneh Torah, Prayer and the Priestly Blessing)\nבימי ר\"ג רבו האפיקורוסין בישראל והיו מצירים לישראל ומסיתין אותן לשוב מאחרי השם וכיון שראה שזו גדולה מכל צרכי בני אדם עמד הוא ובית דינו והתקין ברכה אחת שתהיה בה שאלה מלפני השם לאבד האפיקורוסין וקבע אותה בתפלה כדי שתהיה ערוכה בפי הכל נמצאו כל הברכות שבתפלה תשע עשרה ברכות.\nIn Rabban Gamliel's days, the number of heretics in Israel increased. They were wont to vex the Israelites and seduce them to turn away from God. When R. Gamliel realized that the most urgent need was to remove this evil, he composed a Benediction which contains a petition to God to destroy the heretics, and incorporated it in the Eighteen Blessings so that it should be in a fixed form for all. Hence the total number of Blessings in the Daily Service is Nineteen.\n\n[1] Mishnah Berakhot 7:3 (Mishnah Berakhot)\nכֵּיצַד מְזַמְּנִין, בִּשְׁלשָׁה אוֹמֵר נְבָרֵךְ. בִּשְׁלשָׁה וְהוּא, אוֹמֵר בָּרְכוּ. בַּעֲשָׂרָה, אוֹמֵר נְבָרֵךְ לֵאלֹהֵינוּ. בַּעֲשָׂרָה וָהוּא, אוֹמֵר בָּרְכוּ. אֶחָד עֲשָׂרָה וְאֶחָד עֲשָׂרָה רִבּוֹא. בְּמֵאָה אוֹמֵר, נְבָרֵךְ לַייָ אֱלֹהֵינוּ. בְּמֵאָה וְהוּא, אוֹמֵר בָּרְכוּ. בְּאֶלֶף, אוֹמֵר נְבָרֵךְ לַייָ אֱלֹהֵינוּ אֱלֹהֵי יִשְׂרָאֵל. בְּאֶלֶף וְהוּא, אוֹמֵר בָּרְכוּ. בְּרִבּוֹא, אוֹמֵר, נְבָרֵךְ לַייָ אֱלֹהֵינוּ אֱלֹהֵי יִשְׂרָאֵל אֱלֹהֵי הַצְּבָאוֹת יוֹשֵׁב הַכְּרוּבִים עַל הַמָּזוֹן שֶׁאָכָלְנוּ. בְּרִבּוֹא וְהוּא, אוֹמֵר בָּרְכוּ. כְּעִנְיָן שֶׁהוּא מְבָרֵךְ, כָּךְ עוֹנִין אַחֲרָיו, בָּרוּךְ יְיָ אֱלֹהֵינוּ אֱלֹהֵי יִשְׂרָאֵל אֱלֹהֵי הַצְּבָאוֹת יוֹשֵׁב הַכְּרוּבִים עַל הַמָּזוֹן שֶׁאָכָלְנוּ. רַבִּי יוֹסֵי הַגְּלִילִי אוֹמֵר, לְפִי רֹב הַקָּהָל הֵן מְבָרְכִין, שֶׁנֶּאֱמַר בְּמַקְהֵלוֹת בָּרְכוּ אֱלֹהִים, יְיָ מִמְּקוֹר יִשְׂרָאֵל (תהלים סח). אָמַר רַבִּי עֲקִיבָא, מַה מָּצִינוּ בְּבֵית הַכְּנֶסֶת, אֶחָד מְרֻבִּין וְאֶחָד מֻעָטִין אוֹמֵר, בָּרְכוּ אֶת יְיָ. רַבִּי יִשְׁמָעֵאל אוֹמֵר, בָּרְכוּ אֶת יְיָ הַמְבֹרָךְ:\nHow do they invite [one another to recite the Birkat Hamazon]? If there are three, he [the one saying Birkat Hamazon] says, “Let us bless [Him of whose food we have eaten].” If there are three and him he says, “Bless [Him of whose food we have eaten]” If there are ten, he says, “Let us bless our God [of whose food we have eaten].” If there are ten and he says, “Bless.” It is the same whether there are ten or ten myriads (ten ten thousands). If there are a hundred he says, “Let us bless the Lord our God [of whose food we have eaten]. If there are a hundred and him he says, “Bless.” If there are a thousand he says “Let us bless the Lord our God, the God of Israel [of whose food we have eaten].” If there are a thousand and him he says “Bless.” If there are ten thousand he says, “Let us bless the Lord our God, the God of Israel, the God of hosts, who dwells among the cherubim, for the food which we have eaten.” If there are ten thousand and him he says, “Bless.” Corresponding to his blessing the others answer after him, “Blessed be the Lord our God the God of Israel, the God of hosts, who dwells among the cherubim, for the food which we have eaten.” Rabbi Yose the Galilean says: According to the number of the congregation, they bless, as it says, “In assemblies bless God, the Lord, O you who are from the fountain of Israel.” Rabbi Akiba said: What do we find in the synagogue? Whether there are many or few the he says, “Bless the Lord your God.” Rabbi Ishmael says: “Bless the Lord your God who is blessed.”\n\n[2] Mishnah Berakhot 8:5 (Mishnah Berakhot)\nבֵּית שַׁמַּאי אוֹמְרִים, נֵר וּמָזוֹן וּבְשָׂמִים וְהַבְדָּלָה. וּבֵית הִלֵּל אוֹמְרִים, נֵר וּבְשָׂמִים וּמָזוֹן וְהַבְדָּלָה. בֵּית שַׁמַּאי אוֹמְרִים, שֶׁבָּרָא מְאוֹר הָאֵשׁ. וּבֵית הִלֵּל אוֹמְרִים, בּוֹרֵא מְאוֹרֵי הָאֵשׁ:\nBet Shammai says: [the proper order is] candle, [Birkat Ha]Mazon, spices, and Havdalah. But Bet Hillel says: candle, spices, [Birkat Ha]Mazon, and Havdalah. Bet Shammai says [the blessing over the candle concludes with the words], “Who created the light of the fire.” But Bet Hillel says: “Who creates the lights of the fire.”\n\n[3] Mishnah Berakhot 8:7 (Mishnah Berakhot)\nמִי שֶׁאָכַל וְשָׁכַח וְלֹא בֵרַךְ, בֵּית שַׁמַּאי אוֹמְרִים, יַחֲזֹר לִמְקוֹמוֹ וִיבָרֵךְ. וּבֵית הִלֵּל אוֹמְרִים, יְבָרֵךְ בַּמָּקוֹם שֶׁנִּזְכָּר. עַד אֵימָתַי הוּא מְבָרֵךְ. עַד כְּדֵי שֶׁיִּתְעַכֵּל הַמָּזוֹן שֶׁבְּמֵעָיו:\nOne who has eaten and forgotten to bless [Birkat Hamazon]: Bet Shammai says: he must return to the place where he ate and bless. But Bet Hillel says: he should say it in the place where he remembered. Until when can he bless? Until sufficient time has passed for the food in his stomach to be digested.\n\n[4] Mishnah Berakhot 3:3 (Mishnah Berakhot)\nנָשִׁים וַעֲבָדִים וּקְטַנִּים פְּטוּרִין מִקְּרִיאַת שְׁמַע וּמִן הַתְּפִלִּין, וְחַיָּבִין בִּתְפִלָּה וּבִמְזוּזָה, וּבְבִרְכַּת הַמָּזוֹן:\nWomen, slaves and minors are exempt from reciting the Shema and putting on tefillin, but are obligated for tefillah, mezuzah, and Birkat Hamazon (the blessing after meals).\n\n[5] Mishneh Torah, Prayer and the Priestly Blessing 7:15 (Mishneh Torah, Prayer and the Priestly Blessing)\nבזמן הזה שתקנו ברכת האפיקורוסין בתפלה והוסיפו הטוב והמטיב בברכת המזון נמצאו חמש ברכות יתירות בשבתות וימים טובים שהתפלה שבע ברכות וכן אם לא נתחייב בשאר הימים בכל הברכות האלו כגון שלא ישן כל הלילה ולא התיר חגורו ולא נכנס לבית הכסא וכיוצא באלו צריך להשלים מאה ברכות מן הפירות.\nAt the present time, since the institution of the blessing concerning Heretics as a part of the Amidah Service, and the addition of the blessing beginning, \"Who is good and Who doest good\" to the Grace after meals, there are five additional blessings (beyond the hundred). On Sabbaths and Festivals when the Amidah service consists of seven blessings, and on other days if one was not under the obligation to recite all these benedictions, as, for instance, if one did not sleep the whole night, did not loosen his girdle, or did not need to visit the toilet, and so forth, he has to complete the hundred blessings by partaking of fruit.\n\n[6] Mishneh Torah, Blessings 2:1 (Mishneh Torah, Blessings)\nסדר ברכת המזון כך היא:ראשונה ברכת הזן שנייה ברכת הארץ שלישית בונה ירושלים רביעית הטוב והמטיב ברכה ראשונה משה רבינו תקנה שנייה תיקן יהושע שלישית תיקן דוד ושלמה בנו רביעית חכמי משנה תקנוה.\nThe order of the Grace after meals is as follows: The first blessing is that beginning \"Who feedeth\"; the second is the blessing for the Promised Land; the third, that ending \"Who rebuildeth Jerusalem\"; the fourth, that beginning \"Who is good and doeth good\". The first blessing was instituted by Moses, our teacher; the second, by Joshua; the third, by David and Solomon, his son; the fourth, by the Sages of the Mishna.\n\n[7] Mishneh Torah, Blessings 2:4 (Mishneh Torah, Blessings)\nברכה שלישית פותח בה רחם יי' אלהינו עלינו ועל ישראל עמך ועל ירושלים עירך ועל ציון משכן כבודך או נחמנו יי' אלהינו בירושלים עירך וחותם בה בונה ירושלים או מנחם עמו ישראל בבנין ירושלים ולפיכך נקראת ברכה זו נחמה וכל מי שלא אמר מלכות בית דוד בברכה זו לא יצא ידי חובתו מפני שהיא ענין הברכה שאין נחמה גמורה אלא בחזרת מלכות בית דוד.\nThe third blessing begins, \"Have mercy, O Lord our God, upon us and upon Israel, Thy people, and upon Jerusalem Thy city, and upon Zion, the abiding place of Thy glory\"; or \"Comfort us, O Lord our God, in Jerusalem, Thy city\", and concludes, \"Who will rebuild Jerusalem\" or \"Who will comfort His people Israel in the rebuilding of Jerusalem\". This benediction is accordingly styled \"Comfort\". Whoever has not mentioned in it the Sovereignty of the House of David has not fulfilled his duty. For this constitutes the very essence of the blessing. Israel's consolation will only be a complete consolation when the House of David will be restored to Sovereignty.\n\nAnswer segments:\n(0) sources=[]: According to the Rambam, it was **Rabban Gamliel together with his court (beit din)**.\n\nThe Rambam gives the background: \n(1) sources=[0]: In Rabban Gamliel's days, the number of heretics in Israel increased. They were wont to vex the Israelites and seduce them to turn away from God.\n(2) sources=[]:  In the Hebrew: \n(3) sources=[0]: \"עמד הוא ובית דינו והתקין ברכה אחת שתהיה בה שאלה מלפני השם לאבד האפיקורוסין\"\n(4) sources=[]: , meaning he and his court established a blessing that petitions God to destroy the heretics.\n\nTwo points stand out:\n\n1. **Purpose of fixing it in the Amidah:** He \n(5) sources=[0]: incorporated it in the Eighteen Blessings so that it should be in a fixed form for all.\n(6) sources=[]:  The Hebrew phrase is \"כדי שתהיה ערוכה בפי הכל.\"\n2. **Result:** \n(7) sources=[0]: Hence the total number of Blessings in the Daily Service is Nineteen.\n(8) sources=[]: \n\nThe Rambam also refers to this addition elsewhere when counting the daily hundred blessings. \n(9) sources=[5]: Since the institution of the blessing concerning Heretics as a part of the Amidah Service, and the addition of the blessing beginning, \"Who is good and Who doest good\" to the Grace after meals, there are five additional blessings (beyond the hundred).\n(10) sources=[]: \n\nThe sources here give only the Rambam's account. They don't say which individual, if anyone, worded the blessing at Rabban Gamliel's request. To look into that, you'd need the Talmudic passage that discusses its origin, which isn't among these texts."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdrudQhW98nMV6F3dQd",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Source 0 says R. Gamliel and his court (הוא ובית דינו) established the blessing, per Rambam.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Matches source 0 translation.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transitional remark.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quotation of the Hebrew in source 0.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Accurate paraphrase of source 0.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches source 0.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Hebrew phrase appears in source 0.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches source 0.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Source 5 mentions the heretics blessing in counting the hundred blessings.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Close quotation of source 5.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"Accurate: sources give only Rambam's account and no Talmudic passage on origin.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 5580,
+   "output_tokens": 403,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

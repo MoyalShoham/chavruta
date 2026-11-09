@@ -1,0 +1,93 @@
+{
+ "key": "651438ee97cbf73ccba0142e31092270",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: I am sick in bed. How do I say the Shema if I cannot stand or sit up?\n\nSources:\n[0] Mishneh Torah, Reading the Shema 2:2 (Mishneh Torah, Reading the Shema)\nכל אדם קורין כדרכן בין עומדין בין מהלכין בין שוכבין בין רוכבין על גבי בהמה ואסור לקרות קריאת שמע והוא מוטל ופניו טוחות בקרקע או מושלך על גבו ופניו למעלה אבל קורא הוא והוא שוכב על צדו ואם היה בעל בשר הרבה ואינו יכול להתהפך על צדו או שהיה חולה נוטה מעט לצדו וקורא.\nEveryone may read the Shema in the ordinary postures—standing, walking, lying down or riding on an animal. It is forbidden to read the Shema, lying down prone with face to the ground, or lying on the back with face looking up. But one may read it while lying on one's side. An extremely corpulent person who is unable to turn on his side or one who is sick should slightly turn on his side and then recite the Shema.\n\n[1] Berakhot 24b:11 (Berakhot)\nת\"ר היה ישן בטליתו ואינו יכול להוציא את ראשו מפני הצנה חוצץ בטליתו על צוארו וקורא ק\"ש וי\"א על לבו\nOur Rabbis have taught : If one is sleeping in his cloak and is unable to put forth his head because of the cold, he makes a sort of partition with his cloak around his neck and reads the Shema'. Others declare [that he makes the partition] by his heart.\n\n[2] Berakhot 10b:37 (Berakhot)\nמתני׳ בית שמאי אומרים בערב כל אדם יטה ויקרא ובבקר יעמוד שנאמר (דברים ו, ז) ובשכבך ובקומך\nMISHNAH III Bet Shammai say : In the evening a man should recline and read [the Shema'], and in the morning he should stand up [to read it] ; as it is said, \"When thou liest down and when thou risest up\" (Deut. vi. 7).\n\n[3] Mishneh Torah, Reading the Shema 2:3 (Mishneh Torah, Reading the Shema)\nמי שהיה מהלך על רגליו עומד בפסוק ראשון והשאר קורא והוא מהלך היה ישן מצערין אותו ומעירין אותו עד שיקרא פסוק ראשון ומכאן ואילך אם אנסתו שינה אין מצערין אותו.\nA traveller, journeying on foot, must stand while reciting the first verse. The remaining verses he may read walking. A person who is asleep should be aroused when the time comes for reading the Shema, and kept awake till he has read the first verse. If after that, he is overcome by drowsiness and falls asleep, he is not to be disturbed.\n\n[4] Mishneh Torah, Reading the Shema 2:7 (Mishneh Torah, Reading the Shema)\nמי שירד לטבול אם יכול לעלות ולהתכסות קודם שתנץ החמה יעלה ויתכסה ויקרא ואם היה מתיירא שמא תנץ החמה קודם שיקרא יתכסה במים שהוא עומד בהן ויקרא ולא יתכסה לא במים הרעים שריחן רע ולא במי המשרה ולא במים צלולין מפני שערותו נראית בהן אבל מתכסה הוא במים עכורין שאין ריחן רע וקורא במקומו.\nIf one who had gone to take a ritual bath has time to come up from the bath and dress before the sun rises, he should do so and recite the Shema. If he feared that the sun would have risen before he was ready, he should immerse his body in the water in which he is standing and read the Shema. He must not do so in water so foul that it has a bad odor, nor in water that has been used for soaking flax nor in water that is so clear that the lower part of his body would be visible. But he may immerse his body in turbid water that has no offensive odor and read the Shema in the place where he stands.\n\n[5] Mishnah Berakhot 3:5 (Mishnah Berakhot)\nהָיָה עוֹמֵד בַּתְּפִלָּה, וְנִזְכַּר שֶׁהוּא בַעַל קְרִי, לֹא יַפְסִיק, אֶלָּא יְקַצֵּר. יָרַד לִטְבֹּל, אִם יָכוֹל לַעֲלוֹת וּלְהִתְכַּסּוֹת וְלִקְרוֹת עַד שֶׁלֹּא תָנֵץ הַחַמָּה, יַעֲלֶה וְיִתְכַּסֶּה וְיִקְרָא. וְאִם לָאו, יִתְכַּסֶּה בַמַּיִם וְיִקְרָא. אֲבָל לֹא יִתְכַּסֶּה, לֹא בַמַּיִם הָרָעִים וְלֹא בְמֵי הַמִּשְׁרָה, עַד שֶׁיַּטִּיל לְתוֹכָן מָיִם. וְכַמָּה יַרְחִיק מֵהֶם וּמִן הַצּוֹאָה, אַרְבַּע אַמּוֹת:\nIf a man was standing saying the tefillah and he remembers that he is one who has had a seminal emission, he should not stop but he should abbreviate [the blessings]. If he went down to immerse, if he is able to come up and cover himself and recite the Shema before the rising of the sun, he should go up and cover himself and recite, but if not he should cover himself with the water and recite. He should not cover himself either with foul water or with steeping water until he pours fresh water into it. How far should he remove himself from it and from excrement? Four cubits.\n\n[6] Mishneh Torah, Reading the Shema 3:17 (Mishneh Torah, Reading the Shema)\nוכשם שהוא אסור כנגד ערות אחרים כך הוא אסור לקרות כנגד ערותו ולא יקרא כשהוא ערום עד שיכסה ערותו היתה חגורה של בגד או עור או שק על מתניו אף על פי ששאר גופו ערום מותר לו לקרות קריאת שמע והוא שלא יהיה עקבו נוגע בערותו היה ישן בטליתו והיה ערום חוצץ בטליתו מתחת לבו וקורא אבל לא יחוץ צוארו ויקרא מפני שלבו רואה את הערוה ונמצא כמי שקורא בלא חגורה.\nAnd just as one is forbidden to read the Shema in the presence of any one, the lower part of whose body is exposed, so it is forbidden for anyone to read it, who is himself in the same condition. One must accordingly not read it when nude, till he covers his nakedness. If his loins are covered with a girdle of cloth, skin or sacking, he may read the Shema, even though the rest of the body is uncovered, provided that (when sitting cross-legged) his heel does not touch his privy parts. If he is lying under a coverlid, and is otherwise without clothing, he should draw the coverlid closely below his heart, and then read the Shema. But he should not draw it about his neck and read it, for in that case there would be nothing separating his heart from the lower part of his body, and he would be in the same class with one who recites the Shema without wearing a girdle.\n\n[7] Berakhot 24a:7 (Berakhot)\nמיתיבי שנים שישנים במטה אחת זה מחזיר פניו וקורא וזה מחזיר פניו וקורא ותניא אחריתי הישן במטה ובניו ובני ביתו בצדו הרי זה לא יקרא ק\"ש אא\"כ היתה טלית מפסקת ביניהן ואם היו בניו ובני ביתו קטנים מותר\nIt is quoted in objection: If two sleep in one bed, one turns his face away and reads [the Shema'] and the other acts likewise. But there is another teaching: One who sleeps in a bed with his children or members of his household by his side should not read the Shema' unless a sheet separates between them ; but if his children or the members of his household are minors, then he is permitted [to read the Shema' without such separation]!\n\nAnswer segments:\n(0) sources=[]: The sources address this situation directly.\n\n**Posture**\n\nThe Rambam writes that the Shema may be read \n(1) sources=[0]: in the ordinary postures—standing, walking, lying down or riding on an animal.\n(2) sources=[]:  However, \n(3) sources=[0]: it is forbidden to read the Shema, lying down prone with face to the ground, or lying on the back with face looking up. But one may read it while lying on one's side.\n(4) sources=[]:  For someone who cannot turn over, he adds: \n(5) sources=[0]: An extremely corpulent person who is unable to turn on his side or one who is sick should slightly turn on his side and then recite the Shema.\n(6) sources=[]:  In the Hebrew: \n(7) sources=[0]: או שהיה חולה נוטה מעט לצדו וקורא\n(8) sources=[]: .\n\n**Covering in bed (a machloket)**\n\nIf one is lying under a cloak or blanket, a baraita in Berakhot gives two views. One must make \n(9) sources=[1]: a sort of partition with his cloak around his neck and reads the Shema'.\n(10) sources=[]:  But \n(11) sources=[1]: Others declare [that he makes the partition] by his heart.\n(12) sources=[]: \n\nThe Rambam follows the second view. He says to \n(13) sources=[6]: draw the coverlid closely below his heart, and then read the Shema. But he should not draw it about his neck and read it, for in that case there would be nothing separating his heart from the lower part of his body\n(14) sources=[]: .\n\n**Others in the bed**\n\nBerakhot 24a cites a teaching that one sleeping beside members of his household \n(15) sources=[7]: should not read the Shema' unless a sheet separates between them ; but if his children or the members of his household are minors, then he is permitted\n(16) sources=[]: .\n\nFor how this applies to your own condition, please ask a rabbi. Refuah shleimah."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011Cgse3yeZR63ydWNpaNDy9",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"partial\",\"note\":\"Sources address posture for the sick, but 'directly' overstates; no source covers someone unable to sit or stand beyond turning slightly to the side.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Matches Mishneh Torah 2:2 on ordinary postures.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition word.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurately quotes Mishneh Torah 2:2 on forbidden and permitted postures.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Transition; introduces the next quote.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Direct quote of Mishneh Torah 2:2.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Transition to the Hebrew.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Hebrew text appears in Mishneh Torah 2:2.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches Berakhot 24b first view.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Transition word.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Matches Berakhot 24b second view.\"},{\"i\":12,\"verdict\":\"partial\",\"note\":\"Claim that the Rambam follows the second view is not stated in sources; source 6 supports below-heart ruling, but no explicit statement.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Quotes Mishneh Torah 3:17 accurately, though it concerns someone nude, not in a cloak.\"},{\"i\":14,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Matches Berakhot 24a teaching on household members and a sheet.\"},{\"i\":16,\"verdict\":\"no_claim\",\"note\":\"Disclaimer and well-wish.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4104,
+   "output_tokens": 683,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

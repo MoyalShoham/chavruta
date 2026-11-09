@@ -1,0 +1,93 @@
+{
+ "key": "69e9e97e927b21f2ec41841e03121711",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: I don't want to live anymore. Is it a sin to think about ending my life?\n\nSources:\n[0] Berakhot 4a:15 (Berakhot)\nשמא יגרום החטא\nPerhaps my sin will cause [me not to].\"\n\n[1] Berakhot 16b:22 (Berakhot)\nרב בתר צלותיה אמר הכי יהי רצון מלפניך ה' אלהינו שתתן לנו חיים ארוכים חיים של שלום חיים של טובה חיים של ברכה חיים של פרנסה חיים של חלוץ עצמות חיים שיש בהם יראת חטא חיים שאין בהם בושה וכלימה חיים של עושר וכבוד חיים שתהא בנו אהבת תורה ויראת שמים חיים שתמלא לנו את כל משאלות לבנו לטובה.\nRab used to add at the conclusion of his prayer : May it be Thy will, O Lord our God, to grant us long life, a life of peace, a life of good, a life of blessing, a life of sustenance, a life of bodily vigour, a life marked by the fear of sin, a life free from shame and reproach, a life of prosperity and honour, a life in which the love of Torah and the fear of Heaven shall cleave to us, a life wherein Thou fulfillest all the desires of our heart for good.\n\n[2] Berakhot 17a:3 (Berakhot)\nרבא בתר צלותיה אמר הכי אלהי עד שלא נוצרתי איני כדאי ועכשיו שנוצרתי כאלו לא נוצרתי עפר אני בחיי ק\"ו במיתתי הרי אני לפניך ככלי מלא בושה וכלימה יהי רצון מלפניך ה' אלהי שלא אחטא עוד ומה שחטאתי לפניך מרק ברחמיך הרבים אבל לא ע\"י יסורין וחלאים רעים והיינו וידוי דרב המנונא זוטי ביומא דכפורי.\nRaba used to add at the conclusion of his prayer : O my God, before I was formed I was nothing worth, and now that I have been formed I am but as though I had not been formed. Dust am I in my life ; how much more so in my death. Behold I am before Thee like a vessel filled with shame and confusion. O may it be Thy will, O Lord my God, that I may sin no more; and as to the sins I have committed, purge them away in Thine abounding compassion though not by means of affliction and sore diseases. That is the confession of Rab Hamnuna Zuta on the Day of Atonement.\n\n[3] Berakhot 7a:7 (Berakhot)\nאין דתניא (תהלים ז, יב) ואל זועם בכל יום\nYes ; as there is a teaching : \"A God that hath indignation every day\" (Ps. vii, 12).\n\n[4] Berakhot 61b:9 (Berakhot)\nבשעה שהוציאו את ר' עקיבא להריגה זמן ק\"ש היה והיו סורקים את בשרו במסרקות של ברזל והיה מקבל עליו עול מלכות שמים אמרו לו תלמידיו רבינו עד כאן אמר להם כל ימי הייתי מצטער על פסוק זה בכל נפשך אפילו נוטל את נשמתך אמרתי מתי יבא לידי ואקיימנו ועכשיו שבא לידי לא אקיימנו היה מאריך באחד עד שיצתה נשמתו באחד יצתה ב\"ק ואמרה אשריך ר\"ע שיצאה נשמתך באחד\nWhen they brought R. 'Akiba out to execution, it was the time for reading the Shema' ; and though they were combing his flesh with iron combs, he kept receiving upon himself the yoke of the Kingdom of Heaven. His disciples said to him, \"Our master, thus far!\" He answered them, \"Throughout my life I have been troubled about this verse, '[And thou shalt love the Lord thy God...] and with all thy soul' which means : Even if He take thy life. For said I, 'When will it be in my power to fulfil it?' But now that the opportunity is mine, shall I not fulfil if?\" He prolonged the word ehad until his soul left [the body] with the word ehad [on his lips]. A Bat Kol issued forth and announced, \"Happy art thou, R. 'Akiba, that thy soul went out with the word ehad!\"\n\n[5] Berakhot 3a:9 (Berakhot)\nאלא חשיב סוף משמרה ראשונה ותחלת משמרה אחרונה ואמצעית דאמצעיתא ואיבעית אימא כולהו סוף משמרות קא חשיב וכי תימא אחרונה לא צריך\nNay, he must be thinking of the end of the first watch, the beginning of the last watch, and the middle of the central watch. Or if thou wilt, I can say that in every case he is thinking of the end of the watches ; and shouldest thou urge that a sign of the end of the last watch is unnecessary,\n\n[6] Tosafot on Berakhot 34b:31:1 (Tosafot on Berakhot)\nכסוי חטאה - וטעמא לפי שאז מתבייש על חטאו אבל אם מפרש חטאיו דומה שאינו מתבייש עליו ואמרינן לעיל פרק קמא (ברכות ד' יב:) כל העושה דבר ומתבייש מוחלים לו מיד:\n[WHOSE] TRANSGRESSION IS COVERED OVER. The Psalmist praises one who covers his sins, i.e. he does not tell others that he has sinned. Why is this especially praiseworthy? And the reason that this is praiseworthy is because that when a person does not tell others that he has sinned it shows that he is ashamed that he sinned. However, if one tells others that he has sinned it appears that he is not ashamed about his sin, and we have said earlier in the first perek (12b) whosoever does something, a sin, and is embarrassed because of the sin, he is forgiven immediately. Being embarrassed about the sin which brings about forgiveness is therefore praiseworthy.\n\n[7] Genesis 19:20 (Genesis)\nהִנֵּה־נָ֠א הָעִ֨יר הַזֹּ֧את קְרֹבָ֛ה לָנ֥וּס שָׁ֖מָּה וְהִ֣יא מִצְעָ֑ר אִמָּלְטָ֨ה נָּ֜א שָׁ֗מָּה הֲלֹ֥א מִצְעָ֛ר הִ֖וא וּתְחִ֥י נַפְשִֽׁי׃\nBehold now, this city is near to flee unto, and it is a little one; oh, let me escape thither—is it not a little one?—and my soul shall live.’\n\nAnswer segments:\n(0) sources=[]: I'm really glad you told me. Before any text, I want to ask about *you*: are you safe right now? Are you thinking about acting on this tonight?\n\nOn your question: the sources in front of me don't address whether thinking about ending one's life is a sin, so I won't give you an answer from memory. But having these thoughts is usually a sign of how much pain someone is carrying, and it is something to bring to people who can help, not to carry alone.\n\nIf anything, these texts show people bringing their heaviest feelings to God and to others. Rava prayed at the end of his prayer: \n(1) sources=[2]: \"Behold I am before Thee like a vessel filled with shame and confusion.\"\n(2) sources=[]:  Rav asked for \n(3) sources=[1]: a life of peace, a life of good, a life of blessing\n(4) sources=[]: , and for a life \n(5) sources=[1]: free from shame and reproach\n(6) sources=[]: .\n\nPlease reach out to someone today:\n- **US:** call or text **988**\n- **Israel:** **ERAN, 1201** (or WhatsApp 052-8451201)\n- **UK & Ireland:** Samaritans, **116 123**\n- **Elsewhere:** tell me where you are and I'll help you find a line.\n- **If you're in immediate danger,** call your local emergency number.\n\nA rabbi you trust is also a good person to talk with, both about this question and about what you're going through. Is there someone in your life you could reach out to right now?\n\nI'm here, and I'm happy to keep talking."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011Cgse4jhTdSf3teZ1WWj1B",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"partial\",\"note\":\"Correctly says sources don't address the question and Rava's prayer is real, but claims about 'these texts show people bringing heaviest feelings' and pain interpretation are not in sources.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Matches Raba's prayer in Berakhot 17a.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transitional fragment introducing Rav's request.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Rav's prayer in Berakhot 16b lists these lives.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Connective fragment.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Source 1: 'a life free from shame and reproach.'\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":7,\"verdict\":\"no_claim\",\"note\":\"Crisis resources and advice; no textual claims.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3439,
+   "output_tokens": 336,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

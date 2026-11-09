@@ -1,0 +1,93 @@
+{
+ "key": "0eddf3fbbb1050e5e85a969760087355",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: לפי הרמב\"ם, האם תפילה היא מצוות עשה מן התורה?\n\nSources:\n[0] Mishneh Torah, Prayer and the Priestly Blessing 1:1 (Mishneh Torah, Prayer and the Priestly Blessing)\nמצות עשה להתפלל בכל יום שנאמר ועבדתם את ה' אלהיכם מפי השמועה למדו שעבודה זו היא תפלה שנאמר ולעבדו בכל לבבכם אמרו חכמים אי זו היא עבודה שבלב זו תפלה ואין מנין התפלות מן התורה ואין משנה התפלה הזאת מן התורה ואין לתפלה זמן קבוע מן התורה.\nTo pray daily is an affirmative duty, as it is said, \"And ye shall serve the Lord, your God\" (Exodus 23:25). The service, here referred to, according to the teaching of tradition, is Prayer, as it is said, \"And to serve Him with all your heart\" (Deuteronomy 11:13), on which the sages commented, \"What may be described as Service of the Heart? Prayer\". The number of prayers is not prescribed in the Torah. No form of prayer is prescribed in the Torah. Nor does the Torah prescribe a fixed time for Prayer.\n\n[1] Mishneh Torah, Blessings 1:1 (Mishneh Torah, Blessings)\nמצות עשה מן התורה לברך אחר אכילת מזון שנאמר ואכלת ושבעת וברכת את יי' אלהיך ואינו חייב מן התורה אלא אם כן שבע שנאמר ואכלת ושבעת וברכת ומדברי סופרים אכל אפילו כזית מברך אחריו.\nIt is an affirmative precept of the Torah to say Grace after a meal, as it is said, \"And thou shalt eat and be satisfied and shalt bless the Lord, thy God\" (Deuteronomy 8:10). The Torah only imposes the obligation on a person when he is satisfied; for it is said, \"When thou hast eaten and art satisfied, thou shalt bless etc.\" According to the ordinances of the sages, however, even if one has eaten only as much food as the size of an olive, he recites Grace after the meal.\n\n[2] Berakhot 28a:15 (Berakhot)\nת\"ר היו לפניו שתי תפלות אחת של מנחה ואחת של מוסף מתפלל של מנחה ואח\"כ מתפלל של מוסף שזו תדירה וזו אינה תדירה ר' יהודה אומר מתפלל של מוסף ואח\"כ מתפלל של מנחה שזו מצוה עוברת וזו מצוה שאינה עוברת א\"ר יוחנן הלכה מתפלל של מנחה ואח\"כ מתפלל של מוסף\nOur Rabbis have taught: If there be before a man two Tefillot, one of the afternoon and the other the additional, he should say that of the afternoon and afterwards the additional, because the former is constant, the latter not constant. R. Judah says : He should first recite the additional Tefillah and afterwards that of the afternoon, because the former is a duty that lapses, but the other is not. R. Johanan said : The Halakah is — one first says the afternoon Tefillah and then the additional.\n\n[3] Rashi on Berakhot 16a:18:2 (Rashi on Berakhot)\nואין מברכין לפניה – שאינה מן התורה:\n\n[4] Mishnah Berakhot 4:4 (Mishnah Berakhot)\nרַבִּי אֱלִיעֶזֶר אוֹמֵר, הָעוֹשֶׂה תְפִלָּתוֹ קֶבַע, אֵין תְּפִלָּתוֹ תַּחֲנוּנִים. רַבִּי יְהוֹשֻׁעַ אוֹמֵר, הַמְהַלֵּךְ בִּמְקוֹם סַכָּנָה, מִתְפַּלֵּל תְּפִלָּה קְצָרָה. אוֹמֵר, הוֹשַׁע הַשֵּׁם אֶת עַמְּךָ אֶת שְׁאֵרִית יִשְׂרָאֵל, בְּכָל פָּרָשַׁת הָעִבּוּר יִהְיוּ צָרְכֵיהֶם לְפָנֶיךָ. בָּרוּךְ אַתָּה ה' שׁוֹמֵעַ תְּפִלָּה:\nRabbi Eliezer says: if a man makes his prayers fixed, it is not [true] supplication. Rabbi Joshua says: if one is traveling in a dangerous place, he says a short prayer, saying: Save, O Lord, Your people the remnant of Israel. In every time of crisis may their needs be before You. Blessed are You, O Lord, who hears prayer.\n\n[5] Shulchan Arukh, Orach Chayim 24:1 (Shulchan Arukh, Orach Chayim)\nאִם אֵין אָדָם לוֹבֵשׁ טַלִּית בַּת אַרְבַּע כְּנָפוֹת, אֵינוֹ חַיָּב בְּצִיצִית, וְטוֹב וְנָכוֹן לִהְיוֹת כָּל אָדָם זָהִיר לִלְבֹּשׁ טַלִּית קָטָן כָּל הַיּוֹם, כְּדֵי שֶׁיִּזְכֹּר הַמִּצְוֹת בְּכָל רֶגַע. וְעַל כֵּן יֵשׁ בּוֹ חֲמִשָּׁה קְשָׁרִים כְּנֶגֶד חֲמִשָּׁה חֻמְּשֵׁי תּוֹרָה, וְאַרְבַּע כְּנָפַיִם שֶׁבְּכָל צַד שֶׁיִּפְנֶה יִזְכֹּר וְנָכוֹן לְלָבְשׁוֹ עַל הַמַּלְבּוּשִׁים. לְפָחוֹת יִזָּהֵר שֶׁיִּהְיֶה לָבוּשׁ צִיצִית בִּשְׁעַת הַתְּפִלָּה.\n\n[6] Mishnah Berakhot 3:1 (Mishnah Berakhot)\nמִי שֶׁמֵּתוֹ מוּטָל לְפָנָיו, פָּטוּר מִקְּרִיאַת שְׁמַע, מִן הַתְּפִלָּה וּמִן הַתְּפִלִּין. נוֹשְׂאֵי הַמִּטָּה וְחִלּוּפֵיהֶן וְחִלּוּפֵי חִלּוּפֵיהֶן, אֶת שֶׁלִּפְנֵי הַמִּטָּה וְאֶת שֶׁלְּאַחַר הַמִּטָּה, אֶת שֶׁלַּמִּטָּה צֹרֶךְ בָּהֶן פְּטוּרִים, וְאֶת שֶׁאֵין לַמִּטָּה צֹרֶךְ בָּהֶן חַיָּבִין. אֵלּוּ וָאֵלּוּ פְּטוּרִים מִן הַתְּפִלָּה:\nOne whose dead [relative] lies before him is exempt from the recital of the Shema and from the tefillah and from tefillin. The bearers of the bier and their replacements, and their replacements’ replacement, both those in front of the bier and those behind the bier those needed to carry the bier, are exempt; but those not needed to carry the bier are obligated. Both, however, are exempt from [saying] the tefillah.\n\n[7] Rashi on Berakhot 16a:18:3 (Rashi on Berakhot)\nאבל מברכין לאחריה – שהיא מן התורה דכתיב ואכלת ושבעת וברכת (לקמן ברכות דף מח:):\n\nAnswer segments:\n(0) sources=[]: **כן. לפי הרמב\"ם, עצם החיוב להתפלל בכל יום הוא מצוות עשה מן התורה.** הוא פותח את הלכות תפילה במילים: \n(1) sources=[0]: \"מצות עשה להתפלל בכל יום שנאמר ועבדתם את ה' אלהיכם\"\n(2) sources=[]: .\n\n**המקור:** הרמב\"ם מבאר \n(3) sources=[0]: שהעבודה הנזכרת בפסוק היא, על פי המסורת, תפילה, כמו שנאמר \"ולעבדו בכל לבבכם\" (דברים יא:יג), ועל כך אמרו חכמים: \"איזו היא עבודה שבלב? זו תפילה\"\n(4) sources=[]: .\n\n**מה אינו מן התורה:** הרמב\"ם מגביל את החיוב התורני לעיקר המצווה בלבד: \n(5) sources=[0]: \"ואין מנין התפלות מן התורה ואין משנה התפלה הזאת מן התורה ואין לתפלה זמן קבוע מן התורה\"\n(6) sources=[]: . כלומר:\n- מספר התפילות ביום אינו מן התורה.\n- נוסח התפילה אינו מן התורה.\n- זמן קבוע לתפילה אינו מן התורה.\n\n**השוואה לברכת המזון:** מעניין לעיין גם בפתיחת הלכות ברכות. שם הרמב\"ם קובע ש\n(7) sources=[1]: ברכת המזון היא מצוות עשה מן התורה, שנאמר \"ואכלת ושבעת וברכת את ה' אלהיך\" (דברים ח:י), והתורה מחייבת רק כששבע\n(8) sources=[]: . בשני המקרים הוא מבחין בין עיקר החיוב שמן התורה לבין פרטים שהם מדברי סופרים.\n\n**שאלה לעיון:** בשני המקומות הרמב\"ם מבחין בין שכבה תורנית לשכבה דרבנן. מה נשאר לפיו מתפילה \"מן התורה\" כשאין לה לא מספר, לא נוסח ולא זמן?"
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdwyXDNo5E9tcVeW8HD",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Source 0 says daily prayer is an affirmative duty; the Torah basis is stated there (via tradition).\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quote from Mishneh Torah, Prayer 1:1.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition fragment introducing the next point.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches source 0: tradition teaches that service is prayer, with the sages' comment.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Transition fragment.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Accurate quote of the source's limits on prayer's number, form, and time.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Bullets restate source 0: number, form, fixed time not from Torah.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches Blessings 1:1: Grace after meals is a Torah precept, only when satisfied.\"},{\"i\":8,\"verdict\":\"partial\",\"note\":\"Source 1 mentions rabbinic olive-size Grace; source 0 says nothing about details being rabbinic, only not from Torah.\"},{\"i\":9,\"verdict\":\"partial\",\"note\":\"Question framing; claims the details are rabbinic (derabbanan) for prayer, which source 0 does not state.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4157,
+   "output_tokens": 476,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

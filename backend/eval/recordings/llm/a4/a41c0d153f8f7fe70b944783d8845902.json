@@ -1,0 +1,93 @@
+{
+ "key": "a41c0d153f8f7fe70b944783d8845902",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: אני חולה ומתקשה לעמוד, האם אפשר להתפלל שמונה עשרה בישיבה?\n\nSources:\n[0] Mishneh Torah, Prayer and the Priestly Blessing 5:2 (Mishneh Torah, Prayer and the Priestly Blessing)\nעמידה כיצד אין מתפלל אלא מעומד היה יושב בספינה או בעגלה אם יכול לעמוד יעמוד ואם לאו ישב במקומו ויתפלל חולה מתפלל אפילו שוכב על צדו והוא שיכול לכוין את דעתו וכן הצמא והרעב הרי הן בכלל חולים אם יש בו יכולת לכוין את דעתו יתפלל ואם לאו אל יתפלל עד שיאכל וישתה היה רוכב על הבהמה אע\"פשיש לו מי שיאחז בהמתו לא ירד אלא ישב במקומו ויתפלל כדי שתהא דעתו מיושבת עליו.\nThe Standing position. The Amidah [main prayer] is only recited, standing. A person who is on a ship or in a wagon should, if he is able, stand up for that prayer. If unable, he may read it, sitting in his place. A sick person may read it, even lying down on his side, provided, however, that he can concentrate his mind. A thirsty or hungry person is in the same category as the sick: if he can concentrate, he recites the prayer; if not, he should not do so till he has refreshed himself with food and drink. A person who is riding, need not alight, even if there is some one to hold his beast so that his mind may be at ease.\n\n[1] Mishneh Torah, Prayer and the Priestly Blessing 4:19 (Mishneh Torah, Prayer and the Priestly Blessing)\nתפלות הפרקים כגון תפלת מוסף ראש חדש ותפלת מועדות צריך להסדיר תפלתו ואח\"כ עומד ומתפלל כדי שלא יכשל בה היה מהלך במקום סכנה כגון מקום גדודי חיות ולסטים והגיע זמן תפלה מתפלל ברכה אחת וזו היא:צרכי עמך ישראל מרובים ודעתם קצרה יהי רצון מלפניך ה' אלהינו שתתן לכל אחד ואחד כדי פרנסתו ולכל גויה וגויה די מחסורה והטוב בעיניך עשה ברוך אתה יי' שומע תפלה ומתפלל אותה בדרך כשהוא מהלך ואם יכול לעמוד עומד וכשהוא מגיע לישוב ותתקרר דעתו חוזר ומתפלל תפלה כתקנתה תשעה עשר ברכות.\nPrayers which are only read at periodic intervals, such as the additional service for the beginning of the month and the services for the festivals should be first rehearsed before one stands up to recite them so that he shall not break down during their recital. If a person were travelling in a dangerous locality, infested, for example, by wild beasts or robbers, he should recite one blessing as follows: \"The needs of Israel, Thy people, are many. Their knowledge is scanty. Be it Thy will, O Lord, our God, to give every one what is sufficient for his maintenance and provide every creature with its requirements. Do what is good in Thy sight. Blessed art Thou, O Lord, who hearkenest unto prayer.\" He recites this prayer, walking. If he is able to stand on one spot while uttering it, he should do so. And when he arrives in a neighbourhood that is populated and his mind is calm, he reads the service of nineteen blessings in its regular form.\n\n[2] Rashi on Berakhot 30a:3:2 (Rashi on Berakhot)\nמהיות טוב אל תקרא רע – הואיל ואני יכול להתפלל מעומד שהרי חבורתי עומדת לא אקרא רע להתפלל מהלך ואע\"פ שמותר:\n\n[3] Mishneh Torah, Prayer and the Priestly Blessing 2:2 (Mishneh Torah, Prayer and the Priestly Blessing)\nבכל תפלה שבכל יום מתפלל אדם תשע עשרה ברכות אלו על הסדר במה דברים אמורים כשמצא דעתו מכוונת ולשונו תמהר לקרות אבל אם היה טרוד ודחוק או שקצרה לשונו מהתפלל יתפלל שלש ראשונות וברכה אחת מעין כל האמצעיות ושלש אחרונות ויצא ידי חובתו.\nIn each of the three daily services, a person recites these nineteen blessings in their appointed order. But only if he finds that his mind is in a fit state for prayer and he is fluent in speech. But if one is distracted and harassed, or is not fluent in speech, he should recite the first three blessings, a blessing embodying the gist of all the intermediate blessings, and the last three blessings, and then he has fulfilled his duty.\n\n[4] Mishneh Torah, Prayer and the Priestly Blessing 6:3 (Mishneh Torah, Prayer and the Priestly Blessing)\nכיצד היה לו חולה מבקש עליו רחמים בברכת חולים כפי צחות לשונו היה צריך לפרנסה מוסיף תחנה ובקשה בברכת השנים ועל דרך זה בכל אחת מהן ואם רצה לשאול כל צרכיו בשומע תפלה שואל אבל לא ישאול לא בשלש ראשונות ולא בשלש אחרונות.\nFor instance: If there is a sick person about whom he is concerned, he interpolates in the blessing relating to the sick, in accordance with his ability, a petition for divine mercy to be vouchsafed to the patient. If he needs a livelihood, he interpolates a special supplication in the blessing praying for a prosperous year. In the same way, he may make additions in every one of the blessings. Or if he wishes to include petitions for all his needs in the blessing which ends with the phrase, \"Who hearkeneth unto prayer\", he may do so. But no petition may be inserted in the first three or in the last three blessings.\n\n[5] Rashi on Berakhot 30a:2:1 (Rashi on Berakhot)\nעד כמה – זמנה להתפלל:\n\n[6] Berakhot 16a:14 (Berakhot)\nת\"ר הפועלים שהיו עושין מלאכה אצל בעל הבית קורין ק\"ש ומברכין לפניה ולאחריה ואוכלין פתן ומברכין לפניה ולאחריה ומתפללין תפלה של שמונה עשרה אבל אין יורדין לפני התיבה ואין נושאין כפיהם\nOur Rabbis have taught: Labourers who are working for an employer should read the Shema', say the benedictions before and after, eat their meal with Grace before and after, and then pray the Eighteen Benedictions; but they cannot descend before the Ark nor raise their hands.\n\n[7] Mishneh Torah, Prayer and the Priestly Blessing 13:6 (Mishneh Torah, Prayer and the Priestly Blessing)\nשמונה פסוקים שבסוף התורה מותר לקרות אותם בבית הכנסת בפחות מעשרה אף על פי שהכל תורה היא ומשה מפי הגבורה אמרם הואיל ומשמען שהם אחר מיתת משה הרי נשתנו ולפיכך מותר ליחיד לקרות אותן.\nThe eight verses which conclude the Pentateuch (Deuteronomy 34:5-12) may be read in synagogue even when there are less than ten (male adults) present. Though it is all Torah and Moses uttered them as received from the mouth of the Almighty, still as they convey the thought that they were composed after Moses' death, they have clearly been altered (from the text as it stood originally). An individual may therefore read them (without a quorum).\n\nAnswer segments:\n(0) sources=[]: **מה אומרים המקורות שלפנינו**\n\nהרמב\"ם קובע שהעמידה היא חלק מגדרה של התפילה: \n(1) sources=[0]: The Amidah [main prayer] is only recited, standing.\n(2) sources=[]:  (\"אין מתפלל אלא מעומד\").\n\nעם זאת, הוא מביא מקרים שבהם אפשר להתפלל שלא בעמידה:\n\n- **מי שאינו יכול לעמוד:** על היושב בספינה או בעגלה נאמר: \n(3) sources=[0]: should, if he is able, stand up for that prayer. If unable, he may read it, sitting in his place.\n(4) sources=[]: \n- **חולה:** \n(5) sources=[0]: A sick person may read it, even lying down on his side, provided, however, that he can concentrate his mind.\n(6) sources=[]:  (\"חולה מתפלל אפילו שוכב על צדו והוא שיכול לכוין את דעתו\"). כלומר, לחולה הותר אפילו לשכב, ובוודאי שהתנאי המרכזי הוא כוונת הלב.\n- **כשהדעת אינה מיושבת:** הרמב\"ם מוסיף ש\n(7) sources=[3]: if one is distracted and harassed, or is not fluent in speech, he should recite the first three blessings, a blessing embodying the gist of all the intermediate blessings, and the last three blessings, and then he has fulfilled his duty.\n(8) sources=[]: \n\n**מה המקורות אינם מפרטים**\n\nהמקורות שלפנינו אינם מגדירים איזו רמת חולי או קושי בעמידה נחשבת \"אינו יכול\". הם גם אינם דנים במי שיכול לעמוד רק בחלק מהתפילה.\n\nרפואה שלמה! לשאלה כיצד לנהוג במצבך הספציפי, כדאי לפנות לרב."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011Cgse3hAs7Gb2ay9gMPADY",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Rambam's rule that standing is part of the Amidah follows from source 0; the heading is neutral.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Direct quote from source 0.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Hebrew quote 'אין מתפלל אלא מעומד' appears in source 0.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quote from source 0 about ship or wagon.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Empty segment, just a heading.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Direct quote from source 0.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Hebrew quote matches source 0; the paraphrase about concentration as the central condition follows from it.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Quote from source 3 is accurate, though it concerns distraction, not illness or standing.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Empty segment.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4005,
+   "output_tokens": 367,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "key": "8f14470de6640abb2b69886db3bfb5cc",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Who says one must pray eighteen blessings every day, and who allows an abbreviated version?\n\nSources:\n[0] Mishnah Berakhot 4:3 (Mishnah Berakhot)\nרַבָּן גַּמְלִיאֵל אוֹמֵר, בְּכָל יוֹם מִתְפַּלֵּל אָדָם שְׁמֹנֶה עֶשְׂרֵה. רַבִּי יְהוֹשֻׁעַ אוֹמֵר, מֵעֵין שְׁמֹנֶה עֶשְׂרֵה. רַבִּי עֲקִיבָא אוֹמֵר, אִם שְׁגוּרָה תְפִלָּתוֹ בְּפִיו, יִתְפַּלֵּל שְׁמֹנֶה עֶשְׂרֵה. וְאִם לָאו, מֵעֵין שְׁמֹנֶה עֶשְׂרֵה:\nRabban Gamaliel says: every day a man should pray the eighteen [blessings]. Rabbi Joshua says: an abstract of the eighteen. Rabbi Akiva says: if he knows it fluently he prays the eighteen, and if not an abstract of the eighteen.\n\n[1] Berakhot 28b:12 (Berakhot)\nמתני׳ רבן גמליאל אומר בכל יום ויום מתפלל אדם שמנה עשרה רבי יהושע אומר מעין י\"ח ר\"ע אומר אם שגורה תפלתו בפיו מתפלל י\"ח ואם לאו מעין י\"ח\nMISHNAH Rabban Gamaliel says: Every day one should pray the eighteen [benedictions]. R. Joshua says : The abstract of the eighteen [benedictions]. R. 'Akiba says: If his prayer is fluent in his mouth, he should pray the eighteen ; but if not, an abstract of the eighteen.\n\n[2] Berakhot 29a:13 (Berakhot)\nרבי יהושע אומר מעין שמנה עשרה: מאי מעין שמנה עשרה רב אמר מעין כל ברכה וברכה ושמואל אמר הביננו ה' אלהינו לדעת דרכיך ומול את לבבנו ליראתך ותסלח לנו להיות גאולים ורחקנו ממכאובינו ודשננו בנאות ארצך ונפוצותינו מארבע תקבץ והתועים על דעתך ישפטו ועל הרשעים תניף ידיך וישמחו צדיקים בבנין עירך ובתקון היכלך ובצמיחת קרן לדוד עבדך ובעריכת נר לבן ישי משיחך טרם נקרא אתה תענה ברוך אתה ה' שומע תפלה\nR. Joshua says : The abstract of the eighteen [benedictions]. What is the abstract of the eighteen ? Rab said : An abstract of each benediction. Samuel said : \"Give us understanding, O Lord, our God, to know Thy ways ; circumcise our hearts to fear Thee, and forgive us so that we may be redeemed. Keep us far from our pains ; satiate us on the pastures of Thy land and gather our scattered ones from the four [corners of the earth]. Let them that go astray be judged according to Thy will, and wave Thy hand over the wicked. Let the righteous rejoice in the rebuilding of Thy city and in the establishment of Thy Temple, and in the flourishing of the horn of David Thy servant, and in the clear-shining light of the son of Jesse, Thine anointed. Even before we call, do Thou answer. Blessed art Thou, O Lord, Who hearkenest unto prayer.\"\n\n[3] Mishneh Torah, Prayer and the Priestly Blessing 2:1 (Mishneh Torah, Prayer and the Priestly Blessing)\nבימי ר\"ג רבו האפיקורוסין בישראל והיו מצירים לישראל ומסיתין אותן לשוב מאחרי השם וכיון שראה שזו גדולה מכל צרכי בני אדם עמד הוא ובית דינו והתקין ברכה אחת שתהיה בה שאלה מלפני השם לאבד האפיקורוסין וקבע אותה בתפלה כדי שתהיה ערוכה בפי הכל נמצאו כל הברכות שבתפלה תשע עשרה ברכות.\nIn Rabban Gamliel's days, the number of heretics in Israel increased. They were wont to vex the Israelites and seduce them to turn away from God. When R. Gamliel realized that the most urgent need was to remove this evil, he composed a Benediction which contains a petition to God to destroy the heretics, and incorporated it in the Eighteen Blessings so that it should be in a fixed form for all. Hence the total number of Blessings in the Daily Service is Nineteen.\n\n[4] Mishneh Torah, Blessings 11:16 (Mishneh Torah, Blessings)\nכל דבר שהוא מנהג אע\"פשמנהג נביאים הוא כגון נטילת ערבה בשביעי של חג ואין צריך לומר מנהג חכמים כגון קריאת הלל בראשי חדשים ובחולו של מועד של פסח אין מברכין עליו וכן כל דבר שיסתפק לך אם טעון ברכה אם לאו עושין אותו בלא ברכה ולעולם יזהר אדם בברכה שאינה צריכה וירבה בברכות הצריכות וכן דוד אמר בכל יום אברכך:סליק הלכות ברכות.\nFor a practice that is only customary, even if traced to the prophets, for example, taking the willow branch on the seventh day of the feast of Tabernacles, and—needless to add—if it is ascribed to the Sages, for example, reciting the Hallel on new moons and the intermediate days of Passover, no blessing is to be recited at its performance. Thus also any act, in regard to which you are in doubt whether it requires a blessing or not, should be performed without a blessing. One should always carefully avoid saying blessings unnecessarily; and should be heedful to recite, as often as there may be occasion, the blessings that are requisite. And so David said \"Every day I will bless Thee and praise Thy name forever\" (Ps. 145:2).\n\n[5] Berakhot 16a:14 (Berakhot)\nת\"ר הפועלים שהיו עושין מלאכה אצל בעל הבית קורין ק\"ש ומברכין לפניה ולאחריה ואוכלין פתן ומברכין לפניה ולאחריה ומתפללין תפלה של שמונה עשרה אבל אין יורדין לפני התיבה ואין נושאין כפיהם\nOur Rabbis have taught: Labourers who are working for an employer should read the Shema', say the benedictions before and after, eat their meal with Grace before and after, and then pray the Eighteen Benedictions; but they cannot descend before the Ark nor raise their hands.\n\n[6] Berakhot 3a:13 (Berakhot)\nבאותה שעה למדתי ממנו שלשה דברים למדתי שאין נכנסין לחורבה ולמדתי שמתפללין בדרך ולמדתי שהמתפלל בדרך מתפלל תפלה קצרה\nOn that occasion I learnt three things from him : first, one should not enter ruins ; second, it is permissible to pray by the roadside ; third, one who prays by the roadside should offer an abbreviated prayer.\n\n[7] Mishneh Torah, Prayer and the Priestly Blessing 7:14 (Mishneh Torah, Prayer and the Priestly Blessing)\nחייב אדם לברך מאה ברכות בין היום והלילה ומה הן מאה ברכות אלו כ\"ג ברכות שמנינו בפרק זה ושבע ברכות של קריאת שמע של שחרית וערבית לפניה ולאחריה וכשמתעטף בציצית מברך ברוך אתה יי' אלהינו מלך העולם אשר קדשנו במצותיו וצונו להתעטף בציצית וכשלובש תפילין מברך ברוך אתה יי' אלהינו מלך העולם אשר קדשנו במצותיו וצונו להניח תפילין ושלש תפלות שבכל תפלה מהן שמנה עשרה ברכות הרי שמונים ושש ברכות וכשהוא אוכל שתי סעודות של יום והלילה מברך ארבע עשרה ברכות שבע בכל סעודה אחת כשיטול ידיו תחלה ועל המזון אחת בתחלה ושלש בסוף ועל היין לפניו ולאחריו הרי שבע ברכות הרי מאה ברכות בין הכל.\nA person is in duty bound to recite every complete day one hundred blessings. How are these hundred blessings made up? There are twenty-three blessing which we have enumerated in this chapter; and seven blessings before and after the morning and evening recital of the Shema. When putting on the Zizith , the blessing is recited, \"Blessed art Thou, O Lord our God, King of the Universe, who hast sanctified us with Thy commandments and commanded us to wear a fringed garment\". When putting on the Tephillin (phylacteries), the blessing is recited, \"Blessed art Thou, O Lord our God, King of the Universe, who hast sanctified us with Thy commandments and commanded us to lay the Tephillin \". All these, together with the three daily Services, each consisting of eighteen benedictions, make up eighty-six blessings. When two meals are taken each day, fourteen blessings are recited, seven at each meal, as follows; one blessing on washing the hands, one for the meal, three after its conclusion, one blessing before taking a drink and one after, making seven blessings for each meal.\n\nAnswer segments:\n(0) sources=[]: This is a three-way machloket in **Mishnah Berakhot 4:3**:\n\n- **Rabban Gamliel:** the full eighteen every day. \n(1) sources=[0]: \"רַבָּן גַּמְלִיאֵל אוֹמֵר, בְּכָל יוֹם מִתְפַּלֵּל אָדָם שְׁמֹנֶה עֶשְׂרֵה\"\n(2) sources=[]: , meaning \n(3) sources=[0]: every day a man should pray the eighteen [blessings]\n(4) sources=[]: .\n- **Rabbi Yehoshua:** an abbreviation is enough. \n(5) sources=[0]: Rabbi Joshua says: an abstract of the eighteen.\n(6) sources=[]: \n- **Rabbi Akiva:** it depends on the person. \n(7) sources=[1]: If his prayer is fluent in his mouth, he should pray the eighteen; but if not, an abstract of the eighteen.\n(8) sources=[]:  The key phrase is \n(9) sources=[0]: \"אִם שְׁגוּרָה תְפִלָּתוֹ בְּפִיו\"\n(10) sources=[]: .\n\n**What is the abstract (מעין שמנה עשרה)?** The Gemara (Berakhot 29a) records a further disagreement:\n- **Rav:** \n(11) sources=[2]: an abstract of each benediction.\n(12) sources=[]: \n- **Shmuel:** a single composed prayer, \n(13) sources=[2]: \"הביננו ה' אלהינו לדעת דרכיך...\"\n(14) sources=[]: , which closes \n(15) sources=[2]: \"Blessed art Thou, O Lord, Who hearkenest unto prayer.\"\n(16) sources=[]: \n\n**A related case:** Berakhot 3a reports a lesson that \n(17) sources=[6]: one who prays by the roadside should offer an abbreviated prayer\n(18) sources=[]:  (\n(19) sources=[6]: \"תפלה קצרה\"\n(20) sources=[]: ). The excerpt doesn't name the teacher, and it doesn't say whether this is the same as the \"abstract\" in the Mishnah.\n\n**A side note on the number:** the Rambam records that Rabban Gamliel and his court added a blessing against heretics, so that \n(21) sources=[3]: the total number of Blessings in the Daily Service is Nineteen.\n(22) sources=[]: \n\nFor how this applies in practice, please ask your rabbi."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011Cgsdn5JSb7UqCYQnrQd4r",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Mishnah 4:3 gives Gamliel, Joshua, Akiva; Gamliel says full eighteen daily.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quote of Mishnah 4:3.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Connective phrase.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches the Mishnah translation.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches source 0.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Empty segment.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches Akiva's statement in source 1.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Phrase appears in Akiva's statement in source 0.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Rav: abstract of each benediction, per source 2.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Empty segment.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Shmuel's prayer begins this way in source 2.\"},{\"i\":14,\"verdict\":\"no_claim\",\"note\":\"Connective phrase.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Source 2 ends Shmuel's prayer with this.\"},{\"i\":16,\"verdict\":\"no_claim\",\"note\":\"Empty segment.\"},{\"i\":17,\"verdict\":\"supported\",\"note\":\"Source 6 says this.\"},{\"i\":18,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":19,\"verdict\":\"supported\",\"note\":\"Hebrew phrase appears in source 6.\"},{\"i\":20,\"verdict\":\"supported\",\"note\":\"Source 6 names no teacher and doesn't link to the Mishnah's abstract.\"},{\"i\":21,\"verdict\":\"supported\",\"note\":\"Source 3 states this; Gamliel and court added the blessing.\"},{\"i\":22,\"verdict\":\"no_claim\",\"note\":\"Empty segment.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4860,
+   "output_tokens": 769,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

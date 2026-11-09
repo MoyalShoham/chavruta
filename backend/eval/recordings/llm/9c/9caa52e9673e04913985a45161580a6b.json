@@ -1,0 +1,93 @@
+{
+ "key": "9caa52e9673e04913985a45161580a6b",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: מה הם ייסורים של אהבה?\n\nSources:\n[0] Rashi on Berakhot 5a:10:1 (Rashi on Berakhot)\nיסורין של אהבה – הקב\"ה מייסרו בעוה\"ז בלא שום עון כדי להרבות שכרו בעולם הבא יותר מכדי זכיותיו:\n\n[1] Berakhot 5a:15 (Berakhot)\nוחד אמר אלו הם יסורין של אהבה כל שאין בהן בטול תפלה שנאמר (תהלים סו, כ) ברוך אלהים אשר לא הסיר תפלתי וחסדו מאתי\nThe other declares : Those are to be considered chastenings of love which do not involve neglect of prayer; as it is written, \"Blessed be God, Who hath not turned away my prayer, nor His mercy from me\" (Ps. lxvi. 20)\n\n[2] Berakhot 5a:10 (Berakhot)\nואם תלה ולא מצא בידוע שיסורין של אהבה הם שנאמר (משלי ג, יב) כי את אשר יאהב ה' יוכיח.\nIf he attributed them to neglect of Torah without finding any justification, it is certain that his sufferings are chastenings of love ; as it is said, \"For whom the Lord loveth He correcteth\" (Prov. iii. 12).\n\n[3] Berakhot 5a:16 (Berakhot)\nאמר להו רבי אבא בריה דר' חייא בר אבא הכי אמר ר' חייא בר אבא א\"ר יוחנן אלו ואלו יסורין של אהבה הן שנאמר כי את אשר יאהב ה' יוכיח\nR. Abba the son of R. Hiyya b. Abba said to them : Thus declared R. Hiyya b. Abba in the name of R. Johanan : Both of them are to be considered chastenings of love ; as it is said, \"For whom the Lord loveth He correcteth\" (Prov. iii. 12).\n\n[4] Tosafot on Berakhot 5b:9:1 (Tosafot on Berakhot)\nוהאמר רבי יוחנן דין גרמא דעשיראה ביר - פי' רש\"י דלאדם חשוב כר' יוחנן מסתמא לא היו אלא יסורין של אהבה. ותימא דהא מסיק דהיכא דלא הוו ליה בנים כלל לא הוו יסורין של אהבה והרי כמה צדיקים שלא היו להם בנים. ואי משום בנות ר' יוחנן נמי הוו ליה בנות בפ' בתרא דקדושין (דף עא:) ונראה לפרש דהכי פריך והאמר ר' יוחנן דין גרמא וכו' אלמא מדהוה רגיל לנחם אחרים בכך ש\"מ דהוו יסורין של אהבה. אבל אינו תלוי בכך שהצדיקים עצמם פעמים מעונים ביסורין:\n\n[5] Berakhot 5a:14 (Berakhot)\nפליגי בה רבי יעקב בר אידי ורבי אחא בר חנינא חד אמר אלו הם יסורין של אהבה כל שאין בהן בטול תורה שנאמר (תהלים צד, יב) אשרי הגבר אשר תיסרנו יה ומתורתך תלמדנו\nR. Jacob b. Iddi and Rab Aha b. Hannina [differ in opinion]. One of them says : Those are to be considered chastenings of love which do not involve neglect of Torah; as it is said, \" Happy is the man whom Thou chastenest, O Lord, and teachest him out of Thy law \" (Ps. xciv. 12).\n\n[6] Rashi on Berakhot 5b:9:3 (Rashi on Berakhot)\nדהוו להו בנים ומתו – הוו להו יסורין של אהבה שהאבלות מכפרת על עונותיו:\n\n[7] Berakhot 5b:6 (Berakhot)\nמזבח כפרה הוו יסורין של אהבה לא הוו\nYes, they may be considered an altar of atonement, but not chastenings of love.\n\nAnswer segments:\n(0) sources=[]: **הגדרה (רש\"י):** \n(1) sources=[0]: \"הקב\"ה מייסרו בעוה\"ז בלא שום עון כדי להרבות שכרו בעולם הבא יותר מכדי זכיותיו\"\n(2) sources=[]: .\n\n**סימן ראשון (הגמרא):** אדם שבודק את מעשיו, \n(3) sources=[2]: \"ואם תלה ולא מצא בידוע שיסורין של אהבה הם שנאמר (משלי ג, יב) כי את אשר יאהב ה' יוכיח\"\n(4) sources=[]: .\n\n**מחלוקת: אילו ייסורים נחשבים \"של אהבה\"?**\n\n(5) sources=[5]: פליגי בה רבי יעקב בר אידי ורבי אחא בר חנינא\n(6) sources=[]:  (הגמרא לא מפרשת מי אמר מה):\n- דעה אחת: \n(7) sources=[5]: \"כל שאין בהן בטול תורה שנאמר (תהלים צד, יב) אשרי הגבר אשר תיסרנו יה ומתורתך תלמדנו\"\n(8) sources=[]: .\n- דעה שנייה: \n(9) sources=[1]: \"כל שאין בהן בטול תפלה שנאמר (תהלים סו, כ) ברוך אלהים אשר לא הסיר תפלתי וחסדו מאתי\"\n(10) sources=[]: .\n- רבי אבא בשם ר' חייא בר אבא בשם ר' יוחנן: \n(11) sources=[3]: \"אלו ואלו יסורין של אהבה הן\"\n(12) sources=[]: .\n\n**גבול ההגדרה:** על סוג מסוים של ייסורים נאמר בגמרא: \n(13) sources=[7]: הם יכולים להיחשב \"מזבח כפרה\", אך לא ייסורים של אהבה\n(14) sources=[]: . רש\"י מבאר לגבי מי \n(15) sources=[6]: \"דהוו להו בנים ומתו – הוו להו יסורין של אהבה שהאבלות מכפרת על עונותיו\"\n(16) sources=[]: .\n\n**תוספות** מקשים על כך: \n(17) sources=[4]: \"והרי כמה צדיקים שלא היו להם בנים\"\n(18) sources=[]: , ומסיקים שאין ההגדרה תלויה בכך, \n(19) sources=[4]: \"שהצדיקים עצמם פעמים מעונים ביסורין\"\n(20) sources=[]: .\n\nשימו לב שהגדרת רש\"י (\"בלא שום עון\") שונה מעט מביאורו בדף ה ע\"ב, שבו ייסורים של אהבה גם מכפרים על עוונות. כדאי לבחון את המתח הזה."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdoV8gy4NxpApXBgyG2",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Header attributing definition to Rashi; source 0 is Rashi's definition.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Exact quote of Rashi on Berakhot 5a.\"},{\"i\":2,\"verdict\":\"partial\",\"note\":\"Gemara context about examining one's deeds is plausible, but the sources shown don't give the full first clause.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quote of Berakhot 5a:10.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Header introducing the dispute; supported by the sources.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Source 5 states R. Jacob b. Iddi and R. Aha b. Hanina differ.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Gemara doesn't specify who said which; sources say 'one of them' and 'the other'.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Exact quote from source 5.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Punctuation.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Exact quote from source 1.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Punctuation.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Source 3 quotes R. Abba citing R. Hiyya b. Abba citing R. Yohanan.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Punctuation.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Source 7: altar of atonement but not chastenings of love.\"},{\"i\":14,\"verdict\":\"partial\",\"note\":\"Rashi explanation on who is stated in source 6, but connection to the limit is only implied.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Exact quote of Rashi 5b.\"},{\"i\":16,\"verdict\":\"no_claim\",\"note\":\"Punctuation.\"},{\"i\":17,\"verdict\":\"supported\",\"note\":\"Tosafot raises this difficulty.\"},{\"i\":18,\"verdict\":\"supported\",\"note\":\"Tosafot says it doesn't depend on that.\"},{\"i\":19,\"verdict\":\"supported\",\"note\":\"Quote from Tosafot.\"},{\"i\":20,\"verdict\":\"no_claim\",\"note\":\"Punctuation.\"},{\"i\":21,\"verdict\":\"partial\",\"note\":\"Rashi 5b says bereavement atones, so tension is valid, but 'page 5b' is not in sources and the evaluation is an addition.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3026,
+   "output_tokens": 850,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "key": "0db0ceeacc5e09d331a5c29690ee3cb4",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Does the Rambam allow reading the Shema in any language?\n\nSources:\n[0] Mishneh Torah, Reading the Shema 2:10 (Mishneh Torah, Reading the Shema)\nקורא אדם את שמע בכל לשון שיהיה מבינה והקורא בכל לשון צריך להזהר מדברי שבוש שבאותו הלשון ומדקדק באותו הלשון כמו שמדקדק בלשון הקדש.\nA person may recite the Shema in any language that he understands. And if one reads the Shema in a secular language, he must take care to avoid errors in that language, and be as scrupulous in correctly enunciating the Shema in that language as he would be if he were reading it in the Sacred Tongue.\n\n[1] Berakhot 13a:25 (Berakhot)\nת\"ר ק\"ש ככתבה דברי רבי וחכ\"א בכל לשון\nOur Rabbis have taught : The Shema' must be read as it is written: These are the words of Rabbi; but the Sages say : may be read] in any language.\n\n[2] Berakhot 15a:9 (Berakhot)\nגמ׳ מאי טעמא דר' יוסי משום דכתיב שמע השמע לאזנך מה שאתה מוציא מפיך ות\"ק סבר שמע בכל לשון שאתה שומע\nGEMARA What is R. Jose's reason [for declaring that unless the Shema' is read audibly the requirements of the law have not been fulfilled]? Because it is written, \"Hear O Israel,\" i.e. let thine ear hear what thou issuest from thy mouth. And the first Tanna ? He holds that \"Hear\" [means that the Shema' may be read] in any language which thou hearest.\n\n[3] Berakhot 16a:8 (Berakhot)\nחתן פטור מק\"ש לילה הראשונה ועד מוצאי שבת אם לא עשה מעשה ומעשה בר\"ג שנשא אשה וקרא לילה הראשונה אמרו לו תלמידיו למדתנו רבינו שחתן פטור מק\"ש אמר להם איני שומע לכם לבטל הימני מלכות שמים אפי' שעה אחת:\nA bridegroom is exempt from the obligation of reading the Shema' on the first night [of his marriage], and until the termination of the ensuing Sabbath, if he has not consummated the marriage. It happened that when Rabban Gamaliel married, he read the Shema' on the first night. His disciples said to him, \"Our teacher ! thou hast taught us that a bridegroom is exempt from the obligation of reading the Shema'.\" He replied, \"I will not hearken to you to annul the kingdom of heaven from myself even a single hour.\"\n\n[4] Berakhot 25a:9 (Berakhot)\nאתמר צואה עוברת אביי אמר מותר לקרות ק\"ש רבא אמר אסור לקרות ק\"ש\nIt has been reported : If manure is being carried past a person, Abbai said : It is permitted to read the Shema' ; Raba said : It is prohibited to read it.\n\n[5] Berakhot 25b:8 (Berakhot)\nאתמר עקבו רואה את הערוה מותר נוגע אביי אמר אסור ורבא אמר מותר רב זביד מתני לה להא שמעתא הכי רב חיננא בריה דרב איקא מתני לה הכי נוגע דברי הכל אסור רואה אביי אמר אסור רבא אמר מותר לא נתנה תורה למלאכי השרת והלכתא נוגע אסור רואה מותר\nIt has been reported : If his heel sees his nakedness, it is permitted [to read the Shema']. If the heel touches, Abbai says : It is forbidden [to read] ; Raba says : It is permitted. So Rab Zebid taught this subject. Rab Hinnana b. Rab Ika, however, taught it thus : If the heel touches, all agree that it is forbidden [to read] ; but if the heel sees [the nakedness], Abbai says : It is forbidden ; Raba says : It is permitted, because the Torah was not given to the ministering angels. The Halakah is : If the heel touches, it is forbidden ; if it sees, it is permitted.\n\n[6] Mishneh Torah, Reading the Shema 3:16 (Mishneh Torah, Reading the Shema)\nכשם שאסור לקרות כנגד צואה ומי רגלים עד שירחיק כך אסור לקרות כנגד הערוה עד שיחזיר פניו אפילו כותי או קטן לא יקרא כנגד ערותן אפילו מחיצה של זכוכית מפסקת הואיל והוא רואה אותה אסור לקרות עד שיחזיר פניו וכל גוף האשה ערוה לפיכך לא יסתכל בגוף האשה כשהוא קורא ואפילו אשתו ואם היה מגולה טפח מגופה לא יקרא כנגדה.\nJust as the Shema may not be read in a place where there is ordure or urine till he has moved away [to a distance of at least four cubits], so it is forbidden to read the Shema in the presence of any person, even a gentile or child, whose privy parts are exposed, even though a glass partition separates him from them, unless he turns away his face. Since he is able to see, he may not read the Shema, unless he turns away his face. Any part of a woman's body falls under the same rule. Hence, while reading the Shema, one must not gaze at a woman's body, even if she is his wife. And if a hand-breadth of a part of her body [which is usually covered] is exposed, he must not read the Shema while facing it.\n\n[7] Berakhot 25a:3 (Berakhot)\nאתמר צואה על בשרו או ידו מונחת בבית הכסא רב הונא אמר מותר לקרות ק\"ש רב חסדא אמר אסור לקרות ק\"ש אמר רבא מ\"ט דרב הונא דכתיב (תהלים קנ, ו) כל הנשמה תהלל יה\nIt has been reported : If there be filth upon his body, or his hand is placed within a privy, Rab Huna said : It is permitted to read the Shema' ; Rab Hisda said : It is forbidden to read it. Raba asked : What is Rab Huna's reason ? Because it is written, \"Let everything that hath breath praise the Lord\" (Ps. el. 6).\n\nAnswer segments:\n(0) sources=[]: **Yes.** In Mishneh Torah, Hilchot Kriat Shema 2:10, the Rambam writes: \n(1) sources=[0]: קורא אדם את שמע בכל לשון שיהיה מבינה\n(2) sources=[]: , that is, \n(3) sources=[0]: a person may recite the Shema in any language that he understands.\n(4) sources=[]: \n\nHe adds two conditions. Someone reading in another language \n(5) sources=[0]: must take care to avoid errors in that language, and be as scrupulous in correctly enunciating the Shema in that language as he would be if he were reading it in the Sacred Tongue.\n(6) sources=[]:  So the permission depends on two things: the reader must understand the language, and he must read it carefully and correctly.\n\n**The Talmudic background.** The Rambam's ruling follows one side of a disagreement in the Gemara:\n\n- **Rabbi:** \n(7) sources=[1]: The Shema' must be read as it is written\n(8) sources=[]:  (\n(9) sources=[1]: ככתבה\n(10) sources=[]: ).\n- **The Sages (Chachamim):** It \n(11) sources=[1]: may be read] in any language.\n(12) sources=[]: \n\nBerakhot 15a gives a source for the \"any language\" view in the word \"Shema\" itself. The first Tanna \n(13) sources=[2]: holds that \"Hear\" [means that the Shema' may be read] in any language which thou hearest.\n(14) sources=[]:  In Aramaic: \n(15) sources=[2]: שמע בכל לשון שאתה שומע\n(16) sources=[]: . R. Yose reads the same word differently, as a requirement that the Shema be said audibly: \n(17) sources=[2]: let thine ear hear what thou issuest from thy mouth.\n(18) sources=[]: \n\nThe Rambam's own wording, \"שיהיה מבינה\" (that he understands it), fits this reading of \"שמע\" as \"understand.\" Note, though, that the passage provided does not explicitly name its Talmudic source.\n\nIf you are asking about your own practice, please bring the question to a rabbi."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdwHkYKH3ASAgEMMajc",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Rambam's MT Reading the Shema 2:10 permits any language the reader understands; the citation matches source 0.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quotation of the Hebrew of source 0.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition phrase only.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches the English translation of source 0.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Two conditions (care to avoid errors, scrupulous enunciation) are in source 0.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches source 0 nearly verbatim.\"},{\"i\":6,\"verdict\":\"partial\",\"note\":\"Understanding and care are supported, but 'permission depends on' framing is slightly beyond the text; roughly follows.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Source 1 attributes 'read as written' to Rabbi.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Punctuation fragment.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"ככתבה appears in source 1.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Fragment/transition.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Sages say any language, per source 1.\"},{\"i\":12,\"verdict\":\"partial\",\"note\":\"Source 2 supports the first Tanna's derivation, but calls him first Tanna, not Sages, and 'Rambam follows' is not in sources.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Matches source 2.\"},{\"i\":14,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Quotes the Hebrew of source 2 accurately.\"},{\"i\":16,\"verdict\":\"supported\",\"note\":\"Source 2 gives R. Jose's audibility reasoning.\"},{\"i\":17,\"verdict\":\"supported\",\"note\":\"Matches source 2.\"},{\"i\":18,\"verdict\":\"unsupported\",\"note\":\"Claim that Rambam's 'understands' fits reading 'shema' as understand is not in sources; the disclaimer is true.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3508,
+   "output_tokens": 750,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

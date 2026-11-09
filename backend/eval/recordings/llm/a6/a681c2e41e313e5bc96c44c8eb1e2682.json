@@ -1,0 +1,93 @@
+{
+ "key": "a681c2e41e313e5bc96c44c8eb1e2682",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: איפה מופיעה ברכת כהנים בתורה?\n\nSources:\n[0] Mishneh Torah, Prayer and the Priestly Blessing 14:11 (Mishneh Torah, Prayer and the Priestly Blessing)\nאין ברכת כהנים נאמרת בכ\"מ אלא בלשון הקדש שנאמר כה תברכו את בני ישראל כך למדו מפי השמועה ממשה רבינו ע\"ה כה תברכו בעמידה כה תברכו בנשיאת כפים כה תברכו בלשון הקדש כה תברכו פנים כנגד פנים כה תברכו בקול רם כה תברכו בשם המפורש והוא שיהיה במקדש כמו שאמרנו.\nThe Priestly Benediction, wherever it is recited, must be recited only in Hebrew, as it is said, \"Thus shall ye bless the Children of Israel.\" A tradition dating back to Moses is the authority for the following exposition: \"Thus shall ye bless\", that means, standing. \"Thus shall ye bless\", that means, with hands raised. \"Thus shall ye bless\", that means, in the Holy Tongue. \"Thus shall ye bless\" that means, face to face with the congregation. \"Thus shall ye bless\", that means uttering the Proper Name of God. This however is uttered thus, only when the Benediction is pronounced in the Temple, as already stated.\n\n[1] Mishneh Torah, Prayer and the Priestly Blessing 14:14 (Mishneh Torah, Prayer and the Priestly Blessing)\nבמקדש מברכין ברכת כהנים פעם אחת ביום אחר תמיד של שחר באין ועומדין על מעלות האולם ומברכין כדרך שאמרנו אבל במדינה מברכין אותה אחר כל תפלה חוץ ממנחה כמו שאמרנו בכל מקום משתדלין שיהיה המקרא אותן ישראל שנאמר אמור להם מכלל שאין המקרא מהם.\nThe Priestly Benediction was pronounced in the Temple once every day, after the morning sacrifice had been offered up. The priests came and stood upon the steps of the Temple porch and blessed the people in the form we have stated. Outside the Temple, the Benediction was pronounced at the close of each service except that of the afternoon, as previously stated. The endeavour is everywhere made to secure an Israelite (one who is not a priest) as prompter; as it is said, \"Say unto them\", which implies that the prompter is not to be one of them.\n\n[2] Mishneh Torah, Prayer and the Priestly Blessing 14:9 (Mishneh Torah, Prayer and the Priestly Blessing)\nכיצד ברכת כהנים במקדש הכהנים עולין לדוכן אחר שישלימו הכהנים עבודת תמיד של שחר ומגביהין ידיהם למעלה על גבי ראשיהן ואצבעותיהן פשוטות חוץ מכהן גדול שאין מגביה ידיו למעלה מן הציץ ואחד מקרא אותן מלה מלה כדרך שעושין בגבולין עד שישלימו שלשה הפסוקים ואין העם עונין אחר כל פסוק אלא עושין אותה במקדש ברכה אחת וכשישלימו כל העם עונים ברוך יי' אלהים אלהי ישראל מן העולם ועד העולם.\nHow was the rite of the Priestly Benediction performed in the Temple? The priests went up to the platform after the conclusion of the morning sacrifice. They raised their hands, with fingers straightened, above their heads; except the High Priest who did not raise his hands higher than the Golden Plate. One prompted them, word for word, just as is done outside the temple, till they had concluded the three verses of the Benediction. The people did not respond \"Amen\" after each verse. But all the three verses were recited as one blessing. When they concluded, all the people responded, \"Blessed be the Lord God, the God of Israel, from everlasting to everlasting.\"\n\n[3] Mishneh Torah, Prayer and the Priestly Blessing 7:11 (Mishneh Torah, Prayer and the Priestly Blessing)\nבכל יום חייב אדם לברך שלש ברכות אלו ואחר כך קורא מעט מדברי תורה ונהגו העם לקרוא ברכת כהנים ויש מקומות שקורין צו את בני ישראל ויש מקומות שקורין שתיהן וקורין פרקים או הלכות מן המשנה ומן הברייתות.\nIt is a duty to recite these three blessings daily and then read a small portion of the words of the Torah. The people have the custom to read the Priestly Benediction. In some places the section referring to the Daily Sacrifices is read. In others again, both these sections are read. Chapters or paragraphs from the Mishna or the Boraitha are also read.\n\n[4] Mishneh Torah, Prayer and the Priestly Blessing 14:5 (Mishneh Torah, Prayer and the Priestly Blessing)\nאין המקרא רשאי (להקרות לכהנים) עד שיכלה אמן מפי הציבור ואין הכהנים רשאין להתחיל בברכה עד שיכלה הדיבור מפי המקרא ואין הציבור עונין אמן עד שתכלה הברכה מפי הכהנים ואין הכהנים מתחילין בברכה אחרת עד שיכלה אמן מפי הציבור ואין שליח ציבור רשאי לענות אמן אחר הכהנים כשאר העם שמא תטרף דעתו ולא ידע איזו ברכה מקרא אותן אם פסוק שני או פסוק שלישי.\nThe prompter may not summon the priests till the sound of the congregation's \"Amen\" to the previous blessing has ceased. The priests may not begin the introductory blessing, \"Who hath sanctified us with the sanctification of Aaron and commanded us to bless His people Israel with love\" till the sound of the prompter's summons to the priests has ceased. The congregation do not respond \"Amen\" till the sound of the priest's utterance of the first verse of the Benediction has ceased. The priests do not begin the second verse of the Benediction till the sound of the congregation's \"Amen\" has ceased. The Reader may not join in the congregational response \"Amen\" after the priests' Benediction, lest he become confused and will not know which verse of the Benediction he has to prompt, whether the second or third.\n\n[5] Mishneh Torah, Prayer and the Priestly Blessing 14:12 (Mishneh Torah, Prayer and the Priestly Blessing)\nאין הכהנים רשאין בכל מקום להוסיף ברכה על שלשת הפסוקים כגון יי' אלהי אבותיכם יוסף עליכם ככם אלף פעמים וכיוצא בה לא בקול רם ולא בלחש שנאמר לא תוסיפו על הדבר בשעה שכל כהן עולה לדוכן כשהוא עוקר רגליו לעלות אומר יהי רצון מלפניך יי' אלהינו שתהיה ברכה זו שצויתנו לברך את עמך ישראל ברכה שלמה ואל יהי בה מכשול ועון מעתה ועד עולם וקודם שיחזיר פניו לברך את העם מברך ברוך אתה יי' אלהינו מלך העולם אשר קדשנו בקדושתו של אהרן וצונו לברך את עמו ישראל באהבה ואח\"כ מחזיר פניו לציבור ומתחיל לברכם וכשמחזיר פניו מן הציבור אחר שמשלים אומר עשינו מה שגזרת עלינו עשה עמנו מה שהבטחתנו השקיפה ממעון קדשך מן השמים וברך את עמך את ישראל.\nIn no place may the priests add, either softly or aloud, a blessing to the three verses of the Benediction, such as, \"The Lord, the God of your fathers, make you a thousand times as many more as you are\", or other verses of a similar tenor, for it is said, \"Thou shalt not add to it\" (Deuteronomy 13:1). Every priest proceeding to the platform to pronounce the Benediction, as soon as he starts, says, \"May it be Thy Will, O Lord our God, that this Benediction which Thou hast commanded us to bless therewith Thy people Israel shall be a perfect blessing. May there be in it no stumbling nor perverseness from now and for evermore\". Before the priest turns his face towards the people to bless them, he recites the blessing, \"Blessed art Thou, O Lord our God, King of the Universe, who hast sanctified us with the sanctification of Aaron and commanded us to bless Thy people Israel with love\". He then turns his face to the congregation and begins to bless them. And when he turns his face away from the congregation, after he had concluded the Benediction, he says \"We have done that which Thou hast decreed unto us. Do Thou fulfill unto us that which Thou hast promised unto us. Do Thou look down from Thy holy habitation, from Heaven, and bless Thy People Israel\".\n\n[6] Tosafot on Berakhot 11b:20:1 (Tosafot on Berakhot)\nוברכת כהנים - ואין זה דוכן שהרי לא היו עומדים לדוכן עד לאחר הקטרת אמורים דאמרי' בתענית (פ\"ד ד' כו:) שלשה פעמים ביום הכהנים נושאין כפיהם וכו' וא\"כ הוה ליה למתני ד' פעמים אחד לפני הקטרה ואחד לאחר הקטרה אלא בלא נשיאות כפים אמרו ברכת כהנים כמו שאנו אומרים:\n\n[7] Rashi on Berakhot 11b:20:6 (Rashi on Berakhot)\nוברכת כהנים – לברך את העם ובשאר תפלה לא היה להם פנאי ואף זמן קריאת שמע לא הגיע כדאמר במסכת יומא (דף לז ע\"ב) הקורא את שמע עם אנשי משמר ועם אנשי מעמד לא יצא לפי שאנשי משמר מקדימין וכו':\n\nAnswer segments:\n(0) sources=[]: **המקורות שלפנינו אינם מציינים את המקום המדויק בתורה** (ספר, פרשה או פרק) שבו מופיעה ברכת כהנים, ולכן איני יכול לענות על כך מתוכם.\n\n**מה שהמקורות כן מלמדים על הפסוקים עצמם:**\n\n- הרמב\"ם מצטט את לשון הפסוק \"כה תברכו את בני ישראל\", ודורש ממנו שהברכה נאמרת בעמידה, בנשיאת כפיים, בלשון הקודש, פנים כנגד פנים, בקול רם ובשם המפורש: \n(1) sources=[0]: \"אין ברכת כהנים נאמרת בכ\"מ אלא בלשון הקדש שנאמר כה תברכו את בני ישראל\"\n(2) sources=[]: .\n- הוא מביא גם את המילים \"אמור להם\" מאותו עניין, ולומד מהן \n(3) sources=[1]: \"בכל מקום משתדלין שיהיה המקרא אותן ישראל שנאמר אמור להם מכלל שאין המקרא מהם\"\n(4) sources=[]: .\n- הברכה עצמה בנויה משלושה פסוקים: הכהנים אומרים אותה \n(5) sources=[2]: \"עד שישלימו שלשה הפסוקים\"\n(6) sources=[]: , ו\n(7) sources=[5]: \"אין הכהנים רשאין בכל מקום להוסיף ברכה על שלשת הפסוקים\"\n(8) sources=[]: .\n\n**הערה נוספת מן המקורות:** הרמב\"ם כותב שבברכות התורה שבכל יום \n(9) sources=[3]: \"נהגו העם לקרוא ברכת כהנים\"\n(10) sources=[]: . כלומר, הפסוקים נקראים בכל יום גם כקטע לימוד מן התורה.\n\nכדי לאתר את המקום המדויק של הפרשה בתורה, כדאי לבדוק בחומש עצמו או במקור נוסף."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdfoNKbYibz2WN1PeyG",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"partial\",\"note\":\"Correctly says sources give no exact location; Rambam's derivations (standing, raised hands, etc.) are supported by source 0, though not listed.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Quote accurately appears in source 0.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Quote is in source 1 and uses 'say unto them'.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Source 2 says they conclude the three verses.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Connector fragment only.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Source 5 says priests may not add to the three verses.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":9,\"verdict\":\"partial\",\"note\":\"Source 3 says people customarily read it, but it is not about 'daily Torah blessings' in the sense stated; roughly fits.\"},{\"i\":10,\"verdict\":\"partial\",\"note\":\"Daily reading as a Torah study portion follows from source 3, but 'the verses' is an inference; the source says the Priestly Benediction section.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4847,
+   "output_tokens": 456,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

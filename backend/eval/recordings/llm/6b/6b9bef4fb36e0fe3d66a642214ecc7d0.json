@@ -1,0 +1,93 @@
+{
+ "key": "6b9bef4fb36e0fe3d66a642214ecc7d0",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Where does Moses ask why the righteous suffer and the wicked prosper?\n\nSources:\n[0] Berakhot 7a:25 (Berakhot)\nבקש להודיעו דרכיו של הקב\"ה ונתן לו שנא' (שמות לג, יג) הודיעני נא את דרכיך אמר לפניו רבש\"ע מפני מה יש צדיק וטוב לו ויש צדיק ורע לו יש רשע וטוב לו ויש רשע ורע לו אמר לו משה צדיק וטוב לו צדיק בן צדיק צדיק ורע לו צדיק בן רשע רשע וטוב לו רשע בן צדיק רשע ורע לו רשע בן רשע:\n\"Show me now Thy ways\" (ibid. 5:13). Moses said before Him, \"Lord of the Universe, why is there a righteous man enjoying prosperity and a righteous man afflicted with adversity ? Why is there a wicked man enjoying prosperity and a wicked man afflicted with adversity?\" He answered him, \"Moses, the righteous man who enjoys prosperity is the son of a righteous father ; the righteous man who is afflicted with adversity is the son of a wicked father ; the wicked man who enjoys prosperity is the son of a righteous father ; the wicked man who is afflicted with adversity is the son of a wicked father.\"\n\n[1] Berakhot 7a:28 (Berakhot)\nאלא הכי קא\"ל צדיק וטוב לו צדיק גמור צדיק ורע לו צדיק שאינו גמור רשע וטוב לו רשע שאינו גמור רשע ורע לו רשע גמור\nBut [we may suppose that] God answered Moses thus wise, \"The righteous man who enjoys prosperity is perfectly righteous ; the righteous man who is afflicted with adversity is not perfectly righteous ; the wicked man who enjoys prosperity is not perfectly wicked ; the wicked man who is afflicted with adversity is perfectly wicked.\"\n\n[2] Berakhot 7a:26 (Berakhot)\nאמר מר צדיק וטוב לו צדיק בן צדיק צדיק ורע לו צדיק בן רשע איני והא כתיב (שמות לד, ז) פקד עון אבות על בנים וכתיב (דברים כד, טז) ובנים לא יומתו על אבות ורמינן קראי אהדדי\nThe teacher stated above: \"The righteous man who enjoys prosperity is the son of a righteous father ; the righteous man who is afflicted with adversity is the son of a wicked father.\" But it is not so ; for lo, it is written, \"Visiting the iniquity of the fathers upon the children\" (Exod. xxxiv. 7) and it is also written, \"The children shall not be put to death for the fathers\" (Deut. xxiv. 16)!\n\n[3] Berakhot 7b:21 (Berakhot)\nואב\"א הא והא ברשע שהשעה משחקת לו ולא קשיא הא בצדיק גמור הא בצדיק שאינו גמור דאמר רב הונא מאי דכתיב (חבקוק א, יג) למה תביט בוגדים תחריש בבלע רשע צדיק ממנו וכי רשע בולע צדיק והא כתיב (תהלים לז, לג) ה' לא יעזבנו בידו וכתיב (משלי יב, כא) לא יאונה לצדיק כל און אלא צדיק ממנו בולע צדיק גמור אינו בולע\nOr if thou wilt, I can say that both refer to the wicked upon whom fortune smiles, and still there is no contradiction; for R. Johanan may be understood as speaking of a perfectly righteous man [contending with the wicked], and the other of one who is not perfectly righteous. For Rab Huna said : What means that which is written, \"Wherefore lookest Thou, when they deal treacherously, and holdest Thy peace, when the wicked swalloweth up the man that is more righteous than he\"? (Hab. i. 13). Does, then, the wicked swallow up the righteous? And lo, it is written, \"The Lord will not leave him in his hand\" (Ps. xxxvii. 33) and \"There shall no mischief befall the righteous\" (Prov. xii. 21)! Nay; \"the wicked swalloweth up the man that is more righteous than he,\" but a perfectly righteous man he doth not swallow up.\n\n[4] Exodus 9:27 (Exodus)\nוַיִּשְׁלַ֣ח פַּרְעֹ֗ה וַיִּקְרָא֙ לְמֹשֶׁ֣ה וּֽלְאַהֲרֹ֔ן וַיֹּ֥אמֶר אֲלֵהֶ֖ם חָטָ֣אתִי הַפָּ֑עַם יְהוָה֙ הַצַּדִּ֔יק וַאֲנִ֥י וְעַמִּ֖י הָרְשָׁעִֽים׃\nAnd Pharaoh sent, and called for Moses and Aaron, and said unto them: ‘I have sinned this time; the LORD is righteous, and I and my people are wicked.\n\n[5] Exodus 5:22 (Exodus)\nוַיָּ֧שָׁב מֹשֶׁ֛ה אֶל־יְהוָ֖ה וַיֹּאמַ֑ר אֲדֹנָ֗י לָמָ֤ה הֲרֵעֹ֙תָה֙ לָעָ֣ם הַזֶּ֔ה לָ֥מָּה זֶּ֖ה שְׁלַחְתָּֽנִי׃\nAnd Moses returned unto the LORD, and said: ‘Lord, wherefore hast Thou dealt ill with this people? why is it that Thou hast sent me?\n\n[6] Numbers 14:41 (Numbers)\nוַיֹּ֣אמֶר מֹשֶׁ֔ה לָ֥מָּה זֶּ֛ה אַתֶּ֥ם עֹבְרִ֖ים אֶת־פִּ֣י יְהוָ֑ה וְהִ֖וא לֹ֥א תִצְלָֽח׃\nAnd Moses said: ‘Wherefore now do ye transgress the commandment of the LORD, seeing it shall not prosper?\n\n[7] Berakhot 9a:29 (Berakhot)\n(שמות יא, ב) דבר נא באזני העם וגו' אמרי דבי ר' ינאי אין נא אלא לשון בקשה אמר ליה הקב\"ה למשה בבקשה ממך לך ואמור להם לישראל בבקשה מכם שאלו ממצרים כלי כסף וכלי זהב שלא יאמר\n\"Speak now [na'] in the ears of the people\" etc. (Exod. xi. 2). In the school of R. Jannai they said : The word [na'] always expresses a request. The Holy One, blessed be He, said to Moses, \"I request thee. Go and say to the Israelites : I beg of you to ask of the Egyptians vessels of silver and vessels of gold, so that the righteous one shall not say,\n\nAnswer segments:\n(0) sources=[]: The question appears in **Berakhot 7a**, as part of Moses' request \n(1) sources=[0]: הודיעני נא את דרכיך\n(2) sources=[]:  (\"Show me now Thy ways\"). The Hebrew cites this verse as Exodus 33:13 (שמות לג, יג). The English rendering's \"ibid. 5:13\" looks like a translation error.\n\n**The question:** \n(3) sources=[0]: \"Lord of the Universe, why is there a righteous man enjoying prosperity and a righteous man afflicted with adversity? Why is there a wicked man enjoying prosperity and a wicked man afflicted with adversity?\"\n(4) sources=[]: \n\n**First answer (lineage):** \n(5) sources=[0]: \"the righteous man who enjoys prosperity is the son of a righteous father; the righteous man who is afflicted with adversity is the son of a wicked father\"\n(6) sources=[]: , and likewise for the wicked.\n\n**The Gemara's challenge:** It objects that \n(7) sources=[2]: it is written, \"Visiting the iniquity of the fathers upon the children\" (Exod. xxxiv. 7) and it is also written, \"The children shall not be put to death for the fathers\" (Deut. xxiv. 16)!\n(8) sources=[]: \n\n**Revised answer (degree of righteousness):** \n(9) sources=[1]: צדיק וטוב לו צדיק גמור צדיק ורע לו צדיק שאינו גמור\n(10) sources=[]: . In English: \n(11) sources=[1]: \"The righteous man who enjoys prosperity is perfectly righteous; the righteous man who is afflicted with adversity is not perfectly righteous; the wicked man who enjoys prosperity is not perfectly wicked; the wicked man who is afflicted with adversity is perfectly wicked.\"\n(12) sources=[]: \n\nThe same distinction between perfectly and imperfectly righteous comes up again at Berakhot 7b. There Rav Huna reads Habakkuk 1:13 to mean that \n(13) sources=[3]: \"the wicked swalloweth up the man that is more righteous than he,\" but a perfectly righteous man he doth not swallow up.\n(14) sources=[]: \n\nA related complaint from Moses, about the people rather than individuals, is in Exodus 5:22: \n(15) sources=[5]: \"Lord, wherefore hast Thou dealt ill with this people?\""
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdpAjfieo9p5QpECq6d",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Source 0 at Berakhot 7a has Moses asking this, in connection with his request to know God's ways.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Hebrew quote appears in source 0.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Source cites שמות לג, יג, and English says ibid. 5:13; the 'translation error' observation is consistent with the shown text.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches Moses' question in source 0.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Empty segment.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches God's lineage answer in source 0.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Source 0 gives the same lineage pattern for the wicked.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Source 2 raises this contradiction between the two verses.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Empty segment.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Hebrew matches source 1.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Matches source 1 translation.\"},{\"i\":12,\"verdict\":\"supported\",\"note\":\"Source 3 at Berakhot 7b has Rav Huna on Habakkuk 1:13 and the perfectly righteous distinction.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Matches source 3 quote.\"},{\"i\":14,\"verdict\":\"no_claim\",\"note\":\"Empty segment.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Exodus 5:22 quote is in source 5, and it concerns the people.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3894,
+   "output_tokens": 606,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

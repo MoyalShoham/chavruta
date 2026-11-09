@@ -1,0 +1,93 @@
+{
+ "key": "5d92cad576c97b213aa92d883ec0aa6b",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: May the Shema be recited in any language?\n\nSources:\n[0] Mishneh Torah, Reading the Shema 2:10 (Mishneh Torah, Reading the Shema)\nקורא אדם את שמע בכל לשון שיהיה מבינה והקורא בכל לשון צריך להזהר מדברי שבוש שבאותו הלשון ומדקדק באותו הלשון כמו שמדקדק בלשון הקדש.\nA person may recite the Shema in any language that he understands. And if one reads the Shema in a secular language, he must take care to avoid errors in that language, and be as scrupulous in correctly enunciating the Shema in that language as he would be if he were reading it in the Sacred Tongue.\n\n[1] Berakhot 13a:25 (Berakhot)\nת\"ר ק\"ש ככתבה דברי רבי וחכ\"א בכל לשון\nOur Rabbis have taught : The Shema' must be read as it is written: These are the words of Rabbi; but the Sages say : may be read] in any language.\n\n[2] Berakhot 15a:9 (Berakhot)\nגמ׳ מאי טעמא דר' יוסי משום דכתיב שמע השמע לאזנך מה שאתה מוציא מפיך ות\"ק סבר שמע בכל לשון שאתה שומע\nGEMARA What is R. Jose's reason [for declaring that unless the Shema' is read audibly the requirements of the law have not been fulfilled]? Because it is written, \"Hear O Israel,\" i.e. let thine ear hear what thou issuest from thy mouth. And the first Tanna ? He holds that \"Hear\" [means that the Shema' may be read] in any language which thou hearest.\n\n[3] Mishneh Torah, Prayer and the Priestly Blessing 8:8 (Mishneh Torah, Prayer and the Priestly Blessing)\nוכן אם היתה צואה בגדולה אסור להתפלל ולקרות ק\"ש בקטנה היתה צואה בקטנה מותר להתפלל ולקרות ק\"ש בגדולה אם לא היה שם ריח רע מפני שהיא מופלגת ממנה.\nSo too, if there is ordure in the larger enclosure, it is forbidden to recite prayers or read the Shema in the smaller enclosure. But if there was ordure in the smaller enclosure, prayers may be recited and the Shema may be read in the larger, provided that there was no offensive odor, since the smaller enclosure is divided off from the larger.\n\n[4] Mishneh Torah, Reading the Shema 3:4 (Mishneh Torah, Reading the Shema)\nולא קריאת שמע בלבד אלא כל ענין שהוא מדברי הקדש אסור לאומרו בבית המרחץ ובבית הכסא ואפילו אמרו בלשון חול ולא לאמרו בלבד אלא אפילו להרהר בלבו בדברי תורה בבית הכסא ובבית המרחץ ובמקום הטנופת והוא המקום שיש בו צואה ומי רגלים אסור.\nNot only the sections of the Shema, but anything that appertains to things sacred may not be uttered in a bath house or latrine, even in a secular language. It is forbidden to speak there of such topics. Even to meditate silently on the words of the Torah in a latrine, in a bath house, or in any unclean place that contains ordure or urine, is also prohibited.\n\n[5] Mishneh Torah, Reading the Shema 2:2 (Mishneh Torah, Reading the Shema)\nכל אדם קורין כדרכן בין עומדין בין מהלכין בין שוכבין בין רוכבין על גבי בהמה ואסור לקרות קריאת שמע והוא מוטל ופניו טוחות בקרקע או מושלך על גבו ופניו למעלה אבל קורא הוא והוא שוכב על צדו ואם היה בעל בשר הרבה ואינו יכול להתהפך על צדו או שהיה חולה נוטה מעט לצדו וקורא.\nEveryone may read the Shema in the ordinary postures—standing, walking, lying down or riding on an animal. It is forbidden to read the Shema, lying down prone with face to the ground, or lying on the back with face looking up. But one may read it while lying on one's side. An extremely corpulent person who is unable to turn on his side or one who is sick should slightly turn on his side and then recite the Shema.\n\n[6] Mishneh Torah, Reading the Shema 3:10 (Mishneh Torah, Reading the Shema)\nהיה בינו ובין הצואה מחיצה של זכוכית אע\"פ שהוא רואה אותה מאחרי הזכוכית מותר לקרות בצדה נתן רביעית מים לתוך מי רגלים של פעם אחת מותר לקרות עמהן בתוך ד' אמות.\nIf one is separated from ordure by a glass partition even if the ordure is still visible through the glass, the Shema may be read near it. When a quarter of a log of water (= the volume of a hen's egg and a half) has been poured into a vessel containing urine of one micturition, the Shema may be recited within four cubits of it.\n\n[7] Mishneh Torah, Blessings 1:6 (Mishneh Torah, Blessings)\nוכל הברכות כולן נאמרין בכל לשון והוא שיאמר כעין שתקנו חכמים ואם שינה את המטבע הואיל והזכיר אזכרה ומלכות וענין הברכה אפילו בלשון חול יצא.\nAll blessings may be recited in any language, provided that the form instituted by the sages is followed. And if the form has been changed, the duty of reciting the blessing is discharged, since the name of God and His sovereignty as well as the subject matter of the blessing have been mentioned, even though in a foreign tongue.\n\nAnswer segments:\n(0) sources=[]: **Shema in any language: a machloket in the Gemara**\n\n**The baraita (Berakhot 13a)** records a dispute: \n(1) sources=[1]: ק\"ש ככתבה דברי רבי וחכ\"א בכל לשון\n(2) sources=[]: . That is, \n(3) sources=[1]: The Shema' must be read as it is written: These are the words of Rabbi; but the Sages say: may be read] in any language.\n(4) sources=[]: \n\n- **Rabbi:** \"ככתבה,\" as it is written, which suggests the original language.\n- **The Sages:** \"בכל לשון,\" in any language.\n\n**The source in the verse (Berakhot 15a)** comes up in a related dispute about the word \"שמע\":\n\n- **R. Jose** reads it as \n(5) sources=[2]: \"Hear O Israel,\" i.e. let thine ear hear what thou issuest from thy mouth\n(6) sources=[]: . For him, the word teaches that the Shema must be said audibly.\n- **The first Tanna** reads \n(7) sources=[2]: שמע בכל לשון שאתה שומע\n(8) sources=[]: , that \"Hear\" means \n(9) sources=[2]: [that the Shema' may be read] in any language which thou hearest.\n(10) sources=[]: \n\n**Rambam (Reading the Shema 2:10)** writes that \n(11) sources=[0]: a person may recite the Shema in any language that he understands.\n(12) sources=[]:  He adds a condition: one \n(13) sources=[0]: must take care to avoid errors in that language, and be as scrupulous in correctly enunciating the Shema in that language as he would be if he were reading it in the Sacred Tongue.\n(14) sources=[]: \n\nRambam says something similar about blessings (Blessings 1:6). They \n(15) sources=[7]: may be recited in any language, provided that the form instituted by the sages is followed.\n(16) sources=[]: \n\nSo the Gemara preserves both views, and Rambam's formulation follows the language of the Sages. For how this applies to you in practice, please ask your rabbi."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdqrqxXUknfofeQ95MX",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Framing of a dispute in Berakhot 13a; baraita records Rabbi vs Sages, supported.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Hebrew quote matches source 1.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition only.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate translation of source 1.\"},{\"i\":4,\"verdict\":\"partial\",\"note\":\"Sages' 'any language' supported; 'suggests the original language' is interpretation not in sources.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches source 2 as R. Jose's reason.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Source 2 says unless read audibly the law isn't fulfilled, per R. Jose.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches first Tanna in source 2.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches source 2.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Matches Mishneh Torah 2:10.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Matches source 0.\"},{\"i\":14,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Matches Blessings 1:6.\"},{\"i\":16,\"verdict\":\"partial\",\"note\":\"Gemara preserving both views and Rambam following Sages is plausible inference; Rambam's following the Sages isn't stated in sources.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3313,
+   "output_tokens": 601,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

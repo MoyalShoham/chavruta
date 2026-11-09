@@ -1,0 +1,93 @@
+{
+ "key": "a1c148df70af66a97746419de43d7d3c",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: מה המקור בתורה למצוות מזוזה, לכתוב על מזוזות הבית?\n\nSources:\n[0] Deuteronomy 11:20 (Deuteronomy)\nוּכְתַבְתָּ֛ם עַל־מְזוּז֥וֹת בֵּיתֶ֖ךָ וּבִשְׁעָרֶֽיךָ׃\nAnd thou shalt write them upon the door-posts of thy house, and upon thy gates;\n\n[1] Mishneh Torah, Blessings 11:8 (Mishneh Torah, Blessings)\nכל מצוה שעשייתה היא גמר חיובה מברך בשעת עשייה וכל מצוה שיש אחר עשייתה צווי אחר אינו מברך אלא בשעה שעושה הצווי האחרון כיצד העושה סוכה או לולב או שופר או ציצית או תפילין או מזוזה אינו מברך בשעת עשייה אשר קדשנו במצותיו וצונו לעשות סוכה או לולב או לכתוב תפילין מפני שיש אחר עשייתו צווי אחר ואימתי מברך בשעה שישב בסוכה או כשינענע הלולב או כשישמע קול השופר או כשיתעטף בציצית ובשעת לבישת תפילין ובשעת קביעת מזוזה אבל אם עשה מעקה מברך בשעת עשייה אשר קדשנו במצותיו וצונו לעשות מעקה וכן כל כיוצא בזה.\nWhenever the performance of a religious duty definitely completes the obligation, the blessing is recited at the time it is performed. Whenever the fulfillment of a precept is an antecedent to another precept, the blessing is said at the fulfillment of the latter. For example. A person builds a booth for the Feast of Tabernacles, prepares the palm branch for that festival, fashions a ram's horn for the New Year, puts fringes on a garment, or prepares phylacteries or a Mezuzah . He does not, when preparing any of these articles of religious use, say the blessing \"Who hast sanctified us with Thy commandments and commanded us to build a booth, prepare the palm branch, write phylacteries\"; because the act in each of these cases is followed by another precept. When is the blessing said? When one sits in the booth (on the feast of Tabernacles), handles the palm branch, listens to the sound of the ram's horn (on the New Year) enwraps himself in the fringed garment, puts on phylacteries, affixes the Mezuzah. If however one erects a parapet on the roof, he recites, at the time of erection, the blessing \"Who hast sanctified us with Thy commandments and commanded us concerning a parapet\"; and so with similar precepts.\n\n[2] Mishneh Torah, Blessings 11:2 (Mishneh Torah, Blessings)\nיש מצות עשה שאדם חייב להשתדל ולרדוף עד שיעשה אותה כגון תפילין וסוכה ולולב ושופר ואלו הן הנקראין חובה לפי שאדם חייב על כל פנים לעשות ויש מצוה שאינה חובה אלא דומין לרשות כגון מזוזה ומעקה שאין אדם חייב לשכון בבית החייב מזוזה כדי שיעשה מזוזה אלא אם רצה לשכון כל ימיו באהל או בספינה ישב וכן אינו חייב לבנות בית כדי לעשות מעקה וכל מצות עשה שבין אדם למקום בין מצוה שאינה חובה בין מצוה שהיא חובה מברך עליה קודם לעשייתה.\nThere are some affirmative precepts in regard to which there is an obligation sedulously to strive to fulfil them; as, for example, to put on phylacteries, dwell in a booth on the feast of Tabernacles, take in the hand a palm branch together with the other plants on that feast, hear the sound of the ram's horn on the New Year. These are termed obligatory because there is an unconditional obligation to fulfill them. Again there are religious duties which are not obligatory but are in a sense permissive; for example, to affix a Mezuzah to the doors of a house or build a parapet on the roof; since there is no obligation to dwell in a house that requires a Mezuzah to be affixed to it. One may, if one chooses, live all one's lifetime in a tent or on a ship. Similarly there is no obligation to build a house in order to erect a parapet round the roof. Every duty to God, whether permissive or obligatory, requires a blessing to be said before its fulfilment.\n\n[3] Rashi on Berakhot 20b:1:3 (Rashi on Berakhot)\nובמזוזה ובברכת המזון – מזוזה מצות עשה שלא הזמן גרמא ובגמרא פריך פשיטא:\n\n[4] Rashi on Berakhot 20b:6:1 (Rashi on Berakhot)\nנקיש מזוזה לתלמוד תורה – דכתיב (דברים יא) ולמדתם אותם את בניכם וסמיך ליה וכתבתם מה תלמוד תורה נשים פטורות ואע\"ג דאין הזמן גרמא רחמנא פטרינהו דכתיב את בניכם ולא בנותיכם אף מזוזה נשים פטורות קמ\"ל דנשים חייבות דכתיב למען ירבו ימיכם גברי בעו חיי נשי לא בעי חיי בתמיה:\n\n[5] Rashi on Berakhot 13a:31:1 (Rashi on Berakhot)\nמדברים הדברים – דהוה ליה למכתב והיו דברים האלה (דברים ו׳:ו׳) למדרש שיקרא הדברים כסדרן ולא למפרע כגון ובשעריך ביתך מזוזות:\n\n[6] Berakhot 47a:3 (Berakhot)\nדאית בה מזוזה אין דלית בה מזוזה לא אלא מעתה בית הכנסת ובית המדרש דלית בהו מזוזה הכי נמי דאין מכבדין אלא אימא בפתח הראוי למזוזה\n\"If there is a Mezuzah, one does ; but if there is no Mezuzah, one does not ? Then, in the case of a Synagogue or House of Study which has no Mezuzah, there also one should not honour a man [by making way for him]!\" \"Nay, [the meaning is,] A door which is liable to have a Mezuzah affixed.\"\n\n[7] Rashi on Berakhot 15b:23:2 (Rashi on Berakhot)\nואפילו צואות – שבפרשה כגון וקשרתם וכתבתם צריך לכתוב בתפילין ומזוזות:\n\nAnswer segments:\n(0) sources=[]: **המקור בתורה**\n\nהמקור המפורש שבידינו הוא דברים יא, כ: \n(1) sources=[0]: \"וּכְתַבְתָּ֛ם עַל־מְזוּז֥וֹת בֵּיתֶ֖ךָ וּבִשְׁעָרֶֽיךָ\"\n(2) sources=[]: , כלומר \n(3) sources=[0]: \"And thou shalt write them upon the door-posts of thy house, and upon thy gates\"\n(4) sources=[]: .\n\n**הקשר בפרשה**\n\nרש\"י בברכות כ ע\"ב מצביע על הסמיכות בפרשה. הפסוק \n(5) sources=[4]: דכתיב (דברים יא) ולמדתם אותם את בניכם וסמיך ליה וכתבתם\n(6) sources=[]: . מכאן הוא מעלה את הצד להקיש מזוזה לתלמוד תורה ולפטור נשים. המסקנה היא \n(7) sources=[4]: דנשים חייבות דכתיב למען ירבו ימיכם גברי בעו חיי נשי לא בעי חיי בתמיה\n(8) sources=[]: .\n\n**מה כותבים במזוזה**\n\nרש\"י בברכות טו ע\"ב מוסיף שגם הציוויים שבתוך הפרשה עצמה נכתבים: \n(9) sources=[7]: ואפילו צואות – שבפרשה כגון וקשרתם וכתבתם צריך לכתוב בתפילין ומזוזות\n(10) sources=[]: .\n\n**סדר הקריאה**\n\nרש\"י בברכות יג ע\"א דורש מלשון \"והיו הדברים האלה\" (דברים ו, ו) \n(11) sources=[5]: שיקרא הדברים כסדרן ולא למפרע כגון ובשעריך ביתך מזוזות\n(12) sources=[]: .\n\n**אופי המצווה**\n\nרש\"י מגדיר: \n(13) sources=[3]: מזוזה מצות עשה שלא הזמן גרמא\n(14) sources=[]: . הרמב\"ם (הלכות ברכות יא, ב) מסווג אותה כמצווה \n(15) sources=[2]: שאינה חובה אלא דומין לרשות כגון מזוזה ומעקה שאין אדם חייב לשכון בבית החייב מזוזה\n(16) sources=[]: .\n\nהמקורות שלפניי אינם מביאים פסוק נוסף מעבר לאלה."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdddBMGCeo8F5b9EUrq",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Deut 11:20 is the cited source; framing is fine.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Matches the verse quoted in source 0.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition word.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches the English translation of source 0.\"},{\"i\":4,\"verdict\":\"partial\",\"note\":\"Claims Rashi on Berakhot 20b points to adjacency in the passage; source 4 does say this, but the segment is mostly a header and transition.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Quotes Rashi 20b:6 accurately.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Rashi analogizes mezuzah to Torah study and considers exempting women.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Accurate quote of Rashi's conclusion that women are obligated.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":9,\"verdict\":\"partial\",\"note\":\"Quote is accurate, but the framing 'what is written in a mezuzah' only partly fits Rashi's statement about commands in the passage.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":11,\"verdict\":\"partial\",\"note\":\"Quote accurate, but source 5 does not state 'והיו הדברים האלה' as the derivation; it says the text should have said it.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Accurate quote of Rashi 20b:3.\"},{\"i\":14,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Matches Mishneh Torah, Blessings 11:2.\"},{\"i\":16,\"verdict\":\"no_claim\",\"note\":\"Disclaimer about the sources.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3795,
+   "output_tokens": 674,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

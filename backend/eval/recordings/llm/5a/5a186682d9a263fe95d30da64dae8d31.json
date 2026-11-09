@@ -1,0 +1,93 @@
+{
+ "key": "5a186682d9a263fe95d30da64dae8d31",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: איפה המשנה אומרת שחתן פטור מקריאת שמע בלילה הראשון?\n\nSources:\n[0] Berakhot 16a:8 (Berakhot)\nחתן פטור מק\"ש לילה הראשונה ועד מוצאי שבת אם לא עשה מעשה ומעשה בר\"ג שנשא אשה וקרא לילה הראשונה אמרו לו תלמידיו למדתנו רבינו שחתן פטור מק\"ש אמר להם איני שומע לכם לבטל הימני מלכות שמים אפי' שעה אחת:\nA bridegroom is exempt from the obligation of reading the Shema' on the first night [of his marriage], and until the termination of the ensuing Sabbath, if he has not consummated the marriage. It happened that when Rabban Gamaliel married, he read the Shema' on the first night. His disciples said to him, \"Our teacher ! thou hast taught us that a bridegroom is exempt from the obligation of reading the Shema'.\" He replied, \"I will not hearken to you to annul the kingdom of heaven from myself even a single hour.\"\n\n[1] Mishneh Torah, Reading the Shema 4:1 (Mishneh Torah, Reading the Shema)\nנשים ועבדים וקטנים פטורים מקריאת שמע ומלמדין את הקטנים לקרותה בעונתה ומברכין לפניה ולאחריה כדי לחנכן במצות מי שהיה לבו טרוד ונחפז לדבר מצוה פטור מכל המצות ומקריאת שמע לפיכך חתן שנשא בתולה פטור מקריאת שמע עד שיבא עליה לפי שאין דעתו פנויה שמא לא ימצא לה בתולים ואם שהה עד מוצאי שבת ולא בעל חייב לקרות ממוצאי שבת ואילך שהרי נתקררה דעתו ולבו גס בה אף על פי שלא בעל.\nWomen, slaves and children are exempt from the duty of reading the Shema. Children are taught to read it at the proper time; and they recite at the same time the blessings preceding and following it, so that they may be trained in the performance of religious duties. One whose mind is preoccupied and in an agitated state because of any religious duty which he has to perform is freed from the obligation of reading the Shema. Hence, a bridegroom who has wedded a virgin is exempted from reading the Shema till he has consummated the marriage…. If however consummation has been deferred till the night after the Sabbath subsequent to the marriage, it is his duty to read the Shema from that night and onwards, as his mind has become calm and he is already familiar with his bride.\n\n[2] Berakhot 16b:7 (Berakhot)\nחתן אם רוצה לקרות קרית שמע לילה הראשון קורא רבן שמעון בן גמליאל אומר לא כל הרוצה ליטול את השם יטול:\nIf a bridegroom wishes to read the Shema' on the first night [of his marriage], he may do so. Rabban Simeon b. Gamaliel says : \"Not everybody who wishes to assume the name may do so.\"\n\n[3] Mishneh Torah, Reading the Shema 1:9 (Mishneh Torah, Reading the Shema)\nאי זהו זמן קריאת שמע בלילה מצותה משעת יציאת הכוכבים עד חצי הלילה ואם עבר ואיחר וקרא עד שלא עלה עמוד השחר יצא ידי חובתו שלא אמרו עד חצות אלא כדי להרחיק אדם מן הפשיעה.\nWhen is the time for reading the Shema ? In the evening, the duty is correctly performed if it is read at any time from the first appearance of the stars till midnight. If one however transgressed and delayed, but read the Shema before daybreak, he has discharged the obligation. The Sages fixed midnight as the limit only in order to prevent complete violation.\n\n[4] Berakhot 16a:20 (Berakhot)\nחתן פטור מק\"ש: תנו רבנן בשבתך בביתך פרט לעוסק במצוה ובלכתך בדרך פרט לחתן מכאן אמרו הכונס את הבתולה פטור ואת האלמנה חייב\nA bridegroom is exempt from the obligation of reading the Shema'. Our Rabbis have taught : \"When thou sittest in thy house\" (Deut. vi. 7) excludes one occupied with a religious duty ; \"and when thou walkest by the way\" (ibid.) excludes a bridegroom. Hence they say : He who takes a virgin to his house as wife is exempt ; but if he marry a widow, he has that obligation.\n\n[5] Berakhot 8b:23 (Berakhot)\nהא גופא קשיא אמרת פעמים שאדם קורא קרית שמע שתי פעמים ביום אלמא קודם הנץ החמה יממא הוא והדר תני יוצא בהן ידי חובתו אחת של יום ואחת של לילה אלמא ליליא הוא\nThis is self-contradictory ! Thou sayest, \"There are times when a man reads the Shema' twice in a day\"; consequently, before sunrise is day ! And it continues, \"The man thereby fulfils his obligation [[fol. 9a.]] both for the day and night\" ; consequently it is still night !\n\n[6] Mishnah Berakhot 2:5 (Mishnah Berakhot)\nחָתָן פָּטוּר מִקְּרִיאַת שְׁמַע בַּלַּיְלָה הָרִאשׁוֹן עַד מוֹצָאֵי שַׁבָּת, אִם לֹא עָשָׂה מַעֲשֶׂה. מַעֲשֶׂה בְּרַבָּן גַּמְלִיאֵל שֶׁקָּרָא בַלַּיְלָה הָרִאשׁוֹן שֶׁנָּשָׂא. אָמְרוּ לוֹ תַּלְמִידָיו, לֹא לִמַּדְתָּנוּ, רַבֵּנוּ, שֶׁחָתָן פָּטוּר מִקְּרִיאַת שְׁמַע בַּלַּיְלָה הָרִאשׁוֹן. אָמַר לָהֶם, אֵינִי שׁוֹמֵעַ לָכֶם לְבַטֵּל מִמֶּנִּי מַלְכוּת שָׁמַיִם אֲפִלּוּ שָׁעָה אֶחָת:\nA bridegroom is exempt from reciting the Shema on the first night until the end of the Shabbat, if he has not performed the act. It happened with Rabban Gamaliel who recited the Shema on the first night after he had married. His students said to him: Our master, have you not taught us that a bridegroom is exempt from reciting the Shema. He replied to them: I will not listen to you to remove from myself the Kingship of Heaven even for a moment.\n\n[7] Tosafot on Berakhot 4b:2:1 (Tosafot on Berakhot)\nוקורא קריאת שמע ומתפלל - מכאן משמע שמשעה שהגיע זמן קריאת שמע של לילה שאין לו לאכול סעודה עד שיקרא ק\"ש ויתפלל ערבית:\n\nAnswer segments:\n(0) sources=[]: **המקור: משנה ברכות ב, ה**\n\nהדין מופיע במשנה ברכות פרק ב משנה ה: \n(1) sources=[6]: \"חָתָן פָּטוּר מִקְּרִיאַת שְׁמַע בַּלַּיְלָה הָרִאשׁוֹן עַד מוֹצָאֵי שַׁבָּת, אִם לֹא עָשָׂה מַעֲשֶׂה\"\n(2) sources=[]: . כלומר, הפטור נמשך מהלילה הראשון ועד מוצאי שבת, בתנאי שלא בעל.\n\nהמשנה מביאה גם מעשה ברבן גמליאל, \n(3) sources=[6]: שֶׁקָּרָא בַלַּיְלָה הָרִאשׁוֹן שֶׁנָּשָׂא\n(4) sources=[]: . כשתלמידיו הקשו עליו, השיב: \n(5) sources=[6]: \"אֵינִי שׁוֹמֵעַ לָכֶם לְבַטֵּל מִמֶּנִּי מַלְכוּת שָׁמַיִם אֲפִלּוּ שָׁעָה אֶחָת\"\n(6) sources=[]: .\n\n**המקור לדין בגמרא (ברכות טז ע\"א)**\n\nהגמרא לומדת את הפטור מן הפסוק: \n(7) sources=[4]: \"בשבתך בביתך פרט לעוסק במצוה ובלכתך בדרך פרט לחתן מכאן אמרו הכונס את הבתולה פטור ואת האלמנה חייב\"\n(8) sources=[]: .\n\n**מחלוקת (ברכות טז ע\"ב)**\n\nיש מחלוקת אם חתן רשאי לקרוא אם רצה:\n- **תנא קמא:** \n(9) sources=[2]: \"חתן אם רוצה לקרות קרית שמע לילה הראשון קורא\"\n(10) sources=[]: .\n- **רבן שמעון בן גמליאל:** \n(11) sources=[2]: \"לא כל הרוצה ליטול את השם יטול\"\n(12) sources=[]: .\n\n**טעם הדין לפי הרמב\"ם (הלכות קריאת שמע ד, א)**\n\nהרמב\"ם מסביר שהפטור נובע מטרדת הלב: \n(13) sources=[1]: \"מי שהיה לבו טרוד ונחפז לדבר מצוה פטור מכל המצות ומקריאת שמע\"\n(14) sources=[]: . לכן החתן פטור \n(15) sources=[1]: \"לפי שאין דעתו פנויה\"\n(16) sources=[]: . עוד כותב הרמב\"ם שממוצאי שבת והלאה החתן חייב \n(17) sources=[1]: \"שהרי נתקררה דעתו\"\n(18) sources=[]: .\n\nלשאלות מעשיות יש לפנות לרב."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdmGKCTQKzQ2KZwPpYo",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Mishnah Berakhot 2:5 is source 6, which contains this ruling.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Exact quote of source 6.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Accurate paraphrase of the exemption until Saturday night if he has not consummated; the Rabban Gamaliel story is in the Mishnah.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Quote from source 6.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Students' objection and his reply appear in source 6.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Exact quote of source 6.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Quote matches source 4 (Berakhot 16a); the derivation from the verse is stated there.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Quote matches source 2; attribution as 'tanna kamma' is consistent with the text.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Rabban Simeon b. Gamaliel's statement is in source 2.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Quote from Rambam 4:1 in source 1.\"},{\"i\":14,\"verdict\":\"supported\",\"note\":\"Rambam says hence the bridegroom is exempt.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Quote from source 1.\"},{\"i\":16,\"verdict\":\"supported\",\"note\":\"Source 1 says he is obligated from Saturday night onward.\"},{\"i\":17,\"verdict\":\"supported\",\"note\":\"Quote from source 1.\"},{\"i\":18,\"verdict\":\"no_claim\",\"note\":\"Disclaimer advising to consult a rabbi.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4155,
+   "output_tokens": 706,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

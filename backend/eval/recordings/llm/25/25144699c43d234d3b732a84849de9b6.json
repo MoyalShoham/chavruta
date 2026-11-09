@@ -1,0 +1,93 @@
+{
+ "key": "25144699c43d234d3b732a84849de9b6",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: מאיפה לומדים להתפלל כנגד ירושלים?\n\nSources:\n[0] Berakhot 30a:9 (Berakhot)\nהיה עומד בח\"ל יכוין את לבו כנגד ארץ ישראל שנא' (מלכים א ח, מח) והתפללו אליך דרך ארצם היה עומד בארץ ישראל יכוין את לבו כנגד ירושלים שנאמר (מלכים א ח, מד) והתפללו אל ה' דרך העיר אשר בחרת היה עומד בירושלים יכוין את לבו כנגד בית המקדש שנאמר (דברי הימים ב ו, לב) והתפללו אל הבית הזה היה עומד בבית המקדש יכוין את לבו כנגד בית קדשי הקדשים שנאמר (מלכים א ח, לה) והתפללו אל המקום הזה היה עומד בבית קדשי הקדשים יכוין את לבו כנגד בית הכפורת היה עומד אחורי בית הכפורת יראה עצמו כאילו לפני הכפורת נמצא עומד במזרח מחזיר פניו למערב במערב מחזיר פניו למזרח בדרום מחזיר פניו לצפון בצפון מחזיר פניו לדרום נמצאו כל ישראל מכוונין את לבם למקום אחד\nIf he is standing outside the [Holy] Land, he must direct his heart towards the land of Israel ; as it is said, \"And pray unto Thee toward their land\" (ibid. v. 48). If he is standing in the land of Israel, he must direct his heart towards Jerusalem ; as it is said, \"And they pray unto the Lord toward the city which Thou hast chosen\" (ibid. v. 44). If he is standing in Jerusalem, he must direct his heart towards the Temple ; as it is said, \"And pray toward this house\" (II Chron. vi. 32). If he is standing in the Temple, he must direct his heart towards the Holy of Holies; as it is said, \"And they pray toward this place\" (I Kings viii. 35). If he is standing in the Holy of Holies, he must direct his heart towards the mercy-seat. If he is standing behind the mercy-seat, he must imagine himself to be in front of it. Consequently if he is standing in the East, he must turn West ; if in the West, he must turn East ; if in the South, he must turn North ; if in the North, he must turn South. As a result, all Israel will be directing their heart to one spot.\n\n[1] Mishneh Torah, Prayer and the Priestly Blessing 5:6 (Mishneh Torah, Prayer and the Priestly Blessing)\nתקון המקום כיצד יעמוד במקום נמוך ויחזיר פניו לכותל וצריך לפתוח חלונות או פתחים כנגד ירושלים כדי להתפלל כנגדן שנאמר וכוין פתיחן ליה בעיליתיה וגו' וקובע מקום לתפלתו תמיד ואין מתפלל בחורבה ולא אחורי בית הכנסת אא\"כ החזיר פניו לבית הכנסת ואסור לישב בצד העומד בתפלה או לעבור לפניו עד שירחיק ממנו ארבע אמות.\nPlace where the worshiper prays. He should stand in a low place and turn his face to the wall. Windows or doors towards Jerusalem should be opened, and he should stand facing them when he prays, as it is said, \"Now his windows were open in his upper chamber towards Jerusalem\" (Daniel 6:11). There should be one fixed place set apart for prayer. It should not be recited in a ruin nor at the rear of a synagogue, unless the worshiper turns his face towards the synagogue. It is forbidden to remain seated at the side of one who is standing in prayer, or pass in front of him unless he has moved away from the worshiper to a distance of four cubits.\n\n[2] Mishneh Torah, Prayer and the Priestly Blessing 5:3 (Mishneh Torah, Prayer and the Priestly Blessing)\nנכח המקדש כיצד היה עומד בחוצה לארץ מחזיר פניו נכח ארץ ישראל ומתפלל היה עומד בארץ מכוין את פניו כנגד ירושלים היה עומד בירושלים מכוין פניו כנגד המקדש היה עומד במקדש מכוין פניו כנגד בית קדש הקדשים סומא ומי שלא יכול לכוין את הרוחות והמהלך בספינה יכוין את לבו כנגד השכינה ויתפלל.\nWith face turned towards the Temple. Anyone outside Palestine turns his face towards the land of Israel and recites the prayer. One who is in the Holy Land turns towards Jerusalem. One who is in Jerusalem turns towards the Temple. If one is in the Temple, he turns towards the Holy of Holies. A person who is either blind, or unable to determine the right direction, or is on a ship, directs his heart to the Divine Presence and prays.\n\n[3] Berakhot 31a:22 (Berakhot)\nיכול יתפלל אדם לכל רוח שירצה ת\"ל (דניאל ו, יא) (לקבל) [נגד] ירושלם\nIt is possible to imagine that one can pray in any direction he wishes; therefore there is a teaching to state, \"Towards Jerusalem\" (ibid.).\n\n[4] Rashi on Berakhot 61b:13:2 (Rashi on Berakhot)\nאיכא בינייהו צדדים – דיהודה וגליל שאינן כנגד ירושלים ממש לתנא קמא צדדין נמי אסירי דהא הנפנה ביהודה קאמר כל יהודה משמע ורבנן בתראי סברי כנגד ירושלים ממש אסור אבל לצדדין מותר דהא אדר' יוסי קיימי דאמר לא אסרו אלא ברואה אבל ברחוק לא ואפילו כנגד ירושלים ממש ואתו רבנן למימר וחכמים אוסרים אפילו שלא ברואה ואפילו בזמן הזה ומיהו נגד ירושלים לא:\n\n[5] Tosafot on Berakhot 30a:7:1 (Tosafot on Berakhot)\nהלכה כרבי - שלא ירד למטה ואפי' שלא במקום סכנה ואפילו במהלך מתפלל ואינו צריך להחזיר פניו כנגד ירושלים:\nTHE HALAKHA IS IN ACCORDANCE WITH REBBE. Our Mishna mentions only the opinion of the first Tano that one who is riding on a donkey should descend from the donkey to pray, if he has someone who can watch the donkey. The Braiso introduces a dissenting opinion. Rebbe holds that even if one has a guard available, he need not descend from the donkey. The Gemara concludes that the halochoh is like Rebbe. That he need not dismount from the donkey, even when there is no danger. And even as the donkey is walking one may pray and he need not turn his face toward Yerusholayim. Rebbe’s reason for not requiring that one descend from the donkey is because he will not be able to concentrate properly since he feels that he is losing time while praying. If we required that he stop moving or face Yerusholayim as he prays, that too would cost him time and prevent him from concentrating properly. Therefore, Tosfos concludes that since the halochoho is like Rebbe, not only does one not have to descend from the donkey, but he may continue praying as the donkey walks and he need not face Yerusholayim.\n\n[6] Rashi on Berakhot 54a:7:2 (Rashi on Berakhot)\nכנגד שער מזרחי – חוץ להר הבית אשר בחומה הנמוכה אשר לרגלי הבית במזרח לפי שכל השערים מכוונים זה כנגד זה שער מזרח שער עזרת נשים ושער עזרת ישראל ופתח האולם וההיכל ובית קדשי הקדשים בימי מקדש ראשון כשהיה אמה טרקסין:\n\n[7] Berakhot 3a:12 (Berakhot)\nתניא אמר רבי יוסי פעם אחת הייתי מהלך בדרך ונכנסתי לחורבה אחת מחורבות ירושלים להתפלל בא אליהו זכור לטוב ושמר לי על הפתח (והמתין לי) עד שסיימתי תפלתי לאחר שסיימתי תפלתי אמר לי שלום עליך רבי ואמרתי לו שלום עליך רבי ומורי ואמר לי בני מפני מה נכנסת לחורבה זו אמרתי לו להתפלל ואמר לי היה לך להתפלל בדרך ואמרתי לו מתיירא הייתי שמא יפסיקו בי עוברי דרכים ואמר לי היה לך להתפלל תפלה קצרה\nThere is a teaching : R. Jose said : Once I was journeying by the way, and I entered one of the ruins of Jerusalem to pray. Elijah — may he be remembered for good ! — came, waited at the entrance for me, and stayed until I had concluded my prayer. After I had finished my prayer he said to me, \" Peace be to thee, my master.\" I responded, \"Peace be to thee, my master and teacher.\" Then he said to me, \"My son, why didst thou enter this ruin ?\" I answered, \"To pray.\" He said to me, \"Thou shouldest have prayed by the roadside.\" I said, \"I feared lest passers-by interrupt me.\" Then said he to me, \" Thou shouldest have offered an abbreviated prayer.\"\n\nAnswer segments:\n(0) sources=[]: **המקור בפסוקים מתפילת שלמה**\n\nהברייתא בברכות ל ע\"א לומדת את סדר הכיוונים מפסוקים שונים בתפילת שלמה: \n(1) sources=[0]: היה עומד בח\"ל יכוין את לבו כנגד ארץ ישראל שנא' (מלכים א ח, מח) והתפללו אליך דרך ארצם היה עומד בארץ ישראל יכוין את לבו כנגד ירושלים שנאמר (מלכים א ח, מד) והתפללו אל ה' דרך העיר אשר בחרת\n(2) sources=[]: . משם היא ממשיכה אל בית המקדש ואל בית קדשי הקדשים. המסקנה היא: \n(3) sources=[0]: נמצאו כל ישראל מכוונין את לבם למקום אחד\n(4) sources=[]: .\n\n**המקור בפסוק בדניאל**\n\nבברכות לא ע\"א הלימוד הוא מדניאל: \n(5) sources=[3]: יכול יתפלל אדם לכל רוח שירצה ת\"ל (דניאל ו, יא) (לקבל) [נגד] ירושלם\n(6) sources=[]: .\n\n**ברמב\"ם**\n\nהרמב\"ם (תפילה ה:ו) מביא את הפסוק מדניאל כמקור לפתיחת חלונות: \n(7) sources=[1]: וצריך לפתוח חלונות או פתחים כנגד ירושלים כדי להתפלל כנגדן שנאמר וכוין פתיחן ליה בעיליתיה\n(8) sources=[]: .\n\nשימו לב להבדל בלשון. בגמרא כתוב \"יכוין את **לבו**\", ואילו ברמב\"ם (ה:ג) כתוב \n(9) sources=[2]: מכוין את **פניו** כנגד ירושלים\n(10) sources=[]: . אצל הרמב\"ם כוונת הלב לבדה מופיעה רק במקרים מסוימים: \n(11) sources=[2]: סומא ומי שלא יכול לכוין את הרוחות והמהלך בספינה יכוין את לבו כנגד השכינה ויתפלל\n(12) sources=[]: .\n\n**חריג בתוספות**\n\nלפי תוספות, מי שרוכב על חמור, כיוון שההלכה כרבי, \n(13) sources=[5]: ואפילו במהלך מתפלל ואינו צריך להחזיר פניו כנגד ירושלים\n(14) sources=[]: .\n\nלשאלות מעשיות כדאי לפנות לרב."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdsTL9TnnXubBSBCAkq",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"partial\",\"note\":\"Berakhot 30a is called a baraita, and the verses are from Solomon's prayer; sources don't say 'baraita' or attribute to Solomon's prayer explicitly (Chronicles/Kings are cited though).\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quotation of Berakhot 30a.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Source continues to the Temple and Holy of Holies.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quotation of the conclusion.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches Berakhot 31a quote of Daniel.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches Rambam 5:6 quotation.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Rambam 5:3 says 'מכוין פניו כנגד ירושלים'; the 'Gemara' wording is also in the source.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"Heart-only direction appears for the blind, those unable to determine direction, and those on a ship.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Accurate quotation of Rambam 5:3.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Tosafot says one need not face Jerusalem; the donkey rider context fits.\"},{\"i\":14,\"verdict\":\"no_claim\",\"note\":\"Disclaimer advising to consult a rabbi.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4849,
+   "output_tokens": 628,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

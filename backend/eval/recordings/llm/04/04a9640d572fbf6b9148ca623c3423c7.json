@@ -1,0 +1,93 @@
+{
+ "key": "04a9640d572fbf6b9148ca623c3423c7",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Where are the Israelites told to remember the Sabbath day in the Ten Commandments of Exodus?\n\nSources:\n[0] Berakhot 20b:10 (Berakhot)\nאלא אמר רבא אמר קרא (שמות כ, ז) זכור (דברים ה, יא) ושמור כל שישנו בשמירה ישנו בזכירה והני נשי הואיל ואיתנהו בשמירה איתנהו בזכירה\nBut, said Raba, [the correct reason why they have to \"sanctify\" the Sabbath is because] the Scriptures declare, \"Remember the Sabbath day to keep it holy\" (Exod. xx. 8) and \"Observe the Sabbath to keep it holy\" (Deut. v. 12) — everyone who has to \"observe\" must likewise \"remember\"; and since women must \"observe,\" so must they \"remember.\"\n\n[1] Exodus 20:8 (Exodus)\nזָכ֛וֹר֩ אֶת־י֥֨וֹם הַשַּׁבָּ֖֜ת לְקַדְּשֽׁ֗וֹ\nRemember the sabbath day, to keep it holy.\n\n[2] Deuteronomy 5:15 (Deuteronomy)\nוְזָכַרְתָּ֞֗ כִּ֣י־עֶ֤֥בֶד הָיִ֣֙יתָ֙ ׀ בְּאֶ֣רֶץ מִצְרַ֔֗יִם וַיֹּצִ֨אֲךָ֜֩ יְהוָ֤֨ה אֱלֹהֶ֤֙יךָ֙ מִשָּׁ֔ם֙ בְּיָ֤֥ד חֲזָקָ֖ה֙ וּבִזְרֹ֣עַ נְטוּיָ֑֔ה עַל־כֵּ֗ן צִוְּךָ֙ יְהוָ֣ה אֱלֹהֶ֔יךָ לַעֲשׂ֖וֹת אֶת־י֥וֹם הַשַׁבָּֽת׃ (ס)\nAnd thou shalt remember that thou was a servant in the land of Egypt, and the LORD thy God brought thee out thence by a mighty hand and by an outstretched arm; therefore the LORD thy God commanded thee to keep the sabbath day.\n\n[3] Mishneh Torah, Prayer and the Priestly Blessing 13:20 (Mishneh Torah, Prayer and the Priestly Blessing)\nראש חדש אדר שחל להיות בשבת קורין בפרשת שקלים ומפטירין ביהוידע הכהן וכן אם חל ראש חדש אדר להיות בתוך השבת ואפילו בערב שבת מקדימין וקורין בשבת שלפניו בפרשת שקלים בשנייה קורין זכור ומפטירין פקדתי את אשר עשה עמלק אי זו היא שבת שנייה כל שחל פורים להיות בתוכה ואפי' בערב שבת בשלישית קורין פרה אדומה ומפטירין וזרקתי עליכם ואי זו היא שבת שלישית הסמוכה לרביעית ברביעית קורין החדש הזה ומפטירין בראשון באחד לחדש ואי זו היא רביעית כל שחל ראש חדש ניסן להיות בתוכה ואפילו בערב שבת.\nWhen the first day of the month of Adar falls on a Sabbath, the section concerning the Half Shekel (Exodus 30:11-16) is read; and the lesson from the Prophets is that relating to Jehoiadah the Priest (II Kings 11:17-12:17). When the first of Adar falls on a weekday, even on a Friday, the section concerning the Half-Shekel is read on the previous Sabbath. On the second Sabbath of the month, the section commencing \"Remember\" (Deuteronomy 25:17-19) is read. The lesson from the Prophets is that beginning, \"I remember that which Amalek did to Israel\" (I Samuel 15:1-34). What is meant by the second Sabbath? It is the Sabbath preceding the week in which the Feast of Lots occurs, even if that falls on Friday. On the third Sabbath, the section concerning the Red Heifer (Numbers 19:1-22) is read. The lesson from the Prophets is that containing the verse, \"And I will sprinkle upon you\" (Ezekiel 36:16-36). What is meant by the third Sabbath? That immediately preceding the fourth. On the fourth Sabbath, the section beginning, \"This month\" (Exodus 12:1-20) is read. The lesson from the Prophets is that beginning \"In the first month, on the first day of the month (Ezekiel 45:18-46:15). The fourth Sabbath is that beginning the week in which the first of Nissan occurs, even if it falls on Friday.\n\n[4] Mishneh Torah, Prayer and the Priestly Blessing 13:8 (Mishneh Torah, Prayer and the Priestly Blessing)\nמפסיקין למועדות וליוה\"כ וקוראין בענין המועד לא בסדר שבת ומשה תיקן להם לישראל שיהו קוראין בכל מועד ענינו ושואלין ודורשין בענינו של יום בכל מועד ומועד ומה הן קורין בפסח בפרשת מועדות שבתורת כהנים וכבר נהגו העם לקרות ביום ראשון משכו וקחו לכם ומפטירין בפסח גלגל וביום טוב שני שור או כשב ומפטירין בפסח יאשיהו בשלישי קדש לי כל בכור ברביעי אם כסף תלוה בחמישי פסל לך בששי ויעשו בני ישראל את הפסח במועדו ביום טוב אחרון ויהי בשלח עד סוף השירה עד כי אני ה' רופאך ומפטירין וידבר דוד ובשמיני כל הבכור ומפטירין עוד היום.\nThe regular sequence is interrupted for the three Festivals and for the Day of Atonement, when we read a section appertaining to the Festival and not the weekly portion of the Sabbath. Moses ordained that on each festival a section bearing upon it should be read. On every festival too, the discussion and discourse are on the topic of the day. What sections are read? On Passover, from the section concerning the festivals in the book of Leviticus (22:26-23:44). The people have however the custom of reading on the first day that beginning, \"Draw out, and take unto yourselves lambs (Exodus 12:21-51); and the lesson from the Prophets is the account of the Passover at Gilgal (Joshua 5:2-15). On the second day, that beginning, \"When a bullock or sheep\" (Leviticus 22:26-23:44); and the lesson from the Prophets is the account of Josiah's Celebration of the Passover (II Kings 23:1-25). On the third day, that beginning, \"Sanctify unto me all the first born\" (Exodus 13:1-16). On the fourth day, that beginning, \"If thou lend money\" (Exodus 22:24-23:19). On the fifth day, that beginning, \"Hew thee two tables of stone\" (ibid. 34:1-26). On the sixth day, that beginning, \"Let the children of Israel keep the Passover in its appointed season\" (Numbers 9:1-14). On the seventh day, that beginning, \"And it came to pass when Pharaoh had let the people go\" (Exodus 13:17-15:26) to the end of the Song, and up to the words \"I am the Lord that healeth thee\"; and the lesson from the Prophets is that beginning, \"And David spoke\" (II Samuel 22:1-51). On the eighth day, that beginning, \"All the firstling males\" (Deuteronomy 15:19-16:17); and the lesson from the Prophets is that beginning, \"This very day\" (Isaiah 10:32-12:6).\n\n[5] Berakhot 13a:1 (Berakhot)\nלא שיעקר יעקב ממקומו אלא ישראל עיקר ויעקב טפל לו וכן הוא אומר (ישעיהו מג, יח) אל תזכרו ראשונות וקדמוניות אל תתבוננו אל תזכרו ראשונות זה שעבוד מלכיות וקדמוניות אל תתבוננו זו יציאת מצרים (ישעיהו מג, יט)\nIt is not intended that the name Jacob shall be obliterated, but that Israel will be fundamental and Jacob secondary. Similarly the Scriptures state, \"Remember ye not the former things, neither consider the things of old\" (Is. xliii. 18) — \"Remember ye not the former things,\" i.e. the servitude of the kingdoms, \"neither consider the things of old,\" i.e. the exodus from Egypt. \"Behold I will do a new thing ; now shall it spring forth\" (ibid. 5:19). Rab Joseph taught :\n\n[6] Mishneh Torah, Blessings 2:5 (Mishneh Torah, Blessings)\nבשבתות ובימים טובים מתחיל בנחמה ומסיים בנחמה ואומר קדושת היום באמצע כיצד מתחיל נחמנו יי' אלהינו בציון עירך או רחם יי' אלהינו על ישראל עמך ועל ירושלים עירך ומסיים מנחם עמו ישראל בבנין ירושלים או בונה ירושלים ואומר באמצע בשבת אלהינו ואלהי אבותינו רצה והחליצנו יי' אלהינו במצותיך ובמצות יום השביעי הגדול והקדוש הזה כי יום זה גדול וקדוש הוא מלפניך נשבות בו וננוח בו באהבה כמצות רצונך ברצונך הנח לנו יי' אלהינו ואל תהא עלינו צרה ורעה ויגון ואנחה ביום מנוחתנו ובימים טובים אומר יעלה ויבא וכן בראשי חדשים ובחולו של מועד מוסיף באמצע ברכה שלישית יעלה ויבא.\nOn Sabbaths and Festivals, one begins [this blessing] and concludes it with Consolation, and includes a reference to the special holy character of the day. One begins, \"Comfort us, O Lord our God, in Zion Thy city\"; or \"Have mercy, O Lord our God upon Israel, Thy people, and upon Jerusalem, Thy city\", and ends, \"Who comfortest Thy people Israel in the rebuilding of Jerusalem\", or \"Who rebuildest Jerusalem\". In the middle of the blessing one adds, \"O our God and God of our fathers, be pleased to fortify us by Thy commandments, and especially by the commandment of this great and holy seventh day, (since this day is great and holy before Thee ), we will rest and repose thereon (in love) in accordance with the precept of Thy will. (In Thy favor, O Lord our God, grant us repose), and let there be among us no trouble, evil, sorrow nor sighing on the day of our rest\". On the Festivals the formula beginning, \"May our remembrance rise and come\" is added in the third blessing, as also on the first day of the month and on the intermediate days of the festivals.\n\n[7] Mishneh Torah, Prayer and the Priestly Blessing 12:1 (Mishneh Torah, Prayer and the Priestly Blessing)\nמשה רבינו תיקן להם לישראל שיהו קורין בתורה ברבים בשבת ובשני ובחמישי בשחרית כדי שלא ישהו שלשה ימים בלא שמיעת תורה ועזרא תיקן שיהו קורין כן במנחה בכל שבת משום יושבי קרנות וגם הוא תיקן שיהו קורין בשני ובחמישי שלשה בני אדם ולא יקראו פחות מעשרה פסוקים.\nMoses, our teacher, established the rule for Israel that they should read the Law publicly on Sabbaths and also on the second and fifth days of the week, during the morning service, so that three days shall not elapse without hearing the Law. Ezra established the rule that the Torah should be read at the afternoon service, every Sabbath for the benefit of those who would otherwise spend the day vacuously. He also ordained that on the second and fifth days of the week, three persons should be called to the reading of the Law and that they should read not less than (three verses each) [ten verses].\n\nAnswer segments:\n(0) sources=[]: The command appears in **Exodus 20:8**: \n(1) sources=[1]: זָכ֛וֹר֩ אֶת־י֥֨וֹם הַשַּׁבָּ֖֜ת לְקַדְּשֽׁ֗וֹ\n(2) sources=[]: , \n(3) sources=[1]: \"Remember the sabbath day, to keep it holy.\"\n(4) sources=[]: \n\n**How the Gemara uses this verse**\n\nBerakhot 20b pairs this verse with its counterpart in Deuteronomy. Raba explains that \n(5) sources=[0]: the Scriptures declare, \"Remember the Sabbath day to keep it holy\" (Exod. xx. 8) and \"Observe the Sabbath to keep it holy\" (Deut. v. 12) — everyone who has to \"observe\" must likewise \"remember\"; and since women must \"observe,\" so must they \"remember.\"\n(6) sources=[]:  In the Aramaic: \n(7) sources=[0]: כל שישנו בשמירה ישנו בזכירה\n(8) sources=[]: .\n\nA note on numbering: the Hebrew text of the Gemara labels the verse \n(9) sources=[0]: (שמות כ, ז)\n(10) sources=[]: , while the English translation gives Exod. xx. 8. Verse numbering differs between editions, but both refer to the same verse.\n\n**A related \"remember\" in Deuteronomy**\n\nDeuteronomy's version of the Sabbath command also uses the root ז־כ־ר, though in a different sense. It refers to remembering the Exodus as the reason for the Sabbath: \n(11) sources=[2]: \"And thou shalt remember that thou was a servant in the land of Egypt... therefore the LORD thy God commanded thee to keep the sabbath day.\""
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011Cgsdgcn7NYMcR8mxwVpE3",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Exodus 20:8 contains the command, per source 1.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Hebrew text matches source 1.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches English of Exodus 20:8.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Berakhot 20b does pair Exodus and Deuteronomy verses; Raba explains it.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Quotes source 0 accurately.\"},{\"i\":6,\"verdict\":\"partial\",\"note\":\"Says 'Aramaic' but only introduces quote; the quoted phrase is Hebrew/Aramaic Gemara text, label unverified.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Text appears in source 0.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Source 0 Hebrew cites שמות כ, ז.\"},{\"i\":10,\"verdict\":\"partial\",\"note\":\"Hebrew vs English numbering difference is shown; claim about editions differing is not in sources.\"},{\"i\":11,\"verdict\":\"partial\",\"note\":\"Quote is accurate, but the claim about root ז־כ־ר and its different sense is interpretation beyond source 2.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 5481,
+   "output_tokens": 493,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

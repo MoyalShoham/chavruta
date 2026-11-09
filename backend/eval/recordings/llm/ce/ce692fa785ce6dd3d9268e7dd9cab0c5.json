@@ -1,0 +1,93 @@
+{
+ "key": "ce692fa785ce6dd3d9268e7dd9cab0c5",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: How do the daily prayers correspond to the daily offerings?\n\nSources:\n[0] Mishneh Torah, Prayer and the Priestly Blessing 1:5 (Mishneh Torah, Prayer and the Priestly Blessing)\nוכן תקנו שיהא מנין התפלות כמנין הקרבנות שתי תפלות בכל יום כנגד שני תמידין וכל יום שיש קרבן מוסף תקנו בו תפלה שלישית כנגד קרבן מוסף ותפלה שהיא כנגד תמיד של בקר היא הנקראת תפלת השחר ותפלה שכנגד תמיד של בין הערבים היא הנקראת תפלת מנחה ותפלה שכנגד המוספין היא נקראת תפלת המוספין.\nThus, too, they ordained that the Services of Prayer should be equal in number to the Sacrifices—two services of prayer daily, corresponding to the two daily offerings. And for the day on which an additional offering was ordained, they instituted a third prayer, corresponding to the additional offering. The Service which corresponds to the daily morning sacrifice is called the Morning Prayer. The Service which corresponds to the Afternoon Sacrifice is called the Afternoon Prayer, and the Service corresponding to the Additional offering is called the Additional Prayer.\n\n[1] Mishneh Torah, Prayer and the Priestly Blessing 1:2 (Mishneh Torah, Prayer and the Priestly Blessing)\nולפיכך נשים ועבדים חייבין בתפלה לפי שהיא מצות עשה שלא הזמן גרמא אלא חיוב מצוה זו כך הוא שיהא אדם מתחנן ומתפלל בכל יום ומגיד שבחו של הקדוש ברוך הוא ואח\"כ שואל צרכיו שהוא צריך להם בבקשה ובתחנה ואחר כך נותן שבח והודיה לה' על הטובה שהשפיע לו כל אחד לפי כחו.\nHence, women and slaves are under an obligation to pray, this being a duty, the fulfillment of which is independent of set periods. The obligation in this precept is that every person should daily, according to his ability, offer up supplication and prayer; first uttering praises of God, then, with humble supplication and petition ask for all that he needs, and finally offer praise and thanksgiving to the Eternal for the benefits already bestowed upon him in rich measure.\n\n[2] Mishneh Torah, Prayer and the Priestly Blessing 1:9 (Mishneh Torah, Prayer and the Priestly Blessing)\nתפלות אלו אין פוחתין מהן אבל מוסיפין עליהם אם רצה אדם להתפלל כל היום כולו הרשות בידו וכל אותן התפלות שיוסיף כמו מקריב נדבות לפיכך צריך שיחדש דבר בכל ברכה וברכה מן האמצעיות מעין הברכות ואם חידש אפילו בברכה אחת דיו כדי להודיע שהיא נדבה ולא חובה ושלש ראשונות ושלש אחרונות לעולם אין מוסיפין בהן ולא פוחתין מהן ואין משנין בהן דבר.\nThe number of these services may not be diminished but may be increased. If a person wishes to pray the whole day, he may do so. And the prayers he adds are accounted to him as if he brought free-will offerings. He must accordingly add in each of the middle blessings a thought appropriate to the particular blessing. If this is done in one of the blessings only, that is sufficient, the object being to make it manifest that the prayer is voluntary and not obligatory. In the first three and last three blessings there must be no addition, diminution or change.\n\n[3] Mishneh Torah, Prayer and the Priestly Blessing 1:1 (Mishneh Torah, Prayer and the Priestly Blessing)\nמצות עשה להתפלל בכל יום שנאמר ועבדתם את ה' אלהיכם מפי השמועה למדו שעבודה זו היא תפלה שנאמר ולעבדו בכל לבבכם אמרו חכמים אי זו היא עבודה שבלב זו תפלה ואין מנין התפלות מן התורה ואין משנה התפלה הזאת מן התורה ואין לתפלה זמן קבוע מן התורה.\nTo pray daily is an affirmative duty, as it is said, \"And ye shall serve the Lord, your God\" (Exodus 23:25). The service, here referred to, according to the teaching of tradition, is Prayer, as it is said, \"And to serve Him with all your heart\" (Deuteronomy 11:13), on which the sages commented, \"What may be described as Service of the Heart? Prayer\". The number of prayers is not prescribed in the Torah. No form of prayer is prescribed in the Torah. Nor does the Torah prescribe a fixed time for Prayer.\n\n[4] Mishneh Torah, Prayer and the Priestly Blessing 1:3 (Mishneh Torah, Prayer and the Priestly Blessing)\nאם היה רגיל מרבה בתחנה ובקשה ואם היה ערל שפתים מדבר כפי יכלתו ובכל עת שירצה וכן מנין התפלות כל אחד כפי יכלתו יש מתפלל פעם אחת ביום ויש מתפללין פעמים הרבה והכל יהיו מתפללין נכח המקדש בכ\"מ שיהיה וכן היה הדבר תמיד ממשה רבינו ועד עזרא.\nOne who was fluent, would offer up many prayers and supplications. If one was slow of speech, he would pray as he could and whenever he pleased. Thus also, the number of separate services depended on an individual's ability. One would pray once daily; others, several times in the day. All, however, turned during prayer to the Sanctuary, in whichever direction that might be. This was the uniform practice from the times of Moses to those of Ezra.\n\n[5] Tosafot on Berakhot 2a:7:1 (Tosafot on Berakhot)\nליתני דשחרית ברישא – כדאשכחן בתמיד דכתיב של בקר תחלה:\n[THE TANNA] SHOULD FIRST TEACH [US OF THE OBLIGATION TO RECITE KERIAS SHEMA] IN THE MORNING. There must be a reason why the Gemara suggests that the Kerias Shema of the morning should be taught first. Tosfos explains: Just as we find with the daily tamid offerings, where the verse lists the morning tamid first. So too, the Mishna should follow the lead of the Torah and discuss the Kerias Shema obligation of the morning first.\n\n[6] Mishneh Torah, Prayer and the Priestly Blessing 5:8 (Mishneh Torah, Prayer and the Priestly Blessing)\nהאומנין שהיו עושין מלאכה בראש האילן או בראש הנדבך או בראש הכותל והגיע זמן תפלה יורדין למטה ומתפללין וחוזרין למלאכתן ואם היו בראש הזית או בראש התאנה מתפללין במקומן מפני שטרחן מרובה ומה הן מתפללין אם היו עושין בסעודתן בלבד מתפללין שלש תפלות של תשעה עשר ברכות היו עושין בשכרן מתפללין הביננו ובין כך ובין כך אין יורדין לפני התיבה ואין נושאין את כפיהן.\nLabourers who are working on the top of a wall, or on the top of a tree, when the time for prayer arrives, should descend to the ground, recite the prayer, and resume their labours. If they are on the top of an olive tree or a fig tree, they recite it where they are, as it would entail excessive trouble to descend. What prayer do they recite? Those who work for board only recite the three daily prayers, of nineteen blessings each. If they were working for wages, they recite Havinenu [Summary of the Middle Blessings, together with the first three and last three blessings]. In either case, no congregational service is held, nor is the priestly benediction pronounced.\n\n[7] Mishneh Torah, Prayer and the Priestly Blessing 7:17 (Mishneh Torah, Prayer and the Priestly Blessing)\nסדר תפלות כך הוא בשחר משכים אדם ומברך ברכות אלו וקורא הזמירות ומברך לפניהם ולאחריהם וקורא אחר כך שמע ומברך לפניה ולאחריה ומדלג קדושה מן הברכה ראשונה שלפניה שאין היחיד אומר קדושה וכשהוא חותם גאל ישראל מיד יעמוד כדי שיסמוך גאולה לתפלה ומתפלל מעומד כמו שאמרנו וכשישלים ישב ויפול על פניו ומתחנן ומגביה ראשו ומתחנן מעט והוא יושב בדברי תחנונים ואח\"כ יקרא תהלה לדוד (מיושב) ויתחנן כפי כחו ויפטר למעשיו.\nThe order of the prayers is as follows. In the morning, on arising, a person recites the blessings mentioned above; then reads the Psalms—reciting the appropriate blessings before and after them. Then he reads the Shema, reciting the blessings before and after it, omitting the Kedusha from the former of the two blessings before the Shema, this not being recited by an individual in his private devotions. When he has concluded the blessing after the Shema, which closes with the phrase, \"Who redeemedst Israel\" he immediately rises, so that the reference to the Redemption may be connected with the Amidah prayer, which, as already stated by us, is recited standing. When this prayer is concluded, he sits down, bows his head, offers up supplications, raises his head and still seated, offers further supplications. Then he reads \"The Psalm of David\" (Psalm 145), offers according to his ability, more supplications, after which he proceeds to his affairs.\n\nAnswer segments:\n(0) sources=[]: **Rambam on prayers and offerings**\n\nIn *Hilchot Tefillah*, the Rambam lays out the parallel. The Sages \n(1) sources=[0]: ordained that the Services of Prayer should be equal in number to the Sacrifices—two services of prayer daily, corresponding to the two daily offerings.\n(2) sources=[]:  In the original: \n(3) sources=[0]: שתי תפלות בכל יום כנגד שני תמידין\n(4) sources=[]: .\n\nHe maps them as follows:\n- **Shacharit**: \n(5) sources=[0]: The Service which corresponds to the daily morning sacrifice is called the Morning Prayer.\n(6) sources=[]: \n- **Mincha**: \n(7) sources=[0]: The Service which corresponds to the Afternoon Sacrifice is called the Afternoon Prayer\n(8) sources=[]: \n- **Musaf**: \n(9) sources=[0]: for the day on which an additional offering was ordained, they instituted a third prayer, corresponding to the additional offering.\n(10) sources=[]: \n\n**Background**\n\nThis structure is rabbinic. The Rambam holds that \n(11) sources=[3]: the number of prayers is not prescribed in the Torah\n(12) sources=[]: , and that from Moses to Ezra \n(13) sources=[4]: the number of separate services depended on an individual's ability.\n(14) sources=[]: \n\n**Extension of the parallel**\n\nThe Rambam carries the analogy further. Extra prayers \n(15) sources=[2]: are accounted to him as if he brought free-will offerings\n(16) sources=[]:  (*nedavot*). For that reason one must add something new in the middle blessings, \n(17) sources=[2]: the object being to make it manifest that the prayer is voluntary and not obligatory.\n(18) sources=[]: \n\n**A related echo in Tosafot**\n\nTosafot uses the tamid to explain why the Gemara expected the Mishnah to teach the morning Shema first: \n(19) sources=[5]: Just as we find with the daily tamid offerings, where the verse lists the morning tamid first.\n(20) sources=[]: \n\n**What these sources don't cover**\n\nNone of the provided sources explains how the evening prayer (Ma'ariv) fits into this framework. For that, you'd need additional texts."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdrXd5peBayrcNgamUQ",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Introduces Rambam's Hilchot Tefillah on the parallel; source 0 is from Prayer and the Priestly Blessing.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Matches source 0 closely.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transitional phrase.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Exact Hebrew quote from source 0.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Transition introducing the mapping.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches source 0.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Label only.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches source 0.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Label only.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches source 0 on additional offering and third prayer.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Heading/transition.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Source 3 says number of prayers is not prescribed in the Torah.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Connective phrase.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Source 4 says number depended on ability, from Moses to Ezra.\"},{\"i\":14,\"verdict\":\"no_claim\",\"note\":\"Heading/transition.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Matches source 2 on added prayers as free-will offerings.\"},{\"i\":16,\"verdict\":\"supported\",\"note\":\"Source 2 says add something to middle blessings; nedavot is fair term.\"},{\"i\":17,\"verdict\":\"supported\",\"note\":\"Matches source 2.\"},{\"i\":18,\"verdict\":\"no_claim\",\"note\":\"Heading/transition.\"},{\"i\":19,\"verdict\":\"supported\",\"note\":\"Matches Tosafot in source 5.\"},{\"i\":20,\"verdict\":\"no_claim\",\"note\":\"Heading/transition.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4838,
+   "output_tokens": 702,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

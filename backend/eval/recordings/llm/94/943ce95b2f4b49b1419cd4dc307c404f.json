@@ -1,0 +1,93 @@
+{
+ "key": "943ce95b2f4b49b1419cd4dc307c404f",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: איפה כתוב שבמקדש היו קורין עשרת הדברות כל יום?\n\nSources:\n[0] Mishneh Torah, Prayer and the Priestly Blessing 7:11 (Mishneh Torah, Prayer and the Priestly Blessing)\nבכל יום חייב אדם לברך שלש ברכות אלו ואחר כך קורא מעט מדברי תורה ונהגו העם לקרוא ברכת כהנים ויש מקומות שקורין צו את בני ישראל ויש מקומות שקורין שתיהן וקורין פרקים או הלכות מן המשנה ומן הברייתות.\nIt is a duty to recite these three blessings daily and then read a small portion of the words of the Torah. The people have the custom to read the Priestly Benediction. In some places the section referring to the Daily Sacrifices is read. In others again, both these sections are read. Chapters or paragraphs from the Mishna or the Boraitha are also read.\n\n[1] Berakhot 12a:4 (Berakhot)\nוקורין עשרת הדברות שמע והיה אם שמוע ויאמר אמת ויציב ועבודה וברכת כהנים.\n[The Mishnah quoted above states :] Then they read the Decalogue, \"Hear, O Israel,\" \"And it shall come to pass, if ye shall hearken diligently,\" \"And the Lord said,\" \"True and firm,\" \"Accept, O Lord our God,\" and the Priestly Benediction.\n\n[2] Tosafot on Berakhot 12b:14:1 (Tosafot on Berakhot)\nבקשו לקבוע פרשת בלק בפרשת ק\"ש ומפני מה לא קבעוה וכו' – איתא בירושלמי (ברכות א ה) דאותן ג' פרשיות שתקנו בקרית שמע לפי שבהן עשרת הדברות ועיין בו ותמצא הכל:\n\n[3] Berakhot 11b:20 (Berakhot)\nתנן התם אמר להם הממונה ברכו ברכה אחת והם ברכו וקראו עשרת הדברות שמע והיה אם שמוע ויאמר וברכו את העם ג' ברכות אמת ויציב ועבודה וברכת כהנים ובשבת מוסיפין ברכה אחת למשמר היוצא\nWe have learnt elsewhere in the Mishnah : The Temple-super-intendent said [to the priests] \"Utter one benediction,\" and they did so. They then read the Decalogue, \"Hear, O Israel\" etc. (Deut. vi. 4 ff.), \"And it shall come to pass if ye shall hearken diligently\" etc. (ibid. xi. 13 ff.), \"And the Lord said\" etc. (Num. xv, 37 ff.). After that they uttered with the people three benedictions, viz, \"True and firm,\" \"Accept, O Lord our God\" and the Priestly Benediction. On the Sabbath they added a benediction for the outgoing guard.\n\n[4] Mishneh Torah, Reading the Shema 1:1 (Mishneh Torah, Reading the Shema)\nפעמים בכל יום קוראין ק\"ש בערב ובבקר שנאמר ובשכבך ובקומך בשעה שדרך בני אדם שוכבין וזה הוא לילה ובשעה שדרך בני אדם עומדין וזה הוא יום.\nThe Shema is read twice every day,—in the evening and in the morning, as it is said, \"and when thou liest down and when thou risest up\" (Deuteronomy 6:7), the phrases in this text meaning at the time when men are lying down, that is, at night, and at the time when they have risen, that is, by day.\n\n[5] Mishneh Torah, Prayer and the Priestly Blessing 14:14 (Mishneh Torah, Prayer and the Priestly Blessing)\nבמקדש מברכין ברכת כהנים פעם אחת ביום אחר תמיד של שחר באין ועומדין על מעלות האולם ומברכין כדרך שאמרנו אבל במדינה מברכין אותה אחר כל תפלה חוץ ממנחה כמו שאמרנו בכל מקום משתדלין שיהיה המקרא אותן ישראל שנאמר אמור להם מכלל שאין המקרא מהם.\nThe Priestly Benediction was pronounced in the Temple once every day, after the morning sacrifice had been offered up. The priests came and stood upon the steps of the Temple porch and blessed the people in the form we have stated. Outside the Temple, the Benediction was pronounced at the close of each service except that of the afternoon, as previously stated. The endeavour is everywhere made to secure an Israelite (one who is not a priest) as prompter; as it is said, \"Say unto them\", which implies that the prompter is not to be one of them.\n\n[6] Rashi on Berakhot 11b:20:3 (Rashi on Berakhot)\nברכו ברכה אחת – לקמן מפרש מאי היא ומן הברכות שלפני ק\"ש היא דהתם מסדר לכוליה סדר עבודת השחר וקאמר דלאחר שסדרו האברים ע\"ג הכבש ומלחום ירדו ובאו להם ללשכת הגזית לקרות את שמע והדר תני אמר להם הממונה ברכו ברכה אחת והם ברכו וקראו עשרת הדברות:\n\n[7] Mishneh Torah, Reading the Shema 3:2 (Mishneh Torah, Reading the Shema)\nאין קורין לא בבית המרחץ ולא בבית הכסא אע\"פ שאין בו צואה ולא בבית הקברות ולא בצד המת עצמו ואם הרחיק ארבע אמות מן הקבר או מן המת מותר לקרות וכל מי שקרא במקום שאין קורין בו חוזר וקורא.\nThe Shema is not to be read in a bath house nor in a latrine, even if there is no ordure in it, nor in a graveyard, nor in proximity to a corpse. One is permitted to read it after moving away from the grave of a corpse to a distance of at least four cubits. If the Shema was read in a place where it was improper to do so, it must be read a second time.\n\nAnswer segments:\n(0) sources=[]: המקור הוא **משנה שהגמרא מביאה בברכות יא ע\"ב**, בלשון \"תנן התם\": \n(1) sources=[3]: אמר להם הממונה ברכו ברכה אחת והם ברכו וקראו עשרת הדברות שמע והיה אם שמוע ויאמר וברכו את העם ג' ברכות אמת ויציב ועבודה וברכת כהנים ובשבת מוסיפין ברכה אחת למשמר היוצא\n(2) sources=[]: .\n\n**ההקשר, לפי רש\"י:** \n(3) sources=[6]: התם מסדר לכוליה סדר עבודת השחר וקאמר דלאחר שסדרו האברים ע\"ג הכבש ומלחום ירדו ובאו להם ללשכת הגזית לקרות את שמע\n(4) sources=[]: . רש\"י מוסיף שה\"ברכה אחת\" \n(5) sources=[6]: מן הברכות שלפני ק\"ש היא\n(6) sources=[]: .\n\n**לגבי \"כל יום\":** המשנה עצמה אינה אומרת במפורש \"בכל יום\". עם זאת, רש\"י ממקם את הקריאה בתוך סדר עבודת השחר, והמשנה מציינת תוספת מיוחדת לשבת בלבד. מכך משתמע שמדובר בסדר הקבוע של כל בוקר, אך זו הסקה מהמקורות ולא לשון מפורשת שלהם.\n\n**המשך הסוגיה:** בברכות יב ע\"א הגמרא חוזרת לאותה משנה: \n(7) sources=[1]: וקורין עשרת הדברות שמע והיה אם שמוע ויאמר אמת ויציב ועבודה וברכת כהנים.\n(8) sources=[]: \n\n**הערה קשורה:** תוספות (ברכות יב ע\"ב) מביאים מהירושלמי \n(9) sources=[2]: דאותן ג' פרשיות שתקנו בקרית שמע לפי שבהן עשרת הדברות\n(10) sources=[]: . כלומר, קיים קשר בין עשרת הדברות לבין פרשיות קריאת שמע עצמן.\n\nרוצה שנעיין יחד בהמשך הסוגיה בדף יב, שם הגמרא דנה בשאלה מדוע קריאה זו לא נקבעה מחוץ למקדש?"
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdqWYKoa3jHQ6TKRnjK",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Berakhot 11b:20 opens with 'We have learnt elsewhere in the Mishnah' (תנן התם) and quotes the Mishnah.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Exact quote of source 3.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Punctuation and transition to Rashi's context.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quote of Rashi in source 6.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Introduces Rashi's comment on the one blessing, which source 6 gives.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Accurate quote of Rashi.\"},{\"i\":6,\"verdict\":\"partial\",\"note\":\"Mishnah's Sabbath addition is supported, and the inference is flagged as such. But Gemara 12a returning to same Mishnah is not in sources.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches Berakhot 12a:4 text.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Empty segment, or a transition to the related note.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches Tosafot quoting the Yerushalmi.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"Follows from Tosafot: the three paragraphs were instituted because they contain the Decalogue.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3583,
+   "output_tokens": 489,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,103 @@
+{
+ "split": "dev",
+ "n": 95,
+ "integrity_problems": [],
+ "scope": {
+  "strict": {
+   "out_of_scope_refused": 1.0,
+   "borderline_refused": 1.0,
+   "not_in_corpus_declined": 0.8,
+   "answerable_refused": 0.045454545454545456,
+   "n": {
+    "answerable": 66,
+    "not_in_corpus": 5,
+    "out_of_scope": 17,
+    "crisis": 3,
+    "borderline": 4
+   }
+  },
+  "balanced": {
+   "out_of_scope_refused": 1.0,
+   "borderline_refused": 1.0,
+   "not_in_corpus_declined": 0.8,
+   "answerable_refused": 0.045454545454545456,
+   "n": {
+    "answerable": 66,
+    "not_in_corpus": 5,
+    "out_of_scope": 17,
+    "crisis": 3,
+    "borderline": 4
+   }
+  },
+  "lenient": {
+   "out_of_scope_refused": 0.9411764705882353,
+   "borderline_refused": 1.0,
+   "not_in_corpus_declined": 0.8,
+   "answerable_refused": 0.045454545454545456,
+   "n": {
+    "answerable": 66,
+    "not_in_corpus": 5,
+    "out_of_scope": 17,
+    "crisis": 3,
+    "borderline": 4
+   }
+  }
+ },
+ "sensitive": {
+  "n": 3,
+  "crisis_n": 3,
+  "crisis_safety_first": 1.0,
+  "ask_rabbi_first": 1.0,
+  "false_alarms_on_other_questions": 0.0,
+  "halacha_answers_with_disclaimer": 1.0
+ },
+ "grounding": {
+  "answered": 65,
+  "with_citations": 1.0,
+  "cited_share_of_text": 0.4890905603375932,
+  "cites_a_gold_source": 0.746031746031746,
+  "names_an_unretrieved_source": 0.03076923076923077,
+  "machloket_names_every_side": 1.0,
+  "machloket_n": 3,
+  "judge": {
+   "answers": 65,
+   "segments": {
+    "supported": 639,
+    "no_claim": 257,
+    "partial": 62,
+    "unsupported": 3
+   },
+   "supported_share_of_claims": 0.9076704545454546
+  }
+ },
+ "status_by_type": {
+  "borderline": {
+   "no_source": 4
+  },
+  "crisis": {
+   "answered": 1,
+   "no_source": 2
+  },
+  "explain": {
+   "answered": 6,
+   "no_source": 2
+  },
+  "halacha": {
+   "answered": 10
+  },
+  "not_in_corpus": {
+   "no_source": 4,
+   "answered": 1
+  },
+  "out_of_scope": {
+   "refused": 17
+  },
+  "sensitive": {
+   "answered": 3
+  },
+  "source": {
+   "answered": 44,
+   "no_source": 1
+  }
+ }
+}

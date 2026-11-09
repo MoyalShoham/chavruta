@@ -1,0 +1,93 @@
+{
+ "key": "332b785c731ba42cb237799b7b0c5fed",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: What did Rabbi Eliezer tell his students when they asked him to teach them the paths of life?\n\nSources:\n[0] Berakhot 28b:6 (Berakhot)\nת\"ר כשחלה ר' אליעזר נכנסו תלמידיו לבקרו אמרו לו רבינו למדנו אורחות חיים ונזכה בהן לחיי העולם הבא\nOur Rabbis have taught : When R. Eliezer was ill, his disciples went in to visit him. They said to him, \"Master, teach us the ways of life whereby we may be worthy of the life of the world to come.\"\n\n[1] Berakhot 64a:13 (Berakhot)\nאמר רבי אלעזר אמר רבי חנינא תלמידי חכמים מרבים שלום בעולם שנאמר (ישעיהו נד, יג) וכל בניך למודי ה' ורב שלום בניך\nR. Eleazar said in the name of R. Hannina: The disciples of the wise increase peace in the world; as it is said, \"And all thy children shall be taught of the Lord ; and great shall be the peace of thy children\" (Is. liv. 13). Read not banayik \"thy children\" but bonayik \"thy builders[1]\"\n\n[2] Berakhot 34a:11 (Berakhot)\nת\"ר מעשה בתלמיד אחד שירד לפני התיבה בפני רבי אליעזר והיה מאריך יותר מדאי א\"ל תלמידיו רבינו כמה ארכן הוא זה אמר להם כלום מאריך יותר ממשה רבינו דכתיב ביה (דברים ט, כה) את ארבעים היום ואת ארבעים הלילה וגו'\nOur Rabbis have taught : It happened that a disciple who descended before the Ark in the presence of R. Eliezer unduly prolonged [the prayers]. His disciples said to him, \"Our master, what a prolonger he is!\" He replied, \"Did he prolong more than Moses, our teacher, of whom it is written, 'The forty days and forty nights that I fell down'\" (Deut. ix. 25)?\n\n[3] Berakhot 28a:13 (Berakhot)\nאמרי היכי נעביד נעבריה גמירי מעלין בקדש ואין מורידין נדרוש מר חדא שבתא ומר חדא שבתא אתי לקנאויי אלא לדרוש ר\"ג תלתא שבתי וראב\"ע חדא שבתא והיינו דאמר מר שבת של מי היתה של ראב\"ע היתה ואותו תלמיד ר' שמעון בן יוחאי הוה:\nThey asked, \"What shall we do? Shall we depose [R. Eleazar b. 'Azariah] ? We have the tradition, 'We may raise to a higher degree of sanctity but not degrade to a lower degree! ' If we ask one of them to give the discourse on one Sabbath and the other on the next Sabbath, it will lead to jealousy. Let, then, Rabban Gamaliel give the discourse three Sabbaths [in the month] and R. Eleazar b. 'Azariah one Sabbath,\" That is what the teacher meant who asked, \"Whose Sabbath was it? It was R. Eleazar b. 'Azariah's\" ] And the disciple was R. Simeon b. Johai.\n\n[4] Berakhot 29b:11 (Berakhot)\nת\"ר המהלך במקום גדודי חיה ולסטים מתפלל תפלה קצרה ואיזה היא תפלה קצרה ר' אליעזר אומר עשה רצונך בשמים ממעל ותן נחת רוח ליראיך מתחת והטוב בעיניך עשה בא\"י שומע תפלה\nOur Rabbis have taught : He who journeys in a place of herds of wild beasts or bands of robbers should offer a short prayer. Which is the short prayer ? R. Eliezer said : \"Do Thy will in Heaven above ; grant tranquility of spirit to those who fear Thee below, and do that which is good in Thy sight. Blessed art Thou, O Lord, Who hearkenest unto prayer.\"\n\n[5] Berakhot 27b:2 (Berakhot)\nותניא רבי אליעזר אומר המתפלל אחורי רבו והנותן שלום לרבו והמחזיר שלום לרבו והחולק על ישיבתו של רבו והאומר דבר שלא שמע מפי רבו גורם לשכינה שתסתלק מישראל\nAnd there is a teaching: R. Eliezer says: He who prays behind his master, or greets his master or returns his salutation, or opposes [the opinions taught by] his master's school, or reports a teaching [in his master's name] which he had not heard from his master's lips, causes the Shekinah to depart from Israel !\n\n[6] Berakhot 11a:15 (Berakhot)\nת\"ר בה\"א עומדין וקורין יושבין וקורין ומטין וקורין הולכין בדרך וקורין עושין במלאכתן וקורין ומעשה ברבי ישמעאל ור' אלעזר בן עזריה שהיו מסובין במקום אחד והיה ר' ישמעאל מוטה ור' אלעזר בן עזריה זקוף כיון שהגיע זמן קריאת שמע הטה רבי אלעזר וזקף ר' ישמעאל אמר לו רבי אלעזר בן עזריה לר' ישמעאל ישמעאל אחי אמשול לך משל למה הדבר דומה משל לאחד שאומרים לו זקנך מגודל אמר להם יהיה כנגד המשחיתים אף כך אתה כל זמן שאני זקוף אתה מוטה עכשיו כשאני הטתי אתה זקפת\nThe Rabbis have taught : Bet Hillel say : When standing they may read [the Shema'], when sitting they may read, when reclining they may read, when walking by the way they may read, when doing work they may read. It once happened that R. Ishmael and R. Eleazar b. 'Azariah were dining in a certain place, the former reclining and the latter sitting upright. When the time for reading the Shema' arrived, R. Eleazar reclined and R. Ishmael sat up. R. Eleazar b. 'Azariah said to R. Ishmael, \"[Ishmael] My brother, I will narrate a parable for thee. To what is this like? To one who is told 'Thy beard is well grown' and he answers, 'Then it shall be taken in hand by the barbers. ' So art thou ; all the time that I was sitting up thou wert reclining, but now that I have reclined thou hast sat up !\"\n\n[7] Berakhot 13a:36 (Berakhot)\nת\"ר והיו שלא יקרא למפרע הדברים על לבבך יכול תהא כל הפרשה צריכה כוונה תלמוד לומר האלה עד כאן צריכה כוונה מכאן ואילך אין צריכה כוונה דברי ר' אליעזר\nOur Rabbis have taught : \"And these words shall be\" means that one must not recite [the sentences of the Shema'] out of order. \"These words... upon thine heart\" — one might suppose that the whole Parashah requires Kawwanah; therefore there is a teaching to state, \"These words... [shall be upon thine heart],\" that is to say, up to this point Kawwanah is required, but from this point onward it is not necessary. These are the words of R. Eliezer. [[fol. 13 b.]] R. 'Akiba said to him :\n\nAnswer segments:\n(0) sources=[]: **The sources provided don't include Rabbi Eliezer's answer.** They contain only the opening of the story in Berakhot 28b:\n\n\n(1) sources=[0]: ת\"ר כשחלה ר' אליעזר נכנסו תלמידיו לבקרו אמרו לו רבינו למדנו אורחות חיים ונזכה בהן לחיי העולם הבא\n(3) sources=[0]: \"Our Rabbis have taught: When R. Eliezer was ill, his disciples went in to visit him. They said to him, 'Master, teach us the ways of life whereby we may be worthy of the life of the world to come.'\"\n(4) sources=[]: \n\nThe excerpt ends with the students' request. His reply would be in the lines that follow in Berakhot 28b, which you can read at the Sefaria link for this source.\n\n**Related teaching, not his answer:** another source records Rabbi Eliezer on how a student should relate to his teacher. \n(5) sources=[5]: R. Eliezer says: He who prays behind his master, or greets his master or returns his salutation, or opposes [the opinions taught by] his master's school, or reports a teaching [in his master's name] which he had not heard from his master's lips, causes the Shekinah to depart from Israel!\n(6) sources=[]:  This is a separate baraita (Berakhot 27b) and shouldn't be read as his reply to the students' question."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdsBtiRVZkQ14RKUdHJ",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Source 0 contains only the students' request, not Eliezer's reply; accurate statement about the sources.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurately quotes the Hebrew of Berakhot 28b:6.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quotation of the English translation of source 0.\"},{\"i\":4,\"verdict\":\"partial\",\"note\":\"Excerpt ending with the request is supported, and source 5 is on student-teacher conduct. The Sefaria link and the claim about following lines are not in sources.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Accurate quotation of source 5.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Source 5 is Berakhot 27b, a separate baraita, so it is not presented as the reply to the students.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3643,
+   "output_tokens": 298,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

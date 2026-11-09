@@ -1,0 +1,93 @@
+{
+ "key": "7a48f6c2a0e490687584f938909599b6",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: How many blessings are said before and after the Shema in the morning and evening?\n\nSources:\n[0] Mishneh Torah, Reading the Shema 1:5 (Mishneh Torah, Reading the Shema)\nהקורא קריאת שמע מברך לפניה ולאחריה ביום מברך שתים לפניה ואחת לאחריה ובלילה מברך שתים לפניה ושתים לאחריה.\nBlessings are recited before the Shema and after it. When reading the Shema by day, two blessings are recited before it, and one after it. When reading it at night, two blessings are recited before, and two after it.\n\n[1] Mishneh Torah, Prayer and the Priestly Blessing 7:14 (Mishneh Torah, Prayer and the Priestly Blessing)\nחייב אדם לברך מאה ברכות בין היום והלילה ומה הן מאה ברכות אלו כ\"ג ברכות שמנינו בפרק זה ושבע ברכות של קריאת שמע של שחרית וערבית לפניה ולאחריה וכשמתעטף בציצית מברך ברוך אתה יי' אלהינו מלך העולם אשר קדשנו במצותיו וצונו להתעטף בציצית וכשלובש תפילין מברך ברוך אתה יי' אלהינו מלך העולם אשר קדשנו במצותיו וצונו להניח תפילין ושלש תפלות שבכל תפלה מהן שמנה עשרה ברכות הרי שמונים ושש ברכות וכשהוא אוכל שתי סעודות של יום והלילה מברך ארבע עשרה ברכות שבע בכל סעודה אחת כשיטול ידיו תחלה ועל המזון אחת בתחלה ושלש בסוף ועל היין לפניו ולאחריו הרי שבע ברכות הרי מאה ברכות בין הכל.\nA person is in duty bound to recite every complete day one hundred blessings. How are these hundred blessings made up? There are twenty-three blessing which we have enumerated in this chapter; and seven blessings before and after the morning and evening recital of the Shema. When putting on the Zizith , the blessing is recited, \"Blessed art Thou, O Lord our God, King of the Universe, who hast sanctified us with Thy commandments and commanded us to wear a fringed garment\". When putting on the Tephillin (phylacteries), the blessing is recited, \"Blessed art Thou, O Lord our God, King of the Universe, who hast sanctified us with Thy commandments and commanded us to lay the Tephillin \". All these, together with the three daily Services, each consisting of eighteen benedictions, make up eighty-six blessings. When two meals are taken each day, fourteen blessings are recited, seven at each meal, as follows; one blessing on washing the hands, one for the meal, three after its conclusion, one blessing before taking a drink and one after, making seven blessings for each meal.\n\n[2] Tosafot on Berakhot 2a:10:2 (Tosafot on Berakhot)\nמברך שתים לפניה וכו' - (ירושלמי) ושבע ברכות הוי כנגד שבע ביום הללתיך (תהילים קי״ט:קס״ד) ולא קא חשיב יראו עינינו דההיא ברכה תקנו רבנן כדי להמתין לחבריהם בבית הכנסת. ודוקא בבית הכנסת שלהם שהיו עומדים בשדה והם מסוכנים מן המזיקים אבל בבתי כנסיות שלנו אין צריכין להמתין לחבריהם אלא בלילה:\n[ONE RECITES] TWO BLESSINGS BEFORE [SHEMA] ETC. Tosfos discusses the source for the total of seven berachos recited during the day associated with the Shema. (Yerushalmi) The seven blessings recited together with Shema, four in the evening and three in the morning, correspond to the verse - I have praised you with seven blessing during the day (Tehilim 119). But we actually recite eight Berachos each day, five during Maariv, two before Shema and three afterwards, and three during Shacharis, two before Shema and one afterwards? [The Mishna] does not reckon the Beracha יראו עינינו as an eighth Beracha of this series, because that Beracha was instituted by the Rabanan only so that those of the initial minyan should wait in the synagogue for their fellows who arrived late. It was dangerous to leave the late comers alone in the synagogue. The Rabonon instituted that those already in the synagogue recite this last Beracha, while the late arrivals catch up to the minyan, so that they recite the tefilah and leave together. Is this Beracha for everybody? This Beracha is specifically for their synagogues that were in the field away from the cities, and there is a danger from the evil spirits that harm people who are alone, but in our synagogues that are located within city limits, it is not necessary to wait for their late arriving fellows during the day, only at night.\n\n[3] Berakhot 2a:10 (Berakhot)\nאי הכי סיפא דקתני בשחר מברך שתים לפניה ואחת לאחריה ובערב מברך שתים לפניה ושתים לאחריה לתני דערבית ברישא.\nIf this be so, in the sequel where he teaches : In the morning [the reading of the Shema'] is preceded by two benedictions and followed by one; in the evening it is preceded by two and followed by two, let him likewise treat of the evening first !\n\n[4] Berakhot 11a:24 (Berakhot)\nמתני׳ בשחר מברך שתים לפניה ואחת לאחריה ובערב מברך שתים לפניה ושתים לאחריה אחת ארוכה ואחת קצרה\nMISHNAH IV In the morning [the reading of the Shema'] is preceded by two benedictions and followed by one ; in the evening it is preceded by two and followed by two, one long and one short. Where [the Rabbis] order to say a long benediction, it is not permissible to say a short one ;\n\n[5] Mishnah Berakhot 1:4 (Mishnah Berakhot)\nבַּשַּׁחַר מְבָרֵךְ שְׁתַּיִם לְפָנֶיהָ וְאַחַת לְאַחֲרֶיהָ, וּבָעֶרֶב שְׁתַּיִם לְפָנֶיהָ וּשְׁתַּיִם לְאַחֲרֶיהָ. אַחַת אֲרֻכָּה וְאַחַת קְצָרָה. מָקוֹם שֶׁאָמְרוּ לְהַאֲרִיךְ, אֵינוֹ רַשַּׁאי לְקַצֵּר. לְקַצֵּר, אֵינוֹ רַשַּׁאי לְהַאֲרִיךְ. לַחְתֹּם, אֵינוֹ רַשַּׁאי שֶׁלֹּא לַחְתֹּם. וְשֶׁלֹּא לַחְתֹּם, אֵינוֹ רַשַּׁאי לַחְתֹּם:\nIn the morning he recites two blessings before it and one after it; in the evening two before it and two after it, one long and one short. Where they [the sages] said that a long one should be said, he may not say a short one; where they said a short one he may not say a long one [Where they said] to conclude [with a blessing] he is not permitted to not conclude; where they said to not conclude [with a blessing], he may not conclude.\n\n[6] Mishneh Torah, Prayer and the Priestly Blessing 7:10 (Mishneh Torah, Prayer and the Priestly Blessing)\nהמשכים לקרוא בתורה קודם שיקרא קריאת שמע בין קרא בתורה שבכתב בין קרא בתורה שבעל פה נוטל ידיו תחלה ומברך שלש ברכות ואחר כך קורא ואלו הן:אשר קדשנו במצותיו וצונו על דברי תורה והערב נא יי' אלהינו את דברי תורתך בפינו ובפיפיות עמך כל בית ישראל ונהיה אנחנו וצאצאינו וצאצאי עמך יודעי שמך ועוסקי תורתך ברוך אתה יי' המלמד תורה לעמו ישראל ברוך אתה יי' אלהינו מלך העולם אשר בחר בנו מכל העמים ונתן לנו את תורתו ברוך אתה יי' נותן התורה.\nIf one rises early to read the Torah, before he has recited the Shema, whether it is the Written or the Oral Law that he intends to study, he first washes his hands, recites three blessings and then proceeds to his reading. The blessings are as follows: \"Who hast sanctified us by Thy commandments and given us a command concerning the words of the Law. Make pleasant, we beseech Thee, O Lord our God, the words of Thy Law in our mouth and in the mouth of Thy people, all the house of Israel, so that we with our offspring and the offspring of Thy people all the house of Israel may know Thy name and learn Thy Law for its own sake. Blessed art Thou, O Lord, who givest the Law. Blessed art Thou, O Lord our God, King of the Universe, who hast chosen us from all nations and given us Thy Law. Blessed art Thou, O Lord, who givest the Law.\"\n\n[7] Mishneh Torah, Reading the Shema 1:6 (Mishneh Torah, Reading the Shema)\nברכה ראשונה שלפניה ביום יוצר אור ובורא חשך וכו' וברכה שנייה אהבת עולם אהבתנו ושל אחריה אמת ויציב וברכה ראשונה שלפניה בלילה מעריב ערבים וכו' שנייה לה אהבת עולם בית ישראל עמך אהבת כו' וברכה ראשונה על אחריה אמת ואמונה שנייה לה השכיבנו.\nThe former of the two blessings recited before the Shema by day, is that beginning, \"Who formest light and createst darkness.\" The latter is that beginning, \"With everlasting love hast Thou loved us.\" The blessing subsequent to the Shema is that beginning, \"True and Firm.\" The former of the two blessings recited before the Shema at night is that beginning, \"Who bringest on the evening twilight.\" The latter begins \"With everlasting love hast Thou loved Thy people Israel.\" The former of the blessings, recited after it, is that beginning, \"True and trustworthy.\" The latter, that beginning, \"Cause us to lie down [O Lord, our God, in peace.\"]\n\nAnswer segments:\n(0) sources=[]: **Morning:** two blessings before the Shema and one after.\n**Evening:** two before and two after.\n\nThe Mishnah states it directly: \n(1) sources=[5]: בַּשַּׁחַר מְבָרֵךְ שְׁתַּיִם לְפָנֶיהָ וְאַחַת לְאַחֲרֶיהָ, וּבָעֶרֶב שְׁתַּיִם לְפָנֶיהָ וּשְׁתַּיִם לְאַחֲרֶיהָ\n(2) sources=[]: , \n(3) sources=[5]: one long and one short.\n(4) sources=[]:  The Rambam codifies the same counts: \n(5) sources=[0]: When reading the Shema by day, two blessings are recited before it, and one after it. When reading it at night, two blessings are recited before, and two after it.\n(6) sources=[]: \n\n**The blessings by name (Rambam):**\n- Morning, before: \n(7) sources=[7]: \"Who formest light and createst darkness.\"\n(8) sources=[]:  (יוצר אור) and \n(9) sources=[7]: \"With everlasting love hast Thou loved us.\"\n(10) sources=[]: \n- Morning, after: \n(11) sources=[7]: \"True and Firm.\"\n(12) sources=[]:  (אמת ויציב)\n- Evening, before: \n(13) sources=[7]: \"Who bringest on the evening twilight.\"\n(14) sources=[]:  (מעריב ערבים) and \n(15) sources=[7]: \"With everlasting love hast Thou loved Thy people Israel.\"\n(16) sources=[]: \n- Evening, after: \n(17) sources=[7]: \"True and trustworthy.\"\n(18) sources=[]:  (אמת ואמונה) and \n(19) sources=[7]: \"Cause us to lie down\"\n(20) sources=[]:  (השכיבנו)\n\n**Why seven?** Tosafot, citing the Yerushalmi, says the \n(21) sources=[2]: seven blessings recited together with Shema, four in the evening and three in the morning, correspond to the verse - I have praised you with seven blessing during the day (Tehilim 119).\n(22) sources=[]:  Tosafot then asks why an additional evening blessing, יראו עינינו, is not counted. The answer is that \n(23) sources=[2]: that Beracha was instituted by the Rabanan only so that those of the initial minyan should wait in the synagogue for their fellows who arrived late.\n(24) sources=[]: \n\nThe Rambam also counts these \n(25) sources=[1]: seven blessings before and after the morning and evening recital of the Shema\n(26) sources=[]:  toward the daily hundred blessings."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdkRtPMrqp9EQVmBZ7s",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Counts match Mishnah and Rambam sources.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Quotes Mishnah Berakhot 1:4 accurately.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Mishnah says one long and one short (for evening).\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Rambam in source 0 gives same counts.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches source 0 verbatim.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Heading/formatting.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Source 7 names this blessing.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Hebrew name יוצר אור appears in source 7.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches source 7.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Label only.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Matches source 7.\"},{\"i\":12,\"verdict\":\"supported\",\"note\":\"Hebrew in source 7.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Matches source 7.\"},{\"i\":14,\"verdict\":\"supported\",\"note\":\"Hebrew in source 7.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Matches source 7.\"},{\"i\":16,\"verdict\":\"no_claim\",\"note\":\"Label only.\"},{\"i\":17,\"verdict\":\"supported\",\"note\":\"Matches source 7.\"},{\"i\":18,\"verdict\":\"supported\",\"note\":\"Hebrew in source 7.\"},{\"i\":19,\"verdict\":\"supported\",\"note\":\"Matches source 7.\"},{\"i\":20,\"verdict\":\"supported\",\"note\":\"Hebrew in source 7.\"},{\"i\":21,\"verdict\":\"supported\",\"note\":\"Matches Tosafot's Yerushalmi citation.\"},{\"i\":22,\"verdict\":\"supported\",\"note\":\"Tosafot raises the question about יראו עינינו not being counted.\"},{\"i\":23,\"verdict\":\"supported\",\"note\":\"Matches Tosafot's answer.\"},{\"i\":24,\"verdict\":\"no_claim\",\"note\":\"Spacing only.\"},{\"i\":25,\"verdict\":\"supported\",\"note\":\"Rambam 7:14 counts seven Shema blessings.\"},{\"i\":26,\"verdict\":\"supported\",\"note\":\"Counted toward the hundred daily blessings per source 1.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 5165,
+   "output_tokens": 850,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

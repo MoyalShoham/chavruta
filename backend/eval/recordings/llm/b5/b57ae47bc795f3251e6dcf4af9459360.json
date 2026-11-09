@@ -1,0 +1,93 @@
+{
+ "key": "b57ae47bc795f3251e6dcf4af9459360",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: How should one stand during the Amidah: feet together?\n\nSources:\n[0] Mishneh Torah, Prayer and the Priestly Blessing 5:2 (Mishneh Torah, Prayer and the Priestly Blessing)\nעמידה כיצד אין מתפלל אלא מעומד היה יושב בספינה או בעגלה אם יכול לעמוד יעמוד ואם לאו ישב במקומו ויתפלל חולה מתפלל אפילו שוכב על צדו והוא שיכול לכוין את דעתו וכן הצמא והרעב הרי הן בכלל חולים אם יש בו יכולת לכוין את דעתו יתפלל ואם לאו אל יתפלל עד שיאכל וישתה היה רוכב על הבהמה אע\"פשיש לו מי שיאחז בהמתו לא ירד אלא ישב במקומו ויתפלל כדי שתהא דעתו מיושבת עליו.\nThe Standing position. The Amidah [main prayer] is only recited, standing. A person who is on a ship or in a wagon should, if he is able, stand up for that prayer. If unable, he may read it, sitting in his place. A sick person may read it, even lying down on his side, provided, however, that he can concentrate his mind. A thirsty or hungry person is in the same category as the sick: if he can concentrate, he recites the prayer; if not, he should not do so till he has refreshed himself with food and drink. A person who is riding, need not alight, even if there is some one to hold his beast so that his mind may be at ease.\n\n[1] Mishneh Torah, Prayer and the Priestly Blessing 5:4 (Mishneh Torah, Prayer and the Priestly Blessing)\nתקון הגוף כיצד כשהוא עומד בתפלה צריך לכוין את רגליו זו בצד זו ונותן עיניו למטה כאילו הוא מביט לארץ ויהיה לבו פנוי למעלה כאילו הוא עומד בשמים ומניח ידיו על לבו כפותין הימנית על השמאלית ועומד כעבד לפני רבו באימה ביראה ופחד ולא יניח ידיו על חלציו.\nCorrect posture. When standing in prayer, the feet should be in line; the eyes lowered as if one were looking towards the ground; while the heart should be uplifted as if one were in heaven; the hands should be placed over the heart, close together, the right over the left. The worshipper should stand, like a servant in his master's presence, in awe, fear and dread. He should not place his hands on his hips.\n\n[2] Mishneh Torah, Prayer and the Priestly Blessing 9:2 (Mishneh Torah, Prayer and the Priestly Blessing)\nוהכל עומדין מיד ומתפללים בלחש ומי שאינו יודע להתפלל עומד ושותק עד שיתפלל שליח ציבור בלחש עם שאר העם וכל מי שיגמור תפלתו עם הציבור יפסיע שלש פסיעות לאחוריו ויעמוד במקום שהגיע אליו בעת שיפסיע.\nAll the worshipers immediately rise and recite the Amidah in a low tone. Whoever does not know the prayer stands silent while the reader and the congregation are praying inaudibly. As soon as a congregant has concluded the Amidah, he steps back three paces and remains standing there.\n\n[3] Mishneh Torah, Prayer and the Priestly Blessing 5:10 (Mishneh Torah, Prayer and the Priestly Blessing)\nכריעה כיצד המתפלל כורע חמש כריעות בכל תפלה ותפלה בברכה ראשונה בתחלה ובסוף ובהודיה בתחלה ובסוף וכשגומר התפלה כורע ופוסע שלש פסיעות לאחוריו וכשהוא כורע נותן שלום משמאל עצמו ואח\"כ מימין עצמו ואח\"כ מגביה ראשו מן הכריעה וכשהוא כורע בארבע הכריעות כורע בברוך וכשהוא זוקף זוקף בשם במה דברים אמורים בהדיוט אבל כהן גדול כורע בתחילת כל ברכה ובסוף כל ברכה והמלך כיון ששחה בראשונה אינו מגביה ראשו עד שגומר כל תפלתו.\nGenuflection. The worshiper bends the knees five times in every [ Amidah ] prayer, at the beginning and at the end of the first blessing; at the beginning and the end of the thanksgiving blessing (which begins \"We thank Thee\"); and after the conclusion of the prayer. The knees are then bent, the worshiper steps backwards three paces, and with knees bent, bows to the left, then to the right, and then raises his head. When he bends the knees the first four times, he does so while uttering the word \"Blessed\" and resumes the erect posture at the word \"O Lord.\" This rule applies to the layman. The high priest however bends the knees at the beginning and end of every blessing. The king bows his head at the beginning of the [ Amidah ] prayer and does not raise it till he has concluded it.\n\n[4] Mishneh Torah, Prayer and the Priestly Blessing 14:4 (Mishneh Torah, Prayer and the Priestly Blessing)\nכשישלימו הכהנים ג' פסוקים מתחיל ש\"צ ברכה אחרונה של תפלה שהיא שים שלום והכהנים מחזירין פניהם כלפי הקדש וקופצין אצבעותיהן ועומדין שם בדוכן עד שיגמור הברכה וחוזרין למקומן.\nWhen the priests have concluded reciting the three verses of the Benediction, the Reader begins the last paragraph of the Amidah, that beginning, \"Grant Peace\". The priests turn their faces towards the ark, bend their fingers and remain standing on the platform till he concludes the paragraph, and then they return to their places.\n\n[5] Mishneh Torah, Prayer and the Priestly Blessing 14:3 (Mishneh Torah, Prayer and the Priestly Blessing)\nכיצד היא נשיאת כפים בגבולין בעת שיגיע שליח צבור לעבודה כשיאמר רצה כל הכהנים העומדים בבית הכנסת נעקרין ממקומן והולכין ועולין לדוכן ועומדים שם פניהם להיכל ואחוריהם כלפי העם ואצבעותיהם כפופות לתוך כפיהם עד שישלים שליח ציבור ההודאה ומחזירין פניהם כלפי העם ופושטין אצבעותיהן ומגביהין ידיהם כנגד כתפיהם ומתחילין יברכך ושליח ציבור מקרא אותם מלה מלה והם עונין שנאמר אמור להם עד שיאמר כשמשלימין פסוק ראשון כל העם עונין אמן וחוזר שליח ציבור ומקרא אותן פסוק שני מלה מלה והם עונים עד שמשלימין פסוק שני וכל העם עונין אמן וכן בפסוק שלישי.\nHow is this rite performed outside the Temple? When the Reader of the congregation reaches the paragraph in the Amidah referring to the restoration of the ancient service and he utters the first word of that blessing beginning \"Be pleased\", all the priests in the synagogue leave their places, proceed to the platform in front of the ark, stand there, with their faces towards the ark and their backs towards the congregation, their fingers bent in their palms, till the Reader concludes the paragraph of thanksgiving. Then they turn their faces toward the congregation, straighten their fingers, raise their hands to a level with their shoulders and begin reciting, \"May the Lord bless thee\". The Reader prompts them, word by word, and they repeat, as it is said, \"Say unto them\", which means that they are to wait till he recites. When they have ended the first verse, all the people respond, \"Amen\". The Reader of the congregation prompts them in the second verse, word for word, which they repeat till they have ended the second verse, when all the people respond, \"Amen\". And so with the third verse.\n\n[6] Mishneh Torah, Prayer and the Priestly Blessing 9:4 (Mishneh Torah, Prayer and the Priestly Blessing)\nואומר קדושה בברכה שלישית וכיון שהגיע שליח ציבור לקדושה יש רשות לכל אחד ואחד לחזור במקום שעמד בו בתפלה וכשיגיע שליח ציבור למודים וכורע כל העם שוחין מעט ולא ישחו יותר מדאי ואומרים מודים אנחנו לך יי' אלהינו ואלהי כל בשר יוצרנו יוצר בראשית ברכות והודאות לשמך הגדול והקדוש על שהחייתנו וקיימתנו כן תחיינו ותחננו ותאסוף גליותינו לחצרות קדשך לשמור חוקיך ולעבדך באמת ולעשות רצונך בלבב שלם על שאנו מודים לך וכל האומר מודים מודים משתקין אותו.\nHe recites Kedushah in the third blessing. When the reader comes to the Kedushah, every one of the congregants may return to the place where he had stood while reciting the Amidah. When the reader reaches the blessing beginning, \"We thank Thee\" and bends his knee, all the congregants bow slightly, not however to excess, and recite, \"We give thanks unto Thee, O Lord our God and God of all flesh, our Creator, the Creator of all things in the beginning. Blessings and Thanksgivings be to Thy great and holy Name, because Thou hast kept us in life and hast preserved us. So mayest Thou continue to keep us in life and be gracious unto us. Gather our exiles to Thy holy courts, to observe Thy statutes, serve Thee in truth and do Thy will with a perfect heart, seeing that we give thanks unto Thee\". Any one who reiterates, \"We give thanks unto Thee; we give thanks unto Thee\" is silenced.\n\n[7] Mishneh Torah, Prayer and the Priestly Blessing 5:1 (Mishneh Torah, Prayer and the Priestly Blessing)\nשמונה דברים צריך המתפלל להזהר בהן ולעשותן ואם היה דחוק או נאנס או שעבר ולא עשה אותן אין מעכבין ואלו הן:עמידה ונוכח המקדש ותקון הגוף ותקון המלבושים ותקון המקום והשויית הקול והכריעה והשתחויה.\nIn reciting prayers, eight points should be heeded and observed. If, however, these were disregarded, owing to stress, or disability or even wilfully, the recital of the prayers would not be debarred [deemed ineffective]. The points are as follows: one should stand; with face towards the Temple; the body should be in correct posture; the clothing adjusted; one should stand in a proper place; the voice should be properly modulated; and genuflection and prostration be correctly performed.\n\nAnswer segments:\n(0) sources=[]: The provided sources are all from Rambam's Mishneh Torah (Hilchot Tefillah).\n\n**Standing at all:** Standing is listed as the first of eight things a person praying should heed: \n(1) sources=[7]: one should stand; with face towards the Temple; the body should be in correct posture\n(2) sources=[]: . Rambam states that \n(3) sources=[0]: the Amidah [main prayer] is only recited, standing\n(4) sources=[]: . He then discusses cases like someone on a ship, a sick person, or a rider. These eight points are not absolute: \n(5) sources=[7]: if, however, these were disregarded, owing to stress, or disability or even wilfully, the recital of the prayers would not be debarred\n(6) sources=[]: .\n\n**The feet:** Under \"correct posture\" (תקון הגוף), Rambam writes \n(7) sources=[1]: צריך לכוין את רגליו זו בצד זו\n(8) sources=[]: , literally \"he must align his feet, one beside the other.\" The translation renders this as \n(9) sources=[1]: the feet should be in line\n(10) sources=[]: . So yes, the source describes the feet as placed together, side by side.\n\n**The rest of the posture:** In the same halakha, Rambam continues: \n(11) sources=[1]: the eyes lowered as if one were looking towards the ground; while the heart should be uplifted as if one were in heaven; the hands should be placed over the heart, close together, the right over the left. The worshipper should stand, like a servant in his master's presence, in awe, fear and dread. He should not place his hands on his hips.\n(12) sources=[]: \n\n**What the sources don't cover:** They don't give a reason for placing the feet together, and they record no opposing view on this point.\n\nFor how to apply this in your own practice, please consult a rabbi."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdzrGEWgEeA3bb7KnoT",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"partial\",\"note\":\"All sources are Mishneh Torah Prayer and Priestly Blessing; \\\"Hilchot Tefillah\\\" label is not shown, and it is a minor framing claim.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Source 7 lists standing, facing Temple, correct posture among eight points.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Attribution to Rambam is consistent with the sources, which are all Mishneh Torah.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Source 0 says the Amidah is only recited standing.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Source 0 discusses ship, sick person, and rider; source 7 says points are not absolute.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Quotes source 7 accurately.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Hebrew quote from 5:4 under correct posture (תקון הגוף).\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Literal gloss of the Hebrew is accurate.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches the translation in source 1.\"},{\"i\":10,\"verdict\":\"partial\",\"note\":\"Side by side is supported, but \\\"together\\\" is stronger than \\\"in line\\\"; the sources do not clearly say touching.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Accurate quotation of source 1, same halakha.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Empty/transition segment.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 5022,
+   "output_tokens": 562,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

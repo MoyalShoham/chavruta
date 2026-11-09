@@ -1,0 +1,93 @@
+{
+ "key": "7334d76550fee8303a88ff0f9508f66f",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: מה המחלוקות בין בית שמאי ובית הלל בענייני הסעודה?\n\nSources:\n[0] Berakhot 51b:11 (Berakhot)\nמתני׳ אלו דברים שבין בית שמאי ובין בית הלל בסעודה בית שמאי אומרים מברך על היום ואחר כך מברך על היין ובית הלל אומרים מברך על היין ואחר כך מברך על היום\nMISHNAH The following are the points of variance between Bet Shammai and Bet Hillel in connection with the meal. Bet Shammai say : [On a Sabbath or Festival] one pronunces the benediction over the day and then over the wine ; but Bet Hillel say : He pronounces the benediction over the wine and afterwards over the day.\n\n[1] Berakhot 51b:14 (Berakhot)\nבית שמאי אומרים מכבדין את הבית ואחר כך נוטלין לידים ובית הלל אומרים נוטלין לידים ואחר כך מכבדין את הבית\nBet Shammai say: [After the meal] they clear up and then we wash the hands [prior to Grace] ; but Bet Hillel say : We wash the hands and then they clear up.\n\n[2] Berakhot 51b:15 (Berakhot)\nבית שמאי אומרים נר ומזון בשמים והבדלה ובית הלל אומרים נר ובשמים מזון והבדלה\nBet Shammai say : [The order of benedictions is] light, food, spices and Habdalah; but Bet Hillel say : Light, spices, food and Habdalah.\n\n[3] Berakhot 51b:12 (Berakhot)\nבית שמאי אומרים נוטלין לידים ואחר כך מוזגין את הכוס ובית הלל אומרים מוזגין את הכוס ואחר כך נוטלין לידים\nBet Shammai say : We wash the hands and then fill the cup ; but Bet Hillel say: We fill the cup and then wash the hands.\n\n[4] Berakhot 52a:6 (Berakhot)\nלא ס\"ד דקתני הכא במתניתין בית שמאי אומרים נר ומזון בשמים והבדלה ובית הלל אומרים נר ובשמים מזון והבדלה והתם בברייתא קתני אם אין לו אלא כוס אחד מניחו לאחר המזון ומשלשלן כולן לאחריו שמע מינה דבית שמאי היא ואליבא דרבי יהודה\nThat cannot enter thy mind; for it states here in our Mishnah: Bet Shammai say : [The order of benedictions is] light, food, spices and Habdalah ; but Bet Hillel say : Light, spices, food and Habdalah ; and there in the Baraita it states : \"Should he have only one cup [of wine], he leaves it until after the meal and combines all [the benedictions] afterwards.\" Conclude therefore that it emanates from Bet Shammai as interpreted by R. Judah.\n\n[5] Mishnah Berakhot 8:1 (Mishnah Berakhot)\nאֵלּוּ דְבָרִים שֶׁבֵּין בֵּית שַׁמַּאי וּבֵית הִלֵּל בַּסְּעֻדָּה. בֵּית שַׁמַּאי אוֹמְרִים, מְבָרֵךְ עַל הַיּוֹם וְאַחַר כָּךְ מְבָרֵךְ עַל הַיַּיִן. וּבֵית הִלֵּל אוֹמְרִים, מְבָרֵךְ עַל הַיַּיִן וְאַחַר כָּךְ מְבָרֵךְ עַל הַיּוֹם:\nThese are the points [of difference] between Bet Shammai and Bet Hillel in regard to a meal. Bet Shammai says: first he blesses over the day and then over the wine. Bet Hillel says: first he blesses over the wine and then over the day.\n\n[6] Berakhot 51b:19 (Berakhot)\nבא להן יין אחר המזון אם אין שם אלא אותו כוס בית שמאי אומרים מברך על היין ואח\"כ מברך על המזון ובית הלל אומרים מברך על המזון ואח\"כ מברך על היין\nIf wine is brought to them after the food and there is [only sufficient for] one cup, Bet Shammai declare he says the benediction over the wine and then over the food ; but Bet Hillel declare he says the benediction over the food and then over the wine.\n\n[7] Berakhot 51b:13 (Berakhot)\nבית שמאי אומרים מקנח ידיו במפה ומניחה על השלחן ובית הלל אומרים על הכסת\nBet Shammai say : One wipes his hands with a napkin which he lays upon the table ; but Bet Hillel say : [He lays it] upon the bolster [of his couch].\n\nAnswer segments:\n(0) sources=[]: ## מחלוקות בית שמאי ובית הלל בסעודה\n\nהמשנה פותחת: \n(1) sources=[5]: אֵלּוּ דְבָרִים שֶׁבֵּין בֵּית שַׁמַּאי וּבֵית הִלֵּל בַּסְּעֻדָּה\n(2) sources=[]: . אלה המחלוקות שבמקורות:\n\n**1. קידוש: יום או יין קודם?**\n\n(3) sources=[0]: בית שמאי אומרים מברך על היום ואחר כך מברך על היין ובית הלל אומרים מברך על היין ואחר כך מברך על היום\n(4) sources=[]: \n\n**2. נטילת ידיים ומזיגת הכוס**\n\n(5) sources=[3]: בית שמאי אומרים נוטלין לידים ואחר כך מוזגין את הכוס ובית הלל אומרים מוזגין את הכוס ואחר כך נוטלין לידים\n(6) sources=[]: \n\n**3. היכן מניחים את המפה**\n\n(7) sources=[7]: בית שמאי אומרים מקנח ידיו במפה ומניחה על השלחן ובית הלל אומרים על הכסת\n(8) sources=[]: , כלומר על הכר של המיטה שעליה מסבים.\n\n**4. כיבוד הבית ונטילת ידיים לאחר הסעודה**\n\n(9) sources=[1]: בית שמאי אומרים מכבדין את הבית ואחר כך נוטלין לידים ובית הלל אומרים נוטלין לידים ואחר כך מכבדין את הבית\n(10) sources=[]: \n\n**5. סדר הברכות במוצאי שבת**\n\n(11) sources=[2]: בית שמאי אומרים נר ומזון בשמים והבדלה ובית הלל אומרים נר ובשמים מזון והבדלה\n(12) sources=[]: \nהגמרא משתמשת במשנה זו כדי לזהות ברייתא שבה נאמר שמי שיש לו כוס אחד בלבד \n(13) sources=[4]: מניחו לאחר המזון ומשלשלן כולן לאחריו\n(14) sources=[]: . מסקנתה: \n(15) sources=[4]: שמע מינה דבית שמאי היא ואליבא דרבי יהודה\n(16) sources=[]: .\n\n**6. יין שבא אחר המזון כשיש כוס אחד בלבד**\n\n(17) sources=[6]: בית שמאי אומרים מברך על היין ואח\"כ מברך על המזון ובית הלל אומרים מברך על המזון ואח\"כ מברך על היין\n(18) sources=[]: \n\nהמקורות שלפנינו מביאים את שתי השיטות בכל מחלוקת ואינם מכריעים ביניהן. לשאלות למעשה יש לפנות לרב."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsdnUQkMnmm8pTgttSqr",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"no_claim\",\"note\":\"Heading and transition only.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Quotes Mishnah Berakhot 8:1 opening accurately.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition and heading for first dispute.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches source 0 exactly.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Heading only.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches source 3 exactly.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Heading only.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches source 7 exactly.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Source says bolster of his couch; 'on which they recline' is minor elaboration, consistent.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches source 1 exactly.\"},{\"i\":10,\"verdict\":\"partial\",\"note\":\"Heading says 'motzei Shabbat'; sources say Sabbath/Festival generally not specifically motzei Shabbat, though Havdalah implies it.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Matches source 2 exactly.\"},{\"i\":12,\"verdict\":\"supported\",\"note\":\"Gemara uses Mishnah to identify the Baraita about one cup; source 4 says this.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Baraita quote matches source 4.\"},{\"i\":14,\"verdict\":\"no_claim\",\"note\":\"Transition phrase.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Matches source 4 conclusion.\"},{\"i\":16,\"verdict\":\"no_claim\",\"note\":\"Heading only.\"},{\"i\":17,\"verdict\":\"supported\",\"note\":\"Matches source 6 exactly.\"},{\"i\":18,\"verdict\":\"no_claim\",\"note\":\"Summary and disclaimer about consulting a rabbi.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3282,
+   "output_tokens": 676,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}
