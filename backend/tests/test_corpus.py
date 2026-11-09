@@ -285,3 +285,20 @@ def test_error_responses_are_not_cached(tmp_path: Path) -> None:
             client.section("Berakhot 2a", [])
     assert calls["n"] == 2
     assert list(tmp_path.iterdir()) == []
+
+
+def test_fetch_models_arguments() -> None:
+    """The Docker build runs `fetch_models --chosen --reranker`: no positional models at all."""
+    from chavruta.embeddings import CHOSEN_MODEL, MODELS, RERANKER
+    from chavruta.fetch_models import wanted
+
+    assert wanted(["--chosen", "--reranker"]) == [
+        (MODELS[CHOSEN_MODEL].name, MODELS[CHOSEN_MODEL].weights),
+        (RERANKER, "*.safetensors"),
+    ]
+    assert [n for n, _ in wanted(["e5-base", "--chosen"])] == [
+        MODELS["e5-base"].name,
+        MODELS[CHOSEN_MODEL].name,
+    ]
+    with pytest.raises(SystemExit):
+        wanted(["no-such-model"])

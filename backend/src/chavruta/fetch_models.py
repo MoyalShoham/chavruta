@@ -14,19 +14,28 @@ import argparse
 from chavruta.embeddings import CHOSEN_MODEL, MODELS, RERANKER
 
 
-def main(argv: list[str] | None = None) -> None:
-    from huggingface_hub import snapshot_download
-
+def wanted(argv: list[str] | None = None) -> list[tuple[str, str]]:
+    """(Hugging Face name, weight file pattern) for each model asked for."""
     parser = argparse.ArgumentParser(prog="python -m chavruta.fetch_models")
-    parser.add_argument("models", nargs="*", choices=sorted(MODELS), default=[])
+    # No `choices` here: argparse validates an empty default list against them and fails.
+    parser.add_argument("models", nargs="*", help=f"any of {', '.join(sorted(MODELS))}")
     parser.add_argument("--chosen", action="store_true", help=f"the model the app uses ({CHOSEN_MODEL})")
     parser.add_argument("--reranker", action="store_true")
     args = parser.parse_args(argv)
+    unknown = [m for m in args.models if m not in MODELS]
+    if unknown:
+        parser.error(f"unknown models: {', '.join(unknown)}")
     keys = [*args.models, *([CHOSEN_MODEL] if args.chosen else [])]
-    wanted = [(MODELS[k].name, MODELS[k].weights) for k in dict.fromkeys(keys)]
+    out = [(MODELS[k].name, MODELS[k].weights) for k in dict.fromkeys(keys)]
     if args.reranker:
-        wanted.append((RERANKER, "*.safetensors"))
-    for name, weights in wanted:
+        out.append((RERANKER, "*.safetensors"))
+    return out
+
+
+def main(argv: list[str] | None = None) -> None:
+    from huggingface_hub import snapshot_download
+
+    for name, weights in wanted(argv):
         # One weight format per model; no ONNX/OpenVINO duplicates.
         path = snapshot_download(
             name,
