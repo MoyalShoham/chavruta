@@ -416,7 +416,10 @@ class Chavruta:
             return out
         out.segments = parse_answer(response, sources)
         out.unretrieved = unretrieved(
-            out.text, {s.work for s in sources}, [t.text for s in sources for t in s.texts]
+            out.text,
+            {s.work for s in sources},
+            [t.text for s in sources for t in s.texts],
+            [s.ref for s in sources],
         )
         if out.unretrieved:
             out.notices.append(unretrieved_notice(out.unretrieved))

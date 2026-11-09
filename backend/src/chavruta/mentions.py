@@ -1,20 +1,65 @@
 """Finds the sources an answer names, so that a source the model did not retrieve can be flagged.
 
 The API's citations prove that cited text came from a retrieved source. They do not stop the model
-from also writing "as the Mishnah Berurah says" from memory. This module catches such mentions.
+from also writing "as the Mishnah Berurah says", or "Berakhot 60b" when only 2a was retrieved,
+from memory. This module catches such mentions at two levels:
 
-A mention is a work name with a location ("Shabbat 21b", "תהלים קמה", "סימן פט"), or a work whose
-name alone is a citation ("Rambam", "Mishnah Berurah", "Zohar"). Bare words that double as ordinary
-words ("Shabbat", "ברכות", "שבת") count only with a location. It is a heuristic, tuned for few false
-alarms; its misses are why the README reports it as a check, not a guarantee.
+- the work: a work no retrieved source belongs to ("the Zohar", "Rambam, Laws of Shabbat");
+- the location: a place in a retrieved work that is not itself retrieved ("Berakhot 60b",
+  "Shulchan Arukh, Orach Chayim 300:1", "דברים ו, ט").
+
+A mention is a work name with a location, or a work whose name alone is a citation ("Rambam",
+"Mishnah Berurah"). Hebrew locations must be valid Hebrew numerals, so "בשבת זו." is not a daf
+reference. It is a heuristic, tuned for few false alarms; the README reports it as a check, not a
+guarantee.
 """
 
 from __future__ import annotations
 
 import re
+from collections.abc import Iterable
 from dataclasses import dataclass
 
-# family -> (English names, Hebrew names). A family groups names that refer to one work.
+from chavruta.retrieval import matches
+
+# ---- Hebrew numerals ------------------------------------------------------------------------------
+
+_UNITS = {"א": 1, "ב": 2, "ג": 3, "ד": 4, "ה": 5, "ו": 6, "ז": 7, "ח": 8, "ט": 9}
+_TENS = {"י": 10, "כ": 20, "ך": 20, "ל": 30, "מ": 40, "ם": 40, "נ": 50, "ן": 50, "ס": 60, "ע": 70,
+         "פ": 80, "ף": 80, "צ": 90, "ץ": 90}  # fmt: skip
+_HUNDREDS = {"ק": 100, "ר": 200, "ש": 300, "ת": 400}
+
+
+def gematria(numeral: str) -> int | None:
+    """The value of a Hebrew numeral, or None if it is not one. Strict: hundreds, then at most one
+    tens letter, then at most one units letter; 15 and 16 are טו and טז, never יה and יו. So
+    "זו", "כל" and "זה" are words, not numbers."""
+    s = re.sub("[׳״\"']", "", numeral)
+    if not s:
+        return None
+    if s in ("טו", "טז"):
+        return 15 if s == "טו" else 16
+    if s.endswith(("יה", "יו")):
+        return None
+    i, total = 0, 0
+    while i < len(s) and s[i] == "ת":
+        total += 400
+        i += 1
+    if i < len(s) and s[i] in "קרש":
+        total += _HUNDREDS[s[i]]
+        i += 1
+    if i < len(s) and s[i] in _TENS:
+        total += _TENS[s[i]]
+        i += 1
+    if i < len(s) and s[i] in _UNITS:
+        total += _UNITS[s[i]]
+        i += 1
+    return total if i == len(s) and total > 0 else None
+
+
+# ---- names ----------------------------------------------------------------------------------------
+
+# canonical (Sefaria) title -> (English names, Hebrew names)
 TANAKH = {
     "Genesis": (["Genesis", "Bereshit", "Bereishit"], ["בראשית"]),
     "Exodus": (["Exodus", "Shemot"], ["שמות"]),
@@ -28,6 +73,18 @@ TANAKH = {
     "Isaiah": (["Isaiah"], ["ישעיהו", "ישעיה"]),
     "Jeremiah": (["Jeremiah"], ["ירמיהו", "ירמיה"]),
     "Ezekiel": (["Ezekiel"], ["יחזקאל"]),
+    "Hosea": (["Hosea"], ["הושע"]),
+    "Joel": (["Joel"], ["יואל"]),
+    "Amos": (["Amos"], ["עמוס"]),
+    "Obadiah": (["Obadiah"], ["עובדיה"]),
+    "Jonah": (["Jonah"], ["יונה"]),
+    "Micah": (["Micah"], ["מיכה"]),
+    "Nahum": (["Nahum"], ["נחום"]),
+    "Habakkuk": (["Habakkuk"], ["חבקוק"]),
+    "Zephaniah": (["Zephaniah"], ["צפניה"]),
+    "Haggai": (["Haggai"], ["חגי"]),
+    "Zechariah": (["Zechariah"], ["זכריה"]),
+    "Malachi": (["Malachi"], ["מלאכי"]),
     "Psalms": (["Psalms?", "Tehillim"], ["תהלים", "תהילים"]),
     "Proverbs": (["Proverbs", "Mishlei"], ["משלי"]),
     "Job": (["Job"], ["איוב"]),
@@ -40,24 +97,29 @@ TANAKH = {
     "Ezra": (["Ezra"], ["עזרא"]),
     "Nehemiah": (["Nehemiah"], ["נחמיה"]),
     "Chronicles": (["I Chronicles", "II Chronicles", "Chronicles"], ["דברי הימים"]),
-    "Hosea": (["Hosea"], ["הושע"]),
-    "Amos": (["Amos"], ["עמוס"]),
-    "Micah": (["Micah"], ["מיכה"]),
-    "Malachi": (["Malachi"], ["מלאכי"]),
 }
-TRACTATES = [
-    "Berakhot", "Shabbat", "Eruvin", "Pesachim", "Yoma", "Sukkah", "Beitzah", "Rosh Hashanah",
-    "Taanit", "Megillah", "Moed Katan", "Chagigah", "Yevamot", "Ketubot", "Nedarim", "Nazir",
-    "Sotah", "Gittin", "Kiddushin", "Bava Kamma", "Bava Metzia", "Bava Batra", "Sanhedrin",
-    "Makkot", "Shevuot", "Avodah Zarah", "Horayot", "Zevachim", "Menachot", "Chullin", "Bekhorot",
-    "Arakhin", "Temurah", "Keritot", "Meilah", "Tamid", "Niddah", "Avot", "Peah", "Demai",
+TALMUD = {
+    "Berakhot": "ברכות", "Shabbat": "שבת", "Eruvin": "עירובין", "Pesachim": "פסחים", "Yoma": "יומא",
+    "Sukkah": "סוכה", "Beitzah": "ביצה", "Rosh Hashanah": "ראש השנה", "Taanit": "תענית",
+    "Megillah": "מגילה", "Moed Katan": "מועד קטן", "Chagigah": "חגיגה", "Yevamot": "יבמות",
+    "Ketubot": "כתובות", "Nedarim": "נדרים", "Nazir": "נזיר", "Sotah": "סוטה", "Gittin": "גיטין",
+    "Kiddushin": "קידושין", "Bava Kamma": "בבא קמא", "Bava Metzia": "בבא מציעא",
+    "Bava Batra": "בבא בתרא", "Sanhedrin": "סנהדרין", "Makkot": "מכות", "Shevuot": "שבועות",
+    "Avodah Zarah": "עבודה זרה", "Horayot": "הוריות", "Zevachim": "זבחים", "Menachot": "מנחות",
+    "Chullin": "חולין", "Bekhorot": "בכורות", "Arakhin": "ערכין", "Temurah": "תמורה",
+    "Keritot": "כריתות", "Meilah": "מעילה", "Tamid": "תמיד", "Niddah": "נדה",
+}  # fmt: skip
+MISHNAH_ONLY = [
+    "Avot", "Peah", "Demai", "Kilayim", "Sheviit", "Terumot", "Maasrot", "Maaser Sheni", "Challah",
+    "Orlah", "Bikkurim", "Shekalim", "Eduyot", "Middot", "Kinnim", "Kelim", "Oholot", "Negaim",
+    "Parah", "Tahorot", "Mikvaot", "Makhshirin", "Zavim", "Tevul Yom", "Yadayim", "Oktzin",
 ]  # fmt: skip
-TRACTATES_HE = [
-    "ברכות", "שבת", "עירובין", "פסחים", "יומא", "סוכה", "ביצה", "ראש השנה", "תענית", "מגילה",
-    "מועד קטן", "חגיגה", "יבמות", "כתובות", "נדרים", "נזיר", "סוטה", "גיטין", "קידושין",
-    "בבא קמא", "בבא מציעא", "בבא בתרא", "סנהדרין", "מכות", "שבועות", "עבודה זרה", "הוריות",
-    "זבחים", "מנחות", "חולין", "בכורות", "ערכין", "תמורה", "כריתות", "מעילה", "תמיד", "נדה", "אבות",
-]  # fmt: skip
+#: Rambam's books in the library, by the names an answer might use.
+MT_BOOKS = {
+    "Reading the Shema": ["Reading the Shema", "Keriat Shema", "Kriat Shema", "Shema"],
+    "Prayer and the Priestly Blessing": ["Prayer and the Priestly Blessing", "Prayer", "Tefillah", "Tefilah"],
+    "Blessings": ["Blessings", "Berakhot", "Brachot", "Berachot"],
+}
 # Names that are a citation by themselves.
 NAMED = {
     "Rashi": (["Rashi"], ['רש"י', "רש״י"]),
@@ -103,17 +165,8 @@ WORK_FAMILIES = {
     "Shulchan Arukh, Orach Chayim": {"Shulchan Arukh"},
 }
 
-_EN_LOC = r"\s+\d{1,3}(?:[ab]\b|:\d{1,3}|\b)"
-# Hebrew numerals are letters, so a location must look like one: "ו, ז" (chapter, verse), a label
-# ("פרק ו", "סימן פט"), or a numeral with geresh/gershayim ("קמ\"ה"). "דברים רבים." is not a verse.
-_HE_LOC = (
-    r"\s+(?:[א-ת]{1,3},\s*[א-ת]{1,3}(?![א-ת])"
-    r"|(?:פרק|סימן|דף)\s+[א-ת]{1,3}[׳״\"']?[א-ת]?(?![א-ת])"
-    r"|[א-ת]{1,2}[׳״\"'][א-ת]?(?![א-ת]))"
-)
-_HE_DAF = r"\s+(?:דף\s+)?(?:[א-ת]{1,3}|[א-ת]{1,2}[׳״\"'][א-ת])\s*[.:](?!\d)"
-# One- and two-letter prefixes (ה, ו, ב, כ, ל, מ, ש): "הרמב\"ם", "וכן במשנה ברורה".
 _HE_PREFIX = r"(?<![א-ת])[והבכלמש]{0,2}"
+_NUM = r"[א-ת]{1,4}[׳״\"']?[א-ת]?"
 
 
 @dataclass(frozen=True)
@@ -121,45 +174,141 @@ class Mention:
     family: str
     text: str
     start: int
+    #: The place named, as a Sefaria-style reference, when there is one.
+    ref: str | None = None
 
 
-def _alt(names: list[str]) -> str:
+def _alt(names: Iterable[str]) -> str:
     return "|".join(sorted(names, key=len, reverse=True))
 
 
-def _patterns() -> list[tuple[str, re.Pattern[str]]]:
-    out: list[tuple[str, re.Pattern[str]]] = []
-    for family, (en, he) in TANAKH.items():
-        out.append((family, re.compile(rf"\b(?:{_alt(en)}){_EN_LOC}")))
-        out.append((family, re.compile(rf"{_HE_PREFIX}(?:{_alt(he)}){_HE_LOC}")))
-    for name in TRACTATES:
-        out.append((name, re.compile(rf"\b{name}\s+\d{{1,3}}[ab]\b")))
-        out.append((name, re.compile(rf"\bMishnah\s+{name}\s+\d{{1,2}}(?::\d{{1,2}})?")))
-    for name, en_name in zip(TRACTATES_HE, TRACTATES, strict=False):
-        out.append((en_name, re.compile(rf"(?:מסכת|במסכת|בבלי)\s+{name}(?![א-ת])")))
-        out.append((en_name, re.compile(rf"{_HE_PREFIX}{name}{_HE_DAF}")))
+Parser = tuple[str, re.Pattern[str], str]  # family, pattern, kind of location
+
+
+def _parsers() -> list[Parser]:
+    out: list[Parser] = []
+    for title, (en, he) in TANAKH.items():
+        out.append((title, re.compile(rf"\b(?:{_alt(en)})\s+(?P<c>\d{{1,3}})(?::(?P<v>\d{{1,3}}))?\b"), "en"))
+        he_loc = rf"\s+(?:פרק\s+)?(?P<c>{_NUM})(?:,\s*(?P<v>{_NUM}))?(?![א-ת])"
+        out.append((title, re.compile(rf"{_HE_PREFIX}(?:{_alt(he)}){he_loc}"), "he"))
+    for title, he_name in TALMUD.items():
+        out.append((title, re.compile(rf"\b{title}\s+(?P<d>\d{{1,3}})(?P<a>[ab])\b"), "daf_en"))
+        out.append((title, re.compile(rf"(?:מסכת|במסכת|בבלי)\s+{he_name}(?![א-ת])"), "name"))
+        daf = rf"\s+(?:דף\s+)?(?P<d>{_NUM})\s*(?P<a>[.:])(?!\d)"
+        out.append((title, re.compile(rf"{_HE_PREFIX}{he_name}{daf}"), "daf_he"))
+    for title in [*TALMUD, *MISHNAH_ONLY]:
+        loc = r"\s+(?P<c>\d{1,2})(?::(?P<v>\d{1,2}))?"
+        out.append((title, re.compile(rf"\bMishnah\s+{title}{loc}"), "mishnah"))
+    oc = r"(?:Orach Chayim|Orach Chaim|OC|O\.C\.)"
+    loc = r"\s+(?P<c>\d{1,3})(?::(?P<v>\d{1,2}))?"
+    out.append(("Shulchan Arukh", re.compile(rf"\b(?:Shulchan Arukh|Shulchan Aruch|SA),?\s+{oc}{loc}"), "sa"))
+    out.append(("Shulchan Arukh", re.compile(rf"\b{oc}{loc}"), "sa"))
+    he_oc = (
+        rf"(?:או\"ח|או״ח|אורח חיים)\s+(?:סימן\s+)?(?P<c>{_NUM})(?:,?\s*(?:סעיף\s+)?(?P<v>{_NUM}))?(?![א-ת])"
+    )
+    out.append(("Shulchan Arukh", re.compile(he_oc), "sa_he"))
+    mt = (
+        r"\b(?:Rambam|Maimonides|Mishneh Torah)(?:'s)?,?\s+(?:Laws of|Hilchot|Hilkhot|Hilchos)\s+"
+        r"(?P<book>[A-Z][A-Za-z']*(?:\s+(?:and\s+the\s+|the\s+)?[A-Z][A-Za-z']*)*)"
+        r"(?:,?\s+(?P<c>\d{1,2})(?::(?P<v>\d{1,2}))?)?"
+    )
+    out.append(("Rambam", re.compile(mt), "mt"))
     for family, (en, he) in NAMED.items():
-        out.append((family, re.compile(rf"\b(?:{_alt(en)})\b")))
-        out.append((family, re.compile(rf"{_HE_PREFIX}(?:{_alt(he)})(?![א-ת])")))
+        out.append((family, re.compile(rf"\b(?:{_alt(en)})\b"), "name"))
+        out.append((family, re.compile(rf"{_HE_PREFIX}(?:{_alt(he)})(?![א-ת])"), "name"))
     return out
 
 
-_PATTERNS = _patterns()
+_PARSERS = _parsers()
+
+
+def _ref(family: str, kind: str, m: re.Match[str]) -> str | bool | None:
+    """The reference a match names; None if it names only a work; False if it is not a citation
+    after all (an invalid Hebrew numeral)."""
+    g = m.groupdict()
+    if kind == "name":
+        return None
+    if kind in ("en", "mishnah", "sa"):
+        prefix = {"mishnah": f"Mishnah {family}", "sa": "Shulchan Arukh, Orach Chayim"}.get(kind, family)
+        return f"{prefix} {g['c']}" + (f":{g['v']}" if g.get("v") else "")
+    if kind == "daf_en":
+        return f"{family} {g['d']}{g['a']}"
+    if kind in ("he", "sa_he"):
+        c = gematria(g["c"])
+        v = gematria(g["v"]) if g.get("v") else None
+        if c is None or (g.get("v") and v is None):
+            return False
+        prefix = "Shulchan Arukh, Orach Chayim" if kind == "sa_he" else family
+        return f"{prefix} {c}" + (f":{v}" if v else "")
+    if kind == "daf_he":
+        d = gematria(g["d"])
+        if d is None or d < 2:
+            return False
+        return f"{family} {d}{'a' if g['a'] == '.' else 'b'}"
+    if kind == "mt":
+        name = g["book"].strip()
+        book = next((b for b, names in MT_BOOKS.items() if name in names), None)
+        if book is None:
+            return f"Mishneh Torah, {name}"  # a book the library does not have
+        loc = (f" {g['c']}" if g.get("c") else "") + (f":{g['v']}" if g.get("v") else "")
+        return f"Mishneh Torah, {book}{loc}"
+    return None
 
 
 def find_mentions(text: str) -> list[Mention]:
-    found: dict[tuple[str, int], Mention] = {}
-    for family, pattern in _PATTERNS:
+    found: dict[int, Mention] = {}
+    for family, pattern, kind in _PARSERS:
         for m in pattern.finditer(text):
-            found.setdefault((family, m.start()), Mention(family, m.group(0).strip(), m.start()))
-    return sorted(found.values(), key=lambda m: m.start)
+            ref = _ref(family, kind, m)
+            if ref is False:
+                continue
+            mention = Mention(family, m.group(0).strip(), m.start(), ref if isinstance(ref, str) else None)
+            current = found.get(m.start())
+            # At one position keep the most specific reading: one with a location, then the longest.
+            better = current is None or (
+                (mention.ref is not None, len(mention.text)) > (current.ref is not None, len(current.text))
+            )
+            if better:
+                found[m.start()] = mention
+    # A mention inside a longer one ("Rambam" in "Rambam, Laws of...", "Orach Chayim 300" in
+    # "Shulchan Arukh, Orach Chayim 300") is part of it.
+    spans = list(found.values())
+
+    def inside(x: Mention) -> bool:
+        end = x.start + len(x.text)
+        return any(
+            y is not x and y.start <= x.start and end <= y.start + len(y.text) and len(y.text) > len(x.text)
+            for y in spans
+        )
+
+    return sorted((x for x in spans if not inside(x)), key=lambda x: x.start)
 
 
-def unretrieved(answer_text: str, retrieved_works: set[str], retrieved_texts: list[str]) -> list[Mention]:
-    """Mentions of works that no retrieved source belongs to, and that no retrieved text itself
-    quotes (a Gemara quoting a verse may be followed in naming that verse)."""
+def unretrieved(
+    answer_text: str,
+    retrieved_works: set[str],
+    retrieved_texts: list[str],
+    retrieved_refs: Iterable[str] = (),
+) -> list[Mention]:
+    """Mentions of a work, or of a place in a work, that was not retrieved, and that no retrieved
+    text itself quotes (a Gemara quoting a verse may be followed in naming that verse)."""
     allowed: set[str] = set()
     for w in retrieved_works:
         allowed |= WORK_FAMILIES.get(w, {w})
-    quoted = {m.family for t in retrieved_texts for m in find_mentions(t)}
-    return [m for m in find_mentions(answer_text) if m.family not in allowed and m.family not in quoted]
+    refs = list(retrieved_refs)
+    quoted = [m for t in retrieved_texts for m in find_mentions(t)]
+    quoted_families = {m.family for m in quoted}
+    quoted_refs = [m.ref for m in quoted if m.ref]
+    out: list[Mention] = []
+    for m in find_mentions(answer_text):
+        unknown_work = m.family not in allowed and m.family not in quoted_families
+        unknown_place = m.ref is not None and not _covered(m.ref, refs) and not _covered(m.ref, quoted_refs)
+        if unknown_work or unknown_place:
+            out.append(m)
+    return out
+
+
+def _covered(ref: str, retrieved: list[str]) -> bool:
+    """A named place is covered by a retrieved reference at the same, a finer or a coarser level:
+    "Berakhot 2a" by "Berakhot 2a:3", "Deuteronomy 6:4" by "Deuteronomy 6"."""
+    return any(matches(r, ref) or matches(ref, r) for r in retrieved)

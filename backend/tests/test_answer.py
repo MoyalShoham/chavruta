@@ -168,15 +168,56 @@ def test_answer_naming_an_unretrieved_source_is_flagged() -> None:
     assert "unretrieved_mention" in [n.kind for n in a.notices]
 
 
-def test_naming_a_retrieved_work_or_a_verse_a_source_quotes_is_fine() -> None:
-    assert unretrieved("Deuteronomy 6:4 says so", {"Deuteronomy"}, []) == []
-    assert unretrieved("כמו שכתוב (תהלים קמה, טז)", {"Berakhot"}, ["דכתיב (תהלים קמה, טז) פותח"]) == []
-    assert [m.family for m in unretrieved("See Shabbat 21b", {"Berakhot"}, [])] == ["Shabbat"]
+def test_naming_a_retrieved_place_or_a_verse_a_source_quotes_is_fine() -> None:
+    assert unretrieved("Deuteronomy 6:4 says so", {"Deuteronomy"}, [], ["Deuteronomy 6:4"]) == []
+    assert unretrieved("Berakhot 2a says so", {"Berakhot"}, [], ["Berakhot 2a:3"]) == []
+    assert unretrieved("כמו שכתוב (תהלים קמה, טז)", {"Berakhot"}, ["דכתיב (תהלים קמה, טז) פותח"], []) == []
+    assert [m.family for m in unretrieved("See Shabbat 21b", {"Berakhot"}, [], [])] == ["Shabbat"]
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "Berakhot 60b says so",  # retrieved work, place not retrieved
+        "Shulchan Arukh, Orach Chayim 300:1 rules so",  # beyond the library's 1-241
+        "Rambam, Laws of Shabbat 30:1",  # a book of the Rambam not in the library
+        "ברכות ס: אומרת",
+        "כמו שכתוב בדברים ו, ט",
+    ],
+)
+def test_an_invented_place_inside_a_retrieved_work_is_flagged(text: str) -> None:
+    works = {"Berakhot", "Shulchan Arukh, Orach Chayim", "Mishneh Torah, Blessings", "Deuteronomy"}
+    refs = [
+        "Berakhot 2a:1",
+        "Shulchan Arukh, Orach Chayim 89:3",
+        "Mishneh Torah, Blessings 1:1",
+        "Deuteronomy 6:4",
+    ]
+    assert len(unretrieved(text, works, [], refs)) == 1, text
 
 
 def test_mention_detector_ignores_ordinary_words() -> None:
     assert find_mentions("שבת שלום. ברכות רבות. דברים רבים נאמרו. This Shabbat we read Numbers.") == []
-    assert [m.family for m in find_mentions('הרמב"ם ורש"י וברכות ב:')] == ["Rambam", "Rashi", "Berakhot"]
+    assert find_mentions("בשבת זו. סוכה זו. כל אדם.") == []  # "זו" and "כל" are not numerals
+    found = [(m.family, m.ref) for m in find_mentions('הרמב"ם ורש"י וברכות ב: ושו"ע או"ח סימן פט')]
+    assert found == [
+        ("Rambam", None),
+        ("Rashi", None),
+        ("Berakhot", "Berakhot 2b"),
+        ("Shulchan Arukh", None),
+        ("Shulchan Arukh", "Shulchan Arukh, Orach Chayim 89"),
+    ]
+
+
+@pytest.mark.parametrize(
+    ("numeral", "value"),
+    [("א", 1), ("יב", 12), ("טו", 15), ("טז", 16), ("קמה", 145), ('קמ"ה', 145), ("רמא", 241),
+     ("זו", None), ("כל", None), ("יה", None), ("יו", None), ("", None)],
+)  # fmt: skip
+def test_hebrew_numerals_are_parsed_strictly(numeral: str, value: int | None) -> None:
+    from chavruta.mentions import gematria
+
+    assert gematria(numeral) == value
 
 
 # ---- guardrails added by code ----------------------------------------------------------------------
