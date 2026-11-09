@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      # No ML extra: tests use a deterministic embedder and scripted or recorded model answers.
+      - run: uv sync --frozen
+      - name: Lint and format
+        run: |
+          uv run ruff check src tests alembic
+          uv run ruff format --check src tests alembic
+      - name: Type check (mypy --strict)
+        run: uv run mypy
+      - name: Tests, including the network allowlist and end to end on pgvector
+        run: uv run pytest
+      - name: Evaluation replayed from recordings (no models, no corpus, no API key)
+        run: |
+          for split in dev holdout; do
+            if [ -f eval/retrieval-$split.json ]; then
+              uv run python -m chavruta.evaluation retrieval --split $split --replay --check eval
+            fi
+            if [ -f eval/answers/$split.jsonl ]; then
+              uv run python -m chavruta.eval_answers score --split $split --check eval
+            fi
+          done
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+
+  docker:
+    runs-on: ubuntu-latest
+    needs: [backend, frontend]
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose build

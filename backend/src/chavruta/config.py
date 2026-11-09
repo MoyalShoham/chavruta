@@ -27,6 +27,8 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_prefix="CHAVRUTA_", env_file=None, extra="ignore")
 
     database_url: str = "postgresql+psycopg://chavruta@localhost:5432/chavruta"
+    #: Password for database_url, from a file (the generated-secrets volume); inserted into the URL.
+    db_password_file: str | None = None
     data_dir: Path = BACKEND / "data"
     recordings_dir: Path = BACKEND / "eval" / "recordings" / "llm"
     llm_mode: Mode = Mode.REPLAY
@@ -56,6 +58,16 @@ class Settings(BaseSettings):
         if v not in ("auto", "closed"):
             raise ValueError("closing must be auto or closed")
         return v
+
+    def dsn(self) -> str:
+        if not self.db_password_file:
+            return self.database_url
+        from urllib.parse import quote
+
+        password = quote(Path(self.db_password_file).read_text(encoding="utf-8").strip(), safe="")
+        scheme, rest = self.database_url.split("://", 1)
+        user, host = rest.split("@", 1)
+        return f"{scheme}://{user.split(':')[0]}:{password}@{host}"
 
     @property
     def db_host(self) -> str:

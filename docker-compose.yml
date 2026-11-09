@@ -1,0 +1,109 @@
+# docker compose up --build   ->   http://localhost:3200
+#
+# First run: generates secrets into ./secrets (passwords to sign in are in
+# ./secrets/learner_password and ./secrets/admin_password), loads the corpus snapshot and embeds
+# it on the CPU (a few minutes). Without ANTHROPIC_API_KEY, recorded answers are replayed.
+
+x-backend: &backend
+  build: ./backend
+  image: chavruta-backend
+  env_file:
+    - path: .env
+      required: false
+  environment:
+    CHAVRUTA_DATABASE_URL: postgresql+psycopg://chavruta@db:5432/chavruta
+    CHAVRUTA_DB_PASSWORD_FILE: /secrets/db_password
+    CHAVRUTA_SESSION_SECRET_FILE: /secrets/session_secret
+    CHAVRUTA_LEARNER_PASSWORD_FILE: /secrets/learner_password
+    CHAVRUTA_ADMIN_PASSWORD_FILE: /secrets/admin_password
+    CHAVRUTA_DATA_DIR: /app/data
+    CHAVRUTA_RECORDINGS_DIR: /app/eval/recordings/llm
+  volumes:
+    - ./secrets:/secrets:ro
+    - data:/app/data
+
+services:
+  secrets:
+    image: python:3.12-slim
+    command:
+      - python
+      - -c
+      - |
+        import os, secrets
+        for name, n in (("db_password", 24), ("session_secret", 48), ("learner_password", 12), ("admin_password", 12)):
+            path = f"/secrets/{name}"
+            if not os.path.exists(path):
+                with open(path, "w") as f:
+                    f.write(secrets.token_urlsafe(n))
+                print(f"generated {path}")
+    volumes:
+      - ./secrets:/secrets
+
+  db:
+    image: pgvector/pgvector:pg17
+    depends_on:
+      secrets: { condition: service_completed_successfully }
+    environment:
+      POSTGRES_USER: chavruta
+      POSTGRES_DB: chavruta
+      POSTGRES_PASSWORD_FILE: /secrets/db_password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./secrets:/secrets:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U chavruta -d chavruta"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  migrate:
+    <<: *backend
+    command: ["alembic", "upgrade", "head"]
+    depends_on:
+      db: { condition: service_healthy }
+
+  ingest:
+    <<: *backend
+    command: ["python", "-m", "chavruta.ingest", "--from-file", "corpus/chunks.jsonl.gz"]
+    environment:
+      CHAVRUTA_DATABASE_URL: postgresql+psycopg://chavruta@db:5432/chavruta
+      CHAVRUTA_DB_PASSWORD_FILE: /secrets/db_password
+      CHAVRUTA_DATA_DIR: /app/data
+      CHAVRUTA_CORPUS: ${CHAVRUTA_CORPUS:-full}
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+
+  api:
+    <<: *backend
+    restart: unless-stopped
+    environment:
+      CHAVRUTA_DATABASE_URL: postgresql+psycopg://chavruta@db:5432/chavruta
+      CHAVRUTA_DB_PASSWORD_FILE: /secrets/db_password
+      CHAVRUTA_SESSION_SECRET_FILE: /secrets/session_secret
+      CHAVRUTA_LEARNER_PASSWORD_FILE: /secrets/learner_password
+      CHAVRUTA_ADMIN_PASSWORD_FILE: /secrets/admin_password
+      CHAVRUTA_DATA_DIR: /app/data
+      CHAVRUTA_RECORDINGS_DIR: /app/eval/recordings/llm
+      CHAVRUTA_LLM_MODE: ${CHAVRUTA_LLM_MODE:-replay}
+      CHAVRUTA_CLOSING: ${CHAVRUTA_CLOSING:-auto}
+    mem_limit: 4g
+    depends_on:
+      ingest: { condition: service_completed_successfully }
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 5s
+      timeout: 3s
+      retries: 60
+
+  web:
+    build: ./frontend
+    image: chavruta-web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3200:80"
+    depends_on:
+      api: { condition: service_healthy }
+
+volumes:
+  pgdata:
+  data:

@@ -179,7 +179,7 @@ def main(argv: list[str] | None = None) -> None:
     args = parser.parse_args(argv)
     settings = Settings()
     install_socket_guard(extra_hosts=[settings.db_host])
-    sessions = make_sessions(make_engine(settings.database_url))
+    sessions = make_sessions(make_engine(settings.dsn()))
     specs = preset(args.preset)
     client = SefariaClient(cache_dir=settings.data_dir / "sefaria-cache")
     with sessions() as s:

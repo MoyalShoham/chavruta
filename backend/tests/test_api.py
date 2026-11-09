@@ -418,3 +418,11 @@ def test_closing_can_be_forced_for_a_demo_but_not_disabled(make: Callable[..., T
     assert client.get("/api/status").json()["closed"] is True
     with pytest.raises(ValueError, match="closing"):
         Settings(closing="open")
+
+
+def test_database_password_comes_from_a_file(tmp_path: Path) -> None:
+    secret = tmp_path / "db_password"
+    secret.write_text("p@ss/word\n", encoding="utf-8")
+    s = Settings(database_url="postgresql+psycopg://chavruta@db:5432/chavruta", db_password_file=str(secret))
+    assert s.dsn() == "postgresql+psycopg://chavruta:p%40ss%2Fword@db:5432/chavruta"
+    assert s.db_host == "db"

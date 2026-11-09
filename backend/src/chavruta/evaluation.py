@@ -218,7 +218,20 @@ def cmd_retrieval(args: argparse.Namespace) -> int:
         if c.rerank:
             results[c.name]["relevance"] = relevance_profile(questions, rankings)
     _write_results(args.split, results, args.out)
+    if args.check:
+        committed = json.loads((args.check / f"retrieval-{args.split}.json").read_text(encoding="utf-8"))
+        if _without_timing(committed) != _without_timing(json.loads(json.dumps(results))):
+            print(f"retrieval-{args.split}.json does not match the recorded rankings")
+            return 1
+        print(f"retrieval-{args.split}.json matches the recorded rankings")
     return 0
+
+
+def _without_timing(x: Any) -> Any:
+    """Latency is measured, not replayed; everything else must match exactly."""
+    if isinstance(x, dict):
+        return {k: _without_timing(v) for k, v in x.items() if k != "seconds"}
+    return x
 
 
 def _record(questions: Sequence[Question], wanted: Sequence[Config], out_dir: Path) -> None:
@@ -343,6 +356,7 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--only", nargs="*", help="configuration names to run")
     r.add_argument("--replay", action="store_true", help="score the recorded rankings only")
     r.add_argument("--out", type=Path, default=None)
+    r.add_argument("--check", type=Path, default=None, help="compare with the results committed here")
     r.set_defaults(fn=cmd_retrieval)
     args = parser.parse_args(argv)
     from chavruta.net import install_socket_guard

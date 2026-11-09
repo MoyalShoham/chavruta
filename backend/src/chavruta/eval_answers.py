@@ -386,6 +386,12 @@ def cmd_score(args: argparse.Namespace) -> int:
         (args.out / f"answers-{args.split}.json").write_text(
             json.dumps(r, indent=1, ensure_ascii=False), encoding="utf-8"
         )
+    if args.check:
+        committed = json.loads((args.check / f"answers-{args.split}.json").read_text(encoding="utf-8"))
+        if committed != json.loads(json.dumps(r)):
+            print(f"answers-{args.split}.json does not match the recorded answers")
+            return 1
+        print(f"answers-{args.split}.json matches the recorded answers")
     return 1 if r["integrity_problems"] else 0
 
 
@@ -460,6 +466,7 @@ def main(argv: list[str] | None = None) -> int:
             p.add_argument("--threshold", type=float, default=DEFAULT_RELEVANCE)
         if name == "score":
             p.add_argument("--out", type=Path, default=None)
+            p.add_argument("--check", type=Path, default=None, help="compare with the results committed here")
         if name == "sample":
             p.add_argument("--n", type=int, default=30)
             p.add_argument("--seed", type=int, default=5787)

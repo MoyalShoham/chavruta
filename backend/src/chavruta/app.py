@@ -26,7 +26,7 @@ def make() -> FastAPI:
     settings = Settings()
     install_socket_guard(extra_hosts=[settings.db_host])
     settings.secret()  # refuse to start without a real secret
-    sessions = make_sessions(make_engine(settings.database_url))
+    sessions = make_sessions(make_engine(settings.dsn()))
     with sessions() as s:
         ensure_users(s, settings.password("learner"), settings.password("admin"))
     embedder = SentenceEmbedder(MODELS[CHOSEN_MODEL])
