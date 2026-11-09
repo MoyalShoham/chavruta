@@ -97,7 +97,10 @@ def survey_versions(s: Session, client: SefariaClient, spec: WorkSpec) -> None:
 
 
 def store_chunks(s: Session, spec: WorkSpec, chunks: Sequence[Chunk], skipped: Iterable[Skipped]) -> int:
+    # The license is checked again here: a snapshot file is not trusted to contain only open texts.
+    chunks = [c for c in chunks if is_open(c.license)]
     work = upsert_work(s, spec)
+    before = s.scalar(select(func.count()).select_from(ChunkRow).where(ChunkRow.work_id == work.id)) or 0
     versions: dict[tuple[str, str], Version] = {}
     for c in chunks:
         key = (c.language, c.version)
@@ -117,17 +120,16 @@ def store_chunks(s: Session, spec: WorkSpec, chunks: Sequence[Chunk], skipped: I
         }
         for c in chunks
     ]
-    inserted = 0
     for i in range(0, len(rows), 1000):
         stmt = (
             pg_insert(ChunkRow)
             .values(rows[i : i + 1000])
             .on_conflict_do_nothing(index_elements=["version_id", "ref"])
         )
-        result: Any = s.execute(stmt)
-        inserted += result.rowcount or 0
+        s.execute(stmt)
     work.synced_at = now()
-    return inserted
+    after = s.scalar(select(func.count()).select_from(ChunkRow).where(ChunkRow.work_id == work.id)) or 0
+    return after - before
 
 
 def embed_missing(s: Session, embedder: Embedder, batch: int = 256) -> int:

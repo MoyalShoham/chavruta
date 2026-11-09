@@ -333,6 +333,8 @@ def test_cards_are_scheduled_by_sm2(make: Callable[..., TestClient]) -> None:
     assert reviewed["due"] == "2027-04-21"
     assert card["id"] not in [c["id"] for c in client.get("/api/cards", params={"due": True}).json()]
     assert client.post(f"/api/cards/{card['id']}/review", json={"grade": 9}, headers=H).status_code == 422
+    nowhere = client.post("/api/cards", json={"ref": "Shabbat 2a:1", "front": "q", "back": "a"}, headers=H)
+    assert nowhere.status_code == 422
 
 
 def test_card_suggestions_carry_the_passage_reference_set_by_code(make: Callable[..., TestClient]) -> None:
@@ -375,6 +377,8 @@ def test_work_plan_and_daf_yomi(make: Callable[..., TestClient]) -> None:
     }
     bad = client.post("/api/plans", json={"kind": "work", "work_title": "Nowhere"}, headers=H)
     assert bad.status_code == 422
+    stranger = client.post(f"/api/plans/{plan['id']}/progress", json={"unit": "Genesis 1"}, headers=H)
+    assert stranger.status_code == 422  # progress only for units of the plan
 
 
 # ---- corpus management --------------------------------------------------------------------------------
@@ -444,6 +448,31 @@ def test_closing_can_be_forced_for_a_demo_but_not_disabled(make: Callable[..., T
     assert client.get("/api/status").json()["closed"] is True
     with pytest.raises(ValueError, match="closing"):
         Settings(closing="open")
+
+
+def test_sefaria_outage_is_a_502_not_a_500(loaded: sessionmaker[Session]) -> None:
+    client = build(loaded, answer_llm())
+    state: AppState = client.app.state.chavruta  # type: ignore[attr-defined]
+
+    def down(request: httpx2.Request) -> httpx2.Response:
+        raise httpx2.ConnectError("refused", request=request)
+
+    state.sefaria = SefariaClient(client=httpx2.Client(transport=httpx2.MockTransport(down)), min_interval=0)
+    sign_in(client)
+    assert client.get("/api/links", params={"ref": "Berakhot 2a"}).status_code == 502
+    assert client.get("/api/daf-yomi").json()["ref"] is None
+
+
+def test_ingest_rechecks_licenses_in_a_snapshot(loaded: sessionmaker[Session]) -> None:
+    from chavruta.corpus import BY_TITLE, Chunk
+    from chavruta.ingest import store_chunks
+
+    closed = Chunk(
+        "Genesis 1:1", "Genesis", "Tanakh", "en", "NC Edition", "CC-BY-NC", "In the beginning", "Genesis 1", 0
+    )
+    with loaded() as s:
+        assert store_chunks(s, BY_TITLE["Genesis"], [closed], []) == 0
+        s.rollback()
 
 
 def test_database_password_comes_from_a_file(tmp_path: Path) -> None:

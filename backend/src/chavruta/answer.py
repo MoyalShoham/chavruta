@@ -15,6 +15,8 @@ What the model may and may not do is enforced around it, not only asked of it:
 
 from __future__ import annotations
 
+import hashlib
+import json
 from collections import defaultdict
 from collections.abc import Sequence
 from dataclasses import dataclass, field
@@ -28,7 +30,6 @@ from chavruta.mentions import Mention, unretrieved
 from chavruta.retrieval import Retriever
 from chavruta.scope import URGENT, Classification, Decision, Strictness, classify, decide
 
-PROMPT_VERSION = "2026-11-09.1"
 SOURCES_PER_ANSWER = 8
 DEFAULT_RELEVANCE = 0.05  # reranker probability; chosen on dev (see docs/decisions.md)
 
@@ -311,21 +312,38 @@ class ReplayIndex:
     """
 
     def __init__(self, recordings: Sequence[dict[str, Any]]) -> None:
-        self.by_question: dict[tuple[str, str, int], dict[str, Any]] = {}
+        self.by_question: dict[tuple[str, str, str | None], dict[str, Any]] = {}
         for rec in recordings:
-            req = rec["request"]
-            content = req["messages"][-1]["content"]
-            if isinstance(content, list) and any(b.get("type") == "search_result" for b in content):
-                key = (req["system"], content[-1]["text"], len(req["messages"]))
+            key = self.key(rec["request"])
+            if key is not None:
                 self.by_question[key] = rec
+
+    @staticmethod
+    def key(request: dict[str, Any]) -> tuple[str, str, str | None] | None:
+        """System prompt, the whole conversation's text, and in chavruta mode the anchored passage:
+        everything that defines the question except the order retrieval returned sources in."""
+        messages = request.get("messages", [])
+        last = messages[-1]["content"] if messages else None
+        if not isinstance(last, list) or not any(b.get("type") == "search_result" for b in last):
+            return None
+        texts = [
+            m["content"] if isinstance(m["content"], str)
+            else [b["text"] for b in m["content"] if b.get("type") == "text"]
+            for m in messages
+        ]  # fmt: skip
+        anchor = None
+        if "Chavruta mode" in request["system"]:
+            anchor = next(b["title"] for b in last if b.get("type") == "search_result")
+        conversation = hashlib.sha256(json.dumps(texts, ensure_ascii=False).encode()).hexdigest()
+        return (request["system"], conversation, anchor)
 
     @classmethod
     def load(cls, directory: Path) -> ReplayIndex:
         return cls(iter_recordings(directory))
 
     def find(self, request: dict[str, Any]) -> dict[str, Any] | None:
-        content = request["messages"][-1]["content"]
-        return self.by_question.get((request["system"], content[-1]["text"], len(request["messages"])))
+        key = self.key(request)
+        return self.by_question.get(key) if key else None
 
 
 class Chavruta:
@@ -378,8 +396,10 @@ class Chavruta:
         classification: Classification | None = None,
     ) -> Answer:
         question = question.strip()
-        c = classification or classify(self.llm, question)
-        sources = self.retrieve(question, anchor_ref)
+        # A follow-up is classified and searched together with the question it follows.
+        context = next((t.text for t in reversed(history) if t.role == "user" and t.text.strip()), None)
+        c = classification or classify(self.llm, question, context)
+        sources = self.retrieve(f"{context} {question}" if context else question, anchor_ref)
         # In chavruta mode the anchored passage is always relevant: the learner is studying it.
         best = sources[0].score if sources else None
         threshold = -1e9 if anchor_ref and mode == "chavruta" else self.settings.relevance_threshold

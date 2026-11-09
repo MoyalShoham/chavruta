@@ -12,7 +12,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-import os
 from enum import StrEnum
 from pathlib import Path
 from typing import Any, Protocol
@@ -101,12 +100,6 @@ class RecordingLLM:
                 encoding="utf-8",
             )
         return response
-
-
-def from_env(directory: Path) -> RecordingLLM:
-    mode = Mode(os.environ.get("CHAVRUTA_LLM_MODE", "replay"))
-    inner = AnthropicLLM() if mode != Mode.REPLAY else None
-    return RecordingLLM(directory, mode, inner)
 
 
 def iter_recordings(directory: Path) -> list[dict[str, Any]]:

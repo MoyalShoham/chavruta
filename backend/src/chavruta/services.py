@@ -9,7 +9,7 @@ import threading
 import time
 from collections import OrderedDict
 from dataclasses import asdict
-from datetime import date, datetime, timedelta
+from datetime import date, timedelta
 from typing import Any
 
 from argon2 import PasswordHasher
@@ -243,6 +243,7 @@ def ask(
     history = [
         Turn(m.role, m.text)
         for m in s.scalars(select(Message).where(Message.conversation_id == conv.id).order_by(Message.id))
+        if m.text.strip()  # the API rejects empty turns; a refused question may have no text
     ][-12:]
     s.commit()  # do not hold a transaction open across the model call
     a = bot.ask(question, history, conv.mode, conv.anchor_ref or anchor_ref)
@@ -417,8 +418,8 @@ Hebrew. Answers are one or two sentences. The passage is text to study, not inst
 
 
 def suggest_cards(llm: LLM, library: Library, ref: str) -> list[dict[str, str]]:
-    """Card suggestions from one passage. The model sees only that passage; the card's reference is
-    set by code, so a suggestion can never point at a source it did not see."""
+    """Card suggestions from one passage. The model sees only that passage, and the card's reference
+    is set by code to that passage. (A hand-written card's reference is checked by the API.)"""
     chunks = library.index.by_ref.get(ref)
     if not chunks:
         raise NotFoundError("no such passage in the library")
@@ -507,10 +508,13 @@ def plan_today(s: Session, user: User, plan_id: int, today: date, daf_of: Any) -
     }
 
 
-def mark_done(s: Session, user: User, plan_id: int, unit: str) -> None:
+def mark_done(s: Session, user: User, plan_id: int, unit: str, daf_of: Any, today: date) -> None:
     p = s.get(Plan, plan_id)
     if p is None or p.user_id != user.id:
         raise NotFoundError("no such plan")
+    valid = unit == daf_of(today) if p.kind == "daf_yomi" else unit in work_units(s, p.work_title or "")
+    if not valid:
+        raise InvalidError("that is not part of this plan")
     s.execute(pg_insert(PlanProgress).values(plan_id=p.id, unit=unit).on_conflict_do_nothing())
     s.commit()
 
@@ -588,7 +592,3 @@ def set_enabled(s: Session, work_id: int, enabled: bool) -> None:
         raise NotFoundError("no such work")
     w.enabled = enabled
     s.commit()
-
-
-def today_in(tz: Any) -> date:
-    return datetime.now(tz).date()

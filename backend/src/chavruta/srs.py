@@ -10,7 +10,6 @@ from dataclasses import dataclass, replace
 from datetime import date, timedelta
 
 MIN_EASE = 1.3
-GRADES = (1, 3, 4, 5)
 
 
 @dataclass(frozen=True)

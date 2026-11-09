@@ -379,7 +379,9 @@ def create_app(state: AppState) -> FastAPI:
         return services.cards(s, user, st.now().astimezone(st.tz).date(), due)
 
     @app.post("/api/cards", status_code=201)
-    def add_card(body: CardIn, user: Me, s: Db) -> dict[str, Any]:
+    def add_card(body: CardIn, user: Me, s: Db, st: State) -> dict[str, Any]:
+        if body.ref not in st.library.index.by_ref and body.ref not in st.library.by_section:
+            raise HTTPException(422, "that passage is not in the library")
         result: dict[str, Any] = guarded(
             lambda: services.add_card(s, user, body.ref, body.front, body.back, body.origin)
         )
@@ -455,8 +457,9 @@ def create_app(state: AppState) -> FastAPI:
         return result
 
     @app.post("/api/plans/{plan_id}/progress", status_code=204)
-    def progress(plan_id: int, body: ProgressIn, user: Me, s: Db) -> Response:
-        guarded(lambda: services.mark_done(s, user, _id(plan_id), body.unit))
+    def progress(plan_id: int, body: ProgressIn, user: Me, s: Db, st: State) -> Response:
+        today = st.now().astimezone(st.tz).date()
+        guarded(lambda: services.mark_done(s, user, _id(plan_id), body.unit, daf_of, today))
         return Response(status_code=204)
 
     @app.delete("/api/plans/{plan_id}", status_code=204)

@@ -479,3 +479,49 @@ def test_keyless_replay_serves_a_recorded_answer_when_retrieval_order_differs(tm
     assert again.segments[0].citations[0].ref == first.segments[0].citations[0].ref
     with pytest.raises(MissingRecordingError):
         lenient.ask("a question nobody recorded")
+
+
+def test_a_follow_up_is_classified_and_searched_with_the_question_before_it() -> None:
+    llm = ScriptedLLM(classification(), [{"type": "text", "text": "x"}])
+    bot(llm).ask(
+        "and the other opinion?", history=[Turn("user", "מאימתי קורין את שמע"), Turn("assistant", "...")]
+    )
+    classifier = next(r for r in llm.requests if r["model"] == "claude-haiku-5-5")
+    assert "מאימתי קורין את שמע" in classifier["messages"][0]["content"]
+    sent = [
+        b["title"] for b in llm.answer_requests[0]["messages"][-1]["content"] if b["type"] == "search_result"
+    ]
+    assert sent[0].startswith("Mishnah Berakhot 1:1")  # found through the earlier question
+
+
+def test_replay_key_distinguishes_passage_and_history() -> None:
+    from chavruta.answer import ReplayIndex
+
+    def req(system: str, history: list[str], anchor: str) -> dict[str, Any]:
+        msgs: list[dict[str, Any]] = [{"role": "user", "content": h} for h in history]
+        msgs.append(
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "search_result",
+                        "title": anchor,
+                        "source": "",
+                        "content": [{"type": "text", "text": "t"}],
+                    },
+                    {"type": "text", "text": "Go on"},
+                ],
+            }
+        )
+        return {"system": system, "messages": msgs}
+
+    chav = SYSTEM + "\n\nChavruta mode: ..."
+    keys = {
+        ReplayIndex.key(req(chav, [], "Berakhot 2a:1 (Berakhot)")),
+        ReplayIndex.key(req(chav, [], "Berakhot 2b:1 (Berakhot)")),
+        ReplayIndex.key(req(chav, ["first"], "Berakhot 2a:1 (Berakhot)")),
+        ReplayIndex.key(req(chav, ["other"], "Berakhot 2a:1 (Berakhot)")),
+    }
+    assert len(keys) == 4
+    # In ask mode the source order is retrieval's, so it is not part of the key.
+    assert ReplayIndex.key(req(SYSTEM, [], "A (x)")) == ReplayIndex.key(req(SYSTEM, [], "B (x)"))

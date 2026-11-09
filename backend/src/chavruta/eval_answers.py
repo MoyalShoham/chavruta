@@ -30,7 +30,6 @@ from chavruta.scope import Classification, Scope, Strictness, decide
 
 ANSWERS = EVAL / "answers"
 LLM_RECORDINGS = EVAL / "recordings" / "llm"
-JUDGE_VERSION = "2026-11-09.1"
 ANSWERABLE = ("source", "explain", "halacha", "sensitive")
 
 

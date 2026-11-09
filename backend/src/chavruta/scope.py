@@ -22,8 +22,6 @@ from typing import Any
 
 from chavruta.llm import CLASSIFIER_MODEL, LLM
 
-CLASSIFIER_VERSION = "2026-11-09.1"
-
 
 class Strictness(StrEnum):
     STRICT = "strict"  # Torah-text questions only
@@ -167,12 +165,15 @@ class Decision:
     best_source_score: float | None
 
 
-def classify_request(question: str) -> dict[str, Any]:
+def classify_request(question: str, context: str | None = None) -> dict[str, Any]:
+    """`context` is the learner's previous question, so a follow-up ("and the other opinion?") is
+    classified as part of the conversation it belongs to."""
+    content = question if context is None else f"Earlier question: {context}\n\nFollow-up: {question}"
     return {
         "model": CLASSIFIER_MODEL,
         "max_tokens": 1024,
         "system": SYSTEM,
-        "messages": [{"role": "user", "content": question}],
+        "messages": [{"role": "user", "content": content}],
         "output_config": {"effort": "low", "format": {"type": "json_schema", "schema": SCHEMA}},
     }
 
@@ -199,8 +200,8 @@ def parse_classification(response: dict[str, Any]) -> Classification:
         return Classification(Scope.OUT_OF_SCOPE, "other", True, "unclassified", False, "other")
 
 
-def classify(llm: LLM, question: str) -> Classification:
-    return parse_classification(llm.create(classify_request(question)))
+def classify(llm: LLM, question: str, context: str | None = None) -> Classification:
+    return parse_classification(llm.create(classify_request(question, context)))
 
 
 def decide(
