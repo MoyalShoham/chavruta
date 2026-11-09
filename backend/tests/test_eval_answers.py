@@ -69,10 +69,12 @@ def run(dirs: Path) -> list[dict[str, Any]]:
     b = bot(llm)
     rows = [ev.answer_row(q, b.ask(q.question)) for q in questions]
     (dirs / "answers" / "dev.jsonl").write_text(
-        "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows)
+        "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8"
     )
     judged = ev.judge_rows(RecordingLLM(dirs / "llm", Mode.RECORD, scripted), "dev")
-    (dirs / "answers" / "dev-judge.jsonl").write_text("".join(json.dumps(r) + "\n" for r in judged))
+    (dirs / "answers" / "dev-judge.jsonl").write_text(
+        "".join(json.dumps(r) + "\n" for r in judged), encoding="utf-8"
+    )
     return rows
 
 
@@ -94,14 +96,14 @@ def test_a_doctored_answer_or_citation_is_caught(dirs: Path) -> None:
     rows = run(dirs)
     rows[0]["segments"][0]["text"] = "Something the model never said."
     (dirs / "answers" / "dev.jsonl").write_text(
-        "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows)
+        "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8"
     )
     assert any("differs from the recorded response" in p for p in ev.score("dev")["integrity_problems"])
 
     path = next((dirs / "llm").glob(f"*/{rows[1]['answer_key']}.json"))
-    rec = json.loads(path.read_text())
+    rec = json.loads(path.read_text(encoding="utf-8"))
     rec["response"]["content"][0]["citations"][0]["cited_text"] = "a quotation that was never in the source"
-    path.write_text(json.dumps(rec))
+    path.write_text(json.dumps(rec), encoding="utf-8")
     assert any("not verbatim" in p for p in ev.score("dev")["integrity_problems"])
 
 
@@ -111,8 +113,10 @@ def test_manual_review_sheet(
     run(dirs)
     monkeypatch.setattr(ev, "EVAL", dirs)
     assert ev.main(["sample", "--split", "dev", "--n", "5"]) == 0
-    sheet = (dirs / "manual-review-dev.md").read_text()
+    sheet = (dirs / "manual-review-dev.md").read_text(encoding="utf-8")
     assert sheet.count("Verdict: ") == 2
-    (dirs / "manual-review-dev.md").write_text(sheet.replace("Verdict: ", "Verdict: supported", 1))
+    (dirs / "manual-review-dev.md").write_text(
+        sheet.replace("Verdict: ", "Verdict: supported", 1), encoding="utf-8"
+    )
     ev.main(["manual", "--split", "dev"])
     assert "1 of 2 reviewed" in capsys.readouterr().out
