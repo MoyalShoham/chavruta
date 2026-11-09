@@ -19,6 +19,7 @@ from fastapi import Depends, FastAPI, HTTPException, Path, Query, Request, Respo
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session, sessionmaker
+from starlette.concurrency import run_in_threadpool
 from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoint
 
 from chavruta import services
@@ -128,7 +129,8 @@ class ClosedMiddleware(BaseHTTPMiddleware):
         path = request.url.path
         if path.startswith("/api/") and path not in OPEN_PATHS:
             state: AppState = request.app.state.chavruta
-            st = status_of(state)
+            # The schedule may refresh from Hebcal: keep that blocking call off the event loop.
+            st = await run_in_threadpool(status_of, state)
             if st.closed:
                 return JSONResponse(
                     {"detail": "closed for Shabbat or Yom Tov", **_status_json(st)}, status_code=423
@@ -196,7 +198,7 @@ def create_app(state: AppState) -> FastAPI:
 
     @app.post("/api/session")
     def login(body: Login, request: Request, response: Response, s: Db, st: State) -> dict[str, Any]:
-        key = (request.client.host if request.client else "?", body.username)
+        key = (client_address(request), body.username)
         if st.throttle.blocked(key):
             raise HTTPException(429, "too many failed attempts; wait a minute")
         result = services.login(s, body.username, body.password, st.settings.session_hours)
@@ -481,6 +483,13 @@ def create_app(state: AppState) -> FastAPI:
         return {"strictness": body.strictness}
 
     return app
+
+
+def client_address(request: Request) -> str:
+    """The browser's address. The API is reachable only through the bundled nginx (its port is not
+    published), which sets X-Forwarded-For to the connecting address, overwriting any sent value."""
+    forwarded = request.headers.get("x-forwarded-for", "").split(",")[0].strip()
+    return forwarded or (request.client.host if request.client else "?")
 
 
 def _id(value: int) -> int:

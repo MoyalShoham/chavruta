@@ -62,7 +62,7 @@ plugins = ["pydantic.mypy"]
 files = ["src", "tests"]
 
 [[tool.mypy.overrides]]
-module = ["testcontainers.*", "rank_bm25.*", "sentence_transformers.*", "pgvector.*"]
+module = ["testcontainers.*", "rank_bm25.*", "sentence_transformers.*", "pgvector.*", "torch.*", "huggingface_hub.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]
