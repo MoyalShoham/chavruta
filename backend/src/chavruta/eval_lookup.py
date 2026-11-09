@@ -176,6 +176,8 @@ def cmd_library(args: argparse.Namespace) -> int:
         before = recorded[q.id]
         fetched = [s.ref for s in sources if s.fetched]
         key = request_key(answer_request(q.question, sources, (), "ask")) if decision.answer else None
+        sent_before = before["retrieved"] if before["status"] == "answered" else []
+        sent_now = [s.ref for s in sources] if decision.answer else []
         rows.append(
             {
                 "id": q.id,
@@ -185,6 +187,8 @@ def cmd_library(args: argparse.Namespace) -> int:
                 "planned": found.record()["refs"] if found else None,
                 "fetched_sources": fetched,
                 "same_request": key == before["answer_key"] if before["answer_key"] and key else None,
+                "gold_sent_before": _covers(sent_before, q.gold) if q.gold else None,
+                "gold_sent_now": _covers(sent_now, q.gold) if q.gold else None,
             }
         )
         print(
@@ -224,6 +228,8 @@ def library_check(split: str) -> dict[str, Any] | None:
         "declined_before_answered_now": [
             r["id"] for r in rows if r["status_before"] != "answered" and r["answers_now"]
         ],
+        "gold_lost": [r["id"] for r in rows if r["gold_sent_before"] and not r["gold_sent_now"]],
+        "gold_gained": [r["id"] for r in rows if r["gold_sent_now"] and not r["gold_sent_before"]],
     }
 
 
@@ -384,6 +390,8 @@ def cmd_score(args: argparse.Namespace) -> int:
             f"- Not in the library ({lib['not_in_library']}): now answered from Sefaria: "
             f"{', '.join(lib['not_in_library_answered_now']) or 'none'}.",
             f"- Declined before, answered now: {', '.join(lib['declined_before_answered_now']) or 'none'}.",
+            f"- A gold source the library had sent, no longer sent: {', '.join(lib['gold_lost']) or 'none'}; "
+            f"a gold source sent now that was not before: {', '.join(lib['gold_gained']) or 'none'}.",
             "",
         ]
     text = "\n".join(lines)
