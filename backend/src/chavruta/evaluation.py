@@ -157,6 +157,7 @@ class Config:
     mode: str  # keyword | semantic | hybrid
     model: str | None
     rerank: bool
+    rerank_top: int = 50
 
 
 def configs(models: Sequence[str]) -> list[Config]:
@@ -166,6 +167,7 @@ def configs(models: Sequence[str]) -> list[Config]:
             Config(f"{m}", "semantic", m, False),
             Config(f"hybrid:{m}", "hybrid", m, False),
             Config(f"hybrid:{m}+rerank", "hybrid", m, True),
+            Config(f"hybrid:{m}+rerank20", "hybrid", m, True, 20),
         ]
     return out
 
@@ -251,6 +253,7 @@ def _record(questions: Sequence[Question], wanted: Sequence[Config], out_dir: Pa
         retriever = Retriever(chunks, embedder, vectors, reranker)
         for c in (c for c in wanted if c.model == model):
             rankings = []
+            retriever.rerank_top = c.rerank_top
             for q in questions:
                 start = time.perf_counter()
                 hits = retriever.search(q.question, k=10, mode=c.mode, rerank=c.rerank)

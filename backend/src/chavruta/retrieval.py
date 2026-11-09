@@ -41,8 +41,10 @@ class Retriever:
         embedder: Embedder | None = None,
         vectors: Vectors | None = None,
         reranker: Reranker | None = None,
+        rerank_top: int = CANDIDATES,
     ) -> None:
         self.chunks = list(chunks)
+        self.rerank_top = rerank_top
         self.bm25 = BM25Okapi([tokens(c.text) or ["_"] for c in self.chunks])
         self.embedder = embedder
         self.vectors = vectors
@@ -76,7 +78,9 @@ class Retriever:
         for ranking in lists:
             for rank, i in enumerate(ranking):
                 fused[i] = fused.get(i, 0.0) + 1.0 / (RRF_K + rank + 1)
-        candidates = sorted(fused, key=lambda i: -fused[i])[:CANDIDATES]
+        candidates = sorted(fused, key=lambda i: -fused[i])[
+            : self.rerank_top if rerank and self.reranker else CANDIDATES
+        ]
         scored = [(i, fused[i]) for i in candidates]
         if rerank and self.reranker is not None and candidates:
             rr = self.reranker.scores(query, [self.chunks[i].text[:1500] for i in candidates])
