@@ -38,12 +38,11 @@ ANSWERABLE = ("source", "explain", "halacha", "sensitive")
 
 
 def cmd_run(args: argparse.Namespace) -> int:
-    from chavruta.answer import Chavruta, CorpusIndex, Settings, answer_request
+    from chavruta.answer import Chavruta, CorpusIndex, Settings
     from chavruta.embeddings import MODELS, CrossEncoderReranker, SentenceEmbedder, load_vectors
     from chavruta.evaluation import DATA, load_chunks
     from chavruta.llm import AnthropicLLM
     from chavruta.retrieval import Retriever
-    from chavruta.scope import classify_request
 
     chunks = load_chunks()
     _, vectors = load_vectors(DATA / "vectors" / args.model)
@@ -57,37 +56,43 @@ def cmd_run(args: argparse.Namespace) -> int:
     rows = []
     for q in questions:
         a = bot.ask(q.question)
-        answer_key = request_key(answer_request(q.question, a.sources, (), "ask")) if a.sources else None
-        assert a.decision is not None
-        rows.append(
-            {
-                "id": q.id,
-                "status": a.status.value,
-                "reason": a.decision.reason,
-                "classification": {
-                    **asdict(a.decision.classification),
-                    "scope": a.decision.classification.scope.value,
-                },
-                "classifier_key": request_key(classify_request(q.question)),
-                "sensitive_area": a.decision.sensitive_area,
-                "best_score": a.decision.best_source_score,
-                "retrieved": a.retrieved,
-                "notices": [n.kind for n in a.notices],
-                "answer_key": answer_key,
-                "model": a.model,
-                "text": a.text,
-                "segments": [
-                    {"text": s.text, "citations": [[c.source_index, c.ref, c.language] for c in s.citations]}
-                    for s in a.segments
-                ],
-                "unretrieved": [m.text for m in a.unretrieved],
-            }
-        )
-        print(f"{q.id} {a.status.value:9} {a.decision.reason}", flush=True)
+        rows.append(answer_row(q, a))
+        print(f"{q.id} {a.status.value:9} {rows[-1]['reason']}", flush=True)
     path = ANSWERS / f"{args.split}.jsonl"
     path.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8")
     print(f"{len(rows)} answers -> {path}; {llm.calls} API calls")
     return 0
+
+
+def answer_row(q: Question, a: Any) -> dict[str, Any]:
+    """One evaluated answer, as stored in eval/answers/<split>.jsonl."""
+    from chavruta.answer import answer_request
+    from chavruta.scope import classify_request
+
+    assert a.decision is not None
+    answer_key = request_key(answer_request(q.question, a.sources, (), "ask")) if a.sources else None
+    return {
+        "id": q.id,
+        "status": a.status.value,
+        "reason": a.decision.reason,
+        "classification": {
+            **asdict(a.decision.classification),
+            "scope": a.decision.classification.scope.value,
+        },
+        "classifier_key": request_key(classify_request(q.question)),
+        "sensitive_area": a.decision.sensitive_area,
+        "best_score": a.decision.best_source_score,
+        "retrieved": a.retrieved,
+        "notices": [n.kind for n in a.notices],
+        "answer_key": answer_key,
+        "model": a.model,
+        "text": a.text,
+        "segments": [
+            {"text": s.text, "citations": [[c.source_index, c.ref, c.language] for c in s.citations]}
+            for s in a.segments
+        ],
+        "unretrieved": [m.text for m in a.unretrieved],
+    }
 
 
 # ---- judge -----------------------------------------------------------------------------------------
@@ -159,15 +164,11 @@ def _sent_sources(recording: dict[str, Any]) -> list[dict[str, Any]]:
     return [b for b in content if isinstance(b, dict) and b.get("type") == "search_result"]
 
 
-def cmd_judge(args: argparse.Namespace) -> int:
-    from chavruta.llm import AnthropicLLM
-
-    mode = Mode(args.llm)
-    llm: LLM = RecordingLLM(LLM_RECORDINGS, mode, AnthropicLLM() if mode != Mode.REPLAY else None)
-    questions = {q.id: q for q in load_questions(split=args.split)}
+def judge_rows(llm: LLM, split: str) -> list[dict[str, Any]]:
+    questions = {q.id: q for q in load_questions(split=split)}
     recordings = _recordings_by_key()
     out = []
-    for row in _load_answers(args.split):
+    for row in _load_answers(split):
         if row["status"] != "answered":
             continue
         rec = recordings[row["answer_key"]]
@@ -175,6 +176,15 @@ def cmd_judge(args: argparse.Namespace) -> int:
         text = next(b["text"] for b in response["content"] if b["type"] == "text")
         out.append({"id": row["id"], "verdicts": json.loads(text)["segments"]})
         print(row["id"], Counter(v["verdict"] for v in out[-1]["verdicts"]), flush=True)
+    return out
+
+
+def cmd_judge(args: argparse.Namespace) -> int:
+    from chavruta.llm import AnthropicLLM
+
+    mode = Mode(args.llm)
+    llm: LLM = RecordingLLM(LLM_RECORDINGS, mode, AnthropicLLM() if mode != Mode.REPLAY else None)
+    out = judge_rows(llm, args.split)
     (ANSWERS / f"{args.split}-judge.jsonl").write_text(
         "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in out), encoding="utf-8"
     )

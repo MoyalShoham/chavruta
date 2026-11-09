@@ -114,6 +114,19 @@ _SENSITIVE_WORDS = {
 _SENSITIVE_RE = {k: re.compile(v, re.IGNORECASE) for k, v in _SENSITIVE_WORDS.items()}
 
 
+# First person in English or Hebrew: a question about the asker's own life, not about a text.
+# Not "בני" or "בתי" ("sons of", "houses of" in the texts).
+_PERSONAL = re.compile(
+    r"\b(?:I|I'm|I am|my|me|we|our|us)\b"
+    r"|(?<![א-ת])(?:אני|שלי|שלנו|לי|אנחנו|אבי|אמי|אשתי|בעלי)(?![א-ת])",
+    re.IGNORECASE,
+)
+
+
+def is_personal(question: str) -> bool:
+    return bool(_PERSONAL.search(question))
+
+
 def keyword_sensitivity(question: str) -> str | None:
     for area, pattern in _SENSITIVE_RE.items():
         if pattern.search(question):
@@ -179,9 +192,10 @@ def decide(
 ) -> Decision:
     """Combines the classifier, the keyword backstop and retrieval relevance."""
     area = c.sensitive_area if c.sensitive else None
-    if area is None and c.kind != "text_study":
-        # The backstop skips pure text study ("how did R. Chanina know whether a sick person would
-        # live?"): a story about illness is not a personal question about one.
+    if area is None and (c.kind != "text_study" or is_personal(question)):
+        # The backstop skips impersonal text study ("how did R. Chanina know whether a sick person
+        # would live?"): a story about illness is not a question about one's own illness. It still
+        # fires if the classifier called a first-person question text study.
         area = keyword_sensitivity(question)
     if c.sensitive and area is None:
         area = "other"
