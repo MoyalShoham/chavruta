@@ -83,10 +83,14 @@ class CrossEncoderReranker:
         from sentence_transformers import CrossEncoder
 
         device = device or _device()
-        # Weights come from the local cache only; the backend never downloads at run time.
-        self.model: Any = CrossEncoder(name, device=device, max_length=512, local_files_only=True)
+        kwargs: dict[str, Any] = {}
         if device != "cpu":
-            self.model.model.half()  # half the memory on a GPU; scores agree to about 1e-3
+            import torch
+
+            # Loaded in half precision on a GPU: half the memory, scores agree to about 1e-3.
+            kwargs["model_kwargs"] = {"torch_dtype": torch.float16}
+        # Weights come from the local cache only; the backend never downloads at run time.
+        self.model: Any = CrossEncoder(name, device=device, max_length=512, local_files_only=True, **kwargs)
 
     def scores(self, query: str, passages: list[str]) -> list[float]:
         if not passages:
