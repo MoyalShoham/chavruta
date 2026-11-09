@@ -113,6 +113,9 @@ def test_manual_review_sheet(
     run(dirs)
     monkeypatch.setattr(ev, "EVAL", dirs)
     assert ev.main(["sample", "--split", "dev", "--n", "5"]) == 0
+    # Committed artifacts are LF on every platform (Windows would otherwise write CRLF).
+    written = [dirs / "manual-review-dev.md", *(dirs / "llm").rglob("*.json")]
+    assert all(b"\r" not in p.read_bytes() for p in written)
     sheet = (dirs / "manual-review-dev.md").read_text(encoding="utf-8")
     assert sheet.count("Verdict: ") == 2
     (dirs / "manual-review-dev.md").write_text(

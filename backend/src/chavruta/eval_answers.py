@@ -58,7 +58,9 @@ def cmd_run(args: argparse.Namespace) -> int:
         rows.append(answer_row(q, a))
         print(f"{q.id} {a.status.value:9} {rows[-1]['reason']}", flush=True)
     path = ANSWERS / f"{args.split}.jsonl"
-    path.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8")
+    path.write_text(
+        "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8", newline="\n"
+    )
     print(f"{len(rows)} answers -> {path}; {llm.calls} API calls")
     return 0
 
@@ -185,7 +187,7 @@ def cmd_judge(args: argparse.Namespace) -> int:
     llm: LLM = RecordingLLM(LLM_RECORDINGS, mode, AnthropicLLM() if mode != Mode.REPLAY else None)
     out = judge_rows(llm, args.split)
     (ANSWERS / f"{args.split}-judge.jsonl").write_text(
-        "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in out), encoding="utf-8"
+        "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in out), encoding="utf-8", newline="\n"
     )
     return 0
 
@@ -409,9 +411,9 @@ def cmd_score(args: argparse.Namespace) -> int:
         print("PROBLEM:", p)
     if args.out:
         args.out.mkdir(parents=True, exist_ok=True)
-        (args.out / f"answers-{args.split}.md").write_text(text, encoding="utf-8")
+        (args.out / f"answers-{args.split}.md").write_text(text, encoding="utf-8", newline="\n")
         (args.out / f"answers-{args.split}.json").write_text(
-            json.dumps(r, indent=1, ensure_ascii=False), encoding="utf-8"
+            json.dumps(r, indent=1, ensure_ascii=False), encoding="utf-8", newline="\n"
         )
     if args.check:
         committed = json.loads((args.check / f"answers-{args.split}.json").read_text(encoding="utf-8"))
@@ -455,7 +457,7 @@ def cmd_sample(args: argparse.Namespace) -> int:
             lines += [f"**Cited: {ref}** — {body[:1200]}", ""]
         lines += ["Verdict: ", "", "Reviewer note: ", ""]
     path = EVAL / f"manual-review-{args.split}.md"
-    path.write_text("\n".join(lines), encoding="utf-8")
+    path.write_text("\n".join(lines), encoding="utf-8", newline="\n")
     print(path)
     return 0
 

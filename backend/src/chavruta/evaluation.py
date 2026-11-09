@@ -318,6 +318,7 @@ def _record(questions: Sequence[Question], wanted: Sequence[Config], out_dir: Pa
             path.write_text(
                 json.dumps({"config": c.__dict__, "rankings": rankings}, ensure_ascii=False, indent=1),
                 encoding="utf-8",
+                newline="\n",
             )
             print(f"recorded {c.name}", flush=True)
 
@@ -403,8 +404,10 @@ def _write_results(split: str, results: dict[str, Any], out: Path | None) -> Non
     print(text)
     if out is not None:
         out.mkdir(parents=True, exist_ok=True)
-        (out / f"retrieval-{split}.md").write_text(text, encoding="utf-8")
-        (out / f"retrieval-{split}.json").write_text(json.dumps(results, indent=1), encoding="utf-8")
+        (out / f"retrieval-{split}.md").write_text(text, encoding="utf-8", newline="\n")
+        (out / f"retrieval-{split}.json").write_text(
+            json.dumps(results, indent=1), encoding="utf-8", newline="\n"
+        )
 
 
 def main(argv: list[str] | None = None) -> int:

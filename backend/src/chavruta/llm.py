@@ -98,6 +98,7 @@ class RecordingLLM:
                     {"key": key, "request": request, "response": response}, ensure_ascii=False, indent=1
                 ),
                 encoding="utf-8",
+                newline="\n",
             )
         return response
 
