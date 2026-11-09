@@ -314,6 +314,9 @@ def families_of(work: str) -> set[str]:
     return out
 
 
+_COMPENDIA = {"Rambam", "Shulchan Arukh", "Tur", "Midrash"}
+
+
 def _names(family: str) -> list[str]:
     """Every English and Hebrew name of a mention family that has them."""
     names = [family]
@@ -332,7 +335,9 @@ def named_in(text: str, ref: str) -> bool:
     13:2" (both Rashi and Numbers). Lenient on purpose: it only confirms a place a planner already
     proposed, and never flags anything by itself."""
     work = re.sub(r"\s+[\d:ab-]+$", "", ref.strip())
-    families = [f for f in families_of(work) if len(_names(f)) > 1]
+    # "The Rambam" or "the Shulchan Arukh" names an author of many books, not the book a planner
+    # chose ("לפי הרמב"ם" with Foundations of the Torah planned, on dev); a book must be named.
+    families = [f for f in families_of(work) if len(_names(f)) > 1 and f not in _COMPENDIA]
     if not families:
         return False
     plain = normalize(text).lower()

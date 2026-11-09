@@ -699,7 +699,8 @@ def test_a_book_the_question_names_is_recognised_in_any_of_its_names() -> None:
 
     assert named_in("מה אומרת הגמרא בבבא מציעא דף נט עמוד ב?", "Bava Metzia 59b")
     assert named_in("What does Rashi say on Numbers 13:2?", "Rashi on Numbers 13:2")
-    assert named_in('רמב"ם הלכות תשובה פרק ב', "Mishneh Torah, Repentance 2:2")
+    # Naming the Rambam does not name one of his books (the planner's guess may be the wrong one).
+    assert not named_in('לפי הרמב"ם, האם תפילה היא מצוות עשה?', "Mishneh Torah, Foundations of the Torah 1")
     assert not named_in("Where does Moses ask why the righteous suffer?", "Jeremiah 12:1")
     assert not named_in("מה הדין בשניים שמוצאים מציאה?", "Bava Metzia 2a")
     assert not named_in("What does Rashi say on it?", "Rashi on Numbers 13:2")  # the book is not named
