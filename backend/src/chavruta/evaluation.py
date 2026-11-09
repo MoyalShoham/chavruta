@@ -114,6 +114,7 @@ class Ranking:
     question_id: str
     refs: tuple[str, ...]
     seconds: float
+    scores: tuple[float, ...] = ()
 
 
 def score_rankings(
@@ -201,7 +202,9 @@ def _chunk_id(c: Chunk) -> str:
 
 
 def cmd_retrieval(args: argparse.Namespace) -> int:
-    questions = [q for q in load_questions(split=args.split) if q.in_scope and q.gold]
+    # Every question is retrieved (out-of-scope ones too: their best scores set the relevance
+    # threshold); only questions with gold references are scored for recall.
+    questions = load_questions(split=args.split)
     out_dir = RECORDINGS / "retrieval" / args.split
     wanted = configs(args.models)
     if args.only:
@@ -212,6 +215,8 @@ def cmd_retrieval(args: argparse.Namespace) -> int:
     for c in wanted:
         rankings = _load_rankings(out_dir / f"{_slug(c.name)}.json")
         results[c.name] = score_rankings(questions, rankings)
+        if c.rerank:
+            results[c.name]["relevance"] = relevance_profile(questions, rankings)
     _write_results(args.split, results, args.out)
     return 0
 
@@ -237,7 +242,12 @@ def _record(questions: Sequence[Question], wanted: Sequence[Config], out_dir: Pa
                 start = time.perf_counter()
                 hits = retriever.search(q.question, k=10, mode=c.mode, rerank=c.rerank)
                 rankings.append(
-                    {"id": q.id, "refs": [h.chunk.ref for h in hits], "seconds": time.perf_counter() - start}
+                    {
+                        "id": q.id,
+                        "refs": [h.chunk.ref for h in hits],
+                        "scores": [round(h.score, 6) for h in hits],
+                        "seconds": time.perf_counter() - start,
+                    }
                 )
             path = out_dir / f"{_slug(c.name)}.json"
             path.write_text(
@@ -249,7 +259,31 @@ def _record(questions: Sequence[Question], wanted: Sequence[Config], out_dir: Pa
 
 def _load_rankings(path: Path) -> dict[str, Ranking]:
     data = json.loads(path.read_text(encoding="utf-8"))
-    return {r["id"]: Ranking(r["id"], tuple(r["refs"]), r["seconds"]) for r in data["rankings"]}
+    return {
+        r["id"]: Ranking(r["id"], tuple(r["refs"]), r["seconds"], tuple(r.get("scores", ())))
+        for r in data["rankings"]
+    }
+
+
+THRESHOLDS = (0.01, 0.02, 0.05, 0.1, 0.2, 0.3, 0.5)
+
+
+def relevance_profile(questions: Sequence[Question], rankings: dict[str, Ranking]) -> dict[str, Any]:
+    """How the best reranker score separates answerable questions from the rest, per threshold:
+    the share of answerable questions kept, and of out-of-scope / not-in-library ones stopped."""
+    groups: dict[str, list[float]] = defaultdict(list)
+    for q in questions:
+        r = rankings.get(q.id)
+        if r is None or not r.scores:
+            continue
+        group = "answerable" if q.gold else q.type
+        groups[group].append(r.scores[0])
+    return {
+        str(t): {
+            g: {"n": len(v), "above": sum(x >= t for x in v) / len(v)} for g, v in sorted(groups.items())
+        }
+        for t in THRESHOLDS
+    }
 
 
 def _slug(name: str) -> str:
@@ -273,6 +307,19 @@ def _write_results(split: str, results: dict[str, Any], out: Path | None) -> Non
             f"| {a['mrr@10']:.2f} | {he.get('recall@10', 0):.0%} | {en.get('recall@10', 0):.0%} "
             f"| {a['seconds'] * 1000:.0f} |"
         )
+    for name, r in results.items():
+        if "relevance" not in r:
+            continue
+        lines += [
+            "",
+            f"Best-source score of {name}: share of questions at or above each threshold",
+            "",
+            "| Threshold | Answerable (kept) | Not in library (passed) | Out of scope (passed) |",
+            "|---:|---:|---:|---:|",
+        ]
+        for t, g in r["relevance"].items():
+            row = [g.get(k, {}).get("above", 0.0) for k in ("answerable", "not_in_corpus", "out_of_scope")]
+            lines.append(f"| {t} | {row[0]:.0%} | {row[1]:.0%} | {row[2]:.0%} |")
     text = "\n".join(lines) + "\n"
     print(text)
     if out is not None:
