@@ -165,6 +165,10 @@ Recall@k is the share of questions with a gold source among the top k distinct r
 - Full tables, including e5-base and MiniLM:
   [dev](backend/eval/retrieval-dev.md), [holdout](backend/eval/retrieval-holdout.md). Why the
   model was chosen: [decisions §7](docs/decisions.md).
+- **bge-m3, added after the holdout run and not used for the choice:** on dev only, on a GPU, it
+  beats e5-small. Fused and reranked at depth 20 it reaches 79% recall@10 against 71% (52 against
+  47 of 66 questions). It has no holdout number: holdout has been used, so adopting it would need a
+  fresh one. See [eval/bge-m3](backend/eval/bge-m3/retrieval-dev.md).
 
 **Relevance gate:** this is retrieval alone, before the classifier, at the 0.05 threshold chosen on
 dev. It answers 94% of in-scope questions, lets no not-in-library question through (0 of 2), and
@@ -238,5 +242,5 @@ not itself a faithfulness measure.
 - **Next:**
   - more works with open translations;
   - a second annotator for the question set;
-  - bge-m3 on a GPU;
+  - bge-m3, which is better on dev (above), chosen properly with a new holdout set;
   - the Talmud's own structure (mishnah → gemara → commentaries) as a retrieval signal.

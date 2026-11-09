@@ -36,6 +36,10 @@ jobs:
               echo "SKIPPED: answers for $split are not recorded yet (they need an API key once)"
             fi
           done
+          # bge-m3, dev only: measured after the holdout run, not used for any choice.
+          uv run python -m chavruta.evaluation retrieval --split dev --models bge-m3 \
+            --rerank-models bge-m3 --only bge-m3 hybrid:bge-m3 hybrid:bge-m3+rerank \
+            hybrid:bge-m3+rerank20 --replay --check eval/bge-m3
 
   frontend:
     runs-on: ubuntu-latest

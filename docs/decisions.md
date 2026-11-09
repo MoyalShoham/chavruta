@@ -122,6 +122,9 @@ Verifying the question set against the corpus found the maqaf bug: "את־יום
 | BM25 + paraphrase-multilingual-MiniLM | 59% | 0.42 |
 | BM25 + e5-small, reranked top 50 | 74% | 0.57 |
 | BM25 + e5-small, reranked top 20 | 71% | 0.56 |
+| bge-m3 alone (added after the holdout run; not used for the choice) | 73% | 0.50 |
+| BM25 + bge-m3 (added after the holdout run; not used for the choice) | 73% | 0.52 |
+| BM25 + bge-m3, reranked top 20 (added after the holdout run; not used for the choice) | 79% | 0.60 |
 
 **Chosen:**
 - **e5-small, fused with BM25.** e5-base is within noise on dev (one question out of 66) at four
@@ -130,9 +133,15 @@ Verifying the question set against the corpus found the maqaf bug: "את־יום
 - **Reranking the top 20.** Depth 50 finds two more questions out of 66 at 2.5 times the reranker
   compute, and the reranker is what decides whether the app is usable on a CPU-only Docker host.
 
-**Also tried:** bge-m3. It could not finish embedding the corpus on the 8 GB development machine
-alongside the reranker and Docker, so it is not in the comparison. It is the obvious next candidate
-on a GPU.
+**bge-m3, measured afterwards:** it could not finish embedding the corpus on the 8 GB development
+machine alongside the reranker and Docker, so it was not in the comparison when the choice was made
+and holdout was run. It was measured later on a desktop GPU (RTX 5070 Ti: 23,507 passages in 98 s),
+on dev only ([eval/bge-m3/retrieval-dev.md](../backend/eval/bge-m3/retrieval-dev.md)). On dev it is
+clearly better than e5-small: 73% against 58% recall@10 alone, and 79% against 71% fused and
+reranked at depth 20, which is five more questions out of 66. The rows are labelled because they
+did not inform any choice. Switching would also cost something: 568M parameters against 118M,
+and 1024-dimensional vectors against 384. Adopting it would mean a new choice on dev and a fresh
+holdout, since this one has been used. `CHOSEN_MODEL` stays e5-small.
 
 **Relevance threshold:** 0.05 on the reranker's probability for the best source, also chosen on
 dev. It keeps 94% of answerable questions and, by relevance alone (before the classifier), stops
