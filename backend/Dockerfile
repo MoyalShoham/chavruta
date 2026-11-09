@@ -15,7 +15,7 @@ RUN python -m chavruta.fetch_models ${EMBEDDING_MODEL} --reranker
 COPY alembic.ini ./
 COPY alembic ./alembic
 COPY corpus ./corpus
-COPY eval/recordings ./eval/recordings
+COPY eval ./eval
 ENV HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
 RUN useradd --create-home app && mkdir -p /app/data && chown -R app /app/data
 USER app
