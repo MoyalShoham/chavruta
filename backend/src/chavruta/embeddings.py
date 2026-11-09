@@ -51,7 +51,8 @@ class SentenceEmbedder:
 
         self.key = spec.key
         self.spec = spec
-        self.model: Any = SentenceTransformer(spec.name, device=device or _device())
+        # Weights come from the local cache only; the backend never downloads at run time.
+        self.model: Any = SentenceTransformer(spec.name, device=device or _device(), local_files_only=True)
 
     def _encode(self, texts: list[str], prefix: str) -> Vectors:
         out = self.model.encode(
@@ -74,7 +75,9 @@ class CrossEncoderReranker:
     def __init__(self, name: str = RERANKER, device: str | None = None) -> None:
         from sentence_transformers import CrossEncoder
 
-        self.model: Any = CrossEncoder(name, device=device or _device(), max_length=512)
+        self.model: Any = CrossEncoder(
+            name, device=device or _device(), max_length=512, local_files_only=True
+        )
 
     def scores(self, query: str, passages: list[str]) -> list[float]:
         if not passages:

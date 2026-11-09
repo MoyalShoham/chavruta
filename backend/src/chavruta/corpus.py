@@ -9,9 +9,9 @@ from __future__ import annotations
 
 from collections.abc import Iterator
 from dataclasses import asdict, dataclass
-from typing import Any
+from typing import Any, Protocol
 
-from chavruta.sefaria import Section, SefariaClient, is_open
+from chavruta.sefaria import Section, is_open
 from chavruta.text import clean, is_mostly_hebrew, is_mostly_latin
 
 
@@ -168,8 +168,12 @@ def chunks_of(section: Section, work: WorkSpec, start_position: int) -> tuple[li
     return chunks, skipped
 
 
+class SectionSource(Protocol):
+    def section(self, ref: str, versions: list[tuple[str, str]]) -> Section: ...
+
+
 def fetch_work(
-    client: SefariaClient, work: WorkSpec, max_sections: int = 400
+    client: SectionSource, work: WorkSpec, max_sections: int = 400
 ) -> tuple[list[Chunk], list[Skipped]]:
     """All chunks of a work, walking its sections with Sefaria's 'next' pointer."""
     ref: str | None = work.first_ref

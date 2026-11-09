@@ -12,7 +12,10 @@ _FOOTNOTE = re.compile(
 _TAG = re.compile(r"<[^>]+>")
 # Cantillation marks and vowel points; letters (05D0-05EA) are kept.
 _MARKS = re.compile(r"[֑-ְ֯-ׇֽֿׁׂׅׄ]")
-_PUNCT_HE = re.compile(r"[־׀׃׳״\"'`׳״]")
+# Maqaf, paseq and sof pasuq separate words ("את־יום" is two words); geresh and gershayim belong to
+# the word they mark ("ר\"ע", "נו\"ן"), so they are dropped without a space.
+_WORD_BREAKS = re.compile("[\u05be\u05c0\u05c3]")
+_JOINERS = re.compile("[\u05f3\u05f4\"'`]")
 _TOKEN = re.compile(r"[א-ת]+|[a-z0-9]+")
 _HEBREW_PREFIXES = "והבכלמש"
 
@@ -28,6 +31,11 @@ def clean(text: str) -> str:
 def strip_marks(text: str) -> str:
     """Removes niqqud and cantillation, so pointed and unpointed text match."""
     return _MARKS.sub("", unicodedata.normalize("NFC", text))
+
+
+def normalize(text: str) -> str:
+    """Comparable text: no marks, word-separating punctuation as spaces, abbreviation marks removed."""
+    return _JOINERS.sub("", _WORD_BREAKS.sub(" ", strip_marks(text)))
 
 
 def is_mostly_hebrew(text: str) -> bool:
@@ -49,7 +57,7 @@ def is_mostly_latin(text: str) -> bool:
 def tokens(text: str) -> list[str]:
     """Keyword-search tokens. Hebrew words also yield a variant without a one-letter prefix (ו, ה, ב, ...),
     a cheap stand-in for morphology: "ובשכבך" matches "בשכבך"."""
-    t = _PUNCT_HE.sub("", strip_marks(text).lower())
+    t = normalize(text).lower()
     out: list[str] = []
     for tok in _TOKEN.findall(t):
         out.append(tok)

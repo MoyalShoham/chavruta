@@ -427,7 +427,7 @@ dependencies = [
     { name = "anthropic" },
     { name = "argon2-cffi" },
     { name = "fastapi" },
-    { name = "httpx" },
+    { name = "httpx2" },
     { name = "itsdangerous" },
     { name = "numpy" },
     { name = "pgvector" },
@@ -448,6 +448,7 @@ ml = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "httpx" },
     { name = "mypy" },
     { name = "pytest" },
     { name = "ruff" },
@@ -460,7 +461,7 @@ requires-dist = [
     { name = "anthropic", specifier = ">=2.6.0" },
     { name = "argon2-cffi", specifier = ">=25.1.0" },
     { name = "fastapi", specifier = ">=0.162.2" },
-    { name = "httpx", specifier = ">=0.28.1" },
+    { name = "httpx2", specifier = ">=2.16.0" },
     { name = "itsdangerous", specifier = ">=2.2.0" },
     { name = "numpy", specifier = ">=2.5.4" },
     { name = "pgvector", specifier = ">=0.5.1" },
@@ -478,6 +479,7 @@ provides-extras = ["ml"]
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "httpx", specifier = ">=0.28.1" },
     { name = "mypy", specifier = ">=2.4.1" },
     { name = "pytest", specifier = ">=9.2.0" },
     { name = "ruff", specifier = ">=0.17.4" },
