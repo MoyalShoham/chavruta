@@ -12,6 +12,7 @@ embedding are embedded.
 from __future__ import annotations
 
 import argparse
+import gzip
 import json
 import os
 from collections.abc import Iterable, Sequence
@@ -26,7 +27,7 @@ from sqlalchemy.orm import Session
 from chavruta.corpus import CORPUS, Chunk, Skipped, WorkSpec, fetch_work
 from chavruta.db import ChunkRow, Version, Work, make_engine, make_sessions, now
 from chavruta.embeddings import CHOSEN_MODEL, MODELS, Embedder
-from chavruta.sefaria import SefariaClient, is_open
+from chavruta.sefaria import SefariaClient, SefariaError, is_open
 
 # The demo library: the first chapter of Berakhot (2a-13a) with its Mishnah, Rashi and Tosafot,
 # Deuteronomy, and the laws of Shema; enough for every feature, quick to fetch and embed.
@@ -157,7 +158,8 @@ def until(chunks: Sequence[Chunk], last_section: str | None) -> list[Chunk]:
 
 def load_file(path: Path) -> dict[str, list[Chunk]]:
     by_work: dict[str, list[Chunk]] = {}
-    with path.open(encoding="utf-8") as f:
+    opener: Any = gzip.open if path.suffix == ".gz" else open
+    with opener(path, "rt", encoding="utf-8") as f:
         for line in f:
             c = Chunk(**json.loads(line))
             by_work.setdefault(c.work, []).append(c)
@@ -183,11 +185,14 @@ def main(argv: list[str] | None = None) -> None:
     with sessions() as s:
         local = load_file(args.from_file) if args.from_file else None
         for spec in specs:
+            try:
+                survey_versions(s, client, spec)  # every version Sefaria has, with its license
+            except (SefariaError, OSError) as e:
+                print(f"{spec.title}: version survey unavailable ({e}); continuing", flush=True)
             if local is not None:
                 chunks = until(local.get(spec.title, []), spec.last_ref)
                 skipped: list[Skipped] = []
             else:
-                survey_versions(s, client, spec)
                 chunks, skipped = fetch_work(client, spec)
             n = store_chunks(s, spec, chunks, skipped)
             s.commit()
