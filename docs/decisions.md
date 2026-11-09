@@ -64,6 +64,19 @@ one units letter, with טו and טז for 15 and 16. "בשבת זו." is therefor
 It remains a heuristic. It misses a source alluded to without a name or a location, which is why
 the README calls it a check, not a guarantee.
 
+**Changed on dev, after the first recorded answers (before holdout):** the detector flagged 7 of 65
+dev answers. I read every one, and none named a source that had not been retrieved. Two parsing
+bugs explained five of them:
+- **A commentary named with its daf.** "Tosafot (Berakhot 18a)" and "רש"י (ברכות טז.)" were read as
+  the Gemara on that daf. A daf named right after Rashi or Tosafot now means their comment on it.
+- **The Rambam's chapter and halakha.** "ברכות ח:יד" (Hilchot Berakhot 8:14) was read as Berakhot
+  daf 8b. A daf reference now ends at its colon or period.
+
+The other two are left as known false alarms, because fixing them would need meaning, not parsing:
+"התוספות" meaning "the additions", and an answer saying that Psalms 23 is *not* among its sources.
+This changed no prompt and no request: dev was replayed from the same recordings (0 API calls), and
+only the flags changed. With it, dev went from 11% to 3%.
+
 ## 4. Only openly licensed texts, decided per version from the API
 
 **Chosen:**

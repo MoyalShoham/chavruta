@@ -196,6 +196,31 @@ def test_an_invented_place_inside_a_retrieved_work_is_flagged(text: str) -> None
     assert len(unretrieved(text, works, [], refs)) == 1, text
 
 
+def test_a_commentary_named_with_its_daf_is_covered_by_that_commentary() -> None:
+    """Dev review: "Tosafot (Berakhot 18a)" names Tosafot's comment on the daf, which was retrieved,
+    not the Gemara on that daf."""
+    works = {"Rashi on Berakhot", "Tosafot on Berakhot"}
+    refs = ["Tosafot on Berakhot 18a:13:1", "Tosafot on Berakhot 2b:5:1", "Rashi on Berakhot 16a:18:3"]
+    for text in (
+        "Tosafot (Berakhot 18a) reads this word closely.",
+        "Tosafot on Berakhot 2b cites it.",
+        'רש"י (ברכות טז.) כותב',
+        "תוספות (ברכות יח.) מדייקים",
+    ):
+        assert unretrieved(text, works, [], refs) == [], text
+    # A daf whose commentary was not retrieved is still flagged, and so is the Gemara itself.
+    assert len(unretrieved("Tosafot (Berakhot 60b) says", works, [], refs)) == 1
+    assert len(unretrieved("Berakhot 18a says", works, [], refs)) == 1
+
+
+def test_a_rambam_chapter_and_halakha_is_not_a_daf() -> None:
+    """Dev review: "ברכות ח:יד" is Hilchot Berakhot 8:14, not Berakhot daf 8b. A daf reference ends
+    at the colon or period; a Hebrew numeral right after it makes it chapter:halakha."""
+    assert [m.family for m in find_mentions("רמב\"ם (הל' ברכות ח:יג)")] == ["Rambam"]
+    assert find_mentions("**ברכות ח:יד**: נוסח ברכה") == []
+    assert [m.ref for m in find_mentions("ברכות ח: אומרת")] == ["Berakhot 8b"]
+
+
 def test_mention_detector_ignores_ordinary_words() -> None:
     assert find_mentions("שבת שלום. ברכות רבות. דברים רבים נאמרו. This Shabbat we read Numbers.") == []
     assert find_mentions("בשבת זו. סוכה זו. כל אדם.") == []  # "זו" and "כל" are not numerals

@@ -194,7 +194,8 @@ def _parsers() -> list[Parser]:
     for title, he_name in TALMUD.items():
         out.append((title, re.compile(rf"\b{title}\s+(?P<d>\d{{1,3}})(?P<a>[ab])\b"), "daf_en"))
         out.append((title, re.compile(rf"(?:מסכת|במסכת|בבלי)\s+{he_name}(?![א-ת])"), "name"))
-        daf = rf"\s+(?:דף\s+)?(?P<d>{_NUM})\s*(?P<a>[.:])(?!\d)"
+        # A daf ends at its "." or ":"; a numeral right after it is chapter:halakha ("ברכות ח:יד").
+        daf = rf"\s+(?:דף\s+)?(?P<d>{_NUM})\s*(?P<a>[.:])(?![\dא-ת])"
         out.append((title, re.compile(rf"{_HE_PREFIX}{he_name}{daf}"), "daf_he"))
     for title in [*TALMUD, *MISHNAH_ONLY]:
         loc = r"\s+(?P<c>\d{1,2})(?::(?P<v>\d{1,2}))?"
@@ -303,9 +304,29 @@ def unretrieved(
     for m in find_mentions(answer_text):
         unknown_work = m.family not in allowed and m.family not in quoted_families
         unknown_place = m.ref is not None and not _covered(m.ref, refs) and not _covered(m.ref, quoted_refs)
+        if unknown_place and (comment := _commentary_on(answer_text, m)) and _covered(comment, refs):
+            unknown_place = False
         if unknown_work or unknown_place:
             out.append(m)
     return out
+
+
+_COMMENTATOR_BEFORE = {
+    name: re.compile(rf"(?:{_alt([*NAMED[name][0], *NAMED[name][1]])})\s*(?:on\s+|\(|,)?\s*$")
+    for name in ("Rashi", "Tosafot")
+}
+
+
+def _commentary_on(text: str, m: Mention) -> str | None:
+    """A daf named right after Rashi or Tosafot ("Tosafot (Berakhot 18a)", "רש"י (ברכות טז.)") is
+    that commentator's comment on the daf: "Tosafot on Berakhot 18a"."""
+    if m.ref is None or m.family not in TALMUD:
+        return None
+    before = text[max(0, m.start - 20) : m.start]
+    for name, pattern in _COMMENTATOR_BEFORE.items():
+        if pattern.search(before):
+            return f"{name} on {m.ref}"
+    return None
 
 
 def _covered(ref: str, retrieved: list[str]) -> bool:
