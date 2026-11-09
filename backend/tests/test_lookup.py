@@ -284,10 +284,12 @@ def test_search_skips_reference_works_and_library_passages_and_fetches_each_pass
     assert s.texts_asked() == ["Eruvin 13b:10"]
 
 
-def test_a_named_place_that_cannot_be_fetched_falls_back_to_search() -> None:
-    found = lookup().fetch(Plan(("Eruvin 999z",), ("אלו ואלו",)), in_berakhot, search=False)
+def test_a_named_place_that_cannot_be_fetched_is_an_error_and_search_still_runs() -> None:
+    found = lookup().fetch(Plan(("Eruvin 999z",), ("אלו ואלו",)), in_berakhot, search=True)
     assert found.searched and found.fetched_refs == ["Eruvin 13b:10"]
     assert found.errors == ["Eruvin 999z: Could not find Eruvin 999z"]
+    quiet = lookup().fetch(Plan(("Eruvin 999z",), ("אלו ואלו",)), in_berakhot, search=False)
+    assert not quiet.searched and quiet.chunks == []
 
 
 def test_a_whole_book_or_a_range_is_never_fetched_whole() -> None:
@@ -651,3 +653,42 @@ def test_the_rambam_s_other_works_count_as_the_rambam() -> None:
     assert "Rambam" in families_of("Eight Chapters")
     text = 'הרמב"ם מונה את המצוות'
     assert unretrieved(text, {"Sefer HaMitzvot, Shorashim"}, [], ["Sefer HaMitzvot, Shorashim 1:2"]) == []
+
+
+def test_a_question_the_library_answers_well_is_not_looked_up_even_if_the_planner_guesses_elsewhere() -> None:
+    """The planner may infer a place outside the library ("Jeremiah 12:1") or misspell one inside
+    it ("Orach Chaim"); neither matters while the library's best source is strong and the question
+    names nothing outside it."""
+    s = FakeSefaria()
+    llm = PlannerLLM({"refs": ["Bava Batra 5a", "Shulchan Arukh, Orach Chaim 4"], "queries": ["אלו ואלו"]})
+    e = HashEmbedder()
+    strong = Retriever(ALL, e, e.passages([c.text for c in ALL]), FixedScore(0.6))
+    a = Chavruta(strong, CorpusIndex(ALL), llm, Settings(), lookup=SefariaLookup(s, llm)).ask("שאלה כלשהי")
+    assert s.calls == [] and a.lookup is None and len(llm.planner_requests) == 1
+
+
+def test_borderline_questions_are_not_planned() -> None:
+    s = FakeSefaria()
+    llm = PlannerLLM(
+        {"refs": ["Bava Batra 5a"], "queries": ["אלו ואלו"]}, cls=classification(scope="borderline")
+    )
+    bot(llm, s).ask("מה ההבדל בין חסידים למתנגדים?")
+    assert llm.planner_requests == [] and s.calls == []
+
+
+def test_when_a_lookup_happens_library_places_the_planner_named_compete_on_equal_terms() -> None:
+    """The mezuzah question: the library held the verse but retrieval missed it, and commentaries
+    found by search quoted it. The planned library place is ranked with them, the same way."""
+
+    class Verse:
+        def scores(self, query: str, passages: list[str]) -> list[float]:
+            return [0.8 if "ושננתם" in p else 0.3 if "ושננתם" in query else 0.01 for p in passages]
+
+    e = HashEmbedder()
+    b = Chavruta(Retriever(ALL, e, e.passages([c.text for c in ALL]), Verse()), CorpusIndex(ALL), None)  # type: ignore[arg-type]
+    commentary = chunk("Ibn Ezra on Deuteronomy 6:7:1", "פירוש על הפסוק")
+    library = b.retrieve("Genesis")  # a weak first ranking that misses Deuteronomy 6:7
+    merged = b.merge(
+        "teach them to your children", library, [commentary], ["ושננתם לבניך"], ["Deuteronomy 6:7"]
+    )
+    assert merged[0].ref == "Deuteronomy 6:7" and not merged[0].fetched and merged[0].score == 0.8

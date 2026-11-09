@@ -445,20 +445,20 @@ class Chavruta:
         return [self.index.source(i, c, s) for i, (c, s) in enumerate(chunks)]
 
     def plan(self, question: str, context: str | None, c: Classification) -> Future[Planned] | None:
-        """Plans the Sefaria lookup while the library is searched. The planner runs for every
-        question that might be answered (it is what turns "בבא בתרא דף ה עמוד א" into a reference),
-        and never for one the classifier already refuses or marks sensitive."""
+        """Plans the Sefaria lookup while the library is searched (it is what turns "בבא בתרא דף ה
+        עמוד א" into a reference). Only for a question about the texts: never for one the classifier
+        refuses, calls borderline (Jewish, but not about the texts) or marks sensitive."""
         if self.lookup is None or self._planner is None:
             return None
-        if c.manipulation or c.sensitive or c.scope == Scope.OUT_OF_SCOPE:
+        if c.manipulation or c.sensitive or c.scope != Scope.IN_SCOPE:
             return None
         return self._planner.submit(self.lookup.safe_plan, question, context)
 
-    def look_up(self, planning: Future[Planned], query: str, library_best: float | None) -> Found:
-        """A planned place the library holds is not fetched. Search runs if the library's best
-        source is weak (below SEARCH_BELOW) or the question names a work or a place the library
-        does not hold. Any failure, or a planner slower than PLAN_TIMEOUT, leaves the library's
-        sources as they were."""
+    def look_up(self, planning: Future[Planned], query: str, library_best: float | None) -> Found | None:
+        """Looks up only if the library's best source is weak (below SEARCH_BELOW) or the question
+        names a work or a place the library does not hold; a question the library answers well is
+        never touched. A planned place the library holds is not fetched. Any failure, or a planner
+        slower than PLAN_TIMEOUT, leaves the library's sources as they were."""
         assert self.lookup is not None
         try:
             planned = planning.result(timeout=PLAN_TIMEOUT)
@@ -466,37 +466,49 @@ class Chavruta:
             return Found(errors=["planner timed out: lookup skipped"])
         try:
             outside = bool(unretrieved(query, self.index.works, [], self.index.refs))
-            disabled = self.index.disabled
             weak = library_best is None or library_best < SEARCH_BELOW
+            if not (weak or outside):
+                return None
+            disabled = self.index.disabled
             return self.lookup.fetch_planned(
-                planned, self.index.has, search=weak or outside, blocked=lambda w: w in disabled
+                planned, self.index.has, search=True, blocked=lambda w: w in disabled
             )
         except Exception as e:
             return Found(planned.plan, errors=[f"lookup failed: {type(e).__name__}: {e}"])
 
     def merge(
-        self, query: str, sources: list[Source], chunks: Sequence[Chunk], phrases: Sequence[str] = ()
+        self,
+        query: str,
+        sources: list[Source],
+        chunks: Sequence[Chunk],
+        phrases: Sequence[str] = (),
+        planned_in_library: Sequence[str] = (),
     ) -> list[Source]:
-        """Ranks fetched passages with the library's own embeddings and reranker, and keeps the
-        best of both; a place both hold comes from the library. Two things differ from the
-        library's ranking, both chosen on the lookup's dev split: the reranker reads the passage
-        without vowel points (Sefaria's default Hebrew is often vocalized, which pushed a matching
-        halakhah from 0.87 to 0.02), and the planner's phrases in the text's own language are added
-        to the question (an English question about a short Aramaic line otherwise scores 0)."""
+        """When a lookup happened, ranks everything again in one way: the library's sources, the
+        library places the planner pointed to, and the fetched passages, by the library's own
+        embeddings and reranker. A place both hold comes from the library. Two things differ from
+        the library's first ranking, both chosen on the lookup's dev split: the reranker reads
+        passages without vowel points (Sefaria's default Hebrew is often vocalized, which pushed a
+        matching halakhah from 0.87 to 0.02), and the planner's phrases in the text's own language
+        are added to the question (an English question about a short Aramaic line otherwise
+        scores 0). Library and fetched passages are scored alike, so neither side is favoured."""
         r = self.retriever
-        plain = [replace(c, text=strip_marks(c.text)) for c in chunks]
+        wanted = {s.ref for s in sources}
+        for place in planned_in_library:
+            wanted |= {ref for ref in self.index.refs if ref == place or ref.startswith(place + ":")}
+        library = [c for ref in wanted for c in self.index.by_ref.get(ref, [])]
+        candidates = [*library, *(c for c in chunks if not self.index.has(c.ref))]
+        plain = [replace(c, text=strip_marks(c.text)) for c in candidates]
         vectors = r.embedder.passages([c.text for c in plain]) if r.embedder is not None else None
         ranker = Retriever(plain, r.embedder, vectors, r.reranker, r.rerank_top)
         fetched_index = CorpusIndex(chunks)  # what is shown and sent keeps its vowel points
-        held = {s.ref for s in sources}
         ranking_query = f"{query} ({'; '.join(phrases)})" if phrases else query
-        fetched = [
-            replace(fetched_index.source(0, h.chunk, h.score), fetched=True)
-            for h in ranker.search(ranking_query, k=self.settings.sources)
-            if h.chunk.ref not in held and not self.index.has(h.chunk.ref)
-        ]
-        best = sorted([*sources, *fetched], key=lambda s: -s.score)[: self.settings.sources]
-        return [replace(s, index=i) for i, s in enumerate(best)]
+        out = []
+        for i, h in enumerate(ranker.search(ranking_query, k=self.settings.sources)):
+            in_library = h.chunk.ref in self.index.by_ref
+            index = self.index if in_library else fetched_index
+            out.append(replace(index.source(i, h.chunk, h.score), fetched=not in_library))
+        return out
 
     def ask(
         self,
@@ -539,9 +551,9 @@ class Chavruta:
         sensitive = c.sensitive or (decision.sensitive_area is not None and is_personal(question))
         if planning is not None and may_look and not sensitive:
             found = self.look_up(planning, query, best)
-            if found.chunks:
+            if found is not None and (found.chunks or found.in_library):
                 try:
-                    merged = self.merge(query, sources, found.chunks, found.plan.queries)
+                    merged = self.merge(query, sources, found.chunks, found.plan.queries, found.in_library)
                 except Exception as e:  # ranking the fetched passages failed: keep the library's
                     found.errors.append(f"ranking failed: {type(e).__name__}: {e}")
                     merged = sources

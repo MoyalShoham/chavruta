@@ -257,9 +257,8 @@ class SefariaLookup:
         blocked: Callable[[str], bool] = lambda work: False,
     ) -> Found:
         """Fetches the planned places the library does not hold (`have`, checked again on Sefaria's
-        canonical reference), skipping works the library has disabled (`blocked`); and, if `search`
-        or none of the places could be fetched, the passages Sefaria's search finds for the planned
-        phrases."""
+        canonical reference), skipping works the library has disabled (`blocked`); and, if
+        `search`, the passages Sefaria's search finds for the planned phrases."""
         start = time.monotonic()
         stop = start + self.deadline
         found = Found(plan)
@@ -270,10 +269,7 @@ class SefariaLookup:
         # A commentary's sections are finer than the daf: the daf-level ref is the one to fetch.
         jobs = [(c, False) for c in dict.fromkeys(commentaries)]
         self._gather(jobs, found, have, blocked, stop, optional=True)
-        # Search when asked to, or when a place outside the library was named but could not be
-        # fetched (a reference the planner got wrong, say).
-        named_failed = outside and not sections and not found.in_library
-        if (search or named_failed) and plan.queries and not found.unreachable and time.monotonic() < stop:
+        if search and plan.queries and not found.unreachable and time.monotonic() < stop:
             found.searched = True
             with ThreadPoolExecutor(self.workers) as pool:
                 results = list(pool.map(self._search, plan.queries))
