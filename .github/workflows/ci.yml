@@ -29,11 +29,11 @@ jobs:
       - name: Evaluation replayed from recordings (no models, no corpus, no API key)
         run: |
           for split in dev holdout; do
-            if [ -f eval/retrieval-$split.json ]; then
-              uv run python -m chavruta.evaluation retrieval --split $split --replay --check eval
-            fi
+            uv run python -m chavruta.evaluation retrieval --split $split --replay --check eval
             if [ -f eval/answers/$split.jsonl ]; then
               uv run python -m chavruta.eval_answers score --split $split --check eval
+            else
+              echo "SKIPPED: answers for $split are not recorded yet (they need an API key once)"
             fi
           done
 
@@ -61,4 +61,5 @@ jobs:
     needs: [backend, frontend]
     steps:
       - uses: actions/checkout@v4
-      - run: docker compose build
+      - name: Boot the stack with the demo library and check it through nginx
+        run: scripts/smoke.sh

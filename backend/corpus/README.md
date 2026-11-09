@@ -23,4 +23,4 @@ every version Sefaria has for each work, from a live survey of the API.
 Attribution: texts via Sefaria (sefaria.org). CC-BY texts: Mishnah Yomit by Dr. Joshua Kulp;
 Tosafot translated by Jan Buckler. CC-BY-SA texts (Wikisource Talmud Bavli, Wikisource Mishneh
 Torah) are redistributed here under the same license, CC BY-SA. This snapshot is offered under the
-licenses of the texts it contains; the project's code license does not apply to it.
+licenses of the texts it contains.

@@ -18,7 +18,7 @@ x-backend: &backend
     CHAVRUTA_DATA_DIR: /app/data
     CHAVRUTA_RECORDINGS_DIR: /app/eval/recordings/llm
   volumes:
-    - ./secrets:/secrets:ro
+    - ${CHAVRUTA_SECRETS_DIR:-./secrets}:/secrets:ro
     - data:/app/data
 
 services:
@@ -36,7 +36,7 @@ services:
                     f.write(secrets.token_urlsafe(n))
                 print(f"generated {path}")
     volumes:
-      - ./secrets:/secrets
+      - ${CHAVRUTA_SECRETS_DIR:-./secrets}:/secrets
 
   db:
     image: pgvector/pgvector:pg17
@@ -48,7 +48,7 @@ services:
       POSTGRES_PASSWORD_FILE: /secrets/db_password
     volumes:
       - pgdata:/var/lib/postgresql/data
-      - ./secrets:/secrets:ro
+      - ${CHAVRUTA_SECRETS_DIR:-./secrets}:/secrets:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U chavruta -d chavruta"]
       interval: 2s
@@ -78,7 +78,7 @@ services:
     environment:
       CHAVRUTA_DATABASE_URL: postgresql+psycopg://chavruta@db:5432/chavruta
       CHAVRUTA_DB_PASSWORD_FILE: /secrets/db_password
-        CHAVRUTA_LEARNER_PASSWORD_FILE: /secrets/learner_password
+      CHAVRUTA_LEARNER_PASSWORD_FILE: /secrets/learner_password
       CHAVRUTA_ADMIN_PASSWORD_FILE: /secrets/admin_password
       CHAVRUTA_DATA_DIR: /app/data
       CHAVRUTA_RECORDINGS_DIR: /app/eval/recordings/llm
@@ -99,7 +99,7 @@ services:
     image: chavruta-web
     restart: unless-stopped
     ports:
-      - "127.0.0.1:3200:80"
+      - "127.0.0.1:${CHAVRUTA_WEB_PORT:-3200}:80"
     # No depends_on: the page is up at once and shows "the library is loading" until the API
     # answers (nginx resolves the API's name per request).
 
