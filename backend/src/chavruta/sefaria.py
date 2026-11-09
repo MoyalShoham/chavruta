@@ -78,15 +78,21 @@ class SefariaClient:
         if wait > 0:
             time.sleep(wait)
         for attempt in range(3):
-            response = self.client.get(url)
+            try:
+                response = self.client.get(url)
+            except httpx.HTTPError as e:  # connection refused, timeouts, TLS: not OSErrors in httpx
+                raise SefariaError(f"Sefaria unreachable: {type(e).__name__}") from e
             self._last = time.monotonic()
             if response.status_code in (429, 502, 503, 504) and attempt < 2:
                 time.sleep(2**attempt)
                 continue
             if response.status_code != 200:
                 raise SefariaError(f"{response.status_code} for {url}")
-            data = response.json()
-            if cache is not None:
+            try:
+                data = response.json()  # a 200 HTML page (a challenge, a proxy) is not JSON
+            except ValueError as e:
+                raise SefariaError(f"not JSON from {url}") from e
+            if cache is not None and not (isinstance(data, dict) and "error" in data):
                 cache.parent.mkdir(parents=True, exist_ok=True)
                 cache.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
             return data

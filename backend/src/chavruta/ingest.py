@@ -187,7 +187,7 @@ def main(argv: list[str] | None = None) -> None:
         for spec in specs:
             try:
                 survey_versions(s, client, spec)  # every version Sefaria has, with its license
-            except (SefariaError, OSError) as e:
+            except SefariaError as e:
                 print(f"{spec.title}: version survey unavailable ({e}); continuing", flush=True)
             if local is not None:
                 chunks = until(local.get(spec.title, []), spec.last_ref)

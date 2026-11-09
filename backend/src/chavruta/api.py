@@ -321,7 +321,7 @@ def create_app(state: AppState) -> FastAPI:
         """Connections of a passage from Sefaria, grouped by category, marked when in the library."""
         try:
             found = st.sefaria.links(ref)
-        except (SefariaError, OSError) as e:
+        except SefariaError as e:
             raise HTTPException(502, "Sefaria could not be reached for links") from e
         groups: dict[str, list[dict[str, Any]]] = {}
         seen: set[str] = set()
@@ -411,13 +411,16 @@ def create_app(state: AppState) -> FastAPI:
                 if isinstance(title, dict) and title.get("en") == "Daf Yomi":
                     ref = item.get("ref")
                     return str(ref) if ref else None
-        except (SefariaError, OSError):
+        except SefariaError:
             return None
         return None
 
     @app.get("/api/daf-yomi")
     def daf_yomi(user: Me, st: State, day: date | None = None) -> dict[str, Any]:
-        d = day or st.now().astimezone(st.tz).date()
+        today = st.now().astimezone(st.tz).date()
+        d = day or today
+        if abs((d - today).days) > 400:  # each date is a cached Sefaria request: keep it bounded
+            raise HTTPException(422, "choose a date within about a year of today")
         ref = daf_of(d)
         return {
             "date": d.isoformat(),

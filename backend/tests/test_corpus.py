@@ -257,3 +257,31 @@ def test_corpus_chunks_file_roundtrips(tmp_path: Path) -> None:
     from chavruta.evaluation import load_chunks
 
     assert load_chunks(path) == [chunk]
+
+
+@pytest.mark.parametrize(
+    "handler",
+    [
+        lambda r: (_ for _ in ()).throw(httpx.ConnectError("refused", request=r)),
+        lambda r: (_ for _ in ()).throw(httpx.ReadTimeout("slow", request=r)),
+        lambda r: httpx.Response(200, text="<html>challenge</html>"),
+    ],
+)
+def test_network_and_format_failures_become_sefaria_errors(handler: Any) -> None:
+    with pytest.raises(SefariaError):
+        _client(handler).section("Berakhot 2a", [])
+
+
+def test_error_responses_are_not_cached(tmp_path: Path) -> None:
+    calls = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls["n"] += 1
+        return httpx.Response(200, json={"error": "temporarily unavailable"})
+
+    client = _client(handler, tmp_path)
+    for _ in range(2):
+        with pytest.raises(SefariaError):
+            client.section("Berakhot 2a", [])
+    assert calls["n"] == 2
+    assert list(tmp_path.iterdir()) == []
