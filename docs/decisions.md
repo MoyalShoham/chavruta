@@ -302,3 +302,86 @@ the original IP-literal bypass is the reason the test now covers every path.
   score against the judge.
 
 **The honest limit:** the questions were written for this project, not by independent annotators.
+
+## 15. Beyond the library: look up on Sefaria, never on the open web
+
+The library answers what it holds. Learners ask about every daf, and a "not in my library" for
+"בבא בתרא דף ה עמוד א" is honest but useless. So a question the library cannot answer, or one that
+names a place the library does not hold, is looked up on Sefaria (`lookup.py`).
+
+**Chosen:**
+- **A planner, not an answerer.** Claude Haiku turns the question into at most 3 Sefaria references
+  and 3 short phrases in the language of the text. It runs while the library is searched, so it
+  adds no wait. Its guesses only decide what to fetch: a wrong reference fetches a passage that the
+  reranker then drops, and nothing it writes reaches the answer.
+- **Sefaria resolves each reference first.** If the canonical place is in the library ("Brachot 2a",
+  "Deuteronomy 6:4-9"), nothing is fetched. A question the library answers therefore sends exactly
+  the request it sent before, and the recorded evaluation of the library stays valid. The tests
+  check this for exact places, ranges and aliases, and `eval_lookup library` checks it on the
+  library's own dev questions.
+- **A named place comes with its context:** the daf with Rashi and Tosafot, the chapter, the siman,
+  cut to 60 segments around the place named. Phrases go to Sefaria's full-text search; the best hits
+  of every phrase are fetched in turn, at most 6.
+- **The same rules as the library.** Only openly licensed versions are used, the license read from
+  the API for every version. The text of any other version is never stored, not even in the cache
+  or the recordings. Fetched passages are ranked by the same embeddings and reranker, under the same
+  relevance threshold, and a place both hold comes from the library.
+- **Said, not hidden.** A fetched source carries a "From Sefaria" badge, and the answer a notice
+  that it is outside the measured library.
+- **Bounded, and safe to fail.** At most 240 passages and 20 seconds per question, responses over
+  1.5 MB refused, the planner waited for at most 20 seconds. A failing planner, fetch or ranking
+  leaves the library's answer as it was. If Sefaria is down, the answer says so.
+- **Never for what is refused or sensitive.** Out-of-scope, manipulative and unclassifiable questions
+  are not planned. Sensitive questions are not looked up: the library's halakhah is Orach Chayim,
+  and Yoreh De'ah or Even HaEzer fetched for a question about mourning or divorce would be texts no
+  one measured, on exactly the questions that most need a rabbi.
+
+**Changed after the first dev run** (24 questions; holdout untouched), each with its measurement:
+- **Rank fetched passages without vowel points.** Sefaria's default Hebrew is often vocalized, and
+  the reranker scored the halakhah asked about (Rambam, Repentance 2:2) 0.02 vocalized and 0.87
+  without the points, so weak library passages outranked it. The text shown and sent keeps them.
+- **Add the planner's phrases to the question when ranking fetched passages.** An English question
+  ("the law of the kingdom is the law") scored 0.000 against the Aramaic line that says it (דינא
+  דמלכותא דינא). With the phrases, the gold passage ranked first in 8 of the 9 dev questions where
+  one was fetched. The library's own ranking is unchanged.
+- **Search when the library is weak, not only when it has nothing.** A topic question was answered
+  from an unrelated library passage scoring 0.25 plus a wrong reference the planner guessed. Search
+  now also runs below 0.3, which only 6 of the library's 65 answered dev questions reach.
+- **A sensitive keyword alone no longer blocks the lookup.** "פיקוח נפש" in a question about Yoma
+  85b blocked it; now only a sensitive classification or a personal question does. The notices are
+  shown either way.
+- **The Rambam's other works** (Sefer HaMitzvot, Eight Chapters) count as "the Rambam" for the
+  unretrieved-source check; two answers had been flagged for naming him.
+
+**Changed after running the library's own dev questions with the lookup on** (`eval_lookup
+library`). 14 of the 65 questions the library had answered got a fetched source, many with strong
+library sources, and 3 lookups would have answered borderline questions:
+- **A question the library answers well is never looked up.** A misspelled library place from the
+  planner ("Orach Chaim") failed on Sefaria and fell back to search; a place it inferred outside the
+  library (Jeremiah 12:1) was fetched although the library scored 0.99. Now a lookup happens only if
+  the library's best source is under 0.3 or the question itself names a work or place the library
+  does not hold, and there is no fallback search.
+- **A place whose book the question names is still fetched,** even when the library looks strong:
+  "בבבא מציעא דף נט עמוד ב" scored 0.59 against Berakhot 19a, which tells a related story, and
+  the mention detector does not read "דף נט עמוד ב". A planned place counts as named when the
+  question names its book; it is fetched, but starts no search. Naming an author of many books
+  ("לפי הרמב"ם") does not count: on the library check, the planner had guessed the wrong book.
+- **Borderline questions are not planned.** "Jewish, but not about the texts" stays the scope
+  filter's call, not something to answer from whatever Sefaria's search returns.
+- **When a lookup happens, everything is ranked again the same way:** the library's sources, the
+  library places the planner pointed to, and the fetched passages. Before, library passages kept
+  their first score (vocalized text, bare question), so commentaries quoting the mezuzah verse
+  outranked the verse.
+
+**Rejected:**
+- **Open web search** (the API's web search tool). It would technically stay within the network
+  allowlist, because the search runs at Anthropic. It still breaks the rules this project keeps:
+  pages have no license to check, their reliability is unknown, and every page is a fresh prompt
+  injection surface.
+- **A local model through Ollama** for unrecorded questions. It would add a host to the allowlist,
+  and the grounding depends on the API's citations, which a local model does not have.
+- **Ingesting more of Sefaria instead.** That is the long-term path for works people study often,
+  because it is measured. The lookup covers the long tail meanwhile.
+
+**Privacy:** Sefaria receives the planned references and phrases, which are derived from the
+question, but not the question itself.

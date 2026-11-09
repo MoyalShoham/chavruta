@@ -84,6 +84,7 @@ services:
       CHAVRUTA_RECORDINGS_DIR: /app/eval/recordings/llm
       CHAVRUTA_LLM_MODE: ${CHAVRUTA_LLM_MODE:-replay}
       CHAVRUTA_CLOSING: ${CHAVRUTA_CLOSING:-auto}
+      CHAVRUTA_SEFARIA_LOOKUP: ${CHAVRUTA_SEFARIA_LOOKUP:-true}
       CHAVRUTA_TRUST_PROXY: "true"  # only nginx reaches the API, and it sets X-Forwarded-For
     mem_limit: 4g
     depends_on:

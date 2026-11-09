@@ -36,6 +36,12 @@ jobs:
               echo "SKIPPED: answers for $split are not recorded yet (they need an API key once)"
             fi
           done
+          # The Sefaria lookup: gold places re-checked against recorded Sefaria responses, and the
+          # answers, judge verdicts and the library check re-scored from their recordings.
+          uv run python -m chavruta.eval_lookup verify
+          for split in dev holdout; do
+            uv run python -m chavruta.eval_lookup score --split $split --check eval
+          done
           # bge-m3, dev only: measured after the holdout run, not used for any choice.
           uv run python -m chavruta.evaluation retrieval --split dev --models bge-m3 \
             --rerank-models bge-m3 --only bge-m3 hybrid:bge-m3 hybrid:bge-m3+rerank \

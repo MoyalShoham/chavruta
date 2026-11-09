@@ -6,6 +6,8 @@ An AI study partner (חברותא) for classical Jewish texts, Hebrew first. You
 
 - ask a question and get an answer built from retrieved sources. Each sentence is tied to the
   passage it cites, uncited text is marked, and every source shows its license;
+- ask about a text outside the curated library ("בבא בתרא דף ה עמוד א"): it is looked up on
+  Sefaria for that question, under the same license and grounding rules, and marked as such;
 - open a sugya with Rashi and Tosafot beside each line and a map of its connections;
 - study in chavruta mode, where the partner asks you questions about a passage;
 - follow Daf Yomi or a plan of your own, with spaced-repetition review cards and personal notes.
@@ -33,6 +35,10 @@ a disagreement, and the evaluation checks that. It closes on Shabbat and Yom Tov
   numbers, even if the classifier refuses to look at it.
 - **No outbound surprises.** The backend may reach only Sefaria, Hebcal and the Anthropic API. That
   has to hold for libraries the code does not control, so it is enforced at the socket.
+- **Going beyond the library without losing any of that.** Looking a text up for one question must
+  keep the license rule, the grounding and the guardrails, and must not change a single request for
+  the questions the library already answers, or the recorded evaluation would silently stop
+  applying.
 
 ## How it works
 
@@ -40,6 +46,7 @@ a disagreement, and the evaluation checks that. It closes on Shabbat and Yom Tov
 flowchart LR
     Q[Question<br/>Hebrew or English] --> CLS[Scope classifier<br/>Claude Haiku, JSON schema]
     Q --> RET
+    CLS -->|in scope| PLAN[Lookup planner<br/>Claude Haiku: refs + phrases]
     subgraph RET[Hybrid retrieval]
       BM[BM25<br/>Hebrew-normalised] --> RRF[Reciprocal<br/>rank fusion]
       EMB[multilingual-e5-small<br/>pgvector HNSW] --> RRF
@@ -47,6 +54,8 @@ flowchart LR
     end
     CLS --> DEC{Decide in code:<br/>strictness, relevance,<br/>sensitivity, manipulation}
     RR --> DEC
+    PLAN --> LOOK[Sefaria lookup<br/>places not in the library,<br/>search; open licenses only]
+    LOOK -.->|same reranker<br/>and threshold| DEC
     DEC -->|refuse / no source| OUT
     DEC -->|answer| ANS[Claude Opus<br/>search_result blocks,<br/>API citations]
     ANS --> CHK[Checks in code:<br/>unretrieved works and places,<br/>notices in fixed order]
@@ -79,6 +88,19 @@ flowchart LR
   - Code adds the notices: emergency numbers and "ask your rabbi first" above the answer, the
     not-a-posek disclaimer below it. It also flags any named work or place that was not retrieved.
   - Follow-ups are classified and searched together with the question before them.
+- **Beyond the library** (`lookup.py`):
+  - Claude Haiku plans a lookup while the library is searched: the Sefaria references the question
+    names, and phrases likely to appear in the passage. It never answers.
+  - Sefaria resolves each reference. A place the library holds, under any name or as a range, is not
+    fetched, so a question the library answers is untouched. Other places are fetched with their
+    context (a daf with Rashi and Tosafot, a chapter cut around the verse); phrases go to Sefaria's
+    search.
+  - Only openly licensed versions; the text of any other is never stored. Fetched passages go
+    through the same reranker and relevance threshold, and are marked "From Sefaria".
+  - It runs only when the library's best source is weak or the question names something outside
+    the library: a question the library answers well is never touched.
+  - Bounded (240 passages, 20 seconds) and safe to fail. Refused, borderline and sensitive
+    questions are never looked up.
 - **Study** (`hebcal.py`, `srs.py`, `services.py`):
   - the sugya view with commentaries aligned to each segment, notes, and a connections map from
     Sefaria's links;
@@ -114,6 +136,8 @@ Configuration (see `.env.example`):
   live answers, put `ANTHROPIC_API_KEY` in `.env` and set `CHAVRUTA_LLM_MODE=live`.
 - **Shabbat screen:** `CHAVRUTA_CLOSING=closed` shows it.
 - **Library size:** `CHAVRUTA_CORPUS=demo` loads a smaller library.
+- **Sefaria lookup:** on by default, and needs the API key (the planner is a model call).
+  `CHAVRUTA_SEFARIA_LOOKUP=false` answers from the library only.
 
 Development:
 
@@ -194,7 +218,9 @@ doubled the wait. On the desktop GPU it adds 0.05 s.
 
 ### Answers (holdout, 129 questions, run once)
 
-Each question went through the whole app:
+These answers are the curated library alone, with the Sefaria lookup off; what the lookup changes
+on these same questions is measured in the next section. Each question went through the whole
+app:
 - Claude Haiku classifies it;
 - retrieval finds sources;
 - Claude Opus answers with API citations;
@@ -250,11 +276,85 @@ CI replays every stored answer against its recorded response, checks that every 
 sources that were sent, and recomputes these reports (`eval_answers score --check`). That proves the
 numbers come from real responses. It is not itself a faithfulness measure.
 
+### Beyond the library: the Sefaria lookup (holdout, 21 questions, run once)
+
+[`eval/lookup-questions.jsonl`](backend/eval/lookup-questions.jsonl) has 45 questions about texts
+outside the library, split 24 dev / 21 holdout with no gold place or topic shared across the split
+(nor with the main dev set):
+- **named places**, in learner forms ("בבא מציעא דף נט עמוד ב", "סנהדרין לז ע\"א", "Kiddushin
+  29a", "רמב\"ם הלכות תשובה פרק ב הלכה ב");
+- **well-known passages asked about without a place** ("Where does the Talmud tell of Hillel
+  teaching a convert on one foot?");
+- **topics** ("Where does the Talmud state that the law of the kingdom is the law?");
+- **places that do not exist** ("Shabbat 550a"), where the right outcome is no answer.
+
+Every gold place is checked against Sefaria's openly licensed Hebrew text. Each question went
+through the whole app with the lookup on, and the same Sonnet judge read the answers. Every Sefaria
+response and model response is recorded, and CI replays them. Full reports:
+[dev](backend/eval/lookup-dev.md), [holdout](backend/eval/lookup-holdout.md).
+
+| Holdout | Value |
+|---|---:|
+| Gold passage fetched / sent to the model / cited in the answer (19 with a gold place) | 19 / 19 / 19 |
+| Answered (19 with a gold place) | 19 of 19 |
+| Judge: claims fully supported by the sources sent (20 answers) | 90% |
+| Licenses of every source sent | Public Domain, CC0, CC-BY, CC-BY-SA |
+| Places that do not exist: declined | 1 of 2 |
+| Answers flagged for naming a source that was not sent | 3 of 20 |
+| Fetching from Sefaria, uncached: median / max | 3.8 s / 7.4 s |
+
+The planner (median 1.4 s) runs while the library is searched, so it adds no wait of its own.
+
+**On the library's own questions** (`eval_lookup library`, the main holdout's 129 questions with the
+lookup on, stopped before the answering model):
+- 83 of the 94 questions the library answered send a byte-identical request, so their recorded
+  answers above stand.
+- The other 11 get a fetched source, because the library's best source was weak or the question
+  named something outside it. Their new answers are not recorded or judged.
+- Gold sources: one the library had sent is no longer sent (q095, the vatikin, Berakhot 9b, pushed
+  out by Ein Yaakov, the Tosefta and the Tur), and three questions the library had declined are now
+  answered with their gold.
+- Both not-in-library questions are now answered from Sefaria, which is the point. The "not in
+  library declined 100%" above is the library alone.
+
+What this does and does not show:
+
+- **Holdout is mostly named places** (13 of 19), the case the lookup is built for. Topics are the
+  weak kind, because they depend on the planner's phrases finding the passage in Sefaria's search.
+  On dev, 2 of 4 topic questions failed. In one, a library verse scored 0.65 for "אני מצאתיה", and
+  a strong library source deliberately stops the lookup. In the other, the right line (דינא
+  דמלכותא דינא) was fetched but scored under the relevance threshold, so the honest answer was "no
+  source".
+- **Dev was run five times.** Each change, and the measurement that caused it, is in
+  [decisions §15](docs/decisions.md):
+  - ranking fetched passages without vowel points, and with the planner's phrases;
+  - searching when the library is weak;
+  - never touching a question the library answers well;
+  - fetching a place whose book the question names;
+  - not counting "the Rambam" as naming one of his books.
+
+  Dev ended at 20 of 22 gold passages sent and 92% supported. Holdout was run once, after all of
+  them.
+- **I read the 3 flagged answers.**
+  - Two are the detector misreading what was sent: Rambam books written as "Hilchot De'ot" and
+    "Hilchot Evel", and the dafs of a Tosafot that was sent.
+  - The third names Leviticus 19:18, the verse a retrieved Kli Yakar comments on, though the verse
+    itself was not sent.
+- **The place that does not exist and was "answered"** (Rashi on Bava Kamma 400b) was answered
+  with: the sources don't include Bava Kamma, and 400b is probably a typo. Nothing was invented, but
+  it is counted as answered.
+- **19 of 19 is 19 questions,** written for this project, like the rest.
+
 ## Limitations and next steps
 
-- **A small library.** Torah, Berakhot, and the laws of prayer and blessings: deep enough to test
-  every feature, far from the whole tradition. Daf Yomi in 2026 is outside it, so the daily daf
-  links to Sefaria. Ingestion is per work, but the question set would have to grow with the library.
+- **A small library, and a lookup for the rest.** The curated, measured library is Torah, Berakhot,
+  and the laws of prayer and blessings. Anything else is looked up on Sefaria per question, which
+  is measured on 45 questions, not on the scale of the library's 224. Daf Yomi in 2026 is outside
+  the library, so the daily daf links to Sefaria.
+- **The lookup is a second, less tested path.** Its ranking differs from the library's (no vowel
+  points, the planner's phrases added), it depends on a model planning references, and its cache
+  of Sefaria responses grows without bound and is never re-read for license changes. It sends the
+  planned references and phrases, which come from the question, to Sefaria.
 - **The best translations are excluded by license.** The English Talmud is the 1921 Cohen
   translation, not the CC-BY-NC William Davidson edition, and the Shulchan Arukh has no English
   here at all.
@@ -274,7 +374,7 @@ numbers come from real responses. It is not itself a faithfulness measure.
 - **Single household, no SSO.** Two local accounts, server-side sessions, no MFA or per-user
   administration.
 - **Next:**
-  - more works with open translations;
+  - more works with open translations, chosen by what learners look up most;
   - a second annotator for the question set;
   - bge-m3, which is better on dev (above), chosen properly with a new holdout set;
   - the Talmud's own structure (mishnah → gemara → commentaries) as a retrieval signal.
