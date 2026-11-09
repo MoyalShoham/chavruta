@@ -21,6 +21,7 @@ from collections.abc import Iterable
 from dataclasses import dataclass
 
 from chavruta.retrieval import matches
+from chavruta.text import normalize
 
 # ---- Hebrew numerals ------------------------------------------------------------------------------
 
@@ -311,6 +312,31 @@ def families_of(work: str) -> set[str]:
         if any(work == n or work.startswith((n + " ", n + ",")) for n in (family, *en)):
             out.add(family)
     return out
+
+
+def _names(family: str) -> list[str]:
+    """Every English and Hebrew name of a mention family that has them."""
+    names = [family]
+    if family in TANAKH:
+        names += [*TANAKH[family][0], *TANAKH[family][1]]
+    if family in TALMUD:
+        names.append(TALMUD[family])
+    if family in NAMED:
+        names += [*NAMED[family][0], *NAMED[family][1]]
+    return names
+
+
+def named_in(text: str, ref: str) -> bool:
+    """Whether a text names the work a reference belongs to, by any of its names: "בבבא מציעא דף נט
+    עמוד ב" names "Bava Metzia 59b", "What does Rashi say on Numbers 13:2" names "Rashi on Numbers
+    13:2" (both Rashi and Numbers). Lenient on purpose: it only confirms a place a planner already
+    proposed, and never flags anything by itself."""
+    work = re.sub(r"\s+[\d:ab-]+$", "", ref.strip())
+    families = [f for f in families_of(work) if len(_names(f)) > 1]
+    if not families:
+        return False
+    plain = normalize(text).lower()
+    return all(any(normalize(n).lower() in plain for n in _names(f)) for f in families)
 
 
 def unretrieved(

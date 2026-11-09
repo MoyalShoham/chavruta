@@ -692,3 +692,36 @@ def test_when_a_lookup_happens_library_places_the_planner_named_compete_on_equal
         "teach them to your children", library, [commentary], ["ושננתם לבניך"], ["Deuteronomy 6:7"]
     )
     assert merged[0].ref == "Deuteronomy 6:7" and not merged[0].fetched and merged[0].score == 0.8
+
+
+def test_a_book_the_question_names_is_recognised_in_any_of_its_names() -> None:
+    from chavruta.mentions import named_in
+
+    assert named_in("מה אומרת הגמרא בבבא מציעא דף נט עמוד ב?", "Bava Metzia 59b")
+    assert named_in("What does Rashi say on Numbers 13:2?", "Rashi on Numbers 13:2")
+    assert named_in('רמב"ם הלכות תשובה פרק ב', "Mishneh Torah, Repentance 2:2")
+    assert not named_in("Where does Moses ask why the righteous suffer?", "Jeremiah 12:1")
+    assert not named_in("מה הדין בשניים שמוצאים מציאה?", "Bava Metzia 2a")
+    assert not named_in("What does Rashi say on it?", "Rashi on Numbers 13:2")  # the book is not named
+
+
+def test_a_place_the_question_names_is_fetched_even_when_the_library_looks_strong_but_not_searched() -> None:
+    """ "בבבא מציעא דף נט עמוד ב": the library had a strong-looking passage about the same story
+    (Berakhot 19a), and the question still asked about Bava Metzia."""
+    s = FakeSefaria()
+    llm = PlannerLLM({"refs": ["Bava Batra 5a"], "queries": ["אלו ואלו"]})
+    e = HashEmbedder()
+    strong = Retriever(ALL, e, e.passages([c.text for c in ALL]), FixedScore(0.6))
+    b = Chavruta(strong, CorpusIndex(ALL), llm, Settings(), lookup=SefariaLookup(s, llm))
+    a = b.ask("מה אומרת הגמרא בבבא בתרא דף ה עמוד א על כותל שנפל?")
+    assert any(src.fetched for src in a.sources)
+    assert not any(kind == "search" for kind, _ in s.calls)
+
+
+def test_a_named_place_the_library_turns_out_to_hold_leaves_a_strong_answer_untouched() -> None:
+    question = "מה אומרת משנה ברכות על קריאת שמע בערבית, מאימתי קורין את שמע"
+    with_lookup = PlannerLLM({"refs": ["Mishnah Brachot 1:1"], "queries": ["קורין את שמע"]})
+    a = bot(with_lookup).ask(question)
+    without = PlannerLLM({"refs": [], "queries": []})
+    plain_bot(without).ask(question)
+    assert with_lookup.answer_requests == without.answer_requests and not any(s.fetched for s in a.sources)

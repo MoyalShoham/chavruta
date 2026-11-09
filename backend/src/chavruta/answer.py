@@ -30,7 +30,7 @@ from typing import Any
 from chavruta.corpus import Chunk
 from chavruta.llm import ANSWER_MODEL, LLM, MissingRecordingError, iter_recordings
 from chavruta.lookup import Found, Planned, SefariaLookup
-from chavruta.mentions import Mention, unretrieved
+from chavruta.mentions import Mention, named_in, unretrieved
 from chavruta.retrieval import Retriever, matches
 from chavruta.scope import (
     URGENT,
@@ -465,13 +465,18 @@ class Chavruta:
         except TimeoutError:
             return Found(errors=["planner timed out: lookup skipped"])
         try:
-            outside = bool(unretrieved(query, self.index.works, [], self.index.refs))
             weak = library_best is None or library_best < SEARCH_BELOW
-            if not (weak or outside):
+            # The question names a work or a place the library does not hold, as the mention
+            # detector reads it ...
+            outside = bool(unretrieved(query, self.index.works, [], self.index.refs))
+            # ... or as a planned place whose book the question itself names ("בבבא מציעא דף נט
+            # עמוד ב"). That fetches the place, but does not search.
+            named = any(named_in(query, ref) for ref in planned.plan.refs if not self.index.has(ref))
+            if not (weak or outside or named):
                 return None
             disabled = self.index.disabled
             return self.lookup.fetch_planned(
-                planned, self.index.has, search=True, blocked=lambda w: w in disabled
+                planned, self.index.has, search=weak or outside, blocked=lambda w: w in disabled
             )
         except Exception as e:
             return Found(planned.plan, errors=[f"lookup failed: {type(e).__name__}: {e}"])
@@ -551,7 +556,10 @@ class Chavruta:
         sensitive = c.sensitive or (decision.sensitive_area is not None and is_personal(question))
         if planning is not None and may_look and not sensitive:
             found = self.look_up(planning, query, best)
-            if found is not None and (found.chunks or found.in_library):
+            weak = best is None or best < SEARCH_BELOW
+            # Library places the planner pointed to are ranked in only when the library was weak:
+            # a strong library answer is never re-ranked unless something new was fetched.
+            if found is not None and (found.chunks or (found.in_library and weak)):
                 try:
                     merged = self.merge(query, sources, found.chunks, found.plan.queries, found.in_library)
                 except Exception as e:  # ranking the fetched passages failed: keep the library's
