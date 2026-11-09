@@ -11,7 +11,7 @@ RUN uv sync --frozen --no-dev --extra ml
 # Model weights are fetched here, at build time, from Hugging Face. The running containers are
 # offline (HF_HUB_OFFLINE=1) and network-locked to Sefaria, Hebcal and the Anthropic API.
 
-RUN python -m chavruta.fetch_models --chosen --reranker
+RUN python -m chavruta.fetch_models --chosen --reranker && chmod -R a+rX /models
 COPY alembic.ini ./
 COPY alembic ./alembic
 COPY corpus ./corpus

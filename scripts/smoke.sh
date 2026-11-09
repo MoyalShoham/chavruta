@@ -4,7 +4,14 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 export COMPOSE_PROJECT_NAME=chavruta-smoke CHAVRUTA_CORPUS=demo CHAVRUTA_WEB_PORT=3299
-trap 'docker compose logs --tail 40 api ingest || true; docker compose down -v >/dev/null 2>&1 || true; rm -rf secrets-smoke' EXIT
+cleanup() {
+  docker compose logs --tail 40 api ingest || true
+  docker compose down -v >/dev/null 2>&1 || true
+  # The secrets container writes as root on Linux: remove its files from inside a container.
+  docker run --rm -v "$PWD/secrets-smoke:/s" python:3.12-slim sh -c 'rm -f /s/*' >/dev/null 2>&1 || true
+  rm -rf secrets-smoke || true
+}
+trap cleanup EXIT
 export CHAVRUTA_SECRETS_DIR=./secrets-smoke
 docker compose up -d --build
 base=http://localhost:$CHAVRUTA_WEB_PORT
