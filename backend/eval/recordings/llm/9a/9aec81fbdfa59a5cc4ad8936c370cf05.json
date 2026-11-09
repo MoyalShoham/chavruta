@@ -1,0 +1,93 @@
+{
+ "key": "9aec81fbdfa59a5cc4ad8936c370cf05",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: איפה נאמר שהמבזבז אל יבזבז יותר מחומש?\n\nSources:\n[0] Tosafot on Ketubot 50a:2:1 (Tosafot on Ketubot)\nאל יבזבז יותר מחומש - מפרש בירושלמי שפעם ראשונה יכול לבזבז חומש ומכאן ואילך בכל שנה ושנה יתן חומש הריוח:\n\n[1] Ketubot 50a:2 (Ketubot)\nא\"ר אילעא באושא התקינו המבזבז אל יבזבז יותר מחומש תניא נמי הכי המבזבז אל יבזבז יותר מחומש שמא יצטרך לבריות ומעשה באחד שבקש לבזבז [יותר מחומש] ולא הניח לו חבירו ומנו רבי ישבב ואמרי לה רבי ישבב ולא הניחו חבירו ומנו רבי עקיבא\n\n[2] Shulchan Arukh, Orach Chayim 656:1 (Shulchan Arukh, Orach Chayim)\nשצריך לחזור אחד הידור מצוה בקנית האתרוג. ובו סעיף אחד: אם קנה אתרוג שראוי לצאת בו בצמצום כגון שהוא כביצה מצומצמת ואח\"כ מצא גדול ממנו מצוה להוסיף עד שליש מלגיו בדמי הראשון כדי להחליפו ביותר נאה ויש מי שאומר שאם מוצא שני אתרוגים לקנות והאחד הדור מחבירו יקח ההדר אם אין מייקרים אותו יותר משליש מלגיו בדמי חבירו: הגה מי שאין לו אתרוג או שאר מצוה עוברת אין צריך לבזבז עליה הון רב וכמו שאמרו המבזבז אל יבזבז יותר מחומש אפי' מצוה עוברת [הרא\"ש ורבינו ירוחם נ\"י ח\"ב] ודוקא מצות עשה אבל לא תעשה יתן כל ממונו קודם שיעבור [הרשב\"א וראב\"ד] [וע' לקמן סוף סי' תרנ\"ח בהגה] :\nOne must pursue beautification of the mitzvah when buying an etrog: If one bought an etrog that can just barely fulfill the obligation, i.e. if it was exactly an egg-size, and afterward found a bigger one, it is a mitzvah to pay up to a third more than the price of the first to swap it out for the nicer one. There is one who says that if there are two etrogs available for purchase, one nicer than the other, the nicer one should be purchased if it is not more than a third more expensive than the other one. RAMA: Somebody who doesn't have an etrog or some other [objected associated with a] mitzvah whose time will elapse need not dispense much wealth on it, as they said, \"One who dispenses [money to charity] should not dispense more than one-fifth [of their wealth]\" [Ketubot 50a], even with respect to a mitzvah with a time that will elapse (Ros\"h, Rabbeinu Yerucham 13:2). This specifically applies to a positive mitzvah. However, regarding a negative mitzvah, one should spend all of their wealth rather than sin (Rashb\"a and Raavad). See the end of 658 in the Rama.\n\n[3] Ketubot 110b:23 (Ketubot)\nת\"ר לעולם ידור אדם בא\"י אפי' בעיר שרובה עובדי כוכבים ואל ידור בחו\"ל ואפילו בעיר שרובה ישראל שכל הדר בארץ ישראל דומה כמי שיש לו אלוה וכל הדר בחוצה לארץ דומה כמי שאין לו אלוה שנא' (ויקרא כה, לח) לתת לכם את ארץ כנען להיות לכם לאלהים\nThe Rabbis taught: A man should always live in the Land of Israel, even in a city of which the majority are idolaters, and not live outside of the Land of Israel, even in a city where the majority is Jewish. For whoever lives in the Land of Israel, it is as if he has a God. And whoever lives outside of the Land of Israel, it is as if he has no God. For it is said (Leviticus 25:38): \"to give you the land of Canaan, to be your God.\"\n\n[4] Bartenura on Mishnah Peah 1:1:5 (Bartenura on Mishnah Peah)\nוגמילות חסדים. דבגופו, כגון ביקור חולים ולקבור מתים וכיוצא בהן, אבל גמילות חסדים דבממונו, כגון פדיון שבוים ולהלביש ערומים ולהאכיל את הרעבים וכיוצא בהן יש להן שיעור, שיתן בכל פעם שתבא מצוה כזו לידו חמישית מן הריוח שבנכסיו, ותו לא מחייב, דהכי אמרינן המבזבז אל יבזבז יותר מחומש. הלכך מבעי ליה לאינש לאפרושי חמישית הריוח בכל עת כדי שיהא מצוי כל זמן שיבא גמילות חסד לידו שיקיימנו, ובהכי נפיק ידי חובתו:\nוגמילות חסדים – [and deeds of lovingkindness] of one’s body, such as visiting the sick and burying the dead and others like them, but deeds of lovingkindness [performed] with one’s money , such as the redemption of captives, the clothing of the naked and the feeding of the hungry and others like them, there is a [fixed] measure that one should give every time such a Mitzvah should come to his hand [to perform which is], one fifth of the profit of one’s possessions, and beyond that, one is not obligated [to give], as we say, a person who wants to be liberal (in his giving of tzedakah on a large scale), should not give more than twenty percent (see Ketubot 50a). Therefore, it is necessary for a person to separate out one fifth of his profit at all times so that it would be [readily] found whenever [an opportunity] to perform an act of lovingkindness comes to his hand, in order that he can sustain him (i.e. the less fortunate), and in that way, he fulfills his obligation.\n\n[5] Shulchan Arukh, Yoreh De'ah 249:1 (Shulchan Arukh, Yoreh De'ah)\nכמה חייב ליתן וכיצד יתננה. ובו ט\"ז סעיפים: שיעור נתינתה אם ידו משגת יתן כפי צורך העניים ואם אין ידו משגת כל כך יתן עד חומש נכסיו מצוה מן המובחר ואחד מעשרה מדה בינונית פחות מכאן עין רעה וחומש זה שאמרו שנה ראשונה מהקרן מכאן ואילך חומש שהרויח בכל שנה: הגה ואל יבזבז אדם יותר מחומש שלא יצטרך לבריות (ב\"י בשם הגמ' פ' נערה שנתפתתה) ודוקא כל ימי חייו אבל בשעת מותו יכול אדם ליתן צדקה כל מה שירצה (ג\"ז שם פ' מציאת האשה ומייתי לה רי\"ף ורא\"ש ור\"ן ומרדכי) ואין לעשות ממעשר שלו דבר מצוה כגון נרות לבית הכנסת או שאר דבר מצוה רק יתננו לעניים (מהרי\"ל הל' ראש השנה) :\nThe amount of charity one should give is as follows: if one can but afford, let him give as much as is needed. Under ordinary circumstances, a fifth of one's property is most laudable. To give one-tenth is the average disposition. But to give less than one-tenth is niggardly. When the Rabbis said a \"fifth\" they meant a fifth of the property the first year only and a fifth of the profits in succeeding years. RMI.—But a man should not squander more than one-fifth to charity, so that he might not himself become a public charge.This refers only to his lifetime. Of course, at the time of death one may leave for charity as much as he pleases.\n\n[6] Mishneh Torah, Kings and Wars 5:12 (Mishneh Torah, Kings and Wars)\nלְעוֹלָם יָדוּר אָדָם בְּאֶרֶץ יִשְׂרָאֵל אֲפִלּוּ בְּעִיר שֶׁרֻבָּהּ עַכּוּ\"ם וְאַל יָדוּר בְּחוּצָה לָאָרֶץ וַאֲפִלּוּ בְּעִיר שֶׁרֻבָּהּ יִשְׂרָאֵל. שֶׁכָּל הַיּוֹצֵא לְחוּצָה לָאָרֶץ כְּאִלּוּ עוֹבֵד עֲבוֹדָה זָרָה. שֶׁנֶּאֱמַר (שמואל א כו יט) \"כִּי גֵרְשׁוּנִי הַיּוֹם מֵהִסְתַּפֵּחַ בְּנַחֲלַת ה' לֵאמֹר לֵךְ עֲבֹד אֱלֹהִים אֲחֵרִים\". וּבַפֻּרְעָנֻיּוֹת הוּא אוֹמֵר (יחזקאל יג ט) \"וְאֶל אַדְמַת יִשְׂרָאֵל לֹא יָבֹאוּ\". כְּשֵׁם שֶׁאָסוּר לָצֵאת מֵהָאָרֶץ לְחוּצָה לָאָרֶץ כָּךְ אָסוּר לָצֵאת מִבָּבֶל לִשְׁאָר הָאֲרָצוֹת. שֶׁנֶּאֱמַר (ירמיה כז כב) \"בָּבֶלָה יוּבָאוּ וְשָׁמָּה יִהְיוּ\":\nA person should always dwell in Eretz Yisroel, even in a city where most of the residents are not Jewish, rather than live outside of the Land in a city where most of the residents are Jewish. For anyone who leaves the Land is considered as if he worships idols, as it says, “ for they have driven me out this day that I should not cleave to the inheritance of the Lord, saying, ‘go serve other gods’ ” (I Samuel 26:19). And regarding the calamities it says, “ Neither shall they enter into the land of Israel ” (Ezekiel 13:9). Just as it is forbidden to leave the Land, so it is forbidden to leave Babylon for any other country, as it says, “ They shall be carried to Babylon, and there shall they be ” (Jeremiah 27:22).\n\n[7] Ketubot 67b:16 (Ketubot)\nכי קא ניחא נפשיה אמר אייתו לי חושבנאי דצדקה אשכח דהוה כתיב ביה שבעת אלפי דינרי סיאנקי אמר זוודאי קלילי ואורחא רחיקתא קם בזבזיה לפלגיה ממוניה היכי עביד הכי והאמר ר' אילעאי באושא התקינו המבזבז אל יבזבז יותר מחומש הני מילי מחיים שמא ירד מנכסיו אבל לאחר מיתה לית לן בה:\n... When he [Mar 'Ukva] was about to die, he said: ...He said, “Bring me my bank account records!” ... Written in his accounts, he found that he had 7,000 gold Sianki pieces. He said, “No amount will be enough to take with me to the next world.” [lit. “The road is long, and the provisions few.”] He then distributed half of his wealth as tzedaka. What - how could he do that!? Didn’t Rabi Elai say, “In Usha [the city] it was established: when distributing money ... - a person may only donate one-fifth of their income.” These words - only apply in a person's life, for perhaps a person might lose their property. But, in death - this rule doesn’t apply.\n\nAnswer segments:\n(0) sources=[]: ## המקור העיקרי: כתובות נ ע\"א\n\nהתקנה מובאת בשם ר' אילעא: \n(1) sources=[1]: א\"ר אילעא באושא התקינו המבזבז אל יבזבז יותר מחומש תניא נמי הכי המבזבז אל יבזבז יותר מחומש שמא יצטרך לבריות\n(2) sources=[]: . כלומר, זו תקנת אושא, וגם ברייתא אומרת כך, והטעם הוא שמא יצטרך האדם לבריות.\n\nהגמרא שם מוסיפה מעשה: \n(3) sources=[1]: ומעשה באחד שבקש לבזבז [יותר מחומש] ולא הניח לו חבירו ומנו רבי ישבב ואמרי לה רבי ישבב ולא הניחו חבירו ומנו רבי עקיבא\n(4) sources=[]: .\n\n## כתובות סז ע\"ב\n\nכאן המימרא מובאת בשם ר' אילעאי, כקושיה על מר עוקבא שחילק חצי ממונו לפני מותו. התירוץ הוא: \n(5) sources=[7]: הני מילי מחיים שמא ירד מנכסיו אבל לאחר מיתה לית לן בה\n(6) sources=[]: .\n\n## הכלל בפרשנים ובפוסקים\n\n- **תוספות (כתובות נ ע\"א)** מביאים פירוש מהירושלמי: \n(7) sources=[0]: שפעם ראשונה יכול לבזבז חומש ומכאן ואילך בכל שנה ושנה יתן חומש הריוח\n(8) sources=[]: .\n- **שו\"ע יו\"ד רמט:א**, ברמ\"א: \n(9) sources=[5]: ואל יבזבז אדם יותר מחומש שלא יצטרך לבריות\n(10) sources=[]: . הוא מוסיף שזה רק בחייו, אבל בשעת מותו מותר.\n- **שו\"ע או\"ח תרנו:א**, ברמ\"א: הכלל חל גם על מצוות, \n(11) sources=[2]: אפי' מצוה עוברת\n(12) sources=[]: . אבל זה רק במצוות עשה. בלא תעשה \n(13) sources=[2]: יתן כל ממונו קודם שיעבור\n(14) sources=[]: .\n- **ברטנורא (פאה א:א)** מביא את הכלל כדי לקבוע שיעור לגמילות חסדים בממון: \n(15) sources=[4]: חמישית מן הריוח שבנכסיו, ותו לא מחייב\n(16) sources=[]: .\n\nלשאלות מעשיות כדאי לפנות לרב."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsrJFysa1Xp8o53snHb4",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Ketubot 50a attributes the enactment to R' Ilea at Usha, per source 1.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Exact quote from source 1.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Accurate paraphrase: Usha enactment, baraita, reason lest he need others.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Exact quote from source 1.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Exact quote from source 7.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Source 7 shows the objection regarding Mar Ukva and the resolution.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches Tosafot quote.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Matches Tosafot, which cites the Yerushalmi.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Quote from the Rema in source 5.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"Source 5 says this applies only in lifetime, and at death one may give as he wishes.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Quote from Rema in source 2.\"},{\"i\":12,\"verdict\":\"supported\",\"note\":\"Source 2 says it applies to positive commandments only.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Quote from source 2.\"},{\"i\":14,\"verdict\":\"supported\",\"note\":\"Punctuation only; the Rema attribution and the OC 656 citation are supported.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Matches the Bartenura quote.\"},{\"i\":16,\"verdict\":\"supported\",\"note\":\"Source 4 uses the rule to set a limit on monetary acts of kindness.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 5728,
+   "output_tokens": 634,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "key": "016ab67b80111a99731f927ff6c4a3ec",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Sanhedrin 74a: which sins must one die rather than commit?\n\nSources:\n[0] Mishneh Torah, Foundations of the Torah 5:2 (Mishneh Torah, Foundations of the Torah)\nבַּמֶּה דְּבָרִים אֲמוּרִים בִּשְׁאָר מִצְוֹת חוּץ מֵעֲבוֹדַת כּוֹכָבִים וְגִלּוּי עֲרָיוֹת וּשְׁפִיכַת דָּמִים. אֲבָל שָׁלֹשׁ עֲבֵרוֹת אֵלּוּ אִם יֹאמַר לוֹ עֲבֹר עַל אַחַת מֵהֶן אוֹ תֵּהָרֵג. יֵהָרֵג וְאַל יַעֲבֹר. בַּמֶּה דְּבָרִים אֲמוּרִים בִּזְמַן שֶׁהָעוֹבֵד כּוֹכָבִים מִתְכַּוֵּן לַהֲנָאַת עַצְמוֹ. כְּגוֹן שֶׁאֲנָסוֹ לִבְנוֹת לוֹ בֵּיתוֹ בְּשַׁבָּת אוֹ לְבַשֵּׁל לוֹ תַּבְשִׁילוֹ. אוֹ אָנַס אִשָּׁה לְבָעֳלָהּ וְכַיּוֹצֵא בָּזֶה. אֲבָל אִם נִתְכַּוֵּן לְהַעֲבִירוֹ עַל הַמִּצְוֹת בִּלְבַד. אִם הָיָה בֵּינוֹ לְבֵין עַצְמוֹ וְאֵין שָׁם עֲשָׂרָה מִיִּשְׂרָאֵל יַעֲבֹר וְאַל יֵהָרֵג. וְאִם אֲנָסוֹ לְהַעֲבִירוֹ בַּעֲשָׂרָה מִיִּשְׂרָאֵל יֵהָרֵג וְאַל יַעֲבֹר. וַאֲפִלּוּ לֹא נִתְכַּוֵּן לְהַעֲבִירוֹ אֶלָּא עַל מִצְוָה מִשְּׁאָר מִצְוֹת בִּלְבַד:\nWhereat are these words directed? Concerning all other commandments, save idolatry, adultery and blood-shed. For respecting these three commandments, if one will say to him: \"Transgress one of the three, or die,\" he shall die, and not transgress. Whereat are these words directed? When the idolater intends to have a personal enjoyment, as when he forces an Israelite to build his house, or cook his meals on a Sabbath, or when he forces a Jewish woman, and in like matters; but if he merely intended to make him violate commandments, then, if it happen between themselves, and there be no ten Israelites present, it is mandatory to transgress and not die; but if he forces him to go astray from one of the commandments in the presence of ten Israelites, he must suffer death and not transgress, even though the idolater did not intend to lead him astray save from one of the rest of the commandments.\n\n[1] Sanhedrin 74a:12 (Sanhedrin)\nא\"ר יוחנן משום ר\"ש בן יהוצדק נימנו וגמרו בעליית בית נתזה בלוד כל עבירות שבתורה אם אומרין לאדם עבור ואל תהרג יעבור ואל יהרג חוץ מעבודת כוכבים וגילוי עריות ושפיכות דמים\n\n[2] Sanhedrin 56a:24 (Sanhedrin)\nתנו רבנן שבע מצות נצטוו בני נח דינין וברכת השם ע\"ז גילוי עריות ושפיכות דמים וגזל ואבר מן החי\nOur rabbis taught: The Noachides were commanded regarding seven commandments: (1) Justice, (2) Blasphemy, (3) Idol Worship, (4) Sexual Immorality (5) Murder, (6) Robbery (7) Eating the limb of a living animal.\n\n[3] Mishneh Torah, Foundations of the Torah 5:1 (Mishneh Torah, Foundations of the Torah)\nכָּל בֵּית יִשְׂרָאֵל מְצֻוִּין עַל קִדּוּשׁ הַשֵּׁם הַגָּדוֹל הַזֶּה שֶׁנֶּאֱמַר (ויקרא כב לב) \"וְנִקְדַּשְׁתִּי בְּתוֹךְ בְּנֵי יִשְׂרָאֵל\". וּמֻזְהָרִין שֶׁלֹּא לְחַלְּלוֹ שֶׁנֶּאֱמַר (ויקרא כב לב) \"וְלֹא תְחַלְּלוּ אֶת שֵׁם קָדְשִׁי\". כֵּיצַד. כְּשֶׁיַּעֲמֹד עוֹבֵד כּוֹכָבִים וְיֶאֱנֹס אֶת יִשְׂרָאֵל לַעֲבֹר עַל אַחַת מִכָּל מִצְוֹת הָאֲמוּרוֹת בַּתּוֹרָה אוֹ יַהַרְגֶּנּוּ יַעֲבֹר וְאַל יֵהָרֵג שֶׁנֶּאֱמַר בַּמִּצְוֹת (ויקרא יח ה) \"אֲשֶׁר יַעֲשֶׂה אוֹתָם הָאָדָם וָחַי בָּהֶם\". וָחַי בָּהֶם וְלֹא שֶׁיָּמוּת בָּהֶם. וְאִם מֵת וְלֹא עָבַר הֲרֵי זֶה מִתְחַיֵּב בְּנַפְשׁוֹ:\nIt is mandatory upon the whole house of Israel to sanctify this Great Name, for it is said: \"And I shall be sanctified among the children of Israel\" (Lev. 22.32). They are also charged not to blaspheme Him, for it is said: \"And ye shall not profane My holy Name\" (Ibid.). How are these commandments to be observed? If an idolater will force an Israelite to transgress one of the commandments of the Torah and threaten him with death for disobedience, it is mandatory that he transgress the commandment and be not put to death, for it is said concerning the commandments: \"That which a man may do and live by it\" (Ibid. 18.5)—\"live by it, but not die for it\". Thus, if he chose death and did not transgress, his blood be upon his own head.\n\n[4] Rashi on Sanhedrin 74a:19:1 (Rashi on Sanhedrin)\nמה רוצח יהרג ואל יעבור - ואם אמר לו הוי רוצח והרוג את הנפש ואם לאו הריני הורגך יהרג ואל יעבור:\n\n[5] Rashi on Sanhedrin 74a:21:1 (Rashi on Sanhedrin)\nואפילו מצוה קלה יהרג ואל יעבור - שלא ירגילו העובדי כוכבים להמריך את הלבבות לכך:\n\n[6] Rashi on Sanhedrin 74a:12:2 (Rashi on Sanhedrin)\nיעבור ואל יהרג - וחי בהם ולא שימות בהם:\n\n[7] Sanhedrin 74a:22 (Sanhedrin)\nכי אתא רבין א\"ר יוחנן אפי' שלא בשעת גזרת מלכות לא אמרו אלא בצינעא אבל בפרהסיא אפי' מצוה קלה יהרג ואל יעבור\n\nAnswer segments:\n(0) sources=[]: **The core ruling (Sanhedrin 74a)**\n\n\n(1) sources=[1]: א\"ר יוחנן משום ר\"ש בן יהוצדק נימנו וגמרו בעליית בית נתזה בלוד כל עבירות שבתורה אם אומרין לאדם עבור ואל תהרג יעבור ואל יהרג חוץ מעבודת כוכבים וגילוי עריות ושפיכות דמים\n(2) sources=[]: . A vote in the upper chamber in Lod set the rule: for any Torah prohibition, one transgresses rather than be killed, *except* three: idolatry, forbidden sexual relations, and bloodshed.\n\nRashi gives the reason for the general rule: \n(3) sources=[6]: וחי בהם ולא שימות בהם\n(4) sources=[]: , \"live by them, not die by them.\" On murder he explains that if someone says \n(5) sources=[4]: הוי רוצח והרוג את הנפש ואם לאו הריני הורגך יהרג ואל יעבור\n(6) sources=[]: : \"kill, or I'll kill you,\" one must be killed rather than kill.\n\n**Expansion: public settings**\n\nRabin reported in R. Yochanan's name that even outside a time of royal decree, the leniency applies only \n(7) sources=[7]: בצינעא אבל בפרהסיא אפי' מצוה קלה יהרג ואל יעבור\n(8) sources=[]: . In private it applies, but in public one must die rather than violate even a minor commandment. Rashi explains this is so that \n(9) sources=[5]: שלא ירגילו העובדי כוכבים להמריך את הלבבות לכך\n(10) sources=[]: , so idolaters don't grow accustomed to breaking people's resolve.\n\n**Rambam's codification**\n\nThe Rambam adds a distinction based on the coercer's intent. If he acts \n(11) sources=[0]: to have a personal enjoyment, as when he forces an Israelite to build his house, or cook his meals on a Sabbath\n(12) sources=[]: , one transgresses. But if the coercer's aim is to make the Jew violate commandments \n(13) sources=[0]: in the presence of ten Israelites, he must suffer death and not transgress\n(14) sources=[]: . He also writes that where transgression is required, \n(15) sources=[3]: if he chose death and did not transgress, his blood be upon his own head.\n(16) sources=[]: \n\nFor practical application, please consult a rabbi."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsrGHDUaUyXxvY4DXvbh",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"no_claim\",\"note\":\"Heading only.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Quotes Sanhedrin 74a:12 accurately.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Accurate paraphrase of source 1.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Quotes Rashi 74a:12 accurately.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Translation of Rashi's reason; murder explanation matches source 4.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Quotes Rashi on 74a:19 accurately.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Accurate paraphrase of Rashi.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Quotes Sanhedrin 74a:22 accurately.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Matches source 7 and Rashi (source 5) attribution.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Quotes Rashi 74a:21 accurately.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"Fair paraphrase of Rashi's reason.\"},{\"i\":11,\"verdict\":\"partial\",\"note\":\"Quote is accurate, but the source frames the personal-enjoyment case as one of the three cardinal sins.\"},{\"i\":12,\"verdict\":\"partial\",\"note\":\"Source says transgress only if private with fewer than ten; the 'one transgresses' for enjoyment is wrong, since it means die.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Matches Rambam 5:2 on ten Israelites.\"},{\"i\":14,\"verdict\":\"supported\",\"note\":\"Transition; Rambam 5:1 does say this.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Matches Rambam 5:1 translation.\"},{\"i\":16,\"verdict\":\"no_claim\",\"note\":\"Disclaimer.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4181,
+   "output_tokens": 665,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

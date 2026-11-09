@@ -1,0 +1,119 @@
+{
+ "split": "dev",
+ "n": 24,
+ "integrity_problems": [],
+ "by_type": {
+  "named": {
+   "n": 15,
+   "answered": 15,
+   "gold_fetched": 15,
+   "gold_sent": 15,
+   "answers_citing_gold": [
+    14,
+    15
+   ]
+  },
+  "implicit": {
+   "n": 3,
+   "answered": 3,
+   "gold_fetched": 3,
+   "gold_sent": 3,
+   "answers_citing_gold": [
+    3,
+    3
+   ]
+  },
+  "topic": {
+   "n": 4,
+   "answered": 3,
+   "gold_fetched": 3,
+   "gold_sent": 2,
+   "answers_citing_gold": [
+    2,
+    3
+   ]
+  },
+  "missing": {
+   "n": 2,
+   "answered": 1
+  }
+ },
+ "findable": {
+  "n": 22,
+  "answered": 21,
+  "gold_fetched": 21,
+  "gold_sent": 20
+ },
+ "missing_declined": [
+  1,
+  2
+ ],
+ "grounding": {
+  "answered": 22,
+  "with_citations": 0.9545454545454546,
+  "cited_share_of_text": 0.4718627523478518,
+  "cites_a_gold_source": 0.9047619047619048,
+  "names_an_unretrieved_source": 0.045454545454545456,
+  "machloket_names_every_side": null,
+  "machloket_n": 0,
+  "judge": {
+   "answers": 22,
+   "segments": {
+    "partial": 20,
+    "supported": 244,
+    "no_claim": 90
+   },
+   "supported_share_of_claims": 0.9242424242424242
+  }
+ },
+ "licenses_sent": [
+  "CC-BY",
+  "CC-BY-SA",
+  "CC0",
+  "Public Domain"
+ ],
+ "sefaria_requests_median": 0,
+ "fetch_seconds": {
+  "n": 0,
+  "median": null,
+  "max": null
+ },
+ "plan_seconds": {
+  "median": 0.02,
+  "max": 0.03
+ },
+ "library_check": {
+  "n": 95,
+  "answered_before": 65,
+  "with_fetched_sources": [
+   "q003",
+   "q017",
+   "q037",
+   "q070",
+   "q079",
+   "n003"
+  ],
+  "unchanged": 59,
+  "unchanged_with_identical_request": 59,
+  "not_in_library": 5,
+  "not_in_library_answered_now": [
+   "n002",
+   "n003",
+   "n004",
+   "n005"
+  ],
+  "declined_before_answered_now": [
+   "q083",
+   "q084",
+   "q110",
+   "n002",
+   "n004",
+   "n005"
+  ],
+  "gold_lost": [],
+  "gold_gained": [
+   "q083",
+   "q084"
+  ]
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "key": "bd9e2922cb424f75465dcad9ea22cd9d",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: עירובין יג ע\"ב: מה אמרה בת הקול על בית שמאי ובית הלל?\n\nSources:\n[0] Eruvin 13b:10 (Eruvin)\nא\"ר אבא אמר שמואל שלש שנים נחלקו ב\"ש וב\"ה הללו אומרים הלכה כמותנו והללו אומרים הלכה כמותנו יצאה בת קול ואמרה אלו ואלו דברי אלהים חיים הן והלכה כב\"ה\nRabbi Abba said in the name of Shmuel, For three years, the House of Hillel and the House of Shammai argued. One said, 'The halakha is like us,' and the other said, 'The halakha is like us.' A heavenly voice spoke: \"These and these are the words of the living God, and the halakha is like the House of Hillel.\"\n\n[1] Berakhot 52a:6 (Berakhot)\nלא ס\"ד דקתני הכא במתניתין בית שמאי אומרים נר ומזון בשמים והבדלה ובית הלל אומרים נר ובשמים מזון והבדלה והתם בברייתא קתני אם אין לו אלא כוס אחד מניחו לאחר המזון ומשלשלן כולן לאחריו שמע מינה דבית שמאי היא ואליבא דרבי יהודה\nThat cannot enter thy mind; for it states here in our Mishnah: Bet Shammai say : [The order of benedictions is] light, food, spices and Habdalah ; but Bet Hillel say : Light, spices, food and Habdalah ; and there in the Baraita it states : \"Should he have only one cup [of wine], he leaves it until after the meal and combines all [the benedictions] afterwards.\" Conclude therefore that it emanates from Bet Shammai as interpreted by R. Judah.\n\n[2] Berakhot 51b:14 (Berakhot)\nבית שמאי אומרים מכבדין את הבית ואחר כך נוטלין לידים ובית הלל אומרים נוטלין לידים ואחר כך מכבדין את הבית\nBet Shammai say: [After the meal] they clear up and then we wash the hands [prior to Grace] ; but Bet Hillel say : We wash the hands and then they clear up.\n\n[3] Berakhot 51b:11 (Berakhot)\nמתני׳ אלו דברים שבין בית שמאי ובין בית הלל בסעודה בית שמאי אומרים מברך על היום ואחר כך מברך על היין ובית הלל אומרים מברך על היין ואחר כך מברך על היום\nMISHNAH The following are the points of variance between Bet Shammai and Bet Hillel in connection with the meal. Bet Shammai say : [On a Sabbath or Festival] one pronunces the benediction over the day and then over the wine ; but Bet Hillel say : He pronounces the benediction over the wine and afterwards over the day.\n\n[4] Eruvin 13b:12 (Eruvin)\nכאותה ששנינו מי שהיה ראשו ורובו בסוכה ושלחנו בתוך הבית בית שמאי פוסלין וב\"ה מכשירין אמרו ב\"ה לב\"ש לא כך היה מעשה שהלכו זקני ב\"ש וזקני ב\"ה לבקר את ר' יוחנן בן החורנית ומצאוהו יושב ראשו ורובו בסוכה ושלחנו בתוך הבית אמרו להן בית שמאי (אי) משם ראיה אף הן אמרו לו אם כך היית נוהג לא קיימת מצות סוכה מימיך\nLike that which we taught, One whose head and majority of his body are in the Sukkah and his table are in the [adjacent] house, Beis Shamai said it is invalid, and Beis Hillel said it is valid. Beis Hillel said to Beis Shamai, Is there not a story in our hands that the elders of Beis Shamai and Beis Hillel went to visit R' Yochanan ben HaChornis, and they found him sitting with his head and majority of his body in the Sukkah and his table in the house? [Doesn't this imply it's permissible?] Beis Shamai said back to them, From there you bring a proof? Even they said to him that if this is how you act, you never fulfilled the mitzvah of Sukkah in your life!\n\n[5] Berakhot 51b:12 (Berakhot)\nבית שמאי אומרים נוטלין לידים ואחר כך מוזגין את הכוס ובית הלל אומרים מוזגין את הכוס ואחר כך נוטלין לידים\nBet Shammai say : We wash the hands and then fill the cup ; but Bet Hillel say: We fill the cup and then wash the hands.\n\n[6] Rashi on Berakhot 23b:9:1 (Rashi on Berakhot)\nתיובתא דרבא אמר רב ששת – דאמר בית שמאי היא ולא בית הלל דאם כן לא משכחת מידי לאוקמה הך ברייתא דקתני מאי שהתרתי לך כאן אסרתי לך כאן:\n\n[7] Berakhot 51b:19 (Berakhot)\nבא להן יין אחר המזון אם אין שם אלא אותו כוס בית שמאי אומרים מברך על היין ואח\"כ מברך על המזון ובית הלל אומרים מברך על המזון ואח\"כ מברך על היין\nIf wine is brought to them after the food and there is [only sufficient for] one cup, Bet Shammai declare he says the benediction over the wine and then over the food ; but Bet Hillel declare he says the benediction over the food and then over the wine.\n\nAnswer segments:\n(0) sources=[]: **הבת קול בעירובין יג ע\"ב**\n\nלפי הגמרא, \n(1) sources=[0]: א\"ר אבא אמר שמואל שלש שנים נחלקו ב\"ש וב\"ה הללו אומרים הלכה כמותנו והללו אומרים הלכה כמותנו יצאה בת קול ואמרה אלו ואלו דברי אלהים חיים הן והלכה כב\"ה\n(2) sources=[]: .\n\nבתרגום: \n(3) sources=[0]: \"These and these are the words of the living God, and the halakha is like the House of Hillel.\"\n(4) sources=[]: \n\n**שני חלקים בדברי הבת קול:**\n1. **\"אלו ואלו דברי אלהים חיים הן\"**: שתי השיטות יש להן תוקף ומקור אלוקי.\n2. **\"והלכה כבית הלל\"**: למרות זאת, להלכה פוסקים כבית הלל.\n\n**דוגמה למחלוקת מאותו עמוד:**\nהגמרא שם מביאה מחלוקת בסוכה: \n(5) sources=[4]: מי שהיה ראשו ורובו בסוכה ושלחנו בתוך הבית בית שמאי פוסלין וב\"ה מכשירין\n(6) sources=[]: . בית הלל הביאו ראיה ממעשה ברבי יוחנן בן החורנית. בית שמאי השיבו שאדרבה, הזקנים אמרו לו: \n(7) sources=[4]: if this is how you act, you never fulfilled the mitzvah of Sukkah in your life!\n(8) sources=[]: \n\n**שאלה לעיון:**\nאם שתי השיטות הן \"דברי אלהים חיים\", מדוע ההלכה נקבעת דווקא כבית הלל? המקורות שלפנינו אינם מביאים את הנימוק לכך. כדאי לעיין בהמשך הסוגיה."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsrDASMRidL4LMRQp7ao",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"no_claim\",\"note\":\"Heading and introduction only; no substantive claim.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Quotes source 0 exactly.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Punctuation and transition.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches the English translation in source 0.\"},{\"i\":4,\"verdict\":\"partial\",\"note\":\"Two-part division is supported; 'both have divine source/validity' is interpretive gloss, and 'halakha follows Hillel' is stated.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Quotes source 4 on the Sukkah dispute.\"},{\"i\":6,\"verdict\":\"partial\",\"note\":\"Hillel's proof from R' Yochanan ben HaChornis is supported; the Shammai reply is garbled, since the elders spoke to him, not Shammai replying 'on the contrary'.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Quotes source 4 accurately.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Sources shown do not give the reason; accurate disclaimer, and the question follows from source 0.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3216,
+   "output_tokens": 406,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

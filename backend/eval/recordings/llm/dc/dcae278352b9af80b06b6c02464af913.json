@@ -1,0 +1,93 @@
+{
+ "key": "dcae278352b9af80b06b6c02464af913",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: מגילה ז ע\"ב: עד מתי חייב אדם לבסומי בפוריא?\n\nSources:\n[0] Ohr Chadash, Introduction 27 (Ohr Chadash)\nאמנם מי שסבר כי גם יום הכפורים לא יהיה בטל , דעתו כי אלו שני ימים, דהיינו ימי הפורים ויום הכפורים, דומים בענין זה ; כי ימי הפורים, מפני שהמן היה רוצה לכלות אותם מן העולם, ודבר זה הוא ביטול* גופם. ומפני כך ימי הפורים הם ימי המשתה ושמחה (אסתר ט, כב), וזהו הנאות הגוף . וצריך שיהיה השכרות כל כך עד שיסלק השכל , וכמו שאמרו (מגילה ז:) צריך לבסומי בפוריא עד שלא ידע בין ארור המן ובין ברוך מרדכי. כלומר, כיון שתקנו ימי הפורים למשתה ושמחה, שהוא הנאת הגוף, לכך צריך שיהיו נמשכים לגמרי אחר הנאת הגוף, עד שיסולק השכל לגמרי. כי הגוף והשכל שני הפכים, שאם האחד קם השני נופל , וכל אשר הוא נוטה אחר השכל, הוא נגד הנאת גופו . לכך אמרו (שם) שצריך לבסומי בפוריא עד דלא ידע בין ארור המן לברוך מרדכי, שאז יסולק השכל לגמרי, והאדם נעשה גופני לגמרי . ואפילו בין ארור המן ובין ברוך מרדכי לא ידע, אף שבשביל ארור המן וברוך מרדכי הוא המשתה והשמחה עצמו, ואפילו זה אינו יודע, כל שכן שלא ידע להבחין בין דבר לדבר בשאר דבר . אמנם עוד יתבאר דבר זה . ומפני כך קבעו ימי משתה ושמחה, שהוא הנאת הגוף .\n\n[1] Sefat Emet, Exodus, For Purim 8:4 (Sefat Emet)\nאיתא בגמרא חייב אדם לבסומי בפוריא עד דלא ידע כו'. שמעתי בזה מילין מפה קדוש מו\"ז ז\"ל לעלות עד למעלה מעה\"ד טוב ורע. ואיני זוכר הדברים על בורין. אבל נראה תורף הדברים דכתיב עץ גבוה חמשים אמה והם כל מדריגות השערי טומאה שיש מ\"ט פנים טמא כו'. כי כח של עמלק נמצא בכל המדריגות. אבל באמת שער הנ' של הקדושה. שם לא יש ב' הדרכים. רק כולו טוב. כי שם שורש האחדות. וע\"ז כתיב כאשר ירים משה ידו לשער הנ' ועץ החיים שהיא התורה. ולכן כשנתעורר כח מרע\"ה שהוא שר התורה יש מפלה לעמלק. לכן איתא שבפורים קבלו התורה כו'. והיינו התגלות עץ החיים. ושם נק' דלא ידע בין ארור כו'. שאין שם שום אחיזה לסט\"א כלל. כי הוא שורש האחדות כנ\"ל:בסומי הם הריחות מבשמים שנתמלא העולם בעשרת הדברות. ומו\"ז ז\"ל אמר רמז בשמים מר דרור מתרגמינין מרי דכי. ומרדכי הוא הארת מרע\"ה שורש התורה:\n\n[2] Kitzur Shulchan Arukh 142:6 (Kitzur Shulchan Arukh)\nכֵּיוָן שֶׁכָּל הַנֵּס הָיָה עַל יְדֵי הַיַיִן, וַשְׁתִּי נִטְרְדָה בְּמִשְׁתֵּה הַיַיִן וּבָאָה אֶסְתֵּר בִּמְקוֹמָהּ, וְכֵן עִנְיַן הָמָן וּמַפַּלְתּוֹ הָיָה עַל יְדֵי יַיִן, לָכֵן חִיְבוּ רַבּוֹתֵינוּ זִכְרוֹנָם לִבְרָכָה, לְהִשְׁתַּכֵּר בַּיַיִן, וְאָמְרוּ, חַיָב אֱנָשׁ לְבַסּוּמֵי בַּפּוּרְיָא עַד דְּלָא יֵדַע בֵּין אָרוּר הָמָן לְבָרוּךְ מָרְדְּכָי. וְלַפָּחוֹת יִשְׁתֶּה יוֹתֵר מֵהֶרְגֵּלוֹ, כְּדֵי לִזְכֹּר אֶת הַנֵּס הַגָּדוֹל, וְיִישָׁן. וּמִתּוֹךְ שֶׁיָשֵׁן, אֵינוֹ יוֹדֵעַ בֵּין אָרוּר הָמָן לְבָרוּךְ מָרְדְּכָי. וְאוּלָם מִי שֶׁהוּא חָלוּשׁ בְּטִבְעוֹ, וְכֵן מִי שֶיוֹדֵעַ בְּעַצְמוֹ שֶׁעַל יְדֵי כֵן יְזַלְזֵל חַס וְשָלוֹם בְּאֵיזוֹ מִצְוָה, בִּבְרָכָה, אוֹ בִּתְפִלָּה, אוֹ שֶׁיָבוֹא חַס וְשָׁלוֹם לְקַלּוּת רֹאשׁ, מוּטָב שֶׁלֹּא יִשְׁתַּכֵּר, וְכָל מַעֲשָׂיו יִהְיוּ לְשֵׁם שָׁמָיִם.\nSince the entire miracle of Purim was brought about through wine: Vashti was banished at the wine party, and Esther took her place; also the episode of Haman's downfall came about through wine; therefore, our Rabbis of blessed memory mandated that everyone should become intoxicated with wine, and they said, \"It is an obligation to become intoxicated on Purim , until you cannot tell the difference between 'Cursed be Haman' and 'Blessed be Mordechai.'\" At least you should drink more than you usually do, to recall the great miracle, until you fall asleep; and once you are asleep, you can no longer tell the difference between \"Cursed is Haman\" and \"Blessed is Mordechai.\" However, if a person is physically frail, and similarly, if you know that as a result of [drinking] you will, God forbid, ignore a mitzvah, a berachah, or a prayer, or that it would lead to lightheaded exuberance, it is better not to become drunk. All your deeds should be for the sake of Heaven.\n\n[3] Megillah 7b:7 (Megillah)\nאמר רבא מיחייב איניש לבסומי בפוריא עד דלא ידע בין ארור המן לברוך מרדכי\nRava said: One is obligated to become inebriated [with wine] on Purim until he cannot tell the difference between cursed be Haman and blessed be Mordecai.\n\n[4] Shulchan Arukh, Orach Chayim 695:2 (Shulchan Arukh, Orach Chayim)\nחייב אינש לבסומי בפוריא עד דלא ידע בין ארור המן לברוך מרדכי: הגה וי\"א דא\"צ להשתכר כל כך אלא שישתה יותר מלימודו (כל בו) ויישן ומתוך שישן אינו יודע בין ארור המן לברוך מרדכי (מהרי\"ל) ואחד המרבה ואחד הממעיט ובלבד שיכוין לבו לשמים ואין להתענות בפורים מלבד תענית חלום וע' לעיל סי' תקס\"ח וסי' תק\"ע. יש נהגו ללבוש בגדי שבת ויום טוב בפורים וכן נכון (מהרי\"ל) ונוהגים לעשות סעודת פורים לאחר מנחה וערבית יתפלל בלילה ומתפללים מנחה תחלה בעוד היום גדול ורוב הסעודה צריך להיות ביום (מנהגים) ולא כמו שנוהגין להתחיל סמוך לערב ועיקר הסעודה היא ליל ט\"ו וכשחל פורים ביום ששי יעשו הסעודה בשחרית משום כבוד שבת (מנהגים) ומי שרוצה לעשותה תמיד בשחרית הרשות בידו (ת\"ה) יש אומרים שיש לאכול מאכל זרעונים בפורים זכר לזרעונים שאכל דניאל וחביריו בבבל (כל בו). טוב לעסוק מעט בתורה קודם שיתחיל הסעודה וסמך לדבר ליהודים היתה אורה ושמחה ודרשינן אורה זו תורה (מהרי\"ב) וחייב במשתה ושמחה קצת בשני ימים בי\"ד וט\"ו (מנהגים) וכן נהגו ויש אומרים דאם הזיק אחד את חבירו מכח שמחת פורים פטור מלשלם (ת\"ה סי' ק\"י) וע' בח\"מ בדיני נזיקין :\nOne is obligated to be intoxicated on Purim to the point where he does not know [the difference] between \"accursed is Haman\" and \"blessed is Mordechai\". Rema: Some say it is not necessary to become drunk so much, but rather to drink more than he is used to (Kol Bo), and to fall asleep, and while he sleeps he does not know [the difference] between \"accursed is Haman\" and \"blessed is Mordechai\" (Maharil). [There is no difference on Purim] between one who has more and one who has less, as long as his heart is directed to heaven. One should not fast on Purim, except for a fast for a [bad] dream, and see earlier Siman 568 and Siman 570. There are those who have the custom to dress in Shabbat/Yom Tov clothes on Purim, and that is correct (Maharil). We have the custom to make the Purim meal after the afternoon prayer, and pray the evening prayer at night. We pray the afternoon prayer while most of the day remains, and most of the meal needs to be during the day (Minhagim). And it should not be like those who have the custom to start close to evening, and most of the meal happens during the night of the 15th. When Purim falls out on Friday, they should have the meal in the morning because of honor for the Sabbath (Minhagim). And one who wants to [have his meal] every [Purim] in the morning is allowed to (T\"H). Some say that there is [significance] to eating seeds on Purim as a remembrance for the seeds that Daniel and his friends ate in Babylonia (Kol Bo). It is good to delve a bit in Torah before one begins the meal, and a support for that is (Esther 8:16) \"The Jews had light and happiness...\", which we learn out \"radiance\" - that's Torah (Mahariv). One is obligated to drink a little and be a little happy on two days, the 14th and the 15th (Minhagim), and so is the custom. And some say that if one causes damage to his fellow through his happiness on Purim, he is exempt from restitution (Terumat HaDeshen, Part I 110). And see Terumat HaDeshen Laws of Damages.\n\n[5] Berakhot 47a:5 (Berakhot)\nלמאי נפקא מינה שחייב אדם לומר בלשון רבו\nWhat is to be deduced therefrom ? That a man is in duty bound to repeat [a statement] in the exact language of his teacher.\n\n[6] Kol Bo 45:41 (Kol Bo)\nוחייב אדם לבסומי בפוריא לא שישתכר שהשכרות אסור גמור ואין לך עברה גדולה מזו שהו׳ גורם לגלוי עריות ושפיכות דמים ולכמה עברו׳ זולתן אך שישתה יותר מלמודו מעט כדי שירבה לשמוח ולשמח האביונים וינחם אותם וידבר על לבן וזו היא השמחה השלמה.\n\n[7] Tosafot on Megillah 7b:7:1 (Tosafot on Megillah)\nדלא ידע בין ארור המן לברוך מרדכי. [בירושלמי] ארורה זרש ברוכה אסתר ארורים כל הרשעים ברוכים כל היהודים:\n\nAnswer segments:\n(0) sources=[]: **עד מתי? לשון הגמרא**\n\n\n(1) sources=[3]: אמר רבא מיחייב איניש לבסומי בפוריא עד דלא ידע בין ארור המן לברוך מרדכי\n(2) sources=[]: . תוספות מביאים שבירושלמי הנוסח רחב יותר: \n(3) sources=[7]: ארורה זרש ברוכה אסתר ארורים כל הרשעים ברוכים כל היהודים\n(4) sources=[]: .\n\n**מחלוקת בפירוש השיעור**\n\n1. **כפשוטו, שכרות ממש.** השולחן ערוך מעתיק את לשון הגמרא כמות שהיא (\n(5) sources=[4]: חייב אינש לבסומי בפוריא עד דלא ידע בין ארור המן לברוך מרדכי\n(6) sources=[]: ). המהר\"ל (אור חדש) מסביר שהכוונה לסילוק השכל: \n(7) sources=[0]: שאז יסולק השכל לגמרי, והאדם נעשה גופני לגמרי\n(8) sources=[]: .\n\n2. **לא שכרות, אלא מעט יותר מהרגלו.** הכל בו אוסר שכרות במפורש: \n(9) sources=[6]: לא שישתכר שהשכרות אסור גמור\n(10) sources=[]: . לדבריו המטרה היא \n(11) sources=[6]: שישתה יותר מלמודו מעט כדי שירבה לשמוח ולשמח האביונים\n(12) sources=[]: .\n\n3. **שיטת הרמ\"א.** הרמ\"א מביא דעה ש\n(13) sources=[4]: א\"צ להשתכר כל כך אלא שישתה יותר מלימודו (כל בו) ויישן ומתוך שישן אינו יודע בין ארור המן לברוך מרדכי (מהרי\"ל)\n(14) sources=[]: . הוא מוסיף: \n(15) sources=[4]: ואחד המרבה ואחד הממעיט ובלבד שיכוין לבו לשמים\n(16) sources=[]: .\n\n**קיצור שולחן ערוך**\n\nהקיצור מנמק את החיוב בכך \n(17) sources=[2]: שֶׁכָּל הַנֵּס הָיָה עַל יְדֵי הַיַיִן\n(18) sources=[]: , ומביא את דעת \"לפחות יותר מהרגלו\". הוא גם מסייג שמי שחלש בטבעו, או מי שחושש שיזלזל במצווה, בברכה או בתפילה, \n(19) sources=[2]: מוּטָב שֶׁלֹּא יִשְׁתַּכֵּר\n(20) sources=[]: .\n\n**פירוש פנימי**\n\nהשפת אמת מפרש את \"עד דלא ידע\" כעלייה למדרגה \n(21) sources=[1]: שאין שם שום אחיזה לסט\"א כלל. כי הוא שורש האחדות\n(22) sources=[]: .\n\nלמעשה, כדאי לשאול רב."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsrCfhE7rUgDkiNuYJkp",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"no_claim\",\"note\":\"Heading only.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Matches Megillah 7b quote.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Tosafot cites the Yerushalmi with the longer wording.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Exact quote from Tosafot.\"},{\"i\":4,\"verdict\":\"partial\",\"note\":\"Shulchan Arukh does quote the Gemara wording, but 'literal actual drunkenness' is an interpretive framing not stated.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Quote matches Shulchan Arukh.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Ohr Chadash says intoxication should remove the intellect; attribution to 'Maharal' is not stated in the sources, though the work is Ohr Chadash.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Accurate quote from Ohr Chadash.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Kol Bo explicitly forbids drunkenness.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Accurate quote.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"Introduces Kol Bo's stated purpose.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Accurate quote from Kol Bo.\"},{\"i\":12,\"verdict\":\"supported\",\"note\":\"Rema cites this as the opinion of some.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Accurate quote from the Rema gloss.\"},{\"i\":14,\"verdict\":\"supported\",\"note\":\"Rema adds this statement.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Accurate quote.\"},{\"i\":16,\"verdict\":\"no_claim\",\"note\":\"Punctuation.\"},{\"i\":17,\"verdict\":\"supported\",\"note\":\"Kitzur gives the miracle through wine as reason.\"},{\"i\":18,\"verdict\":\"supported\",\"note\":\"Kitzur says at least drink more than usual and gives the caveats for the frail.\"},{\"i\":19,\"verdict\":\"supported\",\"note\":\"Accurate quote.\"},{\"i\":20,\"verdict\":\"no_claim\",\"note\":\"Punctuation.\"},{\"i\":21,\"verdict\":\"partial\",\"note\":\"Sefat Emet speaks of ascending above good and evil to the 50th gate; quote is accurate but 'ascent to a level' is a loose paraphrase.\"},{\"i\":22,\"verdict\":\"no_claim\",\"note\":\"Advice to ask a rabbi; no textual claim.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6127,
+   "output_tokens": 873,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

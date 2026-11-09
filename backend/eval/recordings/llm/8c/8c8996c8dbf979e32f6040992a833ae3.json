@@ -1,0 +1,93 @@
+{
+ "key": "8c8996c8dbf979e32f6040992a833ae3",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: באיזו מסכת מובא שיהושע בן גמלא תיקן שיושיבו מלמדי תינוקות בכל מדינה ומדינה?\n\nSources:\n[0] Bava Batra 21a:3 (Bava Batra)\nהתקינו שיהו מושיבין מלמדי תינוקות בירושלים מאי דרוש (ישעיהו ב, ג) כי מציון תצא תורה ועדיין מי שיש לו אב היה מעלו ומלמדו מי שאין לו אב לא היה עולה ולמד התקינו שיהו מושיבין בכל פלך ופלך ומכניסין אותן כבן ט\"ז כבן י\"ז\nThey decreed that teachers of children should be set up in Jerusalem. What was expounded? (Isaiah 2:3) \"For out of Zion shall go forth the law.\" But still, whoever had a father, [the father] would bring him up [to Jerusalem] and teach him; whoever didn't have a father would not go up and learn. They decreed that [teachers] should be set up in each and every district. And they would bring them in at around age 16 or 17, and anyone whose teacher was angry at him, [the teacher] would kick him out.\n\n[1] Tur, Yoreh De'ah 245:1 (Tur)\nהלכות תלמוד תורה מצות עשה על כל אחד מישראל שילמד לבנו תורה שנאמר ולמדתם אותם את בניכם וכל המלמד לבנו תורה כאילו קבלה מהר סיני ואינו חייב ללמד לבתו דדרשינן לבניכם ולא לבנותיכם ואשה אינה חייבת ללמד לבנה לא למדו אביו חייב ללמד לעצמו. הוא היה צריך ללמוד ויש לו בן ללמוד ואין ידו משגת להספיק לשניהם אם שניהם שוין הוא קודם לבנו ואם בנו נבון ומשכיל מה שילמוד יותר ממנו בנו קודמו ואע\"פ שבנו קודם לא יבטל הוא שכשם שמצווה עליו ללמד לבנו כך הוא מצווה ללמוד לעצמו כשם שמצווה ללמד לבנו כך מצווה ללמד לבן בנו שנאמר והודעתם לבניך ולבני בניך ולא לבן בנו לבד אלא מצוה על כל חכם מישראל ללמד לתלמידים שגם הם נקראים בנים אלא שמצוה להקדים בנו לבן בנו ובן בנו לבן חבירו וחייב לשכור מלמד לבנו ללמדו אבל אינו חייב ללמד לבן חבירו אלא בחנם ומאימתי מתחיל ללמד לבנו משיתחיל לדבר מתחיל ללמדו תורה צוה לנו משה מורשה קהלת יעקב ופסוק ראשון מפרשת שמע ואח\"כ מלמדו מעט מעט מהפסוקים עד שיהיה כבן ו' או כבן ז' ואז מוליכו אצל מלמד תינוקות היה מנהג בעיר שלוקח מלמד תינוקות שכר נותן לו שכר וחייב ללמדו בשכר עד שיקרא תורה שבכתב כולה ואינו חייב ללמדו בשכר משנה ותלמוד וכתב הרמ\"ה ה\"מ דלא איפשר ליה דדחיקא ליה שעתא אבל אם איפשר ליה חייב לאגמוריה משנה ותלמוד הלכות ואגדות מושיבין מלמדי תינוקות בכל עיר ועיר וכל עיר שאין בה מלמד מחרימין אנשי העיר עד שיושיבו מלמדי תינוקות ואם לא הושיבו מחריבין העיר שאין העולם מתקיים אלא בהבל פיהם של תינוקות של בית רבן מכניסין התינוקות להתלמד כבן ששה וכבן שבעה וכל אחד כפי כחו ובפחות מכאן אין מכניסין אותו ואפילו תינוק שאינו מבין לקרות לא יסלקוהו משם אלא ישב עם האחרים אולי יבין והמלמד יכה אותם להטיל עליהם אימה ולא יכה אותם מכת אויב מוסר אכזרי לפיכך לא יכה אותם לא בשוטים ולא במקל אלא ברצועה קטנה ויושב ומלמדן כל היום וקצת מהלילה כדי לחנכם ללמוד ביום ובלילה ולא יבטלו התינוקות כלל חוץ מערבי שבתות וערבי ימים טובים ובסוף היום ואין מבטלין התינוקות אפי' לבנין ב\"ה אין קורין לתינוקות בתחלה בשבת מה שלא למדו משום טורח שבת אבל מה שקראו כבר פ\"א שונים אותו להן בשבת כ\"ה תינוקות צריכין למלמד א' כתב הרמב\"ם היו יותר על כ\"ה עד ארבעים מושיבין אחד לסייעו בלימודם היו יותר על מ' מעמידין שנים וא\"א הרא\"ש ז\"ל כתב שעד מ' יספיק במלמד אחד בלא שום סיוע וממ' עד נ' מושיבין אחד לסייע וכשהם נ' מושיבין להם שנים עיר שיש בה כ\"ה תינוקות שצריכין להשכיר להם מלמד ויש עיר אחרת אצלה שיש לה ב' מלמדים שיש להם נ' תינוקות אין בני העיר שיש בה כ\"ה יכולים לומר נשלחה להעיר אחרת ונחלקם לפני אותם שני המלמדים והרי מספיקין לכולם אלא צריכין לשכור להם מלמד בעירם אבל בעיר אחת מבית הכנסת לבית הכנסת אחרת מוליכים אותם והוא שלא יהא נהר מפסיק ביניהם שאם נהר מפסיק ביניהם לא יעבירו עליו משום סכנה אבל אם יש עליו גשר חזק יכול להעבירם עליו לשון הרמב\"ם מוליכין הקטן ממלמד למלמד אחר שהוא מהיר ממנו בין במקרא בין בדקדוק בד\"א כשהיו שניהם בעיר אחד ואין נהר מפסיק ביניהם אבל מעיר לעיר או מצד הנהר לצדה באותה העיר אין מוליכין אותן אא\"כ היה עליו גשר בנין בריא שאינו ראוי ליפול מהרה מלמד תינוקות שהניח התינוקות ויוצא או שעושה מלאכה אחרת עמהם או שמתרשל בתלמודו ה\"ז בכלל ארור עושה מלאכת ה' רמיה לפיכך אין ראוי להושיב מלמד אלא בעל יראה מהיר לקרות ולדקדק אם יש כאן מלמד שלומד לתינוקות ובא אחר טוב ממנו מסלקים הראשון מפני השני ואם יש כאן שנים הא' קורא הרבה ואינו מדקדק עמהם להבינם על נכון והאחד אינו קורא כל כך אלא שמדקדק עמהם להבינם לוקחין אותו שמדקדק יותר מי שאין לו אשה לא ילמד תינוקות מפני שאמותיהן מביאין בניהם. ואשה לא תלמוד תינוקות מפני אביהם שמביאים בניהם. אחד מבני חצר או מבני מבוי שבקש לעשות מלמד תינוקות אין שכיניו יכולין למחות בידו וכן מלמד תינוקות שבא חבירו ופתח בית ללמוד תינוקות בצדו כדי שיבואו לו תינוקות אחרים או כדי שיבואו התינוקות שאצל זה לזה אין יכול למחות בידו שנא' ה' חפץ למען צדקו יגדיל תורה ויאדיר:\n\n[2] Bava Batra 21a:4 (Bava Batra)\nומי שהיה רבו כועס עליו מבעיט בו ויצא עד שבא יהושע בן גמלא ותיקן שיהו מושיבין מלמדי תינוקות בכל מדינה ומדינה ובכל עיר ועיר ומכניסין אותן כבן שש כבן שבע\nUntil Yehoshua ben Gamla came and decreed that teachers of children should be set up in each and every province and in each and every city, and [that] they are brought in at around age 6 or 7.\n\n[3] Rashi on Bava Batra 21a:9:1 (Rashi on Bava Batra)\nמתקנת יהושע בן גמלא ואילך - שישבו מלמדי תינוקות בכל עיר:\n\n[4] Rashi on Bava Batra 21a:1:2 (Rashi on Bava Batra)\nמשום תקנת יהושע בן גמלא - אחד מן הכהנים הגדולים שעמדו בבית שני כדאמר ביבמות (דף סא):\n\n[5] Mishneh Torah, Torah Study 2:1 (Mishneh Torah, Torah Study)\nמוֹשִׁיבִין מְלַמְּדֵי תִּינוֹקוֹת בְּכָל מְדִינָה וּמְדִינָה וּבְכָל פֶּלֶךְ וּפֶלֶךְ וּבְכָל עִיר וָעִיר. וְכָל עִיר שֶׁאֵין בָּהּ תִּינוֹקוֹת שֶׁל בֵּית רַבָּן מַחְרִימִין אֶת אַנְשֵׁי הָעִיר עַד שֶׁמּוֹשִׁיבִין מְלַמְּדֵי תִּינוֹקוֹת. וְאִם לֹא הוֹשִׁיבוּ מַחְרִימִין אֶת הָעִיר. שֶׁאֵין הָעוֹלָם מִתְקַיֵּם אֶלָּא בְּהֶבֶל פִּיהֶם שֶׁל תִּינוֹקוֹת שֶׁל בֵּית רַבָּן:\nIt is mandatory to appoint school teachers for small children in each and every state, in each and every province, and in each and every city. Any city wherein there are no children flocking to a master's house, the inhabitants thereof should be excommunicated until they do appoint teachers for the school children, if they then make no such appointment an excommunication should be pronounced against the city itself; for the world cannot endure save only by the fervent recitation of school children in the house of their master.\n\n[6] Bava Batra 21a:2 (Bava Batra)\nדאמר רב יהודה אמר רב ברם זכור אותו האיש לטוב ויהושע בן גמלא שמו שאלמלא הוא נשתכח תורה מישראל שבתחלה מי שיש לו אב מלמדו תורה מי שאין לו אב לא היה למד תורה מאי דרוש (דברים יא, יט) ולמדתם אותם ולמדתם אתם\nFor Rav Yehuda said in the name of Rav: However, remember this man for good, namely Yehoshua ben Gamla, for if not for him, Torah would have been forgotten from Israel. For originally, whoever had a father, [the father] would teach him Torah; whoever had no father would not learn Torah. What was expounded? (Deuteronomy 11:19) \"And ye shall teach them ( 'otam' ).\" \"And you yourselves ( 'atem' ) shall teach.\"\n\n[7] Rashi on Bava Batra 21a:8:2 (Rashi on Bava Batra)\nבסופר מתא - מלמד תינוקות העיר ומושיב מלמדים תחתיו והוא מורה את כולם איך יעשו ויש שם קול גדול:\n\nAnswer segments:\n(0) sources=[]: הדבר מובא ב**מסכת בבא בתרא, דף כא ע\"א**.\n\n**לשון הגמרא:** \n(1) sources=[2]: \"עד שבא יהושע בן גמלא ותיקן שיהו מושיבין מלמדי תינוקות בכל מדינה ומדינה ובכל עיר ועיר ומכניסין אותן כבן שש כבן שבע\"\n(2) sources=[]: .\n\n**ההקשר:** הגמרא מביאה זאת בשם \n(3) sources=[6]: רב יהודה בשם רב: \"זכור אותו האיש לטוב, ויהושע בן גמלא שמו, שאלמלא הוא נשתכחה תורה מישראל\"\n(4) sources=[]: . התקנה הייתה השלב האחרון בתהליך:\n1. \n(5) sources=[6]: בתחילה, מי שהיה לו אב, האב לימדו תורה, ומי שלא היה לו אב לא למד תורה\n(6) sources=[]: .\n2. \n(7) sources=[0]: אחר כך תיקנו שיושיבו מלמדי תינוקות בירושלים, אבל עדיין מי שלא היה לו אב לא היה עולה ולומד\n(8) sources=[]: .\n3. \n(9) sources=[0]: אחר כך תיקנו להושיב מלמדים בכל פלך ופלך, והכניסו את התלמידים בגיל 16 או 17, ומי שרבו כעס עליו, היה מבעט בו\n(10) sources=[]: .\n4. לבסוף באה תקנת יהושע בן גמלא, שהקדימה את גיל הכניסה לשש או שבע.\n\n**רש\"י** מזהה את יהושע בן גמלא כ\n(11) sources=[4]: \"אחד מן הכהנים הגדולים שעמדו בבית שני\"\n(12) sources=[]: , ומפנה לכך למסכת יבמות.\n\n**ההלכה נפסקה גם בספרי הפוסקים:**\n- **רמב\"ם, הלכות תלמוד תורה ב, א:** \n(13) sources=[5]: \"מושיבין מלמדי תינוקות בכל מדינה ומדינה ובכל פלך ופלך ובכל עיר ועיר\"\n(14) sources=[]: .\n- **טור, יורה דעה רמה:** מביא דין דומה, ובכלל זה \n(15) sources=[1]: \"מכניסין התינוקות להתלמד כבן ששה וכבן שבעה\"\n(16) sources=[]: ."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgspKGkYmBBPwGrF1qwox",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Bava Batra 21a is shown as the location of the passage.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Quote matches source 2 exactly.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition fragment; the claim follows in the next segment.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Rav Yehuda in Rav's name, with the quote, matches source 6.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Transition introducing a list of stages.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches source 6: originally one with a father was taught, one without was not.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Punctuation and list numbering only.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Source 0: teachers in Jerusalem, yet those without a father did not go up to learn.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"List numbering only.\"},{\"i\":9,\"verdict\":\"partial\",\"note\":\"Each district and age 16-17 are supported; the teacher kicking out an angry student is in source 0 but 'מבעט בו' is in source 2.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"Source 2 gives ages 6 or 7, after ages 16-17 in source 0; Rashi's identification comes next in segment 11.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Rashi (source 4) matches the quote.\"},{\"i\":12,\"verdict\":\"supported\",\"note\":\"Rashi refers to Yevamot 61.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Matches Rambam in source 5, which says it in a slightly different order.\"},{\"i\":14,\"verdict\":\"supported\",\"note\":\"Source 1 is the Tur on Yoreh De'ah 245 with a similar law.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Quote appears in the Tur.\"},{\"i\":16,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 5707,
+   "output_tokens": 695,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

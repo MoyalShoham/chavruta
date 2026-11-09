@@ -1,0 +1,93 @@
+{
+ "key": "ff4d575ff857002d9e6ab2365cf23d64",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: What does Sukkah 2a say about a sukkah taller than twenty cubits?\n\nSources:\n[0] Sukkah 2a:1 (Sukkah)\nמתני׳ סוכה שהיא גבוהה למעלה מעשרים אמה פסולה ורבי יהודה מכשיר\nA sukkah which is more than twenty cubits high is not valid. Rabbi Judah validates it.\n\n[1] Bartenura on Mishnah Sukkah 1:1:1 (Bartenura on Mishnah Sukkah)\nסוכה שהיא גבוהה למעלה מעשרים אמה פסולה. דסוכה דירת עראי בעינן דכתיב (דברים ט״ז) חג הסכות תעשה לך שבעת ימים, אמרה תורה עשה סוכה לשבעת ימים. ולמעלה מעשרים אמה אין אדם עושה דירתו דירת עראי אלא דירת קבע:\nסוכה שהיא גבוהה למעלה מעשרים אמה פסולה – for a Sukkah, we require a temporary dwelling, as it is written (Deuteronomy 16:13): “[After the ingathering from your threshing floor and your vat,] you shall hold the Feast of Booths for seven days,” the Torah said that you shall make a Sukkah for seven days, and higher than twenty cubits, a person does not make [for] his dwelling a temporary dwelling, but rather a permanent dwelling.\n\n[2] Mishnah Sukkah 1:1 (Mishnah Sukkah)\nסֻכָּה שֶׁהִיא גְבוֹהָה לְמַעְלָה מֵעֶשְׂרִים אַמָּה, פְּסוּלָה. רַבִּי יְהוּדָה מַכְשִׁיר. וְשֶׁאֵינָהּ גְּבוֹהָה עֲשָׂרָה טְפָחִים, וְשֶׁאֵין לָהּ שְׁלֹשָׁה דְּפָנוֹת, וְשֶׁחַמָּתָהּ מְרֻבָּה מִצִּלָּתָהּ, פְּסוּלָה. סֻכָּה יְשָׁנָה, בֵּית שַׁמַּאי פּוֹסְלִין, וּבֵית הִלֵּל מַכְשִׁירִין. וְאֵיזוֹ הִיא סֻכָּה יְשָׁנָה, כָּל שֶׁעֲשָׂאָהּ קֹדֶם לֶחָג שְׁלשִׁים יוֹם. אֲבָל אִם עֲשָׂאָהּ לְשֵׁם חָג, אֲפִלּוּ מִתְּחִלַּת הַשָּׁנָה, כְּשֵׁרָה:\nA sukkah which is more than twenty cubits high is not valid. Rabbi Judah validates it. One which is not ten handbreadths high, or which does not have three walls, or which has more sun than shade, is not valid. An old sukkah: Bet Shammai invalidates it and Bet Hillel validates it. What is an “old sukkah”? Any one which he made thirty days before the festival; but if he made it for the purpose of the festival, even at the beginning of the year, it is valid.\n\n[3] Shulchan Arukh, Orach Chayim 633:1 (Shulchan Arukh, Orach Chayim)\nדין גובה הסוכה. ובו י סעיפים: סוכה שהיא גבוה למעלה מעשרים אמה פסולה בין שהיא גדולה בין שהיא קטנה בין שמחיצות מגיעות לסכך בין שאינן מגיעות אבל עשרים כשרה אפי' כל סככה למעלה מעשרים כיון שאין בחללה אלא עשרים:\nThe Laws of the Height of a Sukkah, 10 Seifim A sukkah which is taller than twenty amot is invalid, whether it is large or small, whether its walls reach the schach or they do not reach the schach. However, a twenty amot tall sukkah is valid, even if all of its schach is above twenty [amot] because its interior is only twenty [amot].\n\n[4] Sukkah 2a:8 (Sukkah)\nאמר רבה דאמר קרא (ויקרא כג, מג) למען ידעו דורותיכם כי בסוכות הושבתי את בני ישראל עד עשרים אמה אדם יודע שהוא דר בסוכה למעלה מעשרים אמה אין אדם יודע שדר בסוכה משום דלא שלטא בה עינא\nRabbah answered: Scripture says, \"That your generations will know that I caused the children of Israel to dwell in sukkot\" (Leviticus 23:43). Up to twenty cubits [high] one knows that he is dwelling in a sukkah, but with one higher than twenty cubits he does not ‘know’ that he is dwelling in a sukkah, since his eye does not catch sight of it.\n\n[5] Sukkah 2a:9 (Sukkah)\nרבי זירא אמר מהכא (ישעיהו ד, ו) וסוכה תהיה לצל יומם מחורב עד עשרים אמה אדם יושב בצל סוכה למעלה מעשרים אמה אין אדם יושב בצל סוכה אלא בצל דפנות\nRabbi Zera said: From the following verse, \"And there shall be a sukkah for shade in the daytime from the heat\" (Isaiah 4:6). Up to twenty cubits [high] one sits in the shade of the sukkah; but with one higher than twenty cubits he sits, not in the shade of the sukkah but in the shade of its walls.\n\n[6] Sukkah 2b:14 (Sukkah)\nמיתיבי סוכה שהיא גבוהה למעלה מעשרים אמה פסולה ורבי יהודה מכשיר עד ארבעים וחמשים אמה\nIt was objected: A Sukkah which is higher than twenty amos is pasul And Rabi Yehudah [says] it is kosher up to forty or fifty amos\n\n[7] Sukkah 2a:12 (Sukkah)\nורבא אמר מהכא (ויקרא כג, מב) בסוכות תשבו שבעת ימים אמרה תורה כל שבעת הימים צא מדירת קבע ושב בדירת עראי עד עשרים אמה אדם עושה דירתו דירת עראי למעלה מעשרים אמה אין אדם עושה דירתו דירת עראי אלא דירת קבע\nRava replied: From the following verse, \"You shall dwell in sukkot for seven days\" (Leviticus 23:42) the Torah declared: For seven days leave your permanent dwelling place and dwell in a temporary dwelling place. Up to twenty cubits [high] one makes his home a temporary one; higher than twenty cubits, one does not make his home temporary, but permanent.\n\nAnswer segments:\n(0) sources=[]: **The Mishnah: a machloket**\n\nThe Mishnah opens: \n(1) sources=[2]: סֻכָּה שֶׁהִיא גְבוֹהָה לְמַעְלָה מֵעֶשְׂרִים אַמָּה, פְּסוּלָה. רַבִּי יְהוּדָה מַכְשִׁיר\n(2) sources=[]: . That is, \n(3) sources=[0]: a sukkah which is more than twenty cubits high is not valid. Rabbi Judah validates it.\n(4) sources=[]:  A baraita quoted on 2b adds that Rabbi Yehudah \n(5) sources=[6]: [says] it is kosher up to forty or fifty amos\n(6) sources=[]: .\n\n**The Gemara: three sources for the twenty-cubit limit**\n\n1. **Rabbah** cites Leviticus 23:43, \"That your generations will know.\" \n(7) sources=[4]: Up to twenty cubits [high] one knows that he is dwelling in a sukkah, but with one higher than twenty cubits he does not 'know' that he is dwelling in a sukkah, since his eye does not catch sight of it.\n(8) sources=[]: \n\n2. **Rabbi Zera** cites Isaiah 4:6, \"a sukkah for shade.\" \n(9) sources=[5]: Up to twenty cubits [high] one sits in the shade of the sukkah; but with one higher than twenty cubits he sits, not in the shade of the sukkah but in the shade of its walls.\n(10) sources=[]: \n\n3. **Rava** cites Leviticus 23:42, \"You shall dwell in sukkot.\" The Torah means \n(11) sources=[7]: for seven days leave your permanent dwelling place and dwell in a temporary dwelling place.\n(12) sources=[]:  Above twenty cubits, \n(13) sources=[7]: one does not make his home temporary, but permanent.\n(14) sources=[]: \n\n**Later sources**\n\nBartenura explains the Mishnah with the same temporary-dwelling reasoning as Rava, \n(15) sources=[1]: דירת עראי\n(16) sources=[]: .\n\nThe Shulchan Arukh (OC 633:1) states the limit applies \n(17) sources=[3]: whether it is large or small, whether its walls reach the schach or they do not\n(18) sources=[]: . It also treats exactly twenty cubits as valid.\n\nFor practical questions, please consult a rabbi."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsoQCgk6dVvFA2UM36bM",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"no_claim\",\"note\":\"Heading and transition.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Matches Mishnah 1:1 text.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches source 0.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Source 6 is on 2b and is introduced as a baraita; 'It was objected' fits.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Source 6 states this.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Punctuation.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches Rabbah in source 4.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Blank.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches Rabbi Zera in source 5.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Blank.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Matches Rava in source 7.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Connector.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Matches source 7.\"},{\"i\":14,\"verdict\":\"no_claim\",\"note\":\"Blank.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Bartenura uses דירת עראי for the same reasoning.\"},{\"i\":16,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":17,\"verdict\":\"supported\",\"note\":\"Matches Shulchan Arukh 633:1.\"},{\"i\":18,\"verdict\":\"supported\",\"note\":\"Source 3 says twenty amot tall is valid.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3838,
+   "output_tokens": 587,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

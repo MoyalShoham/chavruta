@@ -1,0 +1,93 @@
+{
+ "key": "19526baf952de4c21d38a968de50bb2d",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: כותל חצר שנפל, האם מחייבים את השכן לבנות אותו עד ארבע אמות?\n\nSources:\n[0] Bava Batra 5a:5 (Bava Batra)\nמתני׳ כותל חצר שנפל מחייבין אותו לבנותו עד ארבע אמות בחזקת שנתן עד שיביא ראיה שלא נתן\n\n[1] Mishnah Bava Batra 1:4 (Mishnah Bava Batra)\nכֹּתֶל חָצֵר שֶׁנָּפַל, מְחַיְּבִין אוֹתוֹ לִבְנוֹתוֹ עַד אַרְבַּע אַמּוֹת, בְּחֶזְקַת שֶׁנָּתַן, עַד שֶׁיָּבִיא רְאָיָה שֶׁלֹּא נָתָן. מֵאַרְבַּע אַמּוֹת וּלְמַעְלָה, אֵין מְחַיְּבִין אוֹתוֹ. סָמַךְ לוֹ כֹתֶל אַחֵר, אַף עַל פִּי שֶׁלֹּא נָתַן עָלָיו אֶת הַתִּקְרָה, מְגַלְגְּלִין עָלָיו אֶת הַכֹּל, בְּחֶזְקַת שֶׁלֹּא נָתַן, עַד שֶׁיָּבִיא רְאָיָה שֶׁנָּתָן:\nIf the wall of a courtyard fell down they obligate each of the partners to help in building it up to a height of four cubits. He is presumed to have paid [his share] unless the other brings proof that he has not paid. [If the fence was built] four cubits or higher, they do not obligate him [to help in building it.] If [the one who did not contribute] built another wall near it, even if he did not put a roof upon it, they obligate him to share in all of the costs. He is presumed not to have paid [his share] unless he brings proof that he has.\n\n[2] Bava Batra 2b:11 (Bava Batra)\nת\"ש כותל חצר שנפל מחייבין אותו לבנות עד ד' אמות נפל שאני\n\n[3] Berakhot 18a:7 (Berakhot)\nהתם תוך ארבע [אמות] הוא דאסור חוץ לארבע אמות חייב דאמר מר מת תופס ד' אמות לק\"ש הכא חוץ לד' אמות נמי פטור:\nIn this latter case, within four cubits [of the grave] it is forbidden, but beyond that limit, he is under the obligation ; for the teacher has said : A dead body affects four cubits with regard to the reading of the Shema'. But here [in the case of a mourner or watcher], even beyond the limit of four cubits he is exempt.\n\n[4] Kiddushin 31a:3 (Kiddushin)\nאמר רבי יהושע בן לוי אסור לאדם שיהלך ארבע אמות בקומה זקופה שנא' (ישעיהו ו, ג) מלא כל הארץ כבודו רב הונא בריה דרב יהושע לא מסגי ארבע אמות בגילוי הראש אמר שכינה למעלה מראשי\n\n[5] Mishneh Torah, Prayer and the Priestly Blessing 5:6 (Mishneh Torah, Prayer and the Priestly Blessing)\nתקון המקום כיצד יעמוד במקום נמוך ויחזיר פניו לכותל וצריך לפתוח חלונות או פתחים כנגד ירושלים כדי להתפלל כנגדן שנאמר וכוין פתיחן ליה בעיליתיה וגו' וקובע מקום לתפלתו תמיד ואין מתפלל בחורבה ולא אחורי בית הכנסת אא\"כ החזיר פניו לבית הכנסת ואסור לישב בצד העומד בתפלה או לעבור לפניו עד שירחיק ממנו ארבע אמות.\nPlace where the worshiper prays. He should stand in a low place and turn his face to the wall. Windows or doors towards Jerusalem should be opened, and he should stand facing them when he prays, as it is said, \"Now his windows were open in his upper chamber towards Jerusalem\" (Daniel 6:11). There should be one fixed place set apart for prayer. It should not be recited in a ruin nor at the rear of a synagogue, unless the worshiper turns his face towards the synagogue. It is forbidden to remain seated at the side of one who is standing in prayer, or pass in front of him unless he has moved away from the worshiper to a distance of four cubits.\n\n[6] Shulchan Arukh, Choshen Mishpat 155:17 (Shulchan Arukh, Choshen Mishpat)\nמרחיקין את הכותל מן המזחילה של חבירו ד' אמות כדי שיהיה מקום לבעל המזחילה לזקוף סולם ולתקן מזחילה שלו הואיל והחזיק בה: הגה ויש אומרים לענין שאם קנה ממנו מקום כדי לעלות למזחילתו צריך להניח לו מקום ארבע אמות שיעור זקיפת סולם (טור בשם ר\"י וב\"י בשם הרא\"ש):\n\n[7] Mishneh Torah, Prayer and the Priestly Blessing 5:7 (Mishneh Torah, Prayer and the Priestly Blessing)\nלא יעמוד במקום גבוה שלשה טפחים או יותר ויתפלל ולא על גבי מטה ולא על גבי ספסל ולא על גבי כסא היה בנין גבוה אם יש בו ארבע אמות על ארבע אמות שהוא שיעור הבית הרי הוא כעליה ומותר להתפלל בו וכן אם היה מוקף מחיצות מכל רוחותיו אף על פי שאין בו ארבע אמות על ארבע אמות מותר להתפלל בו מפני שאין גבהו ניכר שהרי חלק רשות לעצמו.\nOne must not, while praying, stand on a spot three hand-breadths or more above the floor of the room; nor may one stand for prayer upon a bed, stool or chair. A lofty structure, provided that it is four cubits by four cubits in area—the size of a chamber—is regarded as an attic, and it is permitted to pray in it. So, too, if it was enclosed on all sides by partitions, even though its area was less than four cubits by four cubits, prayers may be recited while standing in it, for the height of such a structure is not noticed, it being a compartment by itself.\n\nAnswer segments:\n(0) sources=[]: כן, לפי המשנה מחייבים אותו, אך רק עד גובה ארבע אמות.\n\n**עד ארבע אמות:** \n(1) sources=[1]: \"כֹּתֶל חָצֵר שֶׁנָּפַל, מְחַיְּבִין אוֹתוֹ לִבְנוֹתוֹ עַד אַרְבַּע אַמּוֹת, בְּחֶזְקַת שֶׁנָּתַן, עַד שֶׁיָּבִיא רְאָיָה שֶׁלֹּא נָתָן\"\n(2) sources=[]: . כלומר, השותף חייב להשתתף בבנייה עד ארבע אמות. אם לאחר מכן הוא טוען ששילם את חלקו, החזקה היא שאכן שילם, והבונה צריך להביא ראיה שלא שילם.\n\n**מעבר לארבע אמות:** \n(3) sources=[1]: \"מֵאַרְבַּע אַמּוֹת וּלְמַעְלָה, אֵין מְחַיְּבִין אוֹתוֹ\"\n(4) sources=[]: .\n\n**אם סמך כותל אחר:** אם השכן שלא השתתף הסתמך על הכותל ובנה לידו כותל נוסף, \n(5) sources=[1]: \"אַף עַל פִּי שֶׁלֹּא נָתַן עָלָיו אֶת הַתִּקְרָה, מְגַלְגְּלִין עָלָיו אֶת הַכֹּל\"\n(6) sources=[]: , כלומר מחייבים אותו בכל ההוצאות, גם בחלק שמעל ארבע אמות. כאן החזקה הפוכה: \n(7) sources=[1]: \"בְּחֶזְקַת שֶׁלֹּא נָתַן, עַד שֶׁיָּבִיא רְאָיָה שֶׁנָּתָן\"\n(8) sources=[]: .\n\n**בגמרא:** משנה זו מובאת גם בגמרא (בבא בתרא ה ע\"א). בדף ב ע\"ב הגמרא מביאה אותה כראיה בדיון אחר ודוחה: \n(9) sources=[2]: \"נפל שאני\"\n(10) sources=[]: , כלומר דין כותל שנפל שונה. המקור שלפנינו אינו מפרט במה הוא שונה ומה הנושא שבו דנה הגמרא שם, ולכן אין בידי להרחיב על כך.\n\nשאר המקורות שבתוצאות עוסקים בשיעור ארבע אמות בהקשרים אחרים, כמו קריאת שמע ותפילה, ואינם נוגעים לשאלה.\n\nלשאלה מעשית יש לפנות לרב."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsqDZY3hTFNEWrbzzSEz",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Mishnah obligates building up to four cubits, not beyond; matches source 1.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quotation of Mishnah in source 1.\"},{\"i\":2,\"verdict\":\"partial\",\"note\":\"Presumption of payment is supported, but 'the builder must bring proof' is a gloss; Mishnah says 'until he brings proof' (the other party).\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Exact quote from source 1.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Exact quote from source 1, though the lead-in framing is loosely paraphrased.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Obligated in all costs, presumption reversed; consistent with source 1. 'Above four cubits' is a mild gloss.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Exact quote from source 1.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":9,\"verdict\":\"partial\",\"note\":\"Source 2 is Bava Batra 2b and quotes 'nafal shani'; that the Mishnah appears at 5a is shown in source 0. 'Dismisses' is plausible.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"Sources do not elaborate; honest disclaimer, and consistent with source 2.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Other sources indeed concern Shema, prayer, and other contexts of four cubits.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Disclaimer advising to consult a rabbi.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3852,
+   "output_tokens": 595,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

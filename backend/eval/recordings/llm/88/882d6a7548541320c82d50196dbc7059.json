@@ -1,0 +1,93 @@
+{
+ "key": "882d6a7548541320c82d50196dbc7059",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: כותל חצר שנפל, האם מחייבים את השכן לבנות אותו עד ארבע אמות?\n\nSources:\n[0] Shulchan Arukh, Choshen Mishpat 155:36 (Shulchan Arukh, Choshen Mishpat)\nבמה דברים אמורים בשאר נזקים חוץ מארבע שהם העשן וריח בית הכסא ואבק וכיוצא בו ונדנוד הקרקע שכל אחד מאלו אין לו חזקה ואפילו שתק כמה שנים הרי זה חוזר וכופהו להרחיק: הגה ואפילו סמך קודם שבא לשם דבר הניזק (טור בשם הרא\"ש ור\"ת ורמב\"ם) מיהו אם זכו שניהן בשל הפקר כל הקודם זכה ואין השני אחריו יכול למחות בו (ריב\"ש סימן שכ\"ב) וכן היזק ראיה במקום שצריך מחיצה כגון חצר השותפין שיש בו דין חלוקה יש לכל אחד מהם לכוף את חבירו לבנות הכותל באמצע כדי שלא יראהו חבירו בשעה שמשתמש בחלקו ומאחר שממילא הם מזיקים זה את זה בלי עשיית שום מעשה אין להם חזקה אלא אע\"פ שעמדו כך שנים רבות בלא מחיצה כופהו לעשות מחיצה בכל עת שירצה ולמה שינו נזקין אלו משאר נזקין לפי שאין דעתו של אדם סובלת נזקין אלו וחזקתו שאינו מוחל שהזיקו היזק קבוע ואם קנו מידו שמחל בניזקין אלו (או שמכרן לו או שנתן לו) (טור בשם ר\"י והרא\"ש וב\"י בשם הרשב\"א) אינו יכול לחזור בו:\n\n[1] Shulchan Arukh, Choshen Mishpat 155:17 (Shulchan Arukh, Choshen Mishpat)\nמרחיקין את הכותל מן המזחילה של חבירו ד' אמות כדי שיהיה מקום לבעל המזחילה לזקוף סולם ולתקן מזחילה שלו הואיל והחזיק בה: הגה ויש אומרים לענין שאם קנה ממנו מקום כדי לעלות למזחילתו צריך להניח לו מקום ארבע אמות שיעור זקיפת סולם (טור בשם ר\"י וב\"י בשם הרא\"ש):\n\n[2] Mishneh Torah, Prayer and the Priestly Blessing 5:6 (Mishneh Torah, Prayer and the Priestly Blessing)\nתקון המקום כיצד יעמוד במקום נמוך ויחזיר פניו לכותל וצריך לפתוח חלונות או פתחים כנגד ירושלים כדי להתפלל כנגדן שנאמר וכוין פתיחן ליה בעיליתיה וגו' וקובע מקום לתפלתו תמיד ואין מתפלל בחורבה ולא אחורי בית הכנסת אא\"כ החזיר פניו לבית הכנסת ואסור לישב בצד העומד בתפלה או לעבור לפניו עד שירחיק ממנו ארבע אמות.\nPlace where the worshiper prays. He should stand in a low place and turn his face to the wall. Windows or doors towards Jerusalem should be opened, and he should stand facing them when he prays, as it is said, \"Now his windows were open in his upper chamber towards Jerusalem\" (Daniel 6:11). There should be one fixed place set apart for prayer. It should not be recited in a ruin nor at the rear of a synagogue, unless the worshiper turns his face towards the synagogue. It is forbidden to remain seated at the side of one who is standing in prayer, or pass in front of him unless he has moved away from the worshiper to a distance of four cubits.\n\n[3] Berakhot 18a:7 (Berakhot)\nהתם תוך ארבע [אמות] הוא דאסור חוץ לארבע אמות חייב דאמר מר מת תופס ד' אמות לק\"ש הכא חוץ לד' אמות נמי פטור:\nIn this latter case, within four cubits [of the grave] it is forbidden, but beyond that limit, he is under the obligation ; for the teacher has said : A dead body affects four cubits with regard to the reading of the Shema'. But here [in the case of a mourner or watcher], even beyond the limit of four cubits he is exempt.\n\n[4] Shulchan Arukh, Choshen Mishpat 155:14 (Shulchan Arukh, Choshen Mishpat)\nוכן אם לא היה באורך כותל שמעון שבונה כנגדו ד' אמות אינו מרחיק אע\"פ שמונע הרגל מלהלך שם שהכותל שהוא פחות מד' אמות אינו צריך חיזוק הארץ: הגה וכן אם כותל ראובן הולך ממזרח למערב ושמעון בא לסמוך כותל מצפון לדרום אין צריך להרחיק (טור) וי\"א דכל זה לא מיירי אלא כשקנו הקרקע מן המלך או מן ההפקר אבל בלאו הכי יכולין לסמוך כותל לכותל (נ\"י פרק לא יחפור והמגיד פ\"ט מה' שכנים ור' ירוחם נ' ל\"א ח\"ו):\n\n[5] Mishneh Torah, Prayer and the Priestly Blessing 5:7 (Mishneh Torah, Prayer and the Priestly Blessing)\nלא יעמוד במקום גבוה שלשה טפחים או יותר ויתפלל ולא על גבי מטה ולא על גבי ספסל ולא על גבי כסא היה בנין גבוה אם יש בו ארבע אמות על ארבע אמות שהוא שיעור הבית הרי הוא כעליה ומותר להתפלל בו וכן אם היה מוקף מחיצות מכל רוחותיו אף על פי שאין בו ארבע אמות על ארבע אמות מותר להתפלל בו מפני שאין גבהו ניכר שהרי חלק רשות לעצמו.\nOne must not, while praying, stand on a spot three hand-breadths or more above the floor of the room; nor may one stand for prayer upon a bed, stool or chair. A lofty structure, provided that it is four cubits by four cubits in area—the size of a chamber—is regarded as an attic, and it is permitted to pray in it. So, too, if it was enclosed on all sides by partitions, even though its area was less than four cubits by four cubits, prayers may be recited while standing in it, for the height of such a structure is not noticed, it being a compartment by itself.\n\n[6] Shulchan Arukh, Choshen Mishpat 155:15 (Shulchan Arukh, Choshen Mishpat)\nהכותש הריפות (פי' חטים הנכתשים במכתשת) וכיוצא בהם בתוך שלו ובעת שמכה מנדנד לחצר חבירו עד שנדנד כיסוי החבית שעל פי החבית (וי\"א שאין צריך כל כך רק שינדנד הכותל קצת) (טור והמגיד פי\"א דשכנים בשם הרשב\"א וב\"י בשם התוס') ה\"ז מזיק בחיציו וחייב להרחיק כדי שלא ינדנד או יבטל מלאכתו שמזקת ואם הזיק בעת הנדנוד חייב לשלם שהרי מכחו בא הנזק: הגה ואפילו נבנה החצר אחר שבא המזיק לכאן צריך המזיק להרחיק נזקו (הגהות מיי' פ\"ט והגהות אשירי ונ\"י ס\"פ לא יחפור) וה\"ה אם אין מזיק לחצר אלא שיש חולי הראש לבעל החצר וקול ההכאה מזיק לו צריך להרחיק עצמו (ריב\"ש סי' קצ\"ז):\n\n[7] Shulchan Arukh, Choshen Mishpat 155:12 (Shulchan Arukh, Choshen Mishpat)\nראובן שהיה כותלו סמוך לכותל שמעון כמין גם ובא ראובן לעשות כותל שני כנגד כותל שמעון עד שיעשה כותלים כמין בי\"ת הרי שמעון מעכב עליו עד שירחיק מכנגדו ד' אמות כדי שיהיה המקום בין שני הכותלים רחב כדי שידושו בו רבים ותתחזק הארץ: הגה אפילו עמדה שם הכותל ימים רבים ונפלה כשחוזר ובנאה צריך להרחיק (טור):\n\nAnswer segments:\n(0) sources=[]: **המקורות שלפניי אינם עונים ישירות על השאלה.** אין בהם דין על גובה הכותל שחייבים לבנות, ולא שיעור \"ארבע אמות\" לגובה כותל בין חצרות.\n\n**מה כן עולה מהמקורות:**\n\n1. **החובה לבנות מחיצה בחצר השותפין** (חו\"מ קנה:לו, ברמ\"א): \n(1) sources=[0]: וכן היזק ראיה במקום שצריך מחיצה כגון חצר השותפין שיש בו דין חלוקה יש לכל אחד מהם לכוף את חבירו לבנות הכותל באמצע כדי שלא יראהו חבירו בשעה שמשתמש בחלקו\n(2) sources=[]: . אין לכך חזקה: \n(3) sources=[0]: אע\"פ שעמדו כך שנים רבות בלא מחיצה כופהו לעשות מחיצה בכל עת שירצה\n(4) sources=[]: . הטעם: \n(5) sources=[0]: לפי שאין דעתו של אדם סובלת נזקין אלו וחזקתו שאינו מוחל\n(6) sources=[]: . עם זאת, \n(7) sources=[0]: ואם קנו מידו שמחל בניזקין אלו... אינו יכול לחזור בו\n(8) sources=[]: .\n   המקור עוסק בכפייה לבנות מחיצה, אך אינו קובע את גובהה ואינו מזכיר כותל שנפל.\n\n2. **כותל שנפל** (חו\"מ קנה:יב): כאן \"ארבע אמות\" הן מרחק ולא גובה. ראובן הבונה כותל מול כותל שמעון צריך \n(9) sources=[7]: שירחיק מכנגדו ד' אמות כדי שיהיה המקום בין שני הכותלים רחב כדי שידושו בו רבים ותתחזק הארץ\n(10) sources=[]: . הרמ\"א מוסיף: \n(11) sources=[7]: אפילו עמדה שם הכותל ימים רבים ונפלה כשחוזר ובנאה צריך להרחיק\n(12) sources=[]: . זה דין הרחקה, ולא חובה לבנות.\n\nכדי לברר את דין כותל שנפל ושיעור גובהו, צריך מקורות נוספים שאינם לפניי. לשאלה מעשית יש לפנות לרב."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsoSQxV45488xTuDDK56",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"partial\",\"note\":\"Accurately says sources don't answer directly, but cites 155:36 as 'קנה:לו' (fine) and framing about height is an inference; mostly fair, slight overreach.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quote from the Rema in 155:36.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Source says they have no chazaka.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quote.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Transition word introducing the reason.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Accurate quote.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Accurate quote of waiver by kinyan.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Source indeed doesn't specify height or mention a fallen wall.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Accurate quote from 155:12.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"The Rema's gloss is in 155:12.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Accurate quote of the Rema.\"},{\"i\":12,\"verdict\":\"supported\",\"note\":\"Follows from the source: four cubits is distancing, not an obligation to build.\"},{\"i\":13,\"verdict\":\"no_claim\",\"note\":\"Disclaimer and referral to a rabbi.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4552,
+   "output_tokens": 514,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

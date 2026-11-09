@@ -1,0 +1,93 @@
+{
+ "key": "c151801ad3a88bc458f32946e9ba8637",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: What does Kiddushin 29a list as a father's obligations toward his son?\n\nSources:\n[0] Kiddushin 29a:10 (Kiddushin)\nתנינא להא דת\"ר האב חייב בבנו למולו ולפדותו וללמדו תורה ולהשיאו אשה וללמדו אומנות וי\"א אף להשיטו במים רבי יהודה אומר כל שאינו מלמד את בנו אומנות מלמדו ליסטות ליסטות ס\"ד אלא כאילו מלמדו ליסטות:\nA Baraita states: \"A father is obligated to circumcise, redeem, teach Torah to, find a wife for, and teach a trade to his son\". There are those that say \"[there is] even [an obligation to show his son] how to swim\". Rabbi Yehuda Says \"all that does not teach his son craft [or trade] teaches him to steal\" To steal, do you think? [will really be a result of not teaching your son to trade]? Rather, or as if he taught him how to steal.\n\n[1] Mishneh Torah, Torah Study 1:2 (Mishneh Torah, Torah Study)\nכְּשֵׁם שֶׁחַיָּב אָדָם לְלַמֵּד אֶת בְּנוֹ כָּךְ הוּא חַיָּב לְלַמֵּד אֶת בֶּן בְּנוֹ שֶׁנֶּאֱמַר (דברים ד ט) \"וְהוֹדַעְתָּם לְבָנֶיךָ וְלִבְנֵי בָנֶיךָ\". וְלֹא בְּנוֹ וּבֶן בְּנוֹ בִּלְבַד אֶלָּא מִצְוָה עַל כָּל חָכָם וְחָכָם מִיִּשְׂרָאֵל לְלַמֵּד אֶת כָּל הַתַּלְמִידִים אַף עַל פִּי שֶׁאֵינָן בָּנָיו. שֶׁנֶּאֱמַר (דברים ו ז) \"וְשִׁנַּנְתָּם לְבָנֶיךָ\" מִפִּי הַשְּׁמוּעָה לָמְדוּ בָּנֶיךָ אֵלּוּ תַּלְמִידֶיךָ שֶׁהַתַּלְמִידִים קְרוּיִין בָּנִים שֶׁנֶּאֱמַר (מלכים ב ב ג) \"וַיֵּצְאוּ בְנֵי הַנְּבִיאִים\". אִם כֵּן לָמָּה נִצְטַוָּה עַל בְּנוֹ וְעַל בֶּן בְּנוֹ. לְהַקְדִּים בְּנוֹ לְבֶן בְּנוֹ וּבֶן בְּנוֹ לְבֶן חֲבֵרוֹ:\nEven as man is obliged to instruct his son, so is he obliged to teach his son's son, for it is said: \"But make them known to thy sons and thy sons' sons\" (Ibid. 4.9); and, not alone to his son and his son's son, but each and every scholar in Israel is commanded to instruct all who desire to be his disciples, even though they be not his sons, for it is said: \"And thou shalt teach them diligently unto thy children\" (Ibid. 6.7.), which is traditionally interpreted to include one's disciples; for disciples, too, are called children, as it is said: \"And the sons of the prophets came forth\" (Second Kings, 2.3.). If it be so, why then was one commanded to teach his son and his son's son? To permit the precedence of one's son to one's son's son, and his son's son to the son of his fellow.\n\n[2] Kiddushin 29a:9 (Kiddushin)\nאמר רב יהודה ה\"ק כל מצות הבן המוטלות על האב לעשות לבנו אנשים חייבין ונשים פטורות\nSays Rav Yehudah \"This is what was meant [by the Mishnah when it says \"All the commandments of the son are upon the father...\"]: All the commandments that are incumbent upon a parent to do for his son, men [i.e. the fathers] are obligated to fulfill while women [i.e. the mothers] are exempt\".\n\n[3] Kiddushin 29a:8 (Kiddushin)\nגמ׳ מאי כל מצות הבן על האב אילימא כל מצות דמיחייב ברא למיעבד לאבא נשים פטורות והתניא איש אין לי אלא איש אשה מנין כשהוא אומר (ויקרא יט, ג) איש אמו ואביו תיראו הרי כאן שנים\nWhat is meant by \"All the commandments of the son are upon the father...\"? Maybe [it means] that women are exempt from all the commandments that a son is obligated to fulfill for his father? [But there is a contradictory] Baraita: \"[When the verse says] 'a man' (Leviticus 19:3), only a man [is explicitly commanded]. From where do we derive [the obligation of] women [as well]? When the verse states 'a man [is commanded to] fear (plural) his mother and father' (ibid.) [the plural form of 'fear' implies] two [distinct individuals that are obligated]\". -?!-\n\n[4] Yachin on Mishnah Kiddushin 1:52:1 (Yachin on Mishnah Kiddushin)\nכל מצות הבן על האב כל מצות של הבן, שחייב האב, כגון מילה, פדיון הבן, ללמדו תורה, ואומנות, ולשוט בנהר, ולהשיאו אשה [וסי' מפת אשא]:\n\n[5] Rashi on Kiddushin 29a:9:1 (Rashi on Kiddushin)\nהמוטלות (עליו) על האב - כגון הנך דמפרש בברייתא ללמדו תורה ולמולו ולפדותו בה' סלעים אם בכור הוא ולהשיאו אשה וכולה יליף ואזיל מקראי:\n\n[6] Kiddushin 29a:6 (Kiddushin)\nמתני׳ כל מצות הבן על האב אנשים חייבין ונשים פטורות וכל מצות האב על הבן אחד אנשים ואחד נשים חייבין וכל מצות עשה שהזמן גרמא אנשים חייבין ונשים פטורות וכל מצות עשה שלא הזמן גרמא אחד האנשים ואחד הנשים חייבין\n\n[7] Kiddushin 29a:11 (Kiddushin)\nלמולו מנלן דכתיב (בראשית כא, ד) וימל אברהם את יצחק בנו והיכא דלא מהליה אבוה מיחייבי בי דינא למימהליה דכתיב (בראשית יז, י) המול לכם כל זכר והיכא דלא מהליה בי דינא מיחייב איהו למימהל נפשיה דכתיב (בראשית יז, יד) וערל זכר אשר לא ימול את בשר ערלתו ונכרתה\nTo circumcise, how do you know? As it is written \"and he circumcised his son\" and where the father did not circumcise him, the court is obligated to circumcise him. As it is written, \"Circumcise for yourselves - all the males.\" Where the court did not circumcise\n\nAnswer segments:\n(0) sources=[]: **A father's obligations in Kiddushin 29a**\n\nThe Gemara brings a Baraita, quoted in Hebrew as \n(1) sources=[0]: האב חייב בבנו למולו ולפדותו וללמדו תורה ולהשיאו אשה וללמדו אומנות\n(2) sources=[]: . In translation, \n(3) sources=[0]: \"A father is obligated to circumcise, redeem, teach Torah to, find a wife for, and teach a trade to his son\"\n(4) sources=[]: .\n\n**Additional views in the Baraita:**\n- **Swimming:** \n(5) sources=[0]: There are those that say \"[there is] even [an obligation to show his son] how to swim\"\n(6) sources=[]: .\n- **Rabbi Yehuda on a trade:** \n(7) sources=[0]: \"all that does not teach his son craft [or trade] teaches him to steal\"\n(8) sources=[]: . The Gemara asks whether he really means stealing, and concludes: \n(9) sources=[0]: Rather, or as if he taught him how to steal.\n(10) sources=[]: \n\n**Context from the Mishnah:** The Mishnah states \n(11) sources=[6]: כל מצות הבן על האב אנשים חייבין ונשים פטורות\n(12) sources=[]: . Rav Yehudah explains this as \n(13) sources=[2]: All the commandments that are incumbent upon a parent to do for his son, men [i.e. the fathers] are obligated to fulfill while women [i.e. the mothers] are exempt\n(14) sources=[]: .\n\n**Commentaries:**\n- Rashi specifies that redemption is \n(15) sources=[5]: בה' סלעים אם בכור הוא\n(16) sources=[]:  (five sela'im, if the son is a firstborn). He adds that the Gemara derives each obligation from verses.\n- Yachin lists the same obligations, including swimming in a river, with the mnemonic \n(17) sources=[4]: [וסי' מפת אשא]\n(18) sources=[]: .\n\n**Example derivation, circumcision:** The source is \n(19) sources=[7]: \"and he circumcised his son\"\n(20) sources=[]: . If the father does not do it, \n(21) sources=[7]: the court is obligated to circumcise him\n(22) sources=[]: . If the court also does not, the obligation falls on the son himself, based on the verse about karet (\n(23) sources=[7]: ונכרתה\n(24) sources=[]: )."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsoPkLyhJA2KbJADUbxs",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"no_claim\",\"note\":\"Heading and introduction; no substantive claim.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Matches the Hebrew of the Baraita in source 0 (omitting the swimming clause).\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Exact translation in source 0.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Punctuation.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches source 0.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Punctuation.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches Rabbi Yehuda in source 0.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Source 0 has the question of whether stealing is meant and the answer.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches source 0.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Whitespace/formatting.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Quotes the Mishnah in source 6.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Transition; Rav Yehudah's explanation is cited next.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Matches Rav Yehudah in source 2.\"},{\"i\":14,\"verdict\":\"no_claim\",\"note\":\"Punctuation.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Quotes Rashi, source 5.\"},{\"i\":16,\"verdict\":\"partial\",\"note\":\"Rashi claims supported, but Yachin 'lists the same obligations' is loose: it lists swimming, and the mnemonic is not about the same list.\"},{\"i\":17,\"verdict\":\"supported\",\"note\":\"Mnemonic appears in source 4.\"},{\"i\":18,\"verdict\":\"no_claim\",\"note\":\"Punctuation.\"},{\"i\":19,\"verdict\":\"supported\",\"note\":\"Source 7 cites this verse.\"},{\"i\":20,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":21,\"verdict\":\"supported\",\"note\":\"Matches source 7.\"},{\"i\":22,\"verdict\":\"partial\",\"note\":\"Source 7 is cut off; the son's own obligation is cited only through the Gemara's following verse, and is not fully shown.\"},{\"i\":23,\"verdict\":\"supported\",\"note\":\"The word appears in source 7's verse quote.\"},{\"i\":24,\"verdict\":\"no_claim\",\"note\":\"Punctuation.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 3952,
+   "output_tokens": 863,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

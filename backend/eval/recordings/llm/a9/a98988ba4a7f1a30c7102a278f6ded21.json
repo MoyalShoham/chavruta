@@ -1,0 +1,93 @@
+{
+ "key": "a98988ba4a7f1a30c7102a278f6ded21",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Mishneh Torah, Sabbath 7:1: how many primary categories of labor are there?\n\nSources:\n[0] Mishnah Shabbat 7:2 (Mishnah Shabbat)\nאֲבוֹת מְלָאכוֹת אַרְבָּעִים חָסֵר אֶחָת. הַזּוֹרֵעַ. וְהַחוֹרֵשׁ. וְהַקּוֹצֵר. וְהַמְעַמֵּר. הַדָּשׁ. וְהַזּוֹרֶה. הַבּוֹרֵר. הַטּוֹחֵן. וְהַמְרַקֵּד. וְהַלָּשׁ. וְהָאוֹפֶה. הַגּוֹזֵז אֶת הַצֶּמֶר. הַמְלַבְּנוֹ. וְהַמְנַפְּצוֹ. וְהַצּוֹבְעוֹ. וְהַטּוֹוֶה. וְהַמֵּסֵךְ. וְהָעוֹשֶׂה שְׁנֵי בָתֵּי נִירִין. וְהָאוֹרֵג שְׁנֵי חוּטִין. וְהַפּוֹצֵעַ שְׁנֵי חוּטִין. הַקּוֹשֵׁר. וְהַמַּתִּיר. וְהַתּוֹפֵר שְׁתֵּי תְפִירוֹת. הַקּוֹרֵעַ עַל מְנָת לִתְפֹּר שְׁתֵּי תְפִירוֹת. הַצָּד צְבִי. הַשּׁוֹחֲטוֹ. וְהַמַּפְשִׁיטוֹ. הַמּוֹלְחוֹ, וְהַמְעַבֵּד אֶת עוֹרוֹ. וְהַמּוֹחֲקוֹ. וְהַמְחַתְּכוֹ. הַכּוֹתֵב שְׁתֵּי אוֹתִיּוֹת. וְהַמּוֹחֵק עַל מְנָת לִכְתֹּב שְׁתֵּי אוֹתִיּוֹת. הַבּוֹנֶה. וְהַסּוֹתֵר. הַמְכַבֶּה. וְהַמַּבְעִיר. הַמַּכֶּה בַפַּטִּישׁ. הַמּוֹצִיא מֵרְשׁוּת לִרְשׁוּת. הֲרֵי אֵלּוּ אֲבוֹת מְלָאכוֹת אַרְבָּעִים חָסֵר אֶחָת:\nThe primary labors are forty less one: sowing, plowing, reaping, binding sheaves, threshing, winnowing, selecting, grinding, sifting, kneading, baking, shearing wool, bleaching, hackling, dyeing, spinning, weaving, the making of two loops, weaving two threads, dividing two threads, tying and untying, sewing two stitches, tearing in order to sew two stitches, capturing a deer, slaughtering, or flaying, or salting it, curing its hide, scraping it [of its hair], cutting it up, writing two letters, erasing in order to write two letters [over the erasure], building, tearing down, extinguishing, kindling, striking with a hammer, [and] carrying out from one domain to another, These are the forty primary labors less one.\n\n[1] Mishneh Torah, Sabbath 7:1 (Mishneh Torah, Sabbath)\nמְלָאכוֹת שֶׁחַיָּבִין עֲלֵיהֶן סְקִילָה וְכָרֵת בְּמֵזִיד אוֹ קָרְבַּן חַטָּאת בִּשְׁגָגָה. מֵהֶן אָבוֹת וּמֵהֶן תּוֹלָדוֹת. וּמִנְיַן כָּל אֲבוֹת מְלָאכוֹת אַרְבָּעִים חָסֵר אַחַת. וְאֵלּוּ הֵן. הַחֲרִישָׁה. וְהַזְּרִיעָה. וְהַקְּצִירָה. וְהָעִמּוּר. וְהַדִּישָׁה. וְהַזְּרִיָּה. וְהַבְּרִירָה. וְהַטְּחִינָה. וְהַהַרְקָדָה. וְהַלִּישָׁה. וְהָאֲפִיָּה. וְהַגְּזִיזָה. וְהַלִּבּוּן. וְהַנִּפּוּץ. וְהַצְּבִיעָה. וְהַטְּוִיָּה. וַעֲשִׂיַּת הַנִּירִין. וְהַנְסָכַת הַמַּסֵּכָה. וְהָאֲרִיגָה. וְהַבְּצִיעָה. וְהַקְּשִׁירָה. וְהַהַתָּרָה. וְהַתְּפִירָה. וְהַקְּרִיעָה. וְהַבִּנְיָן. וְהַסְּתִירָה. וְהַכָּאָה בְּפַטִּישׁ. וְהַצִּידָה. וְהַשְּׁחִיטָה. וְהַהַפְשָׁטָה. וְהַהַעֲבָדָה. וּמְחִיקַת הָעוֹר. וְחִתּוּכוֹ. וְהַכְּתִיבָה. וְהַמְּחִיקָה. וְהַשִּׂרְטוּט. וְהַהַבְעָרָה. וְהַכִּבּוּי. וְהַהוֹצָאָה מֵרְשׁוּת לִרְשׁוּת:\n[With regard to] the forbidden types of work for which one is liable stoning and excision if volitional, and a sin-offering if inadvertent – some of them are primary categories ( avot ), and some of them are sub-categories ( toledot ). And the number of the primary categories of all the types of forbidden work is forty-less-one. And these are them: Plowing, sowing, reaping, binding, threshing, winnowing, sorting, grinding, sifting, kneading, baking, shearing, whitening, combing, dyeing, spinning, making loops, tying the threads of the warp to the base of the loom, weaving, separating the threads, tying, untying, sewing, tearing, building, demolishing, striking with a hammer, hunting, slaughtering, skinning, curing, smoothing leather, cutting, writing, erasing, etching [lines into parchment], burning, extinguishing and carrying from one domain to another.\n\n[2] Bava Kamma 2a:6 (Bava Kamma)\nגבי שבת תנן אבות מלאכות ארבעים חסר אחת אבות מכלל דאיכא תולדות\n\n[3] Mishneh Torah, Sabbath 7:8 (Mishneh Torah, Sabbath)\nכֵּיצַד. הֲרֵי שֶׁחָרַשׁ וְזָרַע וְקָצַר בְּשַׁבָּת בְּהֵעָלֵם אֶחָד חַיָּב שָׁלֹשׁ חַטָּאוֹת. וַאֲפִלּוּ עָשָׂה הָאַרְבָּעִים חָסֵר אַחַת בִּשְׁגָגָה כְּגוֹן שֶׁשָּׁכַח שֶׁאֵלּוּ הַמְּלָאכוֹת אֲסוּרוֹת לֵעָשׂוֹת בְּשַׁבָּת חַיָּב עַל כָּל מְלָאכָה וּמְלָאכָה חַטָּאת אַחַת. אֲבָל אִם טָחַן וְחָתַךְ הָיָּרָק וְשָׁף לָשׁוֹן שֶׁל מַתֶּכֶת בְּהֵעָלֵם אֶחָד אֵינוֹ חַיָּב אֶלָּא חַטָּאת אַחַת. שֶׁהֲרֵי לֹא עָשָׂה אֶלָּא אָב אֶחָד וְתוֹלְדוֹתָיו. וְכֵן כָּל כַּיּוֹצֵא בָּזֶה:\nHow is this? See that [if] he plowed, sowed and reaped on Shabbat in one forgetful spell, he is liable for three sin-offerings. And even if he did forty-less-one [primary categories] inadvertently – such as [if] he forgot that these types of work were forbidden to do on Shabbat – he is liable a sin-offering for each and every type of forbidden work. But if he ground, cut a vegetable and rubbed a strip of metal in one forgetful spell, he is only liable for one sin-offering. For he only did one primary category and its subcategories. And likewise anything that is similar to this.\n\n[4] Rashi on Shabbat 49b:9:1 (Rashi on Shabbat)\nמשום דכתיב והמלאכה היתה דים - ואי מנינן לתרוייהו הוו ארבעים ומדתנן אבות מלאכות ארבעים חסר אחת איכא חד דלא ממנינא ובהני תרי דאיכא למימר דלא מלאכה נינהו ולא ידענא הי מינייהו נפיק והכי קא מיבעיא ליה והמלאכה היתה דים ממנינא היא ומלאכה ממש קאמר והכי קאמר המלאכה שהיו עושין היו עושין די לא פחות מן הצורך ולא יותר מן הצורך כגון רידודי טסין לציפוי הקרשים לדי היו מרדדין אותם וכן בטווי של יריעות והאי לעשות מלאכתו הוא דמפיק ומסייע למאן דאמר במסכת סוטה לעשות צרכיו נכנס לשכב עמה אלא שנראתה לו דמות דיוקנו של אביו ואמר לו עתידין אחיך ליכתב על אבני אפוד רצונך שימחה שמך מביניהם כו' או דילמא האי לעשות מלאכתו מלאכה ממש הוא ומסייע לה לאידך:\n\n[5] Mishneh Torah, Sabbath 7:3 (Mishneh Torah, Sabbath)\nוְכֵן הַזּוֹרֵעַ זְרָעִים אוֹ הַנּוֹטֵעַ אִילָנוֹת אוֹ הַמַּבְרִיךְ אִילָנוֹת אוֹ הַמַּרְכִּיב אוֹ הַזּוֹמֵר. כָּל אֵלּוּ אָב אֶחָד הֵן מֵאֲבוֹת מְלָאכוֹת וְעִנְיָן אֶחָד הוּא. שֶׁכָּל אַחַת מֵהֶן לְצַמֵּחַ דָּבָר הוּא מִתְכַּוֵּן:\nLikewise one who plants seeds, one who plants trees, one who puts shoots into the ground, one who grafts and one who prunes – all of these are [only] one primary category from the primary categories of work, and they have one function. For each one of them is intended make something grow.\n\n[6] Berakhot 33b:15 (Berakhot)\nותודיענו ה' אלהינו את משפטי צדקך ותלמדנו לעשות חקי רצונך ותנחילנו זמני ששון וחגי נדבה ותורישנו קדושת שבת וכבוד מועד וחגיגת הרגל בין קדושת שבת לקדושת יום טוב הבדלת ואת יום השביעי מששת ימי המעשה קדשת הבדלת וקדשת את עמך ישראל בקדושתך ותתן לנו וכו':\n\"Thou, O Lord our God, hast made known unto us the judgments of Thy righteousness ; Thou hast taught us to perform the statutes of Thy will. Thou hast caused us to inherit seasons of joy and feasts of free will gifts, and hast given us as an heritage the holiness of the Sabbath, the glory of the appointed time, and the celebration of the festival. Thou hast made a distinction between the holiness of the Sabbath and that of the festival, and hast hallowed the seventh day above the six working days ; Thou hast distinguished and sanctified Thy people Israel by Thy holiness. And Thou hast given us,\" etc.\n\n[7] Mishneh Torah, Sabbath 7:2 (Mishneh Torah, Sabbath)\nכָּל אֵלּוּ הַמְּלָאכוֹת וְכָל שֶׁהוּא מֵעִנְיָנָם הֵם הַנִּקְרָאִין אֲבוֹת מְלָאכוֹת. כֵּיצַד הוּא עִנְיָנָן. אֶחָד הַחוֹרֵשׁ אוֹ הַחוֹפֵר אוֹ הָעוֹשֶׂה חָרִיץ הֲרֵי זֶה אַב מְלָאכָה. שֶׁכָּל אַחַת וְאַחַת מֵהֶן חֲפִירָה בַּקַּרְקַע וְעִנְיָן אֶחָד הוּא:\nAll these types of work and anything that [shares] their function are called primary categories of forbidden work. How is their scope? It is one whether he plows or digs or makes a furrow, they are certainly [the same] primary category of forbidden work. As each and every one is digging into the ground, and they have one function.\n\nAnswer segments:\n(0) sources=[]: **Thirty-nine.** The Rambam writes: \n(1) sources=[1]: וּמִנְיַן כָּל אֲבוֹת מְלָאכוֹת אַרְבָּעִים חָסֵר אַחַת\n(2) sources=[]: , meaning \n(3) sources=[1]: the number of the primary categories of all the types of forbidden work is forty-less-one.\n(4) sources=[]: \n\n**Context in the halakha:** He introduces them as \n(5) sources=[1]: the forbidden types of work for which one is liable stoning and excision if volitional, and a sin-offering if inadvertent – some of them are primary categories ( avot ), and some of them are sub-categories ( toledot ).\n(6) sources=[]: \n\n**His list:** \n(7) sources=[1]: Plowing, sowing, reaping, binding, threshing, winnowing, sorting, grinding, sifting, kneading, baking, shearing, whitening, combing, dyeing, spinning, making loops, tying the threads of the warp to the base of the loom, weaving, separating the threads, tying, untying, sewing, tearing, building, demolishing, striking with a hammer, hunting, slaughtering, skinning, curing, smoothing leather, cutting, writing, erasing, etching [lines into parchment], burning, extinguishing and carrying from one domain to another.\n(8) sources=[]: \n\n**Comparison with the Mishnah:** The total matches Mishnah Shabbat 7:2, which also says \n(9) sources=[0]: The primary labors are forty less one\n(10) sources=[]: . The lists differ slightly, though:\n- The Mishnah includes \n(11) sources=[0]: salting it\n(12) sources=[]: , which does not appear in the Rambam's list.\n- The Rambam includes *sirtut*, \n(13) sources=[1]: etching [lines into parchment]\n(14) sources=[]: , which is not in the Mishnah's list.\n- The order is different too. For example, the Mishnah begins with sowing, and the Rambam begins with plowing.\n\nThe sources here do not explain why the Rambam's list differs."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsrGvVKUD7BACJBz9EZg",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"partial\",\"note\":\"Number 'thirty-nine' (forty less one) follows from source 1, but 'Rambam' attribution fine; arithmetic not stated explicitly in sources.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Hebrew quote matches Mishneh Torah Sabbath 7:1.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Transition phrase.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches the English translation of source 1.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Heading/transition.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches source 1 text.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Heading.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches source 1 list.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Heading.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Mishnah 7:2 states forty less one.\"},{\"i\":10,\"verdict\":\"no_claim\",\"note\":\"Transition introducing comparison.\"},{\"i\":11,\"verdict\":\"partial\",\"note\":\"Mishnah includes salting, but the Rambam list in 7:1 lacks it; the quoted source only shows the Mishnah part.\"},{\"i\":12,\"verdict\":\"supported\",\"note\":\"Salting indeed absent from the Rambam's list in source 1.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Source 1 includes etching lines into parchment; Mishnah list lacks it.\"},{\"i\":14,\"verdict\":\"partial\",\"note\":\"Order differences are accurate (Mishnah starts sowing, Rambam plowing); disclaimer about sources fine.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6050,
+   "output_tokens": 595,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

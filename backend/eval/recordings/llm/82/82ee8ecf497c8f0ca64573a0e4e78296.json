@@ -1,0 +1,93 @@
+{
+ "key": "82ee8ecf497c8f0ca64573a0e4e78296",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: כותל חצר שנפל, האם מחייבים את השכן לבנות אותו עד ארבע אמות?\n\nSources:\n[0] Bava Batra 5a:5 (Bava Batra)\nמתני׳ כותל חצר שנפל מחייבין אותו לבנותו עד ארבע אמות בחזקת שנתן עד שיביא ראיה שלא נתן\n\n[1] Mishnah Bava Batra 1:4 (Mishnah Bava Batra)\nכֹּתֶל חָצֵר שֶׁנָּפַל, מְחַיְּבִין אוֹתוֹ לִבְנוֹתוֹ עַד אַרְבַּע אַמּוֹת, בְּחֶזְקַת שֶׁנָּתַן, עַד שֶׁיָּבִיא רְאָיָה שֶׁלֹּא נָתָן. מֵאַרְבַּע אַמּוֹת וּלְמַעְלָה, אֵין מְחַיְּבִין אוֹתוֹ. סָמַךְ לוֹ כֹתֶל אַחֵר, אַף עַל פִּי שֶׁלֹּא נָתַן עָלָיו אֶת הַתִּקְרָה, מְגַלְגְּלִין עָלָיו אֶת הַכֹּל, בְּחֶזְקַת שֶׁלֹּא נָתַן, עַד שֶׁיָּבִיא רְאָיָה שֶׁנָּתָן:\nIf the wall of a courtyard fell down they obligate each of the partners to help in building it up to a height of four cubits. He is presumed to have paid [his share] unless the other brings proof that he has not paid. [If the fence was built] four cubits or higher, they do not obligate him [to help in building it.] If [the one who did not contribute] built another wall near it, even if he did not put a roof upon it, they obligate him to share in all of the costs. He is presumed not to have paid [his share] unless he brings proof that he has.\n\n[2] Bava Batra 2b:11 (Bava Batra)\nת\"ש כותל חצר שנפל מחייבין אותו לבנות עד ד' אמות נפל שאני\n\n[3] Kiddushin 31a:3 (Kiddushin)\nאמר רבי יהושע בן לוי אסור לאדם שיהלך ארבע אמות בקומה זקופה שנא' (ישעיהו ו, ג) מלא כל הארץ כבודו רב הונא בריה דרב יהושע לא מסגי ארבע אמות בגילוי הראש אמר שכינה למעלה מראשי\n\n[4] Shulchan Arukh, Choshen Mishpat 155:17 (Shulchan Arukh, Choshen Mishpat)\nמרחיקין את הכותל מן המזחילה של חבירו ד' אמות כדי שיהיה מקום לבעל המזחילה לזקוף סולם ולתקן מזחילה שלו הואיל והחזיק בה: הגה ויש אומרים לענין שאם קנה ממנו מקום כדי לעלות למזחילתו צריך להניח לו מקום ארבע אמות שיעור זקיפת סולם (טור בשם ר\"י וב\"י בשם הרא\"ש):\n\n[5] Shulchan Arukh, Choshen Mishpat 155:36 (Shulchan Arukh, Choshen Mishpat)\nבמה דברים אמורים בשאר נזקים חוץ מארבע שהם העשן וריח בית הכסא ואבק וכיוצא בו ונדנוד הקרקע שכל אחד מאלו אין לו חזקה ואפילו שתק כמה שנים הרי זה חוזר וכופהו להרחיק: הגה ואפילו סמך קודם שבא לשם דבר הניזק (טור בשם הרא\"ש ור\"ת ורמב\"ם) מיהו אם זכו שניהן בשל הפקר כל הקודם זכה ואין השני אחריו יכול למחות בו (ריב\"ש סימן שכ\"ב) וכן היזק ראיה במקום שצריך מחיצה כגון חצר השותפין שיש בו דין חלוקה יש לכל אחד מהם לכוף את חבירו לבנות הכותל באמצע כדי שלא יראהו חבירו בשעה שמשתמש בחלקו ומאחר שממילא הם מזיקים זה את זה בלי עשיית שום מעשה אין להם חזקה אלא אע\"פ שעמדו כך שנים רבות בלא מחיצה כופהו לעשות מחיצה בכל עת שירצה ולמה שינו נזקין אלו משאר נזקין לפי שאין דעתו של אדם סובלת נזקין אלו וחזקתו שאינו מוחל שהזיקו היזק קבוע ואם קנו מידו שמחל בניזקין אלו (או שמכרן לו או שנתן לו) (טור בשם ר\"י והרא\"ש וב\"י בשם הרשב\"א) אינו יכול לחזור בו:\n\n[6] Shulchan Arukh, Choshen Mishpat 155:14 (Shulchan Arukh, Choshen Mishpat)\nוכן אם לא היה באורך כותל שמעון שבונה כנגדו ד' אמות אינו מרחיק אע\"פ שמונע הרגל מלהלך שם שהכותל שהוא פחות מד' אמות אינו צריך חיזוק הארץ: הגה וכן אם כותל ראובן הולך ממזרח למערב ושמעון בא לסמוך כותל מצפון לדרום אין צריך להרחיק (טור) וי\"א דכל זה לא מיירי אלא כשקנו הקרקע מן המלך או מן ההפקר אבל בלאו הכי יכולין לסמוך כותל לכותל (נ\"י פרק לא יחפור והמגיד פ\"ט מה' שכנים ור' ירוחם נ' ל\"א ח\"ו):\n\n[7] Mishneh Torah, Prayer and the Priestly Blessing 5:6 (Mishneh Torah, Prayer and the Priestly Blessing)\nתקון המקום כיצד יעמוד במקום נמוך ויחזיר פניו לכותל וצריך לפתוח חלונות או פתחים כנגד ירושלים כדי להתפלל כנגדן שנאמר וכוין פתיחן ליה בעיליתיה וגו' וקובע מקום לתפלתו תמיד ואין מתפלל בחורבה ולא אחורי בית הכנסת אא\"כ החזיר פניו לבית הכנסת ואסור לישב בצד העומד בתפלה או לעבור לפניו עד שירחיק ממנו ארבע אמות.\nPlace where the worshiper prays. He should stand in a low place and turn his face to the wall. Windows or doors towards Jerusalem should be opened, and he should stand facing them when he prays, as it is said, \"Now his windows were open in his upper chamber towards Jerusalem\" (Daniel 6:11). There should be one fixed place set apart for prayer. It should not be recited in a ruin nor at the rear of a synagogue, unless the worshiper turns his face towards the synagogue. It is forbidden to remain seated at the side of one who is standing in prayer, or pass in front of him unless he has moved away from the worshiper to a distance of four cubits.\n\nAnswer segments:\n(0) sources=[]: **כן, לפי המשנה מחייבים אותו עד ארבע אמות.**\n\n**המשנה (בבא בתרא א:ד):** \n(1) sources=[1]: \"כֹּתֶל חָצֵר שֶׁנָּפַל, מְחַיְּבִין אוֹתוֹ לִבְנוֹתוֹ עַד אַרְבַּע אַמּוֹת, בְּחֶזְקַת שֶׁנָּתַן, עַד שֶׁיָּבִיא רְאָיָה שֶׁלֹּא נָתָן\"\n(2) sources=[]: \n\nמכאן עולים שלושה דינים:\n\n1. **עד ארבע אמות:** השכן חייב להשתתף בבנייה, וחזקה עליו שכבר שילם את חלקו, אלא אם חברו מביא ראיה שלא שילם.\n\n2. **מעל ארבע אמות:** \n(3) sources=[1]: \"מֵאַרְבַּע אַמּוֹת וּלְמַעְלָה, אֵין מְחַיְּבִין אוֹתוֹ\"\n(4) sources=[]: \n\n3. **סמך כותל אחר:** אם השכן שלא השתתף בנה כותל אחר סמוך לו, אז \n(5) sources=[1]: \"אַף עַל פִּי שֶׁלֹּא נָתַן עָלָיו אֶת הַתִּקְרָה, מְגַלְגְּלִין עָלָיו אֶת הַכֹּל, בְּחֶזְקַת שֶׁלֹּא נָתַן, עַד שֶׁיָּבִיא רְאָיָה שֶׁנָּתָן\"\n(6) sources=[]: . במקרה זה החזקה מתהפכת, ועליו להביא ראיה שהשתתף.\n\n**בגמרא:** המשנה מופיעה בבבא בתרא ה ע\"א (\n(7) sources=[0]: מתני׳ כותל חצר שנפל מחייבין אותו לבנותו עד ארבע אמות\n(8) sources=[]: ). היא מובאת גם בדף ב ע\"ב כראיה, ונדחית: \n(9) sources=[2]: \"ת\"ש כותל חצר שנפל מחייבין אותו לבנות עד ד' אמות — נפל שאני\"\n(10) sources=[]: . כלומר, כותל שנפל הוא מקרה מיוחד. הקטע שלפניי אינו מביא את השאלה שעליה נסובה הראיה, ולכן איני יכול לפרט מה בדיוק נדחה.\n\n**הערה:** אחד המקורות כולל תרגום אנגלי של המשנה. כדאי לעיין במקור העברי עצמו, כי לשון התרגום אינה מדויקת בכל מקום.\n\nלשאלה מעשית בין שכנים, יש לפנות לרב או לבית דין."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgspL2jUFh1vxFw7CuhHU",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Mishnah says they obligate him to build up to four cubits.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Accurate quotation of Mishnah Bava Batra 1:4.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Summary of up-to-four-cubits rule and presumption of payment matches the Mishnah.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Accurate quotation from the Mishnah.\"},{\"i\":4,\"verdict\":\"supported\",\"note\":\"Introduces the third case, which matches the Mishnah: one who built an adjacent wall.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Accurate quotation of the Mishnah's last case.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Presumption reverses: presumed not to have paid unless he brings proof; matches the Mishnah.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Matches Bava Batra 5a text, which is the Mishnah there.\"},{\"i\":8,\"verdict\":\"partial\",\"note\":\"Source 2 cites it as a proof (ת\\\"ש) with a rebuttal, but the page 2b is only inferred from the source label.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Accurate quotation of Bava Batra 2b.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"'Fallen is different' is stated; the disclaimer about missing context is fair.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 4200,
+   "output_tokens": 501,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

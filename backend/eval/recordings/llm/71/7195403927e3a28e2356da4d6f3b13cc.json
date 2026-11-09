@@ -1,0 +1,93 @@
+{
+ "key": "7195403927e3a28e2356da4d6f3b13cc",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Where does the Talmud say that one who embarrasses another in public is like one who sheds blood?\n\nSources:\n[0] Bava Metzia 58b:12 (Bava Metzia)\nתני תנא קמיה דרב נחמן בר יצחק כל המלבין פני חבירו ברבים כאילו שופך דמים א\"ל שפיר קא אמרת דחזינא ליה דאזיל סומקא ואתי חוורא אמר ליה אביי לרב דימי במערבא במאי זהירי א\"ל באחוורי אפי דאמר רבי חנינא הכל יורדין לגיהנם חוץ משלשה\n\n[1] Mishneh Torah, Human Dispositions 6:8 (Mishneh Torah, Human Dispositions)\nהַמּוֹכִיחַ אֶת חֲבֵרוֹ תְּחִלָּה לֹא יְדַבֵּר לוֹ קָשׁוֹת עַד שֶׁיַּכְלִימֶנּוּ שֶׁנֶּאֱמַר (ויקרא יט יז) \"וְלֹא תִשָּׂא עָלָיו חֵטְא\". כָּךְ אָמְרוּ חֲכָמִים יָכוֹל אַתָּה מוֹכִיחוֹ וּפָנָיו מִשְׁתַּנּוֹת תַּלְמוּד לוֹמַר וְלֹא תִשָּׂא עָלָיו חֵטְא. מִכָּאן שֶׁאָסוּר לָאָדָם לְהַכְלִים אֶת יִשְׂרָאֵל וְכָל שֶׁכֵּן בָּרַבִּים. אַף עַל פִּי שֶׁהַמַּכְלִים אֶת חֲבֵרוֹ אֵינוֹ לוֹקֶה עָלָיו עָוֹן גָּדוֹל הוּא. כָּךְ אָמְרוּ חֲכָמִים (גמרא סנהדרין קז א) \"הַמַּלְבִּין פְּנֵי חֲבֵרוֹ בָּרַבִּים אֵין לוֹ חֵלֶק לָעוֹלָם הַבָּא\". לְפִיכָךְ צָרִיךְ אָדָם לְהִזָּהֵר שֶׁלֹּא לְבַיֵּשׁ חֲבֵרוֹ בָּרַבִּים בֵּין קָטָן בֵּין גָּדוֹל. וְלֹא יִקְרָא לוֹ בְּשֵׁם שֶׁהוּא בּוֹשׁ מִמֶּנּוּ. וְלֹא יְסַפֵּר לְפָנָיו דָּבָר שֶׁהוּא בּוֹשׁ מִמֶּנּוּ. בַּמֶּה דְּבָרִים אֲמוּרִים בִּדְבָרִים שֶׁבֵּין אָדָם לַחֲבֵרוֹ. אֲבָל בְּדִבְרֵי שָׁמַיִם אִם לֹא חָזַר בּוֹ בַּסֵּתֶר מַכְלִימִין אוֹתוֹ בָּרַבִּים וּמְפַרְסְמִים חֶטְאוֹ וּמְחָרְפִים אוֹתוֹ בְּפָנָיו וּמְבַזִּין וּמְקַלְּלִין אוֹתוֹ עַד שֶׁיַּחֲזֹר לַמּוּטָב כְּמוֹ שֶׁעָשׂוּ כָּל הַנְּבִיאִים בְּיִשְׂרָאֵל:\nHe who rebukes a friend, at the beginning, no hard words should be used against him to shame him, for it is said: \"And thou shalt bear no sin upon him\" (Lev. 19.17). Thus did the wise men say: \"Understand it not by rebuking him thou mayest cause his countenance to change expression; for, it is said: 'And thou shalt bear no sin upon him'\" (Ibid.; Arakin, 16b); herefrom we learn that it is forbidden to put an Israelite to shame, needless to say publicly. Although he who does put his fellow to shame is not flogged, it is a grievous sin. Even so did the wise men say: \"He who publicly puts his fellow's countenance to shame has no share in the world to come\" (Pirke Abot, 3.11). A man is, therefore obliged to guard himself against putting his fellow to shame publicly, regardless of whether he be young or old; not to call him by a name of which he feels ashamed, nor tell aught in his presence of which he is ashamed. However, all these refer to matters touching the relationship between man and man; but if it concern heavenly matters, if the sinner does not repent after being rebuked privately, he should be shamed publicly, and his sin should be proclaimed, and harsh words should be used in his presence, and he should be shamed and cursed till he repent and take up the good path, even as all of the prophets in Israel did with the wicked.\n\n[2] Nedarim 40a:1 (Nedarim)\nרב חלבו באיש לא איכא דקא אתי אמר להו לא כך היה מעשה בתלמיד אחד מתלמידי ר' עקיבא שחלה לא נכנסו חכמים לבקרו ונכנס ר' עקיבא לבקרו ובשביל שכיבדו וריבצו לפניו חיה א\"ל רבי החייתני יצא ר' עקיבא ודרש כל מי שאין מבקר חולים כאילו שופך דמים\nThere is a story about one of Rabbi Avika's students who became sick. The sages did not come to visit him. Rabbi Akiva came in to visit him, and because he showed him respect and sat in front of him, the student lived. He told him Rabbi, you made me live. Rabbi Akiva left and taught, \"He who does not visit the sick is as one who spills blood\".\n\n[3] Yevamot 63b:16 (Yevamot)\nאמר רבי אסי אין בן דוד בא עד שיכלו כל הנשמות שבגוף שנאמר (ישעיהו נז, טז) כי רוח מלפני יעטוף ונשמות אני עשיתי תניא רבי אליעזר אומר כל מי שאין עוסק בפריה ורביה כאילו שופך דמים שנאמר (בראשית ט, ו) שופך דם האדם באדם דמו ישפך וכתיב בתריה ואתם פרו ורבו\n\n[4] Mishneh Torah, Mourning 14:2 (Mishneh Torah, Mourning)\nשְׂכַר הַלְּוָיָה מְרֻבֶּה מִן הַכּל. וְהוּא הַחֹק שֶׁחֲקָקוֹ אַבְרָהָם אָבִינוּ וְדֶרֶךְ הַחֶסֶד שֶׁנָּהַג בָּהּ. מַאֲכִיל עוֹבְרֵי דְּרָכִים וּמַשְׁקֶה אוֹתָן וּמְלַוֶּה אוֹתָן. וּגְדוֹלָה הַכְנָסַת אוֹרְחִים מֵהַקְבָּלַת פְּנֵי שְׁכִינָה. שֶׁנֶּאֱמַר (בראשית יח ב) \"וַיַּרְא וְהִנֵּה שְׁלֹשָׁה אֲנָשִׁים\". וְלִוּוּיָם יוֹתֵר מֵהַכְנָסָתָן. אָמְרוּ חֲכָמִים כָּל שֶׁאֵינוֹ מְלַוֶּה כְּאִלּוּ שׁוֹפֵךְ דָּמִים:\n\n[5] Pirkei Avot 3:11 (Pirkei Avot)\nרַבִּי אֶלְעָזָר הַמּוֹדָעִי אוֹמֵר, הַמְחַלֵּל אֶת הַקָּדָשִׁים, וְהַמְבַזֶּה אֶת הַמּוֹעֲדוֹת, וְהַמַּלְבִּין פְּנֵי חֲבֵרוֹ בָרַבִּים, וְהַמֵּפֵר בְּרִיתוֹ שֶׁל אַבְרָהָם אָבִינוּ עָלָיו הַשָּׁלוֹם, וְהַמְגַלֶּה פָנִים בַּתּוֹרָה שֶׁלֹּא כַהֲלָכָה, אַף עַל פִּי שֶׁיֵּשׁ בְּיָדוֹ תוֹרָה וּמַעֲשִׂים טוֹבִים, אֵין לוֹ חֵלֶק לָעוֹלָם הַבָּא:\nRabbi Elazar of Modiin said: one who profanes sacred things, and one who despises the festivals, and one who causes his fellow’s face to blush in public, and one who annuls the covenant of our father Abraham, may he rest in peace, and he who is contemptuous towards the Torah, even though he has to his credit [knowledge of the] Torah and good deeds, he has not a share in the world to come.\n\n[6] Bava Metzia 58b:13 (Bava Metzia)\nהכל ס\"ד אלא אימא כל היורדין לגיהנם עולים חוץ משלשה שיורדין ואין עולין ואלו הן הבא על אשת איש והמלבין פני חבירו ברבים והמכנה שם רע לחבירו מכנה היינו מלבין אע\"ג דדש ביה בשמיה\n\n[7] Berakhot 31a:9 (Berakhot)\nואב\"א כי הא דרב הונא דא\"ר הונא א\"ר זעירא המקיז דם בבהמת קדשים אסור בהנאה ומועלין בו\nIf thou wilt I can say like that of Rab Huna who stated in the name of R. Ze'ira : He who draws blood from an animal destined for a sacritice is forbidden to make use of it, and [should he use it] he must bring a transgression-offering.\n\nAnswer segments:\n(0) sources=[]: The statement appears in **Bava Metzia 58b**: \n(1) sources=[0]: תני תנא קמיה דרב נחמן בר יצחק כל המלבין פני חבירו ברבים כאילו שופך דמים\n(2) sources=[]: . A tanna taught before Rav Nachman bar Yitzchak that whoever \"whitens the face\" of his fellow in public is as if he sheds blood.\n\nRav Nachman bar Yitzchak affirms it with a physical observation: \n(3) sources=[0]: א\"ל שפיר קא אמרת דחזינא ליה דאזיל סומקא ואתי חוורא\n(4) sources=[]: . \"You have spoken well, for we see that the red leaves and white comes.\" The blood drains from the shamed person's face, as though it were spilled.\n\nThe passage continues in the same vein. Abaye asks Rav Dimi what people in the West (Eretz Yisrael) are careful about, and he answers \n(5) sources=[0]: באחוורי אפי\n(6) sources=[]: , \"about whitening faces.\" Then comes Rabbi Chanina's teaching that \n(7) sources=[6]: all who descend to Gehinnom ascend, except for three who descend and do not ascend\n(8) sources=[]: . One of the three is \n(9) sources=[6]: המלבין פני חבירו ברבים\n(10) sources=[]: , the one who whitens his fellow's face in public.\n\n**Related sources:**\n- **Pirkei Avot 3:11:** Rabbi Elazar HaModa'i lists \n(11) sources=[5]: one who causes his fellow's face to blush in public\n(12) sources=[]:  among those who, \n(13) sources=[5]: even though he has to his credit [knowledge of the] Torah and good deeds, he has not a share in the world to come.\n(14) sources=[]: \n- **Rambam, Hilchot De'ot 6:8:** He derives from \"ולא תשא עליו חטא\" \n(15) sources=[1]: that it is forbidden to put an Israelite to shame, needless to say publicly\n(16) sources=[]: . He adds that \n(17) sources=[1]: although he who does put his fellow to shame is not flogged, it is a grievous sin.\n(18) sources=[]: \n\nThe phrase \"כאילו שופך דמים\" also appears in the provided sources about other matters. These include \n(19) sources=[2]: not visiting the sick\n(20) sources=[]:  (Nedarim 40a) and not escorting guests (Rambam, Hilchot Evel 14:2)."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsrHpUwkBJW13VjBv8dt",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Bava Metzia 58b contains the statement, per source 0.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Quotes source 0 accurately.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Accurate translation of the tanna's teaching before Rav Nachman bar Yitzchak.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches source 0 text.\"},{\"i\":4,\"verdict\":\"partial\",\"note\":\"Translation fine; the 'as though it were spilled' gloss is interpretive, not stated in the source.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Matches source 0.\"},{\"i\":6,\"verdict\":\"partial\",\"note\":\"Translation okay; 'West (Eretz Yisrael)' and Abaye-Rav Dimi framing is mostly there, but Eretz Yisrael is not stated.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Source 6 says all descending to Gehinnom ascend except three; attribution to R. Chanina is in source 0.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"Source 6 lists three who descend and do not ascend.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Source 6 lists the one who whitens his fellow's face publicly.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"Accurate gloss of the phrase.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Matches Pirkei Avot 3:11.\"},{\"i\":12,\"verdict\":\"supported\",\"note\":\"Consistent with source 5 listing.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Matches source 5.\"},{\"i\":14,\"verdict\":\"supported\",\"note\":\"Rambam derives it from Lev. 19:17 per source 1.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Matches source 1.\"},{\"i\":16,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":17,\"verdict\":\"supported\",\"note\":\"Matches source 1.\"},{\"i\":18,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":19,\"verdict\":\"supported\",\"note\":\"Nedarim 40a says not visiting the sick is like shedding blood.\"},{\"i\":20,\"verdict\":\"supported\",\"note\":\"Source 4 says one who does not escort is as shedding blood; Nedarim cited correctly.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 5018,
+   "output_tokens": 810,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

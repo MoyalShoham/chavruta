@@ -1,0 +1,93 @@
+{
+ "key": "d9413ae564aa53154a8ded8dfd0c77e5",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: יומא פה ע\"ב: מאיזה פסוק לומד שמואל שפיקוח נפש דוחה שבת?\n\nSources:\n[0] Midrash Tanchuma Buber, Masei 1:1 (Midrash Tanchuma Buber)\nאלה מסעי בני ישראל (במדבר לג א) . ילמדנו רבינו מי שנרדף מן הגייס ומן הליסטין, מהו שיחלל את השבת, כך שנו רבותינו מי שהיה נרדף מן הגייס ומן הליסטים, מחלל את השבת ומציל את נפשו, שכך אנו מוצאין בדוד, כשביקש שאול להורגו ברח מפניו וימלט, אמרו רבותינו מעשה שבאו כתבים רעים מן המלכות לגדלי ציפורי, באו ושאלו את ר' אליעזר בן פרטא אמרו לו כתבים רעים באו לנו מן המלכות, מה אתה אומר נברח, והיה מתיירא לומר להם ברחו בשבת, אמר להם ולי אתם שואלים, לכו ושאלו את יעקב ואת משה ואת דוד, ביעקב כתיב ויברח יעקב (הושע יב יג) , במשה כתיב ויברח משה מפני פרעה (שמות ב טו) , בדוד כתיב ודוד ברח וימלט (ש\"א יט יח) , ואומר לך עמי בא בחדריך וגו' (ישעיה כו כ) , ומנין שפיקוח נפש דוחה את השבת, שנאמר ושמרתם את חקותי [ואת משפטי אשר יעשה אותם האדם] וחי בהם (ויקרא יח ה) , ולא שימות בהם, וכתיב במילה וביום השמיני ימול בשר ערלתו (שם יב ג) , ואפילו בשבת, והלא דברים קל וחומר, ומה המילה שהיא אחת מרמ\"ח איברים [של אדם], דוחה את השבת, כל גופו על אחת כמה וכמה. אמר הקב\"ה [לישראל] בני הזהרו במצותי, ושמרו את התורה, כי כמה נסים ונפלאות עשיתי לכם מיום שיצאתם ממצרים, והפלתי את שונאיכם, והעברתי אתכם בים, והפלתי פחד ורעדה באויביכם, והשמדתי את האמורי וסיחון ועוג, וכל ארבעים שנה שהייתם במדבר, לא הנחתי אתכם שעה אחת, וכמה נחשים ועקרבים הרגתי לפניכם, שנאמר המוליכך במדבר הגדול והנורא נחש שרף ועקרב (דברים ח טו) , לכך אמר הקב\"ה למשה, כתוב המסעות שנסעו ישראל במדבר, כדי שידעו כמה נסים עשיתי להם בכל מסע ומסע, (שנאמר) [מנין ממה שקראו בענין] אלה מסעי בני ישראל וגו' ויכתוב משה את מוצאיהם למסעיהם על פי ה'.\n(Numb. 33:1:) THESE ARE THE STAGES <BY WHICH> OF THE CHILDREN OF ISRAEL <WENT FORTH FROM THE LAND OF EGYPT> . Let our master instruct us: When a person is being pursued by robbers and brigands, is it permissible for such a one to profane the Sabbath. Thus have our masters taught: When a person is being pursued by robbers and brigands, such a one does profane the Sabbath to save his life. ., Numb. 10:1; Numb. R. 23:1; see RH 2:5; ‘ Eruv 45a; Ta‘an . 14a. We therefore find in the case of David, that when Saul sought to kill him, he fled from him and was saved. . 95b, David’s eating of the consecrated bread (I Sam. 21:7 [6]) on the day of his flight (vs. 11 [10]) took place on the Sabbath. Our masters have said: Once upon a time evil documents came from the Empire for the leading citizens of Sepphoris. , Numb. 10:1, adds, “On the Sabbath.” <The citizens> came to R. Eliezer ben Parta <and> said to him: Evil documents have come to us from the Empire. What do you say? Shall we flee? Since he was afraid to tell them to flee on the Sabbath, he said to them: Are you asking me? Go and ask Jacob, Moses, and David. With reference to Jacob, it is written (in Hos. 12:13 [12]): THEN JACOB FLED . With reference to Moses, it is written (in Exod. 2:15): BUT MOSES FLED FROM PHARAOH . With reference to David, it is written (in I Sam. 19:18) NOW DAVID FLED AND ESCAPED . It also says (in Is. 26:20): GO, MY PEOPLE, ENTER YOUR CHAMBERS… . But where is it shown that the saving of life overrides the Sabbath? Where it is written (in Lev. 18:5): YOU SHALL KEEP MY STATUTES AND ORDINANCES, FOR IT IS THROUGH PERFORMING THEM THAT A PERSON SHALL LIVE and not die through them. It is also written, with reference to circumcision (in Lev. 12:3): AND ON THE EIGHTH DAY THE FLESH OF HIS FORESKIN SHALL BE CIRCUMCISED , even on the Sabbath. Now are not < these > words <an argument> qal wahomer? If circumcision, which concerns <but> one out of the 248 [human] members, overrides the Sabbath, how much the more in the case of the whole body. The Holy One said [to Israel]: My children, be mindful of my ordinances and keep the Torah, for how many miracles and wonders have I done for you from the day that you went forth from Egypt! I cast down those who hated you, I had you pass through the sea, I cast fear and trembling on your enemies, I destroyed the Amorites along with Sihon and Og, and during the whole forty years that you were in the wilderness I did not forsake you for a single hour. Moreover, how many snakes and scorpions did I exterminate in your presence. It is so stated (in Deut. 8:15): ( GOD ) WHO LED YOU THROUGH THE GREAT AND TERRIBLE WILDERNESS WITH ITS FIERY SERPENTS AND SCORPIONS . Therefore, the Holy One said to Moses: Write down the stages by which Israel journeyed in the wilderness, so that they will know how many miracles I performed for them during each and every stage. {Thus it is stated (in Numb. 33:1–2):} [Where is it shown? From what they read on the matter (in Numb. 33:1–2):] THESE ARE THE STAGES <BY WHICH> THE CHILDREN OF ISRAEL <WENT FORTH FROM THE LAND OF EGYPT>…. AND MOSES WROTE DOWN THEIR STARTING POINGS, STAGE BY STAGE, ACCORDING TO THE COMMAND OF THE LORD .\n\n[1] Yoma 85b:3 (Yoma)\nר' שמעון בן מנסיא אומר (שמות לא, טז) ושמרו בני ישראל את השבת אמרה תורה חלל עליו שבת אחת כדי שישמור שבתות הרבה א\"ר יהודה אמר שמואל אי הואי התם הוה אמינא דידי עדיפא מדידהו (ויקרא יח, ה) וחי בהם ולא שימות בהם\n\n[2] Gur Aryeh on Shemot 31:13:1 (Gur Aryeh on Shemot)\nאף על פי שתהיו רדופין וזריזין בזריזות המלאכה וכו'. הרמב\"ן הקשה על זה, כי לדעת רז\"ל אכין ורקין מיעוטן ימעטו בשמירת השבת, כי המעוטים – אצלם ימעטו בדבר המצוה עצמה , ואם תדרוש המעוט בענין מלאכת המשכן יהיה מותר לעשות מלאכת המשכן בשבת. אבל המיעוט הוא למילה ולפיקוח נפש וכיוצא בהן, שהן דוחין את השבת כו' . וקושיא גדולה היא זאת, דלעולם המעוט בא במצוה עצמה, וכאן מרבה מצות שבת שדוחה מלאכת המשכן. ויראה כי פשוטו של מקרא בכל מקום \"אך\" הוא מוציא וסותר את שלפניו, \"שאו את ראש כל עדת בני ישראל\" (במדבר א, ב) \"אך את מטה לוי לא תפקוד\" (שם שם, מט), הרי הוא סותר דבר הראשון אשר נאמר לפני זה. ואצל בלעם (שם כב, כ) \"קום לך אתם ואך את הדבר אשר אדבר אליך\", הרי ממעט את הליכתו, תלך אתם – אבל מכל מקום לא יהיה הכל ברשותך לעשות. \"ואיש אשר לא ישמע אל דברי הנביא וגו', אך הנביא אשר יזיד לדבר דבר בשמי\" (ר' דברים יח, יט-כ), וכן כולם לשון \"אך\" הוא סותר מה שנאמר לפני זה . וגם כן כאן סותר את הדבר שנאמר לפני זה, שציוה על מלאכת המשכן (פסוקים ו-יא), ועליו אמר \"אך את שבתותי\", כלומר למעט מלאכת המשכן בא, שעליו קאי מלת \"אך\" : אמנם מה שדרשו ז\"ל במסכת יומא מנין שפיקוח נפש דוחה את השבת, אמר רבי יוחנן \"אך את שבתותי תשמרו וגו'\", הרי דהוא ממעט את השבת , היינו שמפני שהכתוב הוא אומר בלשון \"אך\", והוי ליה למכתב 'את שבתותי תשמורו', והוי קאי על מה שלמעלה, דהיינו מלאכת המשכן, שישמורו שבת אף לענין מלאכת המשכן, אלא בא למעט שבת עצמו, דהיינו פיקוח נפש . וכן הוא \"וישאר אך נח\" (בראשית ז, כג), משמעותו של כתוב דהכל נמחה חוץ מן נח, שהוא נשאר, ומדכתיב \"אך נח\" דרשו ז\"ל (תנחומא נח, ט) שגם נח לא נשאר הכל, והיה כוהה דם מטורח הבהמות והחיות . וגם כן כאן אומר שיהיו זריזים במלאכת השמכן \"אך את שבתותי תשמורו\", דלא תעשו מלאכת המשכן. ומדכתיב לשון \"אך\" דרשו ז\"ל למעט את השבת שיהיה נדחה מפיקוח נפש : ומה שנקט רש\"י המיעוט ממלאכת המשכן שלא יהיה נעשה בשבת ממלת \"אך\", אף על גב דגם כן יכול למעט ממה שהזהיר הכתוב כאן על השבת , מפני דיותר פשוט למעט מלשון \"אך\" דהוא ממעט ענין הראשון. והדין עם רש\"י בפירוש זה, דמלת \"אך\" הוא למעט גם כן על ענין הראשון שנזכר לפני זה. וכך הוא בכל מקום שלשון \"אך\" הוא למעט ענין הראשון, ומכל מקום דרשו ז\"ל גם כן הלשון למעט המצוה עצמה מדכתיב \"אך\" כמו אצל \"וישאר אך [נח]\", ורש\"י פירש פשוטו, לא יתור של \"אך\" שממנו לומדין פיקוח נפש שדוחה השבת , וזהו נכון :\n\n[3] Yoma 85b:1 (Yoma)\nאבל להחיות אפילו מעל מזבחי ומה זה שספק יש ממש בדבריו ספק אין ממש בדבריו ועבודה דוחה שבת קל וחומר לפקוח נפש שדוחה את השבת נענה רבי אלעזר ואמר ומה מילה שהיא אחד ממאתים וארבעים ושמונה איברים שבאדם דוחה את השבת קל וחומר לכל גופו שדוחה את השבת\n\n[4] Rashi on Yoma 85b:1:3 (Rashi on Yoma)\nומה מילה - שהיא תיקון אחד מאיבריו של אדם דוחה את השבת לפי שחייבין עליה כרת לאחר זמן כך שנויה בתוספתא דשבת:\n\n[5] Rashi on Yoma 85b:5:2 (Rashi on Yoma)\nואשכחן - מהכא דאודאי פיקוח נפש מחללין אבל ספק לא שמעינן מינה וכולהו נמי כגון אך חלק איכא למימר דודאי פיקוח נפש קא ממעט ולא ספק וכן ולא אתם מסורין בידה למות ודאי וכן חלל עליו כדי שישמור ודאי שבתות הרבה:\n\n[6] Rashi on Yoma 85b:1:2 (Rashi on Yoma)\nועבודה - חמורה שדוחה את השבת מפסיקה להצלת נפש:\n\n[7] Berakhot 29a:15 (Berakhot)\nאמר רב נחמן אמר שמואל כל השנה כולה מתפלל אדם הביננו חוץ ממוצאי שבת וממוצאי ימים טובים מפני שצריך לומר הבדלה בחונן הדעת\nRab Nahman said in the name of Samuel : During the whole of the year, one may say the prayer \"Give us understanding\" except at the conclusion of the Sabbath and Festivals, because then it is necessary to say the \"Division\" in the benediction \"Thou favourest man with knowledge.\"\n\nAnswer segments:\n(0) sources=[]: שמואל לומד זאת מהפסוק **\"וחי בהם\"** (ויקרא יח, ה). בגמרא: \n(1) sources=[1]: א\"ר יהודה אמר שמואל אי הואי התם הוה אמינא דידי עדיפא מדידהו (ויקרא יח, ה) וחי בהם ולא שימות בהם\n(2) sources=[]: .\n\nכלומר, שמואל אומר שאילו היה שם, הייתה דרשתו עדיפה על הדרשות שהובאו לפניו. אחת מהן היא דרשת ר' שמעון בן מנסיא: \n(3) sources=[1]: ושמרו בני ישראל את השבת אמרה תורה חלל עליו שבת אחת כדי שישמור שבתות הרבה\n(4) sources=[]: .\n\n**מדוע דרשתו עדיפה?** רש\"י מסביר שהלימודים האחרים מלמדים רק על פיקוח נפש ודאי: \n(5) sources=[5]: דאודאי פיקוח נפש מחללין אבל ספק לא שמעינן מינה וכולהו נמי כגון אך חלק איכא למימר דודאי פיקוח נפש קא ממעט ולא ספק\n(6) sources=[]: . רש\"י מוסיף שגם דרשת \"חלל עליו\" נוגעת לודאי בלבד: \n(7) sources=[5]: חלל עליו כדי שישמור ודאי שבתות הרבה\n(8) sources=[]: . הקטע שלפניי אינו מפרש במפורש מה מוסיף \"וחי בהם\" לעניין ספק, אבל ההקשר מרמז שזה היתרון שבו.\n\n**מקבילה:** גם במדרש תנחומא (בובר, מסעי) מופיע אותו פסוק: \n(9) sources=[0]: ומנין שפיקוח נפש דוחה את השבת, שנאמר ושמרתם את חקותי [ואת משפטי אשר יעשה אותם האדם] וחי בהם (ויקרא יח ה) , ולא שימות בהם\n(10) sources=[]: . המדרש מוסיף שם גם את הקל וחומר ממילה, שמופיע ביומא בשם ר' אלעזר."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgspDrDXoEoRDp86XD4Yd",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Source 1 has Shmuel citing Lev 18:5 'vachai bahem'.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Exact quote from Yoma 85b:3.\"},{\"i\":2,\"verdict\":\"supported\",\"note\":\"Follows from source 1: Shmuel says his derivation is better than theirs; R. Shimon ben Menasya's is one.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Exact quote of R. Shimon ben Menasya in source 1.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":5,\"verdict\":\"partial\",\"note\":\"Rashi says other derivations cover only certain danger, but doesn't say this is why Shmuel's is better.\"},{\"i\":6,\"verdict\":\"supported\",\"note\":\"Rashi says 'chalel alav' refers to certain life-saving only.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"Exact quote from Rashi source 5.\"},{\"i\":8,\"verdict\":\"no_claim\",\"note\":\"Disclaimer that the text doesn't explain; hedged inference.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Matches Tanchuma Buber quote.\"},{\"i\":10,\"verdict\":\"supported\",\"note\":\"Tanchuma has the kal vachomer from circumcision; source 3 attributes it to R. Elazar in Yoma.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6358,
+   "output_tokens": 491,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "key": "2ad1e80107caaeabfc83237f824b890f",
+ "request": {
+  "model": "claude-sonnet-5-5",
+  "max_tokens": 8000,
+  "system": "You check a study assistant's answer against the sources it was given.\n\nFor each numbered segment of the answer, decide:\n- supported: every claim in it is stated in, or follows directly from, the sources listed for it\n  (or, for a segment with no listed sources, from any of the sources shown);\n- partial: some of it is supported and some is not;\n- unsupported: it says something the sources do not say, attributes a view to the wrong person, or\n  names a source that is not shown;\n- no_claim: it makes no claim about the texts (a greeting, a question back to the learner, a\n  transition, a disclaimer).\n\nJudge only against the sources shown, not against your own knowledge. Be strict about who said\nwhat. Keep each note under 25 words.",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Question: Where does the Talmud tell of Hillel teaching a convert the whole Torah while standing on one foot?\n\nSources:\n[0] Kli Yakar on Leviticus 19:18:4 (Kli Yakar on Leviticus)\nוְאָהַבְתָּ לְרֵעֲךָ כָּמוֹךָ. אָמְרוּ רז״ל זֶה כְּלָל גָּדוֹל בַּתּוֹרָה. וּבְמַסֶּכֶת שַׁבָּת (לא.) מַעֲשֶׂה בְּהַהוּא גֵּר שֶׁאָמַר לַמְּדֵנִי כָּל הַתּוֹרָה כְּשֶׁאֲנִי עוֹמֵד עַל רֶגֶל אֶחָד, וְלִמְּדוֹ הִלֵּל פָּסוּק ״וְאָהַבְתָּ לְרֵעֲךָ כָּמוֹךָ״, כָּל דַּעֲלָךְ סָנֵי לְחַבְרָךְ לָא תַּעֲבֵד, וְאִידָךְ פֵּרוּשָׁא זִיל גְּמֹר. וּכְפִי הַנִּרְאֶה שֶׁהַגֵּר הָיָה גֵּר צֶדֶק וְלֹא הָיָה מֵהַתֵּל הִתּוּלִים לוֹמַר בְּדֶרֶךְ שְׂחוֹק שֶׁיְּלַמְּדוֹ כָּל הַתּוֹרָה בְּעוֹד שֶׁהוּא עוֹמֵד עַל רֶגֶל אֶחָד מַמָּשׁ, אֶלָּא וַדַּאי בִּקֵּשׁ מַמָּשׁ שֶׁיַּעֲמִיד לוֹ כָּל מִצְוֹת הַתּוֹרָה עַל יְסוֹד אֶחָד, דְּהַיְנוּ רֶגֶל אֶחָד אֲשֶׁר עָלָיו יַעֲמִיד לוֹ כָּל הַמִּצְוֹת, כְּדֵי שֶׁלֹּא יָבֹא לִידֵי שִׁכְחָה הַמְּצוּיָה בְּגֵר אֲשֶׁר לֹא לָמַד מִנְּעוּרָיו כְּלוּם מִמִּצְוֹת הַתּוֹרָה. עַל כֵּן בִּקֵּשׁ מִמֶּנּוּ שֶׁיִּמְסֹר לוֹ כְּלָל אֶחָד הַכּוֹלֵל כָּל הַתּוֹרָה, וְעַל דֶּרֶךְ הַמְּלִיצָה אָמַר כְּשֶׁאֲנִי עוֹמֵד עַל רֶגֶל אֶחָד, וְכַוָּנָתוֹ לִמְסֹר לוֹ דָּבָר הַנֶּאֱמָר מְהֵרָה בְּלָשׁוֹן קָצָר, וְהַיְנוּ גַּם כֵּן יְסוֹד וְרֶגֶל אֶחָד, וְעַל יְדֵי שֶׁיִּזְכֹּר כְּלָל זֶה יִזְכֹּר אֶת כָּל מִצְוֹת ה׳.\n“Love your neighbor as yourself.” Our Sages said this is a great principle in the Torah. In the Talmud (Shabbat 31a), there is a story about a convert who said, “Teach me the entire Torah while I stand on one foot.” Hillel taught him the verse Love your neighbor as yourself — [explaining it as] “What is hateful to you, do not do to your fellow. The rest is commentary; go and learn.” It appears that this convert was a sincere convert and was not mocking or joking when he asked to be taught the entire Torah while standing on one foot. Rather, he genuinely requested that all the commandments of the Torah be established for him on one foundation — that is, one “foot” upon which all the commandments could stand — so that he would not fall into forgetfulness, which is common for a convert who has not learned anything about the commandments of the Torah since his youth. Therefore, he asked for one principle that encompasses the entire Torah. Metaphorically he said “while I stand on one foot,” meaning he wanted something concise that could be stated quickly and briefly, which would also serve as a single foundation or “foot.” By remembering this principle, he would remember all of God’s commandments.\n\n[1] Shabbat 31a:6 (Shabbat)\nשוב מעשה בנכרי אחד שבא לפני שמאי א\"ל גיירני ע\"מ שתלמדני כל התורה כולה כשאני עומד על רגל אחת דחפו באמת הבנין שבידו בא לפני הלל גייריה אמר לו דעלך סני לחברך לא תעביד זו היא כל התורה כולה ואידך פירושה הוא זיל גמור.\nAnother time a non-Jew came before Shammai and said, \"I will convert if you can teach me the entire Torah while I stand on one foot.\" Shammai pushed the non-Jews aside with the ruler that was in his hand. The non-Jew came before Hillel and Hillel converted him saying, \"What is hateful to you, do not do to your neighbor, that is the entire Torah, the rest is just commentary, now go and study.\"\n\n[2] Tov haLevanon, Ninth Treatise on Abstinence 5:34 (Tov haLevanon)\nושמאי במלאכת הבנין בפ\"ב דשבת דף ל'גבי גר שבא לפני שמאי לגיירו על מנת שילמדנו כל התורה כשהוא עומד על רגל אחת דחפו באמת הבנין שבידו נשמע מזה שבנאי היה:\n\n[3] Shabbat 31a:8 (Shabbat)\nא\"ל כלום מעמידין מלך אלא מי שיודע טכסיסי מלכות לך למוד טכסיסי מלכות הלך וקרא כיון שהגיע (במדבר א, נא) והזר הקרב יומת אמר ליה מקרא זה על מי נאמר א\"ל אפי' על דוד מלך ישראל נשא אותו גר קל וחומר בעצמו ומה ישראל שנקראו בנים למקום ומתוך אהבה שאהבם קרא להם (שמות ד, כב) בני בכורי ישראל כתיב עליהם והזר הקרב יומת גר הקל שבא במקלו ובתרמילו על אחת כמה וכמה\nHillel said to him, \"We cannot anoint someone unless they learn the ceremonies of kingship, go and learn the ceremonies of kingship.\" The new convert went and learned the ceremonies of kingship. When he arrived at the verse, \"and the common man that draweth nigh shall be put to death\" (Numbers 1:51), he asked, \"Who is this verse speaking about?\" Hillel answered him, \"It's even relevant to David, King of Israel.\" The new convert made himself a \"kal v'chomer\": Israel are called Children of God, and out of God's love for them, they are called the first born children of God. If even in regards to them it is said, \"and the common man that draweth nigh shall be put to death...\" how much more so for me who comes to the Jewish people with his staff and bag.\n\n[4] Shabbat 31a:5 (Shabbat)\nת\"ר מעשה בנכרי אחד שבא לפני שמאי אמר לו כמה תורות יש לכם אמר לו שתים תורה שבכתב ותורה שבעל פה א\"ל שבכתב אני מאמינך ושבעל פה איני מאמינך גיירני ע\"מ שתלמדני תורה שבכתב גער בו והוציאו בנזיפה בא לפני הלל גייריה יומא קמא א\"ל א\"ב ג\"ד למחר אפיך ליה א\"ל והא אתמול לא אמרת לי הכי א\"ל לאו עלי דידי קא סמכת דעל פה נמי סמוך עלי:\nIt was taught in a baraita that a non-Jew came before Shammai and asked him, \"How many Torahs do you have?\" Shammai responded, \"Two, the Written Torah and the Oral Torah.\" The non-Jew said, \"I believe in the Written Torah, but not in the Oral Torah. Convert me and teach me only the Written Torah.\" Shammai berated the non-Jew and chased him out The non-Jew came before Hillel and Hillel converted him. One day Hillel taught him the alef-bet, and the next day he switched the names of the letters. He said to Hillel, \"Didn't you teach me the opposite yesterday?\" Hillel responded, \"Just as you trust me in the instruction of letters, so to you must trust me in the instruction of the oral Torah.\"\n\n[5] Berakhot 11a:15 (Berakhot)\nת\"ר בה\"א עומדין וקורין יושבין וקורין ומטין וקורין הולכין בדרך וקורין עושין במלאכתן וקורין ומעשה ברבי ישמעאל ור' אלעזר בן עזריה שהיו מסובין במקום אחד והיה ר' ישמעאל מוטה ור' אלעזר בן עזריה זקוף כיון שהגיע זמן קריאת שמע הטה רבי אלעזר וזקף ר' ישמעאל אמר לו רבי אלעזר בן עזריה לר' ישמעאל ישמעאל אחי אמשול לך משל למה הדבר דומה משל לאחד שאומרים לו זקנך מגודל אמר להם יהיה כנגד המשחיתים אף כך אתה כל זמן שאני זקוף אתה מוטה עכשיו כשאני הטתי אתה זקפת\nThe Rabbis have taught : Bet Hillel say : When standing they may read [the Shema'], when sitting they may read, when reclining they may read, when walking by the way they may read, when doing work they may read. It once happened that R. Ishmael and R. Eleazar b. 'Azariah were dining in a certain place, the former reclining and the latter sitting upright. When the time for reading the Shema' arrived, R. Eleazar reclined and R. Ishmael sat up. R. Eleazar b. 'Azariah said to R. Ishmael, \"[Ishmael] My brother, I will narrate a parable for thee. To what is this like? To one who is told 'Thy beard is well grown' and he answers, 'Then it shall be taken in hand by the barbers. ' So art thou ; all the time that I was sitting up thou wert reclining, but now that I have reclined thou hast sat up !\"\n\n[6] Berakhot 63a:10 (Berakhot)\nתניא הלל הזקן אומר בשעת המכניסין פזר בשעת המפזרים כנס ואם ראית דור שהתורה חביבה עליו פזר שנאמר (משלי יא, כד) יש מפזר ונוסף עוד ואם ראית דור שאין התורה חביבה עליו כנס שנא' עת לעשות לה' הפרו תורתך\nThere is a teaching : Hillel the Elder says : When people collect [learning], do thou scatter ; when they scatter [learning], do thou collect. If thou seest a generation to which Torah is dear, do thou scatter ; as it is said, \"There is that scattereth, and yet increaseth\" (Prov. xi. 24); but if thou seest a generation to which Torah is not dear, do thou collect ; as it is said, \"It is time for the Lord to work ; they have made void Thy Law.\"\n\n[7] Rashi on Shabbat 31a:5:1 (Rashi on Shabbat)\nהוציאו בנזיפה - דתניא הבא לקבל דברי חברות חוץ מדבר אחד וכן גר הבא להתגייר וקבל עליו דברי תורה חוץ מדבר אחד אין מקבלין אותו במסכת בכורות (דף ל:):\nHe cast him out with reprimand: As we learned in a baraita, \"One who comes to accept the matters of scholarly association except for one matter; and likewise, a [gentile] who comes to convert and takes upon himself the words of the Torah except for one matter - we do not accept him.\" This is in Tractate Bekhorot 30b:4.\n\nAnswer segments:\n(0) sources=[]: The story is in **Tractate Shabbat 31a** (Bavli).\n\n**The text (Shabbat 31a:6)**\n\nA non-Jew came before Shammai: \n(1) sources=[1]: גיירני ע\"מ שתלמדני כל התורה כולה כשאני עומד על רגל אחת\n(2) sources=[]: . \n(3) sources=[1]: Shammai pushed the non-Jews aside with the ruler that was in his hand. The non-Jew came before Hillel and Hillel converted him saying, \"What is hateful to you, do not do to your neighbor, that is the entire Torah, the rest is just commentary, now go and study.\"\n(4) sources=[]:  In the Aramaic: \n(5) sources=[1]: דעלך סני לחברך לא תעביד זו היא כל התורה כולה ואידך פירושה הוא זיל גמור\n(6) sources=[]: .\n\n**Context on the page**\n\nIt is one of a series of convert stories. It opens with \n(7) sources=[1]: שוב מעשה\n(8) sources=[]:  (\"another time\"), following the story of a convert who \n(9) sources=[4]: believe[d] in the Written Torah, but not in the Oral Torah\n(10) sources=[]: . Another story follows about a convert who wanted to be anointed High Priest (31a:8).\n\n**Commentators**\n\n- **Kli Yakar** (on Leviticus 19:18) ties Hillel's answer to the verse \"Love your neighbor as yourself.\" He reads the request as sincere: the convert \n(11) sources=[0]: genuinely requested that all the commandments of the Torah be established for him on one foundation — that is, one \"foot\" upon which all the commandments could stand — so that he would not fall into forgetfulness\n(12) sources=[]: .\n- **Tov haLevanon** infers from \n(13) sources=[2]: באמת הבנין\n(14) sources=[]:  (the builder's measuring rod) \n(15) sources=[2]: שבנאי היה\n(16) sources=[]: , meaning that Shammai was a builder by trade."
+   }
+  ],
+  "output_config": {
+   "effort": "low",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "segments": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "i": {
+          "type": "integer"
+         },
+         "verdict": {
+          "type": "string",
+          "enum": [
+           "supported",
+           "partial",
+           "unsupported",
+           "no_claim"
+          ]
+         },
+         "note": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "i",
+         "verdict",
+         "note"
+        ],
+        "additionalProperties": false
+       }
+      }
+     },
+     "required": [
+      "segments"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ },
+ "response": {
+  "id": "msg_011CgsrBV9SmSPQnMJRMw2kM",
+  "container": null,
+  "content": [
+   {
+    "citations": null,
+    "text": "{\"segments\":[{\"i\":0,\"verdict\":\"supported\",\"note\":\"Sources [0] and [1] place the story at Shabbat 31a.\"},{\"i\":1,\"verdict\":\"supported\",\"note\":\"Hebrew quote matches source 1.\"},{\"i\":2,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":3,\"verdict\":\"supported\",\"note\":\"Matches the English of source 1.\"},{\"i\":4,\"verdict\":\"no_claim\",\"note\":\"Transition.\"},{\"i\":5,\"verdict\":\"supported\",\"note\":\"Quote matches the Hebrew of source 1.\"},{\"i\":6,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":7,\"verdict\":\"supported\",\"note\":\"The phrase 'שוב מעשה' opens source 1.\"},{\"i\":8,\"verdict\":\"supported\",\"note\":\"'Another time' is the translation in source 1.\"},{\"i\":9,\"verdict\":\"supported\",\"note\":\"Source 4 has the convert who believes only in the Written Torah.\"},{\"i\":10,\"verdict\":\"partial\",\"note\":\"Source 3 shows a convert learning kingship, but 'High Priest' is not stated; 'anointed' appears, but kingship is implied.\"},{\"i\":11,\"verdict\":\"supported\",\"note\":\"Matches Kli Yakar's reading of the convert's sincerity.\"},{\"i\":12,\"verdict\":\"no_claim\",\"note\":\"Punctuation only.\"},{\"i\":13,\"verdict\":\"supported\",\"note\":\"Phrase appears in source 2.\"},{\"i\":14,\"verdict\":\"partial\",\"note\":\"Source 2 does not say 'measuring rod'; source 1 says 'ruler'. Roughly consistent but the gloss is not in source 2.\"},{\"i\":15,\"verdict\":\"supported\",\"note\":\"Phrase appears in source 2.\"},{\"i\":16,\"verdict\":\"supported\",\"note\":\"Source 2 infers Shammai was a builder.\"}]}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-sonnet-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 5603,
+   "output_tokens": 638,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}
