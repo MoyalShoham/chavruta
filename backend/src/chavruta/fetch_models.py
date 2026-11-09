@@ -21,12 +21,15 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("models", nargs="*", choices=sorted(MODELS), default=[])
     parser.add_argument("--reranker", action="store_true")
     args = parser.parse_args(argv)
-    names = [MODELS[k].name for k in args.models] + ([RERANKER] if args.reranker else [])
-    for name in names:
-        # Safetensors only: no pickled weights, no ONNX/OpenVINO duplicates.
+    wanted = [(MODELS[k].name, MODELS[k].weights) for k in args.models]
+    if args.reranker:
+        wanted.append((RERANKER, "*.safetensors"))
+    for name, weights in wanted:
+        # One weight format per model; no ONNX/OpenVINO duplicates.
         path = snapshot_download(
             name,
-            allow_patterns=["*.json", "*.safetensors", "*.txt", "*.model", "sentencepiece*", "1_Pooling/*"],
+            allow_patterns=["*.json", weights, "*.txt", "*.model", "sentencepiece*", "1_Pooling/*"],
+            ignore_patterns=["onnx/*", "openvino/*"],
         )
         print(f"{name}: {path}", flush=True)
 

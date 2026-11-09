@@ -22,16 +22,23 @@ Vectors = npt.NDArray[np.float32]
 class ModelSpec:
     key: str
     name: str
+    dim: int
     query_prefix: str = ""
     passage_prefix: str = ""
+    #: Weight file pattern to download. Safetensors wherever the authors publish it; bge-m3 has only
+    #: a PyTorch checkpoint, which torch loads with weights_only (no code execution).
+    weights: str = "*.safetensors"
 
 
 MODELS: dict[str, ModelSpec] = {
-    "e5-small": ModelSpec("e5-small", "intfloat/multilingual-e5-small", "query: ", "passage: "),
-    "e5-base": ModelSpec("e5-base", "intfloat/multilingual-e5-base", "query: ", "passage: "),
-    "bge-m3": ModelSpec("bge-m3", "BAAI/bge-m3"),
-    "minilm": ModelSpec("minilm", "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"),
+    "e5-small": ModelSpec("e5-small", "intfloat/multilingual-e5-small", 384, "query: ", "passage: "),
+    "e5-base": ModelSpec("e5-base", "intfloat/multilingual-e5-base", 768, "query: ", "passage: "),
+    "bge-m3": ModelSpec("bge-m3", "BAAI/bge-m3", 1024, weights="pytorch_model.bin"),
+    "minilm": ModelSpec("minilm", "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2", 384),
 }
+#: The model the app uses, chosen on the dev split (docs/decisions.md).
+CHOSEN_MODEL = "e5-small"
+EMBEDDING_DIM = MODELS[CHOSEN_MODEL].dim
 RERANKER = "BAAI/bge-reranker-v2-m3"
 
 

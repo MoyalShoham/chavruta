@@ -128,6 +128,8 @@ class Skipped:
     section_ref: str
     version: str
     reason: str
+    language: str = ""
+    license: str = ""
 
 
 def _units(text: Any, prefix: str) -> Iterator[tuple[str, str]]:
@@ -147,7 +149,11 @@ def chunks_of(section: Section, work: WorkSpec, start_position: int) -> tuple[li
     for v in section.versions:
         language = "he" if v.language in ("he", "hebrew") else "en"
         if not is_open(v.license):
-            skipped.append(Skipped(work.title, section.ref, v.title, f"license {v.license} is not open"))
+            skipped.append(
+                Skipped(
+                    work.title, section.ref, v.title, f"license {v.license} is not open", language, v.license
+                )
+            )
             continue
         for ref, raw in _units(v.text, section.ref):
             body = clean(raw)
@@ -156,7 +162,14 @@ def chunks_of(section: Section, work: WorkSpec, start_position: int) -> tuple[li
             script_ok = is_mostly_hebrew(body) if language == "he" else is_mostly_latin(body)
             if not script_ok:
                 skipped.append(
-                    Skipped(work.title, ref, v.title, f"text is not in the expected script ({language})")
+                    Skipped(
+                        work.title,
+                        ref,
+                        v.title,
+                        f"text is not in the expected script ({language})",
+                        language,
+                        v.license,
+                    )
                 )
                 continue
             chunks.append(
