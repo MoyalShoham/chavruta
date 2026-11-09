@@ -9,7 +9,7 @@ import numpy as np
 import pytest
 
 from chavruta.corpus import Chunk
-from chavruta.embeddings import EMBEDDING_DIM, Vectors, load_vectors, save_vectors
+from chavruta.embeddings import CHOSEN_MODEL, EMBEDDING_DIM, Vectors, load_vectors, save_vectors
 from chavruta.evaluation import Question, Ranking, load_questions, score_rankings, verify_questions
 from chavruta.retrieval import Retriever, matches
 from chavruta.text import tokens
@@ -18,7 +18,7 @@ from chavruta.text import tokens
 class HashEmbedder:
     """Bag-of-tokens vectors: texts sharing words are close. Deterministic, no model download."""
 
-    key = "hash"
+    key = CHOSEN_MODEL  # stands in for the chosen model: same dimension, deterministic
     dim = EMBEDDING_DIM
 
     def _one(self, text: str) -> Vectors:

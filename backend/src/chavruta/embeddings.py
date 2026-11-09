@@ -82,9 +82,11 @@ class CrossEncoderReranker:
     def __init__(self, name: str = RERANKER, device: str | None = None) -> None:
         from sentence_transformers import CrossEncoder
 
-        self.model: Any = CrossEncoder(
-            name, device=device or _device(), max_length=512, local_files_only=True
-        )
+        device = device or _device()
+        # Weights come from the local cache only; the backend never downloads at run time.
+        self.model: Any = CrossEncoder(name, device=device, max_length=512, local_files_only=True)
+        if device != "cpu":
+            self.model.model.half()  # half the memory on a GPU; scores agree to about 1e-3
 
     def scores(self, query: str, passages: list[str]) -> list[float]:
         if not passages:

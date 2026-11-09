@@ -203,7 +203,9 @@ def main(argv: list[str] | None = None) -> None:
         print(f"{total} chunks in the library", flush=True)
         if not args.no_embed:
             from chavruta.embeddings import SentenceEmbedder
+            from chavruta.library import check_embeddings
 
+            check_embeddings(sessions)
             embed_missing(s, SentenceEmbedder(MODELS[CHOSEN_MODEL]))
 
 

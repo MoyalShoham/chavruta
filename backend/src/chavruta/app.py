@@ -15,7 +15,7 @@ from chavruta.config import Settings
 from chavruta.db import make_engine, make_sessions
 from chavruta.embeddings import CHOSEN_MODEL, MODELS, CrossEncoderReranker, SentenceEmbedder
 from chavruta.hebcal import Schedule
-from chavruta.library import Library
+from chavruta.library import Library, check_embeddings
 from chavruta.llm import AnthropicLLM, Mode, RecordingLLM
 from chavruta.net import install_socket_guard
 from chavruta.sefaria import SefariaClient
@@ -26,6 +26,7 @@ def make() -> FastAPI:
     settings = Settings()
     install_socket_guard(extra_hosts=[settings.db_host])
     sessions = make_sessions(make_engine(settings.dsn()))
+    check_embeddings(sessions)
     with sessions() as s:
         ensure_users(s, settings.password("learner"), settings.password("admin"))
     embedder = SentenceEmbedder(MODELS[CHOSEN_MODEL])

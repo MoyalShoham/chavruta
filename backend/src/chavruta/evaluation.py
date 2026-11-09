@@ -246,7 +246,7 @@ def _record(questions: Sequence[Question], wanted: Sequence[Config], out_dir: Pa
     from chavruta.retrieval import Retriever
 
     chunks = load_chunks()
-    reranker = CrossEncoderReranker() if any(c.rerank for c in wanted) else None
+    reranker = MemoReranker(CrossEncoderReranker()) if any(c.rerank for c in wanted) else None
     out_dir.mkdir(parents=True, exist_ok=True)
     for model in dict.fromkeys(c.model for c in wanted):
         embedder = vectors = None
@@ -276,6 +276,20 @@ def _record(questions: Sequence[Question], wanted: Sequence[Config], out_dir: Pa
                 encoding="utf-8",
             )
             print(f"recorded {c.name}", flush=True)
+
+
+class MemoReranker:
+    """Configurations share most of their candidates; each (question, passage) is scored once."""
+
+    def __init__(self, inner: Any) -> None:
+        self.inner = inner
+        self.cache: dict[tuple[str, str], float] = {}
+
+    def scores(self, query: str, passages: list[str]) -> list[float]:
+        missing = list(dict.fromkeys(p for p in passages if (query, p) not in self.cache))
+        for p, score in zip(missing, self.inner.scores(query, missing), strict=True):
+            self.cache[(query, p)] = score
+        return [self.cache[(query, p)] for p in passages]
 
 
 def _load_rankings(path: Path) -> dict[str, Ranking]:

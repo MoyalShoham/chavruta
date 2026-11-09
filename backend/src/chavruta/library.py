@@ -12,8 +12,38 @@ from sqlalchemy.orm import Session, sessionmaker
 from chavruta.answer import CorpusIndex
 from chavruta.corpus import Chunk
 from chavruta.db import ChunkRow, Version, Work
-from chavruta.embeddings import Embedder
+from chavruta.embeddings import CHOSEN_MODEL, EMBEDDING_DIM, Embedder
 from chavruta.retrieval import CANDIDATES, Reranker, Retriever
+
+
+class EmbeddingMismatchError(RuntimeError):
+    pass
+
+
+def check_embeddings(sessions: sessionmaker[Session]) -> None:
+    """Refuses to run on vectors from another model, or a column of another dimension: mixed
+    vectors would silently ruin semantic search."""
+    with sessions() as s:
+        models = set(
+            s.scalars(
+                select(ChunkRow.embedding_model).where(ChunkRow.embedding_model.is_not(None)).distinct()
+            )
+        )
+        dim = s.scalar(
+            text(
+                "SELECT atttypmod FROM pg_attribute "
+                "WHERE attrelid = 'chunks'::regclass AND attname = 'embedding'"
+            )
+        )
+    if models - {CHOSEN_MODEL}:
+        raise EmbeddingMismatchError(
+            f"the library was embedded with {sorted(models)}, the app uses {CHOSEN_MODEL}; re-embed it"
+        )
+    if dim is not None and dim != EMBEDDING_DIM:
+        raise EmbeddingMismatchError(
+            f"the embedding column has {dim} dimensions and {CHOSEN_MODEL} needs {EMBEDDING_DIM}: "
+            "add a migration"
+        )
 
 
 class PgRetriever(Retriever):

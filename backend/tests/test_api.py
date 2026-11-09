@@ -481,3 +481,24 @@ def test_database_password_comes_from_a_file(tmp_path: Path) -> None:
     s = Settings(database_url="postgresql+psycopg://chavruta@db:5432/chavruta", db_password_file=str(secret))
     assert s.dsn() == "postgresql+psycopg://chavruta:p%40ss%2Fword@db:5432/chavruta"
     assert s.db_host == "db"
+
+
+def test_vectors_from_another_model_are_refused(loaded: sessionmaker[Session]) -> None:
+    from sqlalchemy import select, update
+
+    from chavruta.db import ChunkRow
+    from chavruta.embeddings import CHOSEN_MODEL
+    from chavruta.library import EmbeddingMismatchError, check_embeddings
+
+    check_embeddings(loaded)  # the test library is consistent
+    with loaded() as s:
+        first = s.scalars(select(ChunkRow.id).limit(1)).one()
+        s.execute(update(ChunkRow).where(ChunkRow.id == first).values(embedding_model="bge-m3"))
+        s.commit()
+    try:
+        with pytest.raises(EmbeddingMismatchError, match="bge-m3"):
+            check_embeddings(loaded)
+    finally:
+        with loaded() as s:
+            s.execute(update(ChunkRow).where(ChunkRow.id == first).values(embedding_model=CHOSEN_MODEL))
+            s.commit()
